@@ -1,0 +1,741 @@
+\section[eP Beam Energy Measurement]{eP Beam Energy Measurement
+\footnote{Authors: B.Reitz \url{mailto:reitz@jlab.org}}
+}
+\label{sec:ep}
+\subsection {Purpose and Layout}
+\label{sec:ep_purpose}
+
+The Hall A eP system is a stand-alone device to measure the 
+energy of the electron beam. It is located along the beamline
+17~m upstream of the target. The beam energy $E$ is determined by measuring
+the scattered electron angle $\Theta_e$ and the recoil proton angle
+$\Theta_p$ in the $^1$H$(e,e'p)$ elastic reaction according to the kinematic
+formula:
+\begin{equation}
+E = M_p \frac{\cos(\Theta_e) + \sin(\Theta_e)/\tan(\Theta_p) - 1}{1 - \cos(\Theta_p)} + O(m_e^2/E^2),
+\end{equation}
+in which $M_p$ denotes the mass of the proton and $m_e$ the mass of the electron.
+The schematic diagram of the eP system is presented in Fig. \ref{fig:ep_layout}. 
+Two identical arms, each consisting of an electron and a corresponding proton 
+detector system, made up of a set of 2~x~8 silicon micro-strip detectors in the
+reaction plane, are placed symmetrically with respect to the beam along the 
+vertical plane. The target consists of a rotating CH$_2$ tape.
+Simultaneous measurements of the beam energy with both arms result
+in cancellation, to first order, of uncertainties in the knowledge of the position
+and direction of the beam. 
+ \begin{figure}[htb]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.7\textwidth]{ep_layout}
+    \end{center}
+    \caption[eP: Layout]{
+            Schematic layout of the eP energy measurement system,
+            showing the arrangement of its components, the polyethylene (CH$_2$) 
+            target, the Cherenkov detectors, the silicon micro-strip detectors (SSD) 
+            for protons and electrons, and the scintillator detectors.
+            }
+    \label{fig:ep_layout} 
+ \end{figure}  
+\clearpage
+
+\infolevone{
+\subsection{Description of Components}
+\label{sec:ep_desc_comp}
+
+\subsubsection{High Voltage}
+\label{sec:ep_highvoltage}
+
+The eP system is equipped with two gas Cherenkov detectors and 
+altogether 18 scintillators. The high voltage for the photomultiplier
+tubes of these detectors are provided by a LeCroy 1450 HV power supply,
+located in the electronics racks along the beamline. The channel 
+assignment and HV voltages (as of summer 2003) are given in
+Tab. \ref{tab:ep_hv}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|r|l|} \hline
+Channel & HV (Volts) & Detector  \\ \hline \hline
+ 1.2 & 2201 & S1 (bottom) \\  \hline
+ 1.3 & 2200 & S2 (bottom) \\  \hline
+ 1.4 & 1963 & S1 (top) \\  \hline
+ 1.5 & 1963 & S2 (top) \\  \hline
+ 1.8 & 1039 & S3 \\  \hline
+ 1.9 & 1027 & S3 \\  \hline
+ 2.0 & 2250 & Cherenkov  \\  \hline
+ 2.1 & 2250 & Cherenkov  \\  \hline
+ 3.0 & 1004 & S3 \\  \hline
+ 3.1 & 1113 & S3 \\  \hline
+ 3.2 & 1097 & S3 \\  \hline
+ 3.3 & 1144 & S3 \\  \hline
+ 3.4 & 1126 & S3 \\  \hline
+ 3.5 & 1119 & S3 \\  \hline
+ 3.6 & 1006 & S3 \\  \hline
+ 3.7 & 1112 & S3 \\  \hline
+ 3.8 & 1104 & S3 \\  \hline
+ 3.9 & 1071 & S3 \\  \hline
+ 3.10 & 1061 & S3 \\  \hline
+ 3.11 & 1051 & S3 \\  \hline
+\end{tabular}
+\end{center}
+\caption[eP System: HV Summary]{HV connections and HV values. }
+\label{tab:ep_hv}
+\end{table}
+
+\infolevtwo{
+The standard way to control the high voltage is the use of the 
+Hall A MEDM graphical user interface (EPICS), which is running 
+on the \mycomp{hacsbc2} computer. This computer is located in the counting house,
+but can also be accessed from other terminals. Usually at least one terminal 
+in Hall A itself has a MEDM screen running, as well. If it is not running, log into \mycomp{hacsbc2}
+as user \mycomp{hacuser}, and start the GUI with the command
+\mycomp{hlamain}. A screen labeled ``Hall A Main Menu'' will appear (Fig. \ref{fig:ep_hlamain}).
+Chose \mycomp{LeCroy HV}, and select \mycomp{Beamline} in the screen which will pop 
+up (Fig. \ref{fig:ep_hvlecroy}). 
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=4cm]{ep_hlamain}
+    \end{center}
+    \caption[eP: hlamain]{
+            Main menu of the Hall A MEDM graphical user interface. For the eP system
+            the buttons LeCroy HV and EP Energy Measure are relevant.
+            }
+    \label{fig:ep_hlamain} 
+ \end{figure}  
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=4cm]{ep_lecroy}
+    \end{center}
+    \caption[eP: LeCroy HV Screen]{
+	    Epics Menu for the LeCroy High Voltage supplies in Hall A. All slots related
+            to the eP system can be accessed from the Beamline button.
+            }
+    \label{fig:ep_hvlecroy} 
+ \end{figure}  
+}
+
+For a measurement, all HV channels defined in Tab. \ref{tab:ep_hv}
+should be turned on. The demand voltages in these slots
+(Slot 1, Slot 2 ``(e,p) \& ARC'' and Slot 3 ``Moller'') should have 
+the correct preset values. 
+To turn the HV on (or off), or to change the 
+preset values,
+press the button below the title of the slot. Another screen will pop-up,
+where status and preset values can be adjusted. \infolevtwo{
+(See Fig. \ref{fig:ep_hvbeamline} - \ref{fig:ep_hvslot3})
+
+\begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_hvbeamline}
+    \end{center}
+    \caption[eP: Beamline HV Screen]{
+	    Overview screen for the high voltage status of devices belonging to the 
+            beamline instrumentation.
+            }
+    \label{fig:ep_hvbeamline} 
+ \end{figure}  
+
+\begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_hvslot1}
+    \end{center}
+    \caption[eP: HV Screen for Slot 1]{
+	    Control screen for all high voltage channels from Slot 1.
+            }
+    \label{fig:ep_hvslot1} 
+ \end{figure}  
+
+\begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_hvslot2}
+    \end{center}
+    \caption[eP: HV Screen for Slot 2]{
+	    Control screen for all high voltage channels from Slot 2.
+            }
+    \label{fig:ep_hvslot2} 
+ \end{figure}  
+
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_hvslot3}
+    \end{center}
+    \caption[eP: HV Screen for Slot 3]{
+	    Control screen for all high voltage channels from Slot 3.
+            }
+    \label{fig:ep_hvslot3} 
+ \end{figure}
+}
+
+During a measurement, the alarm handler should be running, so that the 
+operator will be informed, should one of the detectors trip. \infolevtwo{This can
+also be done manually, by watching the beamline screen Fig. \ref{fig:ep_hvbeamline}.
+All fields should be green and showing a voltage close to the values given
+in Tab. \ref{tab:ep_hv}.}
+If the EPICS screens are not working, there is an alternative way to 
+control the HV, by connecting via telnet directly to the LeCroy 1450.
+This can be done from nearly any Linux PC in the counting house with the 
+command: \mycomp{$>$ telnet hatsv5 2011}.
+
+\clearpage
+
+\subsubsection{MEDM Controls}
+\label{sec:ep_medm}
+
+\infolevtwo{
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.3\textwidth]{ep_slow}
+    \end{center}
+    \caption[eP: Slow Controls Screen]{
+	    EPICS main screen for the controls of the various devices in the eP system. 
+            }
+    \label{fig:ep_slow} 
+ \end{figure} }
+The target, the silicon micro-strip detectors, and the setting of the 
+Cherenkov detector are controlled by an EPICS GUI \infolevtwo{(Fig. \ref{fig:ep_slow})}. 
+It can be started from the ``Hall A Main Menu'' \infolevtwo{(Fig. \ref{fig:ep_hlamain})}
+running on \mycomp{hacsbc2} by pressing the \mycomp{EP Energy Measure} button.
+(see previous chapter, to learn how to start the ``Hall A Main Menu'' in case
+it is not already running)
+The controls are actually running on a VME computer \mycomp{hallasc6} 
+(Bob calls this \mycomp{e-p~2}). It is located in the eP electronics 
+racks along the beamline in Hall A \infolevfour{(Fig. \ref{fig:ep_pic_slow_ctrl})}. This computer
+sometimes requires rebooting. \infolevtwo{ The computer is reached through 
+the portserver \mycomp{hatsv5} at port 12. To reboot:\\
+\\
+\mycomp{$>$ telnet hatsv5 2012 \\
+user: adaq\\
+password: ******* \\
+\\ }
+if you do not see a prompt, press \mycomp{Ctrl C}.\\
+\\
+\mycomp{-$>$ reboot}\\
+\\
+wait for it to finish and then load EPICS:\\
+\\
+\mycomp{-$>$ $<$ epics \\
+...\\
+-$>$ Ctrl $]$ \\
+telnet$>$ q \\
+$>$\\ }
+
+\infolevfour{
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.75\textwidth]{ep_pic_slow_ctrl}
+    \end{center}
+    \caption[eP: Picture Slow Controls]{
+	    VME crate containing modules for the slow controls of the eP system.
+            }
+    \label{fig:ep_pic_slow_ctrl} 
+ \end{figure}  }
+}
+
+\infolevtwo{
+\subsubsection{Silicon Micro-Strip Detectors}
+\label{sec:ep_ssd}
+
+There are three GUI's associated with the silicon micro-strip detectors. 
+Two of them are important for everyday operations. They are labeled 
+\mycomp{MicroStrip Polarization} 
+and \mycomp{MX7RH Power Supply and Currents}. To operate the SSDs, pull up
+the micro-strip polarization display and turn on all the bias voltages (see Fig. \ref{fig:ep_ssd_bias_control}). 
+Make sure that the bias voltages are set to a reasonable value (30 Volts).
+Pop up both current strip charts so that you can see when the currents 
+have stabilized.
+Pull up the MX7RH display and turn on all the supply's (see Fig. \ref{fig:ep_mx7_control}). 
+Pop up the power supply strip charts. It takes at 
+least 30 minutes for the strips to stabilize.
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_ssd_bias_control}
+    \end{center}
+    \caption[eP: SSD Bias Voltages Screen]{
+            EPICS screen to control the bias voltages for the silicon micro-strip detectors.
+            }
+    \label{fig:ep_ssd_bias_control} 
+ \end{figure}
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_mx7_control}
+    \end{center}
+    \caption[eP: MX7 Controls Screen]{
+	    EPICS screen for the MX7 power supplies. 
+            }
+    \label{fig:ep_mx7_control} 
+ \end{figure}  
+
+\clearpage
+}
+
+\subsubsection{Target}
+\label{sec:ep_target}
+
+The target of the eP system is made of a thin polyethylene (CH$_2$) tape, which 
+is moving while it is in the electron beam. \infolevtwo{ To operate the target one has to
+pull up the target GUI (Fig. \ref{fig:ep_target_control}). There are two controls, one to start the target moving
+labeled \mycomp{Motor Control}
+and another labeled \mycomp{Target Motion} to place the target in the beam. 
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.6\textwidth]{ep_target_control}
+    \end{center}
+    \caption[eP: Target Control Screen]{
+	    EPICS screen for the MX7 power supplies. 
+            }
+    \label{fig:ep_target_control} 
+ \end{figure}  }
+The CH$_2$ tape  must always be moving before 
+it is placed in the beam. There are two monitors of the tape motion:
+an output that shows the motor is powered and a diode-pin combination 
+that triggers on a reflective strip. The diodes are often damaged.\\
+\begin{safetyen}{10}{5}
+Always make sure, that the target is moving while it is in the beam !!!\\
+\end{safetyen}
+The target movement and motion can also be controlled locally.
+\infolevfour{The control box is located under the beamline next to the eP system
+(see Fig. \ref{fig:ep_pic_trgtctrl}.)}\\
+\begin{safetyen}{10}{5}
+If you operate the target manually, make sure that the system
+is set back to remote control afterwards.\\
+\end{safetyen}
+The CH$_2$-tape has only a limited life time. Therefore it
+should be exchanged on a regular basis (twice per year, or 
+before a long beam time). This work has to be done by the 
+Hall A technical staff. 
+\infolevfour{
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_pic_trgtctrl}
+    \end{center}
+    \caption[eP: Picture of Target Control Box]{
+	    Control box for the eP target system.
+            }
+    \label{fig:ep_pic_trgtctrl} 
+ \end{figure}  
+}
+\clearpage
+
+\subsubsection{Cherenkov}
+\label{sec:ep_cer}
+
+The detectors for the protons (the scintillators S1 and S2, and 
+a silicon micro-strip detector) are installed at a fixed angle of
+60$^o$. Therefore the scattering angle of the electron varies 
+between 9$^o$ and 40$^o$ depending on the beam energy.
+There are seven mirrors in each arm, covering the full angular range,
+but only one photomultiplier tube per arm, which only looks at one 
+mirror at a time. Depending on the beam energy the PMT has to be rotated 
+to see the corresponding mirror.
+\infolevtwo{ This movement is controlled by the Cherenkov GUI (see Fig. \ref{fig:ep_cer_control}). 
+To change the setting, pull up the Cherenkov GUI and 
+enter the desired energy in MeV into the widget. One arm at
+a time will move. After the first PMT is in position you must re-enter an
+energy that is 1 or 2 MeV different in order to move the second PMT.
+This is a rather slow process, and can take several minutes.
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.5\textwidth]{ep_cer_control}
+    \end{center}
+    \caption[eP: Cherenkov Controls Screen]{
+	    EPICS control screen for the Cherenkov detector. User input is only
+ 	    possible for the beam energy. Be aware that only one detector at a time
+            is moved.
+            }
+    \label{fig:ep_cer_control} 
+ \end{figure}  }
+
+The Cherenkov detector is filled with pure CO$_2$-gas. \infolevtwo{The schematic of the gas 
+system is shown in Fig. \ref{fig:ep_cer_gas_layout}, \infolevfour{ a picture of the gas-controller
+in Fig. \ref{fig:ep_cer_gas_ctrl}}.} The gas-controller is located in the same rack as 
+the DAQ system. This rack is located in Hall A next to the beamline.
+\infolevtwo{ When performing an eP measurement, the gas system
+should be in \mycomp{Pressure}-mode. Therefore the left rotary switch should be at
+\mycomp{PRESSION} and the right one at \mycomp{FERME}. The two digital displays
+should both indicate a pressure of roughly 10.0~mbar, and the two flow-meters should
+be at zero. However the flow regulator under the left flow meter needs to be open.
+In this mode the system is pressurized, if the pressure falls below 10~mbar
+the automated valve on the gas inlet side opens, until the pressure is restored.
+On the other hand, if the pressure rises above 15~mbar, the automated valve in the exit pipe
+opens, to release pressure.
+
+If the gas Cherenkov detector needs to be opened, one should turn down the gas flow
+on the regulator beneath the left flow meter and open the exit valve (right switch, \mycomp{OUVERT}). 
+After the work on the detector is finished,
+and the volume is closed again, the detector needs to be set in \mycomp{Flow Mode}.
+The left rotary switch needs to be in the \mycomp{DEBIT} and the right one in the
+\mycomp{OUVERT} position, the gas flow regulator needs to be opened. After the 
+detector is purged for a sufficient time, one should switch back to the \mycomp{Pressure}-mode,
+and verify that a pressure of 10~mbar is restored. The CO$_2$ is supplied by the Hall A 
+gas system, which also supplies the Cherenkov detectors in the HRS with CO$_2$. The cylinders
+and the main vallve (operated manually) are located in the gas-shack.
+
+\begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.8\textwidth]{ep_cer_gas_layout}
+    \end{center}
+    \caption[eP: Layout of CO2 Gas System]{
+	    Scheme of the gas system for the two carbon dioxide gas Cherenkov detectors.
+            }
+    \label{fig:ep_cer_gas_layout} 
+\end{figure}  
+
+\infolevfour{
+\begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.8\textwidth]{ep_cer_gas_ctrl}
+    \end{center}
+    \caption[eP: Picture of CO2 Gas Controller]{
+            Picture of the gas controller of the eP gas Cherenkov detectors.
+            }
+    \label{fig:ep_cer_gas_ctrl} 
+\end{figure} }
+}
+\clearpage
+
+\subsubsection{Data Acquisition}
+\label{sec:ep_daq}
+
+The data acquisition (DAQ) is running on \mycomp{adaqep} in the
+\mycomp{epmeas} user account. It is a standard CODA 2.2 system.
+The DAQ system also downloads and initializes logic modules,
+and thresholds of discriminators. Since these settings depend
+on the beam energy, they have to be configured individually for 
+each measurement.
+\infolevfour{The DAQ hardware itself is located in two racks along the beamline 
+in Hall A (see Fig. \ref{fig:ep_pic_daq1} - \ref{fig:ep_pic_daq3} ). 
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.75\textwidth]{ep_pic_daq1}
+    \end{center}
+    \caption[eP: DAQ VME Crate]{
+	    VME crate for the eP data acquisition.
+            }
+    \label{fig:ep_pic_daq1} 
+ \end{figure}  
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.75\textwidth]{ep_pic_daq2}
+    \end{center}
+    \caption[eP: DAQ NIM Bin]{
+	    NIM bin for the eP data acquisition.
+            }
+    \label{fig:ep_pic_daq2} 
+ \end{figure}  
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.75\textwidth]{ep_pic_daq3}
+    \end{center}
+    \caption[eP: DAQ CAMAC Crate]{
+	    CAMAC crate for the eP data acquisition. 
+            }
+    \label{fig:ep_pic_daq3} 
+ \end{figure}  
+\clearpage }
+
+\infolevtwo{
+\paragraph{Trigger-configuration \\ }
+
+Before data taking can start, 
+a trigger file appropriate for the nominal beam energy must be created. This
+file (\mycomp{settings.conf}) insures that the trigger MLU is programmed 
+correctly. You have to be logged into \mycomp{adaqep} as user
+\mycomp{epmeas}. There you have to change to the correct directory
+(use \mycomp{goconf}) and run a short program (\mycomp{trigger}) to 
+generate the trigger file. An example is shown in Fig. \ref{fig:ep_trgcnf}.
+Make sure that you give the beam energy in MeV.
+The file is read in by CODA during the \mycomp{PRESTART}.
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.65\textwidth]{ep_trgconfig}
+    \end{center}
+    \caption[eP: Trigger Configuration]{
+	    Example for the generation of a trigger configuration file.
+            }
+    \label{fig:ep_trgcnf} 
+ \end{figure}  
+
+\paragraph{Rebooting Acquisition-VME \\ }
+
+The DAQ system utilizes a VME computer as its Readout Controller (ROC). This
+computer is designated \mycomp{hallasc15} and can be
+accessed from the portserver \textbf{hatsv5} at port~2. To reboot it, use the following 
+procedure:\\
+\\
+\mycomp{epmeas@adaqep.jlab.org$>$ telnet hatsv5 2002\\
+user: adaq \\
+password: ******** \\
+}
+\\
+if you do not see a prompt, press: \mycomp{Ctrl C}\\
+\\
+\mycomp{-$>$ reboot\\
+-$>$ Ctrl $]$ \\
+telnet$>$ q \\
+epmeas@adaqep.jlab.org$>$\\} 
+\\
+If the reboot fails, or if CODA afterwards still does not work, 
+check that the ROC is configured for CODA 2.2.
+Therefore one has to interrupt the reboot by pressing the \mycomp{any}-key.
+Press \mycomp{p} to show the present setting, it should look the following
+way:\\
+\\
+\mycomp{boot device          : ei \\
+processor number     : 0 \\
+host name            : adaqs3-ep.jlab.org \\
+file name            : /home/epmeas/vxworks/vx162lc-8MB \\
+inet on ethernet (e) : 129.57.188.14:ffffff00 \\
+inet on backplane (b): \\
+host inet (h)        : 129.57.164.45 \\
+gateway inet (g)     : 129.57.188.1 \\
+user (u)             : epmeas \\
+ftp password (pw) (blank = use rsh): \\
+flags (f)            : 0x20 \\
+target name (tn)     : hallasc15 \\
+startup script (s)   : /home/epmeas/vxworks/epmeas\_22.boot \\
+other (o)            : \\
+}
+\\
+Press \mycomp{c} to change these settings and 
+reboot the ROC by pressing \mycomp{@} afterwards.
+
+\paragraph{Running CODA \\ }
+
+To run CODA, you have to be logged into \mycomp{adaqep} as user
+\mycomp{epmeas}. From the prompt CODA can be started with the
+command \mycomp{runcontrol}. Withing CODA you have to click 
+on \mycomp{Configure} and choose configuration \mycomp{epm1},
+then click on \mycomp{Download}, and finally on \mycomp{Prestart}.
+At this point the information in the settings.conf file,
+ that controls the acquisition
+(thresholds, discriminator widths, and trigger MLU logic) is downloaded to the
+hardware and spooled to the diagnostics window. This provides an opportunity
+to check this information.
+
+The actual data taking starts after pressing \mycomp{Go}. The rate 
+is usually rather low, below one per second. However if after 
+a few minutes the number of events is not increasing, one has to 
+verify if:
+\begin{itemize}
+\item the trigger is programmed correctly,
+\item all components of the DAQ are running,
+\item the Cherenkov is at the correct position,
+\item the target is in the beam and moving.
+\end{itemize}
+After collecting enough data, the \mycomp{End} button should be used
+to end data-taking, and to ensure that all data is written into the 
+datafile.
+
+\subsubsection{Data Analysis}
+\label{sec:ep_analysis}
+
+The data analysis is currently done in two steps, using
+two different programs. Both run on \mycomp{adaqep} in the
+\mycomp{epmeas} account.
+
+In the first step, the CODA raw file is converted into an
+ASCII file.
+For this part of the analysis one has to change to the \mycomp{epcoda}
+directory, which can be done by typing \mycomp{goep}, and start
+the program \mycomp{eplong}:\\
+\\
+\mycomp{epmeas@adaqep.jlab.org$>$ goep \\
+epmeas@adaqep.jlab.org$>$ eplong \\
+~How many events (-1= lots) ? \\
+-1 \\
+~What file name ? \\
+epmeas02\_\#\#\#.dat \\
+~What output filename ? \\
+\#\#\# \\
+~opening/adaqep/data1/epraw/epmeas02\_\#\#\#.dat    \\
+\\
+~Have opened  epmeas02\_\#\#\#.dat \\
+\\
+~bank length is wrong \\
+~bank length is wrong \\
+~Finished;  events read =   234 \\
+epmeas@adaqep.jlab.org$>$  \\
+}
+\\
+In this example \#\#\# is the three-digit CODA run number. \mycomp{eplong} can be started,
+while CODA is still taking data for that run.
+
+The second step of the analysis utilizes a stand-alone analysis code,
+which asks for nominal beam energy, beam position, beam intensity
+and duration and uses the output of \mycomp{eplong}. One has to
+change into the \mycomp{ep} directory and start the code:\\
+\\
+\mycomp{epmeas@adaqep.jlab.org$>$ cd \\
+epmeas@adaqep.jlab.org$>$ cd ep \\
+epmeas@adaqep.jlab.org$>$ ep \\
+}
+\\
+Make sure, that the nominal beam energy is given in \textbf{GeV}.
+The program prints the result for the energy, together with
+the path and name for log-files and ntuple files.
+It is recommended to repeat the analysis with a slightly changed
+nominal energy value or with slightly changed cuts, to verify that
+the automatic fitting procedure does really find the eP events,
+and does not trigger on noise. One also has to be aware, that one
+needs elastic events in both arms to get a reliable results.
+Furthermore, for beam energies between 2.7~GeV and 3.4~GeV,
+where micro-strip detector E$_3$ is used, the obtained
+values are systematically shifted as compared to the results from the ARC energy measurements, 
+probably due to a misalignment of this detector.
+}}
+
+\infolevtwo{
+\subsection{Operating Procedure}
+\label{sec:ep_ops_proc}
+
+In preparation of an eP measurement, the mirrors of the Cherenkov 
+should be driven to the appropriate position (see Sec. \ref{sec:ep_cer}), 
+and the silicon micro-strip detectors should be turned on (see Sec. \ref{sec:ep_ssd}).
+These two measures should be started several hours before the actual 
+eP measurement is scheduled.
+
+Shortly before the measurement, the high voltages for the scintillator photomultiplier tubes
+and for the Cherenkov photomultiplier tubes need to be turned on (see Sec. 
+\ref{sec:ep_highvoltage}). Finally the DAQ should be 
+prepared (see Sec. \ref{sec:ep_daq}).
+
+For the eP measurement, the following requirements need to 
+be communicated to MCC:
+\begin{itemize}
+\item 3-4 $\mu$A CW beam 
+\item Raster OFF
+\item OTR target 1C12 OUT
+\item Physics target empty ( or be able to stand unrastered, uncentered beam )
+\item Centered on BPM 1H01 absolute
+\item Fast Feedback must be ON
+\end{itemize} 
+To check the beam position (recommended!), you can use the 
+\mycomp{Monticello} screen from MCC, which is usually also available
+on one monitor in the Hall A counting house. On the 
+\mycomp{Monticello} main menu
+select \mycomp{BPM}, and there click on
+\mycomp{BPM Spikes and Position Summary}.
+This will pop up a new screen, go to the top row of this screen 
+(\mycomp{``Injector, BSY, Hall A, B and C Transport''}) 
+and select \mycomp{Pos Sum}.  From here select \mycomp{Hall A Transport}.
+A screen will show up, which summarizes beam positions at various 
+locations. For the eP system the numbers in \mycomp{BPM 1H01 absolute}
+are the only ones relevant.
+
+When MCC has established those conditions, the high voltages and 
+the micro-strip detectors should be checked one more time.
+Next the eP target tape motion should be turned on 
+(\mycomp{Motor Control}) and then the 
+target can be moved into the beam (\mycomp{Target Motion}, 
+see Sec.\ref{sec:ep_target}.)
+
+Now the actual data-taking can start, by pressing \mycomp{Prestart/Go}
+in the CODA runcontrol screen. The rate should be a few 
+tenth of a Hz. If the BPM position changes, the fast feedback system fails, or a 
+lot of beamtrips accrue, consider stopping the run and starting a new 
+one.
+
+One should analyze the data, while CODA is still running. 
+With a hundred events one can already check the quality of the 
+data, and estimate how much more statistics are needed.
+Typically one needs 40-50 minutes of stable beam or a few 
+hundred events.
+
+After data taking is finished, and it is verified, that there
+is a sufficient number of events to extract a number for the beam energy, 
+the following steps should be taken:
+\begin{itemize}
+\item eP target: should be moved out of the beam
+\item eP target: motor should be turned off (after it is moved out)
+\item MCC can restore the beam needed for the experiment: 
+\begin{itemize}
+\item restore beam position at target
+\item restore raster
+\item insert OTR 1C12, if needed for the experiment
+\item restore beam current
+\end{itemize}
+\item Shift workers can go back to physics target
+\item high voltages for eP scintillators and eP Cherenkov should be turned off
+\item MX7 power supplies and micro-strip bias voltages should be turned off
+\item CODA windows should be closed
+\item remaining windows from the \mycomp{epmeas} account should be closed
+\end{itemize}
+Before posting the result of the eP measurement, one should make sure,
+that the full statistics of the run is analyzed, that the result is 
+independent of the chosen cuts, and that there are events on both 
+arms of the eP system.
+
+\subsection{Maintenance}
+\label{sec:ep_maintenance}
+
+The CH$_2$ tape of the eP target 
+should be exchanged on a regular basis (twice per year, or 
+before a long beam time). This work involves opening the 
+eP scattering chamber and therefore breaking the vacuum in
+this section of the beamline. This work has to be coordinated
+by the Hall A work coordinator, and can only be done by the 
+Hall A technical staff personnel. 
+}
+
+\begin{safetyen}{0}{0}
+\subsection {Safety Assessment}
+\label{sec:ep_safety}
+
+\subsubsection{High Voltage}
+
+The LeCroy 1450~HV~crate equipped with LeCroy~1461N
+high voltage cards provides up to 3~kV of low current power.
+RG-59/U~HV~cables, certified for up to 5~kV, with standard SHV 
+connectors are used to connect the power supply to the photomultipliers.
+The PMTs for S1,S2 and for the Cherenkov detector are usually operated 
+at 1900~-~2300~V and draw up to 1.5~mA currents. The PMTs for the 
+S3 scintillators are operated at 1000~-~1150~V, drawing 0.9~mA current.
+The high voltage MUST be turned off during all work on the detector.
+
+\subsubsection{Silicon Micro-Strip Detectors}
+
+The SSD are prone to radiation damage, regardless if they are 
+turned on or off. Ion chambers next to the eP measure radiation levels
+in this part of the beamline and interrupt beam delivery via the
+fast shutdown system (FSD), in case the levels are not acceptable. Therefore these
+ion chambers should never be masked. 
+
+\subsubsection{Target}
+
+The target is controlled by the experimenters, not by MCC. Therefore it is
+the responsibility of the eP operator to ensure that it is properly
+operated.
+To avoid damage to the eP target, the following instructions have to be 
+followed:
+\begin{itemize}
+\item The target should only be in the beam during an eP measurement
+\item Before inserting the target into the beam, the tape motion has to
+be turned on. The target should not be in the beam when the tape is not moving. 
+\item The target should not be in the beam 
+if the beam current is greater than 5 $\mu$A. 
+\item After finishing the eP measurement, the target should be moved out
+of the beam, and then the tape motion stopped. 
+\item The tape should not run, and the target should not be in the beam
+without an eP operator being present.
+\end{itemize}
+
+\subsubsection{Cherenkov}
+
+If for work on the Cherenkov detector the detector needs to be opened, 
+the CO$_2$ gas flow needs to be stopped. After the work is finished the 
+detector needs to be purged and later the operating mode needs to be restored.
+\infolevone{(see Sec. \ref{sec:ep_cer})}
+
+\end{safetyen}
+
+
+% include the personnel list
+%\input{beamline/ep-personnel}
+
