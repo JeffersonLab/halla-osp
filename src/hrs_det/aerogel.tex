@@ -3,21 +3,40 @@
 
 \section[Aerogel \Cerenkov Counter]{Aerogel \Cerenkov Counters
 \footnote{
-  $CVS~revision~ $Id: aerogel.tex,v 1.7 2003/11/22 21:23:48 bogdanw Exp $ $
+  $CVS~revision~ $Id: aerogel.tex,v 1.8 2003/11/23 23:02:01 bogdanw Exp $ $
 }
 \footnote{Author: B. B. Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
-\hskip .3 in There three threshold \v{C}erenkov counters with the aerogel radiator 
-available for installation in HRS. At least two can be installed in one HRS.
-The first of them, built by Regina university, is described in the next section. 
-Two other, built by JLab/FIU/MIT collaboration, are presented also.
+There are  three aerogel \v{C}erenkov counters available with various indices
+of refraction, which can be installed in either spectrometer 
+and allow a clean separation of pions, kaons and protons over 
+the full momentum range of the HRS spectrometers.
+The first counter (AM) contains hygroscopic aerogel~\cite{Airglass}
+with a refraction index of 1.03 and a thickness of 9~cm. The
+aerogel is continuously flushed with dry CO$_{2}$ gas.  It is viewed
+by 26 PMTs (Burle 8854). For high-energy electrons the average
+number of photo-electrons is about 7.3~\cite{mirraero}.
+
+The next two counters (A1 and A2)~\cite{a1a2} are diffusion-type aerogel counters.
+The diffusion technique for light collection in aerogel \v{C}erenkov detectors
+was evaluated in Refs.~\cite{perrino,lagamda,iommi}.
+%
+A1 has 24 PMTs (Burle 8854). The 9 cm thick aerogel radiator used in A1~\cite{Matsu}
+has a refraction index of 1.015, giving a threshold of 2.84 (0.803) GeV/$c$ for
+kaons (pions). The average number of photo-electrons for GeV electrons
+in A1 is $\simeq$~8 (see Fig.~\ref{diff_aero}). The A2 counter has 26 PMTs
+(XP4572B1~\cite{Photonis}).
+The aerogel in A2~\cite{Matsu} has a refraction index of 1.055, giving 
+a threshold of 2.8 (0.415) GeV/$c$ for protons (pions). 
+The thickness of the aerogel radiator in A2 is 5 cm, producing an average
+number of about 30 photo-electrons for GeV electrons~\cite{a1a2}.
 
 %\author{G.J. Lolos}
 %\address{Dept. of Physics, University of Regina, Regina, SK, S4S 0A2 Canada}
 
 \subsection[Mirror Aerogel \Cerenkov Counter]{Mirror Aerogel \Cerenkov Counter
 \footnote{
-  $CVS~revision~ $Id: aerogel.tex,v 1.7 2003/11/22 21:23:48 bogdanw Exp $ $
+  $CVS~revision~ $Id: aerogel.tex,v 1.8 2003/11/23 23:02:01 bogdanw Exp $ $
 }
 \footnote{Authors: G.J. Lolos \url{mailto:gjlolos@jlab.org}}
 }
@@ -264,7 +283,7 @@ The operation of the aerogel detector is discussed in Ref.\cite{Brash:2002vn}.
 %\end{figure}
 %
 \begin{figure}[p]
-\includegraphics[angle=0,width=15cm]{scint_fig4}
+\includegraphics[angle=0,width=12cm]{scint_fig4}
 \caption[Aerogel: amplification chain]{
  Schematic diagram of the electronic amplification chain. The total 
  resistance of 600 $k\Omega$ between the cathode and the first dynode is shown 
@@ -276,13 +295,6 @@ The operation of the aerogel detector is discussed in Ref.\cite{Brash:2002vn}.
 \label{fig:aero_fig7}
 \end{figure}
 
-\subsection{Responsible Personnel} 
-The following individuals are responsible for the aerogel \v{C}erenkov counters 
-operation. 
-\begin{itemize}
-\item[~]Wojtsekhowski, Bogdan - x7191 
-\end{itemize} 
- 
 \subsection{Safety Assessment}
 
 \begin{safetyen}{10}{10}
@@ -300,7 +312,7 @@ and signal cable ground. This will further enhance safety and eliminate
 potential ground loops in the unlikely event of a slow, and otherwise difficult 
 to diagnose, dielectric breakdown from the $\mu$-metal shield to the aluminum 
 structure or the aluminized mylar in the interior.  
-\end{safetyen}{10}{10}
+\end{safetyen}
 
 \subsection{Operating Procedure}
 
@@ -384,7 +396,7 @@ For reliable PID of the kaon with momentum up to 2.84 GEV/$c$
 the aerogel detector with low refraction index of 1.015 (A1) was constructed.
 Because with low index the light yield suppose to be less a new design
 of the counter was evaluated and optimized. It resulted in
-achievement of the average number of 8 photo-electrons.
+achievement of the average number of 8 photo-electrons. 
 
 For reliable positive identification of the kaon and rejection of the protons 
 large number of photo-electrons is very important. The second  diffusion
@@ -396,9 +408,9 @@ use of different type of PMT - XP4572B.
 Each detector consists of a tray for the aerogel radiator and a diffusion box
 which holds PMTs. The surface of the each box covered with millipore
 paper. The hydrophobic aerogel was used for both detector, however the boxes
-are gas tight, so hydroscopic aerogel also can be used. The positive HV 
+are gas tight, so hydro-scopic aerogel also can be used. The positive HV 
 used in the detector allow to increase the solid angle viewed by each PMT
-and as result the light collection effeiciency. The PMTs don't have
+and as result the light collection efficiency. The PMTs don't have
 $\mu$-metal shields, because the magnetic field at the location of these
 detectors  doesn't effect the light collection efficiency.
 The schematics of A1 and A2 are shown in figs~\ref{fig:A1_scheme} 
@@ -445,5 +457,28 @@ the amplitude spectra.}
 \label{fig:diff_performance}
 \end{figure}
 
+
+\subsection{Responsible Personnel} 
+The following individuals are responsible for the operation 
+of the aerogel \v{C}erenkov counters.
+ 
+\begin{itemize}
+\item[~]Segal, John - x7242 
+\item[~]Wojtsekhowski, Bogdan - x7191 
+\end{itemize} 
+
+\subsection{Safety Assessment}
+
+\begin{safetyen}{10}{10}
+The PMTs are under high voltage and care is required when handling any 
+components of the counter. The body of the counter must be grounded.
+Positive polarity of the HV made operation much more simple, but in some
+situation the HV can be on the body of counter, for example in case of 
+the PMT vacuum failure.
+The important requirement is to switch HV off before disconnection or 
+connection HV cable to the HV divider. If some of the PMT need replacement the 
+HV must be off for all of them and HV supply must be disconnected 
+from all PMT.
+\end{safetyen}
 
 
