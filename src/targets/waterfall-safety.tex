@@ -1,6 +1,6 @@
 \chapter[The Waterfall Target and Safety]{The Waterfall Target and Safety
 \footnote{
-  $CVS~revision~ $Id: waterfall-safety.tex,v 1.1 2003/11/18 19:25:17 gen Exp $ $
+  $CVS~revision~ $Id: waterfall-safety.tex,v 1.2 2003/11/19 22:45:31 lerose Exp $ $
 }
 \footnote{Authors: David Meekins \url{mailto:meekins@jlab.org} and 
  Maurizio Lucentini \url{mailto:lucentin@jlab.org}}
@@ -183,7 +183,7 @@ Stepping Motor &
 \subsection{The Slow--Control System}
 
 All controls and monitoring are handled by the slow control system
-(see fig.~\ref{fig:wt_rack} and appendix). All the data acquisition and
+(see fig.~\ref{fig: wt_control rack} and appendix). All the data acquisition and
 the remote slow control will be performed via MEDM, using the EPICS
 system, the standard control system at JLab (see appendix). The EPICS
 crate (fig.~\ref{fig:wt_crate})contains ADC, DAC modules, and a serial
@@ -479,14 +479,14 @@ in the present setup.}
 
 
 %
-\begin{figure}
-\begin{center}\includegraphics[  width=12cm]{wt2_target_bw}\end{center}
-
-
-\caption{The waterfall target chamber and the 5 solid targets.}
-
-\label{fig:wt_targets}
-\end{figure}
+%\begin{figure}
+%\begin{center}\includegraphics[  width=12cm]{wt2_target_bw}\end{center}
+%
+%
+%\caption{The waterfall target chamber and the 5 solid targets.}
+%
+%\label{fig:wt_targets}
+%\end{figure}
 
 
 %
@@ -513,14 +513,14 @@ in the present setup.}
 
 
 %
-\begin{figure}
-\begin{center}\includegraphics[  width=10cm]{wt2_rack}\end{center}
-
-
-\caption{The rack of the Slow Control System}
-
-\label{fig:wt_rack}
-\end{figure}
+%\begin{figure}
+%\begin{center}\includegraphics[  width=10cm]{wt2_rack}\end{center}
+%
+%
+%\caption{The rack of the Slow Control System}
+%
+%\label{fig:wt_rack}
+%\end{figure}
 
 
 %
@@ -701,21 +701,21 @@ A complete description of the control GUI and general user aspects
 of operation can be found in the document {}``Hall A Waterfall Target
 Operation Manual.''
 
-%
-\begin{figure}
-\begin{center}\includegraphics[  width=7cm]{wt2_hawt-color}\end{center}
+%redundant figure -JJL
+%\begin{figure}
+%\begin{center}\includegraphics[  width=7cm]{wt2_hawt-color}\end{center}
 
 
-\caption{The waterfall target GUI.}
+%\caption{The waterfall target GUI.}
 
-\label{fig:wt_mvmotor}
-\end{figure}
+%\label{fig:wt_mvmotor}
+%\end{figure}
 
 
 All user aspects of the Hall A Waterfall Target are controlled through
 a single screen named {}``Target Lifting Mechanism Control'' (ha$\_$wt$\_$stepmot.adl).\\
  Movement can be initiated by pushing one of the foil position buttons
-located on the upper left (see fig.~\ref{fig:wt_mvmotor}).\\
+located on the upper left (see fig.~\ref{fig: wt_GUI}).\\
  Basically, this takes a present position and places it the {}``set
 position'' input box. A specific position can also be entered directly
 into this box.\\
@@ -960,13 +960,16 @@ necessary. Signage stating this will be posted on the motion mechanism
 upon installation in the hall.
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-safety.tex,v 1.1 2003/11/18 19:25:17 gen Exp $
-% $Id: waterfall-safety.tex,v 1.1 2003/11/18 19:25:17 gen Exp $
-% $Author: gen $
-% $Date: 2003/11/18 19:25:17 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-safety.tex,v 1.2 2003/11/19 22:45:31 lerose Exp $
+% $Id: waterfall-safety.tex,v 1.2 2003/11/19 22:45:31 lerose Exp $
+% $Author: lerose $
+% $Date: 2003/11/19 22:45:31 $
 % $Name:  $
 % $Locker:  $
 % $Log: waterfall-safety.tex,v $
+% Revision 1.2  2003/11/19 22:45:31  lerose
+% eliminated extra figures
+%
 % Revision 1.1  2003/11/18 19:25:17  gen
 % new file name
 %
