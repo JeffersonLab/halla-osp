@@ -1,7 +1,6 @@
-\infolevone{
-\section[Trigger Hardware and Software]{Trigger Hardware and Software
+\chapter[Trigger Hardware and Software]{Trigger Hardware and Software
 \footnote{
-  $CVS~revision~ $Id: trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $ $
+  $CVS~revision~ $Id: trigger.tex,v 1.6 2003/12/05 06:45:07 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -34,7 +33,7 @@ Other triggers might be formed which require other detectors
 to measure the efficiency of the main trigger. The most 
 important is T2 on R-arm and T4 on L-arm, whose definition 
 has changed over time but typically require 2 out of 3 
-from among the S1, S2, and Cerenkov detectors (i.e. the 
+from among the S1, S2, and \Cherenkov{} detectors (i.e. the 
 "or" of S1 is used, etc).
 
 The Hall A HRS trigger system is remotely configured by 
@@ -56,7 +55,7 @@ so long as the detector is fast enough.
 The trigger supervisor also allows for the
 possibility of 2nd level triggers which could
 be used for a later decision.
-}
+
 
 \infolevone{
 \begin{figure}
@@ -76,7 +75,7 @@ be used for a later decision.
 \label{fig:ctrig}}
 \end{center}
 \end{figure}
-}
+} %infolev
 
 \infolevtwo{
 
@@ -88,16 +87,12 @@ Tim Smith and Jeff Vieregg of MIT with
 some input from Bob Michaels.
 There are four types of modules that
 are controlled:
-\hskip 0.05in 
-(1) Discriminators;
-\hskip 0.05in 
-(2) Delay Units;
-\hskip 0.05in 
-(3) Memory Lookup Unit
-\hskip 0.05in 
-(4) AND/OR Modules
-\hskip 0.05in 
-    
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+  \item Discriminators; 
+  \item Delay Units; 
+  \item Memory Lookup Units; 
+  \item AND/OR Modules.
+\end{list}
 
 Here are the instructions to download the trigger.
 First login to the ADAQ Linux box \mycomp{adaql1} or \mycomp{adaql2} 
@@ -142,15 +137,18 @@ cannot be read from CAMAC.
 The simplest way to be sure about what is in the 
 trigger is to download again. 
 
-}
+} % infolev
 
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
-% $Id: trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.6 2003/12/05 06:45:07 gen Exp $
+% $Id: trigger.tex,v 1.6 2003/12/05 06:45:07 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/17 06:49:00 $
+% $Date: 2003/12/05 06:45:07 $
 % $Name:  $
 % $Locker:  $
 % $Log: trigger.tex,v $
+% Revision 1.6  2003/12/05 06:45:07  gen
+% Polishing
+%
 % Revision 1.5  2003/11/17 06:49:00  gen
 % Cosmetic changes
 %

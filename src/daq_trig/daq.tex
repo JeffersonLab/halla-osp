@@ -1,7 +1,6 @@
-\infolevone{
-\section[Spectrometer Data Acquisition]{Spectrometer Data Acquisition
+\chapter[Spectrometer Data Acquisition]{Spectrometer Data Acquisition
 \footnote{
-  $CVS~revision~ $Id: daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $ $
+  $CVS~revision~ $Id: daq.tex,v 1.6 2003/12/05 06:45:07 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -19,9 +18,9 @@ The Hall A data acquisition uses CODA\cite{CODAwww}
 (CEBAF Online Data Acquisition), a toolkit
 developed at Jefferson Lab by the Data
 Acquisition Group. 
-For general information
-about CODA, see the 
-CODA site\htmladdnormallinkfoot{}{\url{http://coda.jlab.org/}}.
+%For general information
+%about CODA, see the 
+%CODA site\htmladdnormallinkfoot{}{\url{http://coda.jlab.org/}}.
 Up to date information about the Hall A DAQ
 is kept at 
 \htmladdnormallinkfoot{}{\url{http://hallaweb.jlab.org/equipment/daq/daq_trig.html}}.
@@ -31,16 +30,17 @@ We typically run with two fastbus crates in
 each spectrometer, plus VME crates for scalers.
 The fastbus modules are of the following
 types:
-(1) LeCroy model
-1877 TDCs operating in common--stop with 0.5 nsec
-resolution for our drift chambers and
-straw chambers; (2) model 1875 TDCs
-operating in common--start with 0.1 nsec resolution
-or 0.05 nsec resolution depending on the setup,
-for our scintillators and trigger 
-timing; and (3) model 1881M ADCs
-for analog signals from scintillators, 
-Cerenkov, and leadglass detectors.
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+  \item LeCroy model
+    1877 TDCs operating in common--stop with 0.5 nsec
+    resolution for our drift chambers and
+    straw chambers; 
+  \item model 1875 TDCs operating in common--start with 0.1 nsec resolution
+      or 0.05 nsec resolution depending on the setup,
+      for our scintillators and trigger timing;
+  \item model 1881M ADCs for analog signals from scintillators, 
+        \Cherenkov{}, and leadglass detectors.
+\end{list}
 In some run periods the beam position monitors
 and raster current were available in a VME system,
 but presently they are read out in fastbus.
@@ -70,11 +70,11 @@ which will be described in sections below.
 The trigger management software is run from the
 \mycomp{atrig} account and is described in
 the Trigger chapter. 
-}
+
 
 \infolevtwo{
 
-\subsection{General Computer Information}
+\section{General Computer Information}
 
 \par
 In the counting room we have various computers 
@@ -101,10 +101,10 @@ If power fails for a prolonged time,
 you must shutdown before the UPS fails.
 
 
-\subsection{Beginning of Experiment Checkout}
+\section{Beginning of Experiment Checkout}
 
 \par
-This subsection describes the 
+This section describes the 
 checkout of DAQ and trigger
 needed before an experiment can start.
 
@@ -140,7 +140,7 @@ Compare the plots and printouts to normal values.}
 
 \end{enumerate}
 
-\subsection{Running CODA}
+\section{Running CODA}
 
 \par
 This section describes how to run CODA for
@@ -199,7 +199,7 @@ does not want the PEDRUN result), see \mycomp{/ped/README}.
 
 \infolevthree{
 
-\subsubsection{
+\subsection{
  Some Frequently Asked Questions about DAQ}
 
 
@@ -260,7 +260,7 @@ in the regime of high rates.}
 
 \end{itemize}
 
-\subsubsection{ Quick Resets }
+\subsection{ Quick Resets }
 
 Problems with CODA can usually be solved with a simple
 reset.  If not, try a Cold Start (see next section).
@@ -274,11 +274,11 @@ is hung up, reboot by going the workspace
 ``Components'' and typing \mycomp{reboot}.  If this 
 doesn't work, try pressing the reset button 
 which is on the ``Crate Resets'' section of the
-Hall A General Tools EPICS Gui.  Telnet back into
+Hall A General Tools EPICS~\cite{EPICSwww} Gui.  Telnet back into
 the ROC to verify its alive.  Then press ``Reset''
 in runcontrol, download and start a new run.
 
-\subsubsection{ Cold Start of CODA}
+\subsection{ Cold Start of CODA}
 
 \par
 If CODA is not running, or if it gets hung up,
@@ -344,7 +344,7 @@ you can ``Start Run'' to start a new run.}
 \end{itemize}
 
 
-\subsubsection{ Recovering from a Reboot of Workstation}
+\subsection{ Recovering from a Reboot of Workstation}
 
 If the workstation from which you are running CODA
 was rebooted, here is how to recover DAQ.
@@ -365,7 +365,7 @@ Then do a Cold Start (see section above).
 
 \infolevone{
 
-\subsection{Electronic Logbook and Beam Accounting}
+\section{Electronic Logbook and Beam Accounting}
 
 Two tools are available for logging information
 by the shift workers: \hskip 0.05in
@@ -414,7 +414,7 @@ but there is also some online help.
 
 \infolevthree{
 
-\subsection {Port Servers}
+\section {Port Servers}
 Portservers are devices on the network that
 allow access to RS232 ports.  Here is how to 
 connect from a computer: \mycomp{telnet hatsv5 2011}
@@ -469,16 +469,19 @@ server IP &  Port & Device \\ \hline
 \end{tabular}
 \end{table}
 
-}
+} %infolev
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
-% $Id: daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.6 2003/12/05 06:45:07 gen Exp $
+% $Id: daq.tex,v 1.6 2003/12/05 06:45:07 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/17 06:49:00 $
+% $Date: 2003/12/05 06:45:07 $
 % $Name:  $
 % $Locker:  $
 % $Log: daq.tex,v $
+% Revision 1.6  2003/12/05 06:45:07  gen
+% Polishing
+%
 % Revision 1.5  2003/11/17 06:49:00  gen
 % Cosmetic changes
 %
