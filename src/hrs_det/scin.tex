@@ -1,10 +1,10 @@
 
 \section[Trigger Scintillator Counters]{Trigger Scintillator Counters
   \footnote{
-    $CVS~revision~ $Id: scin.tex,v 1.5 2003/11/11 21:15:48 feuerbac Exp $ $
+    $CVS~revision~ $Id: scin.tex,v 1.6 2003/11/12 20:26:11 feuerbac Exp $ $
   }
-  \footnote{Authors: Robert Feuerbach \url{mailto:feuerbac@jlab.org},
-    Bogdan Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
+  \footnote{Authors: Robert~Feuerbach~\url{mailto:feuerbac@jlab.org},
+    Bogdan~Wojtsekhowski~\url{mailto:bogdanw@jlab.org}}
 }
 \subsection{Overview}
 
@@ -34,13 +34,13 @@ The S1 scintillator plane consists of six paddles, each with an active area
 of 29.5~cm by 35.5~cm. The counters are made of 5~mm thick BICRON 408
 plastic scintillator and use multi-strip adiabatic light guides which end
 in a long cylindrical spool. There is an inlet for optical fiber mounted on
-the side of the cylindrical light guide. Each paddle is viewed by two 2"
-photo multiplier tubes (Burle 8575).  The S1 paddles are installed at a
-small angle to the S1-plane and overlap by 10 mm.  The detectors are
-clamped to the detector frame through an additional A1 channel, and
-supported from the PMT housings. Figure ~\ref{fig:s1mount} shows the
-mounting scheme for S1. Signals from the PMTs are sent to Camac modules on
-the second level of the shielding hut for processing.
+the side of the cylindrical light guide. Each paddle is viewed by a 2"
+photo multiplier tube (Burle 8575) on each end.  The S1 paddles are
+installed at a small angle to the S1-plane and overlap by 10 mm.  The
+detectors are clamped to the detector frame through an additional A1
+channel, and supported from the PMT housings. Figure ~\ref{fig:s1mount}
+shows the mounting scheme for S1. Signals from the PMTs are sent to Camac
+modules on the second level of the shielding hut for processing.
 
 \begin{figure}[tbh]
   \begin{center}
@@ -50,27 +50,29 @@ the second level of the shielding hut for processing.
     \label{fig:s2layout}
   \end{center}
 \end{figure}
+
 The S2 plane (also called S2m) consists of sixteen bars mounted on a steel
 frame, as shown in Figure~\ref{fig:s2layout}. The bars are made a fast
 plastic scintillator (EJ-230) with dimensions of 17\unit{in} by
 5.5\unit{in} by 2\unit{in} thick. Since the S2 detector is located after
-the tracking and PID 
-detectors in the HRS, the extra material does not compromise the particle
-detection while providing a greater photon yield for an improved timing
-resolution as compared to S1. The bars are individually wrapped with
-25\unit{\mu m} of mylar and 50\unit{\mu m} of black tedlar. The bars do not
-overlap, but are pressed together by a force 60~lbs to minimize the dead
-area between adjacent bars. Trapezoidal lucite light guides on both ends
-couple the bar to two 2" photo multiplier tubes (Photonis XP2282B). S2 is
-assembled on a sub-frame mounted on rails in the detector frame. The bars
-are supported by two thin aluminimum honeycomb panels placed over the
-scintillators, leaving the PMTs and bases accessible for servicing. On the
-frame are mounted analog splitters and threshold discriminators for the
-initial signal processing.
+the tracking and PID detectors in the HRS, the extra material does not
+compromise the particle detection while providing a greater photon yield
+for an improved timing resolution as compared to S1. The bars are
+individually wrapped with 25\unit{\mu m} of mylar and 50\unit{\mu m} of
+black tedlar. The bars do not overlap, but are pressed together by a force
+60~lbs to minimize the dead area between adjacent bars. Trapezoidal lucite
+light guides on both ends couple the bar to 2" photo multiplier tubes
+(Photonis XP2282B). S2 is assembled on a sub-frame mounted on rails in the
+detector frame. The bars are supported by two thin aluminimum honeycomb
+panels placed over the scintillators, leaving the PMTs and bases accessible
+for servicing. On the frame are mounted analog splitters and threshold
+discriminators for the initial signal processing.
 
 The optional S0 plane is made of 10~mm thick BICRON 408 plastic
-scintillator, and uses only one large paddle which covers the focal
-plane. It is viewed by two 3" PMTs (XP2312).
+scintillator with an active area 170~cm long by 25~cm wide. This area is
+covered by a single paddle, viewed from each end by 3" PMTs (XP4312B). The
+signals from these PMTs are sent to Camac modules on the second level of
+the shielding hut for processing.
 
 \infolevone{
   \subsection{PMT regime and time resolution}
@@ -80,7 +82,8 @@ plane. It is viewed by two 3" PMTs (XP2312).
   PMT this leads to 80-100 photo electrons. On the HRS the discriminators
   have a threshold of 45 mV and a typical PMT has gain $~ 3*10^6$. The HV for
   a fresh PMT should be in the range -1800 to -2000 V. Based on PMT pulse rise
-  time ( 2.8 ns ) and photo electron statistics the time resolution is about 0.2 ns.
+  time ( 2.8 ns ) and photo electron statistics the time resolution for the
+  counter is about $\sigma_t \approx 0.2\unit{ns}$.
   The propagation time of the light inside the detector is about 10 ns, which
   needs to be corrected by using track position information.
   
@@ -95,7 +98,10 @@ plane. It is viewed by two 3" PMTs (XP2312).
   with one line as input for the trigger-logic and the other going to a TDC
   after passing through a NIM-ECL converter and a delay of some 880ns. The
   average resulting timing resolution for a single PMT was measured to be
-  better than 150 ps.
+  better than $\sigma_{pmt} < 150\unit{ps}$.
+
+  The geometry of S0 counter limits its timing resolution. The HV In 1999
+  the resolution was measured to be $\sigma_t \approx .2\unit{ns}$.
   
   LeCroy HV 1460 modules are used to supply HV power for the trigger
   counters. The HV can be controlled from a VT100 terminal connected through
@@ -111,12 +117,7 @@ plane. It is viewed by two 3" PMTs (XP2312).
   
   \begin{figure}[p]
     \begin{center}
-%\begin{latexonly}
-      \includegraphics[angle=90.0,height=.8\textheight]{medm_halla_hv_rhrs3}
-%end{latexonly}
-\html{
       \includegraphics[width=.8\textwidth]{medm_halla_hv_rhrs3}
-}%
       \caption[Detectors: HV HRSR Summary Screen]{EPICS HV HRSR summary screen.}
       \label{fig:scinhv}
     \end{center}
@@ -124,12 +125,7 @@ plane. It is viewed by two 3" PMTs (XP2312).
   
   \begin{figure}[p]
     \begin{center}
-%\begin{latexonly}
-      \includegraphics[angle=90.0,height=.8\textheight]{medm_halla_hv_card}
-%end{latexonly}
-\html{
       \includegraphics[width=.8\textwidth]{medm_halla_hv_card}
-}
       \caption[Detectors: HV Screen for Single Card]{HV screen for a
 	single card.}
       \label{fig:s1scinhvc}
@@ -165,9 +161,10 @@ plane. It is viewed by two 3" PMTs (XP2312).
   
   There has been found in the past large He concentrations in Hall A, which
   can lead to a dramatic reduction in the PMT lifetime. To mitigate this
-  problem, each PMT for S1 and S2 is enclosed in a hermetic housing. Air from
-  outdoors is supplied to the housing at a slight over-pressure. A diagram
-  of the PMT housing for the S2 is shown in Figure~\ref{fig:s2_pmt_housing}.
+  problem, each PMT for S0, S1 and S2 is enclosed in a hermetic housing. Air from
+  outdoors is supplied to the housing at a slight
+  over-pressure. Figure~\ref{fig:s2_pmt_housing} shows a schematic of the
+  housings used for the S2 PMTs.
 }
 
 \infolevthree{
@@ -199,6 +196,7 @@ plane. It is viewed by two 3" PMTs (XP2312).
     \end{center}
   \end{figure}
 
+  \paragraph{The Electronic Amplification Chain}
   \begin{figure}[tbhp]
     \begin{center}
       \includegraphics[angle=0,width=.8\textwidth]{scint_fig2a}
@@ -208,7 +206,6 @@ plane. It is viewed by two 3" PMTs (XP2312).
     \end{center}
   \end{figure}
   
-  \paragraph{The Electronic Amplification Chain}
   
   The arrangement of the resistor dynode chain is shown in 
   Figure~\ref{fig:scint_2}. The 
@@ -274,13 +271,16 @@ The following individuals are responsible for operation of the trigger counters.
 \end{itemize} 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.5 2003/11/11 21:15:48 feuerbac Exp $
-% $Id: scin.tex,v 1.5 2003/11/11 21:15:48 feuerbac Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.6 2003/11/12 20:26:11 feuerbac Exp $
+% $Id: scin.tex,v 1.6 2003/11/12 20:26:11 feuerbac Exp $
 % $Author: feuerbac $
-% $Date: 2003/11/11 21:15:48 $
+% $Date: 2003/11/12 20:26:11 $
 % $Name:  $
 % $Locker:  $
 % $Log: scin.tex,v $
+% Revision 1.6  2003/11/12 20:26:11  feuerbac
+% A little more information about S0.
+%
 % Revision 1.5  2003/11/11 21:15:48  feuerbac
 % Add line about S0, minor improvement to formatting.
 %
