@@ -1,6 +1,6 @@
 \section[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: overview.tex,v 1.5 2003/11/21 17:14:22 bogdanw Exp $ $
+  $CVS~revision~ $Id: overview.tex,v 1.6 2003/11/22 21:23:40 bogdanw Exp $ $
 }
 \footnote{Authors: Dr. B.B.Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
@@ -16,13 +16,16 @@ main trigger. The particle identification is obtained from a
 variety of \v{C}erenkov  type detectors (aerogel and gas) and 
 lead-glass shower counters. 
 A pair of VDCs provides tracking information.
-The main part of the detector package in the two spectrometers (trigger scintillators and VDCs)
-is identical; the arrangement of particle-identification detectors differs slightly.
+The main part of the detector package in the two spectrometers 
+(trigger scintillators and VDCs) is identical; 
+the arrangement of particle-identification detectors differs slightly.
 The HRS-L can be equipped with a focal-plane polarimeter to determine 
 the polarization of detected protons.
-The optics of the HRS spectrometers, described in the previous section,
-results in a narrow distribution of particle trajectories in the 
-transverse direction, leading 
+The focal-plane-polarimeter operates with proton momenta up 
+to 3 GeV/$c$ with figure-of-merit of 0.03.
+
+The optics of the HRS spectrometers, results in a narrow distribution of 
+particle trajectories in the transverse direction, leading 
 to an aspect ratio of the beam envelope of about 20:1 at 
 the beginning of the detector package and 4:1 at the end.
 
@@ -33,9 +36,6 @@ suppression systems. The individual detectors are installed on a
 retractable frame, so that they can be moved out of the SH 
 for repair or reconfiguration. 
 The DAQ electronics are mounted on the same frame.
-Figure~\ref{det_sideview} shows sideviews of the  detector setups
-for the two HRSs, including 
-the movable frame, the detector stack and the DAQ electronics.
 
 The concept of VDCs fits well into the scheme of a spectrometer with a small 
 acceptance, allowing a simple analysis algorithm and high efficiency, 
@@ -48,13 +48,12 @@ The position of each VDC relative to the box beam can be reproduced to within
 
 There are two primary trigger scintillator planes (S1 and S2), 
 separated by a distance of about 2 m. 
-
 The long path from the target to the HRS focal plane (25 m) allows 
 accurate time-of-flight identification in coincidence experiments 
 if the accidental rate is low. 
 After correcting for differences in trajectory lengths, 
-a TOF resolution of $\sim 0.5$ ns ($\sigma$) is obtained (see Fig. 
-\ref{tofres}). The time-of-flight between the S1 and S2 planes is also 
+a TOF resolution of $\sim 0.5$ ns ($\sigma$) is obtained. 
+The time-of-flight between the S1 and S2 planes is also 
 used to measure the speed of particles $\beta$, with a resolution of 7\% ($\sigma$).
 
 A gas \v{C}erenkov detector filled  with CO$_{2}$ at atmospheric 
@@ -66,8 +65,7 @@ In the HRS-L, the gas \v{C}erenkov detector in its standard configuration has
 a pathlength of 80~cm, yielding seven photoelectrons on average. 
 The total amount of material in the particle path is about 1.4\% $X_0$. 
 
-Two layers of shower detectors~\cite{shower} are installed in each HRS. 
-The structure of the shower detectors in each arm is shown in Fig.~\ref{shower}. 
+Two layers of shower detectors are installed in each HRS. 
 The blocks in both layers in HRS-L and in the first 
 layer in HRS-R are oriented perpendicular to the particle tracks. In 
 the second layer of HRS-R, the blocks are parallel to the tracks. The front 
@@ -92,14 +90,12 @@ aerogel is continuously flushed with dry CO$_{2}$ gas.  It is viewed
 by 26 PMTs (Burle 8854). For high-energy electrons the average 
 number of photo-electrons is about 7.3. 
 
-The next two counters (A1 and A2)~\cite{a1a2} are diffusion-type aerogel 
-counters. 
-A1 has 24 PMTs (Burle 8854). 
+The next two counters (A1 and A2) are diffusion-type aerogel 
+counters. A1 has 24 PMTs (Burle 8854). 
 The 9 cm thick aerogel radiator used in A1 has a refraction index of 1.015, 
 giving a threshold of 2.84 (0.803) GeV/$c$ for kaons (pions). 
 The average number of photo-electrons for GeV electrons 
-in A1 is $\simeq$~8 (see Fig.~\ref{diff_aero}). The A2 counter has 26 PMTs  
-XP3372B1 made by Photonis. 
+in A1 is $\simeq$~8. The A2 counter has 26 PMTs XP4572B1 made by Photonis. 
 The aerogel in A2 has a refraction index of 1.055, 
 giving a threshold of 2.84 (0.415) GeV/$c$ for protons (pions). 
 The thickness of the aerogel radiator in A2 is 5 cm, producing an average 
@@ -120,7 +116,6 @@ rejection or two arogel counters can be installed on one spectrometer
 or and additional CH2 analyzer for FPP and so on. The locations are
 fixed for the VDC, the S1, the shower detectors, but some other detectors 
 can be moved.
-
 
 \begin{table}[hptb]
 \begin{center}
@@ -171,14 +166,14 @@ SC4    &        &      4264&    3170&    1500 &    1382  &  -1645  &  +/- 705  \
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.5 2003/11/21 17:14:22 bogdanw Exp $
-% $Id: overview.tex,v 1.5 2003/11/21 17:14:22 bogdanw Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.6 2003/11/22 21:23:40 bogdanw Exp $
+% $Id: overview.tex,v 1.6 2003/11/22 21:23:40 bogdanw Exp $
 % $Author: bogdanw $
-% $Date: 2003/11/21 17:14:22 $
+% $Date: 2003/11/22 21:23:40 $
 % $Name:  $
 % $Locker:  $
 % $Log: overview.tex,v $
-% Revision 1.5  2003/11/21 17:14:22  bogdanw
+% Revision 1.6  2003/11/22 21:23:40  bogdanw
 % detector introduction
 %
 % Revision 1.3  2003/06/06 17:00:27  gen
