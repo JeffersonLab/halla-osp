@@ -1,11 +1,10 @@
 %--- Description of components
-\infolevone{
 
 \newcommand{\cppaver}{1.1}
 
-\section[C++ Analyzer]{C++ Analyzer
+\chapter[C++ Analyzer]{C++ Analyzer
 \footnote{
-  $CVS~revision~ $Id: analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $ $
+  $CVS~revision~ $Id: analyzer.tex,v 1.3 2003/12/05 07:24:18 gen Exp $ $
 }
 \footnote{Authors: J.-O.\ Hansen \url{mailto:ole@jlab.org}}
 }
@@ -13,7 +12,7 @@
 The standard offline analysis software for Hall A data is the 
 ``C++ Analyzer'', an object-oriented C++ class package developed at Jefferson
 Lab by Hall A staff. The Analyzer is built onto the 
-ROOT\htmladdnormallinkfoot{}{\url{http://root.cern.ch}} programming
+ROOT~\cite{ROOTcern} programming
 framework. All of ROOT's analysis and visualization tools are available,
 as well as specialized code for Hall A physics analysis. 
 The current version of the Analyzer is \cppaver. Detailed information about the
@@ -31,8 +30,8 @@ that the user specifies. Reconfiguration can be done at run
 time without any need for recompilation of the program.
 
 Currently supported are the analysis of the Hall A HRS spectrometers,
-the beamline instrumentation, scaler and EPICS slow control data, and 
-helicity information. The event decoder is compatible with the CODA
+the beamline instrumentation, scaler and EPICS~\cite{EPICSwww} slow control data, and 
+helicity information. The event decoder is compatible with the CODA~\cite{CODAwww}
 event data format described in the section on Data Acquisition. 
 Decoding of basic helicity information as well as a sophisticated
 algorithm for decoding and prediction of the G0 helicity sequence is
@@ -46,6 +45,8 @@ possible. The following detectors can be used in either HRS spectrometer:
         arbitrary organization in terms of rows and columns of blocks)
   \item Total shower counter (combination of a preshower and shower)
 \end{itemize}
+\infolevone{
+
 The VDC code performs tracking in the focal plane and reconstruction to the
 target. The tracking algorithm has been shown to be accurate for events 
 with one cluster per plane. Noisy events with higher cluster multiplicity
@@ -174,7 +175,7 @@ THaDebugModule   & prints values of global variables for each event and waits\\
 
 %--- Procedures
 \infolevtwo{
-\subsection{Running the Analyzer}
+\section{Running the Analyzer}
 Precompiled binaries of the latest version of the Analyzer are
 installed on the Hall A counting house analysis machines 
 (adaql3--5, adaqs2--3). To run the Analyzer, log into any
@@ -215,7 +216,7 @@ location
   \url{http://hallaweb.jlab.org/root/download}.
 \end{center}
 
-\subsection{Preparing Analysis of a New Experiment}
+\section{Preparing Analysis of a New Experiment}
 \label{offl:sec:newexpt}
 Setting up offline analysis for a new experiment typically 
 involves the following steps:
@@ -270,7 +271,7 @@ involves the following steps:
 	ROOT's visualization tools are available from within the Analyzer.
 \end{enumerate}
 
-\subsection{Database Files and Directories}
+\section{Database Files and Directories}
 \label{offl:sec:database}
 Version \cppaver\ of the C++ Analyzer uses simple ASCII text files
 to store database information. There is one file for each 
@@ -320,7 +321,7 @@ directory, usually \mycomp{\$EXPERIMENT}.
 %--- Principles of operation
 \infolevthree{
 
-\subsection{Program Design Overview}
+\section{Program Design Overview}
 Spectrometers (and similar major installations) are abstracted in an
 Apparatus class hierarchy, while individual detectors belong to a
 Detector class hierarchy. Apparatuses are collections of detectors
@@ -365,7 +366,7 @@ necessary to support such new modules.
 
 \infolevtwo{
 
-\subsection{Responsible Personnel}
+\section{Responsible Personnel}
 For all questions and suggestions regarding the C++ Analyzer,
 please contact Ole Hansen at ext.\ 7627, email 
 \href{mailto:ole@jlab.org}{ole@jlab.org}.
@@ -400,13 +401,16 @@ are also available for help.
 } %end \infolevfour
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/offline/analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $
-% $Id: analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $
-% $Author: ole $
-% $Date: 2003/11/17 22:06:49 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/offline/analyzer.tex,v 1.3 2003/12/05 07:24:18 gen Exp $
+% $Id: analyzer.tex,v 1.3 2003/12/05 07:24:18 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:24:18 $
 % $Name:  $
 % $Locker:  $
 % $Log: analyzer.tex,v $
+% Revision 1.3  2003/12/05 07:24:18  gen
+% Polishing
+%
 % Revision 1.2  2003/11/17 22:06:49  ole
 % Correct some minor mistakes.
 % Highlight computer commands and names consistent with document style.
