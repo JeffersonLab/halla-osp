@@ -1,6 +1,6 @@
  \chapter[RICH]{RICH
 \footnote{
-  $CVS~revision~ $Id: rich.tex,v 1.1 2004/03/19 15:58:17 reitz Exp $ $
+  $CVS~revision~ $Id: rich.tex,v 1.2 2004/03/19 20:44:07 reitz Exp $ $
 }
 \footnote{Authors: B.Reitz \email{reitz@jlab.org}}
 }
@@ -347,10 +347,10 @@ the ``RICH on call'' should be contacted.
 \infolevfour{
  \begin{figure}[htb]
     \begin{center}
-        \includegraphics*[angle=0,width=0.7\textwidth]{rich_after_ioc_crash}
+        \includegraphics*[angle=0,width=0.9\textwidth]{rich_after_ioc_crash}
     \end{center}
     \caption{
-	EPICS screen for the RICH slow controls after a reboot of the IOC..
+	EPICS screen for the RICH slow controls after a reboot of the IOC.
             }
     \label{fig:rich_afterreb} 
  \end{figure}  
@@ -530,33 +530,13 @@ with the sign-off of an authorized personnel of Tab.~\ref{tab:rich:personnel}
 shall be kept by the RICH contact person.
 
 
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{|l|l|l|l|l|r|} \hline
-  \multicolumn{1}{|c|}{Name} & Dept. & \multicolumn{2}{c|}{Telephone} & 
-  \multicolumn{1}{c|}{e-mail} & Comment \\ 
-  \cline{1-1} \cline{3-4}
-  \multicolumn{1}{|c|}{Signature}  &   & JLab & Pager &  & \\ 
-\hline
- {\em Bodo Reitz}  & JLab    & 5064 & 5064 & reitz@jlab.org  & Contact     \\ 
-                          &         &      &      &                 &             \\ \hline
- Jack        Segal        & JLab    & 7242 & 7242 & segal@jlab.org  &  Gas and Freon System \\
-                           &         &      &      &                 &             \\ \hline
- Brian       Kross        & JLab    & 7022 & 7022 & kross@jlab.org  &  Freon System \\
-                          &         &      &      &                 &             \\ \hline
- Francesco   Cusanno      & INFN    &      &      & cusanno@jlab.org & \\
-                          &         &      &      &                 &             \\ \hline
- Mauro       Iodice       & INFN    &      &      & iodice@jlab.org & \\
-                          &         &      &      &                 &             \\ \hline
-                          &         &      &      &                 & \\
-                          &         &      &      &                 &             \\ \hline
-\end{tabular}
-\end{center}
-\caption[RICH: authorized personnel]{
-   RICH: authorized personnel. The primary contact person's
-   name is marked with a slanted font. 
-}
-\label{tab:rich:personnel}
-\end{table}
+\begin{namestab}{tab:rich:personnel}{RICH: authorized personnel}{
+RICH: authorized personnel.}
+ \BodoReitz{\it Contact}
+ \JackSegal{Gas and Freon System}
+ \BrianKross{Freon System}
+ \MauroIodice{}
+ \FrancescoCusanno{}
+\end{namestab}
 
 
