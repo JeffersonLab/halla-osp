@@ -4,18 +4,26 @@
 
 % \newcommand{\Cerenkov}{\v{C}erenkov} 
 \newcommand{\Cerenkov}{Cherenkov} 
+\newcommand{\Cherenkov}{Cherenkov} 
 \parindent=2em 
 \hyphenation{cebaf} 
 
+%  Modify the default report.cls settings
+%  --------------------------------------
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+%  --------------------------------------
+
 \begin{document}
 \color{\Mcol}
+
 \pagestyle{headings}
 
 \input{title}
 
 %\pagestyle{plain}
 \pagenumbering{arabic} 
-\setcounter{page}{1} 
+%\setcounter{page}{1} 
 \tableofcontents
 
 \listoftables
@@ -23,7 +31,7 @@
 \listoffigures
 
 \newpage
-\setcounter{subsection}{0}
+%\setcounter{subsection}{0}
 \input{introduction/all}
 \input{beamline/all}
 \input{targets/all}
@@ -32,23 +40,27 @@
 \input{controls/all}
 \input{daq_trig/all}
 \input{offline/all}
-\appendix
-\input{checklist/all}
+%\appendix
+%\input{checklist/all}
 
 \vskip 0.5cm
-\bibliographystyle{unsrt}
-\bibliography{bibl/halla_ops,bibl/halla_add}
+%\bibliographystyle{unsrt}
+\bibliographystyle{unsrtmod}
+\bibliography{bibl/jlab_manuals,bibl/halla_ref_papers}
 
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/osp/main.tex,v 1.3 2003/11/15 08:54:43 ole Exp $
-% $Id: main.tex,v 1.3 2003/11/15 08:54:43 ole Exp $
-% $Author: ole $
-% $Date: 2003/11/15 08:54:43 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/osp/main.tex,v 1.4 2003/12/05 07:24:58 gen Exp $
+% $Id: main.tex,v 1.4 2003/12/05 07:24:58 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:24:58 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.4  2003/12/05 07:24:58  gen
+% New bibtex style, polishing
+%
 % Revision 1.3  2003/11/15 08:54:43  ole
 % Add chapter on offline analysis (offline subdirectory)
 %
