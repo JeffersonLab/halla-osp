@@ -1,6 +1,6 @@
 \chapter[The Waterfall Target]{The Waterfall Target
 \footnote{
-  $CVS~revision~ $Id: waterfall-target.tex,v 1.4 2003/11/21 18:13:11 gen Exp $ $
+  $CVS~revision~ $Id: waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $ $
 }
 \footnote{Authors: David Meekins \url{mailto:meekins@jlab.org} and 
  Maurizio Lucentini \url{mailto:lucentin@jlab.org}. \\
@@ -39,18 +39,19 @@ The target may be configured for one or multiple waterfall
 \label{sec:wt_descrip_sys}
 
 The main components of the target system (see Fig.~\ref{fig:wt_uno}
- \infolevtwo{and Fig.~\ref{fig:wt_uno-mau}} 
+ \infolevtwo{and Fig.~\ref{fig:wt_uno-mau}}%infolev 
 ) are: 
-\begin{itemize}
-\item a) the waterfall target cell, the target, the solid target ladder; 
-\item b) the hydraulic system; 
-\item c) the movement system; 
-\item d) the slow-control system; 
-\end{itemize}
+\begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+\item[a)] the waterfall target cell, the target, the solid target ladder; 
+\item[b)] the hydraulic system; 
+\item[c)] the movement system; 
+\item[d)] the slow-control system; 
+\end{list}
 
 \begin{figure}[htp]
 \begin{center}\includegraphics[  width=0.9\textwidth]{wt2_uno_OLD}\end{center}
-\caption{Schematic overview of the target system with the hydraulic system
+\caption[Waterfall target system]%
+{Schematic overview of the target system with the hydraulic system
   on the left side, scattering chamber, movement system and target cell
   in the middle. The hydrogen system on the right side is not implemented
   in the present setup.}
@@ -66,24 +67,24 @@ The main components of the target system (see Fig.~\ref{fig:wt_uno}
   \caption{Scheme of the target system devices}
   \label{fig:wt_uno-mau}
   \end{figure}
-}
+}%infolev
 
 The waterfall foil(s) is (are) produced in a cell mounted in the standard
 scattering chamber 
 \infolevfour{
  (Fig.~\ref{fig:wt_tposi} and \ref{fig:wt_enclosure})
-}
+}%infolev
 of Hall A. 
 The water, continuously pumped from a reservoir~(S), goes into
 the target cell and then back into the reservoir. The water passes
 through a system of slits and holes to form one or more flat rectangular
 films, which are stable due to the surface tension and to the adherence
 to stainless steel poles% 
-\infolevfour{ (Fig.~\ref{fig:wt_thfoil})}.
+\infolevfour{ (Fig.~\ref{fig:wt_thfoil})}.%infolev
 Under the cell, a
 target holder allows one to put up to 5 solid targets cooled by the
 water% 
-\infolevfour{ (Fig.~\ref{fig:wt_target-stack})}.
+\infolevfour{ (Fig.~\ref{fig:wt_target-stack})}.%infolev
 
 The waterfall target can consist of a single foil or multiple foils,
 according to the needs of the particular experiment. Notice that it
@@ -98,6 +99,10 @@ one `calibrates' the raw counting rate of either spectrometer by the
 elastic scattering measurement. It is then possible to convert the
 electron or hadron rate observed during the measurement to an average
 target thickness.
+
+\infolevltone{
+For more information consult the full OSP manual~\cite{HallAosp}.
+}%infolev
 
 \infolevfour{
 
@@ -115,7 +120,8 @@ target thickness.
 %\begin{center}\includegraphics[  width=10cm]{wt2_enclosure}\end{center}
 \includegraphics*[height=0.4\textheight]{wt2_enclosure}\hfill
 \includegraphics*[height=0.4\textheight]{wt2_targ_encl}
-\caption{The enclosure of the target used for E00-102 and E94-107 
+\caption[The enclosure of the target used for E00-102 and E94-107]%
+{The enclosure of the target used for E00-102 and E94-107 
         is shown on the left. The waterfall target within the enclosur
         is shown on the right.}
 \label{fig:wt_enclosure}
@@ -129,10 +135,11 @@ target thickness.
 
 \begin{figure}
 \begin{center}\includegraphics[  width=0.90\textwidth]{wt2_target_bw}\end{center}
-\caption{The Waterfall Target Stack, the waterfall cell with solid targets 
+\caption[The Waterfall Target Stack]%
+{The Waterfall Target Stack, the waterfall cell with solid targets 
          mounted beneath\label{fig:wt_target-stack}.}
 \end{figure}
-}
+} %infolev
 
 \infolevone{
 
@@ -221,7 +228,7 @@ Flowmeter probe &
 \hline
 \end{tabular}\end{center}
 
-}
+} %infolev
 
 \infolevone{
 
@@ -237,13 +244,15 @@ about 50~kg.
   \caption{Picture of the movement system.}
   \label{fig:wt_total-view}
   \end{figure}
-}
+}%infolev
 The movement is done using a stepping motor connected to a driver
 module. The driver module is put in a separate chassis and it can
 operate locally in manual mode, by pressing the UP/DOWN preset switch
 and the STOP/GO switch, both located on the front panel of this chassis,
 or in remote mode, from the counting room by computer (see Waterfall
-target EPICS MEDM display). Microswitches serves two purposes: 
+target EPICS MEDM display)\footnote{For EPICS and MEDM see the references \cite{EPICSwww,MEDMwww}}%
+\infolevtwo{ (see Fig.~\ref{fig:wt_GUI})}. %infolev
+Microswitches serves two purposes: 
 
 \begin{itemize}
 \item 1) switch off the beam while the system is moving; 
@@ -287,7 +296,7 @@ Stepping Motor &
 \hline
 \end{tabular}\end{center}
 
-}
+} %infolev
 \infolevone{
 
 \subsection{The Slow--Control System}
@@ -298,13 +307,13 @@ All controls and monitoring are handled by the slow control system
 The data acquisition is performed using EPICS\cite{EPICSwww},
 the standard control system at JLab.
 The EPICS crate 
-\infolevtwo{ (Fig.~\ref{fig:wt_crate})}
+\infolevtwo{ (Fig.~\ref{fig:wt_crate})} %infolev
 contains ADC, DAC modules, and a serial
 line to interface with the motor driver. 
 \infolevtwo{The control equipment is mounted in a rack
- (see Fig.~\ref{fig: wt_control rack}).} 
+ (see Fig.~\ref{fig: wt_control rack}).} %infolev
 The user interface (GUI)%
-\infolevtwo{ (Fig.~\ref{fig:wt_GUI})}
+\infolevtwo{ (Fig.~\ref{fig:wt_GUI})} %infolev
 is based on MEDM\cite{MEDMwww}\footnote{
   The software is maintained by David Wetherholt \url{mailto:wether@jlab.org} 
   of the accelerator controls group.}\footnote{
@@ -390,7 +399,7 @@ List of components:
   \end{center}
   \caption{Waterfall target: control rack.\label{fig: wt_control rack}}
   \end{figure}
-}
+} %infolev
 
 
 All of the analog signals coming from the transducers are to be read
@@ -454,7 +463,7 @@ noise. The user should expect this noise and not be alarmed at oscillating
 values for the encoder signal.
 
 
-}
+} %infolev
 \infolevone{
 
 \section{The Target Cell Windows}
@@ -568,7 +577,7 @@ It is clear from the table that Be is the most suitable choice for
 the entrance and exit windows. The window thicknesses vary for the
 different targets used.
 
-}
+} %infolev
 \infolevone{
 
 \section{Target Layouts}
@@ -634,9 +643,9 @@ not significantly affected by this choice. The thickness of the Be
 window has been increased (150 $\mu $m) because of the bigger diameter
 of the downstream window.% The drawings are in the appendix. 
 
-}
+} %infolev
 
-
+\infolevtwo{
 \section{Operating Procedure}
 \label{sec:oper_proc}
 
@@ -684,10 +693,9 @@ Empty            & -          &  -         \\ \hline
 \label{tab:target-list}
 \end{table}
 
-\infolevlttwo{The detailed operation procedure is described in the
-  full version of OSP\cite{HallAosp}.}
+%\infolevlttwo{The detailed operation procedure is described in the
+%  full version of OSP\cite{HallAosp}.}
 
-\infolevone{
 As it has been mentioned in Sec.\ref{sec:wt_slow_contr}, it
 is common to have noise on the ADC reading out the 
 flowmeter, tachometer, and encoder.
@@ -698,8 +706,7 @@ with the displays visible in the camera focused on the control rack.
 In particular, one should make sure that the postion
 encoder does indicate the proper target (there is some acceptable
 slop on this number).
-}
-
+} %infolev
 \infolevtwo{
 \subsection{Startup of the system}
 
@@ -801,7 +808,7 @@ and it has to be checked if this works well, or not. Fix the trouble
 can begin again.
 \end{itemize}
 
-}
+} %infolev
 
 \infolevtwo{
 \section{Standard Operations}
@@ -881,8 +888,8 @@ checked with the displays on the camera.
 The name of the IOC is iochawt1. The IOC may be rebooted by logging
 into the IOC via telnet and typing reboot. If this is not possible,
 (i.e. the IOC is not responding to remote login) call an expert.
+} %infolev
 
-}
 \infolevtwo{
 
 \section{Troubleshooting (Experts only)}
@@ -891,7 +898,7 @@ This section is intended as a reference for experts only.
 \infolevfour{
   Figure \ref{fig: wt_control rack} shows the control rack. 
   Figure \ref{fig: wt_IOC-rack} shows the IOC rack.
-}
+}%infolev
 \begin{figure}
 \begin{center}
   \includegraphics[  width=0.90\textwidth]{wt2_IOC-rack}
@@ -966,7 +973,8 @@ is controlled via the knob which can be rotated clockwise for more
 speed. Please do not run the pump faster than 2000 as shown on the
 tachometer display. This causes undue strain on the system.
 
-}
+} %infolev
+
 \begin{safetyen}{0}{0}
 \section{Safety Assessments}
 \end{safetyen}
@@ -977,12 +985,13 @@ target configuration for Hall A. There are therfore fewer hazards
 which need to be addressed. The target does use the standard Hall~A 
 scattering chamber for experiment E00-102. The safety hazards for
 the scatting chamber have been addressed in the standard Hall A safety
-documentation (see Sec.\ref{sec:target_chamb} 
-and Sec.\ref{sec:cryo_targ_cmb_falure}). 
+documentation (see Chapter.~\ref{sec:target_chamb}% 
+\infolevone{ and Sec.\ref{sec:cryo_targ_cmb_falure}}). 
 The following subsections outline the potential hazards
 and how each must be addressed.
 \end{safetyen}
 
+\infolevone{
 \begin{safetyen}{10}{10}
 \subsection{Radiological hazards}
 \end{safetyen}
@@ -1146,9 +1155,8 @@ Failed&
 Failed\\
 \hline
 \end{tabular}\end{center}
-
-
-\caption{Summary of thin scattering window hydro-tests. Deflections are given
+\caption[Summary of thin scattering window hydro-tests]%
+{Summary of thin scattering window hydro-tests. Deflections are given
 in (in$\times $1000). The scattering windows are made from 25 $\mu $m
 thick stainless steel shim stock (SST 302; Hardness: 40-45 RC; Tensile
 Strength: 185000 psi). \label{tab: window-table}}
@@ -1180,7 +1188,7 @@ mechanism while it is being serviced. Therefore, to service the system
 while it is installed, the appropriate lockout tagout procedures are
 necessary. Signage stating this will be posted on the motion mechanism
 upon installation in the hall.
-
+} %infolev
 \newpage
 \section{Authorized  Personnel}
 
@@ -1201,13 +1209,16 @@ Gary Dezern        & 7119  & 820-5864\\\hline
 \end{table}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-target.tex,v 1.4 2003/11/21 18:13:11 gen Exp $
-% $Id: waterfall-target.tex,v 1.4 2003/11/21 18:13:11 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $
+% $Id: waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/21 18:13:11 $
+% $Date: 2003/12/05 07:35:03 $
 % $Name:  $
 % $Locker:  $
 % $Log: waterfall-target.tex,v $
+% Revision 1.5  2003/12/05 07:35:03  gen
+% WT2 modified. Polishing
+%
 % Revision 1.4  2003/11/21 18:13:11  gen
 % waterfall-target and waterfall-safety combined
 %

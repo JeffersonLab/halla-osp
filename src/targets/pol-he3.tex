@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 %\footnote{
-%  $CVS~revision~ $Id: pol-he3.tex,v 1.6 2003/11/21 18:26:21 gen Exp $ $
+%  $CVS~revision~ $Id: pol-he3.tex,v 1.7 2003/12/05 07:35:03 gen Exp $ $
 %}
 \footnote{Authors: Revised by: J. P. Chen, P. Chevtsov, K. Kramer, 
 N. Liyanange, K. McCormick, X. Zheng; Original: T. Black, J. P. Chen, H. Gao, 
@@ -34,13 +34,14 @@ light beam for optical pumping.  The lasers are housed in a large
 shielding house, known as the ``laser hut'', which is located about 5m
 away from the target on one side of the beam line.  An overview of a
 typical arrangement of the target components in the Hall is shown in
-Figure~\ref{fig:overview}.
+Fig.~\ref{fig:overview}.
 
 \begin{figure}[p]
 \begin{center}
 \centerline{\includegraphics[scale=0.6]{overview_may23}}
 \end{center}
-\caption{Overview of the target setup. Shown are the laser hut, the
+\caption[Overview of the polarized $^3$He target setup]%
+{Overview of the target setup. Shown are the laser hut, the
 beam pipes covering the laser beam line extending to the target area,
 and the Helmholtz coils with the RF assembly and support sub-assembly. }
 \label{fig:overview}
@@ -109,13 +110,13 @@ and the EPR polarimetry is based on the LabView system on a PC.
 The control system for the target vertical motion, the half-wave
 plate motion, the lasers,
 the oven heater, and temperature and pressure monitoring
-runs under the EPICS environment utilizing
+runs under the EPICS~\cite{EPICSwww} environment utilizing
  an IOC in a VME crate. The LabView system 
 records data on disk and communicates with the 
 EPICS system through the network. Information from the EPICS IOC is logged 
 on disk and selected information passed to the event data stream.
 
-
+\infolevtwo{
 %=============================================
 %\chapter
 \section{Operation Overview}
@@ -223,7 +224,7 @@ To protect the lasers from radiation damage due to the electron beam
 and shield personnel from accidental exposure to hazardous laser
 light, all laser systems are located in a shielding house ("laser hut").
 It is positioned in Hall A on the right-hand side of the target at a
-distance of approximately 5 meters as shown in Figures
+distance of approximately 5 meters as shown in Fig.
 \ref{fig:overview} and \ref{fig:laserhut}.  This placement limits
 the maximum angle for the hadron spectrometer to about 45$^\circ$,
 which is sufficient for the planned $^3$He experiments.
@@ -231,7 +232,7 @@ which is sufficient for the planned $^3$He experiments.
 \begin{figure}
 \begin{center}
 \centerline{\includegraphics[scale=0.6]{topoverv_may23}}
-\caption{ A topview of the laser hut shows the location
+\caption[A topview of the laser hut]{ A topview of the laser hut shows the location
 of the interlocked door as well as the position of the laser table where
 all lasers and optics will be set up.}
 \label{fig:laserhut}
@@ -239,7 +240,7 @@ all lasers and optics will be set up.}
 \end{figure}
 Inside the laser hut, an optical table with an anodized aluminum top
 supports all optics. The setup of the
-polarizing optics is shown in Figure \ref{fig:laser_setup}. 
+polarizing optics is shown in Fig. \ref{fig:laser_setup}. 
 
 Seven infrared diode lasers (four for longitudinal pumping and three
 for transverse pumping) and the related interlock control box
@@ -268,7 +269,7 @@ since the splitter only gives high polarization for direct beam
 Now both beams from each laser have identical linear
 polarizations.  Each passes through a $\lambda$/4 waveplate that
 transforms its polarization from linear to circular.  The orientation of 
-each $\lambda$/4 waveplate is shown in Figure \ref{fig:laser_setup}, note that 
+each $\lambda$/4 waveplate is shown in Fig. \ref{fig:laser_setup}, note that 
 all eight (or six for transverse pumping) $\lambda$/4 waveplates should have 
 the same orientation.
 
@@ -294,7 +295,8 @@ by 90$^\circ$ with respect to the other).
 \begin{center}
 \centerline{\includegraphics[scale=0.8, angle=90]{laser_setup}}
 \end{center}
-\caption{Top view of the optics setup inside the laser hut. All items
+\caption[Top view of the optics setup inside the laser hut]%
+{Top view of the optics setup inside the laser hut. All items
 are on a laser table
 which is sitting on a mezzanine inside the laser hut}
 \label{fig:laser_setup}
@@ -326,21 +328,40 @@ safety precautions (see Section 13 and Appendix A).
 %-----------------------
 \subsection{Diode Lasers \& Controls}
 
-The laser light for this experiment is provided by seven 30 Watt, 795 nm solid-state diode lasers.   The seven primary lasers used during the experiment are made by Coherent Semiconductor Inc.  There will also be two diode lasers made by the Opto-Power Corporation that will be used as spares.  Though there are some minor differences,
-both companies' laser systems perform the same function. Only the Ceherent 
-lasers and control will be described here. If the Opto-Power lasers are used,
-readers are refered to the original version of the polarized $^3$He target
-OSP manual.
+The laser light for this experiment is provided by seven 30 Watt, 795
+nm solid-state diode lasers.  The seven primary lasers used during the
+experiment are made by Coherent Semiconductor Inc.  There will also be
+two diode lasers made by the Opto-Power Corporation that will be used
+as spares.  Though there are some minor differences, both companies'
+laser systems perform the same function. Only the Ceherent lasers and
+control will be described here. If the Opto-Power lasers are used,
+readers are refered to the original version of the polarized $^3$He
+target OSP manual.
 
-The diode lasers consist of a main enclosure which contains the diode, power supplies, fans and control systems for the laser.  The laser light from the diode is sent into a flexible optical fiber which extends out of the main enclosure.The fiber is 5m long in a stainless steel jacket and is removable.    
+The diode lasers consist of a main enclosure which contains the diode,
+power supplies, fans and control systems for the laser.  The laser
+light from the diode is sent into a flexible optical fiber which
+extends out of the main enclosure.The fiber is 5m long in a stainless
+steel jacket and is removable.
 
-The lasers operate at diode temperature from $15^{\circ}$ C to $26.5^{\circ}$ C depending on the system.  They are run at output power of 30 Watts which uses an operating current of 35-40 Amps.  The output laser light has a central wavelength of 795 nm with a spectral width of less than 2 nm. The fiber diamter is 800 microns.  The beam divergence is $< 0.20$ N.A.
+The lasers operate at diode temperature from $15^{\circ}$ C to
+$26.5^{\circ}$ C depending on the system.  They are run at output
+power of 30 Watts which uses an operating current of 35-40 Amps.  The
+output laser light has a central wavelength of 795 nm with a spectral
+width of less than 2 nm. The fiber diamter is 800 microns.  The beam
+divergence is $< 0.20$ N.A.
 
-The lasers have a local control system, which is integrated into the main enclosure.  The local control allows adjustments in operating current (and therefore the laser power) and diode temperature (and therefore the wavelength within a
-small range).
+The lasers have a local control system, which is integrated into the
+main enclosure.  The local control allows adjustments in operating
+current (and therefore the laser power) and diode temperature (and
+therefore the wavelength within a small range).
 
-During the experiment the lasers will be controlled remotely through EPICS.  The lasers have a serial IO port on the back of the main enclosure which is connected to a VME RS-232 port.  There is an MEDM GUI interface for each of the lasers, which
- allows remote control and monitoring of current and temperature as well as being able to turn each laser on and off. 
+During the experiment the lasers will be controlled remotely through
+ EPICS.  The lasers have a serial IO port on the back of the main
+ enclosure which is connected to a VME RS-232 port.  There is an
+ MEDM~\cite{MEDMwww} GUI interface for each of the lasers, which
+ allows remote control and monitoring of current and temperature as
+ well as being able to turn each laser on and off.
 
 
 %-----------------------
@@ -385,7 +406,7 @@ During the experiment the lasers will be controlled remotely through EPICS.  The
 \item Adjust the two-inch mirror so that the reflected light hits 
   the target.
 \item If you know the axises of quarter wave plate, rotate it according to 
-      Figure \ref{fig:laser_setup}.  If not, 
+      Fig. \ref{fig:laser_setup}.  If not, 
 \begin{itemize}
 \item Rotate the quarter wave plate so that the light which passes
   through the cube from the two-inch mirror is a minimum.
@@ -404,7 +425,7 @@ During the experiment the lasers will be controlled remotely through EPICS.  The
   target.
 \item Center a quarter wave plate in the path of each beam.
 \item If you know the axises of quarter wave plate, rotate it according to 
-      Figure \ref{fig:laser_setup}.  If not, you need to do bench test first to 
+      Fig. \ref{fig:laser_setup}.  If not, you need to do bench test first to 
       find the axises of each quarter wave plate.
 \item Repeat for all beams heading towards the target.
 \item Be sure that the helicity of each beam line is the same.
@@ -412,7 +433,7 @@ During the experiment the lasers will be controlled remotely through EPICS.  The
       and the mounts such that all either (or six) laser beams are able to 
       hit the center of the corresponding half wave plates simutanuously.
 \item If you know the axises of half wave plate, rotate each one according 
-      to Figure \ref{fig:laser_setup}. If not, you need to do bench test first to 
+      to Fig. \ref{fig:laser_setup}. If not, you need to do bench test first to 
       find the axises of each half wave plate.
 \end{enumerate}
 
@@ -485,7 +506,7 @@ the same time adjust the 2'' mirror if necessary.
 \item Moving spot to the left (viewing towards fiber): Rotate cube
 holder clockwisely (viewing from the top), then rotate cube (relative
 to its holder) anticlockwisely.  Keep the spot at the center of 2''
-mirror.  See Figure \ref{fig:laser_detail}
+mirror.  See Fig. \ref{fig:laser_detail}
 
 \item Moving spot to the right (viewing towards fiber): Rotate cube
 holder anticlockwisely, then rotate cube anticlockwisely.  Keep the 
@@ -610,29 +631,48 @@ you see a problem with the motion of the motor (i.e. it's driving too
 far forward or about to drive off the table) then press the
 Emergency Stop ``HALT'' button.
 
+} % infolev
+\infolevone{
 %==================================
 %\chapter
 \section{Target Cell}
 \subsection{Description}
 
-The target cell is either a 25 cm or 40 cm long aluminosilicate glass (GE180) high pressure (up to 15 atm) double chamber cell. Typical
-dimensions for a 40 cm cell are shown in Figure \ref{fig:cell1}. A 25 cm cell is identical except the target chamber is 25 cm long instead of 40 cm.  It is a closed system filled with a gas mixture which consists of $^3$He, rubidium and
+The target cell is either a 25 cm or 40 cm long aluminosilicate glass (GE180)
+ high pressure (up to 15 atm) double chamber cell. Typical
+dimensions for a 40 cm cell are shown in Fig. \ref{fig:cell1}. A 25 cm cell 
+is identical except the target chamber is 25 cm long instead of 40 cm.  
+It is a closed system filled with a gas mixture which consists of $^3$He, rubidium and
 nitrogen. 
 
-The cell volumes range from 160 ml for a 25 cm cell to 200 ml for a 40 cm cell.  The interior pressure of the cell at room temperature is between 8 and 10 times atmospheric pressure.  The cells contain approximately 70 torr of nitrogen to help with the spin-exchange process.  There is usually 0.1-0.3 g of Rb in the pumping chamber.  The tritium contamination of the $^3$He gas used to fill the cell is less than 10$^{-11} \%$ according to the specifications from the manufacturer, Spectra Gases.
+The cell volumes range from 160 ml for a 25 cm cell to 200 ml for a 40 cm cell.
+The interior pressure of the cell at room temperature is between 8 and 10 
+times atmospheric pressure.  The cells contain approximately 70 torr of 
+nitrogen to help with the spin-exchange process.  There is usually 0.1-0.3 g 
+of Rb in the pumping chamber.  The tritium contamination of the $^3$He gas 
+used to fill the cell is less than 10$^{-11} \%$ according to 
+the specifications from the manufacturer, Spectra Gases.
 
-The glass walls of the cell vary in thickness from cell to cell and from chamber to chamber.   The end windows of the target chamber are 120-150 microns thick and are therefore the thinnest part of the cell.  The walls of the target chamber and transfer tube are over a millimeter thick and the pumping chamber walls are up to 2 mm thick.   
+The glass walls of the cell vary in thickness from cell to cell 
+and from chamber to chamber.   The end windows of the target chamber 
+are 120-150 microns thick and are therefore the thinnest part of the cell.  
+The walls of the target chamber and transfer tube are over a millimeter 
+thick and the pumping chamber walls are up to 2 mm thick.   
 
 \begin{figure}[t]
 \begin{center}
 \centerline{\includegraphics[scale=1]{tcell}}
 \end{center}
-\caption{Typical 40 cm polarized $^3$He target cell used in this
+\caption[Typical 40 cm polarized $^3$He target cell]%
+{Typical 40 cm polarized $^3$He target cell used in this
 experiment.}
 \label{fig:cell1}
 \end{figure}
 
-The cell is installed on a target ladder and then this ladder is mounted to the bottom of the oven.  The cell is attached to the target ladder with a high-temperature elastomer, GE RTV106.  The ladder is then bolted onto the oven.
+The cell is installed on a target ladder and then this ladder is
+mounted to the bottom of the oven.  The cell is attached to the target
+ladder with a high-temperature elastomer, GE RTV106.  The ladder is
+then bolted onto the oven.
 
 
 \subsection{Installation \& Replacement}
@@ -646,9 +686,11 @@ the cell has been exposed to the electron beam, any replacement of the
 cell must be done under strict observation of possible radiation and
 contamination hazards.
 
-The cells are fragile and under high pressure so they
-can cause damage not only to exposed skin and eyes, but also hearing.  It is therefore important to wear hearing protection in the vicinity of an
-exposed cell and also to wear a face shield and a safety glasses when handling or in the vicinity of someone handling a cell.
+The cells are fragile and under high pressure so they can cause damage
+not only to exposed skin and eyes, but also hearing.  It is therefore
+important to wear hearing protection in the vicinity of an exposed
+cell and also to wear a face shield and a safety glasses when handling
+or in the vicinity of someone handling a cell.
 
 \end{safetyen}
 
@@ -711,6 +753,8 @@ removed from the Hall after approval from RADCON.
 
 \end{itemize}
 
+} % infolev
+\infolevtwo{
 %-----------------------------
 %\chapter
 \section{Target Ladder \& Motion System}
@@ -720,13 +764,13 @@ removed from the Hall after approval from RADCON.
 
 
         The polarized $^3$He target system has four target positions:
-the actual polarized target cell (which can be replaced by a water
+the actual polarized target cell, which can be replaced by a water
 cell for NMR calibration (see Section \ref{sec:nmr}), a solid
 BeO target inline with a seven-foil Carbon target for alignment and
 optics calibration, an empty target position that contains no target
 and allows the beam to pass undisturbed through the apparatus and 
 a reference cell position (see Section \ref{sec:refcell}).
-These targets are mounted on a target ladder as shown in Figure
+These targets are mounted on a target ladder as shown in Fig.
 \ref{fig:tgtladder}.
 
 \begin{figure}
@@ -785,7 +829,8 @@ cell and ladder due to the electron beam.  The FSD signal is generated
 by the SmartStep controller and sent to an FSD node in the Hall.
 Target changes require Hall A personnel to telephone MCC and request
 temporary masking of this FSD channel.
-
+} % infolev
+\infolevone{
 %-----------------------------
 %\chapter
 \section{Target Enclosure \& Windows}
@@ -827,8 +872,9 @@ are terminated with a 0.254mm thick beryllium window.  The beam inlet
 and outlet windows of the target enclosure are made of 0.127mm thick
 aluminum and are strong enough to stop any flying glass shreds in case
 of a target cell explosion.
-
+} % infolev
 %-----------------------------
+\infolevone{
 %===================================
 %\chapter
 \section{Target Cell Heater}
@@ -843,7 +889,7 @@ controller. The system is described in detail in the following.
 
 %----------------------------------
 \subsection{Description}
-Figure \ref{fig:oven} shows a schematic diagram of the heater system
+Fig. \ref{fig:oven} shows a schematic diagram of the heater system
 and the associated controls. Pressurized dry and filtered air at room 
 temperature is provided by a dedicated compressor in the Hall. The air
 enters the system through a shut-off valve and a pressure regulator,
@@ -862,11 +908,12 @@ exhaust pipe where it can cool down.
 \begin{center}
 \centerline{\includegraphics{ovensystem}}
 \end{center}
-\caption{Schematic diagram of the target cell oven control system. The
+\caption[Schematic diagram of the target cell oven control system]%
+{Schematic diagram of the target cell oven control system. The
 instruments in the dashed box are located upstairs, while the remaining
 components are located in the Hall in the vicinity of the target. 
 For clarity, the interlock circuitry
-is not shown (see Figure \protect\ref{fig:interlock}).}
+is not shown (see Fig. \protect\ref{fig:interlock}).}
 \label{fig:oven}
 \end{figure}
 
@@ -874,7 +921,8 @@ is not shown (see Figure \protect\ref{fig:interlock}).}
 \begin{center}
 \centerline{\includegraphics{interlock}}
 \end{center}
-\caption{Schematic diagram of the oven heater interlock system.
+\caption[Schematic diagram of the oven heater interlock system]%
+{Schematic diagram of the oven heater interlock system.
 The switches represent relays. 
 In normal operation, the relays are energized (contacts closed). 
 An alarm condition
@@ -946,7 +994,7 @@ indicates
 \end{enumerate}
 
 A schematic diagram of 
-the interlock system is shown in Figure \ref{fig:interlock}.
+the interlock system is shown in Fig. \ref{fig:interlock}.
 The instruments are programmed such that their dual alarm relays
 operate simultaneously if a value is out of range.
 An interlock condition disables the heater as well as puts the
@@ -1273,29 +1321,56 @@ the ``Standby'' button in the upper-left of the GUI.
   and placing the laser in standby mode.
 
 \end{enumerate}
-
+} % infolev
+\infolevone{
 %=============================
 %\chapter
 \section{Helmholtz Coils}
 \label{sec:helmholtz}
 
-The Helmholtz coils are four large interlocking rings of coils that provide a large constant magnetic field.  Two sets are necessary so that the magnetic field can point in any direction in the horizontal plane.  The larger two coils have an internal diameter of 1.45 m and consist of 272 turns of coil.  The smaller set of coils each have a internal diameter of 1.27 m and are made of 256 turns of coil. 
+The Helmholtz coils are four large interlocking rings of coils that
+provide a large constant magnetic field.  Two sets are necessary so
+that the magnetic field can point in any direction in the horizontal
+plane.  The larger two coils have an internal diameter of 1.45 m and
+consist of 272 turns of coil.  The smaller set of coils each have a
+internal diameter of 1.27 m and are made of 256 turns of coil.
 
-The normal holding field for the target is 25 Gauss which corresponds to approximately 7.2 amps of current in the coils.  However, when doing an NMR measurement the field gets as high as 32 Gauss, which corresponds to 9.2 amps of current.  
+The normal holding field for the target is 25 Gauss which corresponds
+to approximately 7.2 amps of current in the coils.  However, when
+doing an NMR measurement the field gets as high as 32 Gauss, which
+corresponds to 9.2 amps of current.
 
-The coils are controlled by a DC voltage from two Stanford Research System DS345 Function Generators.  These are in turn controlled by a LabView Vi running on a PC.  There is a small glitch in the DS345 function generator : there sometimes will be a short drop in voltage before going to the correct voltage.  This is a problem when rotating the field, since it causes sudden magnitude shifts which in turn destroy a little of the target polarization.  This glitch is compensated for by a specially designed rotation box to which a Wavetek 80 function generator is attached.  This function generator compensates for the small decrease in voltage so that the rotation can be performed smoothly.  
+The coils are controlled by a DC voltage from two Stanford Research
+System DS345 Function Generators.  These are in turn controlled by a
+LabView Vi running on a PC.  There is a small glitch in the DS345
+function generator : there sometimes will be a short drop in voltage
+before going to the correct voltage.  This is a problem when rotating
+the field, since it causes sudden magnitude shifts which in turn
+destroy a little of the target polarization.  This glitch is
+compensated for by a specially designed rotation box to which a
+Wavetek 80 function generator is attached.  This function generator
+compensates for the small decrease in voltage so that the rotation can
+be performed smoothly.
 
-Attached to the small set of Helmholtz coils are a smaller set of coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W power supply.  This target occasionally has a problem with a phenomena known as masing.   This is a loss of target polarization due to coupling of the helium nuclei in their higher
- energy states (such as during an NMR measurement) and a coil of wire (the pick-up coils, a Rb ring, or some other source).  Masing can be easily identified with EPR, and introducing a small field gradient generally makes it disappear.  These coils are used to introduce that field gradient.
+Attached to the small set of Helmholtz coils are a smaller set of
+ coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W
+ power supply.  This target occasionally has a problem with a
+ phenomena known as masing.  This is a loss of target polarization due
+ to coupling of the helium nuclei in their higher energy states (such
+ as during an NMR measurement) and a coil of wire (the pick-up coils,
+ a Rb ring, or some other source).  Masing can be easily identified
+ with EPR, and introducing a small field gradient generally makes it
+ disappear.  These coils are used to introduce that field gradient.
 
-
+} % infolev
+\infolevone{
 %=============================
 %\chapter
 \section{NMR Polarimetry}
 \label{sec:nmr}
 
 This guide explains briefly how to perform safely an NMR AFP sweep on the
-polarized $^{3}$He target. Please, refer to Figure \ref{fig:nmr}  
+polarized $^{3}$He target. Please, refer to Fig. \ref{fig:nmr}  
 showing the target setup and explaining the angle conventions. Longitudinal 
 or parallel field configuration is named if the holding field is pointing 
 towards 0$^{\circ}$, {\it i.e.\/} 
@@ -1329,7 +1404,8 @@ a radius setting  $r=2\ $mm, current less than 15 $\mu$A)}
 \begin{figure}
 \begin{center}
 \centerline{\includegraphics[scale=0.8]{coils_new}}
-\caption{Top view of the longitudinal and transverse Helmholtz coils
+\caption[Top view of the longitudinal and transverse Helmholtz coils]%
+{Top view of the longitudinal and transverse Helmholtz coils
 used in the polarized $^3$He target setup. 
 The RF coils are needed to perform NMR as well as EPR measurements. The
 0$^{\circ}$ angle gives the incident electron
@@ -1381,7 +1457,8 @@ the Counting House A.}
 \begin{figure}
 \begin{center}
 \centerline{\includegraphics[scale=0.75]{NMR_system}}
-\caption{Description of the cabling of the NMR system.
+\caption[Cabling of the NMR system]%
+{Description of the cabling of the NMR system.
 10 cables go from the counting house to the target location
 in the hall : 8 (main+sensing) ESSEX AWG 10 for
 the Helmholtz coils, 1 RG58A/U for the RF coils and 1 RG58A/U for the
@@ -1399,7 +1476,7 @@ coils (usually 1 A rms) of the target setup. Any human contact with the
 wires could be fatal and should 
 therefore be avoided. All the electronic devices and the PC used
 to sweep are located in the Counting House A.
-Refer to {\bf Figure \ref{fig2:electronics_new}} for a description of the
+Refer to Fig.~\ref{fig2:electronics_new} for a description of the
 electronics.
 
 \subsubsection{ The DC current}
@@ -1482,8 +1559,9 @@ polarized Helium 3 target}, JLab-TN-98-049. A copy of this note is included
 in the target 
 binder in the Hall A counting house.
 
+} % infolev
 
-
+\infolevone{
 %======================================
 %\chapter
 \section{EPR Polarimetry}
@@ -1503,7 +1581,7 @@ the lineshape of the
 EPR transition (Rb D2 line) light emitted from the cell as a function of applied
 frequency to the EPR coil. \\
 
-First, construct the  circuit described in figure \ref{fig1:epr} by
+First, construct the  circuit described in Fig. \ref{fig1:epr} by
 following these steps:
 
 \begin{figure}
@@ -1552,7 +1630,8 @@ Be sure that the VCO indicator is lit.
 At a carrier frequency of 10MHz, a 1mV input will produce a 400Hz shift 
 in the output frequency.)
 
-\item Connect PI circuit output to Wavetek 80 VCO IN through an 100:1 attenuator. Set the 100:1 attenuator switch to ``FMS'' (no attenuation). 
+\item Connect PI circuit output to Wavetek 80 VCO IN through an 100:1 attenuator. 
+       Set the 100:1 attenuator switch to ``FMS'' (no attenuation). 
 
 \item Connect Wavetek 80 sync out to SR 620 Counter.  Connect  Wavetek 80 output to 
 the cable leading to the EPR coils.  Make sure that the Wavetek 80
@@ -1665,7 +1744,7 @@ box to lock into the EPR resonance frequency and then track its
 behavior. With AFP spin-flip, a shift in EPR resonance frequency 
 will be measured, which is proportional to the pumping cell polarization.\\
 
-Construct the circuit described in figure \ref{fig2:epr}:
+Construct the circuit described in Fig. \ref{fig2:epr}:
 
 \begin{enumerate}
 
@@ -1833,7 +1912,7 @@ These numbers may also vary at a higher or lower EPR D2 signal amplitude.
 You may also optimize the PI circuit gains by observing how fast the circuit 
 follows the resonance.  When counter reading is stablized,
 change Wavetek frequency manually by 0.04 MHz (which is close to the real jump
-during sweeping, at a target polarization $\sim$ 40%).  If the counter goes back 
+during sweeping, at a target polarization $\sim$ 40\%).  If the counter goes back 
 to resonance in roughly 3$~$5 seconds, then the
 circuit is working well.  If less than 2 seconds and counter reading is not stable, 
 decrease both the relative and absolute gain.  If longer than 6 seconds or lose the 
@@ -1870,7 +1949,7 @@ the main holding field, one is able to monitor the pumping cell polarization con
 
 The circuit and labview program are the same to that are used for AFP Sweep 
 measurement described in Section \ref{sec:eprafp}, except that field feedback system 
-is needed, as shown in Figure \ref{fig3:epr}
+is needed, as shown in Fig. \ref{fig3:epr}
 
 \begin{figure}
 \begin{center}
@@ -1951,7 +2030,9 @@ until they are stablized to zero.
 
 \end{enumerate}
 
+} % infolev
 
+\infolevone{
 %===============================
 %\chapter
 \section{Reference Cell}
@@ -1959,16 +2040,19 @@ until they are stablized to zero.
 
 \subsection{Description of the Reference Cell System}
 
-The reference cell system is comprised of three
-subsystems---the reference target cell, the gas handling system, and
-the control electronics.  The reference target cell is mounted inside
-the target enclosure, which is located in the beam path immediately
-upstream of
+The reference cell system is comprised of three subsystems---the
+reference target cell, the gas handling system, and the control
+electronics.  The reference target cell is mounted inside the target
+enclosure, which is located in the beam path immediately upstream of
 the spectrometers.  The gas handling system consists of a gas
-manifold, which is located in the electronics rack  behind the laser hut, and a series of gas
-lines that connect the manifold to the reference cell. A control box consisting of electronics that control the solenoid valves of the gas system is also located in the electronics rack.  A remote control box, identical to the one in the hall, is located in the counting house.   A schematic of the
-entire system is shown in figure \ref{fig:refcell1}.  The individual
-subsystems are depicted in figures \ref{fig:refcell2}--\ref{fig:refcell3}.
+manifold, which is located in the electronics rack behind the laser
+hut, and a series of gas lines that connect the manifold to the
+reference cell. A control box consisting of electronics that control
+the solenoid valves of the gas system is also located in the
+electronics rack.  A remote control box, identical to the one in the
+hall, is located in the counting house.  A schematic of the entire
+system is shown in Fig. \ref{fig:refcell1}.  The individual subsystems
+are depicted in Fig. \ref{fig:refcell2}--\ref{fig:refcell3}.
 
 \begin{figure}
 \begin{center}
@@ -1991,24 +2075,34 @@ displays so that one can readily determine the status of any switch.
 The reference cell consists of a very thin-walled glass flask.  An
 outlet at the opening is joined to a Copper tube by means of a
 glass-to-metal seal.  This Copper  tube is connected to a 1/8" dia.
-Copper tube  with quick-plug-on gas fittings. High pressure $^3$He gas bottle is mounted   near the target chamber and is connected to the other end of the   1/8" Copper tube through solenoid valve {\bf V3}. The rest of the gas system is connected to the    1/8" copper tube   by a long 1/2" Copper tube. The reference cell is mounted at the gas fitting. A special coupling tool has been designed to facilitate the coupling/de-coupling the reference cell at the quick-plug-on gas joint.
+Copper tube with quick-plug-on gas fittings. High pressure $^3$He gas
+bottle is mounted near the target chamber and is connected to the
+other end of the 1/8" Copper tube through solenoid valve {\bf V3}. The
+rest of the gas system is connected to the 1/8" copper tube by a long
+1/2" Copper tube. The reference cell is mounted at the gas fitting. A
+special coupling tool has been designed to facilitate the
+coupling/de-coupling the reference cell at the quick-plug-on gas
+joint.
 
-The gas handling system  consists of 8 solenoid-controlled, air-actuated valves,
-one hand-set needle valve, two baratron pressure gauges (0--1000 torr
-and 0--1000 psia), two pressure relief valves, a  bottle of
-high-pressure $^3$He gas, a bottle of high pressure N$_2$ gas,  a
-bottle of high pressure $^{4}$He gas, an oil-free turbo pump backed
-up by a pre-pump, and sufficient tubing and pipe fittings to
-connect them all together.  There are 5 basic actions that the
- gas handling system  must accomplish; pump-out, vent, fill with N$_2$ or $^{4}$He,
-and fill with $^3$He.  The selection between N$_2$ and $^{4}$He is
- done by a special directional solenoid valve ({\bf V8}). 
+The gas handling system consists of 8 solenoid-controlled,
+air-actuated valves, one hand-set needle valve, two baratron pressure
+gauges (0--1000 torr and 0--1000 psia), two pressure relief valves, a
+bottle of high-pressure $^3$He gas, a bottle of high pressure N$_2$
+gas, a bottle of high pressure $^{4}$He gas, an oil-free turbo pump
+backed up by a pre-pump, and sufficient tubing and pipe fittings to
+connect them all together.  There are 5 basic actions that the gas
+handling system must accomplish; pump-out, vent, fill with N$_2$ or
+$^{4}$He, and fill with $^3$He.  The selection between N$_2$ and
+$^{4}$He is done by a special directional solenoid valve ({\bf V8}).
 
-The reference cell control panel (shown in Fig.~\ref{fig:refcell3} ) is comprised of 5 pushbutton
-switches, which activate the 5 possible valve setting conditions, a
-baratron high-pressure gauge which reads between 0-1000 psia, a
-baratron low-pressure gauge which reads between 0-1000 torr, two toggle switches to turn on and off the vacuum pump and a toggle switch to select local or remote operation.  
-  The valve configurations for the five  actions  are described in Table~\ref{tab:refcell}.
+The reference cell control panel (shown in Fig.~\ref{fig:refcell3} )
+is comprised of 5 pushbutton switches, which activate the 5 possible
+valve setting conditions, a baratron high-pressure gauge which reads
+between 0-1000 psia, a baratron low-pressure gauge which reads between
+0-1000 torr, two toggle switches to turn on and off the vacuum pump
+and a toggle switch to select local or remote operation.  The valve
+configurations for the five actions are described in
+Table~\ref{tab:refcell}.
 
 \begin{table}
 \begin{center}
@@ -2112,29 +2206,27 @@ in case of a cell explosion.
 
 \subsection{Hazard Mitigation }
 
-After testing the reference cell system to 200 psia and to
-protect the cell
-from rupturing during normal operation,  the relief valves
- have been set to 175 psia.  
+After testing the reference cell system to 200 psia and to protect the
+cell from rupturing during normal operation, the relief valves have
+been set to 175 psia.
 
 
 All personnel shall wear hearing protection when accessing the
- platform area while the cell is under high pressure and no windows are 
-on the target enclosure.  
+ platform area while the cell is under high pressure and no windows
+ are on the target enclosure.
 
-Special care must be taken when accessing the region inside
-the target enclosure.  Full face shielding and safety glasses
- should be
-worn under these
-conditions.  Before working in the vicinity of any of the reference cell
-components, personnel
-shall check the pressure in the manifold from the baratron readout in
-the
-remote control area.
+Special care must be taken when accessing the region inside the target
+enclosure.  Full face shielding and safety glasses should be worn
+under these conditions.  Before working in the vicinity of any of the
+reference cell components, personnel shall check the pressure in the
+manifold from the baratron readout in the remote control area.
 
+\end{safetyen}
 
+} % infolev
 %====================================================
 %\chapter
+\begin{safetyen}{10}{5}
 \section{Hazards and Safety Issues}
 \label{sec:haz}
 
@@ -2145,26 +2237,23 @@ alleviate the potential
 hazards is reported. 
 
 \begin{itemize}
-
-\item Personnel eye sight damage due to a laser light exposure;
-
-\item Fire due to the operation of the high power lasers;
-
-\item Fire due to the operation of the target oven;
-
-\item Explosion of the high pressure target cell;
-
-\item Explosion of the reference cell;
-
-\item Irradiation of the target by the electron beam.
+  \item Personnel eye sight damage due to a laser light exposure;
+  \item Fire due to the operation of the high power lasers;
+  \item Fire due to the operation of the target oven;
+  \item Explosion of the high pressure target cell;
+  \item Explosion of the reference cell;
+  \item Irradiation of the target by the electron beam.
 \end{itemize}
 
 For personnel safety to be effective all personnel authorized to operate
-any subsystem of the target will be
-required  be familiar with that specific subsystem as well as read the
-target OSP. 
+any subsystem of the target will be required  be familiar with that 
+specific subsystem as well as read 
+\infolevone{this} \infolevltone{the full} target OSP% 
+\infolevltone{~\cite{HallAosp}}.
 
+\end{safetyen}
 
+\begin{safetyen}{10}{5}
 %======================================================
 %\chapter
 \section{Laser Safety}
@@ -2272,7 +2361,8 @@ for the safe and effective use of the equipment. In addition,
 this manual provides information about the functioning of the various safety 
 systems installed to protect personnel and equipment.
 
-\subsection{Personnel}
+\subsection{Personnel and Required Training}
+\label{sec:target-phe3-laser-train}
 
 The 30 watts infrared diode lasers (Coherent FAP-System) may only be operated by
 personnel who have :
@@ -2409,10 +2499,12 @@ The normal Hazard Zone for the 30 Watts FAP system is $2.76 \times 10^3$ meters.
 
 \subsection{Laser environment}
 
-The diode lasers and the associated devices will be located in the polarized $^3$He target laser hut in Hall A.
-The entire hut is a laser controlled area. Its organization is shown in
-Fig.\ref{fig:laser_hall}. The setup will be on the second floor and the direct laser light
-will not be visible from the entrance of the room.
+The diode lasers and the associated devices will be located in the
+polarized $^3$He target laser hut in Hall A.  The entire hut is a
+laser controlled area. Its organization is shown in
+Fig.\ref{fig:laser_hall}. The setup will be on the second floor and
+the direct laser light will not be visible from the entrance of the
+room.
 
 
 \begin{figure}
@@ -2478,43 +2570,51 @@ Thus the general procedures for normal operation of the diode lasers in the targ
 
 \subsubsection{Alignment procedure}
 
-All the mechanical stands supporting the optical components have been designed and
-surveyed in order to achieve a preliminary safe alignment of the entire setup (laser
-off).  Initial setup of laser and optical system will be done while the laser 
-hut window is closed (such that no laser beam will come out the laser hut).
-Initial alignment will be done with a standard class 3 HeNe laser  
-(class 3A after attenuation, 650 nm) or a laser pointer (class 3A).
- Laser safety goggles are mandatory for all procedures except for alignment
- using class 3A HeNe laser. Use precaution for class 3A laser when using the 
-HeNe laser: Do not look directly into the beam or use collecting optics.
-The final alignment will be done with the diode laser but at a reduced laser power (less than 10 amps, when the laser spot on a card can be clearly
-seen with IR viewer). The alignment is performed with one laser beam line at a time. 
-The beam can be tracked by the use of either an IR viewing card or
-an IR viewer.  The photosensitive card can be displaced along the beam, and
-the IR viewer allows the tracking by the light slightly diffused on the optical
-components. During this final alignment, the laser hut window will be opened 
-and the laser beam will be directed to the target, while the laser beam pipes 
-and the laser enclosure on top of the target will be taken off. Therefore the 
-whole hall will be classified as laser area. We will use the CANS system
-to have controlled access. Before the laser alignment starts, a sweep will
-be performed to clear the Hall. Then the CANS system will be programmed to
-only allow authorized laser trained persons to have access to the hall.   
-The door to the BSY tunnel will be magnetically locked with a toggle push-button switch. The ``laser danger'' warning sign will be posted at all the entrances. The doors will be checked by pulling the door handle. In addition, a red flashing light will be put at the BSY side of the door.
+All the mechanical stands supporting the optical components have been
+designed and surveyed in order to achieve a preliminary safe alignment
+of the entire setup (laser off).  Initial setup of laser and optical
+system will be done while the laser hut window is closed (such that no
+laser beam will come out the laser hut).  Initial alignment will be
+done with a standard class 3 HeNe laser (class 3A after attenuation,
+650 nm) or a laser pointer (class 3A).  Laser safety goggles are
+mandatory for all procedures except for alignment using class 3A HeNe
+laser. Use precaution for class 3A laser when using the HeNe laser: Do
+not look directly into the beam or use collecting optics.  The final
+alignment will be done with the diode laser but at a reduced laser
+power (less than 10 amps, when the laser spot on a card can be clearly
+seen with IR viewer). The alignment is performed with one laser beam
+line at a time.  The beam can be tracked by the use of either an IR
+viewing card or an IR viewer.  The photosensitive card can be
+displaced along the beam, and the IR viewer allows the tracking by the
+light slightly diffused on the optical components. During this final
+alignment, the laser hut window will be opened and the laser beam will
+be directed to the target, while the laser beam pipes and the laser
+enclosure on top of the target will be taken off. Therefore the whole
+hall will be classified as laser area. We will use the CANS system to
+have controlled access. Before the laser alignment starts, a sweep
+will be performed to clear the Hall. Then the CANS system will be
+programmed to only allow authorized laser trained persons to have
+access to the hall.  The door to the BSY tunnel will be magnetically
+locked with a toggle push-button switch. The ``laser danger'' warning
+sign will be posted at all the entrances. The doors will be checked by
+pulling the door handle. In addition, a red flashing light will be put
+at the BSY side of the door.
 %key-interlock 
 %entrance control system to have controlled access. Before the laser alignment
 %starts, a sweep will be performed to clear the hall. Then the hall will be in 
 %``control access'' mode. MCC will only allow authorized laser trained persons 
 %to have access to the hall. A copy of this LSOP with a current list of 
 %Authorized Persons will be kept at MCC. 
-Most of the final laser alignment will be 
-performed during night time to minimize interference with other work going 
-on in the hall. When the alignment stops, all signs will be take off and
-the CANS system will be disabled and the door to BSY will be unlocked.
+Most of the final laser alignment will be performed during night time
+to minimize interference with other work going on in the hall. When
+the alignment stops, all signs will be take off and the CANS system
+will be disabled and the door to BSY will be unlocked.
 
 \subsubsection{Maintenance procedure}
 
 Replacement of used or damaged optical components of the setup will be made with the
-laser off (power switched off and unplugged).  The positions and orientations of the new components will be mechanically
+laser off (power switched off and unplugged).  The positions and 
+orientations of the new components will be mechanically
 surveyed and extensively checked before turning to any procedure needing the laser on.
 
 When the target enclosure windows need to be opened (such as to inspect
@@ -2563,21 +2663,26 @@ Several controls have been added as preventive measures to the laser room
 and to the direct laser area. We will enumerate these controls here.
 \begin {enumerate}
 \item The laser control area will have danger signs posted and will have a
-yellow beacon indicating the presence of Class IV diode lasers. Danger sign will also be posted near the target enclosure area.
-\item A controlled access interlock system will limit the entrance to the laser hut with a coded number pad. The code is given only to the authorized 
-laser users listed in section 10 with currently valid training. 
-\item The laser switches are interlocked to allow an opening of the door to 
-turn off the laser (to stand-by). 
-\item The main power plug to the laser can be easily pulled. It is plugged
-into a power strip with a on/off switch which can be easily switched off.
-\item Protective safety goggles (minimum OD 4.7 at 795 nm)
-have to be worn when the laser is operational.
-\item All laser beam paths outside the laser hut are enclosed with beam pipe or
-other enclosure (except during laser alignment process).
-\item All personnel need to fulfill the training requirements as indicated in Section 1 of this document.
-\item the LSOP will be posted on the outside door of the laser hut to inform 
-personnel about the
-hazards associated with the setup and the proper procedures.
+yellow beacon indicating the presence of Class IV diode lasers. Danger
+sign will also be posted near the target enclosure area.
+\item A controlled access interlock system will limit the entrance to
+the laser hut with a coded number pad. The code is given only to the
+authorized laser users listed in section 10 with currently valid
+training.
+\item The laser switches are interlocked to allow an opening of the
+door to turn off the laser (to stand-by).
+\item The main power plug to the laser can be easily pulled. It is
+plugged into a power strip with a on/off switch which can be easily
+switched off.
+\item Protective safety goggles (minimum OD 4.7 at 795 nm) have to be
+worn when the laser is operational.
+\item All laser beam paths outside the laser hut are enclosed with
+beam pipe or other enclosure (except during laser alignment process).
+\item All personnel need to fulfill the training requirements as
+indicated in Section 1 of this document.
+\item the LSOP will be posted on the outside door of the laser hut to
+inform personnel about the hazards associated with the setup and the
+proper procedures.
 \end {enumerate}
 
 All controls will be inspected every six months
@@ -2599,7 +2704,8 @@ with maximum CW power of 30 watts (the worst case) to be 4.70.
 OD of 5 safety goggles for the wavelength of 795 nm were selected to be used in the lab.
 
 With all 4 lasers, when the beams overlap, the 
-combined beam will have a size larger than 2.75 inches. The power density will be lower than the maximum power density with one laser. 
+combined beam will have a size larger than 2.75 inches. The power density 
+will be lower than the maximum power density with one laser. 
 
 \item {Nominal Hazard Zone}
 
@@ -2616,12 +2722,17 @@ The laser hazard zone is nimized by confining operation to an interlocked
 laboratory or interlocked enclosure.
 \end{enumerate}
 
+} % infolevtwo
 
-\subsection{List of authorized personnel}
+\begin{safetyen}{10}{5}
+\section{List of authorized personnel}
+\end{safetyen}
+
 The following personnel are authorized to operate the Coherent FAP-system
 diode lasers and the associated polarized $^3$He target facility, under 
 the assumptions, they
-have completed the training requirements defined in Section 1:
+have completed the training requirements%
+\infolevtwo{ defined in Sec.~\ref{sec:target-phe3-laser-train}}:
 \\ 
 \begin{tabular}{ll}
 Gordon Cates            & University of Virginia \\
@@ -2701,17 +2812,19 @@ Xiaochao Zheng          & MIT \\
 Names can be added to the above lists after proper training 
 and authorized by Jian-ping Chen, pager 584-7413, phone 7413 and
 email:jpchen@jlab.org.
-} % infolevtwo
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.6 2003/11/21 18:26:21 gen Exp $
-% $Id: pol-he3.tex,v 1.6 2003/11/21 18:26:21 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.7 2003/12/05 07:35:03 gen Exp $
+% $Id: pol-he3.tex,v 1.7 2003/12/05 07:35:03 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/21 18:26:21 $
+% $Date: 2003/12/05 07:35:03 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.7  2003/12/05 07:35:03  gen
+% WT2 modified. Polishing
+%
 % Revision 1.6  2003/11/21 18:26:21  gen
 % polishing
 %
