@@ -1,6 +1,6 @@
 \chapter[Cryogenic Targets]{Cryogenic Targets
 \footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.10 2004/12/15 00:14:15 gen Exp $ $ }
+  $CVS~revision~ $Id: cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $ $ }
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
 
@@ -11,8 +11,9 @@ cryogenic Hydrogen and Deuterium targets.
 \subsection{Introduction }
 The Hall A cryotarget system contains three target loops. The top loop (loop 1)
 has a single 10 cm ``tuna can'' helium cell, which will be filled with either 
-$^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA). This loop 
-is usually not been used for normal Hydrogen and Deuterium running, in which 
+$^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA). For 
+normal Hydrogen and Deuterium running, the top loop is often leave as a spare,
+in which 
 case it will be filled with a little over one atm helium gas. Both the middle 
 loop and the bottom loop contain one 15 cm and one 4 cm  ``beer can'' cells.
 The middle loop (loop 2) is usually filled with liquid Hydrogen during normal 
@@ -20,7 +21,7 @@ operation.
 The bottom loop (loop 3) is usually filled with liquid Deuterium during normal
 operation. If only the Hydrogen target is used, such as the case for   
 the HAPPEX running, loop 3 (the Deuterium loop) 
-will be filled with 17 PSIA helium gas to save cooling power.
+will be filled with 17 PSIA helium gas to prevent save contamination.
 
 \par
 During the normal operation, the Hydrogen and/or Deuterium target should
@@ -625,6 +626,12 @@ gauges are designated PI130, H$_2$ and PI139, D$_2$. The gas tanks are viewed
 with both pressure transducers (PT133 for hydrogen and PT142 for deuterium)
 and pressure gauges (PI123 for hydrogen and PI112 for deuterium).
 
+If the pressures are significantly deviate from either from one another or from
+the normal operating pressure, the target operator should call the 
+target-expert-on-call. When they differ from one another, it often is due to 
+a failure of one (or more) of the pressure transducers. If more than one deviate significantly from the normal operating pressure, it could be due to 
+temperature change or could be, in more serious situation, leak in the system.
+
 \subsubsection{ Target Cells}
 
 The target cells themselves represent the most likely failure point
@@ -700,9 +707,10 @@ There is
 a separate relief valve on the fill side of the target, CRV30 for H$_2$ and
 CRV59 for D$_2$. This relief is mounted in parallel with the small orifice 
 solenoid valve. Right on top of the cryo-can, on the return side of the target,
-there is a large size (one $in$) relief valve.
+there is a large size (one $in$) relief valve. The relief valves are set at 
+40 psig.
 All target pressure reliefs are connected to the
-nitrogen vent line of the Hall A superconducting magnets.
+nitrogen vent line.
 This is a 3.5 $in$ diameter 
 copper pipe which is filled with nitrogen gas at atmospheric pressure.
 Thus any vented target gas is placed in an inert environment until it is
@@ -758,7 +766,7 @@ vacuum spoiled.
 \end{description}
 
 The two spectrometer windows are both made from aluminum. Each window
-is seven $in$ high and subtends 170 $^\circ$ on the 43 $in$ outer
+is six $in$ high and subtends 170 $^\circ$ on the 43 $in$ outer
 diameter of the scattering chamber. This window is made of
 0.016 $in$ thick 5052 H34 aluminum foil.
 
@@ -769,7 +777,7 @@ placed under load. The window had an inter-ridge
 spacing of 3 inches.
 If the window is treated as a collection
 of smaller rectangular windows which have the full vertical height
-of 7 inches and the inter-ridge spacing as a width,
+of 6 inches and the inter-ridge spacing as a width,
 then stress formulas predict that the 0.016 $in$
 material would reach ultimate stress at a pressure higher than 35 PSID
 (for both over-pressure and under-pressure). 
@@ -1126,13 +1134,16 @@ is also available at the above web sites.
 %\end{document}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.10 2004/12/15 00:14:15 gen Exp $
-% $Id: cryotarget.tex,v 1.10 2004/12/15 00:14:15 gen Exp $
-% $Author: gen $
-% $Date: 2004/12/15 00:14:15 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $
+% $Id: cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2004/12/20 21:45:21 $
 % $Name:  $
 % $Locker:  $
 % $Log: cryotarget.tex,v $
+% Revision 1.11  2004/12/20 21:45:21  jpchen
+% further changes according to review
+%
 % Revision 1.10  2004/12/15 00:14:15  gen
 % minor update of the labels
 %
