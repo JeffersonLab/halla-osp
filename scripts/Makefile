@@ -29,6 +29,15 @@ srcdir1 := $(strip $(srcdir))
 fnam :=$(srcdir)/$(top)/main.tex
 dirhtml := $(top)_html
 
+scrdir := $(shell cd ../scripts ; pwd)
+scrdir1 := $(strip $(scrdir))
+
+# Name files: source and target
+NAMCOM = $(scrdir1)/names.com
+namesd := $(srcdir1)/people
+namess := $(namesd)/names.txt
+namest := $(namesd)/names.tex
+
 #$(error File $(srcdir1))
 #$(error wild $(fnam)=$(wildcard $(fnam)))
 
@@ -96,7 +105,10 @@ clean:
 aux:    $(top).aux
 	pdf	
 
-pdf:	 clean
+$(namest) : $(namess)
+	(cd $(namesd) ; $(NAMCOM))
+
+pdf:	 clean $(namest)
 	echo "Rerun" > $(top).log ; \
 	ln -s -f $(fnam) $(top).tex ; \
 	ln -s -f ../src/$(top)/title.tex . ; \
@@ -157,13 +169,16 @@ html:
 
 
 # ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.3 2003/12/05 05:42:29 gen Exp $
-# $Id: Makefile,v 1.3 2003/12/05 05:42:29 gen Exp $
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.4 2003/12/13 06:26:26 gen Exp $
+# $Id: Makefile,v 1.4 2003/12/13 06:26:26 gen Exp $
 # $Author: gen $
-# $Date: 2003/12/05 05:42:29 $
+# $Date: 2003/12/13 06:26:26 $
 # $Name:  $
 # $Locker:  $
 # $Log: Makefile,v $
+# Revision 1.4  2003/12/13 06:26:26  gen
+# Name tables added
+#
 # Revision 1.3  2003/12/05 05:42:29  gen
 # New latex commands added
 #

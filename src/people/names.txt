@@ -1,0 +1,74 @@
+Tech-on-Call     ~            Hall-A   W.B.
+Cryotarg-on-Call ~            Hall-A   W.B.
+Cryo-on-Call     ~           JLabMCC   7048
+CHL-group        ~              JLab   7405
+Areti            Hari           JLab
+Augustine        Mark           JLab 
+Authier          Martial         CEA   4324  mauthier@Cea.Fr     
+Averett          Todd            CWM
+Bertin           Pierre        IN2P3
+Cates            Gordon          UVA
+Chen             Jian-Ping      JLab 
+Chudakov         Eugene         JLab
+Colombel         Nathalie        CEA   8350  ncolombel@Cea.Fr    
+Day              Tony           JLab 
+Deck             Pascale         CEA   2426  pdeck@Cea.Fr        
+Delbart          Alain           CEA   3454  adelbart@Cea.Fr     
+Deur             Alexandre       UVA
+Dezern           Gary           JLab
+Feuerbach        Robert         JLab
+Folts            Ed             JLab
+Francis          Pete           JLab 
+Gao              Haiyan         Duke 
+Gilman           Ronald        Rutgers
+Glamazdin        Oleksandr     KhIPT
+Gomez            Javier         JLab
+Gonzales         Rick           JLab 
+Gorbenko         Viktor        KhIPT
+Gougnaud         Francois        CEA
+Hansen           Ole            JLab 
+Higgins          Scott          JLab 
+Higinbotham      Douglas        JLab
+Jiang            Xiaodong      Rutgers
+Keith            Christopher    JLab
+Korsch           Wolfgang        UoK 
+Kramer           Kevin           CWM
+Kursun           Zafer          JLab
+Lauze            Ron            JLab 
+LeRose           John           JLab
+Lhuillier        David           CEA   9497  dlhuillier@Cea.Fr   
+Liyanage         Nilanga         UVA
+Lucentini        Maurizio       INFN
+Lussignol        Yves            CEA   2828  lussi@Cea.Fr        
+Marroncle        Jacques         CEA
+McCormick        Kathy         Rutgers 
+Meekins          Dave           JLab
+Merz             Bill           JLab
+Meziani          Zein-Eddine   Temple  
+Michaels         Robert         JLab
+Musson           John           JLab
+Nanda            Sirish         JLab
+Neyret           Damien          CEA   7552  dneyret@Cea.Fr      
+Paschke          Kent          Syracuse
+Pomatsalyuk      Roman         KhIPT
+Reitz            Bodo           JLab
+Roblin           Yves           JLab
+Rutledge         Gary            CWM
+Saha             Arun           JLab
+Salmons          Rusty          JLab
+Seely            Mikell         JLab
+Segal            Jack           JLab
+Seidman          David          JLab
+Slifer           Karl          Temple          
+Solvignon        Patricia      Temple  
+Spiegel          Scot           JLab
+Stevens          Mark           JLab
+Sulkosky         Vince           CWM 
+Tarte            Gerard          CEA   8464  gtarte@Cea.Fr       
+Tiefenback       Michael        JLab    
+Vernin           Pascal          CEA
+Veyssiere        Christian       CEA   9704  cveyssiere@Cea.Fr   
+Voskanyan        Hakob         ErPhI
+Wojtsekhowski    Bogdan         JLab
+Zhang            Joseph         JLab
+Zheng            Xiaochao        ANL
