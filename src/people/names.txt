@@ -2,6 +2,7 @@ Tech-on-Call     ~            Hall-A   W.B.
 Cryotarg-on-Call ~            Hall-A   W.B.
 Cryo-on-Call     ~           JLabMCC   7048
 CHL-group        ~              JLab   7405
+Rad-Con          ~              JLab   7236
 Areti            Hari           JLab
 Augustine        Mark           JLab 
 Authier          Martial         CEA   4324  mauthier@Cea.Fr     

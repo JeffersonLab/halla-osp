@@ -1,6 +1,6 @@
 \chapter[Spectrometer Data Acquisition]{Spectrometer Data Acquisition
 \footnote{
-  $CVS~revision~ $Id: daq.tex,v 1.8 2003/12/17 03:59:48 gen Exp $ $
+  $CVS~revision~ $Id: daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \email{rom@jlab.org}}
 }
@@ -416,7 +416,8 @@ but there is also some online help.
 
 \section {Port Servers}
 Portservers are devices on the network that
-allow access to RS232 ports.  Here is how to 
+allow access to RS232 ports (see Table \ref{tab:daq:portservers}).
+  Here is how to 
 connect from a computer: \mycomp{telnet hatsv5 2011}
 will connect to the portserver at IP \mycomp{hatsv5}
 and port 11.  Note, the offset of 2000 is needed.
@@ -431,9 +432,23 @@ as follows \mycomp{telnet hatsv5} as user = root.
 At the prompt, type \mycomp{kill tty=4} to clear port 4,
 then \mycomp{exit}.  Now you can \mycomp{telnet hatsv5 2004}.
 
-\begin{table}\centering
-\caption[Data Acquisition: Port Servers for DAQ]{
-Port Servers for DAQ}
+
+} %infolev
+
+\infolevltone{\newpage}
+\begin{safetyen}{10}{15}
+\section{Authorized  Personnel} 
+\end{safetyen}
+The authorized personnel is shown in table \ref{tab:daq:personnel}.
+\begin{namestab}{tab:daq:personnel}{DAQ: authorized personnel}{%
+      DAQ: authorized personnel.}
+  \RobertMichaels{\em Contact}
+  \OleHansen{Computers}
+\end{namestab}
+
+\infolevthree{
+\begin{table}[htp]
+\centering
 \begin{tabular}{|l|l|l|}  \hline
 server IP &  Port & Device \\ \hline
 \mycomp{hatsv3}    &   1     &  vt100 Dumb Terminal \\
@@ -467,29 +482,23 @@ server IP &  Port & Device \\ \hline
 \mycomp{hatsv9}    &   4     &  Parity DAQ Crate \\
 \hline
 \end{tabular}
+\caption[Data Acquisition: Port Servers for DAQ]{
+Port Servers for DAQ}
+\label{tab:daq:portservers}
 \end{table}
-
 } %infolev
-
-\infolevltone{\newpage}
-\begin{safetyen}{10}{15}
-\subsection{Authorized  Personnel} 
-\end{safetyen}
-The authorized personnel is shown in table \ref{tab:daq:personnel}.
-\begin{namestab}{tab:daq:personnel}{DAQ: authorized personnel}{%
-      DAQ: authorized personnel.}
-  \RobertMichaels{\em Contact}
-  \OleHansen{Computers}
-\end{namestab}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.8 2003/12/17 03:59:48 gen Exp $
-% $Id: daq.tex,v 1.8 2003/12/17 03:59:48 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $
+% $Id: daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/17 03:59:48 $
+% $Date: 2003/12/17 05:38:13 $
 % $Name:  $
 % $Locker:  $
 % $Log: daq.tex,v $
+% Revision 1.9  2003/12/17 05:38:13  gen
+% Polishing
+%
 % Revision 1.8  2003/12/17 03:59:48  gen
 % authorized personnel tables unfied
 %

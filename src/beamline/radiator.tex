@@ -1,6 +1,6 @@
 \section[Bremsstrahlung Radiator]{Bremsstrahlung Radiator
 \footnote{
-  $CVS~revision~ $Id: radiator.tex,v 1.6 2003/12/13 06:23:37 gen Exp $ $
+  $CVS~revision~ $Id: radiator.tex,v 1.7 2003/12/17 05:38:13 gen Exp $ $
 }
 \footnote{Authors: A.Saha \email{saha@jlab.org}}
 }
@@ -145,6 +145,7 @@ The Hall A technical staff checklist, done as part of preparations for
 closing the Hall for beam, includes checking the radiator
 position, the status of the control box, and the installation of hard stops.
 
+\begin{safetyen}{10}{10}
 \subsection{Special Instructions}
 
 Care must be taken in case any removal or disassembly of the radiator
@@ -155,21 +156,41 @@ while power is on can damage the motor, motor driver, and VME44 board.
 The Cu targets will certainly be activated in the course of an experiment.
 Therefore, only remove the Cu target, the target ladder,
 and/or the whole radiator system in the presence of a Radcon officer.
+\end{safetyen}
 
+} %infolev
+
+\begin{safetyen}{10}{15}
+\subsection{ Authorized Personnel}
+\end{safetyen}
+
+\obsolete{
 Ron Gilman should be informed in case of any problems with the radiator.
 Except for normal operations of the radiator, any work on the
 system hardware requires that RadCon has concurred in the work and
 either Ron Gilman or David Meekins is present.
-
 }
+The responsible personnel is shown in Table \ref{tab:radiat:personnel}.
+\begin{namestab}{tab:radiat:personnel}{Radiator: authorized personnel}{%
+   Radiator: authorized personnel}
+  \ArunSaha{\em Contact}
+  \namestabheader{Any work on hardware should include:}
+  \RonaldGilman{Expert , or}
+  \DaveMeekins{Target group}
+  \RadCon{Concurrence}
+\end{namestab}
+
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/radiator.tex,v 1.6 2003/12/13 06:23:37 gen Exp $
-% $Id: radiator.tex,v 1.6 2003/12/13 06:23:37 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/radiator.tex,v 1.7 2003/12/17 05:38:13 gen Exp $
+% $Id: radiator.tex,v 1.7 2003/12/17 05:38:13 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/13 06:23:37 $
+% $Date: 2003/12/17 05:38:13 $
 % $Name:  $
 % $Locker:  $
 % $Log: radiator.tex,v $
+% Revision 1.7  2003/12/17 05:38:13  gen
+% Polishing
+%
 % Revision 1.6  2003/12/13 06:23:37  gen
 % Septum added. Name tables. Polishing
 %
