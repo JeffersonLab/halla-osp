@@ -15,7 +15,11 @@
 
 % \pagestyle{empty}
 \begin{titlepage}
-\title{{\bf OSP Instructions for Contributors}}
+\title{{\bf OSP Instructions for Contributors
+\thanks{
+ $CVS~revision~ $Id: main.tex,v 1.5 2003/06/06 13:54:08 gen Exp $ $
+}
+}}
 
 \author{E.Chudakov} 
 \setcounter{tocdepth}{3}
@@ -72,7 +76,7 @@
  (make your personal copy), edit the source files and commit
  your changes (write down your changes into the repository). Use
  a JLab machine, with mounted \mycomp{/group}, say \mycomp{jlabl1}, \mycomp{dlha1} etc.
- I checked the procedure only on the Linux platform.
+% I checked the procedure only on the Linux platform.
   \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
     \item Declare an environmental variable \mycomp{CVSROOT=/group/halla/analysis/cvs};
     \item \mycomp{cp /home/gen/.cvswrappers~~ $\tilde{}$/} - provide a CVS wrappers file,
@@ -401,7 +405,7 @@
   to the CVS repository by:\\
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
     \item \mycomp{cvs add {\em file}} - add a new file if needed;
-    \item \mycomp{cvs commit {\em file}} - commit the updated file.
+    \item \mycomp{cvs commit -m \"{}some comments\"{}~ {\em file}} - commit the updated file.
   \end{list}
 
 \section{Conclusion}
@@ -426,20 +430,20 @@
 \bibliographystyle{unsrt}
 \bibliography{bibl/doc}
 
-{\small
-\begin{verbatim}CVS $Id: main.tex,v 1.4 2003/06/05 23:30:00 gen Exp $\end{verbatim}
-}
 
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.4 2003/06/05 23:30:00 gen Exp $
-% $Id: main.tex,v 1.4 2003/06/05 23:30:00 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.5 2003/06/06 13:54:08 gen Exp $
+% $Id: main.tex,v 1.5 2003/06/06 13:54:08 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/05 23:30:00 $
+% $Date: 2003/06/06 13:54:08 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.5  2003/06/06 13:54:08  gen
+% unimportant improvements
+%
 % Revision 1.4  2003/06/05 23:30:00  gen
 % Revision ID is printed in TeX
 %
