@@ -1,6 +1,6 @@
 \section[General Description]{General Description
 \footnote{
-  $CVS~revision~ $Id: beam.tex,v 1.3 2003/06/06 15:19:02 gen Exp $ $
+  $CVS~revision~ $Id: beam.tex,v 1.4 2003/11/17 21:10:38 saha Exp $ $
 }
 \footnote{Authors: A.Saha \url{mailto:saha@jlab.org}}
 }
@@ -61,10 +61,9 @@ The basic Hall A beamline consists of the following:
 \vskip 0.5cm
 1. The Beam Entrance Channel
 
-The beam entrance channel consists of stainless steel tubing connected with 
-conflat type flanges. The usual opening is 2.5 inches for better vacuum 
-conductance except through magnetic and beam diagnostic elements where it is 
-usually 1 inch. Sections are isolated by vacuum valves and these are listed 
+The beam entrance channel consists of 63.5 mm inner diameter stainless steel 
+tubing connected with conflat flanges. Through magnets the inner diameter of the 
+tubing is restricted to 25.4 mm. Sections are isolated by vacuum valves and these are listed 
 in Table~\ref{tab:beam_tab1}. Each section has a roughing port and is pumped with an ion pump. 
 The pressure is about 10$^{-6}$ Torr. There are several sections along the 
 beamline where users interface their equipment. Their individual systems 
@@ -308,45 +307,55 @@ Bench & Scanner &&& IHA1C18B & 43.673 \\ \hline
 &&& Ion Pump & VIP1C20A & 34.500 \\
 &&& Ion Pump & VIP1C20B & 29.500 \\ \hline
 & Current &&& IBC1H00 & \\
-&&&& IUN1H00 & 24.500 \\
+&&&& IUN1H00 & 24.501 \\
 &&&& IBC1H00A & \\
 \multicolumn{2}{l}{Fast Raster} &&& MRA1H00H & 23.000 \\ 
-&&&& MRA1H00H & \\ 
-&&& Valve & VBV1H00 & 22.053 \\
-\multicolumn{2}{l}{eP Energy Target} &&& VTP1H00A & 21.650 \\
-&&& Ion Pump & VIP1H00A & 20.000 \\
-1H01 &&& Valve & VBV1H01 & 19.020 \\
+&&&& MRA1H00V & \\ 
+&&& Valve & VBV1H00B & 22.053 \\
+\multicolumn{2}{l}{eP Energy Target} &&& VTP1H00A & 19.999 \\
+%&&& Ion Pump & VIP1H00A & 20.000 \\
+1H01 &&& Valve & VBV1H01 & 19.018 \\
 & TV View &&& ITV1H01 & 18.938 \\
 & BPM &&& IPM1H01 & 18.650 \\
 && Quad && MQA1H01 & 18.300 \\
 && BC && MBC1H01H & 17.957 \\
-&& BC && MBC1H01V & 17.761 \\ 
+%&& BC && MBC1H01V & 17.761 \\ 
 \hline
-\multicolumn{2}{l}{Moller target} &&&& 17.5000 \\
+\multicolumn{2}{l}{Moller target} &&&& 17.500 \\
 1H02 && Quad && MQM1H02 & 16.500 \\
-&&&& VRV1H02A \\
-&&&& VTC1H02A \\
-1H03 && Quad && MQO1H03 & 15.415 \\
+%&&&& VRV1H02A \\
+%&&&& VTC1H02A \\
+1H03 && Quad && MQM1H03 & 15.415 \\
 1H03 && Quad && MQO1H03A & 14.758 \\
-Moller && Dipole && MMA1H01 & 13.272 \\
-&&& Ion Pump & VIP1H03A & 11.955 \\ \hline
-Bench && BD && MBD1H03H & 8.132 \\
-& BLM &&& IBC1H03A & 7.906 \\
-&&& Valve & VBV1H03A & 7.786 \\
-& BPM &&& IPM1H03A & 7.524 \\
-& Scanner &&& IHA1H03A & 7.353 \\
-&&& Ion Pump & VIP1H03B & 4.486 \\
-&&&& VTC1H03A & \\
-& BPM &&& IPM1H03B & 1.286 \\
-& Scanner &&& IHA1H03B & 1.122 \\
-&&& Valve & VBV1H03B & 0.953 \\ 
+Moller && Dipole && MMA1H03 & 13.272 \\
+%&&& Ion Pump & VIP1H03A & 11.955 \\ 
+1H04 && Quad && MQA1H04 & 9.362 \\
+1H04 && Quad && MQA1H04A & 8.676 \\
+\hline
+Bench && BD && MBD1H04H & 8.133 \\
+& BLM &&& IBC1H04A & 7.906 \\
+%&&& Valve & VBV1H04A & 7.786 \\
+& BPM &&& IPM1H04A & 7.517 \\
+& Scanner &&& IHA1H04A & 7.354 \\
+& BPM &&& IPM1H04BH & 6.829 \\
+& BPM &&& IPM1H04BV & 6.533 \\
+& Current &&& IBC1H04B & 6.256 \\
+&&& Ion Pump & VTP1H04 & 4.493 \\
+&&&& VTC1H04A & \\
+& BPM &&& IPM1H04CH & 3.784 \\
+& BPM &&& IPM1H04CV & 3.488 \\
+& Current &&& IBC1H04C & 3.211 \\
+& OTR &&& IOR1H04 & 2.673 \\
+& BPM &&& IPM1H04B & 2.378 \\
+& Scanner &&& IHA1H04B & 2.215 \\
+&&& Valve & VBV1H04B & 2.046 \\ 
 &&& Radiator & ERR1H & 0.726 \\ \hline
 \multicolumn{4}{l}{TARGET TV Viewer} & ITV1H03A & 0.000 \\
 \hline
 \multicolumn{2}{l}{DUMP Face} &&&& -50.000 \\
 \hline
 \caption[Beamline: Hall A Beamline Elements]{Hall A beamline elements 
-  from switchyard to Hall A beam dump (revised - 2/2/98)}
+  from switchyard to Hall A beam dump (revised - 11/17/03)}
 \label{tab:beam_tab1}
 \end{longtable}
 
@@ -397,13 +406,16 @@ dipoles turned off.
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/beam.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
-% $Id: beam.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 15:19:02 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/beam.tex,v 1.4 2003/11/17 21:10:38 saha Exp $
+% $Id: beam.tex,v 1.4 2003/11/17 21:10:38 saha Exp $
+% $Author: saha $
+% $Date: 2003/11/17 21:10:38 $
 % $Name:  $
 % $Locker:  $
 % $Log: beam.tex,v $
+% Revision 1.4  2003/11/17 21:10:38  saha
+% update
+%
 % Revision 1.3  2003/06/06 15:19:02  gen
 % Revision printout changed
 %

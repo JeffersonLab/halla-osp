@@ -1,6 +1,6 @@
 \section[Arc Energy Measurement]{Arc Energy Measurement
 \footnote{
-  $CVS~revision~ $Id: arc.tex,v 1.3 2003/06/06 15:19:02 gen Exp $ $
+  $CVS~revision~ $Id: arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $ $
 }
 \footnote{Authors: A.Saha \url{mailto:saha@jlab.org}}
 }
@@ -35,118 +35,39 @@ the arc (\char`\"{}integral\char`\"{}). To measure the energy:
 \begin{itemize}
 \item perform several angle measurements 
 \item perform an integral measurement 
-\item analyze the integral measurement and note the value of the arc field integral 
-\item analyze the angle measurements, average the results (proposed by the software),
+\item analyze the integral measurement and note the value of the arc field 
+integral 
+\item analyze the angle measurements, average the results (proposed by the 
+software),
 then ask for the energy calculation, enter the above arc field integral and
 you will get the beam energy computed from the average angle. 
 \end{itemize}
 
-\subsection{Computers and softwares used by scanners and integral: }
-
 \vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|}
-\hline 
-&
-SCANNERS&
-INTEGRAL\\
-\hline 
-\hline 
-Computer:&
-hac&
-pascal1(IP=129.57.188.20)\\
-\hline 
-type:&
-hp&
-sun\\
-\hline 
-login under:&
-gougnaud&
-gougnaud\\
-\hline 
-password:&
-see Arun&
-see Arun\\
-\hline 
-Disk mounted on CUE?&
-yes (use cp for transfer)&
-no (use ftp or rcp)\\
-\hline 
-.adl files directory:&
-\( \sim  \)/arc2/adl/&
-\( \sim  \)/EPICS/adl/\\
-\hline 
-standard .adl file:&
-ARC6.adl&
-arc\_integral.adl\\
-& & (arc\_master.adl)\\
-\hline 
-expert .adl file:&
-expert.adl&
-arc\_nmr.adl \\
-& & (arc\_pdi.adl...)\\
-\hline 
-Directive files dir.:&
-\( \sim  \)/arc2/ARC/&
-\( \sim  \)/EPICS/ioc.mg/\\
-\hline 
-standard directive file:&
-data1234 (data56)&
-magnet.dir\\
-\hline 
-output file:&
-\( \sim  \)/arc2/ARC/scan\_nnn.data&
-\( \sim  \)/EPICS/integral/\\
-& & integral\_nnn.data\\
-\hline 
-analysis code:&
-\( \sim  \)/arc2/ARC/pascal/arc-scan.sun&
-\( \sim  \)/pascal/arc-integral\\
-\hline 
-result file:&
-\( \sim  \)/arc2/ARC/scan\_nnn.data.log&
-\\
-\hline 
-ioc name:&
-arcioc (IP=129.57.188.24)&
-arcioc2  (IP=129.57.188.21)\\
-\hline 
-ioc login name:&
-None&
-target\\
-\hline 
-ioc password:&
-None&
-password\\
-\hline 
-ioc \char`\"{}iam\char`\"{}:&
-gougnaud&
-gougnaud\\
-\hline 
-ioc type and RAM size:&
-MVME162, 8Mo&
-MVME162, 8Mo\\
-\hline 
-ioc boot file:&
-\( \sim  \)/arc2/ioc/up&
-\( \sim  \)/EPICS/ioc.mg/up\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
 
 \subsection{Summary of ARC operations: }
 
 Six scanners of the same type, called \char`\"{}ARC scanner\char`\"{} and labelled
 from scanner \#1 to \#6, are installed on the Hall-A beamline. Scanners \#1
 to \#4 are used for the ARC energy measurement and they are located on the Hall-A
-arc: \#1 and \#2 just upstream of the arc, in the BSY, and \#3 and \#4 in the Hall-A
-tunnel, just upstream the Compton polarimeter. Scanners \#5 and \#6 are located
+arc: \#1 [1HA1C07A] and \#2 [1HA1C07B] just upstream of the arc, in the BSY, and 
+\#3 
+[1HA1C18A] and \#4 [1HA1C18B] in the Hall-A
+tunnel, just upstream the Compton polarimeter. Scanners \#5 [1HA1H03A] and \#6 
+[1HA1H03B] 
+are located
 between the Moller and the target to control the beam geometry on the target
 and their use will not be discussed here. 
 
+Procedure for running a harp scan is described in:
+
+\href{http://hallaweb.jlab.org/equipment/beam/harp_halla/harp.html}{scanrun}.
+
+
 Each scanner has a motor/ball-screw/shaft-encoder/vacuum-penetrator system moving
 accurately a set of 3 tungsten wires through the beam. Each time a wire crosses
-the beam a PMT located a few meters downstream records a signal due to the electromagnetic
+the beam a PMT located a few meters downstream records a signal due to the 
+electromagnetic
 shower induced by the beam in the wire. Both forward and backward passes are
 recorded. The motion is a horizontal translation and, for a forward pass: 
 
@@ -164,1060 +85,26 @@ the arc. This result measured in dispersive arc tuning, along with the field
 integral of the arc dipoles, provides an accurate determination of the beam
 energy. 
 
-The list of the operations for an ARC energy measurement is given here and will
-be detailed after: 
-
-1/check the pulser (scanners) 
-
-2/check the HV (scanners) 
-
-3/check EPICS (scanners) 
-
-4/check space on disk(scanners) 
-
-5/check the integral (see \char`\"{}Details on integral system check\char`\"{}
-below) 
-
-6/ask for chicane off, put target in a safe position, ask \( \sim\)5$\mu$A (achromatic) 
-
-7/perform a scan test in achromatic at \( \sim  \)5$\mu$A
-$-->$ solve the trips $-->$ final
-adjustment of gains of scanners \#1 and \#2 $-->$ save the last (non saturated)
-scan 
-
-8/if everything is OK, ask for dispersive beam \( \sim  \)5$\mu$A 
-
-9/check dispersive beam: 
-
--CW \( \sim  \)5$\mu$A 
-
--Fast Feedback ON 
-
--Energy Feedback ON $\leftarrow$ important 
-
--Kresting ON 
-
--arc's quads and steerers OFF 
-
--beam stable at entrance and exit (Bscope) (see the test plane of the dispersive
-mode in MCC) 
-
-10/perform a scan in dispersive at \( \sim  \)5uA (see details below) 
-
--solve the trips 
-
--finish the 4 gains adjustment 
-
--perform and save 3 good scans 
-
-11/perform a field integral (see details below) 
-
-12/restore beam for the experiment, unmask the diagnostics, restore achromatic
-mode and chicane, quit MEDM and turn both HV channels OFF. 
-
-13/analyze scan data (dispersive only) and integral data. 
-
-
-\subsection{Preliminary details about MEDM }
-
-To fill or update an input field of MEDM, put the mouse cursor in the field,
-do the edit or change, and then PRESS CARRIAGE RETURN WHILE THE CURSOR IS STILL
-INSIDE THE FIELD!!! 
-
-
-\subsection{Details on pulser check }
-
-A pulser is used to trigger the scanner acquisition. The ARC scanner's pulse generator
-(middle counting room) must be adjusted on 1000Hz for CW beam (on \char`\"{}external
-trigger\char`\"{} in pulsed mode, for any scanner). Check the output with a
-scope. 
-
-Settings for CW mode:
-
--frequency: 1KHz 
-
--delay: not important in CW, should be always 0. 
-
--time width: 10$\mu$s 
-
--level: 2.5V on 50 $\Omega$ load, 5V on 1 M$\Omega$, polarity: + (TTL). 
-
-
-\subsection{Details on HV check }
-
-The energy measurement uses scanners \#1 to \#4 with PMT read out. One PMT (PMT0)
-is in the BSY reading scanners \#1 and \#2. One other is in the Compton region
-(PMT1), reading scanners \#3 and \#4. They both are energized by the \char`\"{}beam
-line HV module\char`\"{}, card\#1 channel\#0 (PMT0) and channel\#1 (PMT1), under
-EPICS control of the general Hall A control. Both voltages must be -1200V, make
-sure that \char`\"{}Meas. V\char`\"{} indicates this voltage. If needed, push
-on \char`\"{}enable/disable\char`\"{} or edit the \char`\"{}SET V\char`\"{}
-field. 
-
-
-\subsection{Details on EPICS check (scanners) }
-
--login as \char`\"{}gougnaud\char`\"{} on hac, you need to know the password,
-ask Arun Saha. If you connect by \char`\"{}cd \( \sim  \)gougnaud\char`\"{},
-you will not be able to edit the command file nor save the data. hac$>$ cd arc2/adl
-hac$>$ medm\& 
-
--on the medm access window, click on \char`\"{}file\char`\"{}, and then \char`\"{}open\char`\"{} 
-
--in the open file window, select \char`\"{}ARC6.adl\char`\"{}; the ARC window
-must appear then 
-
--on the medm access window, click on \char`\"{}execute\char`\"{} 
-
--if then the ARC window remains partly blank, or if you have some doubt about
-the identity of the program running in the ioc, go to the \char`\"{}reboot ioc\char`\"{}
-section below. 
-
-
-\subsection{Details on ioc reboot (scanners) }
-
-Reboot arcioc by pushing the \char`\"{}Beamline Arc Measurement VME Reset\char`\"{}
-green button (middle counting room): the arcioc is loaded from the \char`\"{}up\char`\"{}
-file. If the ARC window (in execute mode) was not blank, it becomes blank, then
-wait for 1 minute and it returns to grey: the scanner is then operational. If the
-ioc is not dead, you can also reboot it by software through the network: 
-
-hac$>$rlogin arcioc 
-
-$->$ reboot (the rlogin connection is then broken by the reboot) 
-
-10/98:The hard reboot (green button labelled \char`\"{}ARC\char`\"{}) is temporarily
-connected also to another VME crate (e,p energy measurement), use it only if
-e,p is not running. 
-
-
-\subsection{Details on disk space check (scanners) }
-
-Run the \char`\"{}quota -v\char`\"{} UNIX command under \( \sim  \)gougnaud/arc2/ARC: 
-
-Filesystem usage quota limit timeleft files quota limit timeleft 
-
-/u/home 119308 512000 512000 924 -1 -1 
-
-Do it several times, sometimes the answer is crazy! In the above example you
-have about 400Mo free, a scan file of scanners \#1 to \#4 (energy measurement)
-occupies about 1Mo when unzipped and 300Ko when zipped, so you have room for
-\( \sim  \)400 unzipped files or \( \sim  \)1200 zipped files. 
-
-
-\subsection{Details on running a scan }
-
--On the MEDM screen load \char`\"{}data1234\char`\"{} as Command File. Content
-of \char`\"{}data1234\char`\"{}: 
-
-+1 P 5. 
-
-+2 P 5. 
-
-+3 P 5. 
-
-+4 P 5. 
-
--1 P 5. 
-
--2 P 5. 
-
--3 P 5. 
-
--4 P 5. 
-
-means: use scanners \#1 to \#4, do first the 4 forward pass and then the 4 backward
-ones (to give the wires time to cool down) at 5 turns/s = 12.500 mm/s. Warning:
-lower velocity may cause the wire to melt. An error message will be edited if
-the velocity is outside {]}0., 6.1 t/s{[}. P is for PMT readout (S for Secondary
-emission for scanners \#5 and \#6). The file is in \( \sim  \)gougnaud/arc2/ARC.
-In pulsed mode (60Hz) use a velocity of 0.3 turn/s. You need to edit a special
-file setting this velocity. On the MEDM screen update CW/60Hz, beam current
-and DISPersive/ACHROmatic (for the record). 
-
--Push \char`\"{}START\char`\"{} when ready, you can follow the operations by
-looking at: 
-
--running command: the line of the \char`\"{}Command file\char`\"{} currently
-executed 
-
--the cursor position of the scanners 
-
--voltage versus position plot. The location of the 6 scanners on the MEDM window
-is the following: 
-
 \vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|}
-\hline 
-\#1&
-\#2\\
-\hline 
-\hline 
-\#3&
-\#4\\
-\hline 
-\#5&
-\#6\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-The forward plot is green, the backward one is red. In case of saturation, redo
-the scan with lower gain (see details below). The only peak used for energy
-measurement is the rightmost one (H profile produced by the V wire): focus on
-this peak to adjust the gain, the 2 other peaks may saturate. 
-
--the names on the top of the plots are the CEBAF device names of the scanners. 
-
-WARNING: operating at too high a beam current or too small a velocity may cause
-the wire to melt, with no opportunity to repare it before the next shutdown.
-The total travel time is about 15 s per scanner. During the travel, have a look
-at the beam current. If the beam trips, inquire why, correct if it was caused
-by the scan (set masks), and redo the scan (see details on trips below). 
-
--Save the data (see details below). 
-
--Print the MEDM window (see details below). 
-
--you can plot the profile (see details below). 
-
-After the scan, check the peak (rightmost) quality: it must be compact (Gauss
-curve) with a good signal/noise ratio ($>$5) If scan \#1 and \#2 are not compact:
-report to MCC and make sure that the fast feedback is ON. If scan \#3 and \#4
-are not compact: report also to MCC and make sure that the energy feedback and
-the kresting are ON. 
-
-If the scan seems OK: start a field integral measurement and
- report to \\
- \char`\"{}saha@jlab.org\char`\"{} \\
-with as much details as possible (at least the file names) for data analysis
-and beam energy determination. Record the mail in the e-logbook. Don't forget
-to save the files. 
-
-
-\subsection{Details on MEDM window print }
-
-To print the MEDM window: put the mouse cursor somewhere in the background part
-of the ARC window (outside the plots), push the mouse right button, select print,
-release the button. It should go on \char`\"{}cha1hp\char`\"{} if you work from
-the counting house. 
-
-
-\subsection{Details on profile plot }
-
-To plot the profile: use your favorite curve plotter (hvplot, xmgr...) The scan
-file is a plain ASCII file with a line per acquisition (trigger) and two float
-per line: position in encoder unit (4096.0 per 2.500 mm or turn) and voltage
-after gain in V. First the forward profile with increasing \char`\"{}x\char`\"{},
-then the backward one, with decreasing \char`\"{}x\char`\"{} (x=coordinate transverse
-to the beam and horizontal. Towards beam right for scanners \#1 to \#4, towards
-beam left for \#5 and \#6). Some lines are header lines. In this case the 1st
-character is a \char`\"{}!\char`\"{} seen as a comment line by hvplot (needs
-to be changed for other plotters). The rightmost peak (high x values) was produced
-by the vertical wire (it is a pure horizontal profile), the 2 other peaks by
-the +45deg. and -45deg. wires. 
-
-
-\subsection{Details on gain adjustment (scanners) }
-
-Adjust the gain of the signal amplifier to get {]}-10V, +10V{[} at the input
-of the ADC, range= 001, 002, 004,...128, 256. 
-
-Gain adjustment: in the ARC scanner MEDM window, click (right
-button for Arun Saha,
-left one in general!) on the gain command button located close to the plot of
-the profile of the scanner you want to adjust. Then select a gain and release
-the mouse. 
-
-After a scan: 
-
--Select higher gain if the rightmost peak is $<$ 3V (in absolute value) 
-
--Select lower gain if the scanner saturates. To know if the scanner saturates,
-do not believe the MEDM plot (on which several adjacent channels are averaged),
-trust the red diode associated to each scanner (close to the plot). If you want
-to know what these diodes look like, click on \char`\"{}edit\char`\"{} on the
-MEDM access window: you will see the diodes. Then return to \char`\"{}execute\char`\"{}. 
-
-Start with the gains (dispersive case): 
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|}
-\hline 
-scanner&
-gain\\
-\hline 
-\hline 
-\#1&
-4\\
-\hline 
-\#2&
-8\\
-\hline 
-\#3&
-32\\
-\hline 
-\#4&
-32\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-Note that in dispersive mode the beam is dispersed at scanners \#3 and \#4 locations,
-so these scanners need a higher gain than \#1 and \#2. 
-
-To zoom on a peak, change the MEDM parameters of the window (\char`\"{}edit\char`\"{}): 
-
--first determine the range (in mm) on which you want to zoom 
-
--on the MEDM access window, push on \char`\"{}edit\char`\"{} 
-
--on the ARC window, click anywhere inside the plot you want to change 
-
--on the \char`\"{}Resource Palette\char`\"{}, go down to \char`\"{}Axis Data\char`\"{},
-select it 
-
--on the \char`\"{}Cartesian Plot Axis Data\char`\"{}, in the \char`\"{}X Axis\char`\"{}
-part (X means horizontal), change \char`\"{}Axis Range\char`\"{} from \char`\"{}auto-scale\char`\"{}
-to \char`\"{}user-specified\char`\"{}, then edit \char`\"{}Minimum Value\char`\"{}
-and \char`\"{}Maximum Value\char`\"{} to specify the horizontal range you want
-to look at, the unit is mm. If you used the \char`\"{}edit\char`\"{} facility
-of MEDM, it will suggest that you save the changes when killing the window. Do
-not save the changes! 
-
--on the MEDM access window, push on \char`\"{}execute\char`\"{} 
-
-Short-cut: push on the right button while the cursor is inside the plot, you
-will access directly to the MEDM axis data menu Other MEDM tricks (may depend
-on the version of MEDM you are running): 
-
--Control+middle button+vertical drag will scale the plot up or down 
-
--Shift+middle button+drag will translate the plot. 
-
-
-\subsection{Details on file save (scanners) }
-
-To save the data in a disk file: push on \char`\"{}Save\char`\"{}. The software
-builds automatically a name of the type: \char`\"{}scan\_nnn.data\char`\"{},
-where nnn is the scan run number, incremented automatically. The current run
-number is stored on disk, so unless a disk crashes, you can reboot the VME or
-delete a data file without resetting this number. Read the run number on the
-MEDM screen and record the file name in the e-logbook. The file will be stored
-in \( \sim  \)gougnaud/arc2/ARC. As the file is big (2{*}7000 channel histogram
-per scanner), purge or compress your own data files. \( \sim  \)gougnaud belongs
-both to hac and the CUE, thanks to Javier. So you do not need \char`\"{}ftp\char`\"{}
-to copy it inside the CUE; the cp command works as far as you have the good
-file access. Write in the e-logbook the final path of the file in the CUE. \\
-
-
-Example of scan file: scan\_159.data \\
-
-
-!version:2 
-
-!THU MAY 27 12:55:25 1999 
-
-!CW ,CW\_60Hz, beam time structure 
-
-! 5.000,Microamp, beam current in microamp 
-
-!ACHRO,DISPersif\_ACHROmatique, arc optics tuning 
-
-data1234,Command\_Filename 
-
-! 
-
-!+1 P 1 5. ,Current\_Command\_Line 
-
-!IHA1C07A a,p,TJ\_Device\_Name 
-
-!-1. ~p,Displacment\_X, dimensionless, X=beam left 
-
-!0. ~p,Displacment\_Y, dimensionless, Y=top vertical (Z=beam) 
-
-!1 ~,Rod\_Serial\_Number 
-
-!235360 ~p,Fiducial\_To\_Beam\_Micron (at survey scanner position) 
-
-!1 ~,Cartridge\_Serial\_Number 
-
-!81270 ~a?,p,Cartridge\_Range\_Micron 
-
-!20 ~,Wire\_Diameter\_Micron 
-
-!W ~,Wire\_Material 
-
-!3 ~p,Number\_Of\_Wire 
-
-!20 ~p,Survey\_Wire\_Diameter\_Micron (Wire used for above data) 
-
-!284375,257840,234730 p,Fidicial\_To\_Wire\_Micron 
-
-!.707,0.,-.5 p,Differential\_Fiducial\_To\_Wire (per micron of wire diam) 
-
-!44.97,-45.04,-0.06 p,Angle\_Degree (around Z axis, =0 when perp. to displ.) 
-
-!0.,0.00315,0. p,Differential\_Angle\_Degree\_Per\_Micron (of wire diam) 
-
-!4096 ~a,p,Encoder\_Home 
-
-!118405 ~p,Encoder\_Survey (Survey of 11 Aug 98) 
-
-!1 ~a?,p,Encoder\_Sign (+1 if increase at forward) 
-
-!4096 ~a?,p,Encoder\_unit\_per\_Turn 
-
-!10 ~a?,p,Motor\_Micro\_Step\_Per\_Step 
-
-!200 ~a?,p,Motor\_Step\_Per\_Turn 
-
-!2500 ~a?,p,Screw\_Pitch\_Micron 
-
-!1 ~a? ,Motor\_Polarity (used for forward displacment) 
-
-!begin forward 1 Time Stamp (s)=0 
-
-4093.0 -0.002 
-
-4093.0 0.007 
-
-4093.0 0.007 
-
-........ 
-
-135163.0 -0.002 
-
-135163.0 0.002 
-
-!end forward 1 Time Stamp (s)=1305473 
-
-!-1 P 1 5. ,Current\_Command\_Line 
-
-!begin backward 1 Time Stamp (s)=1305498 
-
-135163.0 0.007 
-
-135163.0 0.007 
-
-........ 
-
-4092.0 0.002 
-
-4092.0 0.002 
-
-!end backward 1 Time Stamp (s)=1305505 
-
-!+2 P 2 5. ,Current\_Command\_Line 
-
-!IHA1C07B a?,p,TJ\_Device\_Name 
-
-!-1. ~p,Displacment\_X, dimensionless, X=beam left 
-
-!0. ~p,Displacment\_Y, dimensionless, Y=top vertical (Z=beam) 
-
-!4 ~,Rod\_Serial\_Number !235120 ~p,Fiducial\_To\_Beam\_Micron (at survey scanner
-position) 
-
-!4 ~,Cartridge\_Serial\_Number 
-
-!81270 ~a?,p,Cartridge\_Range\_Micron 
-
-!20 ~,Wire\_Diameter\_Micron 
-
-!W ~,Wire\_Material 
-
-!3 ~p,Number\_Of\_Wire 
-
-!20 ~p,Survey\_Wire\_Diameter\_Micron (Wire used for above data) 
-
-!284310,257775,234665 p,Fidicial\_To\_Wire\_Micron 
-
-!.707,0.,-.5 p,Differential\_Fiducial\_To\_Wire (per micron of wire diam) 
-
-!45.08,-44.96,0. p,Angle\_Degree (around Z axis, =0 when perp. to displ.) 
-
-!0.,0.00315,0. p,Differential\_Angle\_Degree\_Per\_Micron (of wire diam) 
-
-!4096 ~a,p,Encoder\_Home 
-
-!118407 ~p,Encoder\_Survey (Survey of 11 Aug 98) 
-
-!1 ~a?,p,Encoder\_Sign (+1 if increase at forward) 
-
-!4096 ~a?,p,Encoder\_unit\_per\_Turn 
-
-!10 ~a?,p,Motor\_Micro\_Step\_Per\_Step !200 ~a?,p,Motor\_Step\_Per\_Turn 
-
-!2500 ~a?,p,Screw\_Pitch\_Micron 
-
-!1 ~a? ,Motor\_Polarity (used for forward displacment) 
-
-!begin forward 2 Time Stamp (s)=0 
-
-4092.0 -0.007 
-
-4092.0 0.017 
-
-......
-
-...... 
-
-4090.0 0.032 
-
-4090.0 0.129 
-
-!end backward 4 Time Stamp (s)=1305529
-
-
-\subsection{Details on trip handling }
-
-Trips are frequent at 5$\mu$A, caused by scanners \#3 and \#4 and triggered by the
-Compton ion chamber or BLM, even with chicane OFF. They are invasive for the
-other halls. If a trip occurs, write in the e-logbook which scanner, forward/backward
-(for this, you have to monitor the beam current during the scan), beam current,
-arc tuning mode, which diagnostic tripped (ask MCC), get a strip chart of
-this diagnostic (MCC). Contact the beamline coordinator ( Arun Saha) or the
-hall leader (Kees de Jager) to allow MCC to mask the diagnostic. But in any case start
-with unmasked diagnostics to have all safety systems responding. If masking
-is impossible or not sufficient, reduce the beam current down to 1$\mu$A but the
-quality of the energy measurement will then be affected by the poor signal/noise
-ratio. 
-
-If the trip occurred from scanner \#3 or \#4 during the preliminary test in
-achromatic mode, leave this step and ask for dispersive mode. In this mode,
-due to the dispersion of the beam, the luminosity will be reduced and hopefully
-the trip will not occur. Nevertheless, the test in achromatic mode is useful
-to check the system (including the trip protection!) and to anticipate a gain
-change for scanners \#1 and \#2. 
-
-
-\subsection{Detail on encoder change (scanner) }
-
-The main screw shaft is coupled to the stepper motor by a bellow coupler (bellow
-\#1) and the motor to the encoder by a second bellow coupler (bellow \#2). If
-for any reason (encoder change, motor change, one of the bellows slept) the
-angular relationship between the screw and the encoder is lost, then: 
-
--these two objects must be linked again in good angular agreement (see detail) 
-
--the theodolite survey of the bench must be redone (see detail) 
-
-
-\subsection{Detail on encoder re-mount (scanner) }
-
-The procedure is based on 2 rules: 
-
--the \char`\"{}home\char`\"{} position is defined by an encoder reading=4096
-enc. units 
-
--this \char`\"{}home\char`\"{} position must be at about 1/2 turn (\( \sim  \)2048=1.25mm)
-from the Low Limit Switch (LLS) transition. So this transition must happen
-at encoder reading \( \sim  \)2048. 
-
--if the Low Limit Switch was also changed, then the rule is that the external
-fiducial must be at 230mm from the beam nominal axis when the encoder reading
-is 118407 (\char`\"{}survey\char`\"{} position). This rule needs the help of
-a survey. 
-
-The procedure is the following: 
-
--by software (see \char`\"{}scanner expert task detail\char`\"{}) or by hand
-(by acting on the bellow \#1), set the scanner in the convenient position (LLS
-or survey): 
-
--decouple the bellow \#2 
-
--connect the encoder to the control box readout 
-
--by hand turn the encoder shaft up to have a good reading 
-
--strongly fasten the coupler \#2 Note: the encoder is absolute over 64 turns
-with 4096 units per turn. So, starting from 0 and turning it clockwise, one
-should read: 
-
--4096 after one turn 
-
--8192 after two turns 
-
--... 
-
--up to 262143 just (one puls) before 64 turns 
-
--0 again one puls after. 
-
--4096 after one turn .... 
-
-
-\subsection{De
-tails on scanner expert task }
-
-The path of the \char`\"{}expert task\char`\"{} MEDM file is
- given in the first subsection. 
- Use this task to set the encoder in any position between the limit switches,
-to dismount the wire cartridge, to set the encoder,... 
-
--Call this task in MEDM. 
-
--You get a small window with a blue button. 
-
--Left click on it: it gives you a choice between the 4 ARC scanners. 
-
--Select the scanner you are interested in, then release the left mouse button. 
-
--An \char`\"{}Expert-task\char`\"{} bigger window appears. 
-
--In this new window, left click on the blue button \char`\"{}click to initialize...\char`\"{}. 
-
--Then the designated scanner name is displayed on the top of the window. 
-
--Edit the motion you want in the \char`\"{}First goal\char`\"{} input field.
-This is an ABSOLUTE position (i.e. not an increment), from an origin which can
-be arbitrary, in unit of motor micro-step. +2000 microstep= +1 turn= +4096 encoder
-units, so one has 2.048 encoder units per microstep. 
-
--push on \char`\"{}Pos$-->$0\char`\"{} to set to zero the \char`\"{}Motor current
-position\char`\"{} register. The current scanner position becomes the new origin
-of the motor positions. -once the motor position is entered, push on \char`\"{}1
-WAY\char`\"{} to execute the motion 
-
--If you want to move the scanner fron its current position by 10mm towards the
-beam, and if the current position is 100000, then enter 100000.+(10./2.500)x2000.=108000.,
-and push on \char`\"{}1 WAY\char`\"{}. 
-
--If you want to go to the LLS position, enter a large negative value like -1000000,
-and push on \char`\"{}1WAY\char`\"{} Note: Limit switches will not stop the
-motor at a very reproducible position.
-
-
-\subsection{Detail on theodolite survey of a bench }
-
-The goal is to measure the H angle between the segment joining the fiducials
-of the 2 scanners of the bench in their \char`\"{}survey\char`\"{} position,
-and the normal to the autocollimation mirror associated with this bench. The
-procedure is the same for both benches, except that: -the upstream one needs
-a BSY access, the downstream one just a Hall A access, providing the light tubes
-were left in straight position. 
-
--the upstream angle is \( \sim  \)0, only affected by a change in the scanners;
-the downstream one is \( \sim  \)6 deg and it can be affected by a change in
-the scanners or by a motion of the tunnel. 
-
--the upstream autocollimation is at short distance, the downstream one is at
-long distance, through the light tubes, and the line of sight is bent by a pair
-of mirrors, both at forward and at backward pass. 
-
-The procedure is: 
-
--using the \char`\"{}expert task\char`\"{} (see detail), set both scanners in
-their \char`\"{}survey\char`\"{} position (encoder=118407+-2) 
-
--install the theodolite on its support and level it carefully. 
-
--mount the battery (2 autocollimation batteries and chargers are stored in the
-shed, make sure the batteries are charged) 
-
--push the \char`\"{}ON/Enter\char`\"{} button, the bottom display prompts \char`\"{}V
-zero 1\char`\"{} 
-
--release the \char`\"{}V\char`\"{} break (small knob of the top pair of knobs) 
-
--initialize the V (Vertical angle) encoder by turning slowly and continuously
-the optics around the horiz. axis in a direction, until you get a beep and \char`\"{}V
-zero 2\char`\"{} displayed. Then turn in the opposite direction, until you get
-a beep and \char`\"{}A zero\char`\"{} displayed in the top display. 
-
--release the \char`\"{}A\char`\"{} break (small knob of the bottom pair of knobs) 
-
--initialize the A (Horizontal angle) encoder by turning slowly and continuously
-the whole theodolite around its vertical axis, until you get a beep and \char`\"{}Theo\char`\"{}
-displayed in the top display. Push \char`\"{}ON/Enter\char`\"{} button to accept
-the proposed \char`\"{}theodolite\char`\"{} menu. 
-
--from this point, \char`\"{}V\char`\"{} and \char`\"{}A\char`\"{} angles will
-be permanently displayed in their own displays, in units of decimal degrees from
-0.0000 to 359.9999 If the decimal part is not displayed, correct the levelling. 
-
-Note: the origin of the A angles is arbitrary (this is not the case 
-for the V angles), so you may decide to set it to zero, for example at the first
-autocollimation measurement: this way, the measured angles will be more intuitive.
-To do this: 
-
--from the \char`\"{}THEOD\char`\"{} menu push on \char`\"{}+\char`\"{} (means
-go to the next menu called \char`\"{}SET A\char`\"{}) 
-
--\char`\"{}SET A\char`\"{} menu is proposed: push \char`\"{}enter\char`\"{}
-to accept, you have a \char`\"{}WAIT\char`\"{} displayed, after which the angles
-are displayed again, but with A=0.0000. 
-
--push \char`\"{}-\char`\"{} to proceed: the sub-menu \char`\"{}MEAS P\char`\"{}
-is proposed, you must accept (\char`\"{}enter\char`\"{}), you have then the
-angles displayed, push \char`\"{}-\char`\"{} to come back to the \char`\"{}THEOD\char`\"{}
-menu, then push \char`\"{}enter\char`\"{} to accept it, you should still have
-A=0.0000: you have a new origin of the A angles.
-
--measure the autocollimation angle: 
-
--open the light tube 
-
--plug the autocollimation light cable 
-
--turn ON the autocollimation power switch on the battery 
-
--adjust the autocollimation power potentiometer to half range 
-
--remove the theodolite handle, to let the cable go through. 
-
--adjust the occular (small knob on the optics) to your vision, until you have
-the cross hairs well focused 
-
--adjust the main focusing (large knob on the optics) to infinity (turn counter
-clockwise up to the limit and come back by \( \sim  \)1/4 turn) 
-
--adjust the V angle to 90.00?? deg.: first move the optics, second
-fasten the V break and use the V knob. 
-
--adjust the A angle to point in the direction of the light tube: first move
-the theodolite, second fasten the A break and use the A knob. 
-
--using the A knob, search for a light signal 
-
--focus on it (main focusing): the autocollimation pattern is a yellow/green cross 
-
--adjust A and V angles to get the cross hairs on the autocollimation cross,
-fine adjust both focusings, then check if the pattern you have is the good one
-(there are 2 wrong autocollimation patterns): when you change by a small amount
-the A/V angle, then the A/V coincidence between both crosses must be destroyed.
-If it is not the case, you are focusing on one of the two wrong patterns. Then
-change the main focusing towards infinity (counter clockwise) to get another
-patern. 
-
--fine adjust the autocollimation power potentiometer to get the best vertical
-line of the autocollimation cross -fine adjust A and V angles, record their
-values in the Shed logbook. 
-
--change both angles by 180.000 deg., WITHOUT CHANGING THE MAIN FOCUSING, and
-redo the previous step. 
-
--close the light tube 
-
--turn OFF the autocollimation power switch on the battery, Note: the above measurement
-is easy from upstream, more tricky from downstream (long distance autocollimation).
-New operators should start with the upstream measurement.
-
--measure the scanner \#2/\#3 (the one which is on the autocollimation side) 
-
--remove the scanner cover -unplug the connexion of the encoder to the VME -plug
-the control box on the fiducial lamp and on the encoder 
-
--record the encoder reading in the logbook. It should be \( \sim  \)118407+-2 
-
--adjust the main focusing on the fiducial wire 
-
--adjust the V angle to the middle of the aperture across which the wire appears
--fine adjust the A angle, record A and V values in the Shed logbook. 
-
--change both angles by 180.000 deg., WITHOUT CHANGING THE MAIN FOCUSING, and
-redo the previous step. 
-
--record the encoder reading in the logbook. It should give the previous reading
-+-1 encoder unit 
-
--unplug the control box 
-
--plug the connexion of the encoder to the VME 
-
--cover the scanner, Note: in case of scanner \#2, a foil closing the apertures
-in the mirror support must de removed prior to the survey, and reinstalled after.
-
--measure the scanner \#1/\#4 as for \#2/\#3
-
--re-measure the autocollimation angle.
-
--turn OFF the theodolite (push simultaneously the + and - buttons) 
-
--release both breaks 
-
--mount the handle 
-
--dismount the theodolite 
-
--dismount the battery and the autocollimation cable 
-
--store the theodolite in its box 
-
--store the theodolite box and the control box in the Shed 
-
--charge the battery(ies)
-
-Note: in case you have to change the battery during the measurement, redo the
-complete measurement with the new battery. A battery in good shape can provide
-\( \sim  \)2h of work with autocollimation ON. The survey of
-a bench will take between 1h and 1/2h. If possible, discharge the battery before
-charging it.
-
--analyze the angle: 
-
--in the directory \( \sim  \)gougnaud/arc2/ARC/angles, edit a plain ASCII file
-named upstream\_ddmmyy.dat or downstream\_ddmmyy.dat, depending on the bench,
-where ddmmyy stands for the date of the survey. Use upstream\_270798.dat or
-downstream\_270798.dat as a model. Units are encoder unit and decimal degrees.
-If several measurements of the same quantity were done, enter the average. If
-the full measurement of a bench was done twice, edit both sets of data as in
-the model. 
-
--run \char`\"{}angle\char`\"{} on a Sun machine and follow the instructions
-of the program, accept the proposed mirror calibration angle and ask for an
-average of all your measurements. If only one bench was measured (encoder change,
-BSY closed,...), use for the other bench the most recent file available in \( \sim  \)gougnaud/arc2/ARC/angles. 
-
--analyze individual measurements and compare them to the above average. The
-reproducibility of the reference angle measures several times on the same day
-should be $\leq$ 10-3 deg (17 urad \( \sim  \)3 10-5 on the energy). 
-
--compare the new average to the previous one: if nothing changed in the scanners,
-and if only the downstream angle changed, this can be interpreted as a motion
-of the arc (the code gives the detail of the 3 angles: upstream, downstream
-and reference). 
-
--the files used today (01/07/99) are upstream\_250699.dat (1 meas.) and downstream\_250699.dat
-(2 meas.). They result in a reference angle of 34.32322 deg. (averaged) 
-
--write the new reference angle in the arc-scan source code (include file \char`\"{}arc-incl-plot.f\char`\"{},
-parameter \char`\"{}Reference\_Angle\_Degree\char`\"{}) 
-
--compile and test the arc-scan code. 
-
--report in the e-logbook about the changes and results (file names).\\
-
-
-Example of upstream file: upstream\_250699.dat (1 meas.)\\
-
-
-UPSTREAM BENCH MEASUREMENT 
-
-{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*} 
-
-Used unit: decimal degrees 
-
-Enter data in this order: 
-
-\begin{itemize}
-\item - Autocollimation 
-\item - Fiducial upstream of upstream bench \#1 
-\item - Fiducial downstream of upstream bench \#2 
-\end{itemize}
-- Horizontal Distance (point A, up. fiducial)= 1996.00 mm \#1 
-
-- Horizontal Distance (point A, down. fiducial)= 1975.00 mm \#2 \\
-
-
-{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*} 
-
-25/06/99 Andrew+Tim Mesur. Nb 1 
-
-First measurement on 25/06 
-
-Encoder reading for upstream scanner of upstream bench: 118406 \#1 
-
-Encoder reading for downstream scanner of upstream bench: 118406 \#2 
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|c|c|}
-\hline 
-H1&
-H2&
-V1&
-V2&
-\\
-\hline 
-\hline 
-0.000100&
-179.995500&
-90.002100&
-270.003500&
-Autocoll.\\
-\hline 
-359.977700&
-179.973900&
-250.509900&
-109.498800&
-\#1\\
-\hline 
-179.970000&
-359.967100&
-250.382500&
-109.619700&
-\#2\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-
-Example of downstream file: downstream\_210699.dat (2 meas.) \\
-
-DOWNSTREAM BENCH MEASUREMENT \\
-
-{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*} 
-
-Used unit: decimal degrees 
-
-Enter data in this order: 
-
-\begin{itemize}
-\item Autocollimation 
-\item Fiducial upstream of down. bench \#3 
-\item Fiducial downstream of down. bench \#4 
-\end{itemize}
-
-- Horizontal Distance (point A, up. fiducial)= 1870.00 mm \#3 \\
-- Horizontal Distance (point A, down. fiducial)= 1840.00 mm \#4 \\
-
-
-{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*} 
-
-21/06/99 Pascal Mesur. Nb 1 
-
-First measurement on 21/06 
-
-Encoder reading for upstream scanner of downstream bench: 118405 \#3 
-
-Encoder reading for downstream scanner of down. bench: 118408 \#4
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|c|c|}
-\hline 
-H1 &
-H2&
-V1&
-V2&
-\\
-\hline 
-\hline 
-0.000100&
-179.998050&
-90.001400&
-270.000000&
-Autocoll\\
-\hline 
-6.100100&
-186.10110&
-110.667500&
-249.336900&
-\#3\\
-\hline 
-6.176100&
-186.175700&
-249.129900&
-110.876300&
-\#4 \\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*} 
-
-21/06/99 Pascal Mesur. Nb 2 
-
-Second measurement on 21/06 
-
-Encoder reading for upstream scanner of downstream bench: 118405 \#3 
-
-Encoder reading for downstream scanner of down. bench: 118408 \#4
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|c|c|}
-\hline 
-H1&
-H2&
-V1&
-V2&
-\\
-\hline 
-\hline 
-0.000100&
-179.998100&
-90.003800&
-270.003000&
-Autocoll.\\
-\hline 
-6.100800&
-186.100400&
-110.667600 &
-249.338500&
-\#3\\
-\hline 
-6.176000&
-186.176100&
-249.130700&
-110.875600 &
-\#4 \\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-
-\subsection{More on the theodolite menu }
-
-It is a 2-level menu, the entry point after power ON and indexes initialization
-is at the 2nd level (Theodolite ?), the +/- buttons are used to navigate among
-several choices, the \char`\"{}enter\char`\"{} button to validate the currently
-proposed choice. In the above list, \char`\"{}+\char`\"{} will move to the next
-option (down), \char`\"{}-\char`\"{} to the previous one (up), and \char`\"{}enter\char`\"{}
-will answer \char`\"{}yes\char`\"{} to the proposition. In some cases (SET A)
-the choice is just yes/no. Then \char`\"{}enter\char`\"{} means \char`\"{}yes\char`\"{}
-and \char`\"{}+\char`\"{} or \char`\"{}-\char`\"{} means \char`\"{}no\char`\"{}:
-
-1st level menu: 
-
-\begin{itemize}
-\item $--->$M (Measure)? 
-\item A (Adjust)? 
-\item U (Unit)?
-\end{itemize}
-2nd level menu M (Measure): 
-
-\begin{itemize}
-\item $--->$ M-0 Return to 1st level? 
-\item M-2 THEODOLITE? $--->$ theodolite 
-\item M-5 Zero angle? $--->$ A=0,Set angle? $--->$ Set A to value 
-\item M-7 Hold angle? $--->$ Hold angle
-\end{itemize}
-2nd level menu A (Adjust): 
-
-\begin{itemize}
-\item --$->$ A-0 Return to 1st level? 
-\item A-1 Adjust V index?$--->$Adjust V index 
-\item A-2 Adjust A coll.?-$->$Adjust A coll. 
-\item A-4 Illumin. ON/OFF?-$->$Change Illumin. mode? 
-\item A-5 Compensator ON/OFF?-$->$Change Compens. mode? 
-\item A-6 Levelling with compensation ?-$->$Levelling
-\end{itemize}
-2nd level menu U (Unit): 
-
-\begin{itemize}
-\item $--->$ U-0 Return to 1st level? 
-\item U-1 Reverse A reading?$--->$Reverse A reading 
-\item U-2 Change V display?-$->$Select this V display? 
-\item U-3 Change angle unit?-$->$Sel. this angle unit? 
-\item U-7 Sound ON/OFF?-$->$Change Sound mode? 
-\item U-8 Select configuration?-$->$Select this configur?
-\end{itemize}
 
 \subsection{Summary of field integral }
 
-The purpose is to measure absolutely the straight field integral of a \char`\"{}BA\char`\"{}
+The purpose is to measure absolutely the straight field integral of a 
+\char`\"{}BA\char`\"{}
 3m long dipole, called the \char`\"{}9th dipole\char`\"{} and located in the
 \char`\"{}Dipole Shed\char`\"{}. It is of the same type as the 8 arc dipoles
 and is powered in series with them. 
 
-The ARC integral setup is basically made of a 3m long plate (the \char`\"{}probe\char`\"{})
-which is able to move inside the 9th dipole gap along the beam axis and carrying two
+The ARC integral setup is basically made of a 3m long plate (the 
+\char`\"{}probe\char`\"{})
+which is able to move inside the 9th dipole gap along the beam axis and carrying 
+two
 field measurement devices: a pair of pick-up coils connected in series and a
 set of NMR probes. The coils are on both ends of the probe and the NMRs close
 to the center. 
 
--at the \char`\"{}upstream\char`\"{} probe position, the \char`\"{}downstream\char`\"{}
+-at the \char`\"{}upstream\char`\"{} probe position, the 
+\char`\"{}downstream\char`\"{}
 coil is close to the dipole center, the \char`\"{}upstream\char`\"{} is outside
 the dipole and the NMRs at one end of the dipole: 
 
@@ -1232,7 +119,8 @@ Door$<-$-- ...................$<-$-------DIPOLE-----$--->$
 
 ..................................$<-$-------PROBE------$--->$ 
 
--at the \char`\"{}downstream\char`\"{} probe position, the \char`\"{}upstream\char`\"{}
+-at the \char`\"{}downstream\char`\"{} probe position, the 
+\char`\"{}upstream\char`\"{}
 coil is close to the dipole center, the \char`\"{}downstream\char`\"{} is outside
 the dipole and the NMRs at one end of the dipole: 
 
@@ -1241,8 +129,10 @@ Door$<-$-- ...................$<-$-------DIPOLE-----$--->$
 ....................................................$<-$-------PROBE------$--->$ 
 
 We call upstream the position where the probe is the closest to the shed access
-door. Among the 3 above positions, the only one where the NMR can lock on the dipole
-field is the central one as in the extreme position of the probe, the field homogeneity
+door. Among the 3 above positions, the only one where the NMR can lock on the 
+dipole
+field is the central one as in the extreme position of the probe, the field 
+homogeneity
 is not sufficient. The probe position is controlled by a linear encoder. The
 Z axis refers to the \char`\"{}beam\char`\"{} direction, increasing from upstream
 to downstream. We use three kinds of \char`\"{}Z\char`\"{}: 
@@ -1276,7 +166,8 @@ to a limit (optic) switch.
 -move downstream by a few mm to cross the encoder index (encoder initialization) 
 
 -move to the central position to measure the central field by NMR, the system
-checks if the NMR locks and if the reading is stable, it will be the \char`\"{}before\char`\"{}
+checks if the NMR locks and if the reading is stable, it will be the 
+\char`\"{}before\char`\"{}
 field 
 
 -move back to upstream position 
@@ -1290,17 +181,20 @@ system, this measurement will be called the \char`\"{}backward\char`\"{} integra
 (duration \( \sim  \)7s) 
 
 -move to the central position to measure the central field by NMR, the system
-checks if the NMR locks and if the reading is stable, it will be the \char`\"{}after\char`\"{}
+checks if the NMR locks and if the reading is stable, it will be the 
+\char`\"{}after\char`\"{}
 field. 
 
 In addition to the central field, 4 probe temperatures, a local excitation current
 measurement, the setting of the dipoles P.S, the readback of the dipoles P.S
-and the probe position at NMR measurement time are recorded \char`\"{}before\char`\"{}
+and the probe position at NMR measurement time are recorded 
+\char`\"{}before\char`\"{}
 and \char`\"{}after\char`\"{}. 
 
 To perform an integral field measurement: 
 
-1-check if the system works (see \char`\"{}details on integral system check\char`\"{}
+1-check if the system works (see \char`\"{}details on integral system 
+check\char`\"{}
 below) 
 
 2-run the above integral sequence (see \char`\"{}details on integral run\char`\"{}
@@ -1315,204 +209,18 @@ below)
 5-analyze the data (see Arun Saha). 
 
 
-\subsection{Shed access and safety }
-
-For safety reasons, the access to the shed is limited to authorized
-persons which are listed in the ESAD. To be added to the list, ask the Hall-A leader. The standard
-operation mode of the integral measurement setup is the remote mode, through
-the network, from the counting house. In case of problem needing an access in
-the shed, unauthorized users must contact Arun Saha.
-
-
-\subsection{Details on integral system check }
-
-First - from any workstation or X-terminal connected by telnet to pascal1 workstation,
-run MEDM with arc\_master.adl data file (see Arun for the password of gougnaud
-on pascal1 and the first subsection for the path of arc\_master.adl). If pascal1 is not
-responding, go in the shed and check UPS (see \char`\"{}Details on AC power
-(integral)\char`\"{} below). If the UPS is not beeping, check the room temperature.
-If the temperature is above 35C, the thermal protection of the workstation is
-probably activated, see \char`\"{}detail on temperatures\char`\"{} below. If
-the temperature is below 35C, ask the computer center to restart pascal1. 
-
-Second - check if the 4 temperatures and the 3 currents are stable, in agreement between
-them and if the beam energy computed from the current is realistic compared
-to what you know from MCC. In not, call Arun. If the IOC is dead (all displays
-on \char`\"{}arc-master.adl\char`\"{} are blank), reboot the ioc (see \char`\"{}integral
-ioc reboot\char`\"{} below) Note: the current/field ratio is about 1000A/1.98T
-and the energy/field ratio is 12.03 GeV/T. The current used by MCC for the accelerator
-tuning is the set current. The readback can be different from the set by 0.1A.
-The local current can be different from the set by 5A. For the temperatures
-see \char`\"{}detail on temperatures\char`\"{} below. 
-
-Third - check if the NMR is locked. If not see \char`\"{}details on NMR lock\char`\"{}
-below, 
-
-Forth - check if the NMR reading is stable within 10-5 relative (P.S. stability).
-If not, inquire about a recent or running setting change by the MCC. If necessary
-call Arun Saha. 
-
-
-\subsection{Details on NMR lock }
-
--check if the dipole current is above 22A. The integral setup can't work for
-lower currents (22A \( \sim  \) .043T \( \sim  \)517MeV), due to the NMR probe
-limitation. 
-
--check if the probe is at a central position, corresponding to Zd\( \sim  \)1604mm.
-It should be at this position if no special motion was ordered since the previous
-integral measurement. If not, enter 1604 RETURN in the \char`\"{}set Zd position\char`\"{}
-input field, wait for the end of the motion (look at cursor and position readback
-labelled \char`\"{}out\char`\"{}) and wait for the NMR lock for up to 1 minute.
-Note: due to the software, the position readback may be updated \( \sim  \)10
-seconds after the real probe motion. Zd\( \sim  \)0mm is for the upstream position,
-\( \sim  \)1604mm for the central position and \( \sim  \)3208mm for the downstream
-position. If the probe does not obey, call Arun. If Arun is not available, reboot
-the ioc (see \char`\"{}integral ioc reboot\char`\"{} below) 
-
--check if the NMR probe selected is the good one. The system has 4 probes to
-cover the field/energy range {[}0.043T/0.517GeV,1.05T/12.63GeV{]}. The software
-selects automatically the probe from an estimated field and the following range
-table (from file \char`\"{}magnet.dir\char`\"{}): 
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|}
-\hline 
-mini&
-maxi&
-probe\\
-\hline 
-\hline 
-T&
-T&
-\\
-\hline 
-0.043&
-0.1254&
-\# 1\\
-\hline 
-0.1250&
-0.250&
-\# 2\\
-\hline 
-0.177&
-0.470&
-\# 3\\
-\hline 
-0.338&
-1.06&
-\# 4\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-The estimated field is computed from the \char`\"{}set\char`\"{} current and
-the coefficients given above. Note that there is an overlap between the range
-of each probe. In the standard mode (\char`\"{}auto selection\char`\"{}), two
-selection algorithms are used: 
-
--initial selection: select the probe in which the estimated field will be the
-most \char`\"{}centred\char`\"{} 
-
--routine check: change the probe only if the estimated field is outside the
-selected probe range. 
-
-Initial selection is executed at boot time, at each integral start and when
-you leave the \char`\"{}manual selection\char`\"{} optional mode. 
-
-The routine check is performed periodically. 
-
-In some cases in the past this algorithm did not select the best probe. If it
-occurs again, force the probe selection by opening arc\_nmr.adl medm screen,then
-switch to manual selection mode, click on the probe you want to select and wait
-for NMR lock. Don't forget to return to the \char`\"{}auto selection\char`\"{}
-mode before leaving the integral measurement. Report about the problem in the
-e-logbook. 
-
--expert users can also use nonstandard search modes and DAC values as proposed
-by the arc\_nmr.adl screen (\char`\"{}Dac Value\char`\"{}, \char`\"{}Dac+-5\%\char`\"{}
-and \char`\"{}All Probes Range\char`\"{}). Note that \char`\"{}Dac Value\char`\"{}
-needs a scope. They are asked to restore the standard mode (\char`\"{}SeLected
-Probe Range\char`\"{}) at the end. The DAC to field relationship used by the
-software is linearly interpolated in the table (from file \char`\"{}magnet.dir\char`\"{}): 
-
-\vspace{0.3cm}
-{\centering \begin{tabular}{|c|c|c|c|c|c|}
-\hline 
-dac=0&
-dac=1000&
-dac=2000&
-dac=3000&
-dac=4095&
-Probe\\
-\hline 
-\hline 
-T&
-T&
-T&
-T&
-T&
-\\
-\hline 
-.040362&
-.05388&
-.07443&
-.104184&
-.132404&
-\# 1\\
-\hline 
-.080713&
-.107771&
-.148845&
-.208340&
-.264790&
-\# 2\\
-\hline 
-.161430&
-.215539&
-.297680&
-.416680&
-.529570&
-\# 3\\
-\hline 
-.322870&
-.431112&
-.595471&
-.833455&
-1.059210&
-\# 4\\
-\hline 
-\end{tabular}\par}
-\vspace{0.3cm}
-
-Note: as the 9\( ^{th} \) dipole has a uniform field, there is no gradient
-coil around the probes and the lock is in general easier to obtain than with
-the HRS dipoles. Nevertheless some difficulties may occur at low field due to
-the hysteresis gradient. The NMR system is the same as for the HRS (Metrolab)
-but the EPICS implementation is different. The field polarity is \char`\"{}+\char`\"{}.
-Some lock problems may apear in the {[}60A,70A{]} range. In this case select
-the \char`\"{}Dac+-5\%\char`\"{} option, compute the approximate field as explained
-above, estimate the corresponding DAC value from the table above (depending
-on field value and probe \#), set this estimated value in the arc\_nmr.adl screen,
-correct this setting by using the \char`\"{}+\char`\"{}, \char`\"{}++\char`\"{},
-\char`\"{}-\char`\"{}, and \char`\"{}--\char`\"{} buttons up to have the \char`\"{}OUT
-IN T\char`\"{} value close to the field you computed, and then wait for the
-lock. It should work, you have 100s to get the lock at the begining and at the
-end of the integral sequence! The best is to get the lock by this way before
-starting the integral sequence. 
-
-
 \subsection{Details on integral run }
 
-To run the integral measurement sequence, call the \char`\"{}arc\_integral.adl\char`\"{}
-medm screen on pascal1 (see \char`\"{}Details on integral system check\char`\"{}
-above), then: 
+To run the integral measurement sequence, call the 
+\char`\"{}arc\_integral.adl\char`\"{}
+medm screen, then: 
 
 -push \char`\"{}start\char`\"{} to start the full sequence 
 
 -look at the results displayed: 
 
--after the \char`\"{}before\char`\"{} NMR measurement: the \char`\"{}before\char`\"{}
+-after the \char`\"{}before\char`\"{} NMR measurement: the 
+\char`\"{}before\char`\"{}
 data set 
 
 -after the \char`\"{}forward\char`\"{} integral pass: the forward velocity profile
@@ -1521,197 +229,26 @@ and the forward voltage-after-gain profile
 -after the \char`\"{}backward\char`\"{} integral pass: the backward velocity
 profile and the backward voltage-after-gain profile 
 
--after the \char`\"{}after\char`\"{} NMR measurement: the \char`\"{}after\char`\"{}
+-after the \char`\"{}after\char`\"{} NMR measurement: the 
+\char`\"{}after\char`\"{}
 data set 
 
 -if \char`\"{}BAD NMR\char`\"{} or \char`\"{}PDI saturation\char`\"{} flags
-are set, or if something is obviously wrong in the data or plots, fix the problem
-(see \char`\"{}Details on integral error\char`\"{} below) and start a new integral
-run. 
+are set, or if something is obviously wrong in the data or plots, call expert. 
 
 -data are ready to be saved (see \char`\"{}Details on integral data save\char`\"{}
 below) 
-
-
-\subsection{Details on integral error }
-
--\char`\"{}BAD NMR\char`\"{} flag is set if at least one of the 4 NMR status
-(locked and stable, before and after) is wrong 
-
--the full NMR field measurement is made of 3 successive elementary measurements
-separated by a 5s delay. 
-
--the \char`\"{}lock\char`\"{} status is set to wrong if at least one of the
-3 NMR measurements did not lock before a 100s timeout. The measurement sequence
-is aborted as soon as a measurement does not lock, so the maximum time one has
-to wait for a full NMR measurement is about 100s (in case of a zero current
-measurement for example) 
-
--the \char`\"{}stable\char`\"{} status is set to wrong if the 2nd or the 3rd
-field values differs from the 1st by more than 5 10-4 relative. In any case,
-the field value returned is the last one. 
-
--\char`\"{}In position\char`\"{} is set to false if the probe position was outside
-1604.0+-0.1mm at NMR measurement time. 
-
--\char`\"{}PDI saturation\char`\"{}: the PDI (Mertolab's Precision Digital Integrator)
-consists in a programmable amplifier and a VFC integrator working in the {[}-5V,
-+5V{]} input range. The PDI gain is the result of an automatic selection in
-the {[}1,2,5,10,...1000{]} range, similar to the NMR probe selection. In case
-of a wrong gain selection (maximum voltage after gain, as plotted in the MEDM
-screen, outside the {[}1.5V,5V{[} range), call the \char`\"{}arc\_pdi.adl\char`\"{}
-MEDM screen to switch the gain selection mode from \char`\"{}auto\char`\"{}
-to \char`\"{}manual\char`\"{} and then select manuallay the gain. Return to
-\char`\"{}auto\char`\"{} mode before leaving the integral measurement. 
-
--\char`\"{}before\char`\"{} and \char`\"{}after\char`\"{} data must be very
-close: $<$ 0.1 C difference for the temperatures of a given probe, <0.1A for the
-currents and <10-5 for the field. 
-
--plots: the blue curves are from forward pass, yellow ones for backward pass. 
-
--the top plot gives the probe velocity (in m/s) as function of its position
-(in mm). The forward velocity should be +0.6m/s everywhere except at the center
-where it is reduced to +0.06m/s. The backward velocity plot should be the mirror
-image of the forward ons (-0.6 and -0.06m/s) 
-
--the bottom plot gives the coil voltage after gain (in V) as function of the
-probe position (in mm). It should be a null voltage everywhere except a set
-of oscillation at the center. The backward voltage plot should be the mirror
-image of the forward one (V-$->$-V). See \char`\"{}PDI saturation\char`\"{} above. 
-
--to zoom a MEDM plot, see \char`\"{}Details on gain adjustment (scanners)\char`\"{}
-above. 
-
-
-\subsection{Details on integral data save }
-
-The procedure to save the datafile from \char`\"{}arc-integral.adl\char`\"{}
-is the sane as for the scanners (see \char`\"{}Details on file save (scanners)\char`\"{}
-above), with an independent integral run number. The file name will be of the
-type \char`\"{}integral-nnn.data\char`\"{}, stored on pascal1 in \( \sim  \)gougnaud/EPICS/integral/.
-As pascal1 disk is not mounted on the CUE, use ftp or rcp to move the file to
-the CUE. 
-
-The size of a file is 207Ko. 
-
-The data file is made of: 
-
--a header containing basically the \char`\"{}before\char`\"{} and \char`\"{}after\char`\"{}
-data 
-
--the forward integral data 
-
--the backward integral data. 
-
-Forward end backward integral data are made of 3200 lines of 3 data each: 
-
--a line per trigger, i.e. per mm of probe motion over the 3.2m of the total
-motion. The first trigger line is missing. 
-
--the first data of the line is the probe position in mm, which should be a round
-value from 1.000mm to 3199.000mm at forward pass and from 3199.000mm to 1.000mm
-at backward pass, 
-
--the 2nd data are the flux increment measured during the current step (i.e. between
-the previous trigger and the current one) in unit of 10-8Vs, corrected from
-the gain. 
-
--the 3rd data are the time of the trigger since the start, in microsecond units. 
-
-These field increments,like the scan profiles, can be plotted by standard plotters,
-see \char`\"{}Details on profile plot\char`\"{} above. The curve plotted online
-in \char`\"{}arc-integral.adl\char`\"{} is the time derivative of the above
-flux data, multiplied by the gain to get the input VFC voltage after gain.\\
-
-
-Example of an integral file:\\
-
-
-!ARC magnetic measurement integral data file 
-
-!version:1 
-
-!date: THU MAY 27 15:28:09 1999 THU MAY 27 15:29:21 1999 
-
-!local current (A) 142.25 142.25 
-
-!remote current set (A) 140.11 140.11 
-
-!remote current readout (A) 140.15 140.14 
-
-!NMR field (T) 0.2752619 0.2752621 !NMR locked? T T 
-
-!NMR stable? T T 
-
-!NMR in position? T T 
-
-!Zd plate position (mm) 1604.003 1604.003 
-
-!temperature x+,z+(deg.C) 33.2 33.1 
-
-!temperature x+,z-(deg.C) 32.8 32.7 
-
-!temperature x-,z+(deg.C) 31.1 31.1 
-
-!temperature x-,z-(deg.C) 31.1 31.1 
-
-!PDI gain: 10 
-
-!NMR probe: 3 
-
-!forward data: 
-
-1.000 -100 5138 
-
-2.000 200 9695 
-
-3.000 -100 13830 
-
-4.000 150 17611 
-
-5.000 0 21096 
-
-6.000 200 24340 
-
-....... 
-
-3198.000 -100 7051626 
-
-3199.000 150 7058284 
-
-!end forward, start backward 
-
-3199.000 -50 5160 
-
-3198.000 -50 9730 
-
-..... 
-
-2.000 -100 7052428 
-
-1.000 -50 7059066 
-
-!end backward
-
-
-\subsection{Integral ioc reboot }
-
-One of the VME boards (PMAC's motor board) has its own internal boot process
-triggered at \char`\"{}power on\char`\"{} time. So the usual boot procedure
-(red push button on the ioc or reboot command through the network) is not sufficient
-to make sure that the integral VME is correctly initialized. Thus, boot the
-VME by switching the AC power of the VME crate OFF and ON. The AC power switch
-is located in the lower part of the crate front panel. 
 
 
 \subsection{Details on temperatures }
 
 The AC system of the shed is made of two cooling units, a heating unit and a
 controller connected to two temperature sensors : one located in the shed and
-one located in the BSY. This system is programmed in such a way that the temperature
+one located in the BSY. This system is programmed in such a way that the 
+temperature
 of the shed follows the BSY temperature within +-2C. The BSY temperature can
-be anywhere in the {[}18C,35C{]} range, regardless of the season. The BSY temperature
+be anywhere in the {[}18C,35C{]} range, regardless of the season. The BSY 
+temperature
 and the shed temperature are given (in F) by a display panel located close to
 the workstation, on the wall. The AC system can be set in manual control by
 turning from \char`\"{}auto\char`\"{} to \char`\"{}manual\char`\"{} a set of
@@ -1730,11 +267,14 @@ Tx-z- depending on their position w.r.t. the following (x,z) frame:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
 
-Door$< -${}-{}-~~~~~~~~~~~$< -${}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-D~I~P|O~L~E~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}$->$~
+Door$< -${}-{}-~~~~~~~~~~~$< 
+-${}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-D~I~P|O~L~E~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}$-
+>$~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
 
-~~~~~~~~~~~~~~~~~~~$< -${}-{}-{}-{}-Tx+z-~-{}-{}-{}-{}-{}-{}-|-{}-{}-{}-{}-{}-Tx+z+-{}-{}-{}-{}-{}$->$~
+~~~~~~~~~~~~~~~~~~~$< 
+-${}-{}-{}-{}-Tx+z-~-{}-{}-{}-{}-{}-{}-|-{}-{}-{}-{}-{}-Tx+z+-{}-{}-{}-{}-{}$->$~
 
 ~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~|~
 
@@ -1744,7 +284,9 @@ Door$< -${}-{}-~~~~~~~~~~~$< -${}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-D~I~P|O~L~E~-
 
 ~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~P~R~O~B~E~~~~~~~~~~~~~|~
 
-~~~~~~~~~~~~~~~~~~~$< -${}-{}-{}-{}-Tx-z-~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-Tx-z+-{}-{}-{}-{}-{}$->$
+~~~~~~~~~~~~~~~~~~~$< 
+-${}-{}-{}-{}-Tx-z-~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-Tx-z+-{}-{}-{}-{}-{}$-
+>$
 \end{lyxcode}
 
 Both \char`\"{}x+\char`\"{} sensors are on the probe edge which is inside the
@@ -1754,7 +296,8 @@ the long dimension of the probe and both z+ at 3/4 of this length. The average
 of the 4 temperatures is used by the analysis program to correct the coil distance
 from the thermal expansion of the probe, so it is important to make sure that
 the 4 sensors are working well. The user can just make sure that the temperatures
-displayed in \char`\"{}arc-master.adl\char`\"{} or recorded in \char`\"{}arc-integral.adl\char`\"{}
+displayed in \char`\"{}arc-master.adl\char`\"{} or recorded in 
+\char`\"{}arc-integral.adl\char`\"{}
 are realistic. In \char`\"{}arc-integral.adl\char`\"{} they are given in the
 order: Tx+z-, Tx+z+, Tx-z-, Tx-z+ Tx-z- and Tx-z+ should be close to the shed
 temperature. Tx+z- and Tx+z+ depend on the probe position, as the gap (iron
@@ -1766,248 +309,66 @@ and the magnet/shed temperature history. The 4 temperatures are also displayed
 inside the shed, on the electronics rack. These values are digitized by separate
 ADCs, so they may differ from the remote values by \( \sim  \)0.1C. 
 
+\subsection{Shed access and safety }
 
-\subsection{Details on AC power (integral) }
+For safety reasons, the access to the shed is limited to authorized
+persons which are listed in the ESAD and listed below. To be added to the list, 
+ask the 
+Hall-A leader. 
+The standard
+operation mode of the integral measurement setup is the remote mode, through
+the network, from the counting house. In case of problem needing an access in
+the shed, unauthorized users must contact Arun Saha.
 
-All the shed electronics and computer (except the motor power, see details about
-the Power Switch below) are powered through a UPS (Uninterruptible Power Supply)
-whose role is to protect the setup from short (\( \sim  \)1/4 h) power outages
-and to convert the US AC power (60Hz, 200V between two phases) in a well stabilized
-AC power of European type (220V, 50Hz). When working in the shed, be careful
-about the electrical hazard as the setup can remain powered a long time after
-interrupting the UPS input (see \char`\"{}Shed access and safety\char`\"{} above). 
+\subsection{List of Authorized Personnel for Shed Access}
 
-The UPS unit is located under a table, in front of the electronics rack. It
-has a display, a small keyboard and a beeper. The beeper activated means that
-some important message about the UPS is displayed. In this case, use the keys
-to scan the UPS memory, read the messages, record them in the e-logbook, stop
-the beeper and inform Arun. Refer to the UPS manual (available in the shed)
-for details of operation. 
 
+Pascal Vernin
 
-\subsection{Details on mechanics (integral) }
+Jacques Marroncle
 
-The probe is capable of a fast motion (\( \sim  \)1m/s) and it is hazardous to
-access or to introduce something inside the device, under the altuglass covers,
-or to dismount a cover. It is also hazardous to manipulate the motor shaft (see
-\char`\"{}Shed access and safety\char`\"{} above). To do it safely, the user
-must first turn off the motor power box. The power box is located under the
-motor. It has two external switches: one controlling the logics and one controlling
-the power: 
+Christian Veyssiere
 
-%\newpage
+Francois Gougnaud
 
-\begin{lyxcode}
-~~~~~~~~~~~~~~~~~~~~~Logics~switch~
+Arunava Saha
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
+Mike Tiefenback
 
-(TOP~VIEW)~~~~~~~~~~~~~~~~~~|~
+Yves Roblin
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~V~~
+Rick Gonzales
 
-.~~~~~~~~~~~~~~~~~~~~~~~~-{}-{}-{}-{}-{}-{}-~~~~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-~
+Bill Merz
 
-.~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~|~~|~~~$< -${}-{}-{}-{}-{}-{}-DIPOLE-{}-{}-{}-{}-{}$->$~~~|~
+Mark Augustine
 
-.~~~~~~~~~~~Power~box-{}$->$|~~~~~~~|~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
+Hari Areti
 
-DOOR$< -${}-{}-~~~~~~~~~~~~~~~~|~~~~MOTOR-|~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
+Pete Francis
 
-.~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~|$< -${}-{}-Power~switch~~~~~~~~~~~~~~|~
+Douglas Higinbotham
 
-.~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~|~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
+Scott Higgins
 
-.~~~~~~~~~~~~~~~~~~~~~~~~-{}-{}-{}-{}-{}-{}-~~~~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-~
-\end{lyxcode}
+David Seidman
 
+Ron Lauze
 
-It is important NOT to switch off the logics (some data in memory will be lost),
-but to switch off the motor power (see the exact Power switch location above)
-prior to any intervention on the mechanics. The detailed procedure is the following: 
+Tony Day
 
--turn OFF the power switch 
-
--wait for \( \sim  \)1min to empty its buffer-capacitor 
-
--you can work safely on the mechanics 
-
--make sure that the path of the probe is free (tools...) and the
- covers are in position 
-
--turn the power switch back ON 
-
--reboot the VME (see \char`\"{}Integral ioc reboot\char`\"{} above) 
-
-The above procedure may be necessary if, for some reason, the probe went outside
-its allowed range limited by a pair of electric limit switches. The probe range
-is limited by the following set of devices: 
-
--upstream energy damper for Zd in {[}-40.,-14.mm{]} 
-
--upstream electric limit switch for Zd$<-$7.5mm 
-
--upstream optic limit switch for Zd$<-$3.8mm 
-
-(operation range, 3.2m long) 
-
--downstream optic limit switch for Zd>3200.8mm 
-
--downstream electric limit switch for Zd>3212.3mm 
-
--downstream energy damper for Zd in {[}3214.,3238.mm{]} 
-
-The current status of the 4 limit switches is given in the \char`\"{}arc-master.adl\char`\"{}
-screen. Optical limit switches are used for the encoder initialization procedure
-(see \char`\"{}Summary of field integral\char`\"{} above). Electric limit switches
-should never be activated. But if this happens, then the motor control: 
-
--stops the motor 
-
--raises an error flag (the letted \char`\"{}d\char`\"{} for defect is displayed
-inside the power box, the usual display being a vertical segment) 
-
--waits for a manual repositioning of the probe inside its allowed range and
-for a reboot of the VME. 
-
-The manual repositioning of the probe inside its allowed range can be done safely
-by manipulating the motor shaft while the motor power is off, according to the
-above procedure. 
-
-
-\subsection{Details on detailed field mapping }
-
-The main use of the integral setup is to measure the integral of the 9th dipole
-along a straight line, located on the axis of the pole tips. By moving (manually)
-the dipole in the transverse direction and then performing the integral sequence,
-one will measure the integral along different axes, and hence
-extract the gradient of the dipole integral (used to determine the dipole positionning tolerances).
-By inserting a jumper (short) on one of the pick-up coils and reducing the gain
-of the PDI, the same sequence as for the integral will provide, after a specific
-analysis, the field profile of the dipole as seen by the other coil. This profile
-will cover one half of the magnet, including one of the two fringing fields.
-Reduce the PDI gain by one step ( example: if the automatic gain is 10, select
-manually 5) By inserting the jumper on the other coil, one can get the other
-half profile. These two single coil measurements will provide together the complete
-profile of the dipole including both fringing fields. For the central part,
-where the field is uniform, more accurate data can be taken using the NMR probes.
-Here, there is no change in the hardware, but one must use a specific software:
-the \char`\"{}mapping\char`\"{} MEDM window. By combining, for a set of transverse
-positions: 
-
--standard integral measurement 
-
--upstream profile (upstream coil alone) 
-
--downstream profile (downstream coil alone) 
-
--NMR map of the plateau, 
-
-one gets a 2D map of the dipole field in its mid-plane with an optimum accuracy
-and redundancy and a minimum time spent by the operator. This 2D map is used
-to get the straight-to-curved correction to the integral and a set of tolerances.
-
-Call \char`\"{}medmMew\char`\"{} (and NOT \char`\"{}medm\char`\"{}), then open
-\char`\"{}arc\_map.adl\char`\"{}, as this display is written in a new version
-of MEDM. Due to a bug in this Solaris/MEDM combination, you must enter the name
-of the display in the open menu, you can't just click on the display file name.
-You then get the \char`\"{}ARC-MAPPING\char`\"{} screen. You must define the
-position inside the magnet (Zm) where you want to measure the field, inside the
-{[}-1500mm,+1500mm{]} range. The software will compute the probe position Zd
-depending on the NMR probe selected (automatic or manual selection). You have
-to define 3 regions, where the steps may differ. Edit the fields: 
-
--STARTING Zm 
-
--region 1 : NUMBER OF STEPS and STEP SIZE, then the intermediate position
-Zm is computed automatically by the software as a result of the above input 
-
--region 2 : NUMBER OF STEPS and STEP SIZE, then the intermediate position
-Zm is computed as above 
-
--region 3 : NUMBER OF STEPS and STEP SIZE, then the final position
-Zm is computed as above. 
-
-Then push \char`\"{}Start\char`\"{}. It takes about 20s per
-point, unless there is a lock
-problem, where it can take up to 100s (timeout). If the NMR does not lock
-even far from the ends, push \char`\"{}Stop Map here\char`\"{}, use the DAC+-5\%
-lock mode (see \char`\"{}detail on NMR lock\char`\"{}), and start a new map. 
-
-Note: after \char`\"{}Stop Map here\char`\"{} the incomplete map can still be
-saved. Use \char`\"{}Stop\char`\"{} in case of emergency, and then reboot the
-VME (see detail). 
-
-The measured fields are displayed on the screen as a function of Zm. The sequence
-is: 
-
--a measurement at Zm=0, called \char`\"{}Bref1\char`\"{} 
-
--the list of measurement you entered 
-
--a measurement at Zm=0, called \char`\"{}Bref2\char`\"{}. 
-
-When done, save the data by pushing \char`\"{}Save\char`\"{}. The file is numbered
-automatically, the name is of the type mapping\_nnn.data, where \char`\"{}nnn\char`\"{}
-stands for the map number. The directory is given by the MEDM screen. An example
-of file (\char`\"{}mapping\_7.data\char`\"{}) is given below (EPICS was not
-responding for the P.S. readback and set, the real current was 90A):
-
-!ARC magnetic measurement mapping data file 
-
-!version:1 
-
-!date: SAT JUN 12 04:49:40 1999 SAT JUN 12 05:41:32 1999 
-
--1460.00 50 20.00 
-
--460.00 46 20.00 
-
-460.00 50 20.00 
-
-!temperature x+,z+(deg.C) 29.8 30.2 
-
-!temperature x+,z-(deg.C) 31.7 32.0 
-
-!temperature x-,z+(deg.C) 28.4 28.2 
-
-!temperature x-,z-(deg.C) 28.6 28.2 
-
-!tal nbr pts: 146 
-
-!initial \& final NMR probe: 2 2 
-
-Zm (mm), B (T), NMR lckd, NMR flag,local crt(Vadc),crt set(A),crt rdt(A) 
-
-0.00 0.1770036 1 1 92.19 0.04 0.00 
-
--1460.00 0.1770068 1 1 92.19 0.04 0.00 
-
--1440.00 0.1770157 1 1 92.19 0.04 0.00 
-
-....... 
-
-1439.99 0.1770756 1 1 92.19 0.04 0.00 
-
-1460.00 0.1770665 1 1 92.19 0.04 0.00 
-
-0.00 0.1770044 1 1 92.19 0.04 0.00 
-
-!end
-
-Note: \char`\"{}1\char`\"{} is the normal status for NMR lock and NMR (stability)
-flag. The lines \#4,\#5 and \#6 of the header give the data entred by the operator.
-The result is a map from -1460 to +1460mm with an uniform 20mm step size. This
-input is the standard one for the needs of ARC.
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/arc.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
-% $Id: arc.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 15:19:02 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $
+% $Id: arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $
+% $Author: saha $
+% $Date: 2003/11/17 21:11:03 $
 % $Name:  $
 % $Locker:  $
 % $Log: arc.tex,v $
+% Revision 1.4  2003/11/17 21:11:03  saha
+% update
+%
 % Revision 1.3  2003/06/06 15:19:02  gen
 % Revision printout changed
 %
