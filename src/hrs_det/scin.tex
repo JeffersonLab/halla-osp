@@ -1,350 +1,263 @@
+
 \section[Trigger Scintillator Counters]{Trigger Scintillator Counters
-\footnote{
-  $CVS~revision~ $Id: scin.tex,v 1.3 2003/06/06 17:00:27 gen Exp $ $
-}
-\footnote{Authors: Dr.No \url{mailto:????@jlab.org}}
+  \footnote{
+    $CVS~revision~ $Id: scin.tex,v 1.4 2003/11/11 20:13:58 feuerbac Exp $ $
+  }
+  \footnote{Authors: Robert Feuerbach \url{mailto:feuerbac@jlab.org},
+    Bogdan Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
 \subsection{Overview}
 
-On each HRS the detector system has two planes of trigger
-scintillators S1 and S2.
-The HA detector stack includes an optional third plane, S3.
-The mounting schemes
-of these planes are different. S1 is clamped to the detector
-frame through an additional Al channel,
-while S2 is assembled on a sub frame, which can slide on rails into the
-detector frame.
-S3 has strong a heavy sub frame, which can be mounted on the top
-of the HA detector frame. Figure ~\ref{fig:s1mount} shows the
-mounting scheme for S1.
+\newcommand{\unit}[1]{\,\mbox{\ensuremath{\mathrm{#1}}}}
+
+In the standard detector configuration each HRS has two trigger
+scintillator planes, S1 and S2. The paddles in each plane are arranged to
+provide segmentation along the detector-x direction. An additional
+un-segmented scintillator plane, S0, can 
+optionally be inserted into the detector stack. Fast signals from
+these planes are used to form the trigger, as well as providing timing
+information useful for particle identification.  Typically a coincidence between
+two-or-more scintillator planes is used to form the trigger, and
+through different combinations the triggering effiency of each plane can
+be measured.
 
 \begin{figure}[tbh]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig5}
-{\linespread{1.}
-\caption[Detectors: S1 Mounting]{S1 mounting}
-\label{fig:s1mount}}
-\end{center}
+  \begin{center}
+    \includegraphics[angle=0,width=\textwidth]{scint_fig5}
+    \caption[Detectors: S1 Mounting]{S1 mounting}
+    
+    \label{fig:s1mount}
+  \end{center}
 \end{figure}
+The S1 scintillator plane consists of six paddles, each with an active area
+of 29.5~cm by 35.5~cm. The counters are made of 5 mm thick BICRON 408
+plastic scintillator and use multi-strip adiabatic light guides which end
+in a long cylindrical spool. There is an inlet for optical fiber mounted on
+the side of the cylindrical light guide. Each paddle is viewed by two 2"
+photo multiplier tubes (Burle 8575).  The S1 paddles are installed at a
+small angle to the S1-plane and overlap by 10 mm.  The detectors are
+clamped to the detector frame through an additional A1 channel, and
+supported from the PMT housings. Figure ~\ref{fig:s1mount} shows the
+mounting scheme for S1. Signals from the PMTs are sent to Camac modules on
+the second level of the shielding hut for processing.
 
+\begin{figure}[tbh]
+  \begin{center}
+    \includegraphics[angle=0,width=\textwidth]{scint2_layout}
+    \caption[Detectors: S2 Layout]{The layout on the frame of the S2 paddles and
+    electronics.}
+    \label{fig:s2layout}
+  \end{center}
+\end{figure}
+The S2 plane (also called S2m) consists of sixteen bars mounted on a steel
+frame, as shown in Figure~\ref{fig:s2layout}. The bars are made a fast
+plastic scintillator (EJ-230) with dimensions of 17\unit{in} by
+5.5\unit{in} by 2\unit{in} thick. Since the S2 detector is located after
+the tracking and PID 
+detectors in the HRS, the extra material does not compromise the particle
+detection while providing a greater photon yield for an improved timing
+resolution as compared to S1. The bars are individually wrapped with
+25\unit{\mu m} of mylar and 50\unit{\mu m} of black tedlar. The bars do not
+overlap, but are pressed together by a force 60~lbs to minimize the dead
+area between adjacent bars. Trapezoidal lucite light guides on both ends
+couple the bar to 2" photo multiplier tubes (Photonis XP2282B). S2 is
+assembled on a sub-frame mounted on rails in the detector frame. The bars
+are supported by two thin aluminimum honeycomb panels placed over the
+scintillators, leaving the PMTs and bases accessible for servicing. On the
+frame are mounted analog splitters and threshold discriminators for the
+initial signal processing.
 
-S1 and S2 each consist of six paddles. Each S1 paddle has an
-active area of 29.5 cm by 35.5 cm.
-Each S2 paddle has an active area of 54.0 cm by 37.0 cm. The
-counters are made of 5 mm thick BICRON 
-408 plastic scintillator and use multi-strip adiabatic light
-guides which end in a long cylindrical spool. There is an inlet
-for optical fiber mounted on the side of the 
-cylindrical light guide. Each paddle is viewed by two 2" photo
- multiplier tubes (Burle 8575).
-The S1 paddles are installed at a small angle to the average
-plane and overlap by 10 mm. They are 
-supported from PMT housings. The S2 paddles have only 5 mm
-overlap. Paddles are supported right 
-outside the active area to minimize deflection of the plastic
-scintillator and the torque applied to the mounting of the PMT housing.   
+\infolevone{
+  \subsection{PMT regime and time resolution}
+  
+  High energy electrons passing perpendicular to the S1 detector plane yield
+  about 400-500 photons at the photo cathode of each PMT. In a fresh
+  PMT this leads to 80-100 photo electrons. On the HRS the discriminators
+  have a threshold of 45 mV and a typical PMT has gain $~ 3*10^6$. The HV for
+  a fresh PMT should be in the range -1800 to -2000 V. Based on PMT pulse rise
+  time ( 2.8 ns ) and photo electron statistics the time resolution is about 0.2 ns.
+  The propagation time of the light inside the detector is about 10 ns, which
+  needs to be corrected by using track position information.
+  
+  Due to its thicker cross-section, the initial photon yield in S2 is larger
+  than in S1. With cosmic rays around 900 photo electrons per PMT were
+  observed. To match the gains, the HV on the PMTs were adjusted, and
+  set between -1700 and -2000 V.  The signals from each PMT are sent
+  to a passive 90/10\% splitter, with the greater and lesser portions sent to
+  the on-frame discriminator and Fastbus ADCs,respectively. The
+  discriminator is a Phillips-Scientific model 706 with the threshold set
+  at 10mV. Both NIM outputs are used on each channel, 
+  with one line as input for the trigger-logic and the other going to a TDC
+  after passing through a NIM-ECL converter and a delay of some 880ns. The
+  average resulting timing resolution for a single PMT was measured to be
+  better than 150 ps.
+  
+  LeCroy HV 1460 modules are used to supply HV power for the trigger
+  counters. The HV can be controlled from a VT100 terminal connected through
+  a terminal server or through the EPICS system based on the HAC computer.
+  Current HV settings for the trigger counters should be found from a
+  printout of the EPICS control in the last experimental logbook.
+  
+}
 
-\subsection{PMT regime and time resolution}
-
-High energy electrons passing perpendicular to the S2 detector
-plane yield about 400-500 photons at the photo cathode of each
-PMT. In a fresh PMT this leads to 80-100 
-photo electrons. On HRS the discriminators have a threshold of 45
-mV and a typical 
-PMT has gain $~ 3*10^6$. The HV for a fresh PMT should be in the
-range 1800 to 2000 V. Based on PMT pulse 
-rise time ( 2.8 ns ) and photo electron statistics the time
-resolution is about 0.2 ns. 
-The propagation time of the light inside the detector is about 10 ns,
-which needs to be corrected by using track position information. 
-
-LeCroy HV 1460 modules are used to supply HV power for the
-trigger counters. The HV can be controlled from 
-a VT100 terminal connected through a terminal server or through
-the EPICS system based on the HAC computer. 
-Current HV settings for the trigger counters should be found from
-a printout of the EPICS control in the 
-last experimental logbook.   
-Figures ~\ref{fig:scinhv} and ~\ref{fig:s1scinhvc} give examples
-which are included for guidance only. The settings used in the
-plots may be not correct.
-
-\begin{figure}[p]
-\begin{center}
-%begin{latexonly}
-\includegraphics[angle=90.0,height=20cm]{medm_halla_hv_hrsr_2}
+\infolevtwo{
+  Figures ~\ref{fig:scinhv} and ~\ref{fig:s1scinhvc} give examples which are included
+  for guidance only. The settings used in the plots may be not correct.
+  
+  \begin{figure}[p]
+    \begin{center}
+%\begin{latexonly}
+      \includegraphics[angle=90.0,height=20cm]{medm_halla_hv_rhrs3}
 %end{latexonly}
 \html{
-\includegraphics[angle=0,height=20cm]{medm_halla_hv_hrsr_2}
-}
-{\linespread{1.}
-\caption[Detectors: HV HRSR Summary Screen]{EPICS HV HRSR summary screen.}
-\label{fig:scinhv}}
-\end{center}
-\end{figure}
-
-\begin{figure}[p]
-\begin{center}
-%begin{latexonly}
-\includegraphics[angle=90.0,height=20cm]{medm_halla_hv_card}
+      \includegraphics[height=20cm]{medm_halla_hv_rhrs3}
+}%
+      \caption[Detectors: HV HRSR Summary Screen]{EPICS HV HRSR summary screen.}
+      \label{fig:scinhv}
+    \end{center}
+  \end{figure}
+  
+  \begin{figure}[p]
+    \begin{center}
+%\begin{latexonly}
+      \includegraphics[angle=90.0,height=20cm]{medm_halla_hv_card}
 %end{latexonly}
 \html{
-\includegraphics[angle=0,height=20cm]{medm_halla_hv_card}
+      \includegraphics[height=20cm]{medm_halla_hv_card}
 }
-{\linespread{1.}
-\caption[Detectors: HV Screen for Single Card]{HV screen for a
-single card.}
-\label{fig:s1scinhvc}}
-\end{center}
-\end{figure}
+      \caption[Detectors: HV Screen for Single Card]{HV screen for a
+	single card.}
+      \label{fig:s1scinhvc}
+    \end{center}
+  \end{figure}
+  
+}
 
-\subsection{PMT operation monitoring}
+\infolevone{
+  \subsection{PMT operation monitoring}
+  
+  There are two ways to monitor PMT/detector performance. The first is based
+  on a scaler display program which provides information about PMT counting
+  rates and coincidence counting rates.  A large variation of the rates
+  between paddles is an indication of a possible problem. The second
+  technique is to track the average amplitudes of each PMT for good track
+  events after a complete event reconstruction.  For high efficiency of the
+  trigger it is important to keep the average amplitude for the S1 PMTs above
+  600 channels. Due to the passive splitting, the S2 amplitudes should be
+  expected to be only about 50 channels above the pedestal.
+  
+  \subsection{Measures to Protect the PMTs from Helium}
+  
+  \begin{figure}[tbh]
+    \begin{center}
+      \includegraphics[width=.8\textwidth]{scint2_housing}
+      \caption[Detectors: S2 PMT Housing]{Details of the PMT Housing for S2.}
+      \label{fig:s2_pmt_housing}
+    \end{center}
+  \end{figure}
+  
+  There has been found in the past large He concentrations in Hall A, which
+  can lead to a dramatic reduction in the PMT lifetime. To mitigate this
+  problem, each PMT for S1 and S2 is enclosed in a hermetic housing. Air from
+  outdoors is supplied at a slight over-pressure. A diagram of the housing
+  for the S2 PMTs is shown in Figure~\ref{fig:s2_pmt_housing}.
+}
 
-There are two ways to monitor PMT/detector performance. The first
-is based on a scaler display program which provides information
-about PMT counting rates and coincidence counting rates.
-A large variation of the rates between paddles
-is an indication of a possible problem.
-The second technique is to use the analysis code ESPACE and the
-kumac files developed by K. Takahashi 
-(``kazu'' files). This analysis provides amplitude spectra for
-events with good tracks in the VDC.
-Histograms of amplitudes and average amplitudes for each PMT are
-accumulated. For high efficiency
-of the trigger it is important to keep the average amplitude
-above 600 channels. Sample spectra are shown in Fig ~\ref{fig:scinamp}.
-
-\begin{figure}[hp]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig7}
-{\linespread{1.}
-\caption[Detectors: Average Amplitudes of HA Trigger Counters]
-{ Average Amplitudes of HA Trigger Counters.}
-\label{fig:scinamp}}
-\end{center}
-\end{figure}
-
-\subsection{PMT replacement}
-
-Because of a large contamination of He in the air around the detectors the quantum efficiency of
-the PMTs slowly decreases ( about 5-10\% per month in case of high rate operation ). 
-The replacement of a PMT takes about ~15-20 minutes.
-
-\subsection{ 2" PMT Bases for S1 and S2 Trigger Counters}
-
-A schematic diagram of the 2" PMT Base is shown in Figure~\ref{fig:scint_1}. 
-The Base consists of three main components. 
-These are the front tubular housing (06), which encloses the PMT, part of the scintillator 
-counter's light guide (01), and the mu-metal shield (10). The actual base with 
-the socket and the dynode chain is a separate part, actually an assembly of parts 
-(09-19). The rear tubular housing (07) completes the assembly and encloses the 
-dynode chain and wiring. The three main sections join at the coupling nut (14), 
-which threads partly inside the front tubular housing, while the rear tubular 
-housing threads on the remaining part.
-
-The PMT and the electronic amplification components are mounted on a P.C. board 
-(15) which is enclosed in an aluminum Faraday cage. This assures rigidity and 
-protection from stray RF fields. The mu-metal shield is at cathode potential to 
-minimize the dark current due to capacitive discharge in the photo cathode 
-glass window.
-\begin{figure}
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig1}
-{\linespread{1.}
-\caption[Detectors: 2'' PMT Base]{The 2" PMT base used in S1 and S2 trigger scintillators.}
-\label{fig:scint_1}}
-\end{center}
-\end{figure}
-
-\subsection{Handling Considerations}
-
-\paragraph{Assembly Instructions}
-
-   Unscrew the rear tubular housing from the coupling nut and then unscrew the
-front tubular housing from the coupling nut.  Remove the mu-metal
-shield (10) from the retainer ring (12) by loosening the nylon locking set screw
-(11). After insertion of the PMT in the socket, install the mu-metal shield and
-make sure it sits squarely in the bottom of the socket base (13). 
-
-WARNING: The mu-metal shield should NEVER be assembled in the base without the 
-plastic insulator ring (09). Electrical shock may result if someone touches the 
-outside housings under such a condition. The plastic insulator ring also serves 
-as a mechanical alignment aid to keep the mu-metal shield centered within the 
-front tubular housing.
-
-Tighten the nylon locking set screw but don't over do it and strip the nylon
-threads in the process. The mu-metal shield has a solid friction fit in the
-copper ring inside the retainer ring to make good electrical contact. 
-
-Screw the base assembly, with the PMT and mu-metal shield attached, back into
-the front tubular housing, up to the half way point of the threads in the
-coupling nut. The PMT socket and dynode chain assembly (15) is spring loaded
-(16) so one can see how much compression the light guide will induce on this
-assembly, thus assuring a good contact with the PMT without the risk of damage
-to the latter. Insert the collet nut (03) and the inner collet (04) onto the
-light guide as shown in Figure~\ref{fig:scint_1}. Position the outer collet inside the entrance
-to the front tubular housing and check that it matches the direction of the
-cone to that of the outer collet. Smear a thin layer of optical grease on the
-light guide and insert the latter into the inner collet until it makes contact
-with the PMT. This can be verified by observing the movement of the socket
-against the, now slightly compressed, springs. Insert the outer collet into the
-inner one and screw the collet nut making sure the springs remain slightly
-compressed in the process. Use the special tool to tighten the collet nut until
-the light guide cannot be moved in or out. 
-
-Replace the rear tubular housing by screwing it all the way into the coupling 
-nut. Insert the foam plastic light stop (02) between the collet nut and the 
-light guide. The mechanical assembly is now complete. 
-
-
-\paragraph{The Electronic Amplification Chain}
-
-   The arrangement of the resistor dynode chain is shown in 
-Figure~\ref{fig:scint_2}. The 
-cathode is connected to the mu-metal shield through a 10 M$\Omega$ resistor, in
-addition to the 1 M$\Omega$ resistor between the cathode and the negative HV. The
-dynode chain incorporates an adjustable potentiometer (0-500 $\Omega$) to allow a
-match between the PMT and the external load, in order to eliminate after-pulse
-ringing.  This potentiometer should be adjusted at first to 250 $\Omega$ and then
-make fine adjustments as needed by observing the anode pulses on the
-oscilloscope for critical matching. It is not advisable to do the adjustments
-with HV on. Instead, the process should be done with HV off; remove the rear
-tubular housing, adjust the potentiometer, replace the rear housing, and then
-turn the HV on again. Iterate until the matching is accomplished. In addition to the
-obvious safety concerns, one does not want to remove the light sealing rear
-housing from an active PMT and induce a large light leak which could destroy
-the PMT. 
-
-\begin{figure}[tbh]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig2}
-{\linespread{1.}
-\caption[Detectors: 2'' PMT Base]{The 2" PMT base used in S1 and S2 trigger scintillators.}
-\label{fig:scint_2}}
-\end{center}
-\end{figure}
-
-   Both 2" and 5" bases have been extensively tested under beam conditions. 
-They have several safety related features but these cannot protect anyone who 
-is bent on violating operating procedures and common sense. They allow the 
-removal of the PMT/Base assembly, for repairs of the electronics or replacement 
-of a PMT, without decoupling the housing and collets from the light guide. 
-Thus, replacement of PMTs can be done in minutes without the need to remove the 
-scintillator counters from their subframes.
-
-
-\subsection{ 5" PMT Bases for S3 Counters}
-
-
-   The general layout of the 5" bases is similar to that of the 2" bases
-described above. It consists of a front tubular housing and a rear tubular
-housing, both made out of aluminum. They join at a coupling nut, as shown in
-the schematic diagram of Figure~\ref{fig:scint_3}. The actual
-base where the PMT, $\mu$-metal
-shield, and the electronic dynode amplification chain are located, is
-different. The corresponding middle section, incorporating the above
-components, is made out of a moulded structure used in both the 5" bases and
-the aerogel Cerenkov counters. The PMT socket is moulded integral to the
-section and it is also spring loaded. The collets are different, due to the
-size of the light guide, but the method of assembly is very similar to that of
-the 2" base. 
-
-\begin{figure}[tbh]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig3}
-{\linespread{1.}
-\caption[Detectors: 5'' PMT Base]{The 5" PMT base used in S3 trigger scintillators.}
-\label{fig:scint_3}}
-\end{center}
-\end{figure}
-
-
-\paragraph{Assembly Instructions}
-
-   The collet assembly consists of several expanding rings, one set of solid
-tapered and the other a spring collet. They are placed on top of each other,
-alternating between the two kinds, with a spring collet on the top facing the
-scintillator and the collet nut. As the collet nut is screwed in, it presses
-against the assembly and the spring collets slide inward against the tapered
-solid ones, thus clamping against the light guide. Care should be taken, when
-placing these two different kind of collets inside each other, so as not to
-align the gaps in the plastic and create light leaks. The collets are not
-continuous rings, otherwise they would not be compressible, and the gaps can
-allow light all the way into the PMT if they are aligned. 
-
-The collet nut is placed first around the light guide and the successive layers 
-of the moulded collets are then placed around the light guide; one should make 
-sure that enough free length of exposed light guide remains to enter the 
-housing to slightly compress the PMT and base assembly, as in the case of the 
-2" base. Once the slight compression of the spring loaded PMT-socket assembly 
-is verified, the set of collet rings is moved to enter the housing and rest 
-firmly against the snap/stop ring inside the front tubular housing. Then the 
-collet ring is screwed in using the special tool until the light guide is 
-firmly bedded in the housing and cannot be moved in or out. The remaining 
-procedure is the same as that of the 2" base.
-
-Due to the two diameter shape of the 5" PMT and its mu-metal shield, insertion  
-of the PMT pins into the socket is a blind operation. It has to be done by feel 
-and experience; the pins can only go in a specific PMT-socket geometry and it 
-needs experience to learn when the correct alignment has been achieved. Let 
-someone who has experience do it, bending of the socket pins at the base of the 
-PMT results in destroyed PMTs, and they are expensive.
-
-WARNING: The plastic insulator sleeve inside the front tubular aluminum 
-housing should be in place BEFORE the mu-metal shield/PMT assembly is inserted. 
-Failure to assure the proper location of the insulating plastic sleeve may 
-result in electrical shock.
- 
-\paragraph{The Electronic Amplification Chain}
-
-The dynode amplification chain is mounted on a PC board, as is the case of the 
-2" base. A schematic diagram of the resistor chain is shown in 
-Figure~\ref{fig:scint_4}. As in 
-the case of the 2" base, it incorporates an adjustable potentiometer (0-500 
-$\Omega$) and the nominal critical matching value is 90 $\Omega$. It has, in addition, a 
-51 $\Omega$ resistor in series with the 14th dynode, to further improve the shape of 
-the anode pulse. A safe -HV to start with is -1.8 kV; it provides the best 
-timing resolution with adequate pulse height for electrons during beam 
-testing.
-
-\begin{figure}[tbh]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{scint_fig4}
-{\linespread{1.}
-\caption[Detectors: 5'' PMT Base]{The 5" PMT base used in S3 trigger scintillators.}
-\label{fig:scint_4}}
-\end{center}
-\end{figure}
-
+\infolevthree{
+  \subsection{ 2" PMT Bases for S1 Trigger Counters}
+  
+  A schematic diagram of the 2" PMT Base is shown in
+  Figure~\ref{fig:scint_1}.  The Base consists of three main components.
+  These are the front tubular housing (06), which encloses the PMT, part of
+  the scintillator counter's light guide (01), and the mu-metal shield
+  (10). The actual base with the socket and the dynode chain is a separate
+  part, actually an assembly of parts (09-19). The rear tubular housing (07)
+  completes the assembly and encloses the dynode chain and wiring. The three
+  main sections join at the coupling nut (14), which threads partly inside
+  the front tubular housing, while the rear tubular housing threads on the
+  remaining part.
+  
+  The PMT and the electronic amplification components are mounted on a
+  P.C. board (15) which is enclosed in an aluminum Faraday cage. This assures
+  rigidity and protection from stray RF fields. The mu-metal shield is at
+  cathode potential to minimize the dark current due to capacitive discharge
+  in the photo cathode glass window.
+  
+  \begin{figure}[p]
+    \begin{center}
+      \includegraphics[angle=0,width=\textwidth]{scint_fig1}
+      \caption[Detectors: 2'' PMT Base]{The 2" PMT base used in S1 trigger
+	scintillators.}
+      \label{fig:scint_1}
+    \end{center}
+  \end{figure}
+  
+  \paragraph{The Electronic Amplification Chain}
+  
+  The arrangement of the resistor dynode chain is shown in 
+  Figure~\ref{fig:scint_2}. The 
+  cathode is connected to the mu-metal shield through a 10 M$\Omega$ resistor, in
+  addition to the 1 M$\Omega$ resistor between the cathode and the negative HV. The
+  dynode chain incorporates an adjustable potentiometer (0-500 $\Omega$) to allow a
+  match between the PMT and the external load, in order to eliminate after-pulse
+  ringing.  This potentiometer should be adjusted at first to 250 $\Omega$ and then
+  make fine adjustments as needed by observing the anode pulses on the
+  oscilloscope for critical matching. It is not advisable to do the adjustments
+  with HV on. Instead, the process should be done with HV off; remove the rear
+  tubular housing, adjust the potentiometer, replace the rear housing, and then
+  turn the HV on again. Iterate until the matching is accomplished. In addition to the
+  obvious safety concerns, one does not want to remove the light sealing rear
+  housing from an active PMT and induce a large light leak which could destroy
+  the PMT. 
+  
+  \begin{figure}[tb]
+    \begin{center}
+      \includegraphics[angle=0,width=\textwidth]{scint_fig2}
+      \caption[Detectors: 2'' PMT Base]{The 2" PMT base used
+	in the S1 trigger scintillators.}
+      \label{fig:scint_2}
+    \end{center}
+  \end{figure}
+  
+  The bases have been extensively tested under beam conditions. 
+  They have several safety related features but these cannot protect anyone who 
+  is bent on violating operating procedures and common sense. They allow the 
+  removal of the PMT/Base assembly, for repairs of the electronics or replacement 
+  of a PMT, without decoupling the housing and collets from the light guide. 
+  Thus, replacement of PMTs can be done in minutes without the need to remove the 
+  scintillator counters from their subframes.
+}
 
 \subsection{Safety Assessment}
-
-WARNING: The bases are high voltage devices and should only be handled by 
-competent people who can exercise common sense.
-
-   The maximum voltage for both the PMTs and dynode chain is 3 kV. In actual 
-use, however, there should be no need to exceed the 1.8-2.1 kV operating 
-parameters, since both PMTs and dynode chain have high gain. Nevertheless, the 
-bases are high voltage devices and care should be exercised during handling and 
-setup. The external aluminum parts, the front and rear housing, and the back 
-plate (17), are all grounded via the ground of the BNC (18) and SHV (19) 
-connectors. Since the back plate is connected to the coupling nut via the three 
-steel posts, the front plate is also grounded via the coupling nut and the back 
-plate. Common sense, however, dictates that the bases are not to be handled     
-while under high voltage, even when multiple grounding connections are provided.
-
-The mu-metal shield is also under high voltage, since it is connected to the 
-cathode. Electrical isolation between the mu-metal shield and the front 
-tubular housing is assured by the high dielectric retainer ring (12) and the 
-plastic insulator (09) at the free end of the mu-metal shield. The air gap 
-between the mu-metal shield and the front tubular housing is 6 mm, thus the 
-breakdown value (18 kV) far exceeds the maximum 3.0 kV of the PMT.
-
-In the event that the mu-metal shield is inserted without the plastic insulator 
-ring, or some oaf decides to operate the base without the outside housings, the 
-11 M$\Omega$ resistors between the -HV and the mu-metal shield will restrict the 
-current flow through the mu-metal shield (and the oaf's hands) to less than 0.2 
-mA with -2.1 kV on the base. 
+  
+\begin{safetyen}{10}{10}
+  WARNING: The bases are high voltage devices: the high voltage should be
+  turned off before handling.
+  
+  The maximum (negative) voltage for both the PMTs and dynode chain is 3 kV. In actual 
+  use, however, there should be no need to exceed the 1.8-2.1 kV operating 
+  parameters, since both PMTs and dynode chain have high gain. Nevertheless, the 
+  bases are high voltage devices and care should be exercised during handling and 
+  setup. The external aluminum parts, the front and rear housing, and the back 
+  plate (17), are all grounded via the ground of the BNC (18) and SHV (19) 
+  connectors. Since the back plate is connected to the coupling nut via the three 
+  steel posts, the front plate is also grounded via the coupling nut and the back 
+  plate. Common sense, however, dictates that the bases are not to be handled     
+  while under high voltage, even when multiple grounding connections are provided.
+  
+  The mu-metal shield is also under high voltage, since it is connected to the 
+  cathode. Electrical isolation between the mu-metal shield and the front 
+  tubular housing is assured by the high dielectric retainer ring (12) and the 
+  plastic insulator (09) at the free end of the mu-metal shield. The air gap 
+  between the mu-metal shield and the front tubular housing is 6 mm, thus the 
+  breakdown value (18 kV) far exceeds the maximum 3.0 kV of the PMT.
+  
+  In the event that the mu-metal shield is inserted without the plastic insulator 
+  ring, or some oaf decides to operate the base without the outside housings, the 
+  11 M$\Omega$ resistors between the -HV and the mu-metal shield will restrict the 
+  current flow through the mu-metal shield (and the oaf's hands) to less than 0.2 
+  mA with 2.1 kV on the base. 
+\end{safetyen}
 
 \subsection{Responsible Personnel} 
 The following individuals are responsible for operation of the trigger counters. 
@@ -353,21 +266,19 @@ The following individuals are responsible for operation of the trigger counters.
 \item[~]Wojtsekhowski, Bogdan - x7191 
 \end{itemize} 
 
-
-
-
-
-
-
-
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.3 2003/06/06 17:00:27 gen Exp $
-% $Id: scin.tex,v 1.3 2003/06/06 17:00:27 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 17:00:27 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.4 2003/11/11 20:13:58 feuerbac Exp $
+% $Id: scin.tex,v 1.4 2003/11/11 20:13:58 feuerbac Exp $
+% $Author: feuerbac $
+% $Date: 2003/11/11 20:13:58 $
 % $Name:  $
 % $Locker:  $
 % $Log: scin.tex,v $
+% Revision 1.4  2003/11/11 20:13:58  feuerbac
+% Updated scintillator text.
+% Removed mention of S3 and the base-replacement procedure.
+% Updated text and figures for S2's upgrade to S2m.
+%
 % Revision 1.3  2003/06/06 17:00:27  gen
 % Revision printout changed
 %
