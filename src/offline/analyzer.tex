@@ -1,10 +1,11 @@
-% level 0: 1 page description
+%--- Description of components
+\infolevone{
 
 \newcommand{\cppaver}{1.1}
 
 \section[C++ Analyzer]{C++ Analyzer
 \footnote{
-  $CVS~revision~ $Id: analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $ $
+  $CVS~revision~ $Id: analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $ $
 }
 \footnote{Authors: J.-O.\ Hansen \url{mailto:ole@jlab.org}}
 }
@@ -20,9 +21,6 @@ software (downloads, documentation, etc.) can be found at
 \begin{center}
   \url{http://hallaweb.jlab.org/root/}.
 \end{center}
-
-%--- Description of components
-\infolevone{
 
 Due to its object-oriented design, the Analyzer is modular and extensible.
 Individual analysis components are designed as plug-in modules
@@ -60,7 +58,7 @@ calibration (offset/pedestal subtraction, gain multiplication), and summing
 (for Cherenkovs) or cluster-finding (for showers) of hits. 
 The cluster-finding algorithm of the shower class is basic and currently 
 only capable of finding a single cluster per event. These classes are largely
-generic and should be able to accomodate most new detectors of the respective 
+generic and should be able to accommodate most new detectors of the respective 
 type, even with a different geometry and number of channels.
 
 Several beamline apparatuses are available: a dummy beam (always at zero 
@@ -179,35 +177,43 @@ THaDebugModule   & prints values of global variables for each event and waits\\
 \subsection{Running the Analyzer}
 Precompiled binaries of the latest version of the Analyzer are
 installed on the Hall A counting house analysis machines 
-(adaql1--5, adaqs1--3). To run the Analyzer, log into any
-standard account on these computers, for example as {\tt adaq},
+(adaql3--5, adaqs2--3). To run the Analyzer, log into any
+standard account on these computers, for example as \mycomp{adaq},
 and type\\
 
-\noindent{\tt analyzer}
+\noindent\mycomp{analyzer}
 \vspace{2ex}
 
 As installed, the Analyzer uses the default database in
-the location pointed to by the environment variable {\tt DB\_DIR}.
+the location pointed to by the environment variable \mycomp{DB\_DIR}.
 The Hall A staff makes an effort to keep this database reasonably 
 up-to-date for completed experiments. If you wish to analyze older data,
 the default database might work for you. However, 
 if you wish to use a customized set of database files
 specific to your experiment (usually the case for the current experiment), 
-you will need to re-define {\tt DB\_DIR} to
+you will need to re-define \mycomp{DB\_DIR} to
 point to the location of that database before starting the Analyzer.
 For details on the database, see Section~\ref{offl:sec:database}.
 
 The pre-installed analyzer may not work in certain accounts if 
-the {\tt PATH} and/or {\tt LD\_LIBRARY\_PATH} variables have been
+the \mycomp{PATH} and/or \mycomp{LD\_LIBRARY\_PATH} variables have been
 changed from the system defaults. If this is the case, you should
 correct the login script(s) of the problematic account.
 To restore the system defaults, you may execute one of the following 
 commands:
 
 \begin{tabbing}
-For csh/tcsh shells:$\qquad$ \= {\tt source /adaqfs/apps/env/login.adaq}\\
-For bash shells:     \> {\tt source /adaqfs/apps/env/profile.adaq}
+For csh/tcsh shells:$\qquad$ \= \mycomp{source /adaqfs/apps/env/login.adaq}\\
+For bash shells:     \> \mycomp{source /adaqfs/apps/env/profile.adaq}
 \end{tabbing}
+
+If the Analyzer is to be used outside of the Hall A counting house
+environment, it is currently necessary to build the program from source.
+A {\tt tar} archive of the sources can be obtained from the following
+location
+\begin{center}
+  \url{http://hallaweb.jlab.org/root/download}.
+\end{center}
 
 \subsection{Preparing Analysis of a New Experiment}
 \label{offl:sec:newexpt}
@@ -238,24 +244,24 @@ involves the following steps:
 	\label{offl:item:step3}
   \item Identify desired output histograms and tree variables.
         Create an output definition file. The file 
-        {\tt \$ANALYZER/examples/output\_example.def} contains
+        \mycomp{\$ANALYZER/examples/output\_example.def} contains
 	most of the necessary documentation.
   \item If desired, create a definition file for logicals.
         An example generating detailed VDC statistics is
-	given in {\tt \$ANALYZER/examples/cuts\_example.def}.
+	given in \mycomp{\$ANALYZER/examples/cuts\_example.def}.
   \item Write a CINT\footnote{CINT is a C/C++ interpreter that acts
         as the interactive interface to ROOT and the C++ Analyzer.}
         script that sets up the configuration identified in 
 	Step~\ref{offl:item:step1} and the physics analysis decided on
 	in Step~\ref{offl:item:step3}. Often, a script from a
 	previous experiment, or one of the examples in
-	the directory {\tt \$ANALYZER/examples}, can serve as a guide.
+	the directory \mycomp{\$ANALYZER/examples}, can serve as a guide.
 	The script usually also locates raw data files, creates
-	one or more {\tt THaRun} objects, configures various
-	options of the event loop object {\tt THaAnalyzer}, and
+	one or more \mycomp{THaRun} objects, configures various
+	options of the event loop object \mycomp{THaAnalyzer}, and
 	starts the replay. In particular, the names of the output
 	file, the output definition file, and the logicals definition
-	file must be given to {\tt THaAnalyzer}.
+	file must be given to \mycomp{THaAnalyzer}.
   \item Identify the plots that you wish to generate from the analysis
         results and write a script to create them. This may be part
 	of the script created in the previous step. 
@@ -270,28 +276,30 @@ Version \cppaver\ of the C++ Analyzer uses simple ASCII text files
 to store database information. There is one file for each 
 analysis module. The name of each file is composed as follows:\\
 
-\noindent{\tt db\_<apparatus-name>.<detector-name>.dat}
+\noindent \mycomp{db\_apparatusname.detectorname.dat}
 \vspace{2ex}
 
 For example, a Cherenkov detector named ``a1'' which is part of the
 Left HRS spectrometer, named ``L'', would be associated with 
-a database file named {\tt db\_L.a1.dat}.
+a database file named \mycomp{db\_L.a1.dat}.
 
 The ``run database'', which contains global run-specific parameters
 such as beam energy and spectrometer momentum and angle settings,
-is stored in a special file named {\tt db\_run.dat}.
+is stored in a special file named \mycomp{db\_run.dat}.
 
 All of the above database files should be stored in a location
-that can be modified by the user, for instance in {\tt $\tilde{}$/DB}.
-{\bf The environment variable {\tt DB\_DIR}
+that can be modified by the user, for instance in \mycomp{$\tilde{}$/DB}.
+{\bf The environment variable \mycomp{DB\_DIR}
 must be defined to point to this top-level database
 directory.} Since database parameters change with time, database files
-are organized in time-dependent subdirectories within {\tt \$DB\_DIR}.
-The name of each subdirectory has the form {\tt YYYYMMDD}, where {\tt YYYY},
-{\tt MM} and {\tt DD} represent the year, month, and day, resp., of the 
+are organized in time-dependent subdirectories within \mycomp{\$DB\_DIR}.
+The name of each subdirectory has the form \mycomp{YYYYMMDD}, where 
+\mycomp{YYYY}, \mycomp{MM} and \mycomp{DD} 
+represent the year, month, and day, resp., of the 
 date that is the start of the validity of the entries. Upon initialization,
 the Analyzer locates the most appropriate time-dependent subdirectory based on
-the contents of {\tt \$DB\_DIR} and the time-stamp of the run to be replayed.
+the contents of \mycomp{\$DB\_DIR} 
+and the time-stamp of the run to be replayed.
 Often there is only one time-dependent subdirectory per experiment, but
 if significant changes occur during an experiment, it may be appropriate to
 create several directories.
@@ -301,10 +309,10 @@ is especially true for the run database file which frequently
 will have many time-stamped sections.
 
 For example, an experiment running in April and May of 2004 would
-create a database subdirectory {\tt $\tilde{}$/DB/20040401} and set
-{\tt DB\_DIR=$\;\tilde{}$/DB}. Other files supporting the replay
-of this experiment would reside in an experiment-specific replay
-directory, usually {\tt \$EXPERIMENT}.
+create a database subdirectory \mycomp{$\tilde{}$/DB/20040401} and set
+\mycomp{DB\_DIR=$\;\tilde{}$/DB}. Other files supporting the replay
+of this experiment would reside in an experiment-specific
+directory, usually \mycomp{\$EXPERIMENT}.
 
 
 } %end \infolevtwo
@@ -330,11 +338,12 @@ is up to the user which objects to place in the lists.
 %}
 Both the Apparatus and the Detector class hierarchies,
 as well as the Physics Modules, inherit from a common base class, 
-{\tt THaAnalysisModule}.  
+\mycomp{THaAnalysisObject}.  
 %describe details of hierarchies
 Physics Modules currently do not use a
 particular class hierarchy; all physics modules inherit from
-{\tt THaPhysicsModule}, which in turn inherits from {\tt THaAnalysisModule}.
+\mycomp{THaPhysicsModule}, which in turn inherits from 
+\mycomp{THaAnalysisObject}.
 
 The behavior of existing analysis modules can be modified or extended
 easily by using class inheritance. In such a case, the only code that
@@ -358,9 +367,11 @@ necessary to support such new modules.
 
 \subsection{Responsible Personnel}
 For all questions and suggestions regarding the C++ Analyzer,
-please contact Ole Hansen at ext.\ 7627, email {\tt ole@jlab.org}.
-Bob Michaels (ext.\ 7410, {\tt rom@jlab.org}) 
-and Robert Feuerbach (ext.\ 7254, {\tt feuerbac@jlab.org}) 
+please contact Ole Hansen at ext.\ 7627, email 
+\href{mailto:ole@jlab.org}{ole@jlab.org}.
+Bob Michaels (ext.\ 7410, \href{mailto:rom@jlab.org}{rom@jlab.org}) 
+and Robert Feuerbach (ext.\ 7254, 
+\href{mailto:feuerbac@jlab.org}{feuerbac@jlab.org}) 
 are also available for help.
 
 } %end infolevtwo
@@ -389,13 +400,18 @@ are also available for help.
 } %end \infolevfour
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/offline/analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $
-% $Id: analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/offline/analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $
+% $Id: analyzer.tex,v 1.2 2003/11/17 22:06:49 ole Exp $
 % $Author: ole $
-% $Date: 2003/11/15 08:56:27 $
+% $Date: 2003/11/17 22:06:49 $
 % $Name:  $
 % $Locker:  $
 % $Log: analyzer.tex,v $
+% Revision 1.2  2003/11/17 22:06:49  ole
+% Correct some minor mistakes.
+% Highlight computer commands and names consistent with document style.
+% Add comment about building program from source.
+%
 % Revision 1.1  2003/11/15 08:56:27  ole
 % Initial revision of chapter on offline analysis, covering the C++ software.
 %
