@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 %\footnote{
-%  $CVS~revision~ $Id: pol-he3.tex,v 1.9 2004/12/08 17:27:27 gen Exp $ $
+%  $CVS~revision~ $Id: pol-he3.tex,v 1.10 2004/12/10 23:02:11 jpchen Exp $ $
 %}
 \footnote{Authors: Revised by: J. P. Chen, P. Chevtsov, K. Kramer, 
 N. Liyanange, K. McCormick, X. Zheng; Original: T. Black, J. P. Chen, H. Gao, 
@@ -29,7 +29,8 @@ pumping efficiency.
 
 \subsection{Apparatus}
 
-High power diode lasers (about 100\,W) provide an intense monochromatic
+High power infrared (795 nm) diode lasers (about 100\,W) provide an intense 
+monochromatic
 light beam for optical pumping.  The lasers are housed in a large
 shielding house, known as the ``laser hut'', which is located about 5m
 away from the target on one side of the beam line.  An overview of a
@@ -813,7 +814,7 @@ codes to be saved which will move the target ladder into preset target
 positions.  Remote control is provided through the EPICS environment.
 During norml operation, target motion is controlled through the lifter
 MEDM GUI running on one of the computers in the Hall A counting house.
-The final GUI is under developemnt at this time, but it will have
+The GUI has
 buttons for preset target positions, as well as lights
 indicating the status of the controller (i.e. any faults, at a limit, etc.).
 The velocity, acceleration time, deceleration time and position can
@@ -2237,12 +2238,12 @@ alleviate the potential
 hazards is reported. 
 
 \begin{itemize}
-  \item Personnel eye sight damage due to a laser light exposure;
+  \item Personnel eye sight damage due to exposure to infrared laser light;
   \item Fire due to the operation of the high power lasers;
   \item Fire due to the operation of the target oven;
   \item Explosion of the high pressure target cell;
   \item Explosion of the reference cell;
-  \item Irradiation of the target by the electron beam.
+  \item Activation of the target caused by the electron beam.
 \end{itemize}
 
 For personnel safety to be effective all personnel authorized to operate
@@ -2250,6 +2251,9 @@ any subsystem of the target will be required  be familiar with that
 specific subsystem as well as read 
 \infolevone{this} \infolevltone{the full} target OSP% 
 \infolevltone{~\cite{HallAosp}}.
+
+A target operator is on shift usually when the target laser system is on.
+A training session is required of any target operator. 
 
 \end{safetyen}
 
@@ -2319,7 +2323,7 @@ laser beam alignment are in the hall. This will be arranged by using a
 controlled access 
 to the Hall provided by the CANS system.
 This alignment 
-will be performed only during the night time and weekend. 
+will be performed only during the night time or weekend. 
 Clear warning signs will
 be posted  at the
 entrance of the Hall when the alignment is under progress.
@@ -2813,13 +2817,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.9 2004/12/08 17:27:27 gen Exp $
-% $Id: pol-he3.tex,v 1.9 2004/12/08 17:27:27 gen Exp $
-% $Author: gen $
-% $Date: 2004/12/08 17:27:27 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.10 2004/12/10 23:02:11 jpchen Exp $
+% $Id: pol-he3.tex,v 1.10 2004/12/10 23:02:11 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2004/12/10 23:02:11 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.10  2004/12/10 23:02:11  jpchen
+% made changes according to review
+%
 % Revision 1.9  2004/12/08 17:27:27  gen
 % minor changes before review
 %
