@@ -1,27 +1,2767 @@
-\section[Polarized $^3$He Target]{Polarized $^3$He Target
-\footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.2 2003/06/06 17:12:31 gen Exp $ $
-}
-\footnote{Authors: Dr.No \url{mailto:????@jlab.org}}
+\chapter[Polarized $^3$He Target]{Polarized $^3$He Target
+%\footnote{
+%  $CVS~revision~ $Id: pol-he3.tex,v 1.3 2003/09/23 19:56:32 jpchen Exp $ $
+%}
+\footnote{Authors: Revised by: J. P. Chen, P. Chevtsov, K. Kramer, 
+N. Liyanange, K. McCormick, X. Zheng; Original: T. Black, J. P. Chen, H. Gao, 
+O. Hansen, S. Incerti, S. Jensen, M. G. Jones, M. Liang, Z.-E. Meziani.
+\url{mailto:jpchen@jlab.org}}
 }
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.2 2003/06/06 17:12:31 gen Exp $
-% $Id: pol-he3.tex,v 1.2 2003/06/06 17:12:31 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 17:12:31 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.3 2003/09/23 19:56:32 jpchen Exp $
+% $Id: pol-he3.tex,v 1.3 2003/09/23 19:56:32 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2003/09/23 19:56:32 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
-% Revision 1.2  2003/06/06 17:12:31  gen
-% Revision printout changed
+% Revision 1.3  2003/09/23 19:56:32  jpchen
+% polarized He3 chapter
 %
-% Revision 1.1  2003/06/06 17:09:04  gen
-% Revision printout changed
-%
-% Revision 1.2  2003/06/05 23:30:01  gen
-% Revision ID is printed in TeX
-%
-% Revision 1.1.1.1  2003/06/05 17:28:27  gen
-% Imported from /home/gen/tex/OSP
-%
-%  Revision parameters to appear on the output
+% Revision 1.3  2003/09/15
+% Copied over the actual OSP for the polarized He3 target system
+
+%\documentclass[11pt]{report}
+%\usepackage{graphicx}
+\addtolength{\textwidth}{24mm}
+\addtolength{\oddsidemargin}{-12mm}
+\addtolength{\evensidemargin}{-12mm}
+\addtolength{\textheight}{3\baselineskip}
+%\begin{document}
+
+%\begin{titlepage}
+
+%\title{Hall A
+%Polarized $^3$He Target Operation and Safety
+%Procedure}
+%\author{
+%Revised by: J. P. Chen, P. Chevtsov, K. Kramer, N. Liyanange, K. McCormick, X. Zheng \\
+%\\
+%Original: T. Black,
+%J. P. Chen, H. Gao, O. Hansen, S. Incerti,\\
+%S. Jensen, M. G. Jones, M. Liang, Z.-E. Meziani.}
+%\
+%\date{\today  \\ Version 10}
+
+%\maketitle 
+
+
+%\begin{abstract}
+%We describe in this procedure all aspects of the Polarized $^3$He target
+%operation in Hall A. We have identified and addressed
+% personnel as well as fire safety issues related to the normal operation
+%of the target during
+%the experiment. We explain how safety issues are alleviated and provide
+%a detailed description 
+%of the target operation within the framework  of running experiment.
+
+%\end{abstract}
+
+%\end{titlepage}
+
+
+%\tableofcontents
+%\listoffigures
+
+%-----------------------------
+%\chapter
+\section{General Description}
+\label{sec:general}
+\subsection{Physics Principle}
+
+This target system provides a high-density 
+($\approx 2.5\times 10^{20}$ nuclei/cm$^3$)
+polarized $^3$He gas target for spin physics experiments. 
+
+The target employs the so-called spin-exchange technique.
+In this technique $^3$He is polarized in a two-step process.
+First, rubidium vapor is polarized by optical pumping with
+circularly polarized 795~nm laser light. Second, the electronic polarization
+of the Rb is transferred to the $^3$He nucleus in spin-exchange
+collisions, in which $^3$He nuclei are polarized via the hyperfine interaction.
+The target cell contains high pressure $^3$He gas and a small amount of
+rubidium vapor. In addition, it
+also contains a small amount of nitrogen to increase the
+pumping efficiency.
+
+\subsection{Apparatus}
+
+High power diode lasers (about 100\,W) provide an intense monochromatic
+light beam for optical pumping.  The lasers are housed in a large
+shielding house, known as the ``laser hut'', which is located about 5m
+away from the target on one side of the beam line.  An overview of a
+typical arrangement of the target components in the Hall is shown in
+Figure~\ref{fig:overview}.
+
+\begin{figure}[p]
+\begin{center}
+\centerline{\includegraphics[scale=0.6]{overview_may23}}
+\end{center}
+\caption{Overview of the target setup. Shown are the laser hut, the
+beam pipes covering the laser beam line extending to the target area,
+and the Helmholtz coils with the RF assembly and support sub-assembly. }
+\label{fig:overview}
+\end{figure}
+
+The polarized target comprises several
+components beyond its target cell (see Fig.~\ref{fig:overview})
+related to its operation, they are in subsection:
+
+\begin{enumerate}
+
+\item 
+A double sets of Helmholtz coils which  provide the target spins with a
+holding magnetic field 
+of few tens of Gauss as well as define the orientation of the
+polarization in any required 
+direction. 
+
+\item
+A pair of RF coils which allow for the measurement of the target
+polarization
+using the Adiabatic Fast Passage (AFP) technique and the Electron
+Paramagnetic 
+Resonance (EPR) technique.
+
+\item
+A multi-purpose RF enclosure which holds the RF coils but more
+importantly is crucial for the
+containment of the target cell in case of explosion. It also provides a
+containment volume for the
+$^4$He gas to cool the target windows with cooling jets, minimizing the
+radiation length crossed  by the electron beam. 
+
+\item 
+An oven with all its related components for providing the necessary
+temperature to the  pumping cell in order to bring the  rubidium in its
+vapor phase 
+and control its number density. 
+
+\item 
+A target ladder subassembly which supports a target cell,  a reference
+cell, (which can be filled with $^3$He, Nitrogen or $^4$He gas with pressure
+up to 10 atmospheres to study dilution, density or background),
+ a 7-foil $^{12}$C optics target, a
+BeO beam viewer and an oven. It also includes a full mechanism
+for positioning the targets 
+and bears the target cell viewing mirrors and the optical beam line
+mirrors. 
+
+\item 
+A laser shielding house known as ``laser hut'' where two laser beam lines
+are formed by seven 30-Watt diode lasers. 
+These laser beam lines are used for optical
+pumping of the rubidium alkali atoms in the direction either along the 
+electron beam (longitudinal, 4 lasers) or perpendicular to the electron
+beam line (transverse, 3 lasers). The nominally longitudinal laser beam 
+can also be directed at a different (specific) direction. 
+\end{enumerate} 
+
+
+\subsection{Control System}
+
+The control (including monitoring and measurement) system for
+the target Helmholtz coil magnet power supplies, the NMR polarimetry
+and the EPR polarimetry is based on the LabView system on a PC.
+The control system for the target vertical motion, the half-wave
+plate motion, the lasers,
+the oven heater, and temperature and pressure monitoring
+runs under the EPICS environment utilizing
+ an IOC in a VME crate. The LabView system 
+records data on disk and communicates with the 
+EPICS system through the network. Information from the EPICS IOC is logged 
+on disk and selected information passed to the event data stream.
+
+
+%=============================================
+%\chapter
+\section{Operation Overview}
+\label{sec:Opover}
+
+In normal operation the target will be under one of the following
+situations described below.
+
+\begin{safetyen}{10}{5}
+
+\begin{enumerate}
+
+\item 
+The target is in ``beam position'', the fast raster set to a
+nominal 4 mm $\times$ 4 mm area coverage and the experiment is
+running to collect physics data. In this configuration the monitoring
+of the target consists of reading a set of temperatures of the pumping
+cell, target cell and reference cell. The temperature in the pumping
+cell provides feedback for the temperature controller.  A spectral-analyzer
+is monitoring the laser wavelength and the relative intensity.
+All interlocks of electron beam and laser beam should be on.
+
+\item 
+The beam is turned off and the target is moved to ``Pickup Coil Position''
+(polarized $^3$He target in a position
+between the NMR pickup coils) and a polarization measurement is
+performed using the NMR (AFP) method.  The laser beam will be stopped
+first. If the polarization is in the transverse mode, 
+a rotation of the polarization to the longitudinal direction is
+performed (procedure described in Section~\ref{sec:nmr}).  Once the
+measurement is completed the target cell will be moved back to the ``beam
+position''. If the next running is in transverse mode, a rotation of
+the polarization to the transverse direction is performed.
+The laser beam will be turned on. The beam interlock is
+reset and the fast raster enabled before turning the beam back on
+target. The physics data taking should resume. 
+
+\item 
+The ``Polarized $^3$He Target'' is either in ``beam position'' or in ``pick-up
+coil position''.  The data taking is stopped and the 
+beam is turned off. An EPR measurement is performed (procedure described in 
+Section~\ref{sec:epr}). After the measurement
+is completed and the fast raster enabled, the beam is put back on and
+data taking resumes.
+
+\item 
+The ``BeO Target'' is moved to ``beam position''.
+The electron beam current lowered (to $<~5~\mu$A with raster-off) 
+as not to damage the 
+BeO target.  The monitoring of the beam
+position is performed by looking at the TV monitor which displays the
+view of the target.
+
+\item 
+The multi-foil $^{12}$C ``Optics Target'' is in ``beam position''. Data on the optics
+target are taken for spectrometer optics study or detector calibration.
+Since the BeO and the optics target are in beam at the same time, the above 
+two measurements are often performed at the same time.
+
+\item 
+The target ladder ``Empty Target''
+ frame is moved to ``beam position'' whenever
+beam tuning is performed, and when checking for possible beam halo
+background.
+
+\item  
+The ``Reference Cell Target'' is in ``beam position'' with the beam fast
+raster on and data on the reference cell are taken for calibration.
+
+
+\end{enumerate}
+
+\end{safetyen}
+%=============================
+%\chapter
+\section{Laser System}
+\label{sec:lasers}
+
+The laser system provides 795\,nm circularly polarized light for optical
+pumping of the target. The light is generated by seven solid-state
+diode lasers, which are located in a shielding hut several meters 
+away from the target, and polarized by passing through a polarizer 
+(beam splitter) followed by standard $\lambda/4$ waveplates.  
+\begin{safetyen}{10}{5}
+Each laser emits roughly 30W of
+power.  Because of the invisibility and high intensity of the
+laser beam, the lasers present a significant safety hazard.
+\end{safetyen}
+The system generates two independent laser beams for optical
+pumping of two different target spin directions: parallel
+and perpendicular to the electron beam.  In the standard
+configuration, four lasers are used for the parallel and three for the
+perpendicular direction.  Further, it is possible to reverse each of these
+polarization directions by 180$^\circ$ (``flipping'' the target spin). 
+This requires the rotation of the target holding field (see Section
+\ref{sec:helmholtz}) and reversal of the pumping light helicity.  
+The light helicity can be inverted by inserting a $\lambda/2$ waveplate 
+into the beam path of each laser.
+
+%-----------------------
+\subsection{Laser Hut \& Beam Path}
+\label{sec:las}
+
+To protect the lasers from radiation damage due to the electron beam
+and shield personnel from accidental exposure to hazardous laser
+light, all laser systems are located in a shielding house ("laser hut").
+It is positioned in Hall A on the right-hand side of the target at a
+distance of approximately 5 meters as shown in Figures
+\ref{fig:overview} and \ref{fig:laserhut}.  This placement limits
+the maximum angle for the hadron spectrometer to about 45$^\circ$,
+which is sufficient for the planned $^3$He experiments.
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.6]{topoverv_may23}}
+\caption{ A topview of the laser hut shows the location
+of the interlocked door as well as the position of the laser table where
+all lasers and optics will be set up.}
+\label{fig:laserhut}
+\end{center}
+\end{figure}
+Inside the laser hut, an optical table with an anodized aluminum top
+supports all optics. The setup of the
+polarizing optics is shown in Figure \ref{fig:laser_setup}. 
+
+Seven infrared diode lasers (four for longitudinal pumping and three
+for transverse pumping) and the related interlock control box
+ are located on a 19" rack.  Light is guided out of each laser and 
+goes to an optical table via an optical fiber.  Each beam is focused by a 2" 
+diameter convex lens with a focal length of 88.3mm, then divided by a polarizing
+beam splitter cube into two linearly polarized rays.  Because the
+laser light is initially unpolarized, both the direct and the split
+beam carry approximately half the power. To utilize the full laser
+power it is necessary to combine both beams and focus them onto the
+optical pumping cell.  This is accomplished as follows:
+
+The direct beam is reflected by a 3" diameter dielectric mirror which
+can be adjusted to steer it towards the pumping cell.  The split beam
+passes through a $\lambda/4$ waveplate, is reflected by a 2" diameter
+dielectric mirror, and passes through the $\lambda/4$ waveplate again.  The 
+fast and slow axes of this $\lambda/4$ waveplate should be oriented at an 
+angle of 45$^\circ$ to the horizontal or vertical direction.  The
+linear polarization of this beam is thus rotated by 90$^\circ$, and is
+able to pass through the beamsplitter, essentially without
+reflection.  The second passing through the splitter is necessary to
+achieve a very high degree of linear polarization for the split beam
+since the splitter only gives high polarization for direct beam 
+($T_P>95$\%,$R_S>99.8$\%).
+
+Now both beams from each laser have identical linear
+polarizations.  Each passes through a $\lambda$/4 waveplate that
+transforms its polarization from linear to circular.  The orientation of 
+each $\lambda$/4 waveplate is shown in Figure \ref{fig:laser_setup}, note that 
+all eight (or six for transverse pumping) $\lambda$/4 waveplates should have 
+the same orientation.
+
+The eight (or six for transverse pumping)
+resulting beams are carefully aligned to coincide on the pumping chamber 
+of the cell.  They enter the target chamber via transparent
+windows in the target enclosure and oven walls. There is one
+pair of windows for each polarization direction.
+
+The total path length from the lasers to the pumping cell is about 5
+meters.  The beam path for transverse pumping is a straight line from
+the polarizing optics to the pumping cell (via the transparent
+windows).  However, for any other pumping direction, e.g.\
+longitudinal, the beam must be reflected twice such that it goes first
+down and then horizontally in the desired direction.  To this end, a
+pair of adjustable 4" diameter mirrors is mounted on the outside of
+the target enclosure.  For longitudinal pumping, these mirrors can be
+standard dielectric ones since they will be in a
+polarization-preserving compensating configuration (one mirror rotated
+by 90$^\circ$ with respect to the other).  
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.9, angle=90]{laser_setup}}
+\end{center}
+\caption{Top view of the optics setup inside the laser hut. All items
+are on a laser table
+which is sitting on a mezzanine inside the laser hut}
+\label{fig:laser_setup}
+\end{figure}
+
+Under normal conditions, laser light
+will be completely absorbed by the rubidium in pumping cell.  
+However, there is small amount of the laser light being reflected by 
+the pumping cell wall or deflected by the pumping cell itself. 
+There is a 4" diameter mirror on the left side (viewing
+towards downstream direction) to collect the light for the EPR measurement.  
+The light is focused by two lenses (mounted on the oven) first, then guided
+by a pipe with mirror and additional focusing lenses in it, finally reaches 
+the EPR photodiode which is located a few meters away from the target.
+At the meantime this light will also be viewed by a fiber and enters 
+the spectral-analyzer, which is used to monitor the spectrum and intensity of 
+the lasers.
+
+The laser beam line is
+protected by beam pipes that extend from the laser hut to the target
+top cover. It is important to point out that the laser beam lines are
+fully enclosed from the rest of the hall.
+
+\begin{safetyen}{10}{5}
+The entire laser hut is a laser controlled area that requires special
+safety precautions (see Section 13 and Appendix A).
+\end{safetyen}
+
+%-----------------------
+\subsection{Diode Lasers \& Controls}
+
+The laser light for this experiment is provided by seven 30 Watt, 795 nm solid-state diode lasers.   The seven primary lasers used during the experiment are made by Coherent Semiconductor Inc.  There will also be two diode lasers made by the Opto-Power Corporation that will be used as spares.  Though there are some minor differences,
+both companies' laser systems perform the same function. Only the Ceherent 
+lasers and control will be described here. If the Opto-Power lasers are used,
+readers are refered to the original version of the polarized $^3$He target
+OSP manual.
+
+The diode lasers consist of a main enclosure which contains the diode, power supplies, fans and control systems for the laser.  The laser light from the diode is sent into a flexible optical fiber which extends out of the main enclosure.The fiber is 5m long in a stainless steel jacket and is removable.    
+
+The lasers operate at diode temperature from $15^{\circ}$ C to $26.5^{\circ}$ C depending on the system.  They are run at output power of 30 Watts which uses an operating current of 35-40 Amps.  The output laser light has a central wavelength of 795 nm with a spectral width of less than 2 nm. The fiber diamter is 800 microns.  The beam divergence is $< 0.20$ N.A.
+
+The lasers have a local control system, which is integrated into the main enclosure.  The local control allows adjustments in operating current (and therefore the laser power) and diode temperature (and therefore the wavelength within a
+small range).
+
+During the experiment the lasers will be controlled remotely through EPICS.  The lasers have a serial IO port on the back of the main enclosure which is connected to a VME RS-232 port.  There is an MEDM GUI interface for each of the lasers, which
+ allows remote control and monitoring of current and temperature as well as being able to turn each laser on and off. 
+
+
+%-----------------------
+\subsection{Alignment}
+
+\noindent
+{\bf{Basic procedure for laser alignment}}
+
+
+\begin{enumerate} \setlength{\parskip}{0ex}
+\item Set the height of the diode laser, the center of the polarizing
+  cube (beam splitter), the two-inch mirror, the quarter wave plates, 
+  the lens, and the three-inch mirror to be at the same height.
+\item Viewing along the direction of the cube, the mirror and the wave 
+  plates, you should be able to see the target.  Here target refers to
+  the 4" mirror on top of the oven (for longitudinal laser beam path), 
+  or the side window on target (for transverse laser beam path).  
+  You might need to adjust the position of each post
+  to compromise between transverse and longitudinal lasers.
+\item Place diode alignment laser such that it passes through the center
+  of the polarizing cube and the center of the target.
+\item Rotate the cube and change the angle such that the back reflection
+  hits the alignment laser and such that the reflection hits the diode
+  laser simultaneously.
+\item Place the focusing lens in its mount with the flat side away
+  from the diode laser. Adjust it so that the back reflection goes back 
+  on itself.
+\item Turn the diode laser on at LOW POWER.
+\item Adjust the head of the diode laser such that the light goes
+  through the center of the lens.
+\item Rotate the cube mount such that the light passes through the
+  center. Be sure that the cube is mounted so that the light enters 
+  the marked side and is reflected towards the two-inch mirror.
+\item Turn off the diode laser.
+\item Place the two-inch mirror into its mount and move such that the
+  alignment laser hits the center.
+\item Place a quarter wave plate between the cube and the two-inch
+  mirror.
+\item Turn the laser on at LOW POWER.
+\item Adjust the position of quarter wave plate so that the laser passes through the
+  center.
+\item Adjust the two-inch mirror so that the reflected light hits 
+  the target.
+\item If you know the axises of quarter wave plate, rotate it according to 
+      Figure \ref{fig:laser_setup}.  If not, 
+\begin{itemize}
+\item Rotate the quarter wave plate so that the light which passes
+  through the cube from the two-inch mirror is a minimum.
+\item Rotate the quarter wave plate forty-five degrees.
+\end{itemize}
+\item Adjust the two-inch mirror so that the light hits the target.
+\item Check to see where the back reflection of the diode is hitting. It
+  should be near the head of the diode laser but not directly on top of
+  it. If it is then rotate the cube slightly and realign the two-inch
+  mirror. Repeat if necessary.  It is important to keep the back reflection
+  away from the fiber since a small amount of back reflected laser could reach 
+  the diode through fiber and will damage the laser.
+\item Place the three-inch mirror in its mount.
+\item Check to see that the diode light is hitting the mirror.
+\item Adjust the three-inch mirror so that the light is hitting the
+  target.
+\item Center a quarter wave plate in the path of each beam.
+\item If you know the axises of quarter wave plate, rotate it according to 
+      Figure \ref{fig:laser_setup}.  If not, you need to do bench test first to 
+      find the axises of each quarter wave plate.
+\item Repeat for all beams heading towards the target.
+\item Be sure that the helicity of each beam line is the same.
+\item Place the half wave plates in mounts, adjust the position of the post 
+      and the mounts such that all either (or six) laser beams are able to 
+      hit the center of the corresponding half wave plates simutanuously.
+\item If you know the axises of half wave plate, rotate each one according 
+      to Figure \ref{fig:laser_setup}. If not, you need to do bench test first to 
+      find the axises of each half wave plate.
+\end{enumerate}
+
+\medskip
+\noindent
+{\bf{Testing quarter (half) wave plates}}
+
+\begin{itemize}
+\item Find the direction of the axes:
+
+\begin{enumerate}
+\item Use the laser beam which passes through the polarizing cube (beam splitter).
+\item Place the unknown wave plate in the beam.
+\item Place a polarizing cube after the unknown wave plate.
+\item Place a power meter perpendicular to the polarizing cube such that it
+      measures the power of reflected light. 
+\item Rotate the unknown wave plate such that the reflected light coming
+  from the second cube is at a minimum.
+\item Now one of the axes is in horizontal direction and the other is in
+      vertical direction.
+\end{enumerate}
+
+\item Make sure the axes of all quarter wave plates are identical (either fast or slow):
+
+\begin{enumerate}
+\item Use the laser beam which passes through the polarizing cube (beam splitter).
+\item Measure the laser beam power P.
+\item Place the 1st quarter wave plate in the beam, rotate it such that one of the 
+      axes (marked axis) is in vertical direction.
+\item Rotate the 1st quarter wave plate by 45$^\circ$ clockwise.
+\item Place a 2nd quarter wave plate after the 1st one, rotate it such that one of the 
+      axes (marked axis) is in vertical direction.
+\item Rotate the 2nd quarter wave plate by 45$^\circ$ clockwise.
+\item Place a polarizing cube after the 2nd quarter wave plate.
+\item If the reflected light coming from the cube is at a minimum, then the marked 
+      axes of these two quarter wave plates are opposite (one is fast and the other 
+      is slow);  
+\item If the reflected light coming from the cube is at a maximum and equals roughtly 
+      the full power P, then the marked 
+      axes of these two quarter wave plates are identical (both are fast or both are 
+      slow);  
+\item If the reflected light coming from the cube is at a maximum and equals roughtly 
+      the half power P/2, one of the two wave plates is a half wave plate.
+\end{enumerate}
+\end{itemize}
+
+\medskip
+\noindent
+{\bf{Some technical details}}
+\begin{itemize}
+\item One needs to be careful about backscattering light since it may
+damage the laser FAP (diode) if it is right on top of the fiber.
+However, if the backscattering light is far away from the fiber, it
+indicates that the system is not optimized and will affect the quality
+(intensity and polarization) of laser light to the target.  The major
+part of backscattering light comes from the P light reflected from the
+2'' mirror and the beam-splitter. To check position of backscattering 
+light, one should use a backscattering
+test plate.  Never use paper or any flammable material around fiber.
+Always turn off the laser when putting on or taking off the test plate.
+
+\item Adjust position of back-scattering spot vertically: 
+Probablly the reflecting surfact of beam-splitter is not exactly
+perpendicular to the laser beam.  Make sure the fiber, focuing lens
+and cube(beam-splitter) are at the same level, then rotate cube, at
+the same time adjust the 2'' mirror if necessary.
+
+\item Adjust position of back-scattering spot horizontally:
+\begin{enumerate}
+\item Moving spot to the left (viewing towards fiber): Rotate cube
+holder clockwisely (viewing from the top), then rotate cube (relative
+to its holder) anticlockwisely.  Keep the spot at the center of 2''
+mirror.  See Figure \ref{fig:laser_detail}
+
+\item Moving spot to the right (viewing towards fiber): Rotate cube
+holder anticlockwisely, then rotate cube anticlockwisely.  Keep the 
+spot at the center of 2'' mirror.
+\end{enumerate}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.8, angle=0]{laser_detail}}
+\end{center}
+\caption{Adjusting back-scattering light}
+\label{fig:laser_detail}
+\end{figure}
+
+\end{itemize}
+
+
+%-----------------------
+\subsection{Operation I: Local Mode}
+To turn a laser on:
+\begin{enumerate} \setlength{\parskip}{0ex}
+\item Be sure to connect the laser control box to the interlock and to
+the correct laser.
+\item Turn on the switch on the back panel of the laser.
+\item Turn the key on the front panel to turn on the power.
+\item Set the current through the keypad.
+\item Press the On/Off button.  The screen should show 'laser enabled'.
+\item Press the On/Off button again.  The screen should show 'laser on'. The 
+      laser should be on now.
+\end{enumerate}
+To turn a laser off:
+\begin{itemize}
+\item Press the On/Off button.  The screen should show 'laser disabled'.
+\end{itemize}
+
+Table \ref{tab:laserparam} lists the optimum parameter
+determined for the 30\,W lasers used in experiments E99-117 and E97-103
+in the summer of 2001.
+
+\begin{table}[hbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+
+ Laser        & PS \#  &  FAP-I \#  &  Set Current & Set Temperature & Maximum Current $\star$\\ \hline
+ Coherent 1   & 3115   &  V7645     & 38500 mA  &   15 $^\circ$C     &  45000 mA\\ \hline
+ Coherent 2   & 4151   &  V7250     & 37000 mA  &   24 $^\circ$C     & 44600 mA    \\ \hline
+ Coherent 3   & 4157   &  V7251     & 40000 mA  &   26.3 $^\circ$C   & 48000 mA    \\ \hline
+ Coherent 4   & 4206   &  V8491     & 40000 mA  &   15.5 $^\circ$C   & 48000 mA    \\ \hline
+ Coherent 5   & 4209   &  V8511     & 36000 mA  &   19.7 $^\circ$C   & 43200 mA    \\ \hline
+ Coherent 6   & 4208   &  V8492     & 40000 mA  &   14.7 $^\circ$C   & 48000 mA    \\ \hline
+ Coherent 7  && & &  &       \\ \hline
+\end{tabular}
+ $\star$ Factory set absolute maximum current 
+\end{center}
+\caption{Operational parameters for the 30\,W lasers.}
+\label{tab:laserparam}
+\end{table}
+
+
+
+%-----------------------
+\subsection{Operation II: Remote Mode}
+
+For the remote mode to work, 
+the lasers must be connected to the interlock box,
+the interlock system must be engaged and
+the laser key turned on as described above. The lasers can then 
+be controlled through the MEDM GUIs:
+
+To turn a laser on:
+\begin{enumerate} \setlength{\parskip}{0ex}
+\item Set the desired temperature and current in the ``Set Temp'' 
+and ``Set Current'' enter boxes.
+\item Press the ``Enable'' button.  If you have a camera pointing
+at the laser box in the Hall then you should see 'laser enabled'.
+\item Press the ``Start'' button.  If you have a camera pointing
+at the laser box in the Hall then you should see 'laser on'.  The
+laser should now be on.
+\end{enumerate}
+To turn a laser off:
+\begin{itemize}
+\item Press the ``Stop'' button.  If you have a camera pointing
+at the laser box in the Hall then you should see 'laser disabled'.
+\end{itemize}
+
+In addition to cameras pointing at the lasers boxes in the Laser Hut to 
+monitor lasers on or off, there is a spectral-analyzer which monitors
+both the relative power and the waveform of the lasers. The spectral-analyzer 
+has remote readback.  Alarm will be set when the readback deviate
+from the regular running condition by more than $10\%$. This will enable us 
+to know when there is one laser goes off or when the cell ruptured.
+
+%-----------------------------------------------------------
+\subsection{Half-Wave Plate Motion Control}
+The target polarization can be reversed by insertion or removal of 
+a set of half-wave plates. Before moving the half-wave plates, all lasers
+must be turned off first.
+
+The half-wave plate positions are controlled through the MEDM GUI running
+on one of the computers in the Hall A Counting House.  The half-wave plates
+have only two positions: IN (in the laser beam path) and OUT (pulled out
+of the laser path).  The speed, acceleration, deceleration and number of
+steps can be defined for the half-wave plate motor, but the defaults
+should be fine except in special circumstances.  The GUI allows 
+insertion and removal of the half-wave plates:
+
+To move the half-wave plates IN, click the ``Go'' button under
+``Move Half-Wave Plates IN''.  
+
+To move the half-wave plates OUT, click the ``Go'' button under
+``Move Half-Wave Plates OUT''.
+
+After the motion is finished, you can get the position of the 
+motor by clicking on the ``Get Position'' button.  This button
+shouldn't be pressed while the motor is moving because the motor
+likes to perform one operation at a time.
+
+The motor that drives the half-wave plates isn't 100\% reliable,
+so the plates should be checked on the camera monitor to make 
+sure they are in the correct position after a move.  If
+you see a problem with the motion of the motor (i.e. it's driving too
+far forward or about to drive off the table) then press the
+Emergency Stop ``HALT'' button.
+
+%==================================
+%\chapter
+\section{Target Cell}
+\subsection{Description}
+
+The target cell is either a 25 cm or 40 cm long aluminosilicate glass (GE180) high pressure (up to 15 atm) double chamber cell. Typical
+dimensions for a 40 cm cell are shown in Figure \ref{fig:cell1}. A 25 cm cell is identical except the target chamber is 25 cm long instead of 40 cm.  It is a closed system filled with a gas mixture which consists of $^3$He, rubidium and
+nitrogen. 
+
+The cell volumes range from 160 ml for a 25 cm cell to 200 ml for a 40 cm cell.  The interior pressure of the cell at room temperature is between 8 and 10 times atmospheric pressure.  The cells contain approximately 70 torr of nitrogen to help with the spin-exchange process.  There is usually 0.1-0.3 g of Rb in the pumping chamber.  The tritium contamination of the $^3$He gas used to fill the cell is less than 10$^{-11} \%$ according to the specifications from the manufacturer, Spectra Gases.
+
+The glass walls of the cell vary in thickness from cell to cell and from chamber to chamber.   The end windows of the target chamber are 120-150 microns thick and are therefore the thinnest part of the cell.  The walls of the target chamber and transfer tube are over a millimeter thick and the pumping chamber walls are up to 2 mm thick.   
+
+\begin{figure}[t]
+\begin{center}
+\centerline{\includegraphics[scale=1]{tcell}}
+\end{center}
+\caption{Typical 40 cm polarized $^3$He target cell used in this
+experiment.}
+\label{fig:cell1}
+\end{figure}
+
+The cell is installed on a target ladder and then this ladder is mounted to the bottom of the oven.  The cell is attached to the target ladder with a high-temperature elastomer, GE RTV106.  The ladder is then bolted onto the oven.
+
+
+\subsection{Installation \& Replacement}
+
+\begin{safetyen}{10}{5}
+The target installation is a delicate procedure and should be
+performed only by qualified personnel. A minimum requirement is
+Radiation Worker II training.  Only the first time installation does
+not require the monitoring of radiation around the pivot area. After
+the cell has been exposed to the electron beam, any replacement of the
+cell must be done under strict observation of possible radiation and
+contamination hazards.
+
+The cells are fragile and under high pressure so they
+can cause damage not only to exposed skin and eyes, but also hearing.  It is therefore important to wear hearing protection in the vicinity of an
+exposed cell and also to wear a face shield and a safety glasses when handling or in the vicinity of someone handling a cell.
+
+\end{safetyen}
+
+In the following we describe the procedure for cell replacement. The
+procedure applies both to a routine replacement and a replacement
+after a cell  explosion.
+
+\begin{itemize}
+\item 
+If the replacement of the cell follows the explosion of a previous
+target, a new $Q$ curve of the pickup coils should be measured. If the
+pickup coils have deteriorated, they should be replaced as well.
+
+\item 
+Prepare the replacement target and, if necessary, a new set of
+pickup coils. Request Hall access from MCC, and wait for a member from
+the RADCON team to accompany the group of qualified people authorized
+to change a target cell.
+
+\item  
+The member of the RADCON group will evaluate the radiation level
+around the target area. If safe levels of radiations are observed, the
+work can proceed. Otherwise a Radiation Work Permit will have to be
+written. The member of the RADCON group will either clean up the 
+glass pieces or, after determining that there is no contamination, informs 
+us that we can proceed to clean up the glass pieces.
+
+\item 
+\begin{safetyen}{10}{5}
+All personnel within the target area platform must wear ear
+protection, a face shield and a pair of safety glasses 
+during any access to the inside of the target enclosure.
+\end{safetyen}
+\item  
+Raise the target top assembly support and if necessary remove the
+scattering windows of the RF enclosure to provide sufficient
+access to the target.  
+\begin{safetyen}{10}{5}
+Monitor the radiation level close to the target
+ladder and oven.  Determine what conditions are required to comply
+with a radiation safe work condition.
+\end{safetyen}
+
+\item 
+Qualified personnel should proceed to replace the target and align it
+according to well defined reference lines of the target ladder. The
+motion of the target and the clearance between the pickup
+coils should be tested. When finished, the scattering windows of
+the RF enclosure should be put back in place. 
+
+\item 
+\begin{safetyen}{10}{5}
+If an intact target cell was removed, it should be stored in a wooden
+box with a screwed lid or a metal box specially designed for store
+target cell. It must be left in the hall with 
+``Pressurized Glass Cell, Open By Authorized Personnel Only'' warning sign 
+on the box. It can only be
+removed from the Hall after approval from RADCON.
+\end{safetyen}
+
+\end{itemize}
+
+%-----------------------------
+%\chapter
+\section{Target Ladder \& Motion System}
+\label{sec:motion}
+
+\subsection{Description}
+
+
+        The polarized $^3$He target system has four target positions:
+the actual polarized target cell (which can be replaced by a water
+cell for NMR calibration (see Section \ref{sec:nmr}), a solid
+BeO target inline with a seven-foil Carbon target for alignment and
+optics calibration, an empty target position that contains no target
+and allows the beam to pass undisturbed through the apparatus and 
+a reference cell position (see Section \ref{sec:refcell}).
+These targets are mounted on a target ladder as shown in Figure
+\ref{fig:tgtladder}.
+
+\begin{figure}
+\begin{center}
+\includegraphics{targetladder}
+\caption{Schematic diagram of the target ladder and target positions.}
+\label{fig:tgtladder}
+\end{center}
+\end{figure}
+
+        The target ladder can be positioned vertically using a  
+stepper-motor-driven motion control system.  The controller can drive the
+ladder to five different fixed positions, three of which correspond to
+the three targets, the fourth to the empty (no target) configuration,
+and the fifth to the position used for NMR measurements where the
+target cell is surrounded by the pick-up coils.  The total required
+vertical motion range is approximately 15\,cm.
+
+        The motion controller employed was developed at JLab and will
+be first used in experiment 99-117 (Precision Measurement of the Neutron
+Asymmetry A$_1^n$ at Large x using CEBAF at 6 GeV).  Vertical target motion 
+is provided by a screw-driven cylinder (Industrial Devices Corporation model
+N2P22V1205A12MF1MT1L).  The cylinder incorporates a 200 step/rev 
+stepper motor with a 1:12 gear, resulting in a position repeatability 
+of about $\pm 13 \,\mu$m at a maximum load of 600 lbs (272\,kg). 
+The maximum range of motion is 31.5\,cm.  Mechanical position 
+sensors are mounted on the target support frame to indicate motion
+limits.  These switches are wired normally closed and fail
+open.  A magnetic position sensor (Reed Sensor, PSR-1Q) mounted 
+on the motor cylinder serves as the home switch.  This switch is
+wired normally open, using only two of its three wires (12 V is not 
+connected for this type of switch).  Additionally, a linear 
+potentiometer provides independent readback of the cylinder position.
+
+\subsection{Operation}
+        The motor can be controlled locally and remotely.  Local control
+is provided through the SmartStep 23 keypad controller.  The keypad 
+allows the target to be jogged into position.  It also allows for small
+codes to be saved which will move the target ladder into preset target
+positions.  Remote control is provided through the EPICS environment.
+During norml operation, target motion is controlled through the lifter
+MEDM GUI running on one of the computers in the Hall A counting house.
+The final GUI is under developemnt at this time, but it will have
+buttons for preset target positions, as well as lights
+indicating the status of the controller (i.e. any faults, at a limit, etc.).
+The velocity, acceleration time, deceleration time and position can
+also be manually set from the GUI, but the defaults should be correct
+for all but special situations.  The position of the motor is readback
+on the GUI.  This position is displayed in revolutions from the home
+position and can be compared with preset target positions.  
+
+        The electronics provide a Fast Shutdown (FSD) interlock signal 
+to the accelerator that is triggered whenever the target is moved with
+the beam on.  This prevents damage to the target
+cell and ladder due to the electron beam.  The FSD signal is generated
+by the SmartStep controller and sent to an FSD node in the Hall.
+Target changes require Hall A personnel to telephone MCC and request
+temporary masking of this FSD channel.
+
+%-----------------------------
+%\chapter
+\section{Target Enclosure \& Windows}
+
+The target is surrounded by an enclosure similar to a scattering chamber.
+The enclosure serves three purposes: First, it provides a
+containment volume in case of explosion of the target cell and so limits
+the potential hazard working area.  Second, it holds the RF coils in a
+stable position and provides a strong frame for the support
+assembly. Third, it allows the region around the target to be filled
+with helium gas, minimizing ionization and energy loss of the electron 
+beam crossing the target area.
+
+The enclosure is made of high density polyvinyl (HDPV) material and has 
+several removable
+windows.  The windows are of three types: The incident electron beam
+entrance and exit windows are 0.127 mm thick aluminum.
+The windows on the side of the chamber through which the scattered 
+particles pass are 2.54 mm thick aluminum. Five-mm thick optical-perfect
+windows allow the laser beam to enter the enclosure.
+
+\begin{safetyen}{10}{5}
+If any windows are open, people working anywhere on the {\em target
+platform} must wear ear protection and a face shield. This region is
+designated as the ``target area''.  Signs will be posted indicating
+that the windows are open and that work is in progress. If the windows
+are closed the target area is no longer restricted except for possible
+reasons of radiation safety.
+\end{safetyen}
+
+The electron beam crosses two windows before reaching the target, the
+electron beam pipe window and the target enclosure beam inlet
+window. Similarly, it crosses two similar windows as it leaves the
+target area. The electron beam line is under vacuum and separate from
+the target enclosure for both upstream and down-stream of the target
+enclosure. The gap between the upstream beam line and the enclosure
+inlet window is very narrow. Both upstream and downstream beam lines
+are terminated with a 0.254mm thick beryllium window.  The beam inlet
+and outlet windows of the target enclosure are made of 0.127mm thick
+aluminum and are strong enough to stop any flying glass shreds in case
+of a target cell explosion.
+
+%-----------------------------
+%===================================
+%\chapter
+\section{Target Cell Heater}
+\label{sec:tgtheater}
+
+The target pumping cell must be kept at a temperature of about
+170$^\circ$C (340$^\circ$F) for optical pumping of Rb to be
+effective. This is accomplished by flowing hot air through a special
+temperature-resistant enclosure (``oven'') around the pumping cell 
+and regulating the temperature of the air using a process
+controller. The system is described in detail in the following.
+
+%----------------------------------
+\subsection{Description}
+Figure \ref{fig:oven} shows a schematic diagram of the heater system
+and the associated controls. Pressurized dry and filtered air at room 
+temperature is provided by a dedicated compressor in the Hall. The air
+enters the system through a shut-off valve and a pressure regulator,
+which is typically set to an output pressure of 15 psi. The flow rate
+is measured with a gas velocity sensor (Omega model FMA-905) connected
+to a display unit (Omega DP41-E-S2R) that provides an alarm
+to indicate insufficient flow. The air then passes through a
+resistive heater element (120 VAC, 700 W)\ and continues through
+insulated copper tubing into the target oven. The
+oven material is Torlon and Vespel plastic which can withstand a
+temperature of at least 260$^\circ$C continuously.
+The air finally exits the system through a several meters long
+exhaust pipe where it can cool down.
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics{ovensystem}}
+\end{center}
+\caption{Schematic diagram of the target cell oven control system. The
+instruments in the dashed box are located upstairs, while the remaining
+components are located in the Hall in the vicinity of the target. 
+For clarity, the interlock circuitry
+is not shown (see Figure \protect\ref{fig:interlock}).}
+\label{fig:oven}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics{interlock}}
+\end{center}
+\caption{Schematic diagram of the oven heater interlock system.
+The switches represent relays. 
+In normal operation, the relays are energized (contacts closed). 
+An alarm condition
+(or instrument power failure) will de-energize (open)
+ the corresponding relays,  interrupting the interlock circuit.
+The instruments are programmed such that their dual alarm outputs
+operate simultaneously.}
+\label{fig:interlock}
+\end{figure}
+
+
+A 100$\Omega$ Pt RTD (Omega model F3105) measures the temperature
+inside the oven. A process
+controller (Omega CN77540-C2) operating in PID mode drives the
+heater via a solid-state relay (SSR) regulating the heater power
+dependent on the temperature detected by the RTD.
+The SSR (Omega model SSR240DC10) accepts a low-voltage (3 $-$ 32 VDC)
+control signal of about 30 mA. A mechanical relay between the SSR and
+the heater allows interruption of the 120 VAC heater power in case of a 
+malfunction (see subsection \ref{sec:heaterinterlock}).
+
+A thermocouple (Omega 5SC-GG-K-30-36) is mounted on the
+tubing right after the heater to allow monitoring of the temperature
+of the air exiting the heater.  Another display unit (Omega
+DP41-TC-S2R) reads the thermocouple and generates an alarm if the
+temperature exceeds a preset threshold.
+
+The PID controller as well as the two display units are installed
+in a 19'' chassis in the electronics racks on the second floor of the
+counting house where they can be manually operated if necessary.
+All other components are located in the Hall in the vicinity of the
+target. The instruments can be monitored
+and programmed remotely via serial RS-232 communications, which
+allows convenient control via an EPICS/MEDM graphical user interface 
+(GUI) in the counting house.
+
+\begin{safetyen}{10}{5}
+\subsection{Safety Considerations}
+\label{sec:heaterinterlock}
+
+The heater system represents a significant fire hazard and therefore
+requires good failsafe protection.
+Possible failure modes include:
+\begin{enumerate}
+
+\item Insufficient air flow. Possible causes: Compressor failure;
+obstruction
+  in filter; operator error. Possible harzards: Overheating of heater
+element,
+  resulting in equipment damage and/or fire.
+  Protection: Air flow is monitored; insufficient flow disables heater
+  (and laser) via hardware interlock.
+\item Heater overtemperature. Possible causes: Insufficient airflow;
+  temperature controller failure; RTD failure; operator error.
+  Possible hazards: Damage to heater element and/or tubing; fire.
+  Protection: Heater temperature is monitored; excessive temperature
+  disables heater (and laser) via hardware interlock.
+\item Oven overtemperature. Possible causes: Temperature controller
+failure;
+  RTD failure; insufficient air flow; excessive laser power; 
+  operator error. Possible hazards: Explosion of target cell; damage
+  to oven enclosure and/or optical elements; fire.
+  Protection: Temperature controller will generate alarm if RTD
+indicates
+  excessive temperature, disabling heater via internal logic and 
+  and laser via hardware interlock. 
+%  Auxiliary RTDs inside oven are continously monitored by EPICS control 
+%  program; excessive temperature disables oven controller via software.
+\end{enumerate}
+
+A schematic diagram of 
+the interlock system is shown in Figure \ref{fig:interlock}.
+The instruments are programmed such that their dual alarm relays
+operate simultaneously if a value is out of range.
+An interlock condition disables the heater as well as puts the
+lasers in standby mode. Interlocking the
+lasers is important as the laser light contributes significantly to
+the heating of the target oven. 
+
+\end{safetyen}
+
+\subsection{Operation}
+The oven can be controlled from a GUI running
+on one of the Hall A counting house computers, or manually using the
+front panel controls. 
+
+\subsubsection{Local Operation}
+A brief description of the manual operating procedure is given here:
+
+\begin{enumerate}
+\item The oven controller and temperature and flow displays are located
+  in a 19'' chassis in one of the racks upstairs. Make sure power to this
+  chassis is on. The green light on the front panel should be lit.
+
+\item Verify the alarm set points for the flow meter and
+  temperature indicator. Press the {\tt SETPTS} button
+  until the display shows {\tt SP3}. After about 1 second,
+  the setpoint value appears. It should be 250 for the
+  air flow display and 220 for the temperature display. Press
+  {\tt SETPTS} again and check setpoint {\tt SP4}. It
+  should be identical to {\tt SP3}.
+
+  To change
+  any of the values use the {\tt MIN} and {\tt MAX} buttons. The {\tt MIN}
+  button selects the digit to be changed whereas the {\tt MAX}
+  button changes the value of the currently selected digit.
+  Press {\tt SETPTS} again to store the new value. 
+  When finished, press {\tt SETPTS} until {\tt RUN} appears in the
+  display.
+
+
+\item Verify the current temperature of the oven. It is shown
+  in the upper (red) display of the temperature controller
+  and is labeled {\tt PV} for ``Process Value''. The units are $^\circ$C.
+  The value should be reasonable,
+  {\it e.g.}\/ around room temperature if the oven has been off
+  for several hours or more. If the value does not make sense,
+  either the controller is misconfigured (see below) or the RTD 
+  in the oven is broken or incorrectly connected. 
+  Do not proceed before you have a sensible reading.
+
+\item (Optional) Verify the correct configuration of the controller.
+  Use the {\tt MENU} button on the controller to scroll through
+  the various configuration menus. To inspect parameters within
+  a menu, press {\tt ENTER} followed by {\tt MENU} again. The suggested
+  default parameters are listed in Tables \ref{tab:ctlparam1}
+  and \ref{tab:ctlparam2}. This step
+  is time-consuming and can be skipped if you are relatively certain
+  that the configuration is ok. A detailed description of the 
+  controller parameters is given in the controller manual.
+
+\item Verify that air is flowing. The air flow readout should indicate
+  a value of 350--450. These are arbitrary units. As long as the heater is
+  off, the reading should not fluctuate by more than about $\pm 10$ units.
+
+\item Verify the current temperature of the heater. It should be
+  close to room temperature. If the value is unreasonable, either
+  the readout is misconfigured or the thermocouple is broken.
+  Do not proceed before the problem is corrected.
+
+\item Verify that alarms are reset. 
+  Underneath the main display there are four LEDs, one for each
+  alarm 1--4. If either LED {\tt 3} or {\tt 4} is on on either
+  instrument, it indicates that an alarm has been triggered and
+  that the system is interlocked. You must reset the alarms before
+  you can continue. To do so, first correct
+  the problem ({\it e.g.}\/ turn the air flow on) then press {\tt RESET}
+  once on the affected instrument(s). If the LEDs stay on despite
+  correct setpoints and readings, the instrument is probably misconfigured.
+
+\item Begin heating. 
+  To avoid damage to the oven, the temperature must be increased
+  to the final value slowly. A good final operating temperature is
+  170$^\circ$C, and a good ramping rate is 60$^\circ$C/h, {\it i.e.\/}\
+  heating of the oven will take about three hours to complete.
+  
+  In manual mode, you must enter a new temperature setpoint by hand
+  at fixed time intervals. (``Ramp and Soak'' does not seem to work reliably
+  with this controller.) You should increase the  value by
+  10$^\circ$C every 10 minutes. For example, if the current oven temperature
+  is 35$^\circ$C, start with a setpoint of 45$^\circ$C and increase this
+  value by 10$^\circ$C in approximately 10 minute intervals.
+
+  To enter a new setpoint, do the following
+  \begin{enumerate}
+   \item Press {\tt MENU} on the temperature controller. 
+         A little green light marked {\tt SP1} in the upper left corner of 
+         the display will start to blink. Also, the first digit of
+         the green numerical display, labeled {\tt SV} for ``Setpoint
+         Value'', will blink.
+   \item Use {\tt MIN} to select the digit you wish to change and {\tt MAX}
+         to modify the value.
+   \item When done, press {\tt ENTER}. The display will briefly show
+         {\tt run} when the controller enters normal operating mode.
+         This starts the heating process.
+  \end{enumerate}
+
+\item Check correct operation of the controller. A little green 
+  light marked {\tt SP1} in the upper left corner of the 
+  temperature controller display indicates that the heater is active.
+  This light should blink slowly, being mostly on while the oven is heating
+  up and being mostly off (or even completely off for periods of up
+  to a few minutes) when the oven temperature has reached the setpoint.
+
+  The heater temperature should increase proportionally to the
+  fraction of time that the {\tt SP1} indicator is on. 
+  Note that the temperature reading is {\it not} directly related to the
+  oven temperature. In particular, the heater may become significantly
+  hotter than the oven, and its temperature 
+  might fluctuate from almost room temperature
+  to high values over short periods of time as the heater 
+  power is automatically
+  cycled on and off by the controller.  As long as the temperature 
+  stays below the alarm threshold (220$^\circ$C) there is no reason 
+  for concern.
+
+\item Check stability of the final temperature. 
+  The temperature might overshoot slightly. If the overshoot is
+  less than about 5$^\circ$C then this is normal. If the stability is
+  poor it is probably due to incorrectly set PID parameters in the controller. 
+  Changing these parameters is best done by an expert since this requires
+  in-depth understanding of the system.
+
+  The laser contributes significantly to the heating of the oven.
+  Therefore, you will notice sudden temperature instabilities when
+  the laser is turned off or on. It will take several minutes for
+  the controller to compensate for such changes.
+
+\item The air flow rate is slightly dependent on the heater power
+  applied (conductance varies with temperature). 
+  Therefore, the flow rate will fluctuate by some 10-20\%. This is
+  normal.
+
+
+\item At any time you can place the controller in standby mode by pressing
+  {\tt ENTER} twice. The display will show a blinking text {\tt STBY}.
+  This will turn the heater off completely and can be used
+  when the system appears to malfunction.   However, exercise some
+  caution if the oven is at an elevated temperature since it will quickly 
+  cool down if heater power is disabled and you will lose time bringing
+  it back up to operating temperature.
+
+\item In an emergency, simply turn the power to the chassis off completely.
+  This will open the interlock loops, thereby cutting power to the heater
+  and placing the laser in standby mode.
+
+\end{enumerate}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|r|}
+\hline\hline
+Menu & Submenu & Setting \\
+\hline
+Output Redirection  &                        & S1.o1 \\
+\hline
+Input Type          &                        & RTD   \\
+                    & RTD Type               & 385.3 \\
+                    & RTD Value              & 100\_  \\
+\hline
+RDG Configuration   & Decimal Point          & FFF.F \\
+                    & Temperature Units      & $^\circ$C \\
+                    & Filter Constant        & 0004 \\
+\hline
+Alarm 1             &                        & Enabled \\
+                    & Type                   & Absolute \\
+                    & Latched                & Latched \\
+                    & Contact                & n.c. \\
+                    & Setup                  & Above \\
+                    & Power On               & Enabled \\
+                    & Low Value              & (anything) \\
+                    & Hi Value               & 210.0 \\
+\hline
+Alarm 2             &                        & Not Installed \\
+\hline
+%%% xxx should enable later!
+Loop Break          &                        & Disabled \\  
+\hline
+Output 1            & Self                   & Disabled \\
+                    & \% Low                 & 0000 \\
+                    & \% High                & 0095 \\
+                    & Control Type           & PID \\
+                    & Action Type            & Reverse \\
+                    & Auto PID               & Disabled \\
+                    & Adaptive Control       & Disabled \\
+                    & Anti Integral          & Enabled  \\
+                    & Start PID              & Disabled \\
+                    & Proportional Band      & 0038 \\
+                    & Reset Setup            & 0050 \\
+                    & Rate Setup             & 0000 \\
+                    & Cycle Time             & 0001 \\
+                    & Damping Factor         & 0001 \\
+\hline
+Output 2            & (any)                  & (anything) \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Suggested default parameters for the temperature controller.}
+\label{tab:ctlparam1}
+\end{table}
+%-----------------------------
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|r|}
+\hline
+Menu & Submenu & Setting \\
+\hline
+Ramp \& Soak        & Ramp                   & Disabled \\
+                    & Soak                   & Disabled \\
+\hline
+Analog Output         &                      & Not installed \\
+\hline
+Communication Option  & Baud                 & 9600 \\
+                      & Parity               & Odd  \\
+                      & Data Bits            & 7bit \\
+                      & Stop Bits            & 1bit \\
+\hline
+Bus Format            & Checksum             & no  \\
+                      & Line Feed            & no   \\
+                      & Echo                 & no   \\
+                      & Standard             & 232C \\
+                      & Mode                 & Command \\
+                      & Separator            & Space   \\
+\hline
+Data Format           & Status               & yes     \\
+                      & Reading              & yes     \\
+                      & Peak                 & no      \\
+                      & Valley               & no      \\
+                      & Unit                 & yes     \\
+                      & ID                   & no      \\
+\hline
+Address Setup         & (any)                & (anything) \\
+\hline
+Transmit Time         & (any)                & (anything) \\
+\hline
+Remote Setpoint       &                      & Not installed \\
+\hline\hline
+\end{tabular}
+\end{center}
+\caption{Suggested default parameters for the temperature controller 
+(continued).}
+\label{tab:ctlparam2}
+\end{table}
+
+\subsubsection{Remote Operation}
+\begin{enumerate}
+\item Make sure the power is on to the Oven Heater Controller
+Chassis as described above.  Also verify the alarm set points
+for the oven air flow and heater temperature as above.  
+\item Verify the current temperature of the oven.  It is shown
+on the GUI on the blue HacOMEGA\_RTD readback.  It's shown on 
+the meter and also in the readback box.  Also, a plot of oven temperature
+vs time is shown on the stripchart in the bottom-left of the GUI 
+(labelled oven temperature).  The units are $^\circ$C. 
+The value should be reasonable,  {\it e.g.}\/ around room temperature 
+if the oven has been off for several hours or more. If the value 
+does not make sense, either the controller is misconfigured (see 
+directions for manual control above) or the RTD in the oven is 
+broken or incorrectly connected.  Do not proceed before you have 
+a sensible reading.
+\item Verify that air is flowing. The air flow readout should indicate
+  a value of 350--450. These are arbitrary units. As long as the heater is
+  off, the reading should not fluctuate by more than about $\pm 10$ units.
+\item Verify the current temperature of the heater. It should be
+  close to room temperature. If the value is unreasonable, either
+  the readout is misconfigured or the thermocouple is broken.
+  Do not proceed before the problem is corrected.
+\item Verify that alarms are reset.  The alarms are reset by pressing
+the ``Reset'' button in the upper-left of the GUI.  
+\item Begin heating.  To avoid damage to the oven, the temperature 
+must be increased to the final value slowly. A good final operating 
+temperature is 170$^\circ$C, and a good ramping rate is 60$^\circ$C/h, 
+{\it i.e.\/} heating of the oven will take about three hours to complete.
+
+In controlling the Oven Temperature from the GUI, you must enter a new
+temperature setpoint by hand at fixed time intervals.  Enter the desired
+setpoint in the ``SP1'' enter box in the lower right of the GUI.  
+You should increase the  value by 10$^\circ$C every 10 minutes. 
+For example, if the current oven temperature is 35$^\circ$C, start with 
+a setpoint of 45$^\circ$C and increase this
+value by 10$^\circ$C in approximately 10 minute intervals.
+The heater is controlled in PID (proportional, integral, derivative) mode.
+It approaches the setpoint according to the PID parameters defined in
+the ``Prop. Band'', ``Reset'' and ``Rate'' boxes in the lower-right
+of the GUI.  These values can be changed, but the defaults should be 
+fine except for special circumstances.
+\item Check stability of the final temperature. 
+  The temperature might overshoot slightly. If the overshoot is
+  less than about 5$^\circ$C then this is normal. If the stability is
+  poor it is probably due to incorrectly set PID parameters on the
+  GUI.  Changing these parameters is best done by an expert since this 
+  requires in-depth understanding of the system.
+
+  The laser contributes significantly to the heating of the oven.
+  Therefore, you will notice sudden temperature instabilities when
+  the laser is turned off or on. It will take several minutes for
+  the controller to compensate for such changes.
+
+\item The air flow rate is slightly dependent on the heater power
+  applied (conductance varies with temperature). 
+  Therefore, the flow rate will fluctuate by some 10-20\%. This is
+  normal.
+
+
+\item At any time you can place the controller in standby mode by pressing
+the ``Standby'' button in the upper-left of the GUI.  
+  This will turn the heater off completely and can be used
+  when the system appears to malfunction.   However, exercise some
+  caution if the oven is at an elevated temperature since it will quickly 
+  cool down if heater power is disabled and you will lose time bringing
+  it back up to operating temperature.
+
+
+\item In an emergency, simply turn the power to the chassis off completely.
+  This will open the interlock loops, thereby cutting power to the heater
+  and placing the laser in standby mode.
+
+\end{enumerate}
+
+%=============================
+%\chapter
+\section{Helmholtz Coils}
+\label{sec:helmholtz}
+
+The Helmholtz coils are four large interlocking rings of coils that provide a large constant magnetic field.  Two sets are necessary so that the magnetic field can point in any direction in the horizontal plane.  The larger two coils have an internal diameter of 1.45 m and consist of 272 turns of coil.  The smaller set of coils each have a internal diameter of 1.27 m and are made of 256 turns of coil. 
+
+The normal holding field for the target is 25 Gauss which corresponds to approximately 7.2 amps of current in the coils.  However, when doing an NMR measurement the field gets as high as 32 Gauss, which corresponds to 9.2 amps of current.  
+
+The coils are controlled by a DC voltage from two Stanford Research System DS345 Function Generators.  These are in turn controlled by a LabView Vi running on a PC.  There is a small glitch in the DS345 function generator : there sometimes will be a short drop in voltage before going to the correct voltage.  This is a problem when rotating the field, since it causes sudden magnitude shifts which in turn destroy a little of the target polarization.  This glitch is compensated for by a specially designed rotation box to which a Wavetek 80 function generator is attached.  This function generator compensates for the small decrease in voltage so that the rotation can be performed smoothly.  
+
+Attached to the small set of Helmholtz coils are a smaller set of coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W power supply.  This target occasionally has a problem with a phenomena known as masing.   This is a loss of target polarization due to coupling of the helium nuclei in their higher
+ energy states (such as during an NMR measurement) and a coil of wire (the pick-up coils, a Rb ring, or some other source).  Masing can be easily identified with EPR, and introducing a small field gradient generally makes it disappear.  These coils are used to introduce that field gradient.
+
+
+%=============================
+%\chapter
+\section{NMR Polarimetry}
+\label{sec:nmr}
+
+This guide explains briefly how to perform safely an NMR AFP sweep on the
+polarized $^{3}$He target. Please, refer to Figure \ref{fig:nmr}  
+showing the target setup and explaining the angle conventions. Longitudinal 
+or parallel field configuration is named if the holding field is pointing 
+towards 0$^{\circ}$, {\it i.e.\/} 
+along the incident electron momentum direction. 
+
+
+\subsection{NMR polarization measurement}
+
+\begin{itemize}
+\item{Turn off the lasers (3 or 4), rotate the magnetic holding
+field to the parallel configuration (if the field is in transverse mode).}
+\item{Make sure the target is in the Helium 3 (beam) position.}
+\item{Make sure you are in the parallel field configuration.}
+\item{Run the NMR Record Settings panel. Make sure you get the print out.}
+\item{Run the Current Monitoring panel. Print it at the end.}
+\item{Call MCC and tell them you are going to move the target down to 
+the pick-up coils to measure its polarization. When the target is masked, 
+move the target down to the pick-up coils.}
+\item{Print the RTD screen from the HAC X terminnal.}
+\item{Run the NMR Measurement panel and print it when completed.}
+\item{Move the target back to its beam position.}
+\item{Call MCC, tell them you have measured the polarization 
+and that the target is back to its beam position. 
+Be sure to follow the beam back procedure before sending 
+the beam back to the target (beam position, raster on with 
+a radius setting  $r=2\ $mm, current less than 15 $\mu$A)}
+\item{Run the NMR Extract Polarization panel and print it.}
+\item{Staple the plots together and store them in the target binder.}
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.8]{coils_new}}
+\caption{Top view of the longitudinal and transverse Helmholtz coils
+used in the polarized $^3$He target setup. 
+The RF coils are needed to perform NMR as well as EPR measurements. The
+0$^{\circ}$ angle gives the incident electron
+beam direction. The
+dashed lines indicate the coils main axis, the long bold 
+arrow indicates the holding field direction which can be 
+rotated from 0$^{\circ}$
+to 360$^{\circ}$. We also show the laser beam
+longitudinal and transverse directions.}
+\label{fig:nmr}
+\end{center}
+\end{figure}
+
+\subsection{Plots to print}
+
+For every NMR measurement, print :
+
+\begin{itemize}
+\item{NMR Record settings panel (will be printed by the Vi)}
+\item{NMR Measurement panel (print it at the end of the sweep)}
+\item{NMR Extract Polarization panel (print it when completed)}
+\item{RTD temperatures screen (print it from the X terminal)}
+\end{itemize}
+
+Staple the four plots together and store them in the target binder.
+
+\subsection{Warnings}
+
+\begin{itemize}
+\item{Never stop a running LabVIEW Vi}
+\item{Never put CW beam on the target without raster}
+\item{Every target operator must read and sign the Target Operation and Safety 
+Procedure}
+\item{If the target ruptures, turn OFF the lasers immediately}
+\item{The lasers must be off before rotating the holding field}
+\item{We indicate on Table \ref{settings} the voltage and 
+current values for each KEPCO.}
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics{electronics_may14}}
+\caption{The electronics is located in
+the Counting House A.}
+\end{center}
+\label{fig2:electronics_new}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.75]{NMR_system}}
+\caption{Description of the cabling of the NMR system.
+10 cables go from the counting house to the target location
+in the hall : 8 (main+sensing) ESSEX AWG 10 for
+the Helmholtz coils, 1 RG58A/U for the RF coils and 1 RG58A/U for the
+pick-up coils.}
+\end{center}
+\label{fig3:cabling}
+\end{figure}
+
+\begin{safetyen}{10}{5}
+\subsection{NMR AFP Safety }
+
+The NMR AFP system provides the DC current in the holding coils (up to
+10 A) and the AC current in the RF 
+coils (usually 1 A rms) of the target setup. Any human contact with the
+wires could be fatal and should 
+therefore be avoided. All the electronic devices and the PC used
+to sweep are located in the Counting House A.
+Refer to {\bf Figure \ref{fig2:electronics_new}} for a description of the
+electronics.
+
+\subsubsection{ The DC current}
+
+It is produced by the two Kepco power supplies. 
+One drives the large coils, and the other the small ones, as stamped 
+on their front panel. The output of each Kepco consists of four wires,
+two to lead the current, 
+and the two others used for sensing. The four output plugs are located
+on the back panel of each power 
+supply which can only be reached through the back
+panel of the rack. The connections are protected by a plastic strip and
+can not be touched by hands. 
+In the hall, simple copper screws are used to connect those wires to the
+coils. They should never be 
+touched. The grounding of the system is achieved in the hall.  
+
+\centerline {\bf How to turn the Kepco Power Supplies off in an
+emergency ?}
+
+\begin{enumerate}
+
+\item Turn the Function Generators SRS DS345 off (one for each Kepco) by
+pressing the on/off switch.
+
+\item Turn the Kepco power supplies off by setting the manual on/off
+switch to the off position. The digital 
+displays should turn off. 
+
+\end{enumerate} 
+
+\subsubsection{ The AC current}
+
+It is produced by the EIN RF Power Amplifier located at the bottom of
+the same rack. When 
+it is running, the manual switch is set to the ON position, the red LED
+is steady and the needle on the display is
+above zero. The AC current comes out from the BNC OUTPUT plug, goes
+through a current monitor (looks like a small
+toroid) and finally goes to the RF coils. In the hall, the cable is
+connected to the RF coils along the RF
+mounting using simple connectors with screws. Those are protected by
+electrical black tape. They should never be
+touched when the RF Power Amplifier is running.  The grounding of the
+system is provided by the RF Power Amplifier.
+
+\centerline {\bf How to turn the RF Power Amplifier off in an emergency
+?}
+
+\begin{enumerate}
+
+\item Turn the Function Generator HP 33120A connected to the RF Power
+Amplifier off.
+
+\item Turn the RF Power Amplifier off by setting the manual ON/OFF
+switch to the OFF position. The red LED 
+should turn off and the needle should go back to the zero position. 
+
+\end{enumerate} 
+
+\begin{table}[h]
+\begin{center}
+\caption{ \label{settings} {\it KEPCO settings} }\begin{tabular}[b]
+{|c|c|c|c|c|}
+\hline
+Orientation & KEPCO 3 Voltage & KEPCO 3 Current 
+& KEPCO 4 Voltage & KEPCO 4 Current\\ \hline
+0 deg & 38.0 V & 7.1 A & 0.0 V & 0.0 A \\
+90 deg & 0.0 V & 0.0 A & 38.2 V & 7.2 A \\ \hline
+\end{tabular}
+ \end{center}
+  \end{table}
+
+\end{safetyen}
+
+Detailed description of the NMR system is contained in the 
+following technical note by S. Incerti: {\it The NMR system of the Hall A
+polarized Helium 3 target}, JLab-TN-98-049. A copy of this note is included
+in the target 
+binder in the Hall A counting house.
+
+
+
+%======================================
+%\chapter
+\section{EPR Polarimetry}
+\label{sec:epr}
+
+  
+In what follows we describe two methods to setup and perform an EPR
+measurement of the target polarization.
+
+\subsection{EPR Lineshape Measurement -- Frequency Modulation Sweep:} 
+\label{sec:eprfms}
+
+Use this configuration when you wish only to find the Electron
+Paramagnetic Resonance (EPR) frequency,
+not actually track its position.  This method allows the user to observe
+the lineshape of the
+EPR transition (Rb D2 line) light emitted from the cell as a function of applied
+frequency to the EPR coil. \\
+
+First, construct the  circuit described in figure \ref{fig1:epr} by
+following these steps:
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.7]{eprfig1}}
+\caption{Circuit for EPR lineshape measurement}
+\end{center}
+\label{fig1:epr}
+\end{figure}
+
+\begin{enumerate}
+
+\item Position the PIN diode so that it looks directly at the light beam
+coming from the cell.  If pipe is used for guiding the light from the cell
+to where the PIN diode is located, you may need to adjust the focusing lenses
+within the pipe such that most of the light is collected and reaches the PIN 
+diode.
+
+\item Measure PIN diode output, it should be a DC signal with an amplitude
+of -100 mV to -150 mV.  If the signal is less than -100mV, check the light and 
+PIN diode again.
+
+\item Set Lock-in amplifier parameters:\\
+\indent    AC Gain:     50 dB;    \hspace{3.2cm}    Input Limit: 10 mV;\\
+\indent    Sensitivity:  1 mV;    \hspace{3cm}    DR 16;\\
+\indent    Time Constant: 100 ms; \hspace{2cm}    Osc: 0.000 Hz;\\
+
+\item Connect PIN diode to input A of the Lock-in amplifier.
+
+\item Set Modulation source DS345 parameters:\\
+\indent     Function:  sine wave;\\
+\indent     Sweep/modulate: LIN SWP.\\
+
+\item Connect DS345 'output' to PI circuit 'mod in', 
+DS345 'sync output' to Lock-in Amplifier 'ref in'.
+
+\item Set PI circuit Integration off, make sure the input is disconnected.
+
+\item Set Wavetek 80 parameters:\\
+\indent Modulation Mode: \hspace{0.5cm} VCO;\\
+\indent Output: \hspace{2.3cm}  sine wave;\\
+\indent Operating mode: \hspace{0.8cm}  FUNC.\\
+
+Be sure that the VCO indicator is lit.
+(The VCO is used because it is very sensitive to small changes in voltage.  
+At a carrier frequency of 10MHz, a 1mV input will produce a 400Hz shift 
+in the output frequency.)
+
+\item Connect PI circuit output to Wavetek 80 VCO IN through an 100:1 attenuator. Set the 100:1 attenuator switch to ``FMS'' (no attenuation). 
+
+\item Connect Wavetek 80 sync out to SR 620 Counter.  Connect  Wavetek 80 output to 
+the cable leading to the EPR coils.  Make sure that the Wavetek 80
+output is not in standby mode. 
+
+\item Bypass the RF capacitor by setting the switch to 'EPR' 
+on RF capacitor box front panel.
+\end{enumerate}
+
+
+Now that the circuit is in place, open the LabView program called ``FMSweep.vi'' (in windows-diagram).
+
+
+\begin{enumerate}
+
+\item  Input the start frequency for your sweep in the upper
+left of the screen.  At the start of
+pumping, the resonance frequency should be around the number given by
+this formula:
+
+EPR base resonance = (466000 * holding field in Gauss)
+
+Thus, your sweep should begin below and end above this number.
+However the resonance frequency is different for different Rb polarization
+directions 
+in the pumping cell.  Typically with 25 Gauss holding field the starting 
+sweep frequency is 11.1 MHz for right-handed light, 
+or 11.5 MHz for left-handed light.  
+
+\item Input the voltage at which you will run the EPR coils.  Typically,
+this is 8.0 Vpp, but it can go as high as 16.0 Vpp.
+
+\item Next, set the step to be 1KHz and the number of steps to be 500.
+Keep in mind that the lineshape you are looking for is about 500kHz in
+width. 
+\item Set the number of points per sweep, as well as the sweep
+duration.  Typically we take 2 points per sweep and 500ms for each point.
+The maximum speed should not exceed two points per second. 
+
+\item
+The program will automatically generate the data file to store the data, 
+with a filename related to date and time the program is running.  However,
+you can change the filename and path through the dialog bar located at the
+right bottom corner.
+
+\item After all of the necessary data has been entered, the sweep may begin.  
+To start the program, simply click on the white arrow in the upper
+left corner of the screen.  You should be able to read the current Lock-in
+signal amplitude and the EPR coil frequency from the screen.
+
+\item Under normal conditions,
+ in the plot of Lock-in signal vs. EPR coil frequency showed
+by the program, you should find a dip followed by a peak, or vice versa.  
+
+\item You might need to adjust the Lock-in Amplifier phase. You can use
+``auto-phase'' in reference channel menu or you can adjust it manually
+as follows:
+
+When the program goes at the maximum of the peak (or mininum of the dip), 
+check the Lock-in Amplifier phase by reading the X and Y signals from Lock-in
+Amplifier front panel.  Since the LabView program only reads X channel, the 
+phase should be adjusted such that X channel has a big signal while 
+Y channel is roughly zero (or only consists noise).  If not, adjust the 
+reference channel phase through the front panel menu of the Lock-in amplifier.
+You don't need to stop the program to do it, it is easier to adjust phase
+by checking the output of the running program simutaneously.  
+After the phase is optimized, run the program again.
+
+Manual adjustment is useful when the signal is small compared to the background
+(cable resonance, noise etc.), where ``auto-phase'' will track the phase of the 
+background.
+
+\item An EPR signal of amplitude higher than 25 $\mu$V extracted by FM Sweep
+will be good enough to do the EPR polarization measurement.
+
+\item Once the measurement is done, disconnect the output of 
+Wavetek 80 to the cable leading to RF coil.
+
+\end{enumerate}
+
+\subsection{Common Problems}
+\begin{enumerate}
+
+\item The plot shows no peak/dip. 
+\begin{itemize}
+\item Check the PIN diode and light, make sure there is enough light.
+\item  If the PIN diode signal amplitude is above 100 mV already, try changing the 
+Lock-in Amplifier phase by 90$^\circ$.
+\item  If still no peak is detected, try changing the 
+start sweep frequency and the number of steps such that the program
+will cover larger region.
+\end{itemize}
+
+\item The plot shows multiple peaks.  It might be the signal is mixed with 
+background (cable resonance, noise etc.).  The solution might be complicated
+and will not be discussed here.  Contact target experts on call.
+
+
+\item How do I use the output data? The data is saved in a text
+file consisting of two columns.  The first column contains the frequency
+of the EPR coil, while the second column holds the corresponding signal from the
+Lock-in Amplifier.  Its format can be read by programs such as SigmaPlot, Excel, and Paw.
+
+\end{enumerate}
+
+\subsection{EPR Polarization Measurement -- AFP Sweep}
+\label{sec:eprafp}
+This configuration uses the lock-in amplifier with a PI feedback 
+box to lock into the EPR resonance frequency and then track its
+behavior. With AFP spin-flip, a shift in EPR resonance frequency 
+will be measured, which is proportional to the pumping cell polarization.\\
+
+Construct the circuit described in figure \ref{fig2:epr}:
+
+\begin{enumerate}
+
+\item First construct FM Sweep circuit described above.
+
+\item Connect Lock-in amplifier channel 1 output (from rear panel) to PI circuit 'in'.
+
+\item Switch the 100:1 attenuator from ``FMS (no attenuation)'' to 
+``AFP (100:1)''.
+\item Set Modulation source DS345 parameters:\\
+\indent     Frequency: 200 Hz (This frequency is arbitrary.  200Hz is good 
+since it is far away from most noise sources.)\\
+\indent     Waveform:  sine wave
+\item Set Wavetek 80 parameters:\\
+\indent Amplitude: 8.0 V, higher amplitude will be needed if the signal extracted by FM Sweep is less
+than 25 $\mu$V;\\
+
+\item Bypass the RF capacitor by setting the switch to 'EPR' 
+on RF capacitor box front panel.
+\end{enumerate}
+
+\begin{figure}
+\begin{center}
+\centerline{ \includegraphics[scale=0.7]{eprfig2}}
+\caption{Circuit for EPR measurement with AFP spin flip}
+\end{center}
+\label{fig2:epr}
+\end{figure}
+
+
+Now that the circuit is built, you can begin the initialization of the
+setup.
+
+\begin{enumerate}
+
+\item Set the modulation source DS345 amplitude to approximately 0.6 Vpp.  
+This number can be optimized for different conditions such as different 
+target polarization and EPR D2 signal amplitude.  At an EPR D2 signal amplitude
+of 25 $\mu$V the optimized DS345 amplitude is roughly 0.05 Vpp for P$< 20\%$, 
+between 0.05 and 0.6 Vpp for $20\%<$P$<40\%$, and 0.6 Vpp or higher for 
+P$> 40\% $.
+
+\item Find the EPR resonance frequency:\\
+
+If you have done a FM Sweep measurement, then you already know the
+EPR resonance frequency, continue to the next step.\\
+
+If you don't know where the resonance frequency is, you may want to do 
+a FM sweep measurement, or you can 
+find the current resonance frequency by hand,
+To do this, 
+\begin{itemize}
+\item Temporarily remove the
+connection to Vin on the PI feedback box, turn off the integration
+function, set the 100:1 attenuator switch to ``FMS (short)''.  Now you are back to the FM Sweep circuit setup.
+Manually adjust the Wavetek 80
+frequency with the smallest step 0.01 MHz, 
+while observing the lock-in.  Look in the area
+given by the formula:                                                                                       
+
+EPR base resonance = (466000 * holding field in Gauss) 
+
+This is typically about 11MHz.
+
+\item You should be able to observe the lock-in signal changing 
+when adjusting the frequency.  It should show a maximum ($>$0, peak) followed
+by a minimum ($<$0, dip), or vice versa, and the resonance is between them
+when the lock-in signal is small.  Keep in mind that the lock-in will
+read zero when you are far from resonance
+as well, so be sure to look for this characteristic resonance behavior. 
+
+\item Reconnect the Vin input, and
+set the 100:1 attenuator switch from ``FMS (short)'' back to ``AFP (100:1)''.   
+\end{itemize}
+
+\item Set the Wavetek 80 frequency
+to be 0.1 MHz lower than the current resonance frequency if the light is
+right-handed polarized, or 0.15 MHz lower than the current resonance frequency 
+if the light is left-handed polarized.
+The lock-in signal should be large since you are not at the resonance frequency.
+
+\item Turn on the integration on the PI feedback box.
+
+\item Observe the Vout of PI circuit on an oscilloscope.  If it is ``jumping
+around'' erratically, or looks as if the  Opamps have been saturated, you
+must adjust the gains.  The best advice
+is to begin with the relative gain, and if this does not rectify the
+problem, move on to the absolute gain. 
+Basically, adjust these parameters such that the feedback signal is not too strong,
+neither too weak. \\
+
+\item Once this is done, the circuit should track
+the resonance frequency and the counter reading should change towards it.  The lock-in
+signal should be stablized to minimum.   
+
+\item Wait until the counter reading is stablized, change Wavetek frequency manually
+by 0.01 MHz.  You can observe a jump of 0.01 MHz in counter reading, but then
+it should change back to the resonance frequency, which means the circuit is following
+the resonance.  If not, then the frequency
+it was stablized before is not the true resonance frequency, check the circuit and
+try again.
+
+\item Once this is done, the circuit
+should take care of itself.  Left alone, it will track the movement of
+the resonance peak.
+\end{enumerate}        
+
+To measure the shift in resonance frequency due to AFP spin-flip, 
+open the LabView program AFPSweep.vi.  Enable the program by clicking
+on the large white arrow in the upper left corner of the panel.
+
+\begin{enumerate} 
+\item Set the sweeping time to be 6 seconds and the waiting time to be 20 seconds.  
+Set the number of sweeps to be 2.
+\item Run the program.
+\item Download parameters by clicking the corresponding button, you should read 
+``downloading parameters'' on the program status dialog.
+\item Wait until the program status shows ``waiting for data taking to start''.
+\item Start data taking by clicking the ``pause :: run'' button.  Now the program 
+should read resonance frequency from counter, and the lock-in amplifier signal.  
+The program status should show ``waiting for sweep trigger''.
+\item Wait for roughly 20 seconds, start sweeping by clicking on the ``start
+sweeping'' button. The program status should show ``sweeping...''.
+\item You should then be able to see the jump in resonance frequency.  When the light
+is right-handed polarized, this should be a positive jump, while for left-handed
+light it is negative.
+\item After the sweeping is completed, wait until the program status shows ``waiting 
+for sweep trigger'', now you can stop the program.
+
+\item Disconnect the output of Wavetek 80 to the cable leading to RF coil.
+
+\item \emph{Never stop the program during sweeping, this will cause the $^3$He
+ to stay 
+at the wrong state and hence a big loss in target polarization. }
+\end{enumerate}        
+
+\subsection{Common Problems}
+
+\begin{enumerate}
+
+
+\item The lock-in does not remain stable.  
+Or the lock-in but does not seem to track the resonance.
+
+You may see a big fluctuation in either lock-in signal or resonance frequency.
+This effect can be caused by several things.  
+
+First, it is possible that
+the frequency to which you are locked is not the true resonance, or
+you are completely out of resonance region.
+The solution is again to find manually the resonance, looking for the
+most pronounced signal.  
+
+	The problem could also be caused by a wrong lock-in amplifier phase.
+Please refer to Section \ref{sec:eprfms}.
+
+	Finally, it could be that the PI Feedback box is improperly set. 
+Adjust the gains until the lock-in becomes more stable.  
+Admittedly this method is not very quantitative.
+Based on experience, at high polarization ($>$40\%), both gains should be adjusted 
+anti-clockwisely nearly to the end.  At lower polarization ($\sim$20\%), both gains should
+be adjusted by about 4$\sim$5 turns clockwisely.
+These numbers may also vary at a higher or lower EPR D2 signal amplitude.
+
+You may also optimize the PI circuit gains by observing how fast the circuit 
+follows the resonance.  When counter reading is stablized,
+change Wavetek frequency manually by 0.04 MHz (which is close to the real jump
+during sweeping, at a target polarization $\sim$ 40%).  If the counter goes back 
+to resonance in roughly 3$~$5 seconds, then the
+circuit is working well.  If less than 2 seconds and counter reading is not stable, 
+decrease both the relative and absolute gain.  If longer than 6 seconds or lose the 
+signal, increase both the relative and absolute gain. 
+
+\item The lock-in does not track the resonance when doing AFP flips.
+This is common, since the frequency shift during the spin flip can be
+quite large, on the order of 20-40kHz.  
+
+	First, it is possible that the PI feedback is not strong enough for the circuit
+to follow the resonance shift.  Try increasing the absolute gain of PI circuit
+if possible.
+	Second, it could be that the modulation DS 345 amplitude is too small.  The
+size of this amplitude determines how far from the central frequency the circuit 
+looks for the resonance.   Try increasing the modulation amplitude (but do not increase 
+too much, usually it is less than 0.8 Vpp).  This will cause
+the counter reading less stable and you need to compromise between stablizing the
+circuit and following the frequency shift.
+
+
+\end{enumerate}
+
+
+\subsection{EPR Continuous Monitoring with Field Feedback}  
+  
+This configuration uses the lock-in amplifier with PI feedback 
+circuit to lock into the EPR resonance frequency and then track its
+behavior. At the same time a field feedback system is used to stablize the
+main holding field to a level of 10$^{-5}$.  The EPR resonance frequency is the central
+frequency proportional to the main holding field plus (or minus) a field originated
+from the $^3$He polarization.  By measuring the EPR resonance frequency and
+the main holding field, one is able to monitor the pumping cell polarization continuously.\\
+
+
+The circuit and labview program are the same to that are used for AFP Sweep 
+measurement described in Section \ref{sec:eprafp}, except that field feedback system 
+is needed, as shown in Figure \ref{fig3:epr}
+
+\begin{figure}
+\begin{center}
+\centerline{ \includegraphics[scale=0.7]{eprfig3}}
+\caption{Circuit for continuous EPR measurement with field feedback}
+\end{center}
+\label{fig3:epr}
+\end{figure}
+
+
+
+\begin{enumerate}
+\item Construct circuit and set parameters.  To track the resonance frequency,
+the only difference between EPR AFP measuremen and EPR continous monitoring is 
+that the modulation source DS 345 amplitude does not need to be large.  Typically 
+0.05 Vpp is enough.
+
+\item Make sure the circuit is tracking the resonance frequency.
+
+\item Use a scope or multimeter to measure the two field feedback signals, the 
+amplitude should be less than 500 mV.  If either of them is larger than 500 mV, 
+you must adjust the position of magnetometer sensor such that the signal perpendicular
+to the main holding field is back to 200 mV or lower.  Then adjust the
+power supply for the compensation coil such that the signal parallel to
+the main holding field is back to 200 mV or lower.
+ 
+\item Enable the field feedback system by setting the switch 'bypass/through' 
+on field feedback chassiss to 'bypass'.  You should observe that both field 
+feedback signals are stablized to zero.
+
+\item Run LabView program HP3458A\_read.vi on computer downstairs to record the current
+of compensation coil.
+
+\item Open LabView program AFPSweep.vi, enable the program by clicking the
+white arrow in the upper left corner.
+
+\item Set the paramters, download parameters
+and start data taking.  Do not do sweeping (AFP spin flips).
+
+\item After enough data is collected, stop the program.
+
+\item Disconnect the output of Wavetek 80 to the cable leading to RF coil.
+
+\end{enumerate}
+
+
+
+\subsection{Common Problems}
+\begin{enumerate}
+\item See the problems in the previous section.
+
+\item The field feedback signals jump to +10V or -10V when enabling the field feedback
+system, and stay there afterwards.
+
+This is usually caused by a wrong state of the field feedback system.  For example, wrong
+sign of the feedback settings (XCOS, YCOS) can cause a positive feedback such that the 
+signals are stablized to the satuated values.
+
+\item The field feedback signals oscillate between +10V or -10V when enabling the field feedback
+system.
+
+This is also caused by a wrong state of the field feedback system.  Because we are using
+two dimensional field feedback, wrong
+sign of the feedback settings (XSIN, YSIN) will cause the longitudinal and transverse 
+components of the field interfering with each other through a positive feedback so both
+are not stablized.
+
+\item The field feedback signals are stablized at a small but non-zero value.
+
+This means the field feedback system is working properly and in principle should not
+affect the measurement.  However, a non-zero offset of either of the signals may cause
+a non-linearity between holding field and the compensation coil current, which should
+be avoided in high precision polarization measurements.  With the field feedback 
+system in `Bypass' mode, you can adjust the screws on 
+field feedback chassiss to adjust the `XOFFSET' and 'YOFFSET',
+meanwhile use a scope to measure the two field feedback signals from magnetometer sensor
+until they are stablized to zero.
+
+\end{enumerate}
+
+
+%===============================
+%\chapter
+\section{Reference Cell}
+\label{sec:refcell}
+
+\subsection{Description of the Reference Cell System}
+
+The reference cell system is comprised of three
+subsystems---the reference target cell, the gas handling system, and
+the control electronics.  The reference target cell is mounted inside
+the target enclosure, which is located in the beam path immediately
+upstream of
+the spectrometers.  The gas handling system consists of a gas
+manifold, which is located in the electronics rack  behind the laser hut, and a series of gas
+lines that connect the manifold to the reference cell. A control box consisting of electronics that control the solenoid valves of the gas system is also located in the electronics rack.  A remote control box, identical to the one in the hall, is located in the counting house.   A schematic of the
+entire system is shown in figure \ref{fig:refcell1}.  The individual
+subsystems are depicted in figures \ref{fig:refcell2}--\ref{fig:refcell3}.
+
+\begin{figure}
+\begin{center}
+\centerline{ \includegraphics[scale=0.6]{ref_2}}
+\caption{Schematic of reference cell system}
+\label{fig:refcell1}
+\end{center}
+\end{figure}
+
+Under normal operating conditions, the manifold, the reference cell,
+and the intervening gas lines will be filled with either $^3$He,
+N$_2$, or $^{4}$He gas at high pressure 
+(typically $\approx 10$~atm).  The system
+may be operated either locally (at the panel) or remotely (via
+switches mounted in the counting house).  A switch on the
+gas panel itself allows one to toggle between local and remote
+control.  All switches, local and remote, are equipped with LED
+displays so that one can readily determine the status of any switch.
+
+The reference cell consists of a very thin-walled glass flask.  An
+outlet at the opening is joined to a Copper tube by means of a
+glass-to-metal seal.  This Copper  tube is connected to a 1/8" dia.
+Copper tube  with quick-plug-on gas fittings. High pressure $^3$He gas bottle is mounted   near the target chamber and is connected to the other end of the   1/8" Copper tube through solenoid valve {\bf V3}. The rest of the gas system is connected to the    1/8" copper tube   by a long 1/2" Copper tube. The reference cell is mounted at the gas fitting. A special coupling tool has been designed to facilitate the coupling/de-coupling the reference cell at the quick-plug-on gas joint.
+
+The gas handling system  consists of 8 solenoid-controlled, air-actuated valves,
+one hand-set needle valve, two baratron pressure gauges (0--1000 torr
+and 0--1000 psia), two pressure relief valves, a  bottle of
+high-pressure $^3$He gas, a bottle of high pressure N$_2$ gas,  a
+bottle of high pressure $^{4}$He gas, an oil-free turbo pump backed
+up by a pre-pump, and sufficient tubing and pipe fittings to
+connect them all together.  There are 5 basic actions that the
+ gas handling system  must accomplish; pump-out, vent, fill with N$_2$ or $^{4}$He,
+and fill with $^3$He.  The selection between N$_2$ and $^{4}$He is
+ done by a special directional solenoid valve ({\bf V8}). 
+
+The reference cell control panel (shown in Fig.~\ref{fig:refcell3} ) is comprised of 5 pushbutton
+switches, which activate the 5 possible valve setting conditions, a
+baratron high-pressure gauge which reads between 0-1000 psia, a
+baratron low-pressure gauge which reads between 0-1000 torr, two toggle switches to turn on and off the vacuum pump and a toggle switch to select local or remote operation.  
+  The valve configurations for the five  actions  are described in Table~\ref{tab:refcell}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|l|c|}
+\hline\hline
+Condition & Action & Valves activated (open) \rule[-2.5mm]{0mm}{7mm}\\
+\hline
+C1 & {\bf Evacuate} & V1+V4+V5+V6 \\
+C2 & {\bf Vent} & V4+V5+V6+V7 \\
+C3 & {\bf $\bf ^3$He fill} & V3+V4+V6 \\
+C4 & {\bf N$\bf _2$ fill } & V2+V4+V6 \\
+C5 & {\bf $\bf ^4$He fill } & V2+V4+V6+V8 \\
+\hline\hline
+\end{tabular}
+\caption{Action of the remote-control switch panel}
+\label{tab:refcell}
+\end{center}
+\end{table}
+\begin{figure}
+\begin{center}
+\centerline{ \includegraphics[scale=0.6]{ref_panel}}
+\caption{Valve configuration of the reference cell gas system}
+\label{fig:refcell2}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[scale=0.6]{ref_3}}
+\caption{Control panel}
+\label{fig:refcell3}
+\end{center}
+\end{figure}
+
+
+\subsection{Operation}
+
+
+
+The following operational sequences will allow the filling of the reference cell with the three gases:
+
+\begin{itemize}
+\item Fill with N$_2$
+\begin{itemize}
+\item Step 1: Vent to 16 psia.
+\item Step 2: Evacuate until vacuum reaches 1 mtorr.
+\item Step 3: Hold the N$_2$ button down while checking the high-pressure gauge, until the desired pressure is established.
+\item Repeat steps 2,and 3 three times.
+\end{itemize}
+\item Fill with $^4$He
+\begin{itemize}
+\item Step 1: Vent to 16 psia.
+\item Step 2: Evacuate until vacuum reaches $< 10$ mtorr.
+\item Step 4: Hold the $^4$He button down while checking the high-pressure gauge, until the desired pressure is established.
+\item Repeat steps 2, and 3 three times.
+\end{itemize}
+\item Fill with $^3$He
+\begin{itemize}
+\item Step 1: Vent to 16 psia.
+\item Step 2: Evacuate until vacuum reaches $< 1$ mtorr.
+\item Step 4: Hold the $^3$He button down while checking the high-pressure gauge, until the desired pressure is established.
+\end{itemize}
+\end{itemize}
+
+
+
+
+The pressure at the location of the gas
+manifold is measured by a  baratron gauge.  The baratron
+pressure is read into the data stream and is also output to a remote
+sensing unit located in  the counting house.
+
+
+
+
+\subsection{Cautions}
+
+\begin{enumerate}
+
+\item Be careful with the $^3$He, we have a limited supply.
+
+\item If the system is above atmospheric pressure, always vent it
+before pumping.  
+
+\item Always monitor the high-pressure gauge when filling. Do not  exceed 150 psia.
+
+\end{enumerate}
+
+\begin{safetyen}{10}{5}
+
+\subsection{Potential Hazards}
+
+The principal hazards associated with the reference cell are
+flying material and loud noise if the gas panel or reference cell
+fails catastrophically under high pressure.  Of the two subsystems,
+the reference cell subsystem presents the greater hazard, both because
+it is more likely to fail, and because it is likely to be more
+dangerous if it does.  The RF enclosure is designed to contain all the debris
+in case of a cell explosion.
+
+
+\subsection{Hazard Mitigation }
+
+After testing the reference cell system to 200 psia and to
+protect the cell
+from rupturing during normal operation,  the relief valves
+ have been set to 175 psia.  
+
+
+All personnel shall wear hearing protection when accessing the
+ platform area while the cell is under high pressure and no windows are 
+on the target enclosure.  
+
+Special care must be taken when accessing the region inside
+the target enclosure.  Full face shielding and safety glasses
+ should be
+worn under these
+conditions.  Before working in the vicinity of any of the reference cell
+components, personnel
+shall check the pressure in the manifold from the baratron readout in
+the
+remote control area.
+
+
+%====================================================
+%\chapter
+\section{Hazards and Safety Issues}
+\label{sec:haz}
+
+The main potential hazards encountered in the overall operation of the
+target are listed below.
+As we address the operation of each subsystem, a description on how to
+alleviate the potential
+hazards is reported. 
+
+\begin{itemize}
+
+\item Personnel eye sight damage due to a laser light exposure;
+
+\item Fire due to the operation of the high power lasers;
+
+\item Fire due to the operation of the target oven;
+
+\item Explosion of the high pressure target cell;
+
+\item Explosion of the reference cell;
+
+\item Irradiation of the target by the electron beam.
+\end{itemize}
+
+For personnel safety to be effective all personnel authorized to operate
+any subsystem of the target will be
+required  be familiar with that specific subsystem as well as read the
+target OSP. 
+
+
+%======================================================
+%\chapter
+\section{Laser Safety}
+\label{sec:lsafe}
+
+\subsection{Laser Safety}
+\label{sec:lassaf}
+
+\begin{enumerate}
+\item Always have your safety goggle on when the laser is on!
+\item When the yellow beacon is flashing, have goggle on when you enter
+the hut.
+\item Alignment should be done at low power.
+\item Be sure that the beam is hitting the target.
+\item Do not turn the beam up to full power unless the oven temperature
+is at least 150 degrees Celsius.
+\item Do not look directly into the beam even with safety goggle on.
+\item Do not stand in the way of a beam that is at full power.
+\item Understand where the beam is and where the reflections are.
+\end{enumerate}
+
+\subsection{Fire Hazards and Safety}
+\label{sec:fire}
+
+The fire and safety in the laser hut is covered in the LOSP
+for the laser hut area,
+however, in the target area where the laser beam is directed, there is a
+case where a potential 
+fire hazard exists. 
+
+In case the target cell explodes during optical pumping, the temperature 
+sensors mounted on the target and pumping cells will respond immediately and 
+an alarm will be triggered. The alarm will be triggered whenever 
+a temperature reading of any sensor is 10$\%$ out of its norminal range.
+The target operator should shut off all the lasers immediately.
+Based on the tests performed, the target oven will sustain on the order of 10 
+minutes with full laser power incident and no rubidium atoms 
+to absorb the laser power.
+
+
+\subsection{Personnel Safety/ Working in the Hall}
+\label{sec:prs}
+
+When the installation of the full target setup is finished, working in
+the hall
+shall be safe from laser light hazards or target explosion hazards,
+because 
+laser light as  well as the target cell will be safely enclosed.
+Therefore 
+when considering the overall aspects of the safety of personnel working
+in the
+Hall two distinct periods are to be considered.
+
+\begin{enumerate}
+
+\item One period is during the laser beam alignment because the laser
+beam pipes
+from the laser hut to the  target need to be removed. During this time
+period we
+will ensure that no other person except those people who are laser
+trained and qualified  for
+laser beam alignment are in the hall. This will be arranged by using a
+controlled access 
+to the Hall provided by the CANS system.
+This alignment 
+will be performed only during the night time and weekend. 
+Clear warning signs will
+be posted  at the
+entrance of the Hall when the alignment is under progress.
+
+\item One period is during the setup of the high pressure target cell in
+its final position. 
+In this case the ``target platform'' which is a natural perimeter around
+the target area 
+ will be marked  and signs posted requiring the wearing of ear
+protection and
+faceshield. Beyond that defined perimeter all personnel working in the
+hall
+will not be affected in case of explosion of the cell if they are not 
+wearing  a faceshield. Nevertheless, it is strongly recommended to have 
+ear protection when working anywhere in the Hall. 
+\end{enumerate}
+\end{safetyen}
+
+%----------------------------------------------
+%%% LSOP...
+\begin{appendix}
+
+\begin{safetyen}{10}{5}
+\chapter{Laser Standard Operation Procedure}
+\label{sec:lsop}
+
+
+\section{Introduction}
+
+A polarized $^3$He target system was built and used for JLab experiments 
+E94-010 and E95-001. Several experiments used the 
+polarized $^3$He target system in the last a few years and more approved experiments will use the system in the future. 
+The polarized $^3$He target is based on 
+the principle of spin exchange between optically pumped Rubidium vapor and 
+$^3$He gas. Several high power (30 Watts) 795 nm diode lasers will be used 
+for the optical pumping. A laser hut has been built and installed in Hall A.
+This LSOP describes the setup of the 
+laser system in the laser hut and at the target area, 
+details the potential
+hazards associated with the operation of this setup and provides instructions
+for the safe and effective use of the equipment. In addition,
+this manual provides information about the functioning of the various safety 
+systems installed to protect personnel and equipment.
+
+
+\section{Personnel}
+
+The 30 watts infrared diode lasers (Coherent FAP-System) may only be operated by
+personnel who have :
+\begin {itemize}
+\item completed a Laser Safety course administrated by the laser safety officers at
+Jefferson Laboratory (Patty Hunt).
+\item read the Laser Safety section of the EH\&S Manual(6410);
+\item  completed and passed an opthalmological exam;
+\item had a safety walkthrough by the Laser Safety Supervisor of the 
+Polarized $^3$He Target System (Jian-ping Chen);
+\item read this document;
+\item been added to the authorized list of Laser Personnel, included as the 
+last page of this LSOP.
+\end {itemize}
+Jefferson Lab personnel or outside visitors, who have not completed all of 
+above training, are
+only allowed to enter the laser control area under the following conditions :
+\begin {itemize}
+\item have permission of the Laser Safety
+Supervisor of the Polarized $^3$He target system
+\item be accompanied by a laser authorized personnel
+\item if the laser is operational, with required safety
+goggles
+\item if any equipment, including the laser, is operational, no touching of
+equipment due to electrical hazards.
+\end {itemize}
+
+
+\section{Laser}
+
+The main Laser specifications are outlined in Table 1. For more specific
+information, we refer to the Coherent FAP-system diode laser users manual, 
+which will be available in the lab.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+& \\
+{\bf Specifications}&{\bf COHERENT FAP-System} \\
+\hline
+& \\
+\underline {\it Operational Specifications}& \\
+Output power			& 30 W \\
+& \\
+\underline {\it Mechanical Specifications}& \\
+Weight			        & 60 pounds  \\
+Cooling Requirements 		& None required \\
+Delivery Optical Fiber Bundle   & 0.8 mm diameter \\
+Delivery Fiber Length		& 5.0 meter nom.\\
+Delivery Fiber Termination	& SMA 905 conn. \\
+& \\
+\underline {\it Operational Specifications}& \\
+Typical Operating Temperature   & $0^\circ$C to $35^\circ$C \\
+Typical Storage Temperature     & $-20^\circ$C to $65^\circ$C \\
+Humidity (non-condensing)       & $5\%$ to $95\%$  \\
+& \\
+\underline {\it Electrical Specifications}& \\
+Input Power	                & 115 Vac 60 Hz, $<1200$ W (500 W typical) \\
+& \\
+\underline {\it Optical Specifications}& \\
+Beam Characteristic 		& Semiconductor, multimode \\
+Beam Divergence        & $<0.20$ N. A. \\
+Diode Laser Center Wavelength   & 780 to 840 nm \\
+Wavelength Temp Coefficient	& 0.27 to 0.30 nm/$^\circ$C \\
+Emission Bandwidth (FWHM)       & $\pm 2$ nm \\
+\hline
+\end{tabular}
+\label{speclaser}
+\caption{Laser specifications}
+\end{center}
+\end{table}
+
+
+\section{Optical setup}
+
+The optical setup is shown in figure A.1, and is made of:
+\begin {itemize}
+\item A optical table (stainless steel) supporting one breadboard 
+(anodized aluminum);
+\item Seven infra-red diode lasers (four for longitudinal pumping and three 
+for transverse pumping) located on one side of the table, with optical 
+fiber bundles.
+\item Seven lens to have each laser beam focused at the pumping cell;
+\item Seven beam splitters to split each laser beam to two beams;
+\item Fourteen $\lambda$/4 waveplates to transform each beam from
+linear polarization to right or left circular polarization;
+\item Fourteen dielectric mirrors to reflect each split beam back into the pumping cell;
+\item One transparent window on the RF enclosure and one transparent window 
+on the oven to allow the combined transverse laser beam to pass through;
+\item Two dielectric mirrors to reflect the combined longitudinal 
+laser beam into the pumping cell;
+\item One pumping cell to absorb all the laser beam power;
+\item Three mirrors for monitoring the pumping cell;
+\item One spectral-analyzer for monitoring the pumping cell.
+\end {itemize}
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[angle=90.0, height=8in]{laser_setup}}
+\caption{Optical Setup in the Laser Hut}
+\end{center}
+\end{figure}
+
+The optical table will be about 2 meters from the platform.
+The laser beams will be from about 15 cm to 105 cm above the table
+Each of the 795 nm diode laser light, after passing through the lens,
+will be split into two beams. Each one will go through a $\lambda$/4 waveplate
+to transform linear polarization to circularly right or left polarization. 
+All beams, after passing some windows and being reflected by some mirrors,  
+will shoot into a glass pumping cell filled with
+mixture of Rb vapor and $^3$He gas. The laser beams will be completely absorbed
+by the pumping cell. The total path length from the lasers to the pumping cell
+is about 5 meters. The pumping cell is inside an oven and 
+connected to a target cell. The whole target assembly is inside two pairs of
+Helmholtz coils, which provide a magnetic field for the polarization of the
+target. A NMR system with a set of RF drive coils and a set of separate 
+pickup coils, and an EPR system 
+are used to measure the polarization of the target.
+
+
+\section{Hazards}
+
+The primary beam hazards associated with Class IV lasers consists of eye and skin
+injuries. The most severe eye injuries are caused by viewing the beam either directly
+or through specular reflection. At an infra-red wavelength of $795 nm$ most of the
+laser light entering the eye is absorbed in the retina. The primary adverse effects
+from direct or specular viewing are blindness and severe retinal burns. The primary
+adverse effects from accidental viewing are retinal burns. The retina is most
+sensitive to radiation of this wavelength, and if the laser energy incident to the eye
+is too high, it can cause an irreversible retinal burn.
+
+Laser radiation of the intensity associated with Class IV diode lasers can also
+cause irreversible damage to the skin. The damage caused is either associated with
+temperature rise of the skin tissue following the absorption of laser energy (skin
+burns) or with surface reactions resulting from photon interactions at the molecular
+level (photochemical effect), disrupting the normal functionality of the skin tissue.
+
+
+\section{Laser environment}
+
+The diode lasers and the associated devices will be located in the polarized $^3$He target laser hut in Hall A.
+The entire hut is a laser controlled area. Its organization is shown in
+figure A.2. The setup will be on the second floor and the direct laser light
+will not be visible from the entrance of the room.
+
+
+\begin{figure}
+\begin{center}
+\centerline{\includegraphics[angle=90.0, height=8in]{laser_hall}}
+\caption{The Polarized $^3$He Target Laser Hut Setup}
+\end{center}
+\end{figure}
+
+The laser beams are horizontal and are pointing away from the entrance door. 
+After passing through the optical setup, the laser beams 
+are directed into the pumping cell and terminated there. 
+
+Outside the laser hut, the laser beam path is completely enclosed with beam 
+pipe between the laser hut and the target pivot and an enclosure on top of the 
+the target. 
+Since the beam path is not enclosed inside the laser hut, any partially
+reflective surface may cause deflection of the beam path. When operating the 
+diode laser, safety goggles are required at all times.  
+
+Apart from direct beam hazards to eyes and skin, since the diode lasers are 
+Class IV lasers, there exists a potential fire hazard. Flammable material 
+should not be brought into the laser area.  
+
+\section{Procedures}
+
+In this section, we review the various procedures that are required to operate the
+laser and optical devices. Hazards are least likely to occur during normal operation
+when laser beams are switched on. During tests, maintenance,
+upgrades and/or alignment,  beam hazards are more likely.
+
+{\bf At all times}, when operating the diode lasers in lasing mode, safety goggles
+are required.
+
+\subsection{Normal procedure}
+In the operation mode, each diode laser is in lasing mode rendering an output 
+power of approximately 30 W. The laser beam is already aligned, properly 
+focused and directed into the pumping cell. The lasers are interlocked with the
+entrance door of the laser hut. All the laser beam pipes and the laser 
+enclosure on top of the target are securely installed.
+
+Working with the lasers in normal operational mode will require protective 
+eye wear with a minimum optical 
+density (OD) of 4.7 at wavelength of 795 nm. Before
+starting the laser in its normal operation mode personnel have to enable the
+laser safety interlock box. This will cause access to the laser hut to be in 
+a controlled mode. Authorized personnel with an access code can 
+bypass the interlock for 45 seconds when entering the laser room. Unauthorized
+personnel entering the room will cause the lasers switching to stand-by mode
+when the door is opened. If the laser is to be unattended for a long time, the 
+power should be switched off.
+
+Thus the general procedures for normal operation of the diode lasers in the target lab are:
+
+\begin {itemize}
+\item Enable laser safety interlock box;
+\item Wear protective eyewear;
+\item Switch on AC power;
+\item Turn on the control box with a key; 
+\item Turn laser to Ready and then On.
+\end {itemize}
+
+\subsection{Alignment procedure}
+
+All the mechanical stands supporting the optical components have been designed and
+surveyed in order to achieve a preliminary safe alignment of the entire setup (laser
+off).  Initial setup of laser and optical system will be done while the laser 
+hut window is closed (such that no laser beam will come out the laser hut).
+Initial alignment will be done with a standard class 3 HeNe laser  
+(class 3A after attenuation, 650 nm) or a laser pointer (class 3A). 
+The final alignment will be done with the diode laser. 
+The beam can be tracked by the use of either an IR viewing card or
+an IR viewer.  The photosensitive card can be displaced along the beam, and
+the IR viewer allows the tracking by the light slightly diffused on the optical
+components. During this final alignment, the laser hut window will be opened 
+and the laser beam will be directed to the target, while the laser beam pipes 
+and the laser enclosure on top of the target will be taken off. Therefore the 
+whole hall will be classified as laser area. We will use the CANS system
+to have controlled access. Before the laser alignment starts, a sweep will
+be performed to clear the Hall. Then the CANS system will be programmed to
+only allow authorized laser trained persons to have access to the hall.   
+The door to the BSY tunnel will be magnetically locked with a toggle push-button switch. The ``laser danger'' warning sign will be posted at all the entrances. The doors will be checked by pulling the door handle. In addition, a red flashing light will be put at the BSY side of the door.
+%key-interlock 
+%entrance control system to have controlled access. Before the laser alignment
+%starts, a sweep will be performed to clear the hall. Then the hall will be in 
+%``control access'' mode. MCC will only allow authorized laser trained persons 
+%to have access to the hall. A copy of this LSOP with a current list of 
+%Authorized Persons will be kept at MCC. 
+Most of the final laser alignment will be 
+performed during night time to minimize interference with other work going 
+on in the hall. When the alignment stops, all signs will be take off and
+the CANS system will be disabled and the door to BSY will be unlocked.
+
+\subsection{Maintenance procedure}
+
+Replacement of used or damaged optical components of the setup will be made with the
+laser off (power switched off and unplugged).  The positions and orientations of the new components will be mechanically
+surveyed and extensively checked before turning to any procedure needing the laser on.
+
+When the target enclosure windows need to be opened (such as to inspect
+the target or to replace a 
+target cell) and the hall is not in laser controlled access, 
+the lasers must be turned off before opening the target enclosure.
+The keys for all of the laser power
+supplies will be secured in a lock box.  All staff working in the
+vicinity of the target enclosure 
+must apply personal locks to this box in accordance with
+JLab lockout/tagout procedures.
+The vicinity area will be determined
+from the power measurement and with clear danger sign posted.
+
+In case of the failure of any electromechanical or electrical or electronical device,
+the lasers and the other power supplies will be turned off and the out of order devices
+will be fixed by Coherent or Opto Power service personnel. The Laser power
+can simply be unplugged.
+
+
+\subsection{Off-normal and emergency procedure}
+
+In case of an emergency, power to the laser should be shut off.
+This can be performed in three ways.
+\begin {itemize}
+\item Push the Crash button;
+\item Turn off the control key on the laser power supply;
+\item Pull the plug from the power outlet.
+\end {itemize}
+
+In the event of a fire, the users should leave the laser room and pull the 
+nearest fire alarm. Then leave the hall.
+
+In case anybody is accidentally exposed to the laser beam (direct or indirect)
+without eye protection, he or she should immediately contact the Jefferson
+Lab medical center (Mary Gibson, phone: 7539, page: 584-7539). If it is 
+off business hours, please contact local hospital emergency. At the mean time,
+please inform the laser system superviser (Jian-ping Chen, phone: 7413,
+page: 584-7413) and/or laser safety officer (Patty Hunt, phone: 7039,
+page: 584-7039). 
+
+
+\section{Controls}
+Several controls have been added as preventive measures to the laser room 
+and to the direct laser area. We will enumerate these controls here.
+\begin {itemize}
+\item The laser control area will have danger signs posted and will have a
+yellow beacon indicating the presence of Class IV diode lasers. Danger sign will also be posted near the target enclosure area.
+\item A controlled access interlock system will limit the entrance to the laser hut with a coded number pad. The code is given only to the authorized 
+laser users listed in section 10 with currently valid training. 
+\item The laser switches are interlocked to allow an opening of the door to 
+turn off the laser (to stand-by). 
+\item The main power plug to the laser can be easily pulled. It is plugged
+into a power strip with a on/off switch which can be easily switched off.
+\item Protective safety goggles (minimum OD 4.7 at 795 nm)
+have to be worn when the laser is operational.
+\item All laser beam paths outside the laser hut are enclosed with beam pipe or
+other enclosure (except during laser alignment process).
+\item All personnel need to fulfill the training requirements as indicated in Section 1 of this document.
+\item the LSOP will be posted on the outside door of the laser hut to inform 
+personnel about the
+hazards associated with the setup and the proper procedures.
+\end {itemize}
+
+\section{Maximum permissible exposure}
+
+The Coherent FAP-System  of 
+infra-red diode lasers emit nominal 
+continuous beams of $30~W$ at a wavelength of $795 nm$.
+With a limiting aperture size of $0.385 cm^2$ ( $7 mm$ pupil size),
+this gives an irradiance at the eye of $39 W/cm^2$.
+With one 30 W laser, the maximum irradiance at the eye is $78 W/cm^2$
+As this wavelength is not visible, no blink reflex
+can occur, and we thus assume a 10 second exposure time.
+With a correction factor of $CA=1.55$ the calculated MPE is $1.57 mW/cm^2$.
+
+The required filter transmittance is thus 0.000020 , which gives a minimum 
+Optical Density of 4.7.
+We chose to use safety goggles of Optical density 5, for the wavelength of 
+$795 nm$.
+
+
+\section{List of authorized personnel}
+The following personnel are authorized to operate the Coherent FAP-system
+diode lasers and the associated polarized $^3$He target facility, under 
+the assumptions, they
+have completed the training requirements defined in Section 1:
+
+
+\begin{tabular}{ll}
+Vincent Breton          & William and Mary \\
+Gordon Cates            & University of Virginia \\
+Jian-Ping Chen          & Jefferson Lab (Laser system Supervisor) \\
+Alexandre Deur          & Jefferson Lab \\
+Gary Dezern             & Jefferson Lab \\
+Ed Folts                & Jefferson Lab \\
+Haiyan Gao              & MIT \\
+Ole Hansen              & Jefferson Lab \\
+Wolfgang Korsch         & University of Kentucky \\
+Kevin Kramer            & William and Mary \\
+Nilanga Liyanage        & Jefferson Lab \\
+Zein-Eddine Meziani     & Temple University \\
+Jaideep Singh		& University of Virginia \\
+Karl Slifer             & Temple University \\
+Patricia Solvignon	& Temple University \\
+Scot Spiegel            & Jefferson Lab \\
+Mark Stevens            & Jefferson Lab \\
+Vince Sulkosky		& William and Mary \\
+Xiaochao Zheng          & MIT \\
+\end{tabular}
+
+
+Names can be added to this list by the Laser System Supervisor, 
+Jian-ping Chen, phone 269-7413, pager 584-7413, 
+\url{email to: jpchen@jlab.org}.
+
+\end{safetyen}
+
+%===========================================
+
+\begin{safetyen}{10}{5}
+\chapter{List of Authorized Personnel}
+\section{List of Laser Trained Personnel}
+See the list at the end of Appendix A.
+
+\section{List of Authorized Polarized $^3$He Target Operators}
+
+\begin{tabular}{ll}
+Todd Averett		& William and Mary \\
+Vincent Breton          & William and Mary \\
+Gordon Cates            & University of Virginia \\
+Jian-ping Chen          & Jefferson Lab (Laser system Supervisor) \\
+Alexandre Deur          & Jefferson Lab \\
+Haiyan Gao              & MIT \\
+Ole Hansen              & Jefferson Lab \\
+Wolfgang Korsch         & University of Kentucky \\
+Kevin Kramer            & William and Mary \\
+Nilanga Liyanage        & Jefferson Lab \\
+Kathy McCormick         & Kent State University \\
+Zein-eddine Meziani     & Temple University \\
+Jaideep Singh		& University of Virginia \\
+Karl Slifer             & Temple University \\
+Patricia Solvignon	& Temple University \\
+Vince Sulkosky		& William and Mary \\
+Xiaochao Zheng          & MIT \\
+\end{tabular}
+
+\section{List of Authorized People to Change Target Cells}
+
+\begin{tabular}{ll}
+Jian-ping Chen          & Jefferson Lab \\
+Alexandre Deur          & University of Virginia\\
+Kevin Kramer            & College of William and Mary \\
+Nilanga Liyanage        & Jefferson Lab \\
+Karl Slifer             & Temple University \\
+Vince Sulkosky		& William and Mary \\
+Xiaochao Zheng          & MIT \\
+\end{tabular}
+
+
+\section{List of Authorized People to Perform Laser Alignment}
+\begin{tabular}{ll}
+
+Jian-ping Chen          & Jefferson Lab\\
+Kevin Kramer            & College of William and Mary \\
+Wolfgang Korsch         & University of Kentucky \\
+Patricia Solvignon	& Temple University \\
+Vince Sulkosky		& William and Mary \\
+Xiaochao Zheng          & MIT \\
+
+\end{tabular}
+
+\vskip 0.3in
+Names can be added to the above lists after proper training 
+and authorized by Jian-ping Chen, pager 872-5736, phone 7413 and
+\url{emailto:jpchen@jlab.org}.
+\end{safetyen}
+\end{appendix}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
