@@ -41,6 +41,10 @@ dummy := $(shell if [ $(INFOLEVEL) -lt 4 ]; then echo "\renewcommand{\infolevfou
 dummy := $(shell if [ $(INFOLEVEL) -lt 3 ]; then echo "\renewcommand{\infolevthree}[1]{}%" ; fi >> currinfolevel.tex)
 dummy := $(shell if [ $(INFOLEVEL) -lt 2 ]; then echo "\renewcommand{\infolevtwo}[1]{}%" ; fi >> currinfolevel.tex)
 dummy := $(shell if [ $(INFOLEVEL) -lt 1 ]; then echo "\renewcommand{\infolevone}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -gt 3 ]; then echo "\renewcommand{\infolevltfour}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -gt 2 ]; then echo "\renewcommand{\infolevltthree}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -gt 1 ]; then echo "\renewcommand{\infolevlttwo}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -gt 0 ]; then echo "\renewcommand{\infolevltone}[1]{}%" ; fi >> currinfolevel.tex)
 
 #$(error .config dir= $(srcdir) lev=$(lev))
 TEXINPUTS =.:$(srcdir1):$(srcdir1)/common:$(srcdir1)/$(top):
@@ -152,13 +156,16 @@ html:
 
 
 # ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Id: Makefile,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.2 2003/11/21 18:22:47 gen Exp $
+# $Id: Makefile,v 1.2 2003/11/21 18:22:47 gen Exp $
 # $Author: gen $
-# $Date: 2003/06/05 17:28:33 $
+# $Date: 2003/11/21 18:22:47 $
 # $Name:  $
 # $Locker:  $
 # $Log: Makefile,v $
-# Revision 1.1  2003/06/05 17:28:33  gen
-# Initial revision
+# Revision 1.2  2003/11/21 18:22:47  gen
+# add new command
+#
+# Revision 1.1.1.1  2003/06/05 17:28:33  gen
+# Imported from /home/gen/tex/OSP
 #
