@@ -49,8 +49,9 @@ dummy := $(shell if [ $(INFOLEVEL) -gt 0 ]; then echo "\renewcommand{\infolevlto
 #$(error .config dir= $(srcdir) lev=$(lev))
 TEXINPUTS =.:$(srcdir1):$(srcdir1)/common:$(srcdir1)/$(top):
 BIBINPUTS =$(TEXINPUTS)
+BSTINPUTS =$(TEXINPUTS)
 
-export TEXINPUTS BIBINPUTS
+export TEXINPUTS BIBINPUTS BSTINPUTS
 
 
 DVIPS = dvips  
@@ -156,13 +157,16 @@ html:
 
 
 # ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.2 2003/11/21 18:22:47 gen Exp $
-# $Id: Makefile,v 1.2 2003/11/21 18:22:47 gen Exp $
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.3 2003/12/05 05:42:29 gen Exp $
+# $Id: Makefile,v 1.3 2003/12/05 05:42:29 gen Exp $
 # $Author: gen $
-# $Date: 2003/11/21 18:22:47 $
+# $Date: 2003/12/05 05:42:29 $
 # $Name:  $
 # $Locker:  $
 # $Log: Makefile,v $
+# Revision 1.3  2003/12/05 05:42:29  gen
+# New latex commands added
+#
 # Revision 1.2  2003/11/21 18:22:47  gen
 # add new command
 #
