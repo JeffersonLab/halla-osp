@@ -1,16 +1,16 @@
-\section[Overview]{Overview
+\chapter[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: HacOps.tex,v 1.7 2003/11/21 18:24:31 gen Exp $ $
+  $CVS~revision~ $Id: HacOps.tex,v 1.8 2003/12/05 06:10:22 gen Exp $ $
 }
 \footnote{Authors: J.Gomez \url{mailto:gomez@jlab.org}}
 }
-
+\label{chap:controls}
 
 A distributed computer system
 based on the 
 Experimental Physics and Industrial Control System 
-(EPICS)
-\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/epics}}
+(EPICS)~\cite{EPICSwww}
+%\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/epics}}
  architecture monitors and commands
 the various Hall A systems. The basic components of the system are:
 \begin{itemize}
@@ -22,7 +22,8 @@ and sequencers).
 \item Operator Interfaces (OPI) - Computers capable of executing
 EPICS tools to interact with the IOCs.
 The four most used tools in Hall A are (a)
-a Web-enabled version of the Motif-based Display Editor/Manager (MEDM), (b) StripTool and, (c) a signal archiver.
+a Web-enabled version of the Motif-based Display Editor/Manager (MEDM)~\cite{MEDMwww}, 
+(b) StripTool and, (c) a signal archiver.
 MEDM is the main interface used for monitoring and controlling both the hall and accelerator
 equipment. StripTool allows to monitor 
 the behavior of one or more signals as a function of time. 
@@ -36,49 +37,51 @@ signal database and controls algorithms).
 
 \infolevtwo{
 \section{System's Components}
-Four Linux based computers are used as OPIs: hacsbc2 (Hall A counting house), hacweb1 (101B), hacweb2 (hall) and hacweb3 (101B).
-Two computers act as boot servers: hacsbc2 and hlasrv (2nd-floor of counting house). Hlasrv
-also acts as MEDM server. The signal archiver resides in hacweb1.
+Four Linux based computers are used as OPIs: \mycomp{hacsbc2} (Hall A counting house), 
+\mycomp{hacweb1} (101B), \mycomp{hacweb2} (hall) and \mycomp{hacweb3} (101B).
+Two computers act as boot servers: \mycomp{hacsbc2} and \mycomp{hlasrv} 
+(2nd-floor of counting house). \mycomp{Hlasrv}
+also acts as MEDM server. The signal archiver resides in \mycomp{hacweb1}.
 The tasks assigned to the various IOCs are,
 
 \begin{tabular}{r p{12.0cm}}
-{\bf hallasc7} & Right HRS motion control.\\[0.5ex]
-{\bf hallasc6} & e-p energy measurement system.\\[0.5ex]
-{\bf hallasc18} & Left HRS motion control.\\[0.5ex]
-{\bf iocha1} & Arc energy measurement system - beam position and profile wire
+\mycomp{hallasc7} & Right HRS motion control.\\[0.5ex]
+\mycomp{hallasc6} & e-p energy measurement system.\\[0.5ex]
+\mycomp{hallasc18} & Left HRS motion control.\\[0.5ex]
+\mycomp{iocha1} & Arc energy measurement system - beam position and profile wire
 scanners.\\[0.5ex]
-{\bf iocha2} & Arc energy measurement system - 9th magnet $\int Bdl$ measurement.\\[0.5ex]
-{\bf iocha3} & RICH counter. \\[0.5ex]
-{\bf iocha4} & Electron detector stack - VDCs high voltage and discriminator thresholds, reset lines to various DAQ crates.\\[0.5ex]
-{\bf iocha5} & Beam current monitors.\\[0.5ex]
-{\bf iocha11} & Hadron detector stack - VDCs high volatge and discriminator thresholds, reset lines to various DAQ crates.\\[0.5ex]
-{\bf iocha14} & Left HRS - Q2, Q3 and Dipole power supplies and cryogenics, magnetic field probes and, collimator.\\[0.5ex]
-{\bf iocha16} & Right HRS - Q2, Q3 and Dipole power supplies and cryogenics, magnetic field proves and, collimator. \\[0.5ex]
-{\bf iocha17} & Monitors supply of various gasses to tracking chambers.\\[0.5ex]
-{\bf iocha22} & Electron detector stack - LeCroy high voltage supplies located at
+\mycomp{iocha2} & Arc energy measurement system - 9th magnet $\int Bdl$ measurement.\\[0.5ex]
+\mycomp{iocha3} & RICH counter. \\[0.5ex]
+\mycomp{iocha4} & Electron detector stack - VDCs high voltage and discriminator thresholds, reset lines to various DAQ crates.\\[0.5ex]
+\mycomp{iocha5} & Beam current monitors.\\[0.5ex]
+\mycomp{iocha11} & Hadron detector stack - VDCs high volatge and discriminator thresholds, reset lines to various DAQ crates.\\[0.5ex]
+\mycomp{iocha14} & Left HRS - Q2, Q3 and Dipole power supplies and cryogenics, magnetic field probes and, collimator.\\[0.5ex]
+\mycomp{iocha16} & Right HRS - Q2, Q3 and Dipole power supplies and cryogenics, magnetic field proves and, collimator. \\[0.5ex]
+\mycomp{iocha17} & Monitors supply of various gasses to tracking chambers.\\[0.5ex]
+\mycomp{iocha22} & Electron detector stack - LeCroy high voltage supplies located at
 various points in the hall
 (i.e. beam-line and both electron and hadron detector stacks).\\[0.5ex]
-{\bf iocha26} & \\[0.5ex]
-{\bf iocha48} & Left and Right HRS Q1 power supplies. BigBox power supply.\\[0.5ex]
-{\bf iocha49} & Septum magnets
+\mycomp{iocha26} & \\[0.5ex]
+\mycomp{iocha48} & Left and Right HRS Q1 power supplies. BigBox power supply.\\[0.5ex]
+\mycomp{iocha49} & Septum magnets
 \end{tabular}
 }
 
 \infolevthree{
 \section{Operating Procedures}
 Log into the Hall A control system through one of
-the computers hacsbc2, hacweb1, hacweb2 or hacweb3. The task bar has a
+the computers \mycomp{hacsbc2}, \mycomp{hacweb1}, \mycomp{hacweb2} or \mycomp{hacweb3}. The task bar has a
 ``tool box'' icon with a small arrow on top. Clicking on the arrow brings up a 
-menu. In the case of hacsbc2, the menu contains the Alarm Handler
+menu. In the case of \mycomp{hacsbc2}, the menu contains the Alarm Handler
 application and three further sub-menus: Spectrometer Motion, StripTool and WebMedm.
-The Alarm Handler application is not available in hacweb1 - hacweb3.
+The Alarm Handler application is not available in \mycomp{hacweb1} - \mycomp{hacweb3}.
 Three applications are located under Spectrometer Motion (HRS Floor Marks, LEFT HRS and RIGHT HRS),
 two under SripTool (Strip Tool and Snapshot) and, three under WebMedm (Accelerator Menu,
 Cryogenics Menu and Hall A Menu). To start any of these applications, use the left mouse button
 to click on the application name. These applications, as described below, can be started
 from a terminal. In that case, type the commands given without the quotes.
 
-\subsection{Alarm Handler}
+\section{Alarm Handler}
 The Alarm Handler notifies the user when either a signal being monitored
 is outside some pre-defined limits or
 communication with the IOC in which the signal resides has been lost.
@@ -86,27 +89,18 @@ The Alarm Handler will only detect an abnormal signal condition if
 the signal is included in the Alarm Handler configuration file
 and, the corresponding IOC database record is set to produce an alarm condition.
 
-The Alarm Handler can be started from a terminal with the command ``start\_alh''.
-The default configuration file is ``\~/alh/ALH-default.alhConfig''.
+The Alarm Handler can be started from a terminal with the command \mycomp{start\_alh}.
+The default configuration file is \mycomp{\~/alh/ALH-default.alhConfig}.
 A detail description of the operation and configuration of this application can be found
 in the Alarm Handler Users
 Guide.\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/extensions/alh/index.php}}
 
-\subsection{HRS Floor Marks}
+\section{HRS Floor Marks}
 This application determines the floor marks and vernier readings required
 to set each spectrometer to a given angle. The application can be started from a terminal
-with the command ``setspec''.
+with the command \mycomp{setspec}.
 
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[angle=0,width=\textwidth]{controls-fig1}
-{\linespread{1.}
-\caption[Right HRS Motion Control]{Right HRS motion control.}
-\label{controls-fig1}}
-\end{center}
-\end{figure}
-
-\subsection{RIGHT HRS and LEFT HRS}
+\section{RIGHT HRS and LEFT HRS}
 The ``RIGHT HRS'' (``LEFT HRS'') application is used to set the right (left)
 spectrometer angle.
 To start the ``RIGHT HRS'' (``LEFT HRS'')
@@ -115,17 +109,36 @@ The ``RIGHT HRS'' and ``LEFT HRS'' applications are very similar so, we will
 use ``RIGHT HRS'' as an example.
 
 Upon starting the ``RIGHT HRS'' application, 
-a screen labeled ``RIGHT-HRS Bogies'' will open as shown in
-Fig. \ref{controls-fig1}.
+a screen labeled ``RIGHT-HRS Bogies'' will open as 
+shown in Fig. \ref{fig:medm-hrs-bogies}.
+\begin{figure}[htb]
+\begin{center}
+%  \includegraphics[angle=0,width=0.9\textwidth]{controls-fig1}
+    \includegraphics[angle=0,scale=0.5]{medm_hrs-bogies-right}
+\caption[Right HRS Motion Control]{Right HRS motion control.}
+\label{fig:medm-hrs-bogies}
+\end{center}
+\end{figure}
+
 Pressing the button labeled ``Graph'' in the top-left corner of ``RIGHT-HRS Bogies''
 will open two more screens: one labeled ``Strip Chart'' and an associated, column like,
-signal selection screen. The signal selection screen allows to select the signals
+signal selection screen (see Fig.~\ref{fig:medm-hrs-bogies-graph}).
+The signal selection screen allows to select the signals
 to be plotted in the Strip Chart screen. All signals are plotted with the same color.
 To highlight a given signal,
 use the plot legend located towards the right of the Strip Chart screen: clicking on the line next
 to the signal name will change its color in the main plot.
 The plot screens are likely to be more useful to the Hall A technical staff than to the
 shift personnel.
+\begin{figure}[htb]
+\begin{center}
+    \includegraphics[scale=0.5]{medm_hrs-bogies-right-graph2}
+    \includegraphics[scale=0.5]{medm_hrs-bogies-right-graph1}
+\caption[Right HRS Motion Control - additional options]{Right HRS motion control - additional options.}
+\label{fig:medm-hrs-bogies-graph}
+\end{center}
+\end{figure}
+
 
 The application screens show the Motor Current Output (MCO) and Motor Velocity Output (MVO) for each
 of the four middle-ring (M1-M4) and four outer-ring (O1-O4) motors.
@@ -138,7 +151,7 @@ able to move in any direction (i.e. clockwise or counter-clockwise).
 It is worth to stress that the PSM, DM, brakes and clamps request buttons represent
 \underline{requests} that the hardware interlock circuits may negate. This can be clearly
 seen 
-in Fig. \ref{controls-fig1} which was taken with
+in Fig. \ref{fig:medm-hrs-bogies} which was taken with
 the electrical power to the PSM and DMs disabled for septum magnet installation
 in the central pivot area. Note that PSM and DM request buttons are selected (red color)
 yet the corresponding status fields show interlock incomplete status (``NO'').
@@ -150,7 +163,8 @@ If the status does not change, reboot
 the IOC using the green buttons located in the middle room of the counting house.
 If the failure persists, contact the Hall A on-call tech.
 After the clamps have been successfully released, enter a value in the ``VELOCITY SET'' field
-(see Fig. \ref{controls-fig1} - ``RIGHT-HRS Bogies'' screen). The sign of the velocity
+(see Fig. \ref{fig:medm-hrs-bogies} - ``RIGHT-HRS Bogies'' screen).
+The sign of the velocity
 will determine the sense of spectrometer rotation. The sense of rotation is displayed by the
 field ``DIRECTION''.
 
@@ -182,7 +196,7 @@ application.
 \end{itemize}
 \end{safetyen}
 
-\subsection{Strip Tool}
+\section{Strip Tool}
 Strip Tool plots a real-time strip chart of the values of one or more signals.
 It is useful to monitor data trends.
 
@@ -191,31 +205,57 @@ of this application can be found in the Strip Tool Users
 Guide\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/extensions/StripTool/index.php}}
 with one difference; the version used by Hall A does not have a ``print'' function.
 To print a strip chart use the application ``Snapshot'' described below.
-To start Strip Tool from a terminal type the command ``StripTool''.
+To start Strip Tool from a terminal type the command \mycomp{StripTool}.
 
-\subsection{Snapshot}
+\section{Snapshot}
 Snapshot refers to a KDE desktop application (ksnapshot) which allows to grab an image
 of either the whole
 screen or an individual window. The image can then be sent to a printer or stored on disk.
-The application can be started from a terminal with the command ``ksnapshot''.
+The application can be started from a terminal with the command \mycomp{ksnapshot}.
 
-\subsection{Accelerator Menu}
+\section{Accelerator Menu}
 The ``Accelerator Menu'' application brings up a web-version of Monticello,
 the root MEDM screen giving access to the various accelerator systems. Access to those
 systems is read-only mode except for some Hall A applications which are described elsewhere
 in this OSP. Not all the menus shown in this web-version of Monticello are operational
 because they still are linked to directory structures residing in specific
 Machine Control Center (MCC) computers. The application can be started from a terminal with
-the command ``accmain''.
+the command \mycomp{accmain}.
 
-\subsection{Cryogenics Menu}
+\section{Cryogenics Menu}
 The ``Cryogenics Menu'' application brings up the End Station
 Refrigerator (ESR) menu. Access to all ESR systems is read-only mode. This application
 is typically used by the Hall A technical staff to
-monitor the hall cryogenics. The application can be started from the terminal with the command ``esrmenu''.
+monitor the hall cryogenics. The application can be started from the terminal with the command \mycomp{esrmenu}.
 
-\subsection{Hall A Menu}
-The ``Hall A Menu'' application brings up a menu giving access to all the EPICS based control systems in Hall A. The application can also be started from a terminal with the command ``hlamain''.
+\infolevtwo{
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,height=0.4\textheight]{medm_halla_start}
+\caption[Controls: Hall A Main Control Screen]{Hall A Main Control Screen.}
+\label{fig:medm-hlamain}
+\end{center}
+\end{figure}
+}
+
+\section{Hall A Menu}
+The ``Hall A Menu'' application brings up a menu giving access to all the EPICS 
+based control systems in Hall A. The application can also be started on, say \mycomp{hacsbc2}
+from a terminal with the command \mycomp{hlamain}, opening a control window%
+\infolevtwo{ (see Fig.~\ref{fig:medm-hlamain})}.
+Using this window one can open the ``Tools'' window%
+\infolevtwo{ (see Fig.~\ref{fig:medm-hlamain-tools})}
+ containing
+many available functions for slow control of Hall A equipment.
+\infolevtwo{
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,height=0.8\textheight]{medm_halla_tools}
+\caption[Controls: Hall A Tools Screen]{Hall A Tools Screen.}
+\label{fig:medm-hlamain-tools}
+\end{center}
+\end{figure}
+}
 
 \section{Troubleshooting Procedures}
 The status of most IOCs can be seen
@@ -236,13 +276,16 @@ the software on-call person be notified. If the name is ``hallasc..'' call J. Go
 %\clearpage % forces LaTeX to finish all remaining open floats
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.7 2003/11/21 18:24:31 gen Exp $
-% $Id: HacOps.tex,v 1.7 2003/11/21 18:24:31 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.8 2003/12/05 06:10:22 gen Exp $
+% $Id: HacOps.tex,v 1.8 2003/12/05 06:10:22 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/21 18:24:31 $
+% $Date: 2003/12/05 06:10:22 $
 % $Name:  $
 % $Locker:  $
 % $Log: HacOps.tex,v $
+% Revision 1.8  2003/12/05 06:10:22  gen
+% MEDM pictures added
+%
 % Revision 1.7  2003/11/21 18:24:31  gen
 % polishing
 %
