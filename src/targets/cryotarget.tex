@@ -1,6 +1,6 @@
 \chapter[Cryogenic Targets]{Cryogenic Targets
 \footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $ $ }
+  $CVS~revision~ $Id: cryotarget.tex,v 1.9 2004/12/10 22:39:41 jpchen Exp $ $ }
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
 
@@ -25,16 +25,16 @@ will be filled with 17 PSIA helium gas to save cooling power.
 \par
 During the normal operation, the Hydrogen and/or Deuterium target should
 have already been liquefied and are in a stable state of 
-about 2 degree sub-cooled. 
+about 3 degree sub-cooled. 
 The normal operating conditions of the targets are given in Table~\ref{tab:target-cryo-param}.
 Also listed in Table~\ref{tab:target-cryo-param} are the freezing and boiling temperatures.
-These parameters should be reasonably stable provided that the End Station
+These parameters should be reasonably stable (temperature to $\pm 0.1$ K, 
+pressure to $\pm 1$ psi) provided that the End Station
 Refrigerator (ESR) is stable. The
 temperature is controlled by a software PID loop with a high power heater (up
-to 600 Watts) and a hardware PID loop with a low power heater (up to about 
-60 Watts). Both PID loops read the output of one
-of the Cernox resistors and adjust the power in the high or low power heater 
-appropriately.
+to 600 Watts). The PID loops read the output of one
+of the Cernox resistor temperature sensors and adjust the power in the high 
+power heater appropriately. 
 The control loops function extremely well and the temperature fluctuations with
 steady beam are typically measured in hundredths of degrees. During beam off-
 beam on transitions high power fluctuations of a few tenths of a degree are
@@ -99,6 +99,7 @@ range. The ALH can also repeated alarm if there are noisy analog channels.
 If the AH alarms repeatedly or the cause of the alarm is not clear, the 
 target operator should contact the on-call target expert.
 \end{safetyen}
+}
 
 \subsection{Target Motion and Fast Raster}
 
@@ -116,6 +117,7 @@ the target operator \emph {must check to make sure} that the faster raster
 is on and has a reasonable size.
 \end{safetyen}
 
+\infolevone{
 
 \subsection{Cryogenic Consumption}
 
@@ -136,7 +138,7 @@ target checklist \emph{must be filled
 out once per shift} and store in the target checklist binder.
 
 }
-\infolevtwo{
+%\infolevltone{
 \subsection{Target Operators}
 
 One individual on each shift is responsible for target operations. 
@@ -377,7 +379,7 @@ R. Suleiman&suleiman&
 
 \vspace{0.3cm}
 
-}
+%}
 
 \begin{safetyen}{10}{10}
 \section{Target Experts}
@@ -392,7 +394,6 @@ and their pager and/or home numbers
    Cryo target: experts and authorized personnel, with their home numbers}
    \namestabheader{Hall A Physicists} 
    \JianPingChen{h:867-7380}
-   \KathyMcCormick{h:640-8062}
    \namestabheader{JLab Cryo-Target Group} 
    \DaveMeekins{h:974-4750}
    \MikellSeely{h:833-7890}
@@ -427,7 +428,7 @@ to, but the deuterium target is essentially identical and almost all
 comments apply to both targets. 
 }
 
-\infolevone{
+%\infolevone{
 \begin{safetyen}{10}{5}
 \subsection{Flammable Gas}
 
@@ -474,6 +475,7 @@ and to prevent exposure to any energy source that could cause ignition.
 In the Hall A environment, the most likely source of oxygen is of course the
 atmosphere and the most likely ignition sources are from electrical equipment.
 
+\infolevone{
 \subsubsection{ Electrical Installation}
 
 Hall A contains a lot of electrical equipment and almost all of it
@@ -577,6 +579,7 @@ HP cold cathode gauge. This gauge has a maximum operating voltage of
 current of 133 $\mu$A. The pressure at the entrance to the roughing pump
 is measured by a convectron gauge.
 \end{description}
+}
 
 \subsubsection{ Flammable Gas Detectors}
 
@@ -590,8 +593,8 @@ The electro-chemical sensors were manufactured by Crowcon Detection
 Instruments LTD and
 the readout (four channels) was purchased from CEA Instruments, Inc. 
 (The Gas Master Four System). The readout unit provides two alarm
-levels per channel. The low level alarm is tripped at 20 $\%$ LEL
-while 40 $\%$ LEL activates the high level alarm.
+levels per channel. The low level alarm is tripped at 20 $\%$ of LEL
+while 40 $\%$ of LEL activates the high level alarm.
 Each channel has a relay output for both low and high level alarm
 states and there is also a set of common relays for both alarm
 levels (these common relays respond to the "logical or" of the sensor inputs).
@@ -599,7 +602,7 @@ The common relays will be connected to the Fast Shut Down System, FSD,
 which removes the beam from the hall by disabling a grid bias at the
 injector.
 \end{safetyen}
-}
+
 
 \infolevone{
 \subsection{ Pressure}
@@ -627,14 +630,14 @@ and pressure gauges (PI123 for hydrogen and PI112 for deuterium).
 The target cells themselves represent the most likely failure point
 in the hydrogen system. The outer walls and downstream window 
 of the cells are made of
-$\approx$ 0.03 to 0.045 $in$ thick 3004 aluminum (Coors beer cans in a former
-incarnation) (all the final ones are above 0.035 $in$). 
+$\approx$ 0.003 to 0.045 $in$ thick 3004 aluminum (Coors beer cans in a former
+incarnation) (all the final ones are above 0.0035 $in$). 
 There are two cells soldered to each cell block, one 15 $cm$ long
 and one 4 $cm$ long. Both cells have an outer diameter of 
 approximately 2.5 inches.
 The upstream windows of the cells are made from 0.0028 $in$ thick 5052
 aluminum.
-These windows are soldered to 1.75 $in$ diameter (0.065 $in$ wall)
+These windows are soldered to 1.75 $in$ diameter (0.0065 $in$ wall)
 upstream window tubes which are in turn soldered to the cell block.
 
 Since all the components are made of aluminum it is necessary to plate
@@ -661,12 +664,12 @@ Can & 80 & 0.0035 &short &(J), (D) \\ \hline
 Can & 80 & 0.0035 &long &(J), (D) \\ \hline
 Can & 60 & 0.0038 &long &(V)acuum, (D) \\ \hline
 Can & 85 & 0.0039 &long &(V), (D) \\ \hline
-Window & 110 &0.028& &(J),(D) \\ \hline
-Window & 125 &0.028& &(J),(D) \\ \hline
-Window & 125 &0.028& &(J),(D) \\ \hline
-Window & 115 &0.028& &(J),(D) \\ \hline
-Window & 147 &0.028& &(J),(D) \\ \hline
-Window & 150 &0.028& &(J),(D) \\ \hline
+Window & 110 &0.0028& &(J),(D) \\ \hline
+Window & 125 &0.0028& &(J),(D) \\ \hline
+Window & 125 &0.0028& &(J),(D) \\ \hline
+Window & 115 &0.0028& &(J),(D) \\ \hline
+Window & 147 &0.0028& &(J),(D) \\ \hline
+Window & 150 &0.0028& &(J),(D) \\ \hline
 Complete Blocks & 85 &&&(V), Non-Destructive \\ \hline
 \end{tabular}
 \end{center}
@@ -768,7 +771,8 @@ If the window is treated as a collection
 of smaller rectangular windows which have the full vertical height
 of 7 inches and the inter-ridge spacing as a width,
 then stress formulas predict that the 0.016 $in$
-material would reach ultimate stress at a pressure higher than 35 PSI. 
+material would reach ultimate stress at a pressure higher than 35 PSID
+(for both over-pressure and under-pressure). 
 There is a gate valve between the 
 scattering chamber and the beam entrance (exit) 
 pipe. Both 
@@ -906,7 +910,7 @@ The minor losses are from bends, expansions and contractions in
 piping. 
 
 The final result shows the cells subjected to 58 PSIA during the boil off,
-which is comparable to the 75 PSIA pressure that the assembled cell blocks were
+which is comparable to the 85 PSIA pressure that the assembled cell blocks were
 tested at, and is significantly below the tested
 pressure of the cell components.
 
@@ -927,6 +931,7 @@ If one considers the case where all three targets
 fail at once, the vent must be capable of handling three times
 that amount. A four $in$ diameter relief valve placed near the
 top of the scattering chamber should be capable of handling this rate.
+The 4 $in$ relief valve will vent into the hall.
 A rise in the chamber vacuum will stop the beam, FSD, and
 cause the gate valves on either side of the scattering chamber to
 close. 
@@ -941,16 +946,13 @@ This is really more an issue of target stability than one of
 safety. However, a target with a carefully regulated temperature
 will presumably not undergo worrisome pressure changes.
 
-Each target contains four quality temperature measurements, two Cernox
-resistors and two hydrogen vapor pressure thermometers. The primary
-temperature regulation is done with a dedicated temperature controller
-(an Oxford ITC-502) which slaves a heater (the "low power heater") 
+Each target contains six quality temperature measurements, four Cernox
+resistors and two hydrogen vapor pressure thermometers. The 
+temperature regulation is done with a software control of a high power
+heater
 to the temperature read by one of the Cernox resistors.
 This is a three parameter control loop (Proportional, Integral and Differential
 Control or PID).
-
-In addition, the return temperature of the target systems coolant
-gas is used to regulate the supply of coolant from ESR.
 
 Finally, the heat load from the beam will be compensated in the "active"
 target loop by use of the high power heater. This is not a true regulation
@@ -965,6 +967,7 @@ Finally the redundancy of temperature measurements can be used by the
 control system to pick up the failure of a sensor or its readout channel.
 A more complete discussion of target temperature regulation is available
 in Reference \cite{bi:tgts}.
+}
 
 \subsubsection{Target Freezing}
 
@@ -975,15 +978,17 @@ relief routes out of the system will become clogged with hydrogen ice,
 making the behavior of the system during a warm-up unpredictable.
 \end{safetyen} 
 When the hydrogen and deuterium targets are in use,
-we are using only 15 K coolant. While the hydrogen freezing point
+we usually use only 15 K coolant. While the hydrogen freezing point
 is about 13.8 K, the hydrogen target should not get frozen. 
 \begin{safetyen}{10}{5}
-The freezing point of deuterium is higher than that of hydrogen
-and higher than the temperature of the gas used for
+The freezing point of deuterium is $\sim 19$ K, higher than the temperature of 
+the gas used for
 cooling (15 K).There is 
-a chance that the deuterium target can freeze.
+a chance that the deuterium target can freeze. Also sometime we use 4 K
+instead of 15 K coolant. In this case, hydrogen target could also get frozen.
 \end{safetyen}
 
+\infolevone{
 The coolant flow through the three target heat exchangers is
 connected in parallel for the three target loops.
 The entire target system will be run so that it
@@ -1001,12 +1006,19 @@ constant.
 In the unlikely event that the target temperature drops too low,
 an alarm will sound and the target operator will turn down the corresponding
 J-T valve(s). 
+In one instance the target temperature could drop is when the target control
+ios is rebooted. After the ioc reboot, the high power heater will be reset 
+to zero before going back to PID control. Although the time the high power 
+heater is zeor is short (for about 1 minute), the temperature will drop.
+To prevent it to happen, an auxiliary heater is used in parallel to the
+regular heater. During an ioc reboot, the auxiliary heater will
+replace the rugular one to keep the temperature from dropping.
 
 \subsection{ODH}
 
 The total volume of the targets is relatively small, with the entire
 scattering chamber containing only 9,000 STP $l$ of target
-fluid when all three targets are full. As the scattering chamber
+gas when all three targets are full. As the scattering chamber
 is located in the middle of Hall A
 (i.e. not in a confined area) and the total Hall A volume is 40,000 m$^3$,
 the ODH hazard is minimal.
@@ -1035,36 +1047,17 @@ This is a 7 kVA zero switching time
 UPS which is dedicated to the target. The PC, HAC and the counting house target
 X-terminal are on Uninterruptable Power as well. 
 The targets dedicated UPS provides 18 minutes of power at full load
-(or 50 min at one half load). The status of the UPS, online or offline,
-is read by the control system and after ten minutes the control system
-will initiate an orderly shut down of the targets.
+(or 50 min at one half load). This will provide sufficient time for
+the target operator to properly turn down the targets during power outage, 
+i.e., take away heat load and turn down the fan speed. The target
+operator should call the target-on-call when there is a power outage. 
 
 The principal functions that the control system performs are:
 \begin{description}
 \item[Pressure Monitoring] The pressure at various places in the system is
 monitored and alarm states are generated if a transducer returns a value
 that is outside user defined limits. High pressures will cause the
-small orifice solenoid valve to open and cause an FSD.
-\item[Temperature Monitoring] The temperature of the target
-is read from resistors and vapor pressure bulbs and alarm states are
-activated when any temperature sensor returns a value outside
-the user defined limits. High temperatures will cause an FSD to occur.
-\item[Temperature Regulation] The control system allows the target
-temperature to be regulated. In the default operating scenario this regulation
-is performed by a stand alone temperature controller.
-\item[Solenoid Valve Control] The gas systems have a number of solenoid valves
-that must be switched.
-\item[J-T Valve Control] The flow of coolant through the heat exchangers
-is controlled by a set of J-T valves. These valves control the coolant 
-helium flow through the three loop heat exchangers and the precool heat
-exchanger.
-\item[Circulation Fan Monitoring and Control] The fans which circulate
-the target fluid are monitored (current, voltage, frequency). The
-voltage supplied to the fans is adjustable and alarm states can be set
-on out of range frequency, voltage or current values.
-\item[Vacuum Monitoring] The scattering chamber vacuum is monitored by
-the control system. Unacceptable values will generate an FSD and close
-the upstream and downstream  scattering chamber valves.
+solenoid relief valve to open.
 \item[Target Lifter] The target lifting mechanism is controlled by
 the computer. This allows one to place the desired target in the beam.
 \end{description}
@@ -1088,7 +1081,6 @@ table and certified by J.P.~Chen.
    \namestabheader{Hall A Physicists} 
    \CryotargonCall{Cryotarget}
    \JianPingChen{Cryotarget}
-   \KathyMcCormick{}
    \namestabheader{JLab Cryo-Target Group} 
    \DaveMeekins{}
    \MikellSeely{}
@@ -1133,13 +1125,16 @@ is also available at the above web sites.
 %\end{document}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $
-% $Id: cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/13 06:23:39 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.9 2004/12/10 22:39:41 jpchen Exp $
+% $Id: cryotarget.tex,v 1.9 2004/12/10 22:39:41 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2004/12/10 22:39:41 $
 % $Name:  $
 % $Locker:  $
 % $Log: cryotarget.tex,v $
+% Revision 1.9  2004/12/10 22:39:41  jpchen
+% made changes according to review
+%
 % Revision 1.8  2003/12/13 06:23:39  gen
 % Septum added. Name tables. Polishing
 %
