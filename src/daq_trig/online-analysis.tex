@@ -2,7 +2,7 @@
 
 \section[Online Analysis, Data Checks]{Online Analysis, Data Checks
 \footnote{
-  $CVS~revision~ $Id: online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $ $
+  $CVS~revision~ $Id: online-analysis.tex,v 1.3 2003/11/17 06:49:00 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -14,21 +14,21 @@ data online.
 
 \subsubsection{Scaler Display and Scaler Events}
 Scaler rates and values are displayed using
-a MOTIF based display called ``xscaler''
+a MOTIF based display called \mycomp{xscaler}
 written by C. Howell of Duke University.
 }
 \infolevtwo{
-Normally this is already running on adaqs2 or s3.
+Normally this is already running on \mycomp{adaqs2} or \mycomp{s3}.
 If it is not running, login as
 adaq and go to the appropriate directory,
 which is 
-/home/adaq/\$EXPERIMENT/electron/scaler
+\mycomp{/home/adaq/\$EXPERIMENT/electron/scaler}
 and
-/home/adaq/\$EXPERIMENT/hadron/scaler
+\mycomp{/home/adaq/\$EXPERIMENT/hadron/scaler}
 for the E-arm and H-arm respectively
-where \$EXPERIMENT is an environment
+where \mycomp{\$EXPERIMENT} is an environment
 variable like e95001.
-Then type ``xscaler'' there.  
+Then type \mycomp{xscaler} there.  
 {\it Remember} to push the button ``Start''.
 The first several pages are the scaler rates and
 the next half of the pages are the absolute
@@ -37,10 +37,10 @@ the beginning of each CODA run.
 Scalers are read out at approximately 0.5 Hz 
 and injected into the CODA data-stream 
 as event type 140.  A file
-``scaler\_history.dat'' is maintained which is
+\mycomp{scaler\_history.dat} is maintained which is
 a complete history of scaler readings at
 the end of each run that ended normally.
-For 1-TS mode, this file is in /home/adev/scaler.
+For 1-TS mode, this file is in \mycomp{/home/adev/scaler}.
 
 }
 
@@ -73,9 +73,9 @@ out randomly sampled detector data; and
 histograms of online data.
 \hskip 0.05in 
 Dhist is actually a shell script which runs 
-the executable ``dplot''.  
+the executable \mycomp{dplot}.  
 For some online help, simply type
-``dataspy'' or ``dplot''.
+\mycomp{dataspy} or \mycomp{dplot}.
 These codes analyze a random sample of
 of {\it raw, uncut} data
 in real time from the CODA computer.
@@ -89,24 +89,24 @@ a server which obtains data from shared memory.
 \par 
 This paragraph assumes you are on shift
 and wish to run dhist.  
-While ``dplot'' can run in
+While \mycomp{dplot} can run in
 several ways, let's be definite:  Log in to
-adaqh2 (or s3) as ``adaq'' account.  If dhist
-isn't running, type ``dhist''.  Now you will
+\mycomp{adaqh2} (or \mycomp{s3}) as \mycomp{adaq} account.  If \mycomp{dhist}
+isn't running, type \mycomp{dhist}.  Now you will
 see a reminder of what directory to go to and
-that you should type ``./dhist'' there.
+that you should type \mycomp{./dhist} there.
 
 \par 
-There are optional interfaces ``dopte'' and 
-``dopth'' for turning on/off the histogram
-pages.  The dopte(h) interfaces also show an 
+There are optional interfaces \mycomp{dopte} and 
+\mycomp{dopth} for turning on/off the histogram
+pages.  The \mycomp{dopte(h)} interfaces also show an 
 alarm status for the histograms by statistical
 comparison to a set of reference histograms.
-To start these interfaces, type ``dopte'' or
-``dopth'' for the E-arm and H-arm respectively.
+To start these interfaces, type \mycomp{dopte} or
+\mycomp{dopth} for the E-arm and H-arm respectively.
 
 \par 
-dhist makes about 20 pages of plots which pop
+\mycomp{dhist} makes about 20 pages of plots which pop
 up on the workstation screen and remain for
 a few seconds in succession.  Each page also
 results in a postscript file for printing, and
@@ -116,13 +116,16 @@ can view in PAW.
 }
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $
-% $Id: online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $
-% $Author: rom $
-% $Date: 2003/08/01 20:34:06 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.3 2003/11/17 06:49:00 gen Exp $
+% $Id: online-analysis.tex,v 1.3 2003/11/17 06:49:00 gen Exp $
+% $Author: gen $
+% $Date: 2003/11/17 06:49:00 $
 % $Name:  $
 % $Locker:  $
 % $Log: online-analysis.tex,v $
+% Revision 1.3  2003/11/17 06:49:00  gen
+% Cosmetic changes
+%
 % Revision 1.2  2003/08/01 20:34:06  rom
 % updated for year 2003
 %

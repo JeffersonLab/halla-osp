@@ -1,7 +1,7 @@
 \infolevone{
 \section[Trigger Hardware and Software]{Trigger Hardware and Software
 \footnote{
-  $CVS~revision~ $Id: trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $ $
+  $CVS~revision~ $Id: trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -100,17 +100,17 @@ are controlled:
     
 
 Here are the instructions to download the trigger.
-First login to the ADAQ Linux box adaql1 or adaql2 
-(and no others) as ``atrig'' account.   (E.g. ssh adaql1 -l atrig).   
+First login to the ADAQ Linux box \mycomp{adaql1} or \mycomp{adaql2} 
+(and no others) as \mycomp{atrig} account.   (E.g. \mycomp{ssh adaql1 -l atrig}).   
 The Run Coordinator should know the password.  
-Type ``trigsetup''.   A self-explanatory graphical user 
+Type \mycomp{trigsetup}.   A self-explanatory graphical user 
 interface pops up, where if you are in a coincidence 
 experiment setup you must enter the momenta and particle 
 ID's and then press "Download" and WAIT for it to finish 
-and do not press Ctrl-C.   However, for single arm 
+and do not press \mycomp{Ctrl-C}.   However, for single arm 
 running like Spin Duality or GDH, just press "Download" 
 with the defaults, and WAIT for it to finish and do 
-not press Ctrl-C.   The user should look for suspicious 
+not press \mycomp{Ctrl-C}.   The user should look for suspicious 
 error messages in the window from which trigsetup was 
 launched, e.g. to check if connection to the crate is ok. 
 
@@ -119,18 +119,18 @@ If individual modules need to be modified
 for test purposes etc. (e.g. to change thresholds),
 one may use the expert mode.
 Login to an ADAQ linux box as explained above, 
-then type ``trigsetup mapfile'' where mapfile is 
+then type \mycomp{trigsetup mapfile} where mapfile is 
 the name of the trigger map file.   Some examples 
-of map files are in /home/atrig/trigger, see 
-trigger\_left.map and trigger\_right.map for the 
+of map files are in \mycomp{/home/atrig/trigger}, see 
+\mycomp{trigger\_left.map} and \mycomp{trigger\_right.map} for the 
 left and right spectrometers respectively.     
 These are default databases.   One can modify 
 each module on the fly, save the database, etc.   
 
 \par
 
-After you download, a record of what was sent 
-is put into a file (/home/atrig/trigger/trigger.setup) 
+After you download, a record of what was sent is put into a file \\ 
+\mycomp{/home/atrig/trigger/trigger.setup} 
 which gets put automatically into the electronics 
 logbook ``halog''.   Also, whenever a CODA run is 
 started, this file is inserted as a special event 
@@ -144,13 +144,16 @@ trigger is to download again.
 
 }
 
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
-% $Id: trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
-% $Author: rom $
-% $Date: 2003/08/01 20:34:06 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Id: trigger.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Author: gen $
+% $Date: 2003/11/17 06:49:00 $
 % $Name:  $
 % $Locker:  $
 % $Log: trigger.tex,v $
+% Revision 1.5  2003/11/17 06:49:00  gen
+% Cosmetic changes
+%
 % Revision 1.4  2003/08/01 20:34:06  rom
 % updated for year 2003
 %

@@ -1,7 +1,7 @@
 \infolevone{
 \section[Spectrometer Data Acquisition]{Spectrometer Data Acquisition
 \footnote{
-  $CVS~revision~ $Id: daq.tex,v 1.4 2003/08/01 20:34:06 rom Exp $ $
+  $CVS~revision~ $Id: daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -57,18 +57,18 @@ one in each spectrometer.  This allows us to
 run the spectrometers independently if needed.
 
 \par
-The public account ``a-onl'' is normally
-used for running DAQ and ``adaq'' is used
+The public account \mycomp{a-onl} is normally
+used for running DAQ and \mycomp{adaq} is used
 for running other online software including
 ESPACE or the C++ analyzer.
-On ``adaq'' the directory
-tree of an experiment is adaq/\$EXPERIMENT
+On ``\mycomp{adaq}'' the directory
+tree of an experiment is \mycomp{adaq/\$EXPERIMENT}
 which is organized in subdirectories of 
 various tasks, such as scaler display,
 ESPACE, and other online codes, all of
 which will be described in sections below.
 The trigger management software is run from the
-``atrig'' account and is described in
+\mycomp{atrig} account and is described in
 the Trigger chapter. 
 }
 
@@ -81,21 +81,21 @@ In the counting room we have various computers
 for DAQ, analysis, and controls.  The controls
 subnet is the responsibility of 
 J. Gomez and is documented in another chapter.
-The DAQ computer's names are denoted by adaqXN, where
+The DAQ computer's names are denoted by \mycomp{adaqXN}, where
 X = s is SunOS and X = l is for Linux PC. 
 adaqs1 is the Compton DAQ computer and is normally
-reserved by the Compton group.  adaqs2 and s3
+reserved by the Compton group.  \mycomp{adaqs2} and \mycomp{s3}
 are for running the spectrometer DAQ or doing
 online analysis; we are gradually phasing out the Suns.
 adaql1 and l2 are Linux computers for running DAQ
-while adaql3,4... and higher are for analysis.
+while \mycomp{adaql3,4}... and higher are for analysis.
 The Linux PCs are administered mostly by Ole Hansen.
 
 \par
-To reboot the Suns,  login as ``adaq''
-and type ``reboot''. 
-To reboot the Linux machines, first hit Ctrl-Alt-F1
-to switch to a text console, then hit Ctrl-Alt-Del 
+To reboot the Suns,  login as \mycomp{adaq}
+and type \mycomp{reboot}. 
+To reboot the Linux machines, first hit \mycomp{Ctrl-Alt-F1}
+to switch to a text console, then hit \mycomp{Ctrl-Alt-Del} 
 to reboot.
 If power fails for a prolonged time,
 you must shutdown before the UPS fails.
@@ -115,7 +115,7 @@ on. They should
 boot up in a functional state, except for
 heavily loaded fastbus crates that sometimes
 lose their NVRAM.  (If that happens, see notes
-in adaq/doc/vmeram.doc).}
+in \mycomp{adaq/doc/vmeram.doc}).}
 
 \item{You may download
 a default trigger, following the directions in
@@ -127,11 +127,11 @@ trigger checklist.}
 \item{Make sure the HV is on for all detectors
 and that the values are normal.}
 
-\item{Start the xscaler
+\item{Start the \mycomp{xscaler}
 display following the instructions below and
 check that the rates from detectors are normal.}
  
-\item{Startup runcontrol (CODA) using the directions below
+\item{Startup \mycomp{runcontrol} (CODA) using the directions below
 and start a run.  With the trigger downloaded
 and the HV on, you are taking cosmics data, typically at 
 a rate of 3 Hz per spectrometer.  
@@ -156,11 +156,11 @@ independently.
 The 1-TS mode can also handle single--arm
 triggers but is about 1/2 the aggregate speed
 of the 2-TS mode.  When running the 2-TS
-mode, one uses the a-onl account on adaql2 for one
-spectrometer and the adev account on adaql1 or adaqs2 
+mode, one uses the a-onl account on \mycomp{adaql2} for one
+spectrometer and the adev account on \mycomp{adaql1} or \mycomp{adaqs2} 
 for the other spectrometer.  
 The 1-TS mode normally uses the 
-a-onl account on adaql2 only.
+a-onl account on \mycomp{adaql2} only.
 The information that follows refers to 
 the a-onl account, but the other account is quite similar.
 
@@ -193,7 +193,7 @@ A note about pedestal runs.  They have the exclusive
 purpose of obtaining pedestals used for pedestal
 suppression.  For details about what is done
 and hints for getting pedestals for ESPACE (which
-does not want the PEDRUN result), see /ped/README.
+does not want the PEDRUN result), see \mycomp{/ped/README}.
 
 }
 
@@ -208,7 +208,7 @@ does not want the PEDRUN result), see /ped/README.
 Use a command ``find\_run 1745'' to find
 where run 1745 has been written on disk and MSS.  
 The data are first written to disks like
-/adaql2/dataN, N=1,2,3...etc.  Files are 
+\mycomp{/adaql2/dataN}, N=1,2,3...etc.  Files are 
 automatically split, with suffixes .0,.1,.2...etc.
 Splitting occurs at 2 Gbytes to avoid problem
 of system file size limit.  
@@ -219,7 +219,7 @@ purged from disk automatically.  Users should
 
 \item{ {\it Q: How to adjust prescale factors ? } 
 \hskip 0.05in
-Edit the file /prescale/ prescale.dat.
+Edit the file \mycomp{\~/prescale/prescale.dat}.
 One common problem is putting typographical
 errors here which then leads to no triggers
 getting accepted.}
@@ -228,7 +228,7 @@ getting accepted.}
 The deadtime is displayed in the datamon
 window, which normally is running next to the 
 runcontrol window, but if this window is
-not up, type ``datamon'' to bring it up.
+not up, type \mycomp{datamon} to bring it up.
 This window also shows the full-path-name of the file
 being written by CODA for the present run.}
 
@@ -271,7 +271,7 @@ The expert claims he can restart CODA
 
 If a ROC (ReadOut Controller, or crate)
 is hung up, reboot by going the workspace
-``Components'' and typing ``reboot''.  If this 
+``Components'' and typing \mycomp{reboot}.  If this 
 doesn't work, try pressing the reset button 
 which is on the ``Crate Resets'' section of the
 Hall A General Tools EPICS Gui.  Telnet back into
@@ -291,9 +291,9 @@ thing is to do them all, which takes a few minutes.
 
 \begin{itemize}
 \item{Kill off all CODA processes on the workstation
-by typing ``kcoda''.  This stops runcontrol, the
+by typing \mycomp{kcoda}.  This stops runcontrol, the
 event builder, and other processes, and allows
-for a clean start.  The ``kcoda'' script will then
+for a clean start.  The \mycomp{kcoda} script will then
 tell you exactly what to do next.}
 \item{Make sure the fastbus and VME crates are
 running.  The crates are usually known by 
@@ -305,14 +305,14 @@ portserver-port is the portserver IP and port\#
 where to login.
 An example might be \hskip 0.05in
 ROC4-hallasfi4-(hatsv4,port3) which is
-ROC4, a fastbus crate with IP hallasfi4 attached
-to the portserver IP hatsv4 at port 3.
+ROC4, a fastbus crate with IP \mycomp{hallasfi4} attached
+to the portserver IP \mycomp{hatsv4} at port 3.
 You can check if the ROCs
 are up by looking on the Components work space
 at the telnet session (if it's not logged, 
 try to telnet in).
 If the ROCs don't talk to runcontrol, you can type
-``reboot'' at the arrow prompt ($\rightarrow$).   If you
+\mycomp{reboot} at the arrow prompt ($\rightarrow$).   If you
 don't get this arrow prompt, or if you can't telnet in,
 the computer is hung up, so press 
 the reset button in the ``Crate Resets'' GUI
@@ -323,11 +323,11 @@ telnet back in to verify it's up.
 On rare occassions it is necessary to
 power cycle the crate, which requires access. }
 \item{ Start runcontrol interactively
-by typing ``runcontrol''.
+by typing \mycomp{runcontrol}.
 Actually there may be
 more steps prior to starting runcontrol,
 depending on the experimental setup.
-See the printout from ``kcoda'' for instructions.}
+See the printout from \mycomp{kcoda} for instructions.}
 \item{ In runcontrol,
 press the ``Connect'' button.  
 After ``connect''
@@ -354,9 +354,9 @@ accounts should be available on a paper on the wall
 in the counting room, or ask the run coordinator.
 In the workspace for ``Components'' telnet into
 all the ROCs.  If the x-terms windows are not 
-available, type ``setupxterms''.  Start emacs
+available, type \mycomp{setupxterms}.  Start emacs
 for the prescale factors: 
-``emacs /prescale/prescale.dat''.
+\mycomp{emacs /prescale/prescale.dat}.
 Make sure msqld is running in the process list;
 it is supposed to start when the computer boots.
 Then do a Cold Start (see section above).
@@ -377,7 +377,7 @@ by the shift workers: \hskip 0.05in
 The electronic logbook is a web-based
 repository of logbook data.  There are
 two ways to make entries:  One can use
-the halog GUI (type ``halog'' and make your 
+the halog GUI (type \mycomp{halog} and make your 
 entry), or one may use a script
 to insert a file.  
 Some data from EPICS
@@ -385,7 +385,7 @@ and scalers, among other things, are inserted
 automatically into halog on each start-of-run
 and each end-of-run.  These data also get
 written into files with the run number in
-their name in /epics/runfiles.
+their name in \mycomp{/epics/runfiles}.
 Data appear on the web at a certain URL
 \htmladdnormallinkfoot{}{\url{http://www.jlab.org/~adaq/halog/html/logdir.html}}.
 It is recommended that one software expert
@@ -405,8 +405,8 @@ and a summary is e-mailed to various people like the
 run coordinators and the hall leader.
 When you come on shift, the GUI is probably
 already running.  If not, you may start it
-by logging onto adaql1 as the
-adaq account and type ``bta''.
+by logging onto \mycomp{adaql1} as the
+adaq account and type ``\mycomp{bta}''.
 It is a fairly obvious GUI,
 but there is also some online help.
 
@@ -417,8 +417,8 @@ but there is also some online help.
 \subsection {Port Servers}
 Portservers are devices on the network that
 allow access to RS232 ports.  Here is how to 
-connect from a computer: ``telnet hatsv5 2011''
-will connect to the portserver at IP hatsv5
+connect from a computer: \mycomp{telnet hatsv5 2011}
+will connect to the portserver at IP \mycomp{hatsv5}
 and port 11.  Note, the offset of 2000 is needed.
 For dealing with HV, it is best to use a Linux PC
 for which the keymap is F1 = PF1 and F2 = PF2.
@@ -427,44 +427,44 @@ If another person is connected to a certain port,
 you cannot connect.  To bump off another user, login
 as root with password available from the paper posted
 on the wall of the counting room (or ask run coordinator)
-as follows ``telnet hatsv5'' as user = root.
-At the prompt, type ``kill tty=4'' to clear port 4,
-then ``exit''.  Now you can ``telnet hatsv5 2004''.
+as follows \mycomp{telnet hatsv5} as user = root.
+At the prompt, type \mycomp{kill tty=4} to clear port 4,
+then \mycomp{exit}.  Now you can \mycomp{telnet hatsv5 2004}.
 
 \begin{table}\centering
 \caption[Data Acquisition: Port Servers for DAQ]{
 Port Servers for DAQ}
 \begin{tabular}{|l|l|l|}  \hline
 server IP &  Port & Device \\ \hline
-hatsv3    &   1     &  vt100 Dumb Terminal \\
-hatsv3    &   2     &  ROC1 Lower Fastbus Crate \\
-hatsv3    &   3     &  TS0 Trig. Super. VME Crate \\
-hatsv3    &   4     &  R-arm Upper HV Crate \\
-hatsv3    &   5     &  R-arm Lower HV Crate \\
-hatsv3    &   8     &  ROC2 Upper Fastbus Crate \\
-hatsv4    &   1     &  vt100 Dumb Terminal \\
-hatsv4    &   2     &  ROC3 Lower Fastbus Crate \\
-hatsv4    &   3     &  ROC4 Upper Fastbus Crate \\
-hatsv4    &   5     &  HV Crate   \\
-hatsv4    &   6     &  RICH HV Crate \\
-hatsv4    &   7     &  RICH VME Crate \\
-hatsv4    &   14    & TS1 Trig. Super. VME Crate \\
-hatsv5    &   1     &  vt100 Dumb Terminal \\
-hatsv5    &   2     &  e-P Crate 1 \\
-hatsv5    &   3     &  Moller 1 \\
-hatsv5    &   4     &  Moller 2 \\
-hatsv5    &   8     &  Compton ROC3 \\
-hatsv5    &   9     &  Compton ROC4 \\
-hatsv5    &   10    &  Compton ROC5 \\
-hatsv5    &   11    &  Beamline HV  \\
-hatsv5    &   12    &  e-P Crate 2 \\
-hatsv5    &   13    &  ARC Energy \\
-hatsv5    &   14    &  ROC14 VME Crate \\
-hatsv5    &   15    &  ROC15 VME Crate \\
-hatsv12   &   5     &  Compton ROC1 \\
-hatsv12   &   6     &  Compton ROC2 \\
-hatsv15   &   -     &  2nd Floor Counting Room \\
-hatsv9    &   4     &  Parity DAQ Crate \\
+\mycomp{hatsv3}    &   1     &  vt100 Dumb Terminal \\
+\mycomp{hatsv3}    &   2     &  ROC1 Lower Fastbus Crate \\
+\mycomp{hatsv3}    &   3     &  TS0 Trig. Super. VME Crate \\
+\mycomp{hatsv3}    &   4     &  R-arm Upper HV Crate \\
+\mycomp{hatsv3}    &   5     &  R-arm Lower HV Crate \\
+\mycomp{hatsv3}    &   8     &  ROC2 Upper Fastbus Crate \\
+\mycomp{hatsv4}    &   1     &  vt100 Dumb Terminal \\
+\mycomp{hatsv4}    &   2     &  ROC3 Lower Fastbus Crate \\
+\mycomp{hatsv4}    &   3     &  ROC4 Upper Fastbus Crate \\
+\mycomp{hatsv4}    &   5     &  HV Crate   \\
+\mycomp{hatsv4}    &   6     &  RICH HV Crate \\
+\mycomp{hatsv4}    &   7     &  RICH VME Crate \\
+\mycomp{hatsv4}    &   14    & TS1 Trig. Super. VME Crate \\
+\mycomp{hatsv5}    &   1     &  vt100 Dumb Terminal \\
+\mycomp{hatsv5}    &   2     &  e-P Crate 1 \\
+\mycomp{hatsv5}    &   3     &  Moller 1 \\
+\mycomp{hatsv5}    &   4     &  Moller 2 \\
+\mycomp{hatsv5}    &   8     &  Compton ROC3 \\
+\mycomp{hatsv5}    &   9     &  Compton ROC4 \\
+\mycomp{hatsv5}    &   10    &  Compton ROC5 \\
+\mycomp{hatsv5}    &   11    &  Beamline HV  \\
+\mycomp{hatsv5}    &   12    &  e-P Crate 2 \\
+\mycomp{hatsv5}    &   13    &  ARC Energy \\
+\mycomp{hatsv5}    &   14    &  ROC14 VME Crate \\
+\mycomp{hatsv5}    &   15    &  ROC15 VME Crate \\
+\mycomp{hatsv12}   &   5     &  Compton ROC1 \\
+\mycomp{hatsv12}   &   6     &  Compton ROC2 \\
+\mycomp{hatsv15}   &   -     &  2nd Floor Counting Room \\
+\mycomp{hatsv9}    &   4     &  Parity DAQ Crate \\
 \hline
 \end{tabular}
 \end{table}
@@ -472,13 +472,16 @@ hatsv9    &   4     &  Parity DAQ Crate \\
 }
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
-% $Id: daq.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
-% $Author: rom $
-% $Date: 2003/08/01 20:34:06 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Id: daq.tex,v 1.5 2003/11/17 06:49:00 gen Exp $
+% $Author: gen $
+% $Date: 2003/11/17 06:49:00 $
 % $Name:  $
 % $Locker:  $
 % $Log: daq.tex,v $
+% Revision 1.5  2003/11/17 06:49:00  gen
+% Cosmetic changes
+%
 % Revision 1.4  2003/08/01 20:34:06  rom
 % updated for year 2003
 %
