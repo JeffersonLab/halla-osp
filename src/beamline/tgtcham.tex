@@ -1,7 +1,7 @@
 \chapter[Target Chamber]{Target Chamber
 \label{sec:target_chamb}
 \footnote{
-  $CVS~revision~ $Id: tgtcham.tex,v 1.9 2004/12/15 00:12:24 gen Exp $ $
+  $CVS~revision~ $Id: tgtcham.tex,v 1.10 2004/12/20 21:44:41 jpchen Exp $ $
 }
 \footnote{Authors: ?? \email{??@jlab.org}}
 }
@@ -17,7 +17,8 @@ evacuated  multistaged can. So far, three chambers have been designed:
         No yet manufactured by Dec,2003.}.
 \end{list}
 
-Here, the chamber 1 is described.
+Here, the chamber 1 is described. The chambers 2 and 3 are only different in 
+size and slightly in shape. The safety considerations are fully applied to chambers 2 and 3.
 The chamber was designed to isolate the beam line vacuum from  each
 HRS so that each HRS could rotate
 around the target without vacuum coupling and without jeapordizing
@@ -34,7 +35,23 @@ The chamber vacuum is isolated from the  HRS by using thin aluminum foils.
 The target chamber is designed so that
 each spectrometer will have continuous coverage in the standard tune from
 $\theta_{min}=$12.54$^\circ$ to $\theta_{max}=$165$^\circ$.
-The aluminum window is 6~$in$ high an 0.016~$in$ thick.
+The aluminum window is 6~$in$ high an 0.016~$in$ thick made of 5052 H34 aluminum foil.
+The foil forms regularly spaced vertical ridges when
+placed under load. The window had an inter-ridge
+spacing of 3 inches.
+If the window is treated as a collection
+of smaller rectangular windows which have the full vertical height
+of 6 inches and the inter-ridge spacing as a width,
+then stress formulas predict that the 0.016 $in$
+material would reach ultimate stress at a pressure higher than 35 PSID
+(for both over-pressure and under-pressure). 
+There is a gate valve between the 
+scattering chamber and the beam entrance (exit) 
+pipe. Both 
+valves will be closed automatically in the
+event that the chamber vacuum begins to rise and an FSD will be caused
+( this is done via a relay output of the scattering
+chamber vacuum gauge). If either valve is closed an FSD will result.
 
 The target chamber is supported by a 24 $in$ diameter pivot post
 secured in concrete, rising about 93.6 $in$ above the Hall A cement floor.
@@ -43,6 +60,19 @@ consists of an aluminum middle ring, a stainless steel base ring,
 each with a 41.0 $in$ inner diameter,
 and a stainless steel cylindrical top hat with 40 $in$ inner diameter
 to enclose the cryotarget and secure the cryogenic connections.
+
+When the scattering chamber is under vacuum, there is a potential
+danger of window rupture.
+The loud noice from the rupture could hurt
+one's ears if not pretected. Therefore when the chamber is under vacuum,
+protective covers are put on if possible. It needs to be takes off
+for data taking. For restricted access, the protective cover is required
+to be on when the chamber is in vacuum. When switching from the controlled
+access to restricted access, the protective cover is required to be put on 
+before the switch is taking place. Anytime when the scattering chamber
+is under vacuum, the pivet area is pretected
+with a loop around and a warning sign is posted that anybody goes into the
+looped area, hearing protection is required.
 
 \infolevone{
 	The aluminum ring with an outer diameter of 45.0 $in$ and
@@ -220,13 +250,16 @@ chapter (see Sec.~\ref{sec:target-he3-general}).
 \end{namestab}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/tgtcham.tex,v 1.9 2004/12/15 00:12:24 gen Exp $
-% $Id: tgtcham.tex,v 1.9 2004/12/15 00:12:24 gen Exp $
-% $Author: gen $
-% $Date: 2004/12/15 00:12:24 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/tgtcham.tex,v 1.10 2004/12/20 21:44:41 jpchen Exp $
+% $Id: tgtcham.tex,v 1.10 2004/12/20 21:44:41 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2004/12/20 21:44:41 $
 % $Name:  $
 % $Locker:  $
 % $Log: tgtcham.tex,v $
+% Revision 1.10  2004/12/20 21:44:41  jpchen
+% changes according to review
+%
 % Revision 1.9  2004/12/15 00:12:24  gen
 % minor update of the labels
 %
