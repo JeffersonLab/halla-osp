@@ -1,10 +1,11 @@
 \chapter[General Description]{General Description
 \footnote{
-  $CVS~revision~ $Id: beam.tex,v 1.8 2004/12/08 17:27:27 gen Exp $ $
+  $CVS~revision~ $Id: beam.tex,v 1.9 2004/12/15 00:12:59 gen Exp $ $
 }
 \footnote{Authors: A.Saha \email{saha@jlab.org}}
 }
 \section{Introduction}
+\label{sec:beam-intro}
 
 %The beamline inside Hall A and the upstream tunnel transports
 %the electron beam from the end of the arc to the target and 
@@ -389,11 +390,19 @@ and beamline.\\
 \begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
   \item Radiation ``Hot Spots'' - marked by ARM or RadCon personnel;
   \item Vacuum in the beam line tubes and other vessels;
-  \item Electric power hazards in vicinity of the magnets. 
+  \item Thin windows:
+    \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+      \item exit of M{\o}ller dipole - see Chapter~\ref{sec:moller}; 
+      \item vacuum chamber - see Chapter~\ref{chap:vacuum};
+    \end{list}
+  \item Electric power hazards in vicinity of the magnets; 
+  \item Magnetic field hazards in vicinity of the magnets. 
+  \item Conventional hazards (fall hazard, crane hazard etc.).
 \end{list}
 Some magnets, as the M{\o}ller spectrometer elements, are covered with plastic
 sheets for electric safety. Any access to these magnets requires
-the ``Lock and Tag'' procedure~\cite{EHScebaf} and the appropriate training. \\
+the ``Lock and Tag'' procedure~\cite{EHScebaf} and the appropriate training,
+including the equipment-specific one. \\
 
 \noindent{}Additional safety information is available in the following documents:
 \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
@@ -413,7 +422,7 @@ the ``Lock and Tag'' procedure~\cite{EHScebaf} and the appropriate training. \\
   \JianPingChen{\em 2-nd Contact}
   \namestabheader{Liaisons from Accelerator Division}
   \HariAreti{..to Physics}
-  \ZaferKursun{..to Hall-A}
+  \DarrellSpraggins{..to Hall-A}
 \end{namestab}
 
 
@@ -421,13 +430,16 @@ the ``Lock and Tag'' procedure~\cite{EHScebaf} and the appropriate training. \\
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/beam.tex,v 1.8 2004/12/08 17:27:27 gen Exp $
-% $Id: beam.tex,v 1.8 2004/12/08 17:27:27 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/beam.tex,v 1.9 2004/12/15 00:12:59 gen Exp $
+% $Id: beam.tex,v 1.9 2004/12/15 00:12:59 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/08 17:27:27 $
+% $Date: 2004/12/15 00:12:59 $
 % $Name:  $
 % $Locker:  $
 % $Log: beam.tex,v $
+% Revision 1.9  2004/12/15 00:12:59  gen
+% minor update of the labels
+%
 % Revision 1.8  2004/12/08 17:27:27  gen
 % minor changes before review
 %
