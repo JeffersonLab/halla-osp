@@ -1,0 +1,403 @@
+% level 0: 1 page description
+
+\newcommand{\cppaver}{1.1}
+
+\section[C++ Analyzer]{C++ Analyzer
+\footnote{
+  $CVS~revision~ $Id: analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $ $
+}
+\footnote{Authors: J.-O.\ Hansen \url{mailto:ole@jlab.org}}
+}
+
+The standard offline analysis software for Hall A data is the 
+``C++ Analyzer'', an object-oriented C++ class package developed at Jefferson
+Lab by Hall A staff. The Analyzer is built onto the 
+ROOT\htmladdnormallinkfoot{}{\url{http://root.cern.ch}} programming
+framework. All of ROOT's analysis and visualization tools are available,
+as well as specialized code for Hall A physics analysis. 
+The current version of the Analyzer is \cppaver. Detailed information about the
+software (downloads, documentation, etc.) can be found at
+\begin{center}
+  \url{http://hallaweb.jlab.org/root/}.
+\end{center}
+
+%--- Description of components
+\infolevone{
+
+Due to its object-oriented design, the Analyzer is modular and extensible.
+Individual analysis components are designed as plug-in modules
+that can be added as needed. As a result, the scope of the data analysis is 
+to a large extent user-configurable. Only data from those spectrometers and 
+detectors is analyzed, and only those physics calculations are carried out
+that the user specifies. Reconfiguration can be done at run 
+time without any need for recompilation of the program.
+
+Currently supported are the analysis of the Hall A HRS spectrometers,
+the beamline instrumentation, scaler and EPICS slow control data, and 
+helicity information. The event decoder is compatible with the CODA
+event data format described in the section on Data Acquisition. 
+Decoding of basic helicity information as well as a sophisticated
+algorithm for decoding and prediction of the G0 helicity sequence is
+possible. The following detectors can be used in either HRS spectrometer:
+\begin{itemize} \setlength{\parskip}{0ex}
+  \item Vertical Drift Chambers (VDCs)
+  \item Scintillators (one or more paddles with up to two PMTs each)
+  \item Cherenkov counters (arbitrary number of PMTs/mirrors, 
+        usable for both gas Cherenkovs and aerogels in each HRS)
+  \item Shower counters (shower, preshower, pion rejectors with 
+        arbitrary organization in terms of rows and columns of blocks)
+  \item Total shower counter (combination of a preshower and shower)
+\end{itemize}
+The VDC code performs tracking in the focal plane and reconstruction to the
+target. The tracking algorithm has been shown to be accurate for events 
+with one cluster per plane. Noisy events with higher cluster multiplicity
+and events with more than one good track in the focal plane may not be
+reconstructed correctly by the present version of the code, but work is in
+progress to make this type of analysis also reliable.
+
+The scintillator, Cherenkov, and shower counter classes perform basic decoding,
+calibration (offset/pedestal subtraction, gain multiplication), and summing 
+(for Cherenkovs) or cluster-finding (for showers) of hits. 
+The cluster-finding algorithm of the shower class is basic and currently 
+only capable of finding a single cluster per event. These classes are largely
+generic and should be able to accomodate most new detectors of the respective 
+type, even with a different geometry and number of channels.
+
+Several beamline apparatuses are available: a dummy beam (always at zero 
+position and angle), an ``unrastered'' beam, and a ``rastered'' beam. 
+BPM and raster detectors are implemented and 
+can be analyzed to obtain the beam position
+on an event-by-event basis.  The BPM code currently only supports
+standard ADCs (e.g.\ LeCroy), not the older Struck readout.
+
+To carry out standard post-reconstruction calculations, the following
+Physics Modules are available:
+\begin{itemize} \setlength{\parskip}{0ex}
+  \item Single-arm electron kinematics ($Q^2$, $\omega$ etc.)
+  \item Coincidence kinematics (missing energy etc.)
+  \item Coincidence time
+  \item Reaction point (vertex position) reconstruction 
+  \item Extended target tracking corrections
+\end{itemize}
+As many physics
+modules as needed can be added to the analyzer before starting replay.
+Identical modules can be added multiple times with different parameters.
+For example, on can calculate ``electron kinematics'' using both uncorrected
+and energy-loss corrected tracks in one analysis pass without modifying
+or recompiling any code. For experiments requiring
+specialized calculations of kinematics or any other quantities,
+writing a new physics module is the preferred approach. 
+
+The results of calculations performed by the various analysis modules 
+(spectrometers, detectors, physics modules) are made available via 
+so-called global variables. 
+Global variables provide access to data via names (text strings). 
+Scalars as well as fixed and variable-size arrays are supported.
+The global variable names are used in the definition of the analysis output
+and of logicals. 
+
+To control the analysis flow, to collect statistics, and to select
+interesting data, tests and cuts (``logicals'') can be defined
+dynamically at run time.  If certain tests fail for a given event,
+further analysis of that event is skipped, and the event is not
+included in the output.  Such tests can be put at the end of all the
+major stages of the analysis.  This allows making decisions about an
+event early in the analysis, improving performance.  A summary of all
+test results is written to a file at the end of the analysis.
+
+Data of interest can be histogrammed and/or written to
+a ROOT Tree in the output file.  The contents of the output
+is defined dynamically at the beginning of the analysis.
+Both 1- and 2-dimensional histograms are supported. Histograms
+can be filled selectively using logical expressions (cuts).
+
+} %end \infolevone
+
+\infolevfour{
+Table~\ref{offl:tab:modules} lists the analysis modules available in
+version \cppaver\ of the C++ Analyzer. 
+%The global variables available
+%from these modules are described in Table~\ref{offl:tab:variables}.
+
+% Tables of modules
+
+\begin{table}[p]
+\begin{tabular}{|l|l|}
+\hline
+Class name & Description \\
+\hline
+\multicolumn{2}{|l}{Apparatuses} \\
+\hline
+THaHRS     & HRS spectrometer (left or right) with VDC (``vdc'') \\
+           & and two scintillator planes (``s1'', ``s2''). \\
+THaIdealBeam & Dummy beam with zero position and angle. \\
+THaRasteredBeam & Beam with raster \\
+THaUnrasteredBeam & Beam without raster (for calibration) \\
+\hline
+\multicolumn{2}{|l}{Detectors} \\
+\hline
+THaVDC          & VDC package for HRS \\
+THaScintillator & generic scintillator \\
+THaCherenkov    & generic Cherenkov (gas or aerogel) \\
+THaShower       & generic shower counter \\
+THaTotalShower  & combination of preshower and shower \\
+THaBPM          & beam position monitor with standard ADCs \\
+THaRaster       & beam raster system \\
+\hline
+\multicolumn{2}{|l}{Physics Modules} \\
+\hline
+THaReactionPoint & vertex position (intersection of spectrometer track \\
+                 & with beam) \\
+THaTwoarmVertex  & vertex position (intersection of two spectrometer tracks) \\
+THaAvgVertex     & vertex position (average of reaction points from two \\
+                 & spectrometers) \\
+THaElectronKine  & single-arm electron kinematics \\
+THaPrimaryKine   & single-arm kinematics for particle with arbitrary mass \\
+THaSecondaryKine & coincidence kinematics \\
+THaExtTarCor     & extended target corrections \\
+THaCoincidenceTime & coincidence time calculation \\
+THaGoldenTrack   & selects Golden Track from multiple reconstructed tracks \\
+THaDebugModule   & prints values of global variables for each event and waits\\
+\hline
+\end{tabular}
+\caption{Analysis modules available in version \cppaver\ of the C++ Analyzer}
+\label{offl:tab:modules}
+\end{table}
+
+% Tables of global variables
+%\begin{table}
+%\vspace*{1cm}
+%\caption{Global variables available in version \cppaver\ of the C++ Analyzer}
+%\label{offl:tab:variables}
+%\end{table}
+
+} %end infolevfour
+
+
+%--- Procedures
+\infolevtwo{
+\subsection{Running the Analyzer}
+Precompiled binaries of the latest version of the Analyzer are
+installed on the Hall A counting house analysis machines 
+(adaql1--5, adaqs1--3). To run the Analyzer, log into any
+standard account on these computers, for example as {\tt adaq},
+and type\\
+
+\noindent{\tt analyzer}
+\vspace{2ex}
+
+As installed, the Analyzer uses the default database in
+the location pointed to by the environment variable {\tt DB\_DIR}.
+The Hall A staff makes an effort to keep this database reasonably 
+up-to-date for completed experiments. If you wish to analyze older data,
+the default database might work for you. However, 
+if you wish to use a customized set of database files
+specific to your experiment (usually the case for the current experiment), 
+you will need to re-define {\tt DB\_DIR} to
+point to the location of that database before starting the Analyzer.
+For details on the database, see Section~\ref{offl:sec:database}.
+
+The pre-installed analyzer may not work in certain accounts if 
+the {\tt PATH} and/or {\tt LD\_LIBRARY\_PATH} variables have been
+changed from the system defaults. If this is the case, you should
+correct the login script(s) of the problematic account.
+To restore the system defaults, you may execute one of the following 
+commands:
+
+\begin{tabbing}
+For csh/tcsh shells:$\qquad$ \= {\tt source /adaqfs/apps/env/login.adaq}\\
+For bash shells:     \> {\tt source /adaqfs/apps/env/profile.adaq}
+\end{tabbing}
+
+\subsection{Preparing Analysis of a New Experiment}
+\label{offl:sec:newexpt}
+Setting up offline analysis for a new experiment typically 
+involves the following steps:
+\begin{enumerate}
+  \item Determine the experimental configuration (spectrometers,
+        detectors, beamline) to be analyzed and identify the corresponding 
+	analysis modules. \label{offl:item:step1}
+  \item Create a database for the new experiment, using the
+        start date of the data taking as the time-stamp for new
+	new entries (see Section~\ref{offl:sec:database}).
+	At the minimum the database should contain up-to-date
+	detector map entries for every detector and rough starting
+	values for the spectrometer reconstruction matrix elements
+	and VDC timing offsets. Often this information can be
+	carried over from a previous experiment with only minor
+	modifications. Also, enter any other calibrations and geometry
+	data that are available, even if approximate.
+  \item In the database, create initial run database values.
+        These are typically the starting beam energy and spectrometer
+	momentum and angle settings. If the experiment is already completed,
+	extract the history of these settings from logs and enter them
+	into the database. These values affect the kinematics calculations;
+	they are not important for detector checkout.
+  \item Determine which physics calculations are needed for the
+        offline analysis and identify corresponding Physics Modules.
+	\label{offl:item:step3}
+  \item Identify desired output histograms and tree variables.
+        Create an output definition file. The file 
+        {\tt \$ANALYZER/examples/output\_example.def} contains
+	most of the necessary documentation.
+  \item If desired, create a definition file for logicals.
+        An example generating detailed VDC statistics is
+	given in {\tt \$ANALYZER/examples/cuts\_example.def}.
+  \item Write a CINT\footnote{CINT is a C/C++ interpreter that acts
+        as the interactive interface to ROOT and the C++ Analyzer.}
+        script that sets up the configuration identified in 
+	Step~\ref{offl:item:step1} and the physics analysis decided on
+	in Step~\ref{offl:item:step3}. Often, a script from a
+	previous experiment, or one of the examples in
+	the directory {\tt \$ANALYZER/examples}, can serve as a guide.
+	The script usually also locates raw data files, creates
+	one or more {\tt THaRun} objects, configures various
+	options of the event loop object {\tt THaAnalyzer}, and
+	starts the replay. In particular, the names of the output
+	file, the output definition file, and the logicals definition
+	file must be given to {\tt THaAnalyzer}.
+  \item Identify the plots that you wish to generate from the analysis
+        results and write a script to create them. This may be part
+	of the script created in the previous step. 
+	Note that there is no need to quit the Analyzer and start a new
+	session or another program after completion of the analysis; all of
+	ROOT's visualization tools are available from within the Analyzer.
+\end{enumerate}
+
+\subsection{Database Files and Directories}
+\label{offl:sec:database}
+Version \cppaver\ of the C++ Analyzer uses simple ASCII text files
+to store database information. There is one file for each 
+analysis module. The name of each file is composed as follows:\\
+
+\noindent{\tt db\_<apparatus-name>.<detector-name>.dat}
+\vspace{2ex}
+
+For example, a Cherenkov detector named ``a1'' which is part of the
+Left HRS spectrometer, named ``L'', would be associated with 
+a database file named {\tt db\_L.a1.dat}.
+
+The ``run database'', which contains global run-specific parameters
+such as beam energy and spectrometer momentum and angle settings,
+is stored in a special file named {\tt db\_run.dat}.
+
+All of the above database files should be stored in a location
+that can be modified by the user, for instance in {\tt $\tilde{}$/DB}.
+{\bf The environment variable {\tt DB\_DIR}
+must be defined to point to this top-level database
+directory.} Since database parameters change with time, database files
+are organized in time-dependent subdirectories within {\tt \$DB\_DIR}.
+The name of each subdirectory has the form {\tt YYYYMMDD}, where {\tt YYYY},
+{\tt MM} and {\tt DD} represent the year, month, and day, resp., of the 
+date that is the start of the validity of the entries. Upon initialization,
+the Analyzer locates the most appropriate time-dependent subdirectory based on
+the contents of {\tt \$DB\_DIR} and the time-stamp of the run to be replayed.
+Often there is only one time-dependent subdirectory per experiment, but
+if significant changes occur during an experiment, it may be appropriate to
+create several directories.
+A finer division of time-dependent information
+can be provided by timestamps within each database file. This
+is especially true for the run database file which frequently
+will have many time-stamped sections.
+
+For example, an experiment running in April and May of 2004 would
+create a database subdirectory {\tt $\tilde{}$/DB/20040401} and set
+{\tt DB\_DIR=$\;\tilde{}$/DB}. Other files supporting the replay
+of this experiment would reside in an experiment-specific replay
+directory, usually {\tt \$EXPERIMENT}.
+
+
+} %end \infolevtwo
+
+%--- Principles of operation
+\infolevthree{
+
+\subsection{Program Design Overview}
+Spectrometers (and similar major installations) are abstracted in an
+Apparatus class hierarchy, while individual detectors belong to a
+Detector class hierarchy. Apparatuses are collections of detectors
+that are analyzed in a particular way. Specialized physics analysis,
+such as kinematics calculations, vertex determination, and energy loss
+corrections, can be done in Physics Modules.  All three types of
+objects, Apparatuses, Detectors, and Physics Modules, are kept in
+lists that are processed during replay. In setting up the replay, it
+is up to the user which objects to place in the lists.
+
+%\infolevfour{
+%The class hierarchies of Apparatuses and Detectors are shown in 
+%Figures~\ref{offl:fig:apparatus-hierarchy} 
+%and \ref{offl:fig:detector-hierarchy}.
+%}
+Both the Apparatus and the Detector class hierarchies,
+as well as the Physics Modules, inherit from a common base class, 
+{\tt THaAnalysisModule}.  
+%describe details of hierarchies
+Physics Modules currently do not use a
+particular class hierarchy; all physics modules inherit from
+{\tt THaPhysicsModule}, which in turn inherits from {\tt THaAnalysisModule}.
+
+The behavior of existing analysis modules can be modified or extended
+easily by using class inheritance. In such a case, the only code that
+needs to be written is the implementation of the new feature.  For
+example, the standard Cherenkov detector class currently only
+calculates the total sum of ADC amplitudes. For a new type of
+Cherenkov counter, or to do a more sophisticated analysis of the
+standard Cherenkov detectors, one might want to calculate separate ADC
+sums for certain groups of PMTs.  To do so, one would write a new
+class inheriting from the standard Cherenkov class, which could
+contain as little as one function, performing the additional
+calculations, and the corresponding data members.  New types of
+detectors and even entire spectrometers, as well as new types of
+physics calculations, can be added similarly easily, again using class
+inheritance.  No change to and no rebuilding of the core program is
+necessary to support such new modules.
+
+} %end \infolevthree
+
+\infolevtwo{
+
+\subsection{Responsible Personnel}
+For all questions and suggestions regarding the C++ Analyzer,
+please contact Ole Hansen at ext.\ 7627, email {\tt ole@jlab.org}.
+Bob Michaels (ext.\ 7410, {\tt rom@jlab.org}) 
+and Robert Feuerbach (ext.\ 7254, {\tt feuerbac@jlab.org}) 
+are also available for help.
+
+} %end infolevtwo
+
+%--- Large figures
+\infolevfour {
+
+% Class hierarchy diagrams
+
+%\begin{figure}
+%\includegraphics[width=\textwidth]{apparatus-classes}
+%\caption{Class hierarchy for Apparatuses in version \cppaver\ of the 
+%C++ Analyzer.}
+%\label{offl:fig:apparatus-hierarchy}
+%\end{figure}
+%
+%\begin{figure}
+%\includegraphics[width=\textwidth]{detector-classes}
+%\caption{Class hierarchy for Detectors in version \cppaver\ of the 
+%C++ Analyzer.}
+%\label{offl:fig:detector-hierarchy}
+%\end{figure}
+
+
+
+} %end \infolevfour
+ 
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/offline/analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $
+% $Id: analyzer.tex,v 1.1 2003/11/15 08:56:27 ole Exp $
+% $Author: ole $
+% $Date: 2003/11/15 08:56:27 $
+% $Name:  $
+% $Locker:  $
+% $Log: analyzer.tex,v $
+% Revision 1.1  2003/11/15 08:56:27  ole
+% Initial revision of chapter on offline analysis, covering the C++ software.
+%
+%
+
