@@ -1,6 +1,6 @@
-\section[Vertical Drift Chambers]{Vertical Drift Chambers
+\chapter[Vertical Drift Chambers]{Vertical Drift Chambers
 \footnote{
-  $CVS~revision~ $Id: vdc.tex,v 1.4 2003/11/13 21:35:26 gen Exp $ $
+  $CVS~revision~ $Id: vdc.tex,v 1.5 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Authors: J.Segal \url{mailto:segal@jlab.org}}
 }
@@ -26,7 +26,7 @@
 % gas system status is now logged automatically in EPICS
 % JS segal@jlab.org
 
-\subsection{Overview}
+\section{Overview}
 
 The High Resolution Spectrometer Vertical Drift Chambers provide a
 precise ($\pm 125~\mu$m) measurement of the position and angle of
@@ -49,7 +49,7 @@ to the nominal particle trajectories (see Figures
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=13cm,clip]{vdc_geom_1}
+\includegraphics[angle=0,width=0.7\textwidth,clip]{vdc_geom_1}
 \caption[Detectors: VDC Geometry]{Relative VDC geometry}
 \label{fig:trajectory1}
 \end{center}
@@ -57,7 +57,7 @@ to the nominal particle trajectories (see Figures
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=13cm,clip]{vdc_geom_2}
+\includegraphics[angle=0,width=0.7\textwidth,clip]{vdc_geom_2}
 \caption[Detectors: VDC Geometry]{Relative VDC geometry}
 \label{fig:trajectory2}
 \end{center}
@@ -73,18 +73,20 @@ bottles located in the Hall A gas supply shed to gas supply control
 panels located on the main level of the space frames in the detector
 huts.
 
+\infolevthree{
 As charged particles pass through the chamber gas in the VDCs, they
 produce ionization.  This ionization drifts along the electric field
 lines defined by the high voltage planes and the signal wires.  
 Ionization is collected in the form of analog pulses on the signal
 wires.  The pulses are then amplified, discriminated and used to
 start multihit TDCs, which are subsequently stopped by the overall
-event trigger.  The TDCs are read out by the \texttt{CODA} acquisition
-software.  The data are histogrammed online by the \texttt{DHIST}
-software.  In-depth offline data analysis requires the \texttt{ESPACE}
-software.
-
-\subsection{Operating Procedure}
+event trigger.  The TDCs are read out by the CODA\cite{CODAwww} acquisition
+software.  The data are histogrammed online by the \mycomp{dhist} 
+(see Sec.~\ref{sec:onl-dhist}) software.  In-depth data analysis  
+requires the offline software (see Sec.~\ref{sec:onl-ofl-analysis}).
+} %infolev
+\infolevtwo{
+\section{Operating Procedure}
 \paragraph {Gas Flow Operating Procedures}
 
 Chamber gas is delivered to a given VDC detector package via HAGS,
@@ -113,7 +115,7 @@ only be changed by authorized personnel.
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=13cm,clip]{vdc_gasflow}
+\includegraphics[angle=0,width=0.7\textwidth,clip]{vdc_gasflow}
 {\linespread{1.}
 \caption[Detectors: Gas Flow Schematic]{Gas flow schematic}
 \label{fig:gasflow}}
@@ -122,7 +124,7 @@ only be changed by authorized personnel.
 
 The status of the gas handling system should be monitored carefully
 every shift.  Manual logging is not required as the system status is
-constantly logged via EPICS.  Any substantial deviation from the
+constantly logged via EPICS~\cite{EPICSwww}.  Any substantial deviation from the
 median parameters can result in a change in the operational parameters
 of the VDCs and should be immediately investigated.  If at all
 possible, gas flow should be continuously maintained, even in
@@ -142,7 +144,7 @@ information not provided here.
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=13cm,clip]{vdc_scheme}
+\includegraphics[angle=0,width=0.6\textwidth,clip]{vdc_scheme}
 \caption[Detectors: VDC Overview]{VDC overview.}
 \label{fig:vdcscheme}
 \end{center}
@@ -155,7 +157,7 @@ each of three HV planes in a given VDC detector package via a
 The power supply is located in
 the detector hut in a NIM bin on the upper level of the space frame.
 This unit may be controlled either manually or remotely via the
-\texttt{EPICS} control software, and also provides a monitor of the
+EPICS control software, and also provides a monitor of the
 current drawn (nominally 70 nA) by the VDCs to which it is attached.
 Connections from the power supply to the Hammond splitter box, as
 well as from the Hammond splitter box to the VDCs are made using
@@ -225,7 +227,7 @@ on continuously if and only if gas is available to the chamber.  This
 avoids time loss to reconditioning and maintains the desirable
 steady-state operating condition.
 
-\subsection{Handling Considerations}
+\section{Handling Considerations}
 
 The VDCs are very delicate devices which are absolutely essential to
 the instrumentation of the Hall A spectrometers.  Thus, extreme care
@@ -251,14 +253,17 @@ four 12VDC fans mounted in the aluminum Faraday cage.}
 1 $\mu$A instantaneously.  If they do, something is wrong!}
 \end{itemize}
 
-\subsection{Other Documentation}
+\section{Other Documentation}
 See the URL%
 \htmladdnormallinkfoot{}{\url{
 http://www.jlab.org/~fissum/vdcs.html
 }}.
+} %infolev
 
-\subsection{Safety Assessment}
+\begin{safetyen}{5}{5}
+\section{Safety Assessment}
 The following potential hazards have been clearly identified.
+\end{safetyen}
 \begin{description}
 \item {\bf The High Voltage System}
 The Bertan 377N HV low current power supply provides a nominal
@@ -281,7 +286,7 @@ confined high pressure gas represents a tremendous (potentially lethal)
 amount of stored energy.
 \end{description}
 
-\subsection{Responsible Personnel} 
+\section{Responsible Personnel} 
 \label{people}
 The following individuals are responsible for chamber problems. 
 \begin{itemize} 
@@ -290,13 +295,16 @@ The following individuals are responsible for chamber problems.
 \end{itemize} 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/vdc.tex,v 1.4 2003/11/13 21:35:26 gen Exp $
-% $Id: vdc.tex,v 1.4 2003/11/13 21:35:26 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/vdc.tex,v 1.5 2003/12/05 07:12:10 gen Exp $
+% $Id: vdc.tex,v 1.5 2003/12/05 07:12:10 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/13 21:35:26 $
+% $Date: 2003/12/05 07:12:10 $
 % $Name:  $
 % $Locker:  $
 % $Log: vdc.tex,v $
+% Revision 1.5  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 % Revision 1.4  2003/11/13 21:35:26  gen
 % Correction from Jack
 %

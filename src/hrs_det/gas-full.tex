@@ -1,10 +1,10 @@
-\section[HRS Gas Supply System for Wire Detectors]{HRS Gas Supply System for Wire Detectors
+\chapter[HRS Gas Supply System for Wire Detectors]{HRS Gas Supply System for Wire Detectors
 \footnote{
-  $CVS~revision~ $Id: gas-full.tex,v 1.2 2003/06/06 21:41:39 gen Exp $ $
+  $CVS~revision~ $Id: gas-full.tex,v 1.3 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Authors: J.Segal \url{mailto:segal@jlab.org}}
 }
-\subsection{Overview}
+\section{Overview}
 
 The detector systems in both HRS's (FPP and VDC) are expected to use a
 mixture of Argon and Ethane in roughly equal proportions, plus about
@@ -27,7 +27,7 @@ detector, selection of either operating gas or purge gas, flow control
 and metering, overpressure relief to protect the detector components,
 exhaust flow measurement, and backflow prevention.
 
-\subsubsection{Bulk Gas Supply}
+\subsection{Bulk Gas Supply}
 
 The bulk gas supply consists of two bottles each of Argon, Ethane, and
 Carbon-Dioxide.  Except for fittings which vary by type of gas the
@@ -77,7 +77,7 @@ supplies enter the mixing system.
 \end{center}
 \end{figure}
 
-\subsection{Gas Mixing Station}
+\section{Gas Mixing Station}
 The gas mixing system works by metering three gas supplies into a
 common mixing tank.  The mixture is then bubbled through alcohol in a
 tank within a small refrigerator which has been modified for safe
@@ -89,7 +89,7 @@ pressure control systems are all built into the same relay rack.  They
 are collectively referred to as the Gas Mixing Station.  A flow
 diagram is shown in Figure\ref{fig:gas_schem}
 
-\subsubsection{ Mass Flow Control System}
+\subsection{ Mass Flow Control System}
 The flow rate of each component gas is controlled by a mass flow
 controller which delivers a constant mass of gas per unit time.
 (Tylan General model FC-280AV) The mass flow is independent of
@@ -141,7 +141,7 @@ teed to an overpressure relief valve (RV-271) set for 25 psig.  This
 prevents overpressuring of the blending tank, the bubbler, or the
 delivery lines.
 
-\subsubsection{ Alcohol Bubbler}
+\subsection{ Alcohol Bubbler}
   
 \begin{figure}[htp]
 \begin{center}
@@ -208,7 +208,7 @@ Filling the alcohol reservoir is not trivial.  Please refer to and
 carefully follow the procedure detailed in section 3.3.2 {\it Adding
 Alcohol}.
 
-\subsubsection{ Delivery Pressure Control}
+\subsection{ Delivery Pressure Control}
 Gas will be metered to each detector element through a needle valve.
 To achieve a constant flow through a needle valve a constant
 differential pressure must be maintained across it, so it is necessary
@@ -245,7 +245,7 @@ inside the delivery rack.  This regulator receives 45 psig inert gas
 (the same gas delivered to mixer flow channel 3) and provides 15 psig
 gas to the INERT supply line to Hall-A.
 
-\subsection{Gas Delivery into Hall A}
+\section{Gas Delivery into Hall A}
 
 Between the gas shed and the two Hall-A shield houses are several gas
 line runs of about 700 feet in length.  These are shown schematically
@@ -255,7 +255,7 @@ Two similar tubes are teed into these near the beamline entrance to
 Hall-A and they supply VDC and inert gas to the Electron Arm shield
 house.  The pressures in all of these lines is nominally 15 psig.
 
-\subsubsection{ Distribution in the Shield Houses}
+\subsection{ Distribution in the Shield Houses}
 
 Inside each shield house there is a gas distribution panel which
 controls the gas flows to the individual wire chambers in that
@@ -294,7 +294,7 @@ digital flowmeters are factory- calibrated for Nitrogen.  To correct
 the readings for Argon multiply by 1.45; for Ethane multiply by 0.5;
 for CO$_2$ multiply by 0.74.
 
-\subsubsection{ Waste Gas Collection and Venting}
+\subsection{ Waste Gas Collection and Venting}
 Gas coming from the chamber exhaust bubblers is collected in a
 manifold and routed back to the gas shed through a large (1-inch OD)
 polyethylene tube.  There are separate manifolds and exhaust lines for
@@ -316,7 +316,7 @@ interlock is to protect the detector windows from overpressure.
 \end{figure}
 
 
-\subsection{Autherized Personnel}
+\section{Autherized Personnel}
 The following personnel are responsible for problems concerning the
 gas system:
 
@@ -326,7 +326,7 @@ gas system:
 \end{itemize} 
 
 
-\subsection{Safety and Device Protection}
+\section{Safety and Device Protection}
 
 There are a number of monitor points which provide signals to the gas
 interlock panel and which can cause the supply of gas to be
@@ -366,9 +366,9 @@ line downstream of a solenoid valve is low and the solenoid valve is
 opened with full inlet pressure. To reset the {\bf Excess Flow Valves}
 refer to the section {\it Resetting a closed Excess Flow Valve}.
 
-\subsection{System Operation}
+\section{System Operation}
 
-\subsubsection{ Pre-Startup Checklist}
+\subsection{ Pre-Startup Checklist}
 
 Before initial use with a flammable gas or after a significant
 down-time the following checks should be made to insure the safety and
@@ -388,7 +388,7 @@ N$_2$ and correction factors for Ethane and Argon).
 \item Verify that flammable gas leak sensors are appropriately calibrated.
 \end{enumerate}
 
-\subsubsection{ Startup Procedure}
+\subsection{ Startup Procedure}
 
 \begin{enumerate}
 \item Close gas shed outlet valves MV-302-A, -B, -C to isolate the mixing/delivery system 
@@ -456,8 +456,8 @@ through the three rotameters associated with these valves exceeds (roughly) 150 
 presence of supply pressures (gauges PG401A,B and PG501A,B,C) and set gas 
 selection valves and needle valves to desired gasses and flow rates for each chamber.
 \end{enumerate}
-\subsubsection{  Normal Operation}
-\subsubsection{ Changing gas bottles}
+\subsection{  Normal Operation}
+\subsection{ Changing gas bottles}
 
 {\bf Warning: High pressure gas bottles contain significant stored energy and 
 are potentially hazardous.  Handling of gas bottles should be done only by 
@@ -483,7 +483,7 @@ bottle to the flex-line.
 valve.
 \end{enumerate}
 
-\subsubsection{ Adding Alcohol}
+\subsection{ Adding Alcohol}
 
 {\bf Warning: Never open gas flow into the alcohol bubbler without an outlet 
 valve being open.}
@@ -507,7 +507,7 @@ overfill} (to or above the top of the sight glass).
 \item Seal the cover on the {\bf REFILL CANISTER} to prevent contamination.
 \end{enumerate}
 
-\subsubsection{ Setting a Flow Rate}
+\subsection{ Setting a Flow Rate}
 
 The flow of each individual gas component, and therefore the final gas mixture, is 
 controlled by the {\bf Dynamass DM-2401 System}, the {\bf FM-8 Flow/Ratio 
@@ -542,7 +542,7 @@ window) is not lit, press the ON/OFF button for that channel to illuminate this 
 \item Observe system flow and pressure control and verify that it is correct.
 \end{enumerate}
 
-\subsection{Troubleshooting :  Things to Check}
+\section{Troubleshooting :  Things to Check}
 
 Each of the following monitor points must report a nominal condition to the gas interlock 
 panel in order for the logic to be "made up" and for gas flow to be enabled:
@@ -609,7 +609,7 @@ Overpressure & is $>$18 psi. & $\bullet$If needed, vent excess & Station
 \hline
 \end{tabular}
 
-\subsubsection{ Resetting a closed Excess Flow Valve}
+\subsection{ Resetting a closed Excess Flow Valve}
 
 Each Excess Flow Valve automatically closes if the flow rate through it 
 exceeds about 4 slpm at 45 psig.  The exact flow threshold varies somewhat 
@@ -647,15 +647,15 @@ SHUTOFF.
 \item Verify that all faults are now cleared on the gas interlock panel.
 \end{enumerate}
 
-\subsubsection{ Restarting flow after a power failure.}
+\subsection{ Restarting flow after a power failure.}
 
 Normally the gas control system is protected from power outages by an
 uninterruptable power supply (UPS).  If the system is nevertheless
 disturbed by a loss of power then perform the steps outlined in
 section 3.2, Startup Procedure.
 
-\subsection{Maintenance}
-\subsubsection{ Periodic Inspections}
+\section{Maintenance}
+\subsection{ Periodic Inspections}
 
 Anytime work is done on any part of the gas system, or there is an
 occurrence that could possibly have damaged the gas system, the system
@@ -691,13 +691,16 @@ interim operation of the gas system while one or more flow controllers
 is removed for maintenance.
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/gas-full.tex,v 1.2 2003/06/06 21:41:39 gen Exp $
-% $Id: gas-full.tex,v 1.2 2003/06/06 21:41:39 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/gas-full.tex,v 1.3 2003/12/05 07:12:10 gen Exp $
+% $Id: gas-full.tex,v 1.3 2003/12/05 07:12:10 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 21:41:39 $
+% $Date: 2003/12/05 07:12:10 $
 % $Name:  $
 % $Locker:  $
 % $Log: gas-full.tex,v $
+% Revision 1.3  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 % Revision 1.2  2003/06/06 21:41:39  gen
 % Captions improvements
 %

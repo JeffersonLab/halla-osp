@@ -1,13 +1,13 @@
 %\vfill\eject
 %\newpage
-\section[The Focal Plane Polarimeter]{The Focal Plane Polarimeter
+\chapter[The Focal Plane Polarimeter]{The Focal Plane Polarimeter
 \footnote{
-  $CVS~revision~ $Id: fpp.tex,v 1.4 2003/11/14 21:57:36 nanda Exp $ $
+  $CVS~revision~ $Id: fpp.tex,v 1.5 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Authors: S.Nanda \url{mailto:nanda@jlab.org}}
 }
 
-\subsection{Overview}
+\section{Overview}
 
 The focal plane polarimeter measures the polarization of protons in the
 hadron spectrometer detector stack.
@@ -20,7 +20,7 @@ straw chambers, a type of drift chamber.
 
 As shown in Figure~\ref{fig:hadron_det}, 
 the front straw chambers are separated by about 114 cm, and are located
-before and after the gas Cerenkov detector.
+before and after the gas \Cherenkov{} detector.
 The second chamber is followed by scintillator 2, which is in turn
 followed by the polarimeter carbon analyzer.
 The rear chambers, chambers 3 and 4, are separated by 38 cm and are
@@ -41,8 +41,9 @@ of the proton paths, so that the total thickness of scattering carbon may be
 adjusted.
 The block thicknesses, from front to rear, are 9" (22.9cm), 6" (15.2cm), 
 3" (7.6cm) , 1.5" (3.8cm) , and 0.75" (1.9cm).
-The block positions are controlled through EPICS; the controls
-may be reached through the Hall A / hadron spectrometer / detectors menus.
+The block positions are controlled through EPICS~\cite{EPICSwww}; the controls
+may be reached through the Hall A / hadron spectrometer / detectors menus%
+\infolevtwo{ (see Fig.~\ref{fig:medm-hlamain-tools})}.
 Particles passing through the carbon analyzer can be absorbed in it.
 
 The straw chamber planes are designated as X, U, and V planes.
@@ -52,6 +53,7 @@ The UV coordinate system is created by a 45 degree rotation in the
 transverse plane of the XY coordinate system, with +U between the
 +X and +Y axes, and +V between the +Y and -X axes.
 
+\infolevthree{
 The straw chamber operation is described in the following paragraphs.
 
 When a charged particle passes through the chamber in typical Jefferson Lab
@@ -70,6 +72,8 @@ The movement of the positive and negative ions leads to a voltage drop
 on the wire, or equivalently to a negative analog signal.
 The analog signal is about 20 ns long, with a (negative)
 peak current of about 40 $\mu$A, and propagates towards each end of the straw.
+} %infolev
+\infolevone{
 At one end of each straw is a board that supplies high voltage
 (see Figure \ref{fig:termboard});
 impedance matching on this board, with a 1500 pF capacitor and a 370 $\Omega$
@@ -210,8 +214,10 @@ The system currently is only implemented for manual operation, except
 that data may be read out through CODA.
 This procedure requires some familiarity with trigger logic and setup,
 should only be done by experts, and is not documented here.
+} %infoolev
 
-\subsection{Operating Procedure}
+\infolevtwo{
+\section{Operating Procedure}
 \paragraph {Gas Flow Operating Procedures}
 
 The chamber gas is mixed 63$\%$-37$\%$ (by weight) Ar ethane. The gas is mixed
@@ -509,7 +515,7 @@ avoids time loss to reconditioning and maintains the desirable
 steady-state operating condition.
 
 
-\subsection{Carbon Doors}
+\section{Carbon Doors}
 
 
 Four of the five doors operate remotely, the fifth needing further
@@ -593,7 +599,7 @@ this procedure is to make sure that you do not change the polarity of
 the 90V while the doors are moving. This place undue stress on the
 motors and the power supply as well.
 
-\subsection{Handling Considerations}
+\section{Handling Considerations}
 
 The FPP straw chambers are very delicate devices which are absolutely
 essential to many Hall A physics experiments.
@@ -632,12 +638,14 @@ is shorted to ground!}
 
 \end{itemize}
 
+} %infolev
+
 \begin{safetyen}{0}{0}
-\subsection{Safety Assessment}
+\section{Safety Assessment}
 \label{sec:fpp_safety}
 \end{safetyen}
 
-\begin{safetyen}{50}{50}
+\begin{safetyen}{10}{10}
 The following potential hazards have been clearly identified.
 
 \begin{description}
@@ -662,7 +670,7 @@ bottles. This confined high pressure gas represents a tremendous
 \end{description}
 \end{safetyen}
 
-\subsection{Responsible Personnel} 
+\section{Responsible Personnel} 
 The following individuals are responsible for chamber problems. 
 Generally, the non Jefferson Lab people are responsible for
 FPP detector problems, whereas the Jefferson Lab people are responsible
@@ -677,15 +685,18 @@ shared with other systems.
 \item[~]Jack Segal, Jefferson Lab - x7242
 \end{itemize}
  
-\vfill\eject
+%\vfill\eject
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/fpp.tex,v 1.4 2003/11/14 21:57:36 nanda Exp $
-% $Id: fpp.tex,v 1.4 2003/11/14 21:57:36 nanda Exp $
-% $Author: nanda $
-% $Date: 2003/11/14 21:57:36 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/fpp.tex,v 1.5 2003/12/05 07:12:10 gen Exp $
+% $Id: fpp.tex,v 1.5 2003/12/05 07:12:10 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:12:10 $
 % $Name:  $
 % $Locker:  $
 % $Log: fpp.tex,v $
+% Revision 1.5  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 % Revision 1.4  2003/11/14 21:57:36  nanda
 % updated fpp osp
 %

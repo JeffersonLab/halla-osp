@@ -1,12 +1,11 @@
-
-\section[Trigger Scintillator Counters]{Trigger Scintillator Counters
+\chapter[Trigger Scintillator Counters]{Trigger Scintillator Counters
   \footnote{
-    $CVS~revision~ $Id: scin.tex,v 1.7 2003/11/12 20:39:30 feuerbac Exp $ $
+    $CVS~revision~ $Id: scin.tex,v 1.8 2003/12/05 07:12:10 gen Exp $ $
   }
   \footnote{Authors: Robert~Feuerbach~\url{mailto:feuerbac@jlab.org},
     Bogdan~Wojtsekhowski~\url{mailto:bogdanw@jlab.org}}
 }
-\subsection{Overview}
+\section{Overview}
 
 \newcommand{\unit}[1]{\,\mbox{\ensuremath{\mathrm{#1}}}}
 
@@ -22,6 +21,7 @@ two-or-more scintillator planes is used to form the trigger, and
 through different combinations the triggering effiency of each plane can
 be measured.
 
+\infolevfour{
 \begin{figure}[tbh]
   \begin{center}
     \includegraphics[width=.8\textwidth]{scint_fig5}
@@ -30,6 +30,7 @@ be measured.
     \label{fig:s1mount}
   \end{center}
 \end{figure}
+} % infolev
 The S1 scintillator plane consists of six paddles, each with an active area
 of 29.5~cm by 35.5~cm. The counters are made of 5~mm thick BICRON 408
 plastic scintillator and use multi-strip adiabatic light guides which end
@@ -38,8 +39,10 @@ the side of the cylindrical light guide. Each paddle is viewed by a 2"
 photo multiplier tube (Burle 8575) on each end.  The S1 paddles are
 installed at a small angle to the S1-plane and overlap by 10 mm.  The
 detectors are clamped to the detector frame through an additional A1
-channel, and supported from the PMT housings. Figure ~\ref{fig:s1mount}
-shows the mounting scheme for S1. Signals from the PMTs are sent to Camac
+channel, and supported from the PMT housings. 
+\infolevfour{Figure ~\ref{fig:s1mount} shows the mounting scheme for S1.
+}%infolev
+Signals from the PMTs are sent to Camac
 modules on the second level of the shielding hut for processing.
 
 \begin{figure}[tbh]
@@ -75,7 +78,7 @@ signals from these PMTs are sent to Camac modules on the second level of
 the shielding hut for processing.
 
 \infolevone{
-  \subsection{PMT regime and time resolution}
+  \section{PMT regime and time resolution}
   
   High energy electrons passing perpendicular to the S1 detector plane yield
   about 400-500 photons at the photo cathode of each PMT. In a fresh
@@ -105,7 +108,7 @@ the shielding hut for processing.
   
   LeCroy HV 1460 modules are used to supply HV power for the trigger
   counters. The HV can be controlled from a VT100 terminal connected through
-  a terminal server or through the EPICS system based on the HAC computer.
+  a terminal server or through the EPICS~\cite{EPICSwww} system based on the HAC computer.
   Current HV settings for the trigger counters should be found from a
   printout of the EPICS control in the last experimental logbook.
   
@@ -135,7 +138,7 @@ the shielding hut for processing.
 }
 
 \infolevone{
-  \subsection{PMT operation monitoring}
+  \section{PMT operation monitoring}
   
   There are two ways to monitor PMT/detector performance. The first is based
   on a scaler display program which provides information about PMT counting
@@ -147,9 +150,9 @@ the shielding hut for processing.
   600 channels. Due to the passive splitting, the S2 amplitudes should be
   expected to be only about 50 channels above the pedestal.
 
-\clearpage
+%\clearpage
   
-  \subsection{Measures to Protect the PMTs from Helium}
+  \section{Measures to Protect the PMTs from Helium}
   
   \begin{figure}[tbh]
     \begin{center}
@@ -168,7 +171,7 @@ the shielding hut for processing.
 }
 
 \infolevthree{
-  \subsection{ 2" PMT Bases for S1 Trigger Counters}
+  \section{ 2" PMT Bases for S1 Trigger Counters}
   
   A schematic diagram of the 2" PMT Base is shown in
   Figure~\ref{fig:scint_1}.  The Base consists of three main components.
@@ -232,7 +235,7 @@ the shielding hut for processing.
   scintillator counters from their subframes.
 }
 
-\subsection{Safety Assessment}
+\section{Safety Assessment}
   
 \begin{safetyen}{10}{10}
   WARNING: The bases are high voltage devices: the high voltage should be
@@ -263,7 +266,7 @@ the shielding hut for processing.
   mA with 2.1 kV on the base. 
 \end{safetyen}
 
-\subsection{Responsible Personnel} 
+\section{Responsible Personnel} 
 The following individuals are responsible for operation of the trigger counters. 
 \begin{itemize}
 \item[~]Segal, Jack - x7242 
@@ -271,13 +274,16 @@ The following individuals are responsible for operation of the trigger counters.
 \end{itemize} 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.7 2003/11/12 20:39:30 feuerbac Exp $
-% $Id: scin.tex,v 1.7 2003/11/12 20:39:30 feuerbac Exp $
-% $Author: feuerbac $
-% $Date: 2003/11/12 20:39:30 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/scin.tex,v 1.8 2003/12/05 07:12:10 gen Exp $
+% $Id: scin.tex,v 1.8 2003/12/05 07:12:10 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:12:10 $
 % $Name:  $
 % $Locker:  $
 % $Log: scin.tex,v $
+% Revision 1.8  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 % Revision 1.7  2003/11/12 20:39:30  feuerbac
 % typo fix
 %

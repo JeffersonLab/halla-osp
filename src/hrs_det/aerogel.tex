@@ -1,13 +1,15 @@
-%\author{B.B. Wojtsekhowski}
-%\address{Physics Dept. TJNAF}
-
-\section[Aerogel \v{C}erenkov Counter]{Aerogel \v{C}erenkov Counters
+%\section[Aerogel \Cherenkov{} Counter]{Aerogel \Cherenkov{} Counters
+\chapter[Aerogel \Cherenkov{} Counter]{Aerogel \Cherenkov{} Counters
 \footnote{
-  $CVS~revision~ $Id: aerogel.tex,v 1.10 2003/11/24 21:39:39 bogdanw Exp $ $
+  $CVS~revision~ $Id: aerogel.tex,v 1.11 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Author: B. B. Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
-There are  three aerogel \v{C}erenkov counters available with various indices
+\label{chap:hrs-aerogel}
+
+\section{Overview}
+
+There are three aerogel \Cherenkov{} counters available with various indices
 of refraction, which can be installed in either spectrometer 
 and allow a clean separation of pions, kaons and protons over 
 the full momentum range of the HRS spectrometers.
@@ -15,8 +17,13 @@ The first counter (AM) contains hygroscopic aerogel
 \footnote{Airglass AB, BOX 150, 245 22 Staffanstorp, Sweden.}.
 with a refraction index of 1.03 and a thickness of 9~cm. 
 The aerogel is continuously flushed with dry CO$_{2}$ gas.  
-It is viewed by 26 PMTs (Burle 8854
-\footnote{Burle Industries Inc., 1000 New Holland Ave., Lancaster, PA 17601, USA.}). 
+It is viewed by 26 PMTs (Burle 8854~\cite{BurleInd}).
+%\footnote{Burle Industries Inc., 1000 New Holland Ave., Lancaster, PA 17601, USA,
+%\url{http://www.burle.com/}}). 
+\infolevltone{
+A cross sectional schematic of the detector is shown in Fig.~\ref{fig:aero_fig2}.
+} %infolev 
+
 For high-energy electrons the average 
 number of photo-electrons is about 7.3~\cite{Brash:2002vn}.
 
@@ -25,9 +32,24 @@ A1 has 24 PMTs (Burle 8854). The 9 cm thick aerogel radiator used in A1
 \footnote{ Matsushita Electric Works, {\tt www.mew.co.jp}.}.
 has a refraction index of 1.015, giving a threshold of 2.84 (0.803) GeV/$c$ for
 kaons (pions). The average number of photo-electrons for GeV electrons
-in A1 is $\simeq$~8 (see fig.~\ref{fig:diff_performance}). The A2 counter has 26 PMTs
-(XP4572B1 \footnote{Photonis, Avenue Roger Roncier, Z.I. Beauregard,
-B.P. 520, 19106 Brive Cedex, France.} ).
+in A1 is $\simeq$~8% 
+\infolevtwo{(see Fig.~\ref{fig:diff_performance})}.
+\infolevtwo{
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=-90,width=0.8\textwidth]{diff_aero}
+\end{center}
+\caption[Number of photo-electrons in A1 and A2 vs particle momenta and 
+the amplitude spectra]
+{Number of photo-electrons in A1 and A2 vs particle momenta and 
+the amplitude spectra.}
+\label{fig:diff_performance}
+\end{figure}
+} %infolev
+ The A2 counter has 26 PMTs
+(XP4572B1 from Photonis~\cite{PhotonisInd}).
+%\footnote{Photonis, Avenue Roger Roncier, Z.I. Beauregard,
+%B.P. 520, 19106 Brive Cedex, France, \url{http://www.photonis.com}}).
 The aerogel in A2 also hygrophobic has a refraction index of 1.055, 
 giving a threshold of 2.8 (0.415) GeV/$c$ for protons (pions). 
 The thickness of the aerogel radiator in A2 is 5 cm, producing an average
@@ -36,14 +58,14 @@ number of about 30 photo-electrons for GeV electrons.
 %\author{G.J. Lolos}
 %\address{Dept. of Physics, University of Regina, Regina, SK, S4S 0A2 Canada}
 
-\subsection[Mirror Aerogel \v{C}erenkov Counter]{Mirror Aerogel \v{C}erenkov Counter
+\infolevone{
+\section[Mirror Aerogel \Cherenkov{} Counter]{Mirror Aerogel \Cherenkov{} Counter
 \footnote{
-  $CVS~revision~ $Id: aerogel.tex,v 1.10 2003/11/24 21:39:39 bogdanw Exp $ $
+  $CVS~revision~ $Id: aerogel.tex,v 1.11 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Author: G.J. Lolos \url{mailto:gjlolos@jlab.org}}
 }
-
-It is a silica aerogel \v{C}erenkov counter of the compact reflection mirror design, 
+It is a silica aerogel \Cherenkov{} counter of the compact reflection mirror design, 
 which was dictated by the available space (36.3 cm along the incident particle direction). 
 In addition, the high singles rates expected in Hall A are better handled 
 with segmented detectors covering the focal plane, 
@@ -54,7 +76,7 @@ enough directionality remains in the visible $\lambda$ region,
 where the selected PMTs have good quantum efficiency, to make
 light collection with mirrors an attractive and practical alternative. 
 
-An effective segmentation of the aerogel \v{C}erenkov counter, matching the 
+An effective segmentation of the aerogel \Cherenkov{} counter, matching the 
 segmentation of the trigger scintillators, can be used to separate multiple
 tracks through the focal plane and will allow an additional element of
 selectivity and track sensitivity in the focal plane instrumentation.  This
@@ -67,9 +89,9 @@ For example, in the off-line analysis, the aerogel counter PMT with the highest
 number of photoelectrons can be matched with the trigger counter and 
 VDC information to identify the actual path of a pion, 
 thus separating it from a simultaneously detected proton, which
-has no \v{C}erenkov signature.  
+has no \Cherenkov{} signature.  
 Such a capability of double hit resolution is not possible with diffusion 
-\v{C}erenkov counter designs, because the photon collection efficiency does not 
+\Cherenkov{} counter designs, because the photon collection efficiency does not 
 have a strong correlation with the incident particle track within the aerogel material. 
  
 The requirement for segmentation, in addition to supplementing the information
@@ -83,11 +105,11 @@ envelope incident on the aerogel, and the diffusion of the light in the low
 $\lambda$ region by the aerogel material, an increase in the area covered by
 PMTs results in an increase in the number of photons detected.  
 As a result, a total of 26 PMTs are used in the counter, as shown in 
-figure\ref{fig:aero_fig1}, with minimal spacing between their $\mu$-metal shields 
+Fig.~\ref{fig:aero_fig1}, with minimal spacing between their $\mu$-metal shields 
 (2.8 $mm$).  
 The total area covered by the PMT photo-cathode windows comprises 72\% of the area 
 of the counter opposite the planar parabolic mirrors.  
-A cross sectional schematic of the detector is shown in figure \ref{fig:aero_fig2}, 
+A cross sectional schematic of the detector is shown in Fig.~\ref{fig:aero_fig2}, 
 clearly illustrating the planar parabolic design of the mirror surfaces and their 
 relative orientation with respect to the PMTs, and the orientation of the counter 
 relative to the central axis of the spectrometers. 
@@ -126,7 +148,7 @@ Each end plate is made out of the same aluminum alloy as the side walls, and
 also incorporates stiffening lips folded integrally to each plate, one at the
 top and one at the bottom.  Each end plate has been provided with inlet and
 outlet gas line connections, which will be used to fill the counter enclosure
-with dry $CO_2$ gas to protect the silica aerogel from water vapour absorption.
+with dry $CO_2$ gas to protect the silica aerogel from water vapor absorption.
 %figures \ref{fig:aero_fig3} and \ref{fig:aero_fig4} show the bottom (tray) sections, 
 %and main plus upper (mirror) sections, respectively.  
 %The main (middle or PMT) section, in figure \ref{fig:aero_fig4},
@@ -135,7 +157,7 @@ with dry $CO_2$ gas to protect the silica aerogel from water vapour absorption.
 
 All internal surfaces of the detector, except the planar parabolic mirrors,
 themselves, are lined with aluminized 
-mylar\footnote{National Metalizing, P.O. Box 5202, Princeton, NJ 08540, USA.} 
+mylar\footnote{National Metalizing , P.O. Box 5202, Princeton, NJ 08540, USA.} 
 to increase the overall reflectivity of the counter.  
 The mirrors are made in $45\times 20.5 cm^2$ moulded surfaces, formed in one 
 rigid structure. 
@@ -158,10 +180,12 @@ The light and gas sealing action is provided by continuous twin parallel rubber
 strips along the joint area, and by Tedlar film of 0.025 $mm$ thickness
 covering the top of the outer planar parabolic area. 
 %
-\begin{figure}[p]
-\includegraphics[angle=0,width=14cm]{aero_fig1}
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,width=0.6\textwidth]{aero_fig1}
+\end{center}
 \caption[Aerogel:layout]{
- Schematic diagram of the aerogel \v{C}erenkov counter as viewed by the
+ Schematic diagram of the aerogel \Cherenkov{} counter as viewed by the
  incoming particles.  The numbers indicate the sections, 1 to 13, in the
  counter. Each section is viewed by two PMTs, one on the top (T) and one in the
  bottom (B). The labeling carries no significance other than identifying the
@@ -170,8 +194,11 @@ covering the top of the outer planar parabolic area.
 \label{fig:aero_fig1}
 \end{figure}
 
-\begin{figure}[tbh]
-\includegraphics[angle=0,width=14cm]{aero_fig2}
+} %infolev
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,width=0.6\textwidth]{aero_fig2}
+\end{center}
 \caption[Aerogel:mirrors]{
  Cross sectional drawing of the counter, along the particle direction, 
  showing the planar parabolic nature of the mirrors and the geometry of the 
@@ -180,6 +207,8 @@ covering the top of the outer planar parabolic area.
  }
 \label{fig:aero_fig2}
 \end{figure}
+
+\infolevone{
 
 The third major component of the counter consists of a removable tray where the
 silica aerogel is placed. 
@@ -198,16 +227,16 @@ circumference of the tray and containing the feed-through spacers for the
 retaining bolts.   The tray is equipped with SMA-type fiber optic feed through
 connectors for the gain and timing monitor system, which utilizes fiber
 optic cables.  Each fiber illuminates two adjacent PMTs, except the last PMT
-on either side (13T and 13B in figure \ref{fig:aero_fig1}), 
+on either side (13T and 13B in Fig.~\ref{fig:aero_fig1}), 
 which have their own dedicated fiber. 
 The light is generated in a gas plasma discharge 
 unit\footnote{Optitron Inc. 23206 S. Normandie Ave. \#8, Torrance, CA 90502, USA.} 
-and duplicates the spectrum expected from \v{C}erenkov radiation.  In addition, the
+and duplicates the spectrum expected from \Cherenkov{} radiation.  In addition, the
 fibers terminate beneath the silica aerogel, thus, the light reaching the PMTs
-will have the absorption characteristics of real \v{C}erenkov light produced 
+will have the absorption characteristics of real \Cherenkov{} light produced 
 in the aerogel radiator. 
 
-Due to the nature of \v{C}erenkov detectors, where few photoelectrons (PEs) are
+Due to the nature of \Cherenkov{} detectors, where few photoelectrons (PEs) are
 emitted by the photo-cathodes in the PMTs, any extraneous light entering the
 enclosure is very troublesome.  As a result of the small number of PEs
 expected, the PMTs operate either near to, or at, maximum high voltage, and,
@@ -235,7 +264,7 @@ with the $\mu$-metal shield to eliminate the possibility of electric shock
 through careless handling; this high impedance also limits the current drawn,
 in the unlikely event of a complete dielectric breakdown between the shields
 and the aluminum parts of the detector. A schematic diagram of the electronic 
-amplification chain is shown in figure \ref{fig:aero_fig7}. 
+amplification chain is shown in Fig.~\ref{fig:aero_fig7}. 
 
 The operation of the aerogel detector is discussed in Ref.\cite{Brash:2002vn}.
 
@@ -285,8 +314,10 @@ The operation of the aerogel detector is discussed in Ref.\cite{Brash:2002vn}.
 %\label{fig:aero_fig6}
 %\end{figure}
 %
-\begin{figure}[p]
-\includegraphics[angle=0,width=12cm]{scint_fig4}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[angle=0,width=0.8\textwidth]{scint_fig4}
+\end{center}
 \caption[Aerogel: amplification chain]{
  Schematic diagram of the electronic amplification chain. The total 
  resistance of 600 $k\Omega$ between the cathode and the first dynode is shown 
@@ -298,26 +329,10 @@ The operation of the aerogel detector is discussed in Ref.\cite{Brash:2002vn}.
 \label{fig:aero_fig7}
 \end{figure}
 
-\subsection{Safety Assessment}
+} %infolev
 
-\begin{safetyen}{10}{10}
-The PMTs are under high voltage and care is required when handling any 
-components of the counter. As stated earlier on in this report, the insulating 
-material between the $\mu$-metal shield and the aluminum exoskeleton far 
-exceeds the operating voltage. In addition, the 11 $M\Omega$ resistor between 
-the $\mu$-metal shield and the HV source, restricts the current flow below the  
-critical 1 $mA$ level. The combination of Tedlar film, plexiglas composites, 
-and injection moulded bases, are all safe to handle but care should be 
-exercised when handling the aluminum parts of the counter or touching the metal 
-back plate of the base. It is strongly recommended to ground the aluminum 
-exoskeleton of the counter, at several spots, to a common ground with the HV 
-and signal cable ground. This will further enhance safety and eliminate 
-potential ground loops in the unlikely event of a slow, and otherwise difficult 
-to diagnose, dielectric breakdown from the $\mu$-metal shield to the aluminum 
-structure or the aluminized mylar in the interior.  
-\end{safetyen}
-
-\subsection{Operating Procedure}
+\infolevtwo{
+\section{Operating Procedure}
 
 \paragraph{Operating Voltage}
 
@@ -331,7 +346,7 @@ than sufficient to separate the one PE from the pedestal of all ADCs we have
 used so far. It should not be necessary to increase the voltage above the   
 recommended one. 
 
-\subsection{Handling Considerations}
+\section{Handling Considerations}
 
 It is generally not advised to open up the counter if the persons involved are
 not thoroughly familiar with the assembly and specific component function.
@@ -369,7 +384,7 @@ Reverse the process for installation.
 \paragraph{Installation and Removal of the $SiO_2$ Tray}
 
 {\bf PLEASE NOTE}: The $SiO_2$ aerogel panels are extremely fragile and sensitive to 
-water and chemical vapour. Do not handle with bare hands, use clean cotton, or 
+water and chemical vapor. Do not handle with bare hands, use clean cotton, or 
 other fabric type, gloves instead. Surgical gloves often are contaminated with 
 lubricants and are not suitable for this purpose. 
 
@@ -391,9 +406,9 @@ leaks before turning the HV on at operating values. Even a small light
 leak can destroy the PMTs if they are at -2,950 V! Check for light leaks with 
 lights out, using a small portable light, and reduced voltage around -2,000 V.
 
-\subsection [Diffusion aerogel counters] {Diffusion aerogel counters}
-
+\section[Diffusion aerogel counters]{Diffusion aerogel counters 
 \footnote{Author: B. B. Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
+}
 
 For reliable PID of the kaon with momentum up to 2.84 GEV/$c$ 
 the aerogel detector with low refraction index of 1.015 (A1) was constructed.
@@ -411,72 +426,84 @@ use of different type of PMT - XP4572B.
 Each detector consists of a tray for the aerogel radiator and a diffusion box
 which holds PMTs. The surface of the each box covered with millipore
 paper. The hydrophobic aerogel was used for both detector, however the boxes
-are gas tight, so hydro-scopic aerogel also can be used. The positive HV 
+are gas tight, so hygroscopic aerogel also can be used. The positive HV 
 used in the detector allow to increase the solid angle viewed by each PMT
 and as result the light collection efficiency. The PMTs don't have
 $\mu$-metal shields, because the magnetic field at the location of these
 detectors  doesn't effect the light collection efficiency.
 The schematics of A1 and A2 are shown in figs~\ref{fig:A1_scheme} 
 and~\ref{fig:A2_scheme}.
-The structure of the diffusion box is shown in fig.~\ref{fig:A2_PMT}.
-The picture was made before installation of the millipore paper.
-%
-\begin{figure}[p]
-\includegraphics[angle=0,width=12cm]{a2_PMT_box1.jpg}
-\caption[The diffusion box of A2 detector]
-{The diffusion box of A2 detector.}
-\label{fig:A2_PMT}
-\end{figure}
-%
-The fig.~\ref{fig:diff_performance} shows performance characteristics 
-of the A1 and A2 counters. 
-%
-The fig.~\ref{fig:A1_inside} shows the view of A1 counter from inside.
-The are semi-spherical photo-cathode of 8854 on left and right side. 
-The white wires on the bottom are installed to avoid aerogel blocks 
-motion during detector transportation.
-%
-\begin{figure}[p]
-\includegraphics[angle=0,width=12cm]{a1_inside.jpg}
-\caption[Aerogel A1 from inside of the detector ]
-{Aerogel A1 detector from inside of the diffusion box. }
-\label{fig:A1_inside}
-\end{figure}
-%
-\begin{figure}[p]
-\includegraphics[angle=0,width=15cm]{A1_scheme.pdf}
+
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,width=0.8\textwidth]{A1_scheme}
+\end{center}
 \caption[The scheme of A1 detector] {The scheme of A1 detector.}
 \label{fig:A1_scheme}
 \end{figure}
 %
-\begin{figure}[p]
-\includegraphics[angle=0,width=15cm]{A2_scheme.pdf}
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,width=0.8\textwidth]{A2_scheme}
+\end{center}
 \caption[The scheme of A2 detector] {The scheme of A2 detector.}
 \label{fig:A2_scheme}
 \end{figure}
 %
+%
+} %infolev
+
+\infolevfour{
+The structure of the diffusion box is shown in Fig.~\ref{fig:A2_PMT}.
+The picture was made before installation of the millipore paper.
+
 \begin{figure}[p]
-\includegraphics[angle=0,width=15cm]{diff_aero.pdf}
-\caption[Number of photo-electrons in A1 and A2 vs particle momenta and 
-the amplitude spectra]
-{Number of photo-electrons in A1 and A2 vs particle momenta and 
-the amplitude spectra.}
-\label{fig:diff_performance}
+\begin{center}
+  \includegraphics[angle=0,width=12cm]{a2_PMT_box1}
+\end{center}
+\caption[The diffusion box of A2 detector]
+{The diffusion box of A2 detector.}
+\label{fig:A2_PMT}
 \end{figure}
 
+The Fig.~\ref{fig:A1_inside} shows the view of A1 counter from inside.
+The are semi-spherical photo-cathode of 8854 on left and right side. 
+The white wires on the bottom are installed to avoid aerogel blocks 
+motion during detector transportation.
 
-\subsection{Responsible Personnel} 
-The following individuals are responsible for the operation 
-of the aerogel \v{C}erenkov counters.
- 
-\begin{itemize}
-\item[~]Segal, John - x7242 
-\item[~]Wojtsekhowski, Bogdan - x7191 
-\end{itemize} 
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=0,width=12cm]{a1_inside}
+\end{center}
+\caption[Aerogel A1 from inside of the detector ]
+{Aerogel A1 detector from inside of the diffusion box. }
+\label{fig:A1_inside}
+\end{figure}
 
-\subsection{Safety Assessment}
+The Fig.~\ref{fig:diff_performance} shows performance characteristics 
+of the A1 and A2 counters. 
+
+} %infolev
 
 \begin{safetyen}{10}{10}
+\section{Safety Assessment}
+
+The PMTs are under high voltage and care is required when handling any 
+components of the counter. As stated earlier on in this report, the insulating 
+material between the $\mu$-metal shield and the aluminum exoskeleton far 
+exceeds the operating voltage. In addition, the 11 $M\Omega$ resistor between 
+the $\mu$-metal shield and the HV source, restricts the current flow below the  
+critical 1 $mA$ level. The combination of Tedlar film, Plexiglas composites, 
+and injection moulded bases, are all safe to handle but care should be 
+exercised when handling the aluminum parts of the counter or touching the metal 
+back plate of the base. It is strongly recommended to ground the aluminum 
+exoskeleton of the counter, at several spots, to a common ground with the HV 
+and signal cable ground. This will further enhance safety and eliminate 
+potential ground loops in the unlikely event of a slow, and otherwise difficult 
+to diagnose, dielectric breakdown from the $\mu$-metal shield to the aluminum 
+structure or the aluminized mylar in the interior.  
+
+\obsolete{
 The PMTs are under high voltage and care is required when handling any 
 components of the counter. The body of the counter must be grounded.
 Positive polarity of the HV made operation much more simple, but in some
@@ -486,6 +513,27 @@ The important requirement is to switch HV off before disconnection or
 connection HV cable to the HV divider. If some of the PMT need replacement the 
 HV must be off for all of them and HV supply must be disconnected 
 from all PMT.
+}
 \end{safetyen}
 
+\section{Responsible Personnel} 
+The following individuals are responsible for the operation 
+of the aerogel \Cherenkov{} counters.
+ 
+\begin{itemize}
+\item[~]Segal, John - x7242 
+\item[~]Wojtsekhowski, Bogdan - x7191 
+\end{itemize} 
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/aerogel.tex,v 1.11 2003/12/05 07:12:10 gen Exp $
+% $Id: aerogel.tex,v 1.11 2003/12/05 07:12:10 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:12:10 $
+% $Name:  $
+% $Locker:  $
+% $Log: aerogel.tex,v $
+% Revision 1.11  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 

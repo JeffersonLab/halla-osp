@@ -1,10 +1,15 @@
-\section[Overview]{Overview
+%\section[Overview]{Overview
+\chapter[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: overview.tex,v 1.8 2003/11/24 01:31:23 bogdanw Exp $ $
+  $CVS~revision~ $Id: overview.tex,v 1.9 2003/12/05 07:12:10 gen Exp $ $
 }
 \footnote{Authors: Dr. B.B.Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
-\hskip .3 in The detector packages of the two spectrometers are designed 
+\label{chap:hrs_det}
+
+\section{Overview of the Detector Package}
+
+The detector packages of the two spectrometers are designed 
 to perform various functions 
 in the characterization of charged particles passing through the spectrometer. 
 These include: providing a trigger to activate the data-acquisition 
@@ -13,7 +18,7 @@ precise timing for time-of-flight measurements and coincidence determination,
 and identification of the scattered particles. 
 The timing information is provided from scintillators, as well as the
 main trigger. The particle identification is obtained from a 
-variety of \v{C}erenkov  type detectors (aerogel and gas) and 
+variety of \Cherenkov{}  type detectors (aerogel and gas) and 
 lead-glass shower counters. 
 A pair of VDCs provides tracking information.
 The main part of the detector package in the two spectrometers 
@@ -23,10 +28,10 @@ The HRS-L can be equipped with a focal-plane polarimeter to determine
 the polarization of detected protons.
 The focal-plane-polarimeter operates with proton momenta up 
 to 3 GeV/$c$ with figure-of-merit of 0.03.
-The side view of the detector stacks are shown in fig.~\ref{fig:side-view}.
+The side view of the detector stacks are shown in Fig.~\ref{fig:side-view}.
 %
 \begin{figure}[p]
-\includegraphics[angle=0,width=15cm]{sideview.jpg}
+\includegraphics[angle=0,height=0.7\textheight]{hrs_det_sideview}
 \caption[The side view of the detector stacks]
 {The side view of the detector stacks.}
 \label{fig:side-view}
@@ -65,12 +70,12 @@ a TOF resolution of $\sim 0.5$ ns ($\sigma$) is obtained.
 The time-of-flight between the S1 and S2 planes is also used to measure 
 the speed of particles $\beta$, with a resolution of 7\% ($\sigma$).
 
-A gas \v{C}erenkov detector filled  with CO$_{2}$ at atmospheric 
+A gas \Cherenkov{} detector filled  with CO$_{2}$ at atmospheric 
 pressure is mounted between the trigger scintillator planes S1 and S2. 
 The detector allows an electron identification  with 99\% efficiency
 and has a threshold for pions at 4.8 GeV/$c$. 
-\v{C}erenkov in the HRS-R, leading to an average of about twelve photoelectrons. 
-In the HRS-L, the gas \v{C}erenkov detector in its standard configuration has 
+\Cherenkov{} in the HRS-R, leading to an average of about twelve photoelectrons. 
+In the HRS-L, the gas \Cherenkov{} detector in its standard configuration has 
 a pathlength of 80~cm, yielding seven photoelectrons on average. 
 The total amount of material in the particle path is about 1.4\% $X_0$. 
 
@@ -87,11 +92,11 @@ dimensions 15 cm by 15 cm by 30(35) cm.
 The second layer is  composed of 34 similar blocks. 
 Because of its reduced thickness, the resolution in HRS-L is not as good 
 as that of the shower detector in HRS-R.
-The combination of the gas \v{C}erenkov and shower detectors provides a 
+The combination of the gas \Cherenkov{} and shower detectors provides a 
 pion suppression above 2 GeV/$c$ of  a factor of $2 \cdot 10^{5}$, with a 
 98\% efficiency for electron selection in the HRS-R. 
 
-There are  three aerogel \v{C}erenkov counters available with various indices
+There are  three aerogel \Cherenkov{} counters available with various indices
 of refraction, which can be installed in either spectrometer and allow 
 a clean separation of pions, kaons and protons over the full momentum 
 range of the HRS spectrometers.
@@ -112,7 +117,8 @@ giving a threshold of 2.84 (0.415) GeV/$c$ for protons (pions).
 The thickness of the aerogel radiator in A2 is 5 cm, producing an average 
 number of about 30 photo-electrons for GeV electrons.
 
-\subsection{Geometry of the Spectrometer Detector Packages}
+\infolevone{
+\section{Geometry of the Detector Packages}
 
 Tables ~\ref{ta:Rdetg} and ~\ref{ta:Ldetg} give geometry
 information for the Left arm and Right arm detector packages. 
@@ -148,7 +154,6 @@ SHOW2   &    3780&     3912 &   2400 &    900  &     964    & -1207  & +/- 322  
 the detectors on Right Arm in mm.}
 \label{ta:Rdetg}
 \end{table}
-
 \begin{table}[hptb]
 \begin{center}
 \begin{tabular}{cccccccc}
@@ -176,14 +181,18 @@ SC4    &        &      4264&    3170&    1500 &    1382  &  -1645  &  +/- 705  \
 %\vfill\eject
 
 
+} %infolev
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.8 2003/11/24 01:31:23 bogdanw Exp $
-% $Id: overview.tex,v 1.8 2003/11/24 01:31:23 bogdanw Exp $
-% $Author: bogdanw $
-% $Date: 2003/11/24 01:31:23 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.9 2003/12/05 07:12:10 gen Exp $
+% $Id: overview.tex,v 1.9 2003/12/05 07:12:10 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 07:12:10 $
 % $Name:  $
 % $Locker:  $
 % $Log: overview.tex,v $
+% Revision 1.9  2003/12/05 07:12:10  gen
+% shower.tex modified. infolevel added. Polishing
+%
 % Revision 1.8  2003/11/24 01:31:23  bogdanw
 % detector introduction
 %
