@@ -1,0 +1,26 @@
+% - Definition for the namestab environment to print a table with names
+
+\newenvironment{namestab}[3]{%
+     \newcommand{\mynamtabcap}[0]{%
+        \caption[#2]{#3}%
+        \label{#1}%
+     }%
+   \begin{table}[htp]
+     \centering
+     \small
+     \begin{tabular}{|p{114pt}|l|l|l|p{94pt}|p{70pt}|} \hline
+         \multicolumn{1}{|c|}{Name} & Dept. & \multicolumn{2}{c|}{Call} & 
+         \multicolumn{1}{c|}{e-mail} & \multicolumn{1}{c|}{Comment} \\ 
+         \cline{3-4}   
+             &   & Tel & Pager &  &  \\
+         \hline 
+}%
+{    \hline
+     \end{tabular}%
+     \normalsize%
+     \mynamtabcap%
+   \end{table}%
+}
+
+% A header through all the columns
+\newcommand{\namestabheader}[1]{\hline \multicolumn{6}{|c|}{\em #1} \\ \hline}
