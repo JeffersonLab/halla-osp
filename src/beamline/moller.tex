@@ -1,6 +1,6 @@
 \section[M{\o}ller Polarimeter]{M{\o}ller Polarimeter
 \footnote{
-  $CVS~revision~ $Id: moller.tex,v 1.5 2003/06/06 21:12:51 gen Exp $ $
+  $CVS~revision~ $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $ $
 }
 \footnote{Authors: E.Chudakov \url{mailto:gen@jlab.org}}
 }
@@ -17,7 +17,8 @@ to measure the polarization of the electron beam delivered to the hall.
     \begin{center}
         \includegraphics*[angle=0,width=\textwidth]{moller_layout_v}
     \end{center}
-    \caption{Layout of M{\o}ller polarimeter. The origin of the 
+    \caption[M{\o}ller: layout]{
+            Layout of M{\o}ller polarimeter. The origin of the 
             coordinate frame is at the center of the polarimeter
              target, which is 17.5~m upstream of the Hall A target.
             }
@@ -138,7 +139,7 @@ measured at 2 complimentary target angles, say 25 and $155^o$.
       \begin{center}
           \includegraphics*[angle=90,scale=0.45]{moller_medm_window}
       \end{center}
-      \caption{The M{\o}ller target rotary dial.
+      \caption[M{\o}ller:MEDM MCC control]{The M{\o}ller MEDM MCC control.
             }
       \label{fig:moller_medm_1} 
    \end{figure}  
@@ -160,7 +161,7 @@ physics target.
       \begin{center}
           \includegraphics*[angle=0,width=\textwidth]{moller_targ_phot1}
       \end{center}
-      \caption{The M{\o}ller target.
+      \caption[M{\o}ller:target]{The M{\o}ller target.
             }
       \label{fig:moller_targ_1} 
    \end{figure}  
@@ -217,7 +218,7 @@ holder. A scale
       \begin{center}
           \includegraphics*[angle=0,scale=0.5]{moller_targ_phot2}
       \end{center}
-      \caption{The M{\o}ller target rotary dial.
+      \caption[M{\o}ller:target rotary dial]{The M{\o}ller target rotary dial.
             }
       \label{fig:moller_targ_2} 
    \end{figure}  
@@ -285,7 +286,7 @@ The M{\o}ller polarimeter spectrometer consists of three quadrupole magnets and 
       \begin{center}
           \includegraphics*[angle=0,width=\textwidth]{moller_spectr_phot1}
       \end{center}
-      \caption{The M{\o}ller spectrometer. The target is located at the right
+      \caption[M{\o}ller:spectrometer]{The M{\o}ller spectrometer. The target is located at the right
             side of the photograph, the blue dipole magnet is close to the center.
             }
       \label{fig:moller_spectr_phot1} 
@@ -415,7 +416,7 @@ in several crates in the Hall:
       \begin{center}
           \includegraphics*[angle=0,height=20cm]{moller_electronics_phot1}
       \end{center}
-      \caption[The M{\o}ller electronics crates.]{The M{\o}ller electronics,
+      \caption[M{\o}ller: electronics crates.]{The M{\o}ller electronics,
             located in the Hall, at the right side of the beam line. 
             The top crate is the VME DAQ crate, the middle one is the CAMAC
             crate and the bottom one is the NIM crate. The first VME
@@ -442,7 +443,7 @@ One can connect to the CPU boards and the HV crate via a portserver:
       \begin{center}
           \includegraphics*[angle=0,width=\textwidth]{moller_fsd_phot1}
       \end{center}
-      \caption[The M{\o}ller FSD crate.]{The M{\o}ller target
+      \caption[M{\o}ller: FSD crate.]{The M{\o}ller target
             motion may cause the Fast ShutDown (FSD) of the accelerator.
             The LEDs in the top right corner show the appropriate
             signals from the target. The top LED lit indicates
@@ -485,7 +486,7 @@ are controlled from a Java program, equipped with a GUI.
       \begin{center}
           \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window}
       \end{center}
-      \caption{The slow control console (Java).
+      \caption[M{\o}ller:slow control window]{The slow control console (Java).
             }
       \label{fig:moller_slowc_1} 
    \end{figure}  
@@ -507,7 +508,7 @@ are controlled from a Java program, equipped with a GUI.
       \begin{center}
           \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window_hv}
       \end{center}
-      \caption{HV control console.
+      \caption[M{\o}ller:HV control]{HV control console.
             }
       \label{fig:moller_slowc_hv} 
    \end{figure}  
@@ -517,7 +518,7 @@ are controlled from a Java program, equipped with a GUI.
       \begin{center}
           \includegraphics*[angle=0,scale=0.55]{moller_slowcntrl_window_de}
       \end{center}
-      \caption{Detector setting console.
+      \caption[M{\o}ller: electronics control]{Detector setting console.
             }
       \label{fig:moller_slowc_de} 
    \end{figure}  
@@ -532,8 +533,8 @@ are controlled from a Java program, equipped with a GUI.
       \begin{center}
           \includegraphics*[angle=0,scale=0.55]{moller_slowcntrl_window_co}
       \end{center}
-      \caption{Control console for the collimator (and also the slide, which is not relevant
-               here).
+      \caption[M{\o}ller: collimator control]{Control console for the collimator 
+               (and also the slide, which is not relevant here).
             }
       \label{fig:moller_slowc_co} 
    \end{figure}  
@@ -808,13 +809,16 @@ are responsible for ensuring that it is properly positioned.\\
 \input{beamline/moller-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.5 2003/06/06 21:12:51 gen Exp $
-% $Id: moller.tex,v 1.5 2003/06/06 21:12:51 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
+% $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 21:12:51 $
+% $Date: 2003/06/06 21:41:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.6  2003/06/06 21:41:39  gen
+% Captions improvements
+%
 % Revision 1.5  2003/06/06 21:12:51  gen
 % Revision printout changed
 %
@@ -845,13 +849,16 @@ are responsible for ensuring that it is properly positioned.\\
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.5 2003/06/06 21:12:51 gen Exp $
-% $Id: moller.tex,v 1.5 2003/06/06 21:12:51 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
+% $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 21:12:51 $
+% $Date: 2003/06/06 21:41:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.6  2003/06/06 21:41:39  gen
+% Captions improvements
+%
 % Revision 1.5  2003/06/06 21:12:51  gen
 % Revision printout changed
 %
