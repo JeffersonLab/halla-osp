@@ -1,6 +1,6 @@
 \chapter[eP Beam Energy Measurement]{eP Beam Energy Measurement
 \footnote{
-  $CVS~revision~ $Id: ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $ $
+  $CVS~revision~ $Id: ep.tex,v 1.5 2003/12/08 15:34:23 reitz Exp $ $
 }
 \footnote{Authors: B.Reitz \url{mailto:reitz@jlab.org}}
 }
@@ -116,7 +116,7 @@ To turn the HV on (or off), or to change the
 preset values,
 press the button below the title of the slot. Another screen will pop-up,
 where status and preset values can be adjusted. \infolevtwo{
-(See Fig. \ref{fig:ep_hvbeamline} - \ref{fig:ep_hvslot3})
+(See Figs. \ref{fig:ep_hvbeamline}, \ref{fig:ep_hvslot1}, \ref{fig:ep_hvslot2}, and \ref{fig:ep_hvslot3})
 
 \begin{figure}[bht]
     \begin{center}
@@ -401,7 +401,7 @@ and thresholds of discriminators. Since these settings depend
 on the beam energy, they have to be configured individually for 
 each measurement.
 \infolevfour{The DAQ hardware itself is located in two racks along the beamline 
-in Hall A (see Fig. \ref{fig:ep_pic_daq1} - \ref{fig:ep_pic_daq3} ). 
+in Hall A (see Figs. \ref{fig:ep_pic_daq1}, \ref{fig:ep_pic_daq1}, and \ref{fig:ep_pic_daq3} ). 
 
  \begin{figure}[bht]
     \begin{center}
@@ -434,7 +434,7 @@ in Hall A (see Fig. \ref{fig:ep_pic_daq1} - \ref{fig:ep_pic_daq3} ).
 }
 
 \infolevtwo{
-\paragraph{Trigger-configuration \\ }
+\subsubsection{Trigger-configuration \\ }
 
 Before data taking can start, 
 a trigger file appropriate for the nominal beam energy must be created. This
@@ -456,7 +456,7 @@ The file is read in by CODA during the \mycomp{PRESTART}.
     \label{fig:ep_trgcnf} 
  \end{figure}  
 
-\paragraph{Rebooting Acquisition-VME \\ }
+\subsubsection{Rebooting Acquisition-VME \\ }
 
 The DAQ system utilizes a VME computer as its Readout Controller (ROC). This
 computer is designated \mycomp{hallasc15} and can be
@@ -500,7 +500,7 @@ other (o)            : \\
 Press \mycomp{c} to change these settings and 
 reboot the ROC by pressing \mycomp{@} afterwards.
 
-\paragraph{Running CODA \\ }
+\subsubsection{Running CODA \\ }
 
 To run CODA, you have to be logged into \mycomp{adaqep} as user
 \mycomp{epmeas}. From the prompt CODA can be started with the
@@ -733,13 +733,16 @@ detector needs to be purged and later the operating mode needs to be restored.
 \input{beamline/ep-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
-% $Id: ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/05 05:48:30 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.5 2003/12/08 15:34:23 reitz Exp $
+% $Id: ep.tex,v 1.5 2003/12/08 15:34:23 reitz Exp $
+% $Author: reitz $
+% $Date: 2003/12/08 15:34:23 $
 % $Name:  $
 % $Locker:  $
 % $Log: ep.tex,v $
+% Revision 1.5  2003/12/08 15:34:23  reitz
+% change paragraph to subsubsection
+%
 % Revision 1.4  2003/12/05 05:48:30  gen
 % Polishing
 %
