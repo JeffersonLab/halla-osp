@@ -11,7 +11,8 @@ Bertin           Pierre        IN2P3
 Cates            Gordon          UVA
 Chen             Jian-Ping      JLab 
 Chudakov         Eugene         JLab
-Colombel         Nathalie        CEA   8350  ncolombel@Cea.Fr    
+Colombel         Nathalie        CEA   8350  ncolombel@Cea.Fr
+Cusanno          Francesco      INFN    
 Day              Tony           JLab 
 Deck             Pascale         CEA   2426  pdeck@Cea.Fr        
 Delbart          Alain           CEA   3454  adelbart@Cea.Fr     
@@ -31,9 +32,11 @@ Hansen           Ole            JLab
 Higgins          Scott          JLab 
 Higinbotham      Douglas        JLab
 Jiang            Xiaodong      Rutgers
+Iodice           Mauro          INFN
 Keith            Christopher    JLab
 Korsch           Wolfgang        UoK 
 Kramer           Kevin           CWM
+Kross            Brian          JLab
 Kursun           Zafer          JLab
 Lauze            Ron            JLab 
 LeRose           John           JLab
