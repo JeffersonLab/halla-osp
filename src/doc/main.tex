@@ -17,7 +17,7 @@
 \begin{titlepage}
 \title{{\bf OSP Instructions for Contributors
 \thanks{
- $CVS~revision~ $Id: main.tex,v 1.8 2003/06/07 20:08:57 gen Exp $ $
+ $CVS~revision~ $Id: main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $ $
 }
 }}
 
@@ -313,6 +313,28 @@
   }\noindent
   The selected parts can be long and can contain sections, figures etc.
 
+  In a slim document, produced at a low information level,
+  one may want to say something like ``For details see the full document
+  ... URL ...''. Let us assume that the missing information belongs
+  to the information level 4. Then, in order not to print this sentence
+  for the documents at the level 4 (since these ``details'' are
+  present), one should use:
+  {\color{blue}
+   \begin{verbatim}
+\infolevltfour{For details see the full document ...URL...}
+  \end{verbatim}%
+  }\noindent
+  The sentence will be printed only if the current information level 
+  is less than 4.
+  There are similar commands for different information levels
+  of the information required:
+  {\color{blue}
+   \begin{verbatim}
+\infolevltone{...}
+\infolevlttwo{...}
+\infolevltthree{...}
+  \end{verbatim}%
+  }\noindent
 
 \subsection{Selecting the Safety Information}
 \label{sec:safety}
@@ -438,13 +460,16 @@
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.8 2003/06/07 20:08:57 gen Exp $
-% $Id: main.tex,v 1.8 2003/06/07 20:08:57 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $
+% $Id: main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/07 20:08:57 $
+% $Date: 2003/11/21 18:11:47 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.9  2003/11/21 18:11:47  gen
+% new command added
+%
 % Revision 1.8  2003/06/07 20:08:57  gen
 % Underscore in the name changed to dashes
 %
