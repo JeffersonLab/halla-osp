@@ -1,0 +1,13058 @@
+#This file was created by <mitchell> Wed Jun 30 18:04:57 1999
+#LyX 1.0 (C) 1995-1999 Matthias Ettrich and the LyX Team
+\lyxformat 2.15
+\textclass article
+\language default
+\inputencoding default
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+ARC ENERGY MEASUREMENT OPERATIONS
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ P.V.
+ 3/1/1999
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The ARC energy measurement is under EPICS control through a MEDM display.
+\layout Standard
+
+Two independent control systems are used: the beam bend angle measurement
+\layout Standard
+
+through the arc ("scanners") and the field integral of the arc ("integral").
+\layout Standard
+
+To measure the energy:
+\layout Standard
+
+-perform several angle measurements
+\layout Standard
+
+-perform an integral measurement
+\layout Standard
+
+-analyze the integral measurement and note the value of the arc field integral
+\layout Standard
+
+-analyze the angle measurements, average the results (proposed by the software),
+\layout Standard
+
+then ask for the energy calculation, enter the above arc field integral
+ and
+\layout Standard
+
+you will get the beam energy computed from the average angle.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+1-Computers and softwares used by scanners and integral:
+\layout Standard
+
+________________________________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ SCANNERS
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ INTEGRAL
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Computer:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ hac
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ pascal1
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (IP=129.57.188.20)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+type:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ hp
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ sun
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+login under:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ gougnaud
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ gougnaud
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+password:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ see Arun
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ see Arun
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Disk mounted on CUE?
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ yes (use cp for transfer)
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ no (use ftp or rcp)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+.adl files directory:
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/adl/
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/EPICS/adl/
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+standard .adl file
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ARC6.adl
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ arc_integral.adl (arc_master.adl)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+expert .adl file
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ expert.adl
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ arc_nmr.adl (arc_pdi.adl)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Directive files dir.:
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/ARC/
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/EPICS/ioc.mg/
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+standard directive file:data1234 (data56)
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ magnet.dir
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+output file:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/ARC/scan_nnn.data
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/EPICS/...
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ...integral/integral_nnn.data
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+analysis code
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/ARC/pascal/arc-scan.sun
+\protected_separator 
+ ~/pascal/arc-integral
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+result file
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/ARC/scan_nnn.data.log
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc name
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ arcioc
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ arcioc2
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (IP=129.57.188.24)
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (IP=129.57.188.21)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc login name
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ None
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ target
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc password
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ None
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ password
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc "iam"
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ gougnaud
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ gougnaud
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc type and RAM size
+\protected_separator 
+
+\protected_separator 
+ MVME162, 8Mo
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ MVME162, 8Mo
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+ioc boot file:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/arc2/ioc/up
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ~/EPICS/ioc.mg/up
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+2-Summary of ARC operations:
+\layout Standard
+
+________________________________
+\layout Standard
+
+
+\protected_separator 
+ 6 scanners of the same type, called "ARC scanner" and labelled from
+\layout Standard
+
+scanner #1 to #6, are installed on the Hall-A beamline.
+ Scanners #1 to #4
+\layout Standard
+
+are used for the ARC energy measurement and they are located on the Hall-A
+\layout Standard
+
+arc: #1 and #2 just upstream the arc, in the BSY, and #3 and #4 in the Hall-A
+\layout Standard
+
+tunnel, just upstream the Compton polarimeter.
+ Scanners #5 and #6 are
+\layout Standard
+
+located between the Moller and the target to control the beam geometry
+\layout Standard
+
+on the target and their use will not be discussed here.
+\layout Standard
+
+
+\protected_separator 
+ Each scanner has a motor/ball-screw/shaft-encoder/vacuum-penetrator
+\layout Standard
+
+system moving accurately
+\layout Standard
+
+a set of 3 tungsten wires through the beam.
+ Each time a wire crosses the beam
+\layout Standard
+
+a PMT located a few meters downstream records a signal due to the
+\layout Standard
+
+electromagnetic shower induced by the beam in the wire.
+ Both forward and
+\layout Standard
+
+backward passes are recorded.
+ The motion is a horizontal translation and,
+\layout Standard
+
+for a forward pass:
+\layout Standard
+
+-the translation is from beam left to beam right,
+\layout Standard
+
+-the two first wire crossing the beam are at 45deg from
+\layout Standard
+
+the vertical,
+\layout Standard
+
+-the third wire, which is the only important for the ARC energy
+\layout Standard
+
+measurement, is vertical.
+\layout Standard
+
+
+\protected_separator 
+Recording, during the scan, the scanner position and the PMT output
+\layout Standard
+
+voltage allows us to determine the beam position at each scanner location.
+\layout Standard
+
+Then, using calibration data not detailed here, we deduce the net beam bend
+\layout Standard
+
+angle through the arc.
+ This result measured in dispersive arc tuning, along
+\layout Standard
+
+with the field integral of the arc dipoles, provides an accurate determination
+\layout Standard
+
+of the beam energy.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The list of the operations for an ARC energy measurement is given here
+\layout Standard
+
+and will be detailed after:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 1/check the pulser (scanners)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 2/check the HV
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (scanners)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 3/check EPICS
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (scanners)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 4/check space on disk(scanners)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 5/check the integral (see "Details on integral system check" below)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 6/ask for chicane off, put target in a safe position, ask ~5uA (achromatic)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 7/perform a scan test in achromatic at ~5uA
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -->solve the trips
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -->final adjustment of gains of scanners #1 and #2
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -->save the last (non saturated) scan
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 8/if everything is OK, ask for dispersive beam ~5uA
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 9/check dispersive beam:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -CW ~5uA
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -Fast Feedback ON
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -Energy Feedback ON
+\protected_separator 
+ <-------important
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -Kresting ON
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -arc's quads and steerers OFF
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -beam stable at entrance and exit (Bscope)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (see the test plane of the dispersive mode in MCC)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 10/perform a scan in dispersive at ~5uA (see details below)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -solve the trips
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -finish the 4 gains adjustment
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -perform and save 3 good scans
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 11/perform a field integral (see details below)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 12/restore beam for the experiment
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ unmask the diagnostics, restore achromatic mode and chicane,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ quit MEDM and turn both HV channels OFF.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ 13/analyze scan data (dispersive only) and integral data
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+3-Preliminary details about MEDM
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To fill or update an input field of MEDM, put the mouse cursor
+\layout Standard
+
+in the field, do the edit or change, and then PRESS CARRIAGE RETURN
+\layout Standard
+
+WHILE THE CURSOR IS STILL INSIDE THE FIELD!!!
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+4-Details on pulser check
+\layout Standard
+
+_________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ A pulser is used to trig the scanner acquisition.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ The ARC scanners pulse generator (middle counting room)
+\layout Standard
+
+must be adjusted on 1000Hz
+\protected_separator 
+ for CW beam (on "external trigger"
+\layout Standard
+
+in pulsed mode, for any scanner).
+ Check the output with a scope.
+\layout Standard
+
+Settings for CW mode
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -frequency: 1KHz
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -delay: not important in CW, should be always 0.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -time width: 10us
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -level: 2.5V on 50 Ohm load, 5V on 1 MOhm,
+\protected_separator 
+ polarity: + (TTL)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+5-Details on HV check
+\layout Standard
+
+_____________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The energy measurement uses scanners #1 to #4 with PMT read out.
+ One
+\layout Standard
+
+PMT (PMT0) is in the BSY reading scanners #1 and #2.
+ One other is
+\layout Standard
+
+in the Compton region (PMT1), reading scanners #3 and #4.
+ They both are
+\layout Standard
+
+energized by the "beam line HV module", card#1 channel#0 (PMT0)
+\layout Standard
+
+and channel#1 (PMT1), under EPICS control of the general Hall A
+\layout Standard
+
+control.
+ Both voltages must be -1200V, make sure that "Meas.
+ V"
+\layout Standard
+
+indicates this voltage.
+ If needed, push on "enable/disable" or
+\layout Standard
+
+edit the "SET V" field.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+6-Details on EPICS check (scanners)
+\layout Standard
+
+___________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-login as "gougnaud" on hac, you need to know her password, ask to Arun.
+ If you
+\layout Standard
+
+connect by "cd ~gougnaud", you will not be able to edit the command file
+\layout Standard
+
+nor save the data.
+\layout Standard
+
+hac> cd arc2/adl
+\layout Standard
+
+hac> medm&
+\layout Standard
+
+-on the medm access window, click on "file", and then "open"
+\layout Standard
+
+-in the open file window, select "ARC6.adl", the ARC window must
+\layout Standard
+
+appear then
+\layout Standard
+
+-on the medm access window, click on "execute"
+\layout Standard
+
+-if then the ARC window remains partly blank, or if you have some doubt
+\layout Standard
+
+about the identity of the program running in the ioc, go to the "reboot
+ ioc"
+\layout Standard
+
+section below
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+7-Details on ioc reboot (scanners)
+\layout Standard
+
+________________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Reboot arcioc by pushing the "Beamline Arc Measurement VME Reset"
+\layout Standard
+
+green button (middle counting room): the arcioc is loaded from the "up"
+ file
+\layout Standard
+
+If the ARC window (in execute mode) was not blank, it becomes blank,
+\layout Standard
+
+then wait for 1 minute it returns to grey: the scanner is then operational.
+\layout Standard
+
+If the ioc is not dead, you can also reboot it by software through the network:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ hac>rlogin arcioc
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -> reboot
+\protected_separator 
+ (the rlogin connection is then broken by the reboot)
+\layout Standard
+
+10/98:The hard reboot (green button labelled "ARC") is temporarily connected
+\layout Standard
+
+also to another VME crate (e,p energy measurement), use it only if e,p is
+ not
+\layout Standard
+
+running.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+8-Details on disk space check (scanners)
+\layout Standard
+
+________________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Run the "quota -v" UNIX command under ~gougnaud/arc2/ARC:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Filesystem
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ usage
+\protected_separator 
+ quota
+\protected_separator 
+ limit
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ timeleft
+\protected_separator 
+ files
+\protected_separator 
+ quota
+\protected_separator 
+ limit
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ timeleft
+\layout Standard
+
+/u/home
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 119308 512000 512000
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 924
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -1
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Do it several times, sometimes the answer is crazy!
+\layout Standard
+
+In the above example you have about 400Mo free, a scan file of
+\layout Standard
+
+scanners #1 to #4 (energy measurement) occupies about 1Mo when
+\layout Standard
+
+unzipped and 300Ko when zipped, so you have room for ~400 unzipped files
+\layout Standard
+
+or ~1200 zipped files.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+9-Details on running a scan
+\layout Standard
+
+___________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ -On the MEDM screen load "data1234" as Command File.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Content of "data1234":
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
++1 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
++2 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
++3 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
++4 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
+-1 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
+-2 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
+-3 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
+-4 P
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 5.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+means: use scanners #1 to #4, do first the 4 forward pass and then
+\layout Standard
+
+the 4 backward ones (to let to the wires the time to cool down)
+\layout Standard
+
+at 5 turns/s=12.500 mm/s.
+ Warning: lower velocity may cause the wire to melt.
+\layout Standard
+
+An error message will be edited if the velocity is outside ]0., 6.1 t/s[.
+\layout Standard
+
+P is for PMT readout (S for Secondary emission for scanners #5 and #6).
+\layout Standard
+
+The file is in ~gougnaud/arc2/ARC.
+\layout Standard
+
+In pulsed mode (60Hz) use a velocity of 0.3 turn/s.
+ You need to edit a special
+\layout Standard
+
+file setting this velocity.
+\layout Standard
+
+On the MEDM screen update CW/60Hz, beam current and DISPersive/ACHROmatic
+\layout Standard
+
+(for the record).
+\layout Standard
+
+-Push "START" when ready, you can follow the operations by looking at:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -running command: the line of the "Command file" currently
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ executed
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -the cursor position of the scanners
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -voltage versus position plot.
+ The location of the 6 scanners
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ on the MEDM window is the following:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #2
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #3
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #4
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #5
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #6
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The forward plot is green, the backward one is red.
+ In case of
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ saturation, redo the scan with lower gain (see details below).
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The only peak used for energy measurement is the rightmost one
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (H profile produced by the V wire): focus on this peak to adjust
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the gain, the 2 other peaks may saturate.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -the names on the top of the plots are the CEBAF device names
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ of the scanners.
+\layout Standard
+
+WARNING: operating at too high a beam current or too small a velocity
+\layout Standard
+
+may cause the wire to melt, with no opportunity to repare it
+\layout Standard
+
+before the next shutdown.
+\layout Standard
+
+The total travel time is about 15s per scanner.
+ During the travel, have a look
+\layout Standard
+
+to the beam current.
+ If the beam trips, inquire why, correct
+\layout Standard
+
+if it was caused by the scan (set masks), and redo the scan (see details
+\layout Standard
+
+on trips below).
+\layout Standard
+
+-Save the data (see details below).
+\layout Standard
+
+-Print the MEDM window (see details below).
+\layout Standard
+
+-you can plot the profile (see details below).
+\layout Standard
+
+
+\protected_separator 
+ After the scan, check the peak (rightmost) quality: it must be
+\layout Standard
+
+compact (Gauss curve) with a good signal/noise ratio (>5)
+\layout Standard
+
+If scan #1 and #2 are not compact: report to MCC and make sure that
+\layout Standard
+
+the fast feedback is ON.
+ If scan #3 and #4 are not compact: report
+\layout Standard
+
+also to MCC and make sure that the energy feedback and the kesting
+\layout Standard
+
+are ON.
+\layout Standard
+
+
+\protected_separator 
+ If the scan seems OK: start a field integral measurement 
+\layout Standard
+
+and report to "saha@jlab.org" with as much details
+\layout Standard
+
+as possible (at least the file names) for data analysis and
+\layout Standard
+
+beam energy determination.
+ Record the mail in the e-logbook.
+\layout Standard
+
+Don't forget to save the files.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+10-Details on MEDM window print
+\layout Standard
+
+_______________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To print the MEDM window: put the mouse cursor somewhere in the
+\layout Standard
+
+background part of the ARC window (outside the plots), push the
+\layout Standard
+
+mouse right button, select print, release the button.
+\layout Standard
+
+It should go on "cha1hp" if you work from the counting house.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+11-Details on profile plot
+\layout Standard
+
+__________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To plot the profile: use your favorite curve plotter (hvplot, xmgr...)
+\layout Standard
+
+The scan file is an plain ASCII file with a line per acquisition (trigger)
+\layout Standard
+
+and two float per line: position in encoder unit (4096.0 per
+\layout Standard
+
+2.500 mm or turn) and voltage after gain in V.
+ First the
+\layout Standard
+
+forward profile with increasing "x", then the backward one,
+\layout Standard
+
+with decreasing "x" (x=coordinate transverse to the
+\layout Standard
+
+beam and horizontal.
+ Towards beam right for scanners #1
+\layout Standard
+
+to #4, towards beam left for #5 and #6).
+ Some lines
+\layout Standard
+
+are header lines.
+ In this case the 1st character
+\layout Standard
+
+is a "!" seen as a comment line by hvplot (need to be
+\layout Standard
+
+changed for other plotters).
+ The rightmost peak (high x values)
+\layout Standard
+
+was produced by the vertical wire (it is a pure horizontal
+\layout Standard
+
+profile), the 2 other peaks by the +45deg.
+ and -45deg.
+ wires.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+12-Details on gain adjustment (scanners)
+\layout Standard
+
+_______________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ Adjust the gain of the signal amplifier to get ]-10V, +10V[ at the input
+\layout Standard
+
+of the ADC, range= 001, 002, 004,...128, 256.
+\layout Standard
+
+
+\protected_separator 
+ Gain adjustment: in the ARC scanner MEDM window, click (right button
+\layout Standard
+
+for Arun, left one in general!)
+\layout Standard
+
+on the gain command button located close to the plot of the profile
+\layout Standard
+
+of the scanner you want to adjust.
+ Then select a gain and release the mouse.
+\layout Standard
+
+After a scan:
+\layout Standard
+
+
+\protected_separator 
+ -Select higher gain if the rightmost peak is <3V (in absolute value)
+\layout Standard
+
+
+\protected_separator 
+ -Select lower gain if the scanner saturates.
+ To know if the scanner saturates,
+\layout Standard
+
+do not believe the MEDM plot (on which several adjacent channels are averaged),
+\layout Standard
+
+trust the red diode associated to each scanner (close to the plot).
+\layout Standard
+
+If you want to know what these diodes look like, click on "edit" on the
+ MEDM
+\layout Standard
+
+access window: you will see the diodes.
+ Then return to "execute".
+\layout Standard
+
+
+\protected_separator 
+ Start with the gains (dispersive case):
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ scanner
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ gain
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 4
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #2
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 8
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #3
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 32
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ #4
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 32
+\layout Standard
+
+
+\protected_separator 
+Note that in dispersine mode the beam is dispersed at
+\layout Standard
+
+scanners #3 and #4 locations, so these scanners need a higher gain than
+\layout Standard
+
+#1 and #2.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To zoom on a peak, change the MEDM parameters of the window ("edit"):
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -first determine the range (in mm) on which you want to zoom
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -on the MEDM access window, push on "edit"
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -on the ARC window, click anywhere inside the plot you
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ want to change
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -on the "Resource Palette", go down to "Axis Data", select it
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -on the "Cartesian Plot Axis Data", in the "X Axis" part
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (X means horizontal), change "Axis Range" from "auto-scale"
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ to "user-specified", then edit "Minimum Value" and "Maximum
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Value" to specify the horizontal range you want to look at,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the unit is mm.
+ If you used the "edit" facility of MEDM,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ it will suggest you to save the changes when killing the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ window.
+ Do not save the changes!
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -on the MEDM access window, push on "execute"
+\layout Standard
+
+
+\protected_separator 
+ Short-cut: push on the right button while the cursor is inside the plot,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ you will access directly to the MEDM axis data menu
+\layout Standard
+
+
+\protected_separator 
+ Other MEDM tricks (may depend on the version of MEDM you are running):
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -Control+middle button+vertical drag will scale the plot up or down 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -Shift+middle button+drag will translate the plot
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+13-Details on file save (scanners)
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To save the data in a disk file: push on "Save".
+ The software
+\layout Standard
+
+builds automatically a name of the type: "scan_nnn.data",
+\layout Standard
+
+where nnn is the scan run number, incremented automatically.
+\layout Standard
+
+The current run number is stored on disk, so unless a disk crash,
+\layout Standard
+
+you can reboot the VME or delete a data file without resetting this number.
+\layout Standard
+
+Read the run number on the MEDM screen and record
+\layout Standard
+
+the file name in the
+\protected_separator 
+ e-logbook.
+ The file will be
+\layout Standard
+
+stored in ~gougnaud/arc2/ARC.
+ As the file is big (2*7000 channel
+\layout Standard
+
+histogram per scanner), purge or compress your own data files.
+ ~gougnaud
+\layout Standard
+
+belongs both to hac and the CUE, thanks to Javier.
+ So you
+\layout Standard
+
+do not need "ftp" to copy it inside the CUE, the cp command
+\layout Standard
+
+works as far as you have the good file access.
+ Write in the e-logbook the
+\layout Standard
+
+final path of the file in the CUE.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+14-Details on trip handling
+\layout Standard
+
+___________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ Trips are frequent at 5uA, caused by scanners #3 and #4 and
+\layout Standard
+
+triggered by the Compton ion chamber or BLM, even with chicane OFF.
+\layout Standard
+
+They are invasive for the other halls.
+ If a trip occurs, write
+\layout Standard
+
+in the e-logbook which scanner, forward/backward (for this, you
+\layout Standard
+
+have to monitor the beam current during the scan),
+\layout Standard
+
+beam current, arc tuning mode, which diagnostic tripped (ask to MCC),
+\layout Standard
+
+get a strip chart of this diagnostic (MCC).
+ Contact the beamline
+\layout Standard
+
+coordinator ( Arun Saha) or the hall leader (Kees) to allow MCC
+\layout Standard
+
+to mask the diagnostic.
+ But in any case start with unmasked diagnostics
+\layout Standard
+
+to have all safety systems responding.
+ If masking is impossible or
+\layout Standard
+
+not sufficient, reduce the beam current down to 1uA but the quality
+\layout Standard
+
+of the energy measurement will then be affected by the poor signal/noise
+\layout Standard
+
+ratio.
+\layout Standard
+
+If the trip occurred from scanner #3 or #4 during the preliminary
+\layout Standard
+
+test in achromatic mode, leave this step and ask for dispersive mode.
+\layout Standard
+
+In this mode, due to the dispersion of the beam, the luminosity
+\layout Standard
+
+will be reduced and hopefully the trip will not occur.
+\layout Standard
+
+Nevertheless, the test in achromatic mode is usefull to check the
+\layout Standard
+
+system (including the trip protection!) and to anticipate a gain change
+\layout Standard
+
+for scanners #1 and #2.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+15-Detail on encoder change (scanner)
+\layout Standard
+
+_____________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+The main screw shaft is coupled to the steppre motor by a bellow
+\layout Standard
+
+coupler (bellow #1) and the motor to the encoder by a second bellow
+\layout Standard
+
+coupler (bellow #2).
+ If for any reason (encoder change, motor change,
+\layout Standard
+
+one of the bellows slept) the angular relationship between the screw and
+\layout Standard
+
+the encoder is lost, then:
+\layout Standard
+
+-these two objects must be linked again in good angular agreement (see detail)
+\layout Standard
+
+-the theodolite survey of the bench must be redone (see detail)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+16-detail on encoder re-mount (scanner)
+\layout Standard
+
+_______________________________________
+\layout Standard
+
+
+\protected_separator 
+The procedure is based on 2 rules:
+\layout Standard
+
+-the "home" position is defined by an encoder reading=4096 enc.
+ units
+\layout Standard
+
+-this "home" position must be at about
+\protected_separator 
+ 1/2 turn (~2048=1.25mm) from
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ the Low Limit Switch (LLS) transition.
+ So this transition must happend
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ at encoder reading~2048
+\layout Standard
+
+-if the Low Limit Switch was also changed, then the rule is that the external
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ fiducial must be at 230mm from the beam nominal axis when the encoder
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ reading is 118407 ("survey" position).
+ This rule needs the help of a 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ survey.
+\layout Standard
+
+
+\protected_separator 
+ The procedure is the following:
+\layout Standard
+
+-by software (see "scanner expert task detail") or by hand (by acting on
+ 
+\layout Standard
+
+
+\protected_separator 
+ the bellow #1), set the scanner in the convenient position (LLS or survey)
+\layout Standard
+
+-decouple the bellow #2
+\layout Standard
+
+-connect the encoder to the control box readout
+\layout Standard
+
+-by hand turn the encoder shaft up to have the good reading
+\layout Standard
+
+-fasten strongly the coupler #2
+\layout Standard
+
+
+\protected_separator 
+ Note: the encoder is absolute over 64 turns with 4096 units per turn.
+\layout Standard
+
+So, starting from 0 and turning it clockwise, one should read:
+\layout Standard
+
+-4096 after one turn
+\layout Standard
+
+-8192 after two turns
+\layout Standard
+
+-...
+\layout Standard
+
+-up to 262143 just (one puls) before 64 turns
+\layout Standard
+
+-0 again one puls after.
+\layout Standard
+
+-4096 after one turn
+\layout Standard
+
+....
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+17-Details on scanner expert task
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The path of the "expert task" MEDM file is given in section 1
+\layout Standard
+
+Use this task to set the encoder in any position between the limit switches,
+\layout Standard
+
+to dismount the wire cartrige, to set the encoder,...
+\layout Standard
+
+-Call this task in MEDM.
+\layout Standard
+
+-You get a small window with a blue button.
+\layout Standard
+
+-Left click on it: it gives you the choise between the 4 ARC scanners.
+\layout Standard
+
+-Select the scanner you are interested with, then release the lefl mouse
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ button.
+\layout Standard
+
+-An "Expert-task" bigger window appears.
+\layout Standard
+
+-In this new window, left click on the blue button "click to initialize...".
+\layout Standard
+
+-Then the designated scanner name is displayed on the top of the window
+\layout Standard
+
+-Edit the motion you want in the "First goal" input field.
+ This is
+\layout Standard
+
+
+\protected_separator 
+ an ABSOLUTE position (i.e.
+ not an increment), from an origin which
+\layout Standard
+
+
+\protected_separator 
+ can be arbitrary, in unit of motor micro-step.
+ +2000 microstep= +1 turn=
+\layout Standard
+
+
+\protected_separator 
+ +4096 encoder units, so one has 2.048 encoder unit per microstep.
+\layout Standard
+
+-push on "Pos-->0" to set to zero the "Motor current position" register.
+\layout Standard
+
+
+\protected_separator 
+ The current scanner position becomes the new origin of the motor positions.
+\layout Standard
+
+-once the motor position is entred, push on "1 WAY" to execute the motion
+\layout Standard
+
+-If you want to move the scanner fron its current position by 10mm towards
+\layout Standard
+
+
+\protected_separator 
+ the beam, and if the current position is 100000, then enter
+\layout Standard
+
+
+\protected_separator 
+ 100000.+(10./2.500)x2000.=108000., and push on "1 WAY".
+\layout Standard
+
+-If you want to go to the LLS position, enter a large negative value
+\layout Standard
+
+
+\protected_separator 
+ like -1000000, and push on "1WAY"
+\layout Standard
+
+Note: Limit switches will not stop the motor at a very reproducible position.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+18-Detail on theodolite survey of a bench
+\layout Standard
+
+_________________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The goal is to measure the H angle between the segment joining the fiducials
+\layout Standard
+
+of the 2 scanners of the bench in their "survey" position, and the normal
+\layout Standard
+
+to the autocollimation mirror associated with this bench.
+ The procedure is
+\layout Standard
+
+the same for both benchs, except that:
+\layout Standard
+
+-the upstream one needs a BSY access, the downstream one just a HallA access,
+\layout Standard
+
+
+\protected_separator 
+ providing the light tubes were left in straight position.
+\layout Standard
+
+-the upstream angle is ~0, only affected by a change in the scanners, the
+\layout Standard
+
+
+\protected_separator 
+ downstream one is ~6 deg and it can be affected by a change in the scanners
+\layout Standard
+
+
+\protected_separator 
+ or by a motion of the tunnel.
+\layout Standard
+
+-the upstream autocollimation is at short distance, the downstream one
+\layout Standard
+
+
+\protected_separator 
+is at long distance, through the light tubes, and the lign of sight is
+\layout Standard
+
+
+\protected_separator 
+bent by a pair of mirrors, both at forward and at backward pass.
+\layout Standard
+
+The procedure is:
+\layout Standard
+
+-using the "expert task" (see detail), set both scanners in their "survey"
+\layout Standard
+
+position (encoder=118407+-2)
+\layout Standard
+
+-install the theodolite on its support and level it carefully.
+\layout Standard
+
+-mount the battery (2 autocollimation batteries and chargers are stored
+\layout Standard
+
+
+\protected_separator 
+ in the shed, make sure the batteries are charged)
+\layout Standard
+
+-push the "ON/Enter" button, the bottom display prompts "V zero 1"
+\layout Standard
+
+-relese the "V" break (small knob of the top pair of knobs)
+\layout Standard
+
+-initialize the V (Vertical angle) encoder by turnung slowly and
+\layout Standard
+
+continuously the optics around the horiz.
+ azis in a direction, until you get
+\layout Standard
+
+
+\protected_separator 
+a beep and "V zero 2" displayed.
+ Then turn in the opposite
+\layout Standard
+
+direction, until you get a beep and "A zero" displayed in the top display.
+\layout Standard
+
+-relese the "A" break (small knob of the bottom pair od knobs)
+\layout Standard
+
+-initialize the A (Horizontal angle) encoder by turnung slowly and
+\layout Standard
+
+
+\protected_separator 
+continuously the whole theodolite around its vertical axis, until you get
+\layout Standard
+
+
+\protected_separator 
+a beep and "Theo" displayed in the top display.
+ Push "ON/Enter" button
+\layout Standard
+
+
+\protected_separator 
+to accept the proposed "theodolite" menu.
+\layout Standard
+
+-from this point, "V" and "A" angles will be permanently displayed
+\layout Standard
+
+
+\protected_separator 
+ in their own displays, in unit of decimal degrees from 0.0000 to 359.9999
+\layout Standard
+
+
+\protected_separator 
+ If the decimal part is not displayed, correct the levelling.
+\layout Standard
+
+Note: the origin of the A angles is arbitrary (it is not the case of that
+ of
+\layout Standard
+
+the the V angles), so you may decide to set it to zero, for example at the
+\layout Standard
+
+first autocollimation measurement: this way, the measured angles will be
+\layout Standard
+
+more intuitive.
+ To do this:
+\layout Standard
+
+-from the "THEOD" menu push on "+" (means go to the next menu calles "SET
+ A")
+\layout Standard
+
+-"SET A" menu is proposed: push "enter" to accept, you have a "WAIT"
+\layout Standard
+
+
+\protected_separator 
+ displayed, after what the angles are displayed again, but with A=0.0000
+\layout Standard
+
+-push "-" to proceed: the sub-menu "MEAS P" is proposed, you must accept
+\layout Standard
+
+
+\protected_separator 
+ ("enter"), you have then the angles displayed, push "-" to come back
+\layout Standard
+
+
+\protected_separator 
+ to the "THEOD" menu, then push "enter" to accept it, you should still
+\layout Standard
+
+
+\protected_separator 
+ have A=0.0000: you have a new origin of the A angles.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-measure the autocollimation angle:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -open the light tube
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -plug the autocollimation light cable 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -turn ON the autocollimation power switch on the battery
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the autocollimation power potentiometer to half range
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -remove the theodolite handle, to let the cable go through.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the occular (small knob on the optics) to your vision, until
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ you have the cross hairs well focused
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the main focusing (large knob on the optics) to infinity
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (turn counter clockwise up to the limit and come back by ~1/4 turn)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the V angle to 90.00?? deg.: first move directly the optics,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ second fasten the V break and use the V knob.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the A angle to point in the direction of the light tube:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ first move directly the theodolite, second fasten the A break and
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ use the A knob.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -using the A knob, search for a light signal
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -focus on it (main focusing): the autocollimation patern is a yellow/green
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ cross
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust A and V angles to get the cross hairs on the autocollimation cross,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ fine adjust both focusings, then check if the patern you have is the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ good one (there is 2 wrong autocollimation patterns): when you change
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ by a small amount the A/V angle, then the A/V coincidence between
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ both crosses must be destroyed.
+ If it is not the case, you are focusing
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ on one of the two wrong paterns.
+ Then change the main focusing towards
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ infinity (counter clockwise) to get an other patern.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -fine adjust the autocollimation power potentiometer to get the best
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ vertical line of the autocollimation cross
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -fine adjust A and V angles, record their values in the Shed logbook.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -change both angles by 180.000 deg., WITHOUT CHANGING THE MAIN FOCUSING,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ and redo the previous step.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -close the light tube
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -turn OFF the autocollimation power switch on the battery
+\layout Standard
+
+Note: the above measurement is easy from upstream, more tricky from downstream
+\layout Standard
+
+(long distance autocollimation).
+ New operators should start with the upstream
+\layout Standard
+
+measurement.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-measure the scanner #2/#3 (the one which is on the autocollimation side)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -remove the scanner cover
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -unplug the connexion of the encoder to the VME
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -plug the control box on the fiducial lamp and on the encoder
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -record the encoder reading in the logbook.
+ It shoulb be ~118407+-2
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the main focusing on the fiducial wire
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -adjust the V angle to the middle of the apperture across which the wire
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ appears
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -fine adjust the A angle, record A and V values in the Shed logbook.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -change both angles by 180.000 deg., WITHOUT CHANGING THE MAIN FOCUSING,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ and redo the previous step.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -record the encoder reading in the logbook.
+ It should give the previous
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ reading +-1 encoder unit
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -unplug the control box
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -plug the connexion of the encoder to the VME
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -cover the scanner
+\layout Standard
+
+Note: in case of scanner #2, a foil closing
+\protected_separator 
+ the appertures in the mirror
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ support must de removed prior to the survey, and reinstalled after.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-measure the scanner #1/#4 as for #2/#3
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-re-measure the autocollimation angle.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-turn OFF the theodolite (push simultaneously the
+\protected_separator 
+ + and - buttons)
+\layout Standard
+
+-relese both breaks
+\layout Standard
+
+-mount the handle
+\layout Standard
+
+-dismount the theodolite
+\layout Standard
+
+-dismount the battery and the autocollimation cable
+\layout Standard
+
+-store the theodolite in its box
+\layout Standard
+
+-store the theodolite box and the control box in the Shed
+\layout Standard
+
+-charge the battery(ies)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Note: in case you have to change the battery during the measurement,
+\layout Standard
+
+redo the complete measurement with the new battery.
+ A battery in good shape
+\layout Standard
+
+can provide ~2h of work with only 1/3 with autocollimation ON.
+\layout Standard
+
+The survey of a bench will take between 1h and 1/2h.
+ If possible, discharge
+\layout Standard
+
+the battery before charging it.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-analyze the angle:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -in the directory ~gougnaud/arc2/ARC/angles,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ edit a plain ASCII file named upstream_ddmmyy.dat
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ or downstream_ddmmyy.dat, depending on the bench, where ddmmyy
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ stands for the date of the survey.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Use upstream_270798.dat or downstream_270798.dat as a model.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Units are encoder unit and decimal degrees.
+ If severall measurement
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ of the same quantity were done, enter the average.
+ If the full
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ measurement of a bench was done twice, edit both sets of
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ data as in the model.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -run "angle" on a Sun machine and follow the instructions of the program,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ accept the proposed mirror calibration angle and ask for an average
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ of all your measurements.
+ If only one bench was
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ measured (encoder change, BSY closed,...), use for the other bench
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the most recent file available in ~gougnaud/arc2/ARC/angles.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -analyze individual measurements and compare them to the above average.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+The reproducibility of the reference angle measures severall times on
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the same day should be <= 10-3 deg (17 urad~3 10-5 on the energy).
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -compare the new average to the previous one: if nothing changed in
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the scanners, and if only the downstream angle changed, 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ this can be interpreted as a motion of the arc (the code gives the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ detail of the 3 angles: upstream, dowmstream and reference).
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -the files used today (23/06/99) are upstream_210699.dat (1 meas.) and
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ downstream_210699.dat (2 meas.).
+ They result in a reference angle of
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 34.32301 deg.
+ (averaged)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -write the new reference angle in the arc-scan source code
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (include file "arc-incl-plot.f", parameter "Reference_Angle_Degree")
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -compile and test the arc-scan code.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -report in the e-logbook about the changes and results (file names).
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+15-More on the theodolite menu
+\layout Standard
+
+______________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ It is a 2-levels menu, the entry point after power ON and indexes
+\layout Standard
+
+initialization is at the 2nd level (Theodolite?), the +/- buttons
+\layout Standard
+
+are used to navigate among several choices, the "enter" button to validate
+\layout Standard
+
+the currently proposed choice.
+ In the above list, "+" will move to the
+\layout Standard
+
+next option (down), "-" to the previous one (up), and "enter" will answer
+\layout Standard
+
+"yes" to the proposition.
+ In some cases (SET A) the choise is just yes/no.
+\layout Standard
+
+Then "enter" means "yes" and "+" or "-" means "no":
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+1st level menu: 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ --->M
+\protected_separator 
+ (Measure)?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A
+\protected_separator 
+ (Adjust)?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U
+\protected_separator 
+ (Unit)?
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 2nd level menu M
+\protected_separator 
+ (Measure):
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ---> M-0
+\protected_separator 
+
+\protected_separator 
+ Return to 1st level?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ M-2
+\protected_separator 
+
+\protected_separator 
+ THEODOLITE?--->theodolite
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ M-5
+\protected_separator 
+
+\protected_separator 
+ Zero angle?-->A=0,Set angle?-->Set A to value
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ +/-:Measure Point
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ M-7
+\protected_separator 
+
+\protected_separator 
+ Hold angle?-->Hold angle
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 2nd level menu A
+\protected_separator 
+ (Adjust):
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ---> A-0
+\protected_separator 
+
+\protected_separator 
+ Return to 1st level?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A-1
+\protected_separator 
+
+\protected_separator 
+ Adjust V index?--->Adjust V index
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A-2
+\protected_separator 
+
+\protected_separator 
+ Adjust A coll.?-->Adjust A coll.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A-4
+\protected_separator 
+
+\protected_separator 
+ Illumin.
+ ON/OFF?-->Change Illumin.
+ mode?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A-5
+\protected_separator 
+
+\protected_separator 
+ Compensator ON/OFF?-->Change Compens.
+ mode?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ A-6
+\protected_separator 
+
+\protected_separator 
+ Levelling with compens.?-->Levelling
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 2nd level menu U
+\protected_separator 
+ (Unit):
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ---> U-0
+\protected_separator 
+
+\protected_separator 
+ Return to 1st level?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U-1
+\protected_separator 
+
+\protected_separator 
+ Reverse A reading?--->Reverse A reading
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U-2
+\protected_separator 
+
+\protected_separator 
+ Change V display?-->Select this V display?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U-3
+\protected_separator 
+
+\protected_separator 
+ Change angle unit?-->Sel.
+ this angle unit?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U-7
+\protected_separator 
+
+\protected_separator 
+ Sound ON/OFF?-->Change Sound mode?
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ U-8
+\protected_separator 
+
+\protected_separator 
+ Select configuration?-->Select this configur?
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+15-Summary of field integral
+\layout Standard
+
+____________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The purpose is to measure in absolute the straight field integral of
+\layout Standard
+
+a "BA" 3m long dipole, called the "9th dipole" and located in the "Dipole
+ Shed".
+\layout Standard
+
+It is of the same type as the 8 arc dipoles and powered in series with them.
+\layout Standard
+
+
+\protected_separator 
+ The ARC integral setup is basically made of a 3m long plate (the "probe")
+\layout Standard
+
+able to move inside the 9th dipole gap along the beam axis and
+\layout Standard
+
+carrying two field measurement devices: a pair of pick-up coils connected
+\layout Standard
+
+in series and a set of NMR probes.
+ The coils are on both ends of the probe
+\layout Standard
+
+and the NMR's close to the center.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-at the "upstream" probe position, the "downstream" coil is close to the
+ dipole
+\layout Standard
+
+center, the "upstream" is outside the dipole and the NMR's at one end of
+ the
+\layout Standard
+
+dipole:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Door<---
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------DIPOLE-------->
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ up coil
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ NMR
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ down coil
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------PROBE--------->
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-at the "central" probe position, each coil is at one end of the 3m long
+\layout Standard
+
+dipole and the NMR's close to the dipole center:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Door<---
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------DIPOLE-------->
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ up coil
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ NMR
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ down coil
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------PROBE--------->
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-at the "downstream" probe position, the "upstream" coil is close to the
+ dipole
+\layout Standard
+
+center, the "downstream" is outside the dipole and the NMR's at one end
+ of the
+\layout Standard
+
+dipole:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Door<---
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------DIPOLE-------->
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ up coil
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ NMR
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ down coil
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <--------PROBE--------->
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+We call upstream the position where the probe is the closest
+\layout Standard
+
+to the shed access door.
+ Among the 3 above position, the only where the NMR
+\layout Standard
+
+can lock on the dipole field is the central one as in extreme position of
+ the
+\layout Standard
+
+probe, the field homogeneity is not sufficient.
+ The probe
+\layout Standard
+
+position is controlled by a linear encoder.
+\layout Standard
+
+The Z axis refers to the "beam" direction, increasing from upstream to
+\layout Standard
+
+downstream.
+ We use three kinds of "Z":
+\layout Standard
+
+-Zm to locate a point inside the magnet.
+ The dipole center is at Zm=0 and
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ the yoke ends at +-1500.mm
+\layout Standard
+
+-Zp to locate a point inside the probe.
+ The probe center is at Zp=0.
+ Each
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ of the 4 NMR probes has a Zp given in the file "magnet.dir".
+ At a 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ temperature of 21C, the coils are at Zp=+-1519.815mm (from magnet.dir)
+\layout Standard
+
+-Zd to refer to a displacement of the probe w.r.t.
+ the dipole.
+ Zd=0 refers
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ to the upstream (home) position of the probe.
+ The integral measurement is
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ performed from Zd=0.000mm (1st PDI trigger) to Zd=3199.000mm (last
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ PDI trigger), for forward pass.
+ Zd is given by the display (at the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ top of the rack) or by the master screen ("OUT").
+\layout Standard
+
+The relationship between Zm, Zp and Zd is:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Zd-Zm+Zp=C where C is a constant given in magnet.dir (C=1604.000 nomin.).
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Example of use: to have the probe center at the dipole center, one must
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ set Zd=1604.000mm (set Zm=0 and Zp=0 in the above formula, and solve 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The integral measurement sequence is the following:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-from the current position (a priory arbitrary) move the probe upstream,
+\layout Standard
+
+up to a limit (optic) switch.
+\layout Standard
+
+-move downstream by a few mm to cross the encoder index (encoder initialization)
+\layout Standard
+
+-move to the central position to measure the central field by NMR, the system
+ checks if
+\layout Standard
+
+the NMR locks and if the reading is stable, it will be the "before" field
+\layout Standard
+
+-move back to upstream position
+\layout Standard
+
+-move to downstream position while integrating the flux through the coil
+ system,
+\layout Standard
+
+this measurement will be called the "forward" integral (duration ~ 7s)
+\layout Standard
+
+-move back to upstream position while integrating the flux through the coil
+ system,
+\layout Standard
+
+this measurement will be called the "backward" integral (duration ~ 7s)
+\layout Standard
+
+-move to the central position to measure the central field by NMR, the system
+ checks if
+\layout Standard
+
+the NMR locks and if the reading is stable, it will be the "after" field
+\layout Standard
+
+
+\protected_separator 
+ In addition to the central field, 4 probe temperatures, a local excitation
+\layout Standard
+
+current measurement, the setting of the dipoles P.S, the readback of the
+ dipoles P.S
+\layout Standard
+
+and the probe position at NMR measurement time are recorded "before" and
+ "after"
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+To perform an integral field measurement:
+\layout Standard
+
+1-check if the system works (see "details on integral system check" below)
+\layout Standard
+
+2-run the above integral sequence (see "details on integral run" below)
+\layout Standard
+
+3-fix the error(s) if any
+\protected_separator 
+ (see "details on integral errors" below)
+\layout Standard
+
+4-save the data in a file
+\protected_separator 
+ (see "details on integral data save" below)
+\layout Standard
+
+5-analyze the data (see Arun)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+16-Shed access and safety
+\layout Standard
+
+_________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+For safety reasons, the access to the shed is limited to a list of authorized
+\layout Standard
+
+persons and the work inside the shed is regulated by an OSP
+\layout Standard
+
+(Operating Safety Procedure).
+ To be added to the
+\layout Standard
+
+list, ask to the Hall-A leader.
+ The standard operation mode of the integral
+\layout Standard
+
+measurement setup is the remote mode, through the network, from the counting
+ house.
+\layout Standard
+
+In case of problem needing an access in the shed, unauthorized users must
+ contact Arun.
+\layout Standard
+
+Note: the OSP will expire on 9/1/99
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+17-Details on integral system check
+\layout Standard
+
+___________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+1-From any workstation or X-terminal connected by telnet to pascal1 workstation,
+\layout Standard
+
+run MEDM with arc_master.adl data file (see Arun for the password of
+\layout Standard
+
+gougnaud on pascal1 and section 1 for the path of arc_master.adl).
+\layout Standard
+
+If pascal1 is not responding, go in the shed and check UPS (see "Details
+ on 
+\layout Standard
+
+AC power (integral)" below).
+\layout Standard
+
+If the UPS is not beeping, check the room temperature.
+\layout Standard
+
+If the temperature is above 35C, the thermal protection of the workstation
+ is
+\layout Standard
+
+probably activated, see "detail on temperatures" below.
+\layout Standard
+
+If the temperature is below 35C, ask to the computer center to restart pascal1.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+2-Check if the 4 temperatures and the 3 currents
+\protected_separator 
+ are stable, in agreement
+\layout Standard
+
+between them and if the beam energy computed from the current is realistic
+\layout Standard
+
+compared to what you know from MCC.
+ In not, call Arun.
+ If the IOC is dead
+\layout Standard
+
+(all displays on "arc-master.adl" are blank), reboot the ioc (see "integral
+ ioc
+\layout Standard
+
+reboot" below)
+\layout Standard
+
+Note: the current/field ratio is about 1000A/1.98T and the energy/field ratio
+\layout Standard
+
+is 12.03 GeV/T.
+ The current used by MCC for the accelerator tuning is the set
+\layout Standard
+
+current.
+ The readback can be different from the set by 0.1A.
+ The local current
+\layout Standard
+
+can be different from the set by 5A.
+ For the temperatures see "detail on 
+\layout Standard
+
+temperatures" below.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+3-Check if the NMR is locked.
+ If not see "details on NMR lock" below,
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+4-Check if the NMR reading is stable within 10-5 relative (P.S.
+ stability).
+\layout Standard
+
+
+\protected_separator 
+If not, inquire about a recent or running setting change by the MCC.
+\layout Standard
+
+
+\protected_separator 
+If not, call Arun.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+18-Details on NMR lock
+\layout Standard
+
+______________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ -check if the dipole current is above 22A.
+ The integral setup can't work for
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ lower currents (22A~0.043T~517MeV), due to the NMR probe limitation.
+\layout Standard
+
+
+\protected_separator 
+ -check if the probe is at a central position, corresponding to Zd~1604mm.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ It should be at this position if no special motion was ordered since
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the previous integral measurement.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ If not, enter 1604 RETURN in the "set Zd position" input field, wait for
+ the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ end of the motion (look at cursor and position readback labelled "out")
+ and wait
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for the NMR lock for up to 1 minute.
+ Note: due to the software, the position
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ readback may be updated ~10 seconds after the real probe motion.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Zd~0mm is for the upstream position, ~1604mm for the central position
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ and ~3208mm for the downstream position.
+ If the probe does not obey,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ call Arun.
+ If Arun is not available, reboot the ioc (see "integral ioc reboot"
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ below)
+\layout Standard
+
+
+\protected_separator 
+ -check if the NMR probe selected is the good one.
+ The system has 4 probes
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ to cover the field/energy range [0.043T/0.517GeV,1.05T/12.63GeV].
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The software selects automatically the probe from an estimated field
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ and the following range table (from file "magnet.dir"):
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ mini
+\protected_separator 
+
+\protected_separator 
+ maxi
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ probe
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.043
+\protected_separator 
+
+\protected_separator 
+ 0.1356
+\protected_separator 
+ # 1
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.0784
+\protected_separator 
+ 0.271
+\protected_separator 
+
+\protected_separator 
+ # 2
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.159
+\protected_separator 
+
+\protected_separator 
+ 0.547
+\protected_separator 
+
+\protected_separator 
+ # 3
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.30
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1.05
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ # 4
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The estimated field is computed from the "set" current and the coefficients
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ given above.
+ Note that there is an overlap between the range of each probe.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ In the standard mode ("auto selection"), two selection algorithms are used:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -initial selection: select the probe in which the estimated field
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ will be the most "centred"
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -routine check: change the probe only if the estimated field is
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ outside the selected probe range.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Initial selection is executed at boot time, at each integral start and
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ when you leave the "manual selection" optional mode.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The routine check is performed periodically
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ In some cases in the past this algorithm did not select the best probe.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ If it occurs again, force the probe selection by opening arc_nmr.adl
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ medm screen,then switch to manual selection mode, click on the probe
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ you want to select and wait for NMR lock.
+ Don't forget to return to the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ "auto selection" mode before leaving the integral measurement.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Report about the problem in the e-logbook.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -expert users can also use nonstandard search modes and DAC values as
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ proposed by the arc_nmr.adl screen ("Dac Value", "Dac+-5%" and "All Probes
+ Range").
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Note that "Dac Value" needs a scope.
+ They are asked to restore the
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ standard mode ("SeLected Probe Range") at the end.
+ The DAC to field relationship
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ used by the software is linearly interpolated in the table (from file
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ "magnet.dir"):
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ dac=0
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ dac=1000 dac=2000 dac=3000 dac=4095
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ T
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ .040362
+\protected_separator 
+ .053885
+\protected_separator 
+ .074430
+\protected_separator 
+ .104184
+\protected_separator 
+ .132404
+\protected_separator 
+ probe # 1
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ .080713
+\protected_separator 
+ .107771
+\protected_separator 
+ .148845
+\protected_separator 
+ .208340
+\protected_separator 
+ .264790
+\protected_separator 
+ probe # 2
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ .161430
+\protected_separator 
+ .215539
+\protected_separator 
+ .297680
+\protected_separator 
+ .416680
+\protected_separator 
+ .529570
+\protected_separator 
+ probe # 3
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ .322870
+\protected_separator 
+ .431112
+\protected_separator 
+ .595471
+\protected_separator 
+ .833455 1.059210
+\protected_separator 
+ probe # 4
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Note: as the 9th dipoles has an uniform field, there is no gradient coil
+ around the
+\layout Standard
+
+probes and the lock is in general easier to obtain than with the HRS dipoles.
+\layout Standard
+
+Nevertheless some difficulties may occur at low field due to the hysteresis
+ gradient.
+\layout Standard
+
+The NMR system is the same as for the HRS (Metrolab) but the EPICS implementatio
+n is
+\layout Standard
+
+different.
+ The field polarity is "+".
+\layout Standard
+
+Some lock problems may apear in the [60A,70A] range.
+ In this case select the "Dac+-5%"
+\layout Standard
+
+option, compute the approximate field as explained above, estimate the correspon
+ding
+\layout Standard
+
+DAC value from the table above (depending on field value and probe #), set
+ this
+\layout Standard
+
+estimated value in the arc_nmr.adl screen, correct this setting by using
+ the "+", "++",
+\layout Standard
+
+"-", and "--" buttons up to have the "OUT IN T" value close to the field
+ you computed,
+\layout Standard
+
+and then wait for the lock.
+ It should work, you have 100s to get the lock at the begining
+\layout Standard
+
+and at the end of the integral sequence! The best is to get the lock by
+ this way before
+\layout Standard
+
+starting the integral sequence.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+19-Details on integral run
+\layout Standard
+
+__________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ To run the integral measurement sequence, call the "arc_integral.adl" medm
+ screen
+\layout Standard
+
+on pascal1 (see "Details on integral system check" above), then:
+\layout Standard
+
+-push "start" to start the full sequence
+\layout Standard
+
+-look at the results displayed:
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -after the "before" NMR measurement: the "before" data set
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -after the "forward" integral pass: the forward velocity profile and the
+ forward
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ voltage-after-gain profile
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -after the "backward" integral pass: the backward velocity profile and
+ the backward
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ voltage-after-gain profile
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -after the "after" NMR measurement: the "after" data set
+\layout Standard
+
+-if "BAD NMR" or "PDI saturation" flags are set, or if something is obviously
+ wrong
+\layout Standard
+
+in the data or plots, fix the problem (see "Details on
+\layout Standard
+
+integral error" below) and start a new integral run.
+\layout Standard
+
+-data are ready to be saved (see "Details on integral data save" below)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+20-Details on integral error
+\layout Standard
+
+____________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+-"BAD NMR" flag is set if at least one of the 4 NMR status (locked and stable,
+ before and
+\layout Standard
+
+
+\protected_separator 
+ after) is wrong
+\layout Standard
+
+
+\protected_separator 
+ -the full NMR field measurement is made of 3 successive elementary measurements
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ separated by a 5s delay.
+\layout Standard
+
+
+\protected_separator 
+ -the "lock" status is set to wrong if at least one of the 3 NMR measurements
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ did not lock before a 100s timeout.
+ The measurement sequence is aborted as soon
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ as a measurement does not lock, so the maximum time one has to wait for
+ a full
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ NMR measurement is about 100s (in case of a zero current measurement for
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ example)
+\layout Standard
+
+
+\protected_separator 
+ -the "stable" status is set to wrong if the 2nd or the 3rd field values
+ differs from
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the 1st by more than 5 10-4 relative.
+ In any case,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the field value returned is the last one.
+\layout Standard
+
+-"In position" is set to false if the probe position was outside 1604.0+-0.1mm
+ at
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ NMR measurement time.
+\layout Standard
+
+-"PDI saturation": the PDI (Mertolab's Precision Digital Integrator) consists
+ in a
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ programmable amplifier and a VFC integrator working in the [-5V, +5V] input
+ range.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ The PDI gain is the result of an automatic selection in the [1,2,5,10,...1000]
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ range, similar to the NMR probe selection.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ In case of a wrong gain selection (maximum voltage
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ after gain, as plotted in the MEDM screen, outside the [1.5V,5V[ range),
+ call
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ the "arc_pdi.adl" MEDM screen to switch the gain selection mode from "auto"
+ to
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ "manual" and then select manuallay the gain.
+ Return to "auto" mode before
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ leaving the integral measurement.
+\layout Standard
+
+-"before" and "after" data must be very close: <0.1 C difference for the
+ temperatures
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ of a given probe, <0.1A for the currents and <10-5 for the field.
+\layout Standard
+
+-plots: the blue curves are from forward pass, yellow ones for backward
+ pass.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -the top plot gives the probe velocity (in m/s) as function of its position
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (in mm).
+ The forward velocity should be +0.6m/s everywhere except at the center
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ where it is reduced to +0.06m/s.
+ The backward velocity plot should be the mirror
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ image of the forward ons (-0.6 and -0.06m/s)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -the bottom plot gives the coil voltage after gain (in V) as function of
+ the probe
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ position (in mm).
+ It should be a null voltage everywhere except a set of
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ oscillation at the center.
+ The backward voltage plot should be the mirror
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ image of the forward one (V-->-V).
+ See "PDI saturation" above.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ -to zoom a MEDM plot, see "Details on gain adjustment (scanners)" above.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+21-Details on integral data save
+\layout Standard
+
+________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The procedure to save the datafile from "arc-integral.adl" is the sane as
+ for
+\layout Standard
+
+the scanners (see "Details on file save (scanners)" above), with an independent
+\layout Standard
+
+integral run number.
+ The file name will be of the type "integral-nnn.data", stored
+\layout Standard
+
+on pascal1 in ~gougnaud/EPICS/integral/.
+ As pascal1 disk is not mounted
+\layout Standard
+
+on the CUE, use ftp or rcp to move the file to the CUE.
+\layout Standard
+
+The size of a file is 207Ko.
+\layout Standard
+
+The data file is made of:
+\layout Standard
+
+-a header containing basically the
+\protected_separator 
+ "before" and "after" data
+\layout Standard
+
+-the forward integral data
+\layout Standard
+
+-the backward integral data
+\layout Standard
+
+Forward end backward integral data are made of 3200 lines of 3 data each:
+\layout Standard
+
+-a line per trigger, i.e.
+ per mm of probe motion over the 3.2m of the total motion.
+\layout Standard
+
+
+\protected_separator 
+ The first trigger line is missing.
+\layout Standard
+
+-the first data of the line is the probe position in mm, it should be a
+ round
+\layout Standard
+
+value from 1.000mm to 3199.000mm at forward pass and from 3199.000mm to 1.000mm
+ at
+\layout Standard
+
+
+\protected_separator 
+backward pass,
+\layout Standard
+
+-the 2nd data is the flux increment measured during the current step (i.e.
+ between
+\layout Standard
+
+the previous trigger and the current one) in unit of 10-8Vs, corrected from
+ the gain.
+\layout Standard
+
+-the 3rd data is the time of the trigger since the start, in microsecond
+ unit.
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ These field increments,like the scan profiles, can be plotted by standard
+ plotters,
+\layout Standard
+
+see "Details on profile plot" above.
+ The curve plotted online in 
+\layout Standard
+
+"arc-integral.adl" is the time derivative of the above flux data, 
+\layout Standard
+
+multiplied by the gain to get the input VFC voltage after gain.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+22-Integral ioc reboot
+\layout Standard
+
+______________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ One of the VME boards (PMAC's motor board) has its own internal boot process
+\layout Standard
+
+triggered at "power on" time.
+ So the usual boot procedure (red push button on
+\layout Standard
+
+the ioc or reboot command through the network) is not sufficient to make
+ sure that
+\layout Standard
+
+the integral VME is correctly initialized.
+ Thus, boot the VME by shitching OFF and
+\layout Standard
+
+ON the AC power of the VME crate.
+ The AC power switch is located in the lower part
+\layout Standard
+
+of the crate front panel.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+23-Details on temperatures
+\layout Standard
+
+__________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The AC system of the shed is made of two cooling units, a heating unit
+\layout Standard
+
+and a controller connected to two temperature sensor : one located in
+\layout Standard
+
+the shed and one located in the BSY.
+\layout Standard
+
+This system is programmed in such a way that the temperature of
+\layout Standard
+
+the shed follows the BSY temperature within +-2C.
+ The BSY temperature can be
+\layout Standard
+
+anywhere in the [18C,35C] range, regardless to the season.
+ The BSY temperature
+\layout Standard
+
+and the shed temperature are given (in F) by a display panel located close
+ to the
+\layout Standard
+
+workstation, on the wall.
+ The AC system can be set in manual control by turning
+\layout Standard
+
+from "auto" to "manual" a set of switches controlling the cooling units
+ and the heater
+\layout Standard
+
+unit.
+ These switch boxes are located on the shed wall.
+\layout Standard
+
+If the shed temperature is above 34.4C (94F), call Arun (the electronics
+ can 
+\layout Standard
+
+be damaged) and cool down the shed in manual AC mode.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The 4 temperature sensors of the probe are labelled Tx+z+, Tx+z-, Tx-z+,
+ Tx-z-
+\layout Standard
+
+depending on their position w.r.t.
+ the following (x,z) frame:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ x
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ ^
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+Door<---
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <-------------D I P|O L E ----------->
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <-----Tx+z- -------|------Tx+z+------>
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |---------->z
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ P R O B E
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <-----Tx-z- --------------Tx-z+------>
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Both "x+" sensors are on the probe edge which is inside the dipole gap and
+ both
+\layout Standard
+
+"x-" sensors on the opposite edge which is outside the dipole gap.
+\layout Standard
+
+Both "z-" sensors are at 1/4 of the long dimension of the probe and both
+ z+ at 3/4 of
+\layout Standard
+
+this length.
+ The average of the 4 temperatures is used by the analysis program
+\layout Standard
+
+to correct the coil distance from the thermal expansion of the probe, so
+ it is
+\layout Standard
+
+important to make sure that the 4 sensors are working well.
+ The user can just
+\layout Standard
+
+make sure that the temperatures displayed in "arc-master.adl" or recorded
+ in
+\layout Standard
+
+"arc-integral.adl" are realistic.
+ In "arc-integral.adl" they are given in the
+\layout Standard
+
+order: Tx+z-, Tx+z+, Tx-z-, Tx-z+
+\layout Standard
+
+Tx-z- and Tx-z+ should be close to the shed temperature.
+\layout Standard
+
+Tx+z- and Tx+z+ depend on the probe position, as the gap (iron yoke) is
+ warmer
+\layout Standard
+
+than the shed and the dipole coil (at both ends of the dipole) is warmer
+\layout Standard
+
+than the iron yoke.
+ For a probe in a central position for
+\layout Standard
+
+more than about one hour, the Tx+z- and Tx+z+ sensors should
+\layout Standard
+
+give the yoke temperature, i.e the shed temperature plus 0.
+ to 5.C, depending
+\layout Standard
+
+on the current, LCW temperature and the magnet/shed temperature history.
+\layout Standard
+
+The 4 temperatures are also displayed inside the shed, on the electronics
+ rack.
+\layout Standard
+
+These values are digitized by separate ADC's, so they may differ from the
+\layout Standard
+
+remote values by ~0.1C.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+24-Details on AC power (integral)
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+All the shed electronics and computer (except the motor power, see details
+\layout Standard
+
+about the Power Switch below) are powered through
+\layout Standard
+
+a UPS (Uninterruptible Power Supply) whose role is to protect the setup
+ from
+\layout Standard
+
+short (~1/4 h) power outages and to convert the US AC power (60Hz, 200V
+ 
+\layout Standard
+
+between two phases) in a well stabilized AC power of European type (220V,
+ 50Hz).
+\layout Standard
+
+When working in the shed, be carefull about the electrical hazard as the
+ setup can
+\layout Standard
+
+remain powered a long time after interrupting the UPS input
+\layout Standard
+
+(see "Shed access and safety" above).
+\layout Standard
+
+The UPS unit is located under a table, in front of the electronics rack.
+\layout Standard
+
+It has a display, a small keyboard and a beeper.
+ The beeper activated means
+\layout Standard
+
+that some important message about the UPS is displayed.
+ In this case, use
+\layout Standard
+
+the keys to scan the UPS memory, read the messages, record them in the e-logbook
+,
+\layout Standard
+
+stop the beeper and inform Arun.
+ Refer to the UPS manual (available in the shed)
+\layout Standard
+
+for details of operation.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+25-Details on mechanics (integral)
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ The probe is able of a fast motion (~1m/s) and it is hazardous to access
+ or to
+\layout Standard
+
+introduce something inside the device, under the altuglass covers, or to
+ dismount
+\layout Standard
+
+a cover.
+ It is also hazardous to manipulate the motor shaft (see "Shed access and
+ safety"
+\layout Standard
+
+above).
+ To do it safely, the user must first turn off the motor power box.
+\layout Standard
+
+The power box is located under the motor.
+ It has two external switch: one controlling
+\layout Standard
+
+the logics and one controlling the power:
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Logics switch
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+(TOP VIEW)
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ V
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -------
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -------------------------------------
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ <-------DIPOLE------>
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ Power box-->|
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+DOOR<---
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ MOTOR-|
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |<---Power switch
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\protected_separator 
+ |
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ |
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -------
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ -------------------------------------
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+It is important NOT to switch off the logics (some data in memory will be
+ lost),
+\layout Standard
+
+but to switch off the motor power (see the exact Power switch location above)
+ prior
+\layout Standard
+
+to any intervention on the mechanics.
+\layout Standard
+
+The detailed procedure is the following:
+\layout Standard
+
+
+\protected_separator 
+ -turn OFF the power switch
+\layout Standard
+
+
+\protected_separator 
+ -wait for ~1min to empty its buffer-capacitor
+\layout Standard
+
+
+\protected_separator 
+ -you can work safely on the mechanics
+\layout Standard
+
+
+\protected_separator 
+ -make sure that the path of the probe is free (tools...) and the covers in
+ position
+\layout Standard
+
+
+\protected_separator 
+ -turn back ON the power switch
+\layout Standard
+
+
+\protected_separator 
+ -reboot the VME (see "Integral ioc reboot" above)
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The above procedure may be necessary if, for some reason, the probe went
+ outside
+\layout Standard
+
+its allowed range limited by a pair of electric limit switches.
+\layout Standard
+
+The probe range is limited by the following set of devices:
+\layout Standard
+
+
+\protected_separator 
+ -upstream energy damper
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd in [-40.,-14.mm]
+\layout Standard
+
+
+\protected_separator 
+ -upstream electric limit switch
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd<-7.5mm
+\layout Standard
+
+
+\protected_separator 
+ -upstream optic limit switch
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd<-3.8mm
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ (operation range, 3.2m long)
+\layout Standard
+
+
+\protected_separator 
+ -downstream optic limit switch
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd>3200.8mm
+\layout Standard
+
+
+\protected_separator 
+ -downstream electric limit switch
+\protected_separator 
+ for Zd>3212.3mm
+\layout Standard
+
+
+\protected_separator 
+ -downstream energy damper
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ for Zd in [3214.,3228.mm]
+\layout Standard
+
+The current status of the 4 limit switches is given in the "arc-master.adl"
+ screen.
+\layout Standard
+
+Optic limit switch are used for the encoder initialization procedure (see
+ "Summary
+\layout Standard
+
+of field integral" above).
+ Electric limit switches should never be activated.
+\layout Standard
+
+But if this happends, then the motor control:
+\layout Standard
+
+-stops the motor
+\layout Standard
+
+-raises an error flag (the letted "d" for defect is displayed inside the
+ power box,
+\layout Standard
+
+the usual display being a vertical segment)
+\layout Standard
+
+-waits for a manual repositioning of the probe inside its allowed range
+ and for
+\layout Standard
+
+a reboot of the VME.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The manual repositioning of the probe inside its allowed range can be done
+ safely
+\layout Standard
+
+by manipulating the motor shaft while the motor power is off, according
+ to the
+\layout Standard
+
+above procedure.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Details on detailed field mapping
+\layout Standard
+
+_________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+The main use of the intergral setup is to measure the integral of the 9th
+\layout Standard
+
+dipole along a straight line, located on the axis of the pole tips.
+\layout Standard
+
+By moving (manually) the dipole in the transverse direction and then
+\layout Standard
+
+performing the integral sequence, one will measure the integral along
+\layout Standard
+
+different axis, and so access to the integral gradient of the dipole
+\layout Standard
+
+(used to determine the dipole positionning tolerancies).
+\layout Standard
+
+By inserting a jumper (short) on one of the pick-up coils and reducing the
+ gain
+\layout Standard
+
+of the PDI, the same sequence as for the integral will provide, after
+\layout Standard
+
+a specific analysis, the field profile of the dipole as seem by the
+\layout Standard
+
+other coil.
+ This profile will cover one half of the magnet, including
+\layout Standard
+
+one of the two fringing fields.
+\layout Standard
+
+Reduce the PDI gain by one step ( example: if the automatic gain is 10,
+ select
+\layout Standard
+
+manually 5)
+\layout Standard
+
+By inserting the jumper on the other coil, on can get the other half profile.
+\layout Standard
+
+These two single coil measurements will provide together
+\layout Standard
+
+the complete profile of the dipole including both fringing fields.
+\layout Standard
+
+For the central part, where the field is uniform, more accurate data
+\layout Standard
+
+can be taken using the NMR probes.
+ Here, there is no change in the
+\layout Standard
+
+hardware, but one must use a specific software: the "mapping" MEDM window.
+\layout Standard
+
+By combining, for a set of transverse positions:
+\layout Standard
+
+-standard integral measurement
+\layout Standard
+
+-upstream profile (upstream coil alone)
+\layout Standard
+
+-downstream profile (downstream coil alone)
+\layout Standard
+
+-NMR map of the plateau,
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ one get a 2D map of the dipole field in its mid-plane with an optimum
+\layout Standard
+
+accuracy and redondancy and a minimun time spent by the operator.
+\layout Standard
+
+This 2D map is used to get the straight-to-curved correction to the
+\layout Standard
+
+integral and a set of tolerancies.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ Call "medmMew" (and NOT "medm"), then open "arc_map.adl", as this display
+\layout Standard
+
+is written in a new version of MEDM.
+ Due to a bug in this Solaris/MEDM
+\layout Standard
+
+combination, you must enter the name of the display in the open menu, you
+\layout Standard
+
+can't just click on the display file name.
+\layout Standard
+
+You then get the "ARC-MAPPING" screen.
+\layout Standard
+
+You must define the position inside the magnet (Zm) where you want measure
+\layout Standard
+
+the field, inside the [-1500mm,+1500mm] range.
+ The software will compute
+\layout Standard
+
+the probe position Zd depending on the NMR probe selected (automatic or
+\layout Standard
+
+manual selection).
+ You have to define 3 regions, where the steps may differ.
+\layout Standard
+
+Edit the fields:
+\layout Standard
+
+-STARTING Zm
+\layout Standard
+
+-rgion 1 : NUMBER OF STEPS and STEP SIZE, then the "intermediate position
+ Zm
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ is computed automatically by the software as a result of the above input
+\layout Standard
+
+-rgion 2 : NUMBER OF STEPS and STEP SIZE, then the "intermediate position
+ Zm
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ is computed as above
+\layout Standard
+
+-rgion 3 : NUMBER OF STEPS and STEP SIZE, then the "final position Zm
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ is computed as above
+\layout Standard
+
+Then push "Start".
+ It takes about 20s per point, unless lock problem, where
+\layout Standard
+
+it can take up to 100s (timeout).
+ In case the NMR does not lock even far from
+\layout Standard
+
+the ends, push "Stop Map here", use the DAC+-5% lock mode (see "detail on
+\layout Standard
+
+
+\protected_separator 
+NMR lock"), and start a new map.
+\layout Standard
+
+Note: after "Stop Map here" the incomplete map can still be saved.
+\layout Standard
+
+Use "Stop" in case of emmergency, and then reboot the VME (see detail).
+\layout Standard
+
+The measured fields are displayed on the screen as a function of Zm.
+\layout Standard
+
+The sequence is:
+\layout Standard
+
+-a measurement at Zm=0, called "Bref1"
+\layout Standard
+
+-the list of measurement you entred
+\layout Standard
+
+-a measurement at Zm=0, called "Bref2"
+\layout Standard
+
+When done, save the data by pushing "Save".
+ The file is numbered automatically,
+\layout Standard
+
+the name is of the type mapping_nnn.data, where "nnn" stands for the map
+\layout Standard
+
+number.
+ The directory is given by the MEDM screen.
+\layout Standard
+
+An example of file ("mapping_7.data") is given below (EPICS was not
+\layout Standard
+
+responding for the P.S.
+ readback and set, the real current was 90A):
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+!ARC magnetic measurement mapping data file
+\layout Standard
+
+!version:1
+\layout Standard
+
+!date: SAT JUN 12 04:49:40 1999 SAT JUN 12 05:41:32 1999
+\layout Standard
+
+
+\protected_separator 
+-1460.00
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 50
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 20.00
+\layout Standard
+
+
+\protected_separator 
+ -460.00
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 46
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 20.00
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+ 460.00
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 50
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 20.00
+\layout Standard
+
+!temperature x+,z+(deg.C) 29.8 30.2 
+\layout Standard
+
+!temperature x+,z-(deg.C) 31.7 32.0
+\layout Standard
+
+!temperature x-,z+(deg.C) 28.4 28.2
+\layout Standard
+
+!temperature x-,z-(deg.C) 28.6 28.2
+\layout Standard
+
+!tal nbr pts:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 146
+\layout Standard
+
+!initial & final NMR probe: 2
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 2
+\layout Standard
+
+
+\protected_separator 
+ Zm (mm),
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ B (T), NMR lckd, NMR flag,local crt(Vadc),crt set(A),crt rdt(A)
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\protected_separator 
+
+\protected_separator 
+ 0.1770036
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+
+\protected_separator 
+-1460.00
+\protected_separator 
+
+\protected_separator 
+ 0.1770068
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+
+\protected_separator 
+-1440.00
+\protected_separator 
+
+\protected_separator 
+ 0.1770157
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+.......
+\layout Standard
+
+
+\protected_separator 
+ 1439.99
+\protected_separator 
+
+\protected_separator 
+ 0.1770756
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+
+\protected_separator 
+ 1460.00
+\protected_separator 
+
+\protected_separator 
+ 0.1770665
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\protected_separator 
+
+\protected_separator 
+ 0.1770044
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 1
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 92.19
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.04
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 0.00
+\layout Standard
+
+!end
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Note: "1" is the normal status for NMR lock and NMR (stability) flag
+\layout Standard
+
+The lines #4,#5 and #6 of the header give the data entred by the operator.
+\layout Standard
+
+They result is a map from -1460 to +1460mm with an uniform 20mm step size.
+\layout Standard
+
+This input is the standard one for the needs of ARC.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+End of the ARC manual
+\layout Standard
+
+
+\protected_separator 
+
+\the_end

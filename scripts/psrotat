@@ -1,0 +1,45 @@
+#!/bin/sh
+# PostScript picture rotation to -90 deg
+
+OPTIONS=" "
+while true
+do
+	case "$1" in
+	-*) OPTIONS="$OPTIONS $1" ;;
+	*)  break ;;
+	esac
+	shift
+done
+echo $1 $OPTIONS
+
+if [ $# -ne 2 ]; then
+        echo "Postscript file rotation to -90 deg"
+	echo "Usage: `basename $0` ...switches... input.ps output.ps" 1>&2
+	exit 1
+fi
+
+in=$1
+out=$2
+t1=tmp.ps
+t2=tmp.epsi
+
+cat $in | grep -v HiResBoundingBox > $t1
+ps2epsi $t1
+x0=`cat $t2 | grep '^%%BoundingBox:' | awk ' NF > 4 {print $2}'`
+y0=`cat $t2 | grep '^%%BoundingBox:' | awk ' NF > 4 {print $3}'`
+x0=`expr -$x0 - 612`
+
+rm -f $t1 $t2
+
+exec gs -sDEVICE=pswrite -sOutputFile=$out -dNOPAUSE -dBATCH $OPTIONS -c -90 rotate $x0 -$y0 translate -f $in
+# ===========  CVS info
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/psrotat,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Id: psrotat,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Author: gen $
+# $Date: 2003/06/05 17:28:33 $
+# $Name:  $
+# $Locker:  $
+# $Log: psrotat,v $
+# Revision 1.1  2003/06/05 17:28:33  gen
+# Initial revision
+#

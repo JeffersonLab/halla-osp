@@ -1,0 +1,138 @@
+%\section{Trigger Electronics and Supporting Software}
+
+\ssubsection{Overview}
+
+	The basic philosophy underlying the trigger design is that the hardware must be mounted on the spectrometer, for the fastest possible trigger decision,  but it should also be remotely controllable and programmable from the counting house, to optimize flexibility.  These considerations have driven a design which utilizes currently available ``emitter-coupled-logic'' (ECL) modules with remotely programmable parameters. The trigger was further designed to run in one spectrometer in singles mode,  or both spectrometers in coincidence mode.  
+
+	In this document, we will divide the trigger system into three (intertwined) subsystems: the physical hardware of the trigger (crates, electronic modules and cables), the logical arrangement of the trigger (crate/slot assignments and wiring) and finally the software control of the trigger.  The hardware will dominate our discussion of safety; not only the safety of the user, but also how to safe guard the hardware.  The logical arrangement can, in principle be modified.  However since it is presently working well we expect it to be stable.  We will record here its present (March 1997) configuration. The software which controls the trigger is called {\sl XTrigMang}.  A detailed manual for the use on XTrigMang is available online (ftp://ftp.cebaf.gov/pub/halla/doc/TrigMang.ps). Nevertheless, we will also include a basic manual for operating the software in this document.
+
+	The hardware of the trigger system consist of two nearly identical set of electronics mounted in the detector package of each spectrometer, as well as three cables which run between the spectrometers for coincidence logic and re-timing.  Each spectrometer contains three CAMAC crates and part of a VME crate which houses the 
+{\sl Trigger Supervisor}, the interface between the event and {\sl ``CODA''} (see CODA manual for details), and the crate controller (the interface between the crates and the either-net).  The CAMAC crates  are stuffed full of discriminators (LeCroy 4413), delays (LeCroy 4518), logic gates (LeCroy 4516) and memory-lookup-units  --- MLUs  (LeCroy 2373).
+
+	The trigger will simultaneously make a decision in each spectrometer based on local information.  If it is running in coincidence mode it will then essentially ``and'' these two signals to produce the coincidence trigger.  A simplified overview is sketched in the figure below.
+
+\snfig{./figs/trigger_over.eps}{Overview of the logic of the trigger. }{trig_over}{5in}
+
+	The details of the electron-arm singles trigger, which
+can be used by itself or feed into the coincidence trigger, is sketched below.
+
+\snfig{./figs/trigger_etrig.ps}{Overview of electron-arm singles trigger. }{tirge}{5in}
+
+	Each module has a logical name, such as {\sl s12e\_l\_disc }, which is the discriminator for the left side of the scintillators (layer 1 and 2) in the electron-arm.  The logical name is the name a user will generally need when operating the trigger.
+
+	One of the important considerations for the user of the trigger is getting signals from the electron-arm and the hadron-arm to arrive in the coincidence logic at essentially the same time.  A slow hadron, such as a 40 MeV proton,  could arrive as much as 200 ns after the electron,  which is essentially traveling at the speed of light.  On the other-hand,  Hall A can also perform experiments with kinematics in which the proton can travel at roughly 0.98c,  ie. with essentially no time difference. 
+
+	The way in which the trigger synchronizes these signals is through a series of delays which can be increased or decreased as need be. It is important that all the delays from the hadron arm through the ``Trigger Supervisor'' to the ``Fastbus Transition Module'' (FTM) in the Hadron arm should add up to match the 380 ns fixed delay (top of figure 3).  Likewise the delays from the electron arm, through the two 237 ns transit times between the two spectrometers, and through the programmable delays, the ``Trigger Supervisor'' to the ``Fastbus Transition Module'' (FTM) in the Electron arm should add up to match the 680 ns fixed delay.  However,  all of these delays should be calculated and modified in the trigger settings files before the run starts.  
+
+	The details of the coincidence trigger are sketched below.
+
+\snfig{./figs/trigger_coinc.ps}{Overview of coincidence trigger. }{trig_coinc}{5in}
+
+\ssubsection{Authorized Personnel - Support Personnel}
+
+	The expert at Jefferson Labs is:
+
+\begin{enumerate}
+
+	\item Bob Michaels -  rom@cebaf.gov - (757) 269 - 7410
+		pager: 1-800-918-7410
+
+	\item Meihua Liang - mliang@cebaf.gov - (757) 269 - 7176
+		pager: 
+
+\end{enumerate}
+
+\noindent There is additional support from the University of New Hampshire:
+
+\begin{enumerate}
+
+	\item Hardware - John Calarco - calarco@unh.edu - (603) 862- 2088
+
+	\item Software - Timothy Smith - tim.smith@unh.edu - (603) 862-1691
+
+\end{enumerate}
+
+
+\ssubsection{Safety Assessment}
+
+	The primary safety issues for the trigger are the safety issues related to general handling of CAMAC, Fastbus and VME modules and crates.  In fact the user can inflict more damage on the hardware then the hardware can inflict on the user.  A few common sense things which are to be avoided are:  
+
+\begin{enumerate}
+
+	\item Power down the crates before changing modules.
+
+	\item Never use excessive force when installing modules into crates or plugging in cables. It is easy to bend the pins in the twisted pair cable connectors.
+
+	\item If possible,  leave empty spaces between modules for cooling purposes. 
+
+\end{enumerate}
+	
+
+\ssubsection{Operating Procedure}
+
+	In General,  the operation of the trigger is simple and straight forward.  Any reconfiguration of the trigger should have been performed well ahead of time and in consultation with the Hall A Trigger Manual (the XTrigMang manual is on the web).
+	
+	In most cases an operator will only need to download a trigger settings file.  The trigger is controlled through a program called ``XTrigMang''.  At present this can be executed from within the
+{\sl adaq} account, change to the {\sl \$EXPERIMENT/trigger} directory. Then execute XTrigMang, which reads four files;  ``trigger.conf'', ``trigger.map'', ``trigger.settings'' and ``X.map''.  ``X.map'' defines the placing of buttons on the {\sl gui} windows of XTrigMang.  ``trigger.map'' defines the logical name of every module in every slot in the CAMAC crates.  ``trigger.settings'' is the settings of the modules (discrimenator levels, delays, logic-gates, MLU patterns, etc.).  ``trigger.conf'' is a file in which the names of the other three files can be changed.
+
+	XTrigMang is build around five types of action,  which can be performed on one module at a time or all modules simultaneously.  The five actions are: 1) \fbox{read} and display the data-base which is in memory, 2) \fbox{ set} (modify or edit) the data-base, 3) \fbox{ show} what is in the crate, 4) \fbox{ verify} that the crate and data-base match, 5) \fbox{ download} the setting in the data-base to the crate. The user can also \fbox{save Data-Base}, ie. write the data-base to the disk file for future use.
+
+	After starting XTrigMang the top level organizational window,  as shown below, will appear.  If everything was configured as desired one can simply click on the \fbox{download all} button at this point.  The button will remain ``depressed'' until the download is finished.  It is generally a good idea to check the download with a \fbox{verify all}.  This will read back all the settings from the crate and check them against the data-base.  Both download and verify can take a minute or so if the patterns in the MLUs are complex. ``Verify All'' lists only the modules in which the settings in the data-base are different from the settings read from the crate. Most of the time the ``Verify All''(see figure below) will be blank, in that case the trigger is ready to use.  If the window is not blank see {\sl trouble-shooting} below.
+
+\snfig{./figs/trigger_mainwindow.ps}{The main window of XTrigMang}{trig_main}{5in}
+
+\snfig{./figs/trigger_verify.ps}{The {\sl Verify All} window list modules whose 
+	setting in the crate are not the same as the settings 
+	in the data-base. In this case two modules were unplugged,
+	one module was in the wrong slot and one module was broken.}{trig_verify}{5in}
+	
+\paragraph{Modifying the settings and single module control}
+
+	In many cases the user may need to deal with one module at a time.  For example if the Verify All caught a problem,  the user is advised to first try and download the settings to just that one module.  Or perhaps the user wishes to modify the settings.  
+
+	By clicking on a button in the upper part of the main XTrigMang window,  a second orginizational window will be opened,  for example the \fbox{Electron\_Arm} button will open a window with buttons for every module in the electron arm.
+	
+\snfig{./figs/trigger_subwindow.ps}{The {\sl Electron\_Arm } window list all the modules in the 
+Electron Arm part of the trigger.  The arrangement of the buttons indicates the flow of 
+information.  For example s12e\_l\_disc is the input for s12e\_l\_delay.  s12e\_l\_delay 
+and s12e\_r\_delay are the inputs for s12e\_logic.}{trig_sub}{5in}
+
+		
+	By clicking on an individual module,  one can gain control of that particular module.  There are four different type of windows for the four different types of modules,  as shown below. For each module,  the user can \fbox{read} the data-base in memory,  \fbox{set} or edit the data-base,  \fbox{show} what is in the crate,  \fbox{verify} that crate and data-base are the same and \fbox{download} the data-base settings into the modules.
+
+\snfig{./figs/trigger_disc.ps}{ The {\sl Discriminator} window}{trig_disc}{5in}
+\snfig{./figs/trigger_delay.ps}{ The {\sl Delay} Window}{trig_delay}{5in}
+\snfig{./figs/trigger_logic.ps}{ The {\sl Logic} Window}{trig_logic}{5in}
+\snfig{./figs/trigger_mlu.ps}{ The {\sl MLU} window }{trig_mlu}{5in}
+		
+	{\bf If you modify the data-base be sure to click on the \fbox{save Data-Base} button on the main window!}
+
+ 
+\paragraph{ General Information}
+
+	 Some general information about the configuration of the trigger is available from the main window of XTrigMang.  One can view a complete list of which modules are in which slots with the \fbox{read map} button. The user can also view the settings of all of the modules at once with the \fbox{read settings} button (see figure below).
+	
+\snfig{./figs/trigger_readMap.ps}{Information windows {\sl Read Map } of which
+module is assigned to which slot in the crate}{trig_readMap}{5in}
+
+\snfig{./figs/trigger_readSet.ps}{{Information window \sl Read Settings } in the Data-Base. }{trig_readSet}{5in}
+
+\paragraph{ Trouble Shooting }
+
+	The ``Verify All'' is the best meathod of detecting if something is not right.  If a module is flaged, attempt the following steps.  
+
+\begin{enumerate}
+
+	\item Open the control window of just that module,  and download just that module ---  and then verify.
+
+	\item Check to be sure that the slot assignment is correct in the ``trigger.map'' .
+
+	\item Check power to the crate (this will effect all modules in that crate).
+
+\end{enumerate}
+ 
+	If these fail contact on of the local experts listed in section 1.2
+
+
+%\end{document}
+

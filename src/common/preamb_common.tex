@@ -1,0 +1,127 @@
+
+% -  Define the environments for different information levels (lev=0 - no special environment)
+% default: everything is set. It can be redefined with the file currinfolev.tex
+% (Comment: is done in such a clumsy way since if-then-else does not work with latex2html) 
+\newcommand{\infolevone}[1]{#1}%
+\newcommand{\infolevtwo}[1]{#1}%
+\newcommand{\infolevthree}[1]{#1}%
+\newcommand{\infolevfour}[1]{#1}%
+
+% input the INFO LEVEL flag, say \def\infolevel{4} and redefine the environments
+\input{currinfolevel.tex}
+% \input{infolevel.tex}
+%   =0 - overview+safety only, 
+%   =1 + procedures, 
+%   =2 + components, 
+%   =3 + principles of operation, 
+%   =4 + performance
+
+\usepackage{color}
+\usepackage{longtable}
+% \usepackage{amsfonts}
+% \usepackage{amssymb}
+
+\def\Mcol{black}  % Main text color
+\def\Scol{red}    % Safety text color
+\def\SBcol{red}   % Safety marginbar color
+\def\Ccol{magenta}   % Computer input/output color
+%\definecolor{Scol}{rgb}{red}    % Safety text color
+
+%begin{latexonly}
+% ===    Set a true/false value for PDF hyper marks  
+\newif\ifhyprf
+%\hyprffalse
+\hyprftrue
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+    \pdffalse           % we are not running PDFLaTeX
+\else
+    \pdfoutput=1        % we are running PDFLaTeX
+    \pdftrue
+\fi
+
+\ifpdf
+  \pdfcompresslevel=9
+  \usepackage[pdftex]{graphicx}
+%  \usepackage{thumbpdf}
+  \definecolor{rltred}{rgb}{0.75,0,0}
+  \definecolor{rltgreen}{rgb}{0,0.3,0}
+  \definecolor{rltblue}{rgb}{0,0,0.75}
+  \definecolor{rltdarkgreen}{rgb}{0.1,0.6,0.1}
+  \ifhyprf
+     \usepackage[pdftex,
+         colorlinks=true,
+         urlcolor=rltblue,       % \href{...}{...} external (URL)
+         filecolor=rltgreen,     % \href{...} local file
+         linkcolor=rltred,       % \ref{...} and \pageref{...}
+         citecolor=rltdarkgreen, % citations
+         pagebackref,
+         pdfpagemode=None,
+         pdftitle={OSP Hall A},
+         pdfauthor={Hall A},
+         pdfsubject={JLab Hall A Operations},
+         pdfkeywords={JLab HallA operations safety OSP}]{hyperref}
+  \fi
+  \usepackage{pdfcolmk}
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\else
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps,.epsi,.ps,.eps.gz,.epsi.gz,.ps.gz}
+\fi
+
+\usepackage{cite}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{changebar}
+% \usepackage{url}
+\usepackage{html,hthtml}
+
+\oddsidemargin=0.25in 
+\evensidemargin=0.25in 
+\topmargin=-0.2in 
+\textwidth=6.25in 
+\textheight=8.7in
+\renewcommand{\textfraction}{0.05} 
+
+%end{latexonly}
+
+\newcommand{\obsolete}[1]{}%
+\newcommand{\myhtml}[1]{}%
+
+\begin{htmlonly}
+  \usepackage{graphicx}
+%  \usepackage{epsf}
+  \DeclareGraphicsExtensions{.eps,.epsi,.ps}
+  \def\makeglossary{}
+  \pagecolor[named]{White}
+
+% -  Define the environments for different information levels (lev=0 - no special environment)
+
+\end{htmlonly}
+
+
+\newenvironment{safetyen}[2]%  SAFETY environment
+       {\color{\SBcol}%
+              \marginpar{\rule[-#2mm]{1mm}{#1mm}}%
+        \color{\Scol}}%
+       {\color{\Mcol}}
+%       {\color{red}\bfseries}%
+%       {\color{black}\rmfamily}
+
+\newcommand{\dirfig}[0]{figs}
+\newcommand{\dircur}[0]{}
+\newcommand{\mycomp}[1]{{\color{\Ccol}{\sf #1}}}
+
+ 
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/common/preamb_common.tex,v 1.1 2003/06/05 17:28:33 gen Exp $
+% $Id: preamb_common.tex,v 1.1 2003/06/05 17:28:33 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:33 $
+% $Name:  $
+% $Locker:  $
+% $Log: preamb_common.tex,v $
+% Revision 1.1  2003/06/05 17:28:33  gen
+% Initial revision
+%

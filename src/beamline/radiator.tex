@@ -1,0 +1,160 @@
+\section{Bremsstrahlung Radiator}
+
+\subsection{Overview}
+
+The Bremsstrahlung radiator is the last element in the Hall A beam line 
+before the scattering chamber, and is about 72.6 cm from the center 
+of the physics targets.
+Its design is based on the Hall C radiator 
+system built by David Meekins, and documented in the Hall C operations
+manual.
+
+The central component of the system is a U-shaped, oxygen-free copper target
+ladder, with six positions for differing thicknesses of oxygen-free Cu foils.
+The ladder is designed so that it never intersects the beam.
+The 3.175-cm wide gap in the ladder is spanned only by 
+the target foils, which are 6.35 cm wide, 3.175 cm high,
+and 3.332 cm apart (center to center).
+A stepper motor moves the target ladder with foils up and down,
+into and out of the beam.
+Hard stops prevent motion of the ladder beyond the limit switches.
+Water cooling of the radiator ladder cools the foils, preventing
+damage from overheating by the beam.
+
+The interaction of the beam with the foils produces
+background radiation in the Hall.
+At 3 GeV, ion chamber trip levels do not need to be
+adjusted, and increases in detector background rates are minimal;
+further tests are planned for 0.8 GeV.
+No local shielding is installed, as calculations indicate
+that this will not significantly affect dose at the site boundary.
+Any installation and/or subsequent modifications must be coordinated
+with RadCon.
+
+\subsection{Safety Issues}
+
+The only safety issue concerning the Bremsstrahlung radiator is that of
+induced radioactivity in the Cu targets and in the water 
+used for cooling the targets.
+The water cooling system is a closed loop,
+using a portable welding-torch water cooler, located
+under the beam line just upstream of the target. 
+The cooler is kept in a tray which is intended to provide secondary
+containment in case of a leak.
+The cooling system must not be breached or drained without concurrence from 
+the RCG. Accidental breach or spill constitutes a radiation contamination hazard.  
+A spill control kit, capable of containing a system leak or spill, is
+staged by the door to the hall. In the event of a spill notify
+the RCG.
+
+\subsection{Operations}
+
+Although the radiator foils are water cooled, a high current electron beam
+may melt the foils.
+Beam currents with the radiator will be limited to 30 micro-amperes.
+Including a safety factor, the raster radii given in Table 1
+will limit the temperature rise to 100 $^{\circ}$C.
+
+\begin{table}
+\begin{center}
+\caption[Bremsstrahlung Radiator: Raster Radius]{Raster radius as a function of beam current.}
+\begin{tabular}{cc}
+\hline
+\hline
+Current ($\mu$A) & Minimum raster radius (mm) \\
+\hline \\
+10 & (not needed) \\
+15 & 0.2 \\
+20 & 0.7 \\
+25 & 1.3 \\
+30 & 2.1 \\
+\hline \hline \\
+\end{tabular}
+\end{center}
+\end{table}
+
+The only operational control consists of moving the ladder in and out.
+Radiator position is determined by the ratio of the readback voltage from 
+a linear encoder to the voltage applied to it.
+Table 2 gives the radiator position as a function of this ratio.
+The foil thicknesses are set so that the thickness, in percent
+of a radiation length, equals the foil number, except that
+no foils are mounted in position 1.
+
+\begin{table}
+\begin{center}
+\caption[Bremsstrahlung Radiator: Encoder Calibration]{Encoder voltage calibration. See text.}
+\begin{tabular}{ccc}
+\hline
+\hline
+Position & Voltage ratio & $V_{\rm encoder}$ for $V_{\rm supply}$ = 5 V \\
+\hline \\
+out limit & 0.030 & 0.15 \\
+ foil 1 & 0.102 & 0.511 \\
+ foil 2 & 0.269 & 1.346 \\
+ foil 3 & 0.436 & 2.179 \\
+ foil 4 & 0.603 & 3.013 \\
+ foil 5 & 0.769 & 3.847 \\
+ foil 6 & 0.936 & 4.681 \\
+ in limit & 0.966 & 4.831 \\
+\hline \hline \\
+\end{tabular}
+\end{center}
+\end{table}
+
+Software controls of the ladder position are under development;
+radiator position is changed by calling
+MCC and requesting that the radiator be set to some foil position,
+or to the out limit.
+The position may be changed with beam on.
+A manual-control backup system also exists.
+
+Both software and manual backup systems
+control an Oregon Micro Systems MH10DX step motor driver,
+which drives a Slo-Syn M063-LS09 stepper motor.
+The MH10 driver, power supplies, and other control circuitry, 
+are in a custom-built box located in the hall in rack 1H75B10.
+The linear encoder voltage ADC is in slot 5 of the CAMAC crate in 
+rack 1H75B02; radiator inputs use channels 15 and 16, and
+are connected through a patch panel to block 30 in rack 1H75B08.
+
+When the radiator is not being used, the system should be set to the
+out-limit position, so that it is clear of the beam.
+Power to the control box in the hall may be turned off with a front-panel 
+switch if the radiator will not be used for a long time - and should be 
+turned off if work is to be done on the radiator.
+This deactivates the limit switches and the linear encoder, 
+but does not affect positioning.
+Additional hard stops should be installed as a safety measure.
+The Hall A technical staff checklist, done as part of preparations for
+closing the Hall for beam, includes checking the radiator
+position, the status of the control box, and the installation of hard stops.
+
+\subsection{Special Instructions}
+
+Care must be taken in case any removal or disassembly of the radiator
+system is needed.
+Disconnecting the stepper motor from the motor driver
+while power is on can damage the motor, motor driver, and VME44 board.
+
+The Cu targets will certainly be activated in the course of an experiment.
+Therefore, only remove the Cu target, the target ladder,
+and/or the whole radiator system in the presence of a Radcon officer.
+
+Ron Gilman should be informed in case of any problems with the radiator.
+Except for normal operations of the radiator, any work on the
+system hardware requires that RadCon has concurred in the work and
+either Ron Gilman or David Meekins is present.
+
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/radiator.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Id: radiator.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:32 $
+% $Name:  $
+% $Locker:  $
+% $Log: radiator.tex,v $
+% Revision 1.1  2003/06/05 17:28:32  gen
+% Initial revision
+%

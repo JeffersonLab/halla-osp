@@ -1,0 +1,225 @@
+Post Beam Checklist for an extended time
+								Last revised 2/22/99
+This checklist will be performed after every restricted access to Hall A that maintenance is performed
+
+People checking list _______________________________________________________
+
+  Power supplies
+			( from the control room )
+Electron
+Q1
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Q2
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Q3
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Dipole
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Hadron
+Q1
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Q2
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Q3
+___	set current to 0 amps by remote control 
+___	turn output off by remote control 
+
+Dipole
+___	set current to 0 amps by remote control 
+
+
+
+
+
+
+
+				( from the Hall )
+Target
+
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	Install protective shields over vacuum windows if Cryo target is installed
+___      target light off at target
+___	cctv cameras off at target
+___	turbo off at rack #
+___	turbo valve closed at rack #                          switch #
+___	backing pump off and bled up  at pump
+___	gages operational
+___	windows functional
+
+ Spectrometers
+
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	turbo valves closed at valve controller in rack # 1H71/72B08 switch #
+___	turbo off at turbo controller in rack # 1H71/72B08
+___	blower off at controls under spectrometer
+___	pump valves closed at valve controller in rack # 1H71/72B08  switch # 
+___	convectron gages on
+___	cold cathode gages off at gage in rack #
+___	windows functional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Electron
+Q1
+___	ensure 0 current status on local power meter 
+___      ensure that the set to and ADC readouts all equal "0" 
+___	turn off  Q1 LCW supply valve slowly and lock it in the off position
+
+Q2
+___	ensure 0 current status on local power meter 
+___	ensure that the set to volts readout equals "0"
+___	ensure that the set to current readout equals "0"
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+Q3
+___      ensure 0 current status on local power meter 
+___	ensure that the set to volts readout equals "0"
+___	ensure that the set to current readout equals "0"
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+Dipole
+___	ensure 0 current status on local power meter 
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hadron
+Q1
+___	ensure 0 current status on local power meter 
+___      ensure that the set to and ADC readouts all equal "0" 
+___	turn off  Q1 LCW supply valve slowly and lock it in the off position
+
+Q2
+___	ensure 0 current status on local power meter 
+___	ensure that the set to volts readout equals "0"
+___	ensure that the set to current readout equals "0"
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+Q3
+___      ensure 0 current status on local power meter 
+___	ensure that the set to volts readout equals "0"
+___	ensure that the set to current readout equals "0"
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+Dipole
+___	ensure 0 current status on local power meter 
+___	switch off input power at power supply
+___	switch off power at safety disconnect and lock switch in the off position
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Entrance beam tube
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	beam line vacuum valves closed
+___	E P turbo valve closed
+___	E P turbo off 
+___	E P backing pump off and vented to atm.
+___	Moeller turbo valve closed
+___	Moeller turbo off 
+___	Moeller backing pump off and vented to atm.
+___	instrument air compressor functioning normally
+
+
+		
+Exit beam tube
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	beam tube valve closed 
+___	exit beam tube turbo valve closed
+___	exit beam tube turbo off 
+___	exit beam tube backing pump off and vented to atm.
+___	cold cathode gage off
+___	convectron gages on
+
+
+
+
+ Dump
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	turn off diffuser cooler
+___	Inspect visible areas for water leaks
+
+
+ Hall 
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+___	Inspect power supply platforms, spectrometers, and the rest of the Hall, looking for water leaks and cryogenic plumes
+___      cctv cameras off
+___	clear of unnecessary equipment
+___	Man lift and Forklift removed from truck ramp
+___	Doors unlocked
+
+

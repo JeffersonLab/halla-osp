@@ -1,0 +1,346 @@
+\documentclass[12pt]{article} 
+
+\usepackage{epsfig} 
+
+%\usepackage{rotating} 
+
+\usepackage{graphicx} 
+
+
+\begin{document}
+\section{Lead Glass Shower Counters}
+
+\subsection{Overview}
+
+ The Hall A electron spectrometer is equipped with a 2-layer,
+segmented shower counter.  The first layer, the so-called
+``pre-shower'' counter is made of 48 blocks of TF1 lead glass. Each
+block is nominally 10 cm by 10 cm by 35 cm long. The blocks are
+assembled in 24 modules with two blocks in each module. PMTs located
+outside of the beam envelope view the lead glass from opposite
+sides. The second layer, the so-called ``total absorber'' counter is
+an assembly of 96 blocks of SF5 lead glass, arranged in a 6-by-16
+rectanglular grid.  The total absorber shower blocks are nominally 15
+cm by 15 cm by 35 cm and viewed by a PMT from the back side.  The
+pre-shower block PMTs are 3'' Hamamatsu 3036, and the shower block
+PMTs are 5'' Phillips XP2050. The hadron spectrometer has a single
+layer of 15 cm thick shower counter, the so-called ``pion
+rejector'. It is made of 32 blocks of SF5 lead glass. Each block has
+nominal dimensions of 15 cm by 15 cm by 30 cm. 5'' Phillips XP1050 are
+also used in the pion rejector. The HA shower counter is installed
+behind the focal plane polarimeter at the same position as can be used
+for the S3 scintillator plane. \\
+
+
+The pre-shower counter is assembled on a 1/2 inch-thick Al plate
+bolted to the Detector Frame, meaning removal of any detector takes a
+lot of time. However the PMTs are easily accessible from the sides.
+Total absorber blocks are installed in a strong box made of 5/8 inch
+Al plates.  The PMTs and HV dividers are accessible from the back. The
+box can be lifted by the hall crane when the Detector Frame is outside
+of Shielding Hut. The lead glass blocks of the total absorber should
+be repaired or replaced only when the support box has horizontal
+orientation.\\
+
+
+Pion rejector blocks are supported by a 1/2'' Al plate. The frame is
+bolted to the Detector Frame.\\
+ 
+As charged particles pass through the lead glass of the shower
+counter, they produce high energy photons and electron-positron pairs.
+These particles in turn produce additional trees of new particles: a
+so-called electro-magnetic shower.  Cherenkov light is emitted inside
+the lead glass when the electron or positron has an energy above ~ 2
+MeV, and this light is then detected in the photo tubes. The anode
+current pulses are then amplified, delayed and sent to ADCs, which are
+gated by the overall event trigger. The ADCs are read out by the {\it
+CODA} acquisition software.  The data are histogramed online by the
+{\it DHIST} software.  In-depth off-line data analysis requires the
+{\it ESPACE} software.
+
+\subsection{Principles of PID with Shower Counter}
+The shower Counter is used for identification of electrons and
+separating them from hadrons. This is possible because for high energy
+electrons the main mechanism of interaction with matter is a
+production of electron-positron pairs but for hadrons the nuclear
+interaction ( and at low energy ionization ) dominates.  The SF5 lead
+glass has a nuclear interaction length of $\sim 22$ cm, which is about
+10 times larger than the radiation length. Differences in the
+longitudinal profiles of electro-magnetic and hadronic showers provide
+a way to use of a shower counter for PID.  Shower counters complement
+other means of PID such as time-of-flight (TOF) or threshold Cherenkov
+counters, due to the independent physical processes responsible which
+result in different detector limitations. Independent PID allows
+multiple detectors ($i.e.$, a Cherenkov counter followed by a shower
+counter) to obtain excellent rejection ratios that are the product of
+the individual rejection ratios.
+
+Shower counters measure the energy deposited by the incoming particle.
+The detected light output is linearly proportional to the energy lost
+by the incoming particle, however coefficients are different for
+hadrons and electrons.  Electro-magnetic showers are stopped in the
+counters, whereas hadronic showers, due to the longer hadronic mean
+free path, are not.  Looking at the longitudinal distribution of the
+energy deposited in the calorimeter differentiates between
+electro-magnetic and hadronic showers and therefore identifies the
+incident particle.  Typical pion rejection with a lead glass counter
+is of the order of 100-1000:1 in the 1 to 10 GeV region.  The Hall A
+electro-magnetic shower counter is meant to offer rejection ratios
+better than 100:1. The figure \ref{2d_sh_psh} and figure \ref{fen}
+demonstrate electron separation from pion at momentum of 1500 MeV/c.
+%
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig5.eps}
+{\linespread{1.}
+\caption[Typical correlation amplitudes in shower and pre-shower]{Shower vs pre-shower}
+\label{2d_sh_psh}}
+\end{center}
+\end{figure}
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig6.eps}
+{\linespread{1.}
+\caption[PID parameter fen]{PID by shower counter. Upper plot for electrons. 
+Bottom plot for pions.}
+\label{fen}}
+\end{center}
+\end{figure}
+%
+
+The limitation in using a shower counter comes from separating the
+tails of the distributions, and is therefore dependent on energy
+resolution.  At higher energy the relative resolution of a shower
+counter improves, leading to better separation between distributions.
+Conversely, other techniques perform worse at higher energy.
+
+\subsection{Operation}
+\subsubsection{Amplitude and calibration}
+
+The average number of photons produced in the lead glass as result of
+Cherenkov radiation per one GeV of energy deposited in
+electro-magnetic cascade is about 4500. These photons are released in
+the glass almost instantly as the shower develops. Photons can travel
+long and different paths inside of lead glass block before hitting the
+photo cathode. The current pulse from the PMT anode has a duration
+about 15-20 ns. For initial calibration of the counter it is possible
+to use cosmic rays. The amplitude of the signal from cosmic muons
+corresponds to a shower with energy deposition of about 6 MeV per cm
+passing through the lead glass. For the pre-shower counter the cosmic
+signal equivalent to 60 MeV and clearly visible in the amplitude
+spectra. For the total-shower a clean cosmic signal also can be
+observed when event samples are filtered with a cut on the angles of
+the particles.  Determination of the amplitude to energy conversion
+coefficients done by using events from special calibration runs when
+the energy of the electrons was measured in the spectrometer. Because
+of the large dynamic range of signals from shower blocks the PMT gain
+is relatively low ( $~\sim 1*10^6$ ) and a cosmic signal is not easy
+to find with the oscilloscope. It has amplitude about 1-3 mV.
+
+\subsubsection{Operating Procedures}
+
+\paragraph{Power Supplies and Electronics Procedures} 
+A LeCroy HV 1460 is used to supply HV power for the trigger
+counters. It can be controlled from a VT100 terminal connected through
+a terminal server or through the EPICS system running on the computer
+HAC.  Current HV settings for trigger counters should be found from
+print-outs of EPICS controls in the last experimental logbook. The
+LeCroy HV power supply provides -1500 V nominal to the total absorber
+and 1200 V to the pre-shower. The figure~\ref{hv_psh} and the
+figure~\ref{hv_sh} presents actual high voltage settings.
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig1.eps}
+{\linespread{1.}
+\caption[High voltage settings of pre-shower]{HV pre-shower}
+\label{hv_psh}}
+\end{center}
+\end{figure}
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig2.eps}
+{\linespread{1.}
+\caption[High voltage settings of shower]{HV shower}
+\label{hv_sh}}
+\end{center}
+\end{figure}
+%
+
+The power supply is located in the detector hut on the upper level of
+the Detector Frame. Connections from the power supply to the base are
+made using standard SHV connectors mounted on red RG-59/U HV cable
+which is rated to handle voltages upto 5 kV.  If at all possible, the
+HV power supplies should be left on continuously.  This allows the
+tube noise to quiet down after high voltage is applied and the
+temperature of the base components stabilizes.
+%
+\paragraph{Signal Handling, Summing, Amplification and the Multiplexer}
+The upstairs electronics racks hold two NIM bins containing the
+summing modules of the multiplexer.  The output of these is sent to
+the ADCs.  The individual channels are sent into an ADC where it can
+later be analyzed by the software.  The sum of every six channels are
+used to form combinations between shower and pre-shower blocks and
+finally sent to the trigger signal.  The operations manual for the
+multiplexer was written by H. Breuer, UMd and is available from him
+upon request.  The detector signals are physically plugged into the
+ADC channels and connected to the signal wires labeled as shown for
+both the pre-shower counter figure~\ref{map_psh} and total absorber
+counter figure~\ref{map_sh}.
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig3.eps}
+{\linespread{1.}
+\caption[Wiring map for pre-shower ]{Pre-shower detector map}
+\label{map_psh}}
+\end{center}
+\end{figure}
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm,height=16cm,clip]{shower_fig4.eps}
+{\linespread{1.}
+\caption[Wiring map for shower ]{Shower detector map}
+\label{map_sh}}
+\end{center}
+\end{figure}
+%
+The shower counters are very delicate devices which are easily
+damaged.  Thus, care must be exercised whenever they are moved or
+used.
+
+\begin{itemize}
+\item{Before turning on the high voltage for the shower counters (HAC5 
+for the pre-shower and HAC6 for the total absorber), check the shower
+counter log book located in the Hall A counting house for the latest
+values of the high voltage.}
+
+\item{Never disconnect or connect any of the high voltage cables to 
+the bases with the high voltage power turned on.  Doing so will damage
+the bases (the zener diodes will be destroyed).}
+
+\item{Never service the lead glass with the high voltage on.  The
+high voltage poses a safety hazard.}
+
+\item{Never drop anything onto the bases and tubes; they are 
+extremely fragile.  They should not be used as support or to hold any
+weight.  Also, do not drop the lead glass blocks.  The blocks are made
+of glass and will become damaged or destroyed.}
+
+\item{When ramping the HV, keep an eye on the current drawn 
+by the individual bases.  A light leak in the wrapping will produce a
+large current ( $ > 1 \mu$A at low voltages (1 kV).  If the tubes
+draw an excess amount of current turn them off and check for leaks
+in the wrapping.}
+\end{itemize}
+%
+
+\subsection{Safety Assessment}
+The following potential hazards have been clearly identified.
+\begin{description}
+\item {\bf The High Voltage System} The LeCroy 1443 HV crate equipped
+with LeCroy 1461N negative high voltage cards provides upto 3.3 kV of
+low current power.  Red HV RG-59/U cable rated for voltages upto to 5
+kV with standard SHV connectors are used to connect the power supply to
+th photomultiplier tube voltage divider bases.  A given base on the
+TA draws typically 500-600 $\mu A$ of current with the high voltage
+on at between 1400 and 1500 Volts.  The PS bases typically draw 900
+$\mu A$  with the high voltage on at between 1100 and 1200 Volts.
+%
+\item {\bf The Lead Glass Support Structure}
+The lead glass shower counters are mounted on top of the space
+frame for the detectors.  Access for servicing the shower counters
+requires climbing on top of the support frame.  Only the responsible
+personnel identified below should attempt to service the shower counter;
+such work requires proper safety precautions and prior training/experience.
+\item {\bf The Lead Glass blocks}
+The lead glass shower blocks and tubes are approximately 70 -- 80 pounds
+in weight apiece.  Lifting, replacing, or moving such blocks should
+be done properly to avoid muscle problems and damage to the blocks.
+\end{description}
+%
+\subsection{Authorized Personnel} 
+The following individuals are authorized to work on shower counters. 
+\begin{itemize} 
+\item[~]Breuer, Herbert - 301-405-6108 
+\item[~]Markowitz, Pete - x7237, 305-348-1710
+\item[~]Segal, Jack - x7242 
+\item[~]Voskania, Hakob - x5105
+\item[~]Wojtsekhowski, Bogdan - x7191 
+\end{itemize} 
+
+\subsection{Software Algorithms}
+The purpose of the shower cluster reconstruction in each of Preshower and 
+Total Absorber parts of the shower detector is:
+\begin{list}{$\bullet$}{}
+\item Define all clusters of fired blocks, which belong to the showers, 
+      registered in the detector;
+\item Calculate parameters of showers in the detector: energy deposition of 
+      showers, $X$ and $Y$ coordinates of the shower center;
+\item Set parameters and identify the, so called, ``main'' cluster.
+\end{list}
+
+\noindent A cluster in the shower detector is determined as follows:
+\begin{list}{---}{}
+\item A cluster is a group of continuous blocks; 
+\item A cluster can occupy a maximum 6 ($2 \times 3$) blocks in the case of the
+      Pre-shower and 9 ($3 \times 3$) blocks in the case of the Total Absorber; 
+\item The central block is defined as block that has maximum energy deposited.
+\end{list}
+
+The ``main'' cluster in Pre-shower/Total Absorber is the cluster with
+the largest energy which is coincident with the ``golden track'', or
+coincident with some Shower/Pre-shower cluster.  A coincidence of a
+cluster with the ``golden track'' means that distance between the
+shower cluster center and the crossing point of the ``golden track''
+with the detector plane is less than a certain magnitude.  Such a
+coincidence of Pre-shower and Total Absorber clusters means, that
+distance between the clusters centers is less than a certain magnitude
+assuming that both of these points are considered on the same
+$Z$--plane.  
+
+Shower clusters reconstruction in the Pre-shower and
+Total Absorber is performed by the following steps:
+\begin{enumerate}
+\item Sort the fired blocks of the detector in decreasing order of their 
+      energy deposition values;
+\item Pick out the block with the maximum energy deposition and all fired blocks in
+      it's geometric vicinity ($2 \times 3$ blocks for Pre-shower, $3 \times 3$ blocks
+      for Shower), as belonging to one cluster;
+
+\item Remove all of blocks, associated in the cluster, from following
+      considerations;
+\item Repeat steps 2 and 3, until all of the fired blocks are organized into 
+      a cluster;
+\item Calculate energy deposition, $X$ and $Y$ coordinates of each cluster and 
+      sort clusters based on their energies in decreasing order;
+\item Define coordinates of the crossing point of the ``golden track'' with the detector 
+      plane in the detector local coordinate system;
+\item Analyze geometrical position of the ``golden track'' point on the 
+      detector plane and clusters centers in order to determine the ``main'' 
+      cluster and to set it parameters and software identifier.
+\end{enumerate}
+
+Energy deposition $E$, $X$ and $Y$ coordinates of the shower center are 
+calculated by the formulas: 
+
+$$E=\sum_{i \in M}e_i\ ,\ \ \ \ 
+X=\sum_{i \in M}e_i \cdot x_i/E\ ,\ \ \ \ Y=\sum_{i \in M}e_i \cdot y_i/E\ ,$$
+
+where: $i$ --- number of detector block, included into the cluster; $M$ --- set
+of blocks numbers, included into the cluster; $e_i$ --- energy deposition in 
+the block $i$ of detector; $x_i$, $y_i$ --- $X$ and $Y$ coordinates of center 
+of the block $i$ of detector.
+
+The shower cluster reconstruction algorithm described above has been
+implemented by the ESPACE analysis subroutine {\bf tot\_shower}.  A
+complete description of the program as well as information about the
+ESPACE routines and kumac files used to perform the analysis,
+photographs of the detectors and more information can be found at the
+URL:
+
+http://www.jlab.org/\~ armen/sh\_web\_page/sh\_page\_init.html
+\end{document}

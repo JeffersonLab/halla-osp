@@ -1,0 +1,85 @@
+#! /bin/bash
+
+# -- Configure the work directory "run" for TeX running
+# -- 2 position call parameters:
+#    1) document name (the name of the top .tex file without .tex in directory src/)
+#    2) Info level (0 - for the slimmest vesrion, 4 - for the full version)
+
+  PROG=`basename $0`
+  echo Start $PROG
+
+# ==========   Help routine start
+ help_dis () {
+  cat <<help_doc
+ $PROG - a script to configure the work directory "run" for TeX running
+  -- 2 position call parameters:
+     1) document name (the name of the top .tex file without .tex in directory src/, say osp)
+     2) Info level (0 - for the most slim version, 4 - for the full version)
+
+ Usage: ./$PROG docname NLEV
+        ./$PROG -?   - prints this help
+
+ Example: $PROG osp 4     # - The full version of the OSP document
+help_doc
+ }
+# ==========   Help routine end
+
+  if [ "$1" = "?" -o "$1" = "-?" ]; then
+    help_dis
+    exit
+  fi
+  if [ "$#" -ne 2 ]; then
+    echo "***" Error - 2 parameters needed. Usage:
+    help_dis
+    exit
+  fi
+
+
+  doc=$1
+  docf=src/$doc/main.tex
+  lev=$2
+
+# Check the input
+  if ! test -f $docf  ; then
+    echo Error in $PROG : WRONG document name $doc : file $docf is missing
+    exit
+  fi 
+  ok=0
+  for i in 0 1 2 3 4 5 6 7 8 9 ; do 
+     [ "$lev" == "$i" ] && ok=1 
+  done
+  if [ $ok -eq 0 ] ; then
+    echo Error in $PROG : WRONG level number $lev : should be from 0 to 9
+    exit
+  fi 
+
+# Create directory run and copy some files (updated) there
+  if test -d run ; then 
+     rm -r -f run 
+  fi 
+  mkdir run 
+  cd run 
+  ln -s ../scripts/Makefile .
+
+  echo " DOCNAME="$doc    > .config
+  echo " INFOLEVEL="$lev >> .config
+  echo Directory run created.
+#  
+# === CVS header
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/config,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Log: config,v $
+# Revision 1.1  2003/06/05 17:28:33  gen
+# Initial revision
+#
+
+# ===========  CVS info
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/config,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Id: config,v 1.1 2003/06/05 17:28:33 gen Exp $
+# $Author: gen $
+# $Date: 2003/06/05 17:28:33 $
+# $Name:  $
+# $Locker:  $
+# $Log: config,v $
+# Revision 1.1  2003/06/05 17:28:33  gen
+# Initial revision
+#

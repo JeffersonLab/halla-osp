@@ -1,0 +1,2785 @@
+#This file was created by <mitchell> Tue Jun 29 11:27:59 1999
+#LyX 1.0 (C) 1995-1999 Matthias Ettrich and the LyX Team
+\lyxformat 2.15
+\textclass article
+\language default
+\inputencoding default
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+
+\protected_separator 
+Cryo Target Pre Beam Checklist
+\protected_separator 
+ Date______
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+time _______
+\protected_separator 
+
+\protected_separator 
+ 
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Last revised 3/6/98
+\layout Standard
+
+This checklist will be performed after every restricted access to Hall A
+ that maintenance is performed
+\layout Standard
+
+People checking list _______________________________________________________
+\layout Standard
+
+Electron Arm
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Spectrometers
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+correct angle ___________ (not to be used for calculations)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+correct pointing _________(not to be used for calculations)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+collimator operation at 3 positions
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check spectrometer for obstructions to movement
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check intergen bottles for correct pressure
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that 15 degree stop pin is installed
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Vacuum 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+blower on at controls under spectrometer
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turbo on at turbo controller in rack # 1H71B01
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+pump valves open at valve controller in rack # 1H71B01
+\protected_separator 
+ channel #2 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+convectron gages read "0" millitorr 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+roughing valve closed at rack #1H71B01 channel # 4 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cold cathode gages on at gage in rack # 1H71B01 cold cathode < 5x10-5
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual cold cathode reading ________
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+entrance & exit vacuum windows functional
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+magnet controls
+\layout Standard
+
+Q1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q1 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q1 to 80 slm as read from rack #Q171Q
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv camera on and focused
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+D1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Dipole full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Dipole to 80 slm as read from rack #D171Q
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q2
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q2 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q2 to 60 slm as read from the Q2 instrument rack meter.
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q3
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q3 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q3 to 60 slm as read from the Q3 instrument rack meter.
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+Power supplies
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+POWER SUPPLY TURN ON PROCEDURES
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Verify UPSs as operational on all power supply controls (with no current
+ on magnets only)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+red rotating beacons on 
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q1:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, insure that power supply is in remote
+ control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q2:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on both sets of three pole breakers located on power supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, lift lever on lower right side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that power supply is in remote control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q3:
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on both sets of three pole breakers located on power supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, lift lever on lower right side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that power supply is in remote control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Dipole:
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on power lever on right upper side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults on supply and at rack #
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, insure that power supply is in remote
+ control
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv camera on and focused
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check power supply for proper polarity 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NMR gradient compensation for on and proper polarity
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Hadron Arm
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Spectrometers
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+correct angle ___________ (not to be used for calculations)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+correct pointing _________(not to be used for calculations)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+collimator operation at 3 positions
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check spectrometer for obstructions to movement
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check intergen bottles for correct pressure
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that 15 degree stop pin is installed
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Vacuum 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+blower on at controls under spectrometer
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turbo on at turbo controller in rack # 1H71B01
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+pump valves open at valve controller in rack # 1H71B01
+\protected_separator 
+ channel #2 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+convectron gages read "0" millitorr 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+roughing valve closed at rack #1H71B01 channel # 4 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cold cathode gages on at gage in rack # 1H71B01 cold cathode < 5x10-5
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual cold cathode reading ________
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check dipole turbo for on
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+magnet controls
+\layout Standard
+
+Q1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q1 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q1 to 80 slm as read from rack #Q171Q
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv camera on and focused
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+D1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Dipole full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Dipole to 80 slm as read from rack #D171Q
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q2
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q2 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q2 to 60 slm as read from the Q2 instrument rack meter.
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q3
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Q3 full of liquid
+\protected_separator 
+ (80%) actual______
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+open lead flows on Q3 to 60 slm as read from the Q3 instrument rack meter.
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual lead flows
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+A______
+\protected_separator 
+B______
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+Power supplies
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+POWER SUPPLY TURN ON PROCEDURES
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Verify UPSs as operational on all power supply controls (with no current
+ on magnets only)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+red rotating beacons on 
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q1:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, insure that power supply is in remote
+ control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q2:
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on both sets of three pole breakers located on power supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, lift lever on lower right side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that power supply is in remote control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Q3:
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on both sets of three pole breakers located on power supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, lift lever on lower right side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that power supply is in remote control
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Dipole:
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visual inspection of main current leads, dump resistor, and lead flags (for
+ condition, visual shorts ,etc.)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unlock power disconnect switch and turn on AC power
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turn on power lever on right upper side of supply
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+visually check power supply for faults on supply and at rack #
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+when all faults have been cleared, insure that power supply is in remote
+ control
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv camera on and focused
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check power supply for proper polarity 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NMR gradient compensation for on and proper polarity
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ Target
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+windows functional
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv cameras "on" and focused
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+target light "on" 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+backing pump "on" at pump
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turbo "on" at rack # 1H75B09
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turbo valve "open" at rack # 1H75B09 channel # 1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+gages operational
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+convectron "0" millitorr at rack # 1H75B09
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cold cathode < 5x10-4 at rack # 1H75B08
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual cold cathode reading __________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Exit beam tube
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+backing
+\protected_separator 
+ pump "on" at pump and operational
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+valve "open" controlled at rack # 1H75B09
+\protected_separator 
+ channel # (temp manual at pump)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+turbo "on" at rack #
+\protected_separator 
+ 1H75B09
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+gages operational
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+convectron "<5" millitorr at rack # 1H75B09
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+actual
+\protected_separator 
+ convection reading ________
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+diffuser cooler on
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+diffuser water level ok
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Entrance beam tube
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that Moeller turbo is on and running
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that Moeller target cooler is on and operational
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that there is cooling water flow to the Moeller Dipole 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+insure that ep turbo is on and running
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ beam line vacuum valves "open" (visually checked)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+instrument air compressor functioning normally
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+Hall 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+all interlocks in rack # 1H75B08 indicate green
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check 3 Moeller power supplies for on (lights flashing at magnets)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+check location and operational readiness of Ion chambers
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+correct LCW flow and pressure (100 psi supply and 60 psi return)
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv cameras on and focused
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+cctv monitors at X terminal off
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+clear of unnecessary equipment
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Man lift and Forklift in truck ramp
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+perform pre sweep of run safe boxes
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+unnecessary personnel exit Hall
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+move Electron spectrometer stairs clear of lower balcony
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ensure polar crane is positioned over the entrance beam pipe 
+\layout Standard
+
+and that power is off at the power disconnect switch 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ensure spectrometer entrance window guards are removed
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ensure target window guards are remove
+\layout Standard
+
+\the_end

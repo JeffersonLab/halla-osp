@@ -1,0 +1,80 @@
+     
+        Hall A OSP Documentation Source
+        ===============================
+         (E.Chudakov   gen@jlab.org)
+
+Introduction:
+------------
+The Hall A OSP (Operation Safety Procedures) document describes  
+the systems, devices and procedures used in Hall A, containing
+the safety issues. The systems include, for example, the HRS
+scintillation counters, the HRS magnets, the Moller polarimeter
+etc.
+
+The purpose of this package is to produce the Hall A OSP manual
+in PDF and HTML formats. It contains the source of the text, 
+the pictures and tools to make the documents. 
+
+Top directory, static:
+src/ - the source (LaTeX) and pictures
+scripts/ - auxilliary scripts and the makefile
+mics/ - miscelleneous documents - not used regularly
+
+Top directory, dynamic:
+run/ - work directory to create the documents
+
+One can create the OSP document with different levels of
+detalization (noted as "infolevel"), the lower the value, 
+the more slim is the document. All the levels contain the 
+basic safety information for every system. Additional 
+information depends on the level:
+infolevel=0 - a short (1 page) description per system including 
+              a picture for the layout if needed;
+infolevel=1 - plus a description of the system's components;
+infolevel=2 - plus a description of the procedures and pictures, 
+              like MEDM windows in PNG format;  
+infolevel=3 - plus the main principles of the devices' operation;
+infolevel=4 - plus photographs and other large pictures
+ 
+Producing the Documents:
+-----------------------
+In order to produce the OSP document, with, say, infolevel=4 one 
+has to:
+1) ./scripts/config osp 4   (in the top directory)
+   This creates a work directory run/ to produce the document 
+2) cd run/
+3) make pdf  - to create the document (osp.pdf) in PDF format 
+4) make html - to create the document (in osp_html/) in HTML format
+
+Browsing the PDF document: 
+-------------------------
+The PDF can be viewed with Acrobat reader of xpdf (on Linux).
+Both browsers can search for a given word. Also, the 
+document contains hyper-references both inside the document
+(so, one can jump forth and back to, say, the literature 
+references), and also outside, using the standard URL.
+In order to use the external references one may need 
+to configure the browsers. Use the "Edit/Preference" button
+on acroread. For xpdf you may need to copy /etc/xpdfrc
+to ~/.xpdfrc and edit it, uncommenting the line
+#urlCommand     "netscape -remote 'openURL(%s)'"
+and commenting out the previous line.
+Typically, xpdf/acroread tries to use an existing WWW browser
+window and does not open a new window.
+
+Instructions for Contrubutors
+----------------------------
+A more detailed instruction can be found in
+http://www.jlab.org/~gen/osp/
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/README,v 1.1 2003/06/05 17:28:27 gen Exp $
+% $Id: README,v 1.1 2003/06/05 17:28:27 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:27 $
+% $Name:  $
+% $Locker:  $
+% $Log: README,v $
+% Revision 1.1  2003/06/05 17:28:27  gen
+% Initial revision
+%

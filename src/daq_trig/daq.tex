@@ -1,0 +1,420 @@
+ 
+\section{Spectrometer Data Acquisition}
+
+
+%  Re:  Hall A OPS Manual Chapter for DAQ and Trigger
+%Author:  Robert Michaels, Hall A Staff, Jefferson Lab
+% Date:  March, 1999
+
+% Files needed for the Hall OPS Manual chapter on DAQ and
+% Trigger are the following.  
+
+%    1. daq.tex   (the latex file)
+%    2. etrig.epsi     (encapsulated postscript figure)
+%    3. htrig.epsi         "            "         "
+%    4. coinc.epsi         "            "         "
+
+
+\par
+The Hall A data acquisition uses CODA\cite{CODAwww}
+(CEBAF Online Data Acquisition), a toolkit
+developed at Jefferson Lab by the Data
+Acquisition Group.  
+%For general information
+%about CODA, see the CODA site\htmladdnormallinkfoot{}{\url{http://coda.jlab.org/}}.
+
+\par
+We have one fastbus crate in the
+electron spectrometer and two fastbus
+crates in the hadron spectrometer.
+The fastbus modules are of the following
+types:
+(1) LeCroy model
+1877 TDCs operating in common--stop with 0.5 nsec
+resolution for our drift chambers and
+straw chambers; (2) model 1875 TDCs
+operating in common--start with 0.1 nsec resolution
+for our scintillators and trigger 
+diagnostics; and (3) model 1881M ADCs
+for signals from scintillators, 
+Cerenkov, and leadglass detectors.
+Event--driven readout of our beam position
+monitors and raster current is
+available from VME systems.
+
+\par
+The trigger supervisor is a custom--made
+module built by the data
+acquisition group.  Its functions are to
+synchronize the readout crates, to administer
+the deadtime logic of the entire system, and
+to prescale various trigger inputs.  
+We have two trigger supervisors,
+one in each spectrometer.  This allows us to
+run the spectrometers independently if needed.
+
+\par
+Use the public account ``adev''
+for running runcontrol, and use ``adaq''
+for other online software including ESPACE.
+On ``adaq'' the directory
+tree of an experiment is adaq/\$EXPERIMENT
+which is organized in subdirectories of 
+various tasks, such as scaler display,
+ESPACE, and other online codes, all of
+which will be described in sections below.
+The trigger management software is described in
+the Trigger chapter. 
+
+\subsection{General Computer Information}
+
+\par
+In the counting room we have various computers 
+for DAQ, analysis, and controls.  The controls
+subnet (which includes the ``hac'' computer 
+among others) is the 
+responsibility of J. Gomez and is documented in Chapter 6.
+The DAQ computer's names are denoted by adaqXN, where
+X=s is SunOS, X=h is HP-UX, and X=l is for Linux PC. 
+adaqs1 is the Compton DAQ computer and is normally
+reserved by the Compton group.  adaqs2 and s3
+are for running the spectrometer DAQ or doing
+online analysis.  adaqh2, h3, and h4 are for
+running the older version 1.4 of CODA still
+used by some setups.  adaql1 and l2 are relatively
+fast Linux PCs available for analysis and are 
+administered by Ole Hansen.  
+
+\par
+To reboot the Suns,  login as ``adaq''
+and type ``reboot''.  On HP's adaqh2-4 you cannot
+reboot, but must ``shutdown''.  For both HPs and Suns
+here is how to shutdown:  Login as ``adaq'' and 
+type ``shutdown'', wait several minutes until the 
+screen indicates it's safe (on Suns it goes black and
+on HPs it will say it's safe), then turn off power.
+To reboot the Linux machines, first hit Ctrl-Alt-F1
+to switch to a text console, then hit Ctrl-Alt-Del 
+to reboot.
+If power fails for a prolonged time,
+you must shutdown before the UPS fails.
+
+\par
+For all computer problems you may
+call Robert Michaels (x7410)
+unless you happen to know another expert who can solve your problem.
+If Michaels is not available, call Ole Hansen  (x7627) or
+Javier Gomez (x7498).  
+
+
+\subsection{Beginning of Experiment Checkout}
+
+\par
+This subsection describes the 
+checkout of DAQ and trigger
+needed before an experiment can start.
+
+\begin{enumerate}
+\item{First ensure that all the fastbus, VME,
+CAMAC, and NIM crates are powered
+on. They should
+boot up in a functional state, except for
+heavily loaded fastbus crates that sometimes
+lose their NVRAM.  (If that happens, call R. Michaels)}
+
+\item{You may download
+a default trigger, following the directions in
+the trigger chapter.  If the hadron momentum changes
+you may need to set a new delay.  A trigger expert
+should do the start-of-experiment
+trigger checklist.}
+
+\item{Make sure the HV is on for all detectors
+and that the values are normal.}
+
+\item{Start the xscaler
+display following the instructions below and
+check that the rates from detectors are normal.}
+ 
+\item{Startup runcontrol (CODA) using the directions below
+and start a run.  With the trigger downloaded
+and the HV on, you are taking cosmics data, typically at 
+a rate of 3 Hz per spectrometer.  
+Examine the data using dataspy,
+dhist, and ESPACE as explained below.  Compare the
+plots and printouts to normal values.}
+
+\end{enumerate}
+
+\subsection{Running CODA}
+
+\par
+This section describes how to run CODA for
+the spectrometer DAQ.  There are two modes:
+1) The most common is the ``1-Trigger-Supervisor (1-TS)''
+mode which uses one trigger supervisor and
+is used for coincidence experiments; and
+2) The ``2-Trigger-Supervisor (2-TS)'' mode which
+is used for running the two spectrometers
+independently.
+
+\par
+The 1-TS mode can also handle single--arm
+triggers but is about 1/2 the aggregate speed
+of the 2-TS mode.  When running the 2-TS
+mode, one uses the adev account on adaqs2 for the
+H-spectrometer and the atrig account on adaqs3 for
+the E-spectrometer.  
+The 1-TS mode normally uses the 
+adev account on adaqs2 only.
+The information that follows refers to 
+the adev account, but
+the atrig account is quite similar.  For example,
+for a file like /home/adev/prescale/prescale.dat
+there is a corresponding file at
+/home/atrig/prescale/prescale.dat.
+
+\par
+Here is how to start and stop a run.
+Normally, when you come on shift, 
+runcontrol will be running.  If not,
+see the section on ``Cold Start'' below.
+To start and stop runs, push the buttons
+``Start Run'' and ``End Run'' in the
+runcontrol GUI.   To change configurations
+use the ``Run Type'' button.  If you have
+been running you will first have to push the
+``Abort'' button before you can change the 
+run type.  Normally the configurations
+you want are the following.
+
+\begin{itemize} 
+\item[~]TWOSPECT -- For running the two spectrometers in
+1-TS mode.
+\item[~]PEDRUN -- To do a pedestal run in 1-TS mode
+\item[~]ELECTRON -- For E-arm in 2-TS mode
+\item[~]HADRON -- For H-arm in 2-TS mode
+\item[~]PEDRUNE -- To do a pulser run for E-arm in 1-TS mode
+\item[~]PEDRUNH -- To do a pulser run for H-arm in 1-TS mode
+\end{itemize} 
+
+\par 
+A note about pedestal runs.  They have the exclusive
+purpose of obtaining pedestals used for pedestal
+suppression.  For details about what is done
+and hints for getting pedestals for ESPACE (which
+does not want the PEDRUN result), see /home/adev/
+ped/README.)
+
+\subsubsection{
+ Some Frequently Asked Questions about DAQ}
+
+
+\begin{itemize} 
+\item{ {\it Q: Where is the data ?} \hskip 0.05in  
+Use a command ``find\_run 1745'' to find
+where run 1745 has been written on disk and MSS.  
+The data are first written to disk.  Files are 
+automatically split, with suffixes .0,.1,.2...etc.
+Splitting occurs at 2 Gbytes to avoid problem
+of system file size limit.  Files are
+archived automatically to tape in the MSS
+tape silo.  Two tape copies are made.  Data are
+purged from disk automatically.  Users should
+{\it never} attempt to copy, move, or erase data.}
+
+\item{ {\it Q: How to adjust prescale factors ? } 
+\hskip 0.05in
+Edit the file /home/adev/prescale/ prescale.dat.
+One common problem is putting typographical
+errors here which then leads to no triggers
+getting accepted.}
+
+\item{ {\it Q: What is the deadtime ? } \hskip 0.05in
+The deadtime is displayed in the datamon
+window, which normally is running next to the 
+runcontrol window, but if this window is
+not up, type ``datamon'' to bring it up.
+This window also shows the full-path-name of the file
+being written by CODA for the present run.}
+
+\item{ {\it Q: Why is the deadtime so high ?  
+(and related)} \hskip 0.1in
+Search for answers among the following.
+The standard lore is that 30\% deadtime is tolerable,
+but you should ask your analysis team to decide.
+Sometimes people seeing large deadtimes
+have forgotten to observe that the beam is in
+pulsed mode.  Another possibility is that the
+workstation is overloaded.  The computer used
+for CODA should not be used for much else.
+Do not attempt to read or write rapidly to the
+same physical disk to which CODA is writing.
+Sometimes it is observed that the workstation
+itself is very sluggish.  
+This could be due to a foreign
+mounted disk having gone away, and there are
+other possible reasons.  If a Cold Start of CODA
+doesn't solve this, you may 
+try rebooting the workstation
+(see computer section).  Also, if
+the event size changes substantially, e.g. due
+to noise conditions, the deadtime as a function
+of rate will change, especially 
+in the regime of high rates.}
+
+
+\end{itemize}
+
+\subsubsection{ Cold Start of CODA}
+
+\par
+If CODA is not running, or if it gets hung up,
+you can do a cold start.  Frequently a subset of
+these steps is sufficient to recover from a hangup,
+but it takes some experience to realize the
+minimum of steps that
+are necessary, so the simplest 
+thing is to do them
+all (it takes a few minutes).
+
+\begin{itemize}
+\item{Kill off all CODA processes on the workstation
+by typing ``kcoda''.  This stops runcontrol, the
+event builder, and other processes, and allows
+for a clean start.}
+\item{Make sure the fastbus and VME crates are
+running.  The crates are named below as 
+``computer(CODA-name)'',
+where computer is the internet name and the 
+CODA-name is the name runcontrol calls it: \hskip 0.05in
+hallasfi1 (ROC1), hallasfi2 (ROC2), hallasfi3 (ROC3),
+halladaq1 (TS0), halladaq4 (TS1), hallavme2 (ROC15),
+and hallavme1 (ROC14).  (Note: for 1-TS mode
+you don't use ROC15, and sometimes ROC3 which
+has FPP is left off for good reasons.)  
+You can check if the ROCs
+are up by looking on the Components work space
+at the telnet session (if it's not logged, 
+try to telnet in).
+If the ROCs don't talk to runcontrol, you can type
+``reboot'' at the arrow prompt ($\rightarrow$).   If you
+don't get this arrow prompt, or if you can't telnet in,
+the computer is hung up, so press 
+for a full 5 seconds
+the labeled green button corresponding
+to this ROC in the middle room of the counting
+room.  After the ROC comes back (2 minutes),
+telnet back in to verify it's up.}
+\item{ Start runcontrol interactively
+by typing ``runcontrol''.
+Iconize and ignore the window from which 
+you started runcontrol.}
+\item{ In runcontrol,
+press the ``Connect'' button.  
+After ``connect''
+wait 10 seconds and press ``Run Types''.  
+You may also press the ``Reset'' button in the upper left
+corner.  Indeed sometimes reset is {\it all} 
+that's needed to fix CODA.
+Choose the run type from the dialog box
+(see section on Running
+CODA for descriptions of run types).}
+\item{ After you configure and download the Run Type,
+you can ``Start Run'' to start a new run.}
+
+
+\end{itemize}
+
+\subsection{Electronic Logbook and Beam Accounting}
+
+Two tools are available for logging information
+by the shift workers: \hskip 0.05in
+1) The Electronic Logbook ``halog'', and
+\hskip 0.05in
+2) The Hall Beam--Time Accounting Table.
+
+\par
+The electronic logbook is a web-based
+repository of logbook data.  There are
+two ways to make entries:  One can use
+the halog GUI (type ``halog'' and make your 
+entry), or one may use a script
+to insert a file.  
+Some data from EPICS
+and scalers, among other things, are inserted
+automatically into halog on each start-of-run
+and each end-of-run.  These data also get
+written into files with the run number in
+their name in /home/adev/epics/runfiles.
+Data appear on the web at a certain URL%
+\htmladdnormallinkfoot{}{\url{http://www.jlab.org/~adaq/halog/html/logdir.html}}.
+
+It is recommended that one software expert
+from the experiment be
+assigned to modify the logging scripts
+as he or she sees fit.
+
+\par 
+The Hall Beam--Time Accounting Table is the mechanism
+to summarize and record
+how the beam time in a shift was spent.  
+These data are logged automatically in a database
+and are e-mailed to various people like the
+run coordinators and the hall leader.
+When you come on shift, the GUI is probably
+already running.  If not, you may start it
+by logging onto adaqs2 as the
+adaq account, cd to /home/adaq/ACCOUNT, and
+type ``atable''.  It is a fairly obvious GUI,
+but there is also a help button
+which explains everything.
+
+
+\subsection {Terminal Servers}
+There are four DEC 
+server 200/MC terminal servers in Hall A;
+one in each of the two spectrometer detector
+huts and two near the beamline.
+These servers allow you check and to modify the
+detector HV, as well as the NVRAM of the 
+frontend DAQ computers. 
+The servers may be accessed through
+dumb terminals connected to any CEBAF terminal server,
+e.g. the VT100 style terminal in the
+middle room of the counting house.
+The table entitled ``Terminal Service for DAQ'' 
+shows the ports
+connected for spectrometer and beamline DAQ.
+
+\begin{table}\centering
+\caption[Data Acquisition: Terminal Service for DAQ]{Terminal Service for DAQ}
+\begin{tabular}{|l|l|l|l|}  \hline
+Port  &   Service & Device & Function\\ \hline
+ 1    &   HAC1    & halladaq1  & E-arm Trig Super TS0\\
+ 2    &   HAC2    & hallasfi1  & E-arm Fastbus ROC1\\
+ 3    &   HAC9    & halladaq4 & H-arm Trig Super TS1 \\
+ 4    &   HAC11   & hallasfi2  & H-arm Fastbus ROC2\\
+ 5    &   HAC12   & hallasfi3  & H-arm Fastbus ROC3\\
+ 6    &   HAC5    & LeCroy 1450 & E-arm HV control\\
+ 7    &   HAC6    & LeCroy 1450 & E-arm HV control\\
+ 8    &   HAC13   & LeCroy 1450  & H-arm HV control\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+ 
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Id: daq.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:32 $
+% $Name:  $
+% $Locker:  $
+% $Log: daq.tex,v $
+% Revision 1.1  2003/06/05 17:28:32  gen
+% Initial revision
+%

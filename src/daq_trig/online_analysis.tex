@@ -1,0 +1,104 @@
+\section{Online Analysis, Data Checks}
+ 
+\par
+The following tools are available for checking
+data online.
+
+
+\subsubsection{Scaler Display and Scaler Events}
+Scaler rates and values are displayed using
+a MOTIF based display called ``xscaler''
+written by C. Howell of Duke University.
+Normally this is already running on adaqs2 or s3.
+It also runs on HP-UX but the SunOS version
+is preferred.  If it is not running, login as
+adaq and go to the appropriate directory,
+which is 
+/home/adaq/\$EXPERIMENT/electron/scaler
+and
+/home/adaq/\$EXPERIMENT/hadron/scaler
+for the E-arm and H-arm respectively
+where \$EXPERIMENT is an environment
+variable like e95001.
+Then type ``xscaler'' there.  
+{\it Remember} to push the button ``Start''.
+The first several pages are the scaler rates and
+the next half of the pages are the absolute
+scaler counts.  The scalers are cleared at
+the beginning of each CODA run.
+Scalers are read out at approximately 0.5 Hz 
+and injected into the CODA data-stream 
+as event type 140.  A file
+``scaler\_history.dat'' is maintained which is
+a complete history of scaler readings at
+the end of each run that ended normally.
+For 1-TS mode, this file is in /home/adev/scaler.
+
+\subsection{Analysis using ESPACE}
+
+ESPACE is the main offline software package
+for analyzing Hall A experiments, and it is
+used for rapid near-online analysis in the
+counting room.  ESPACE is
+documented in a separate chapter, 
+but it is worth mentioning here in a list of
+essential tools for checking data.
+
+\subsection{Dataspy and Dhist} 
+
+Dataspy and Dhist are online diagnostic programs
+whose purposes are: 
+\hskip 0.05in 1) To print
+out randomly sampled detector data; and
+\hskip 0.05in 
+2) To automatically plot to the screen
+histograms of online data.
+\hskip 0.05in 
+Dhist is actually a shell script which runs 
+the executable ``dplot''.  
+For some online help, simply type
+``dataspy'' or ``dplot''.
+These codes analyze a random sample of
+of {\it raw, uncut} data
+in real time from the CODA computer.
+The data are distributed on the network by
+a server which obtains data from shared memory.
+
+\par 
+This paragraph assumes you are on shift
+and wish to run dhist.  
+While ``dplot'' can run in
+several ways, let's be definite:  Log in to
+adaqh2 (or s3) as ``adaq'' account.  If dhist
+isn't running, type ``dhist''.  Now you will
+see a reminder of what directory to go to and
+that you should type ``./dhist'' there.
+
+\par 
+There are optional interfaces ``dopte'' and 
+``dopth'' for turning on/off the histogram
+pages.  The dopte(h) interfaces also show an 
+alarm status for the histograms by statistical
+comparison to a set of reference histograms.
+To start these interfaces, type ``dopte'' or
+``dopth'' for the E-arm and H-arm respectively.
+
+\par 
+dhist makes about 20 pages of plots which pop
+up on the workstation screen and remain for
+a few seconds in succession.  Each page also
+results in a postscript file for printing, and
+there is a histogram file dplot.his which one
+can view in PAW.    
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/Attic/online_analysis.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Id: online_analysis.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:32 $
+% $Name:  $
+% $Locker:  $
+% $Log: online_analysis.tex,v $
+% Revision 1.1  2003/06/05 17:28:32  gen
+% Initial revision
+%

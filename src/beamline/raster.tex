@@ -1,0 +1,73 @@
+\section{Fast Raster}
+
+The beam is rastered on target with an amplitude of
+several millimeters to prevent overheating.  
+The raster is a pair of horizontal (X) and vertical (Y)
+air-core dipoles located 23 m upstream of the
+target. The raster has been used in two different modes,
+sinusoidal and amplitude modulated. In the sinusoidal pattern
+both the X and Y magnet pairs are driven with pure sine waves
+with $90^{\circ}$ relative phase, 
+and frequencies which do not produce a closed Lissajous pattern.
+In the amplitude modulated (or square root of time) mode  
+both the X and Y magnets are driven at 18 kHz with
+a $90^{\circ}$ phase between X and Y producing  a circular
+pattern. The radius of this pattern is changed by amplitude
+modulation at 1 kHz. The radius modulation
+is controlled by a function generator whose function
+creates a uniform distribution of the area swept out
+by the beam motion. It is not possible to switch on the fly
+between the two modes of operation as hardware changes are required.
+
+One can view the status of the raster in the
+EPICS overview screen called ``General Accelerator
+Parameters'' where the set-point for the radius amplitude
+and the readback of the peak-current in the raster are displayed.
+
+Control of the raster is done by first asking the MCC
+operators to set up the raster for a particular radius, 
+typically 2.5 mm.
+The control software assumes a field-free region between
+the raster and the target, so it is only approximately
+correct because there are four quadrupoles in this region.
+It is important to check the raster spot size and
+make adjustments if necessary.  The main adjustment is made
+by asking MCC to change the radius.
+Relatively small independent adjustments to the 
+gains on the X and the Y raster
+coils are available in the middle room of the hall A
+counting room using the ``PGA Controller'' knobs.
+Near these knobs is also located an oscilloscope X-Y trace
+of the current in the raster.  A fast shutdown (FSD) shuts
+the beam down within 0.1 msec if the raster fails, thus
+affording some protection of the target.
+
+{\it NOTE:  If you are unsure of the status of the raster,
+measure the spot size with very low current ($\le 2 \mu$A) or with
+the target out of the beam.}  An unfortunately common and 
+potentially fatal error 
+is to check the beam spot size with high current on target; by
+the time you check it, the target might already be destroyed.
+The rastered beam spot on target can be checked with
+plots in ESPACE or by using the stand alone code called ``spot''.
+Spot is probably already running somewhere; it runs on the 
+Linux or Sun computers in the counting room; if it's not
+running, type ``spot''.  When a new CODA run is started,
+spot automatically clears its histograms and displays 
+in a window the X-Y beam position monitor
+coordinates from the first few thousand events from the
+start of the run.  
+For more details on usage, type ``spot -h'' (help).
+
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/raster.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Id: raster.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:32 $
+% $Name:  $
+% $Locker:  $
+% $Log: raster.tex,v $
+% Revision 1.1  2003/06/05 17:28:32  gen
+% Initial revision
+%

@@ -1,0 +1,870 @@
+\section{M{\o}ller Polarimeter}
+\label{sec:moller}
+
+\subsection {Purpose and Layout}
+\label{sec:moller_purpose}
+%\cbstart
+
+
+The Hall A beam line is equipped with a M{\o}ller 
+polarimeter
+whose purpose is 
+to measure the polarization of the electron beam delivered to the hall. 
+
+ \begin{figure}[bht]
+    \begin{center}
+        \includegraphics*[angle=0,width=\textwidth]{moller_layout_v}
+    \end{center}
+    \caption{Layout of M{\o}ller polarimeter. The origin of the 
+            coordinate frame is at the center of the polarimeter
+             target, which is 17.5~m upstream of the Hall A target.
+            }
+    \label{fig:moller_layout} 
+ \end{figure}  
+
+The M{\o}ller polarimeter consists of (see Fig.\ref{fig:moller_layout}):
+\begin{itemize}
+\item  a magnetized ferromagnetic foil used as a polarized electron target,
+       placed 17.5 m upstream of the central 
+       pivot point of the Hall A High Resolution Spectrometers;
+
+\item a spectrometer consisting of three quadrupole magnets and a dipole magnet,
+      used to deflect the electrons scattered in a certain kinematic
+      range towards the M{\o}ller detector;
+
+\item a detector and its associated shielding house;
+\item a stand alone data acquisition system;
+\item off-line analysis software which helps to extract the beam polarization
+      from the data immediately after the data are taken. 
+\end{itemize}
+
+The beam polarization is measured by measuring the difference
+in the counting rates for two beam helicity samples.  
+%This document discusses the safe operation of the M{\o}ller polarimeter
+%in the Hall A beam line.
+
+There are also external resources of 
+information\htmladdnormallinkfoot{}{(Home page: \url{http://www.jlab.org/~moller/})}. 
+
+\infolevthree{
+\subsection {Principles of Operation}
+\label{sec:moller_principles}
+
+The cross-section of the M{\o}ller scattering 
+$ \vec{e^-} + \vec{e^-} \rightarrow e^- + e^-$
+depends on the beam and target polarizations ${\cal P}^{beam}$ and 
+${\cal P}^{target}$ as:
+\begin{equation}
+         \sigma \propto ( 1 +  
+            \sum_{i=X,Y,Z} (A_{ii}\cdot{}{\cal P}^{targ}_{i}\cdot{}{\cal P}^{beam}_{i})) , 
+\end{equation}
+where $i = X,Y,Z$ defines the projections of the polarizations. 
+The analyzing power $A$ depends on the scattering angle in the CM frame 
+$\theta{}_{CM}$. 
+Assuming that the beam direction is along the Z-axis and that the scattering
+happens in the ZX plane:
+\begin{equation}
+         A_{ZZ} = 
+            -\frac{\sin^2\theta{}_{CM}\cdot(7+\cos^2\theta{}_{CM})}
+                                   {(3+\cos^2\theta{}_{CM})^2},
+         A_{XX} = -\frac{\sin^4\theta{}_{CM}}
+                       {(3 + \cos^2\theta{}_{CM})^2},
+         A_{YY} = -A_{XX}
+\end{equation}
+
+The analyzing power does not depend on 
+the beam energy.
+At $\theta{}_{CM}=90^o$ the analyzing power has its maximum $A_{ZZ}^{max}=7/9$. 
+A transverse polarization also leads to an asymmetry, though the analyzing power is 
+lower:  $A_{XX}^{max}=A_{ZZ}^{max}/7$. The main purpose of the polarimeter
+is to measure the longitudinal component of the beam polarization.
+ 
+The M{\o}ller polarimeter of Hall A detects pairs of scattered electrons in a 
+range of $ 75^o < \theta{}_{CM} < 105^o$. The average analyzing power 
+is about $<A_{ZZ}>=0.76$.
+
+The target consists of a thin magnetically saturated ferromagnetic foil.
+In such a material about 2 electrons per atom can be 
+polarized. An average electron polarization of about 8\% can be obtained.
+In Hall A M{\o}ller polarimeter the foil is magnetized along its plane and
+can be tilted at angles $20-160^o$ to the beam. The effective target 
+polarization is 
+${\cal P}^{target}={\cal P}^{foil}\cdot{}\cos\theta{}^{target}$.
+
+The secondary electron pairs pass through a magnetic spectrometer
+which selects particles in a certain kinematic region. Two electrons
+are detected with a two-arm detector and the 
+coincidence counting rate of the two arms is measured.
+
+The beam longitudinal polarization is measured as:
+\begin{equation}
+           {\cal P}^{beam}_{Z} = \frac{N_{+}-N_{-}}{N_{+}+N_{-}}\cdot{}
+      \frac{1}{{\cal P}^{foil}\cdot{}\cos\theta{}^{target}\cdot{}<A_{ZZ}>},
+\end{equation}
+where $N_{+}$ and $N_{-}$ are the measured counting rates with two opposite
+mutual orientation of the beam and target polarizations, while 
+$<A_{ZZ}>$ is obtained using Monte-Carlo calculation of the M{\o}ller 
+spectrometer acceptance, ${\cal P}^{foil}$ is derived from special
+magnetization measurements of the foil samples and $\theta{}^{target}$
+is measured using a scale, engraved on the target holder and seen
+with a TV camera, and also using the counting rates measured at
+different target angles.
+
+The target is rotated in the
+horizontal plane. The beam polarization may have a horizontal 
+transverse component, which would interact with the horizontal transverse 
+component of the target polarization. The way to cancel the influence
+of the transverse component is to take an average of the asymmetries
+measured at 2 complimentary target angles, say 25 and $155^o$. 
+}
+
+\infolevone{
+
+\subsection{Description of Components}
+\label{sec:moller_compon}
+
+\subsubsection{MEDM Control}
+\label{sec:moller_compon_medm}
+
+ Several components of the polarimeter, namely the target position and
+ the current in the magnets can be checked
+ using the regular MEDM program of Machine Control Center (MCC). The appropriate
+ window%
+\infolevtwo{
+   ~\ref{fig:moller_medm_1}
+   \begin{figure}% [htb]
+      \begin{center}
+          \includegraphics*[angle=90,scale=0.45]{moller_medm_window}
+      \end{center}
+      \caption{The M{\o}ller target rotary dial.
+            }
+      \label{fig:moller_medm_1} 
+   \end{figure}  
+}
+can be called from the Hall A MEDM menues. Only the MCC can change
+the values in this window.
+
+\subsubsection{Polarized Electron Target }
+\label{sec:moller_compon_targ}
+
+The M{\o}ller Polarized Electron Target is
+placed on the beamline 17.5 m upstream of the main Hall A
+physics target.
+\infolevfour{
+   The photograph on Fig.~\ref{fig:moller_targ_1} shows the
+   target chamber, the beam pipe, Helmholtz coils and other
+   elements.
+   \begin{figure}% [hbt]
+      \begin{center}
+          \includegraphics*[angle=0,width=\textwidth]{moller_targ_phot1}
+      \end{center}
+      \caption{The M{\o}ller target.
+            }
+      \label{fig:moller_targ_1} 
+   \end{figure}  
+}
+
+Two target slots exist, called ``bottom'' and ``top''.
+For the M{\o}ller target at the moment
+a supermendur foil 12~$\mu$m thick is used, positioned in the ``bottom'' 
+slot. The target block can be moved vertically from the center,
+which contains the hole for the beam, to either ``bottom'' or ``top'' 
+position.  
+The foil can be tilted to the beam at an angle required,
+in a range from $20^o$ to $160^o$.
+
+\infolevtwo{
+Both vertical movement of the target and its rotation is controlled by the 
+Machine Control Center (MCC)
+operators. The vertical movement is controlled by 3 buttons
+on the M{\o}ller MEDM display, named ``center'', ``bottom'' and ``top''.
+Rotation is controlled by typing an angle, measured in certain units,
+in a ``rotary'' window and pressing RETURN. The size of the unit is defined
+by the end switches which stop the target rotation at low and high
+end points. The distance between these 2 switches is about $140^o$,
+and this distance is divided into 80 units. Therefore one unit is about
+$1.75^o$. In order to turn the target to $90^o$ one should set a value
+of about 38 units. The default rotary position is at 0 units and
+the target cannot be moved vertically being at a different position.
+}
+
+\begin{safetyen}{20}{20}
+Before the target is moved vertically the target
+movement should be ``masked'' by the MCC operators, since the vertical
+movement may bring thick construction elements into the beam area
+and therefore is connected to the Fast Shutdown (FSD). The target rotation
+is safer and can be performed without ``masking'' the target movement
+and is normally performed without turning off the beam.
+A potentially dangerous target rotation to angles lower than $15^o$
+is prevented mechanically. 
+\end{safetyen}
+
+\infolevtwo{
+he target motion is supervised using 2 TV cameras, displayed in
+Hall A counting house.
+One camera is looking from the side. A glass window in the target 
+vacuum box allows one to see the beam area in the place where 
+a target can be moved in. The central position (empty) of the target
+block is seen as an empty round hole. A target moved in is clearly
+visible. The second camera looks from the top at the target
+holder. A scale 
+}
+\infolevfour{
+   (Fig.~\ref{fig:moller_targ_2})
+   \begin{figure}[hbt]
+      \begin{center}
+          \includegraphics*[angle=0,scale=0.5]{moller_targ_phot2}
+      \end{center}
+      \caption{The M{\o}ller target rotary dial.
+            }
+      \label{fig:moller_targ_2} 
+   \end{figure}  
+}
+\infolevfour{
+engraved on the holder shows its angle in degrees. 
+This scale gives correct relative angles of the target.
+The absolute angle of the target to the beam is measured
+using the event rates, measured at a given target angle and
+at about $90^o$. At the moment the scale has a shift, that:
+$\theta^{target}~\approx~\theta^{scale}-2.5^o$.
+}
+
+The target is magnetically saturated using 2 external
+Helmholtz coils, providing a field of about 240~Gs along the beam
+axis at the target center. The coils are turned on by the M{\o}ller 
+CODA task, during the data taking. Its polarity is reversed for each new
+run of data taking (one run typically takes 2-3~min).
+
+\begin{safetyen}{20}{20}
+The beam of a few $\mu$A may heat up the target locally by 20-40K,
+which may change slightly the target polarization. Therefore
+the beam current is limited to about 2$\mu$A\footnote{ 
+A system for cooling the target with liquid nitrogen has been built. 
+However, it has not been used and there are no plans to use it.}
+because of heating, while the dead time problems actually
+limit the current to about 0.5$\mu$A.
+\end{safetyen}
+
+\infolevtwo{
+The temperature of the target holder is measured using cernox resistors.
+
+The target magnetization has been measured before the installation\footnote{
+The magnetization can be also measured in situ, by changing the field in
+the Helmholtz coils and measuring the voltage at pick-up coils, wound
+around the target foils, although this method is less accurate
+than the lab method and has not been used.}.
+}
+}
+
+%\cbend
+\infolevone{
+
+\subsubsection {Spectrometer Description }
+\label{sec:moller_compon_spectr}
+
+The M{\o}ller polarimeter spectrometer consists of three quadrupole magnets and one
+ dipole magnet (see Fig.\ref{fig:moller_layout}
+ \infolevtwo{
+   and also Fig.\ref{fig:moller_medm_1}
+ }
+ ):
+\begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
+   \item quadrupole {\bf MQM1H02} (on the yoke labeled {\bf $PATSY$});
+   \item quadrupole {\bf MQO1H03} (on the yoke labeled {\bf $TESSA$}); 
+   \item quadrupole {\bf MQO1H03A} (on the yoke labeled {\bf $FELICIA$})
+   \item dipole {\bf MMA1H01} (on the yoke marked as {\bf $University \, of \,
+    Kentucky$}).
+\end{list} 
+\noindent
+\infolevfour{
+   The photograph on Fig.~\ref{fig:moller_spectr_phot1} shows the side view
+   of the spectrometer.
+   \begin{figure}% [hbt]
+      \begin{center}
+          \includegraphics*[angle=0,width=\textwidth]{moller_spectr_phot1}
+      \end{center}
+      \caption{The M{\o}ller spectrometer. The target is located at the right
+            side of the photograph, the blue dipole magnet is close to the center.
+            }
+      \label{fig:moller_spectr_phot1} 
+   \end{figure}  
+}
+
+These magnetic elements are controlled by MCC operators.
+
+The spectrometer accepts electrons scattered close to the horizontal 
+plane (see Fig.\ref{fig:moller_layout}). The acceptance in the asymuthal
+angle is limited by a collimator in front of the dipole magnet, while
+the detector vertical size and the magnetic field in the dipole magnet limit 
+the acceptance in the scattering angle $\theta_{CM}$.
+
+\infolevtwo{
+ The electrons have to pass through
+the beam pipe in the 
+region of the quads, through the collimator in front of 
+the dipole magnet, with a slit of 0.3-4~cm high, 
+through two vertical
+slits in the dipole, about 2~cm wide, positioned at $\pm$4~cm 
+from the beam. These slits are ended with vacuum tight windows
+at the end of the dipole. The dipole deflects the scattered 
+electrons down, towards the detector. 
+The detector, consisting
+of 2 arms - 2 vertical columns -  
+is positioned such that electrons, scattered at $\theta_{CM}=90^o$ pass
+close to its center. 
+This acceptance is about $76<\theta_{CM}<104^o$. At beam energies below 1~GeV
+the vertical slits in the dipole limit the acceptance to about
+$83<\theta_{CM}<97^o$.
+}
+
+For a given beam energy there is an optimal setting of the currents in 
+these 4 magnets%
+\infolevtwo{ (see section~\ref{sec:moller_oper_magset})}.
+At energies higher than 2.5~GeV it is possible
+to optimize the beam line for both regular running and for 
+M{\o}ller measurements. Typically, the dipole magnet should be turned on
+only for the M{\o}ller measurements. 
+
+\subsubsection {Detector}
+\label{sec:moller_compon_det}
+
+The M{\o}ller polarimeter detector is located in the shielding box downstream 
+of the dipole and consists of two identical modules placed symmetrically about a vertical
+plane containing the beam axis, thus enabling   
+coincidence measurements.
+Each part of the detector includes:
+\begin{itemize}
+  \item An aperture detector consisting of a 28$\times$4cm$\times$1cm 
+        scintillator  with Plexiglas light guide and a Hamamatsu R1307 (3 inch)
+        photomultiplier tube.
+  \item A ``spaghetti'' lead - scintillating fiber calorimeter\footnote{
+         before summer 2002 a lead glass calorimeter consisting of 4 
+         8$\times$8$\times$30 cm$^3$
+         was used. It lost a big fraction of the amplitude due
+         to the radiation damage and deterioration of the optical contact.},
+        consisting of 2 blocks 9$\times$15$\times$30~cm$^3$, each separated into 2
+        channels equipped with Photonis XP2282B (2 inch) photomultiplier tubes. Thus,
+        The vertical aperture is segmented into 4 calorimeter channels.
+\end{itemize}
+The HV crate is located in the Hall A rack 15 and is connected
+to a portserver {\em hatsv5}, port 11.
+HV for the lead glass detectors is tuned in order to align the M{\o}ller peak
+position at a ADC channel 300 for each module, which means that the gain
+of the the bottom modules is about 50\% higher than the gain of the top
+modules.
+
+\obsolete{
+The values of HV are presented in table \ref{tab:moller_hv}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|r|r|c||r|r|r|r|r|r|} \hline
+    & & & \multicolumn{6}{c|}{Voltage (V) for given beam energies (MeV)} 
+  \\ \cline{4-9}
+      \multicolumn{1}{|r|}{slot}
+    & \multicolumn{1}{r|}{\#}
+    & \multicolumn{1}{c||}{PMT}
+    & 845$^{~}$ & 1645$^{~}$ & 2445$^{~}$ & 3245$^{~}$ & 3334$^{~}$ & 4252$^{~}$  
+  \\ \hline
+ 4  &  0 & LG (L) 1  & 1974 & 1896 & 1851 & 1819 & 1817 & 1790  \\  \hline
+ 4  &  1 & LG (L) 2  & 1914 & 1835 & 1791 & 1759 & 1757 & 1730  \\  \hline
+ 4  &  2 & LG (L) 3  & 1909 & 1842 & 1803 & 1775 & 1773 & 1750  \\  \hline
+ 4  &  3 & LG (L) 4  & 1870 & 1806 & 1770 & 1744 & 1742 & 1720  \\  \hline
+ 4  &  4 & LG (R) 5  & 1903 & 1814 & 1762 & 1727 & 1724 & 1694  \\  \hline
+ 4  &  5 & LG (R) 6  & 1897 & 1824 & 1781 & 1751 & 1749 & 1724  \\  \hline
+ 4  &  6 & LG (R) 7  & 1934 & 1843 & 1790 & 1754 & 1751 & 1720  \\  \hline
+ 4  &  7 & LG (R) 8  & 1935 & 1865 & 1824 & 1797 & 1794 & 1770  \\  \hline
+ 4  &  8 & Ap scin L & 1800 & 1800 & 1800 & 1800 & 1800 & 1800  \\  \hline
+ 4  &  9 & Ap scin R & 1900 & 1900 & 1900 & 1900 & 1900 & 1900  \\  \hline
+\end{tabular}
+\end{center}
+\caption[M{\o}ller Polarimeter: HV Summary]{HV connections and
+  HV values. 
+
+}
+\label{tab:moller_hv}
+\end{table}
+
+In order to obtain the HV values for an arbitrary energy:
+\begin{list}{--}{\setlength{\itemsep}{0.cm}}
+\item login to {\it adaqs3} as {\it moller}; 
+\item $adaqs3>~cd~paw/analysis$, start PAW, select Workstation type 3; 
+\item $paw>~exec~sett\_{}magp~e0=3.2$, the required values of $GL$ or $BdL$ are printed. 
+\end{list} 
+} 
+
+
+\subsubsection {Electronics}
+\label{sec:moller_compon_ele}
+
+The electronics, used for M{\o}ller polarimetry, is located
+in several crates in the Hall:
+\begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+  \item[1.] VME, board computer \mycomp{halladaq14} - for Helmholtz coils control;
+  \item[2.] VME, board computer \mycomp{hallavme5} - for DAQ;
+  \item[3.] CAMAC - for the trigger and data handling;
+  \item[4.] NIM - for the trigger and data handling;
+  \item[5.] LeCroy 1450 - HV crate, slot 4.
+\end{list}
+\noindent
+\infolevfour{
+   The photograph on Fig.~\ref{fig:moller_electr_phot1} shows the crates 2-4.
+   \begin{figure}% [hbt]
+      \begin{center}
+          \includegraphics*[angle=0,height=20cm]{moller_electronics_phot1}
+      \end{center}
+      \caption[The M{\o}ller electronics crates.]{The M{\o}ller electronics,
+            located in the Hall, at the right side of the beam line. 
+            The top crate is the VME DAQ crate, the middle one is the CAMAC
+            crate and the bottom one is the NIM crate. The first VME
+            crate, used to control the Helmholtz coils, is above these three.
+            }
+      \label{fig:moller_electr_phot1} 
+   \end{figure}  
+}
+\noindent
+One can connect to the CPU boards and the HV crate via a portserver:
+\begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+  \item[1.] \mycomp{halladaq14} - \mycomp{hatsv5} port \mycomp{3};
+  \item[2.] \mycomp{hallavme5}~ - \mycomp{hatsv5} port \mycomp{4};
+  \item[5.] LeCroy 1450 - \mycomp{hatsv5} port \mycomp{11}.
+\end{list}
+
+\noindent
+\infolevfour{
+    The M{\o}ller target positions are connected to the Fast ShutDown (FSD)
+    system of the accelerator.
+   The photograph on Fig.~\ref{fig:moller_fsd_phot1} shows the crate which controls
+   the signals.
+   \begin{figure}[hbt]
+      \begin{center}
+          \includegraphics*[angle=0,width=\textwidth]{moller_fsd_phot1}
+      \end{center}
+      \caption[The M{\o}ller FSD crate.]{The M{\o}ller target
+            motion may cause the Fast ShutDown (FSD) of the accelerator.
+            The LEDs in the top right corner show the appropriate
+            signals from the target. The top LED lit indicates
+            no FSD signal.
+            }
+      \label{fig:moller_fsd_phot1} 
+   \end{figure}  
+}
+
+\subsubsection {DAQ}
+\label{sec:moller_compon_daq}
+
+The DAQ%
+\htmladdnormallinkfoot{}{(More details in: \url{http://www.jlab.org/~moller/guide1_linux.html})} 
+ is based on CODA\cite{CODAwww} and runs at \mycomp{adaql2},
+connecting to \mycomp{hallavme5}. The database server for CODA
+is located on \mycomp{adaqs2}. 
+
+\subsubsection {Slow Control}
+\label{sec:moller_compon_slow}
+
+The Helmholtz coils are controlled via a script starting automatically
+at the beginning of each CODA run. The polarity of the current in the coils
+is reversed at every new run.
+
+The HV, the electronics settings and the collimator position
+are controlled from a Java program, equipped with a GUI.
+
+ Start the slow control task:
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql1} as \mycomp{moller};
+   \item \mycomp{adaql1$>$~cd~Java/msetting/}
+   \item \mycomp{adaql1$>$~./mpc} - start the slow control task.
+ \end{list}
+ It may take about a minute to start all the components and read out
+ the proper data from the electronic crates.
+\infolevtwo{
+  The slow control console is presented on Fig.~\ref{fig:moller_slowc_1}.
+   \begin{figure}[htb]
+      \begin{center}
+          \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window}
+      \end{center}
+      \caption{The slow control console (Java).
+            }
+      \label{fig:moller_slowc_1} 
+   \end{figure}  
+}
+ The components are: 
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item \mycomp{EPICS Monitor}: these EPISC variables are stored for every DAQ run
+   \item \mycomp{Detector Settings} is used to set up the thresholds, delays etc.
+   \item \mycomp{High Voltage Control} for the photomultiplier tubes
+   \item \mycomp{Motor Control} to move the collimator
+   \item \mycomp{Target Monitor} information on the target position, magnets etc.
+ \end{list}
+\infolevtwo{
+
+  High voltage can be changed or turne on/off using the HV console (Fig.~\ref{fig:moller_slowc_hv}),
+  where the first 8 channels belong to the calorimeter and the other 2 channels
+  belong to the aperture counters.
+   \begin{figure}[htb]
+      \begin{center}
+          \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window_hv}
+      \end{center}
+      \caption{HV control console.
+            }
+      \label{fig:moller_slowc_hv} 
+   \end{figure}  
+  The settings of the CAMAC electronics used to make the trigger
+  and control DAQ are controlled using the \mycomp{Detector Setting} window (Fig.~\ref{fig:moller_slowc_de}):
+   \begin{figure}[htb]
+      \begin{center}
+          \includegraphics*[angle=0,scale=0.55]{moller_slowcntrl_window_de}
+      \end{center}
+      \caption{Detector setting console.
+            }
+      \label{fig:moller_slowc_de} 
+   \end{figure}  
+   \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+     \item \mycomp{Delay line} - the delays for the calorimeter and counter signals;
+     \item \mycomp{LedDiscriminator} - discriminator thresholds for the calorimeter and the counters
+     \item \mycomp{PLU Module} - settings of the logical unit
+   \end{list}
+  The collimator width can be changed using
+  \mycomp{Motor Control} window (Fig.~\ref{fig:moller_slowc_co}),
+   \begin{figure}[htb]
+      \begin{center}
+          \includegraphics*[angle=0,scale=0.55]{moller_slowcntrl_window_co}
+      \end{center}
+      \caption{Control console for the collimator (and also the slide, which is not relevant
+               here).
+            }
+      \label{fig:moller_slowc_co} 
+   \end{figure}  
+}
+
+}
+
+\infolevtwo{
+\subsection {Operating Procedure }
+\label{sec:moller_oper}
+
+The procedure includes general steps as follows: 
+\begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
+  \item ``Non-invasive'' preparations - start the appropriate
+          computer processes, turn on the HV and learn the
+          magnet settings needed;
+  \item ``Invasive'' preparation: beam tuning with the regular
+          magnet settings, loading the M{\o}ller settings,
+          beam tuning, if neccessary, installing the M{\o}ller target;
+  \item Detector check/tuning;
+  \item Measurements;
+  \item Restoring the regular settings.
+\end{list}
+The ``non-invasive'' preparations can be done without disturbing the running 
+program in the Hall. It is reasonable to perform these preparations
+before starting the ``invasive'' part.
+
+In more details, the ``invasive'' procedure looks as follows:
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Remove the main target;
+   \item Tune the beam position with any convenient beam current;
+   \item Load the M{\o}ller settings in the magnets; 
+   \item Check the beam position;
+   \item Tune the beam to $\sim{}0.3~\mu$A for M{\o}ller measurements; 
+   \item Pull in the M{\o}ller target;
+   \item Make measurements at the forward target angle ($\sim{}23^\circ$);
+   \item Make 2 short runs at the normal target angle ($\sim{}90^\circ$);
+   \item Make measurements at the backward target angle ($\sim{}163^\circ$);
+ \end{list}
+
+\subsubsection {Initialization}
+\label{sec:moller_oper_initial}
+
+In order to control the operations several sessions
+of \mycomp{moller} account must be opened at computers \mycomp{adaql1,...}.
+The data analysis and some initial calculations are done using a PAW\cite{PAWwww}
+session on  \mycomp{adaql1}:
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql1} as \mycomp{moller};
+   \item \mycomp{adaql1$>$~cd~paw/analysis}, start PAW (type \mycomp{paw}), select Workstation type 3.  
+ \end{list}
+\noindent
+CODA runs on \mycomp{adaql2}: 
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql2} as \mycomp{moller}, make two sessions;
+   \item \mycomp{adaql2$>$ kcoda} - clean up the old coda;
+   \item \mycomp{adaql2$>$ et\_start moller \&} - start ET if it is not running;
+   \item Reset \mycomp{hallavme5} and \mycomp{halladaq14} by pressing two top left green
+         reset buttons in the middle room of the counting house;
+   \item \mycomp{adaql2$>$ runcontrol} - start CODA;
+   \item Click \mycomp{Connect} and select the configuration \mycomp{beam\_pol};
+   \item Click \mycomp{Download} to download the program into the VME board.
+ \end{list}
+
+\noindent
+Slow control:
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql1} as \mycomp{moller};
+   \item Start the slow control (see section~\ref{sec:moller_compon_slow});
+   \item Load the regular settings and the appropriate HV.
+ \end{list}
+
+\subsubsection {Initial Beam Tune}
+\label{sec:moller_oper_initbeam}
+
+ Typically, the M{\o}ller measurements are taken during the regular Hall A
+ running, when the beam has been tuned for this running. However,
+ the M{\o}ller measurements require a different magnetic setting.
+ At least the dipole magnet has to be turned on. This magnet
+ slightly deflects the beam downward. The deflection at the main target
+ could be 2-8~mm, depending on the beam energy. It is, therefore, 
+ useful to tune the beam position before the dipole is turned on. It can be done
+ before the magnets are set to th M{\o}ller mode.
+ The requirements are: 
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item On BPM IPM1H01 (in front of the M{\o}ller target) $|X|<0.2$~mm, $|Y|<0.2$~mm.
+   \item On BPM IPM1H04A/B $|X|<2$~mm, $|Y|<2$~mm.
+ \end{list}
+ The request should be given to MCC. 
+
+\subsubsection {The Magnet Settings}
+\label{sec:moller_oper_magset}
+
+ In order to find the proper settings for the given beam energy, say 3.25~GeV, 
+ type on the PAW session: \\ 
+ \hspace*{0.5cm} \mycomp{PAW$>$~exec~sett\_magp~e0=3.25 nq=3} for 3-quad configuration \\
+ \hspace*{0.5cm} \mycomp{PAW$>$~exec~sett\_magp~e0=3.25 nq=2} for 2-quad configuration \\
+ The printed values for $GL$ and $BdL$ should be checked with the current values,
+ displayed on the MEDM window~\ref{sec:moller_compon_medm}. 
+ The MCC should be asked to load the M{\o}ller settings in the magnets -
+ they have a tool to load the proper settings for the M{\o}ller
+ magnets and a few other magnets on the beam line. 
+ The set values should be compared with the calculated values%
+ \footnote{The reasonable acuracy in the  magnets settings is about 1-2\%}.
+ \begin{safetyen}{5}{2}
+   The beam must be turned off when the magnets are tuned.
+ \end{safetyen}
+
+
+\subsubsection {Final Beam Tune}
+\label{sec:moller_oper_finalbeam}
+
+ The beam parameters for M{\o}ller measurements
+ are: 
+   \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}        
+     \item Remove the main target;
+     \item \begin{safetyen}{5}{0} the beam current $\sim{}0.3~\mu$A and $<2~\mu$A;
+            \end{safetyen}
+     \item the beam current should be reduced mainly by closing the ``slit''
+           in the injector (not by the laser attenuator), in order to
+           reduce the effect of current leak-through from the other halls.
+   \end{list}
+
+
+\subsubsection {Target Motion}
+\label{sec:moller_oper_target}
+ MCC should be asked to put in one of the targets (typically, the \mycomp{bottom}
+\infolevtwo{
+ (see Fig.~\ref{fig:moller_medm_1})
+}
+ target is used). The requirements for the target motion are:
+ \begin{safetyen}{10}{10}
+    \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+       \item Vertical motion: beam OFF, target motion MASKED.
+       \item Rotation: no constraint, the beam can be ON. 
+    \end{list}
+ \end{safetyen}
+
+ Ask the MCC to resume the same beam and check the Ion Chamber
+ {\bf SLD1H03} reading. It should not exceed 1000. At beam energies
+ above 1.6 GeV it should not exceed 300.
+
+\subsubsection{Detector Tuning and Checking }
+\label{sec:dettune}
+
+The goal is to check that the detector is working, that the counting rates
+are normal and that the M{\o}ller peaks are located at about ADC channel 300
+for all the calorimeter blocks.
+
+\begin{list}{}{\setlength{\itemsep}{0.5cm}}
+  \item[A.] Data taking with CODA
+        \begin{list}{}{\setlength{\itemsep}{0.cm}}
+             \item[1.] Take a RUN for about 20k events. Let us assume the run 
+                       number is 9911.
+        \end{list}
+  \item[B.] Data analysis with PAW
+        \begin{list}{--}{\setlength{\itemsep}{0.cm}}
+             \item[1.]  \mycomp{PAW$>$~exec~run~run=9911}: build an NTUPLE and 
+                       attach it to the PAW session;
+             \item[2.]  \mycomp{PAW$>$~exec~lg\_spectra~icut=60~run=9911}: look at the 
+                       ADC distributions. The peaks should be at about ADC channel 300
+                       for all 8 modules. If the peaks are off - try to adjust
+                       the HV (do not go beyond 1990V).
+        \end{list}
+  \item[C.] Check of the background
+        \begin{list}{}{\setlength{\itemsep}{0.cm}}
+             \item[1.] Raise the thresholds to 240~mV of the channels 1 and 2
+                       of the discriminator, using the slow control window 
+                       (see section~\ref{sec:moller_compon_slow});
+             \item[2.] Take a run of about 20k events, say run=9915;
+             \item[3.]  \mycomp{PAW$>$~exec~lg\_spectra~icut=60~cut=11~run=9915}: look at the 
+                       ADC distributions. The peaks should be at about ADC channel 300
+                       for all 8 modules. The histograms 9 and 10 present the sums
+                       of the left and right arms.
+                       The histogram 11 (sum of both arms) should contain a clean peak at
+                       about channel 600;
+             \item[4.] \mycomp{PAW$>$~exec~asyms~angl=23.0~run=9915}: polarization analysis should
+                       provide a reasonable number. Check the scaler rates per second.
+                       The counting rates in each arm should not exceed 600kHz. If they
+                       are higher ask the MCC to reduce the beam current.
+        \end{list}
+\end{list}
+
+\subsubsection {Polarization Measurement }
+\label{sec:polmeas}
+
+\begin{list}{$\bullet$}{\setlength{\itemsep}{0.cm}}
+  \item[1.] Make a note in the logbook of the target angle on the scale, 
+            seen with the TV camera.  
+  \item[2.] Take 4 runs of data with the given angle, each run of about 20-30k
+            events (30k at $E_{beam}<2$~GeV).
+  \item[3.] Ask the MCC to turn the target to 38 units 
+            and make a note of the angle on the scale.
+  \item[4.] Take 2 runs of data with the given angle, each run of about 15k events.
+  \item[5.] Ask the MCC to turn the target to 80 units
+            and make a note of the angle on the scale.
+  \item[6.] Take 6 runs of data with the given angle, each run of about 20-30k
+            events (30k at $E_{beam}<2$~GeV).
+  \item[7.] Analyze the data
+        \begin{list}{--}{\setlength{\itemsep}{0.cm}}
+             \item[1.] \mycomp{PAW$>$~exec~run~run=????} and
+             \item[2.] \mycomp{PAW$>$~exec~asyms~run=????~angl=tang}, for each RUN,
+                       \mycomp{tang} is the target angle observed on the scale.
+             \item[3.] \mycomp{PAW$>$~call~prunpri.f(9000,20000)}, print a table
+                       with the results for a given range of runs.
+%             \item[4.] \mycomp{PAW$>$~shell~ cp ~runs.tab~ \tilde{}{\hbox{}}moller/public\_html/tab/run.tab.9916-9950}, 
+%                       copy the table to a database.
+        \end{list}
+\end{list}
+
+}
+\begin{safetyen}{0}{0}
+\subsection {Safety Assessment}
+\label{sec:moller_safety}
+\end{safetyen}
+
+
+\begin{safetyen}{50}{50}
+\subsubsection{Magnets}
+
+Particular care must be taken in working in the vicinity of the
+magnetic elements of the polarimeter as they can have large currents
+running in them. Only members of the M{\o}ller polarimeter group are
+authorized to work in their immediate vicinity, and only when they are
+not energized. The quadrupole magnets and the leads for the dipole magnet 
+are protected with Plexiglas shields. As with all elements of the
+polarimeter which can
+affect the beamline, the magnets are controlled by MCC. There are four
+red lights which indicate the status of the magnets. The dipole has two
+lights which are activated via a magnetic field sensitive switch placed
+on the coils of the dipole. One light is placed on the floor on beam left,
+and the other is placed on the raised walkway on beam right. The quadrupoles
+have similarly placed lights (one on the floor on beam left and one
+on the walkway), and are lit up when any one of the M{\o}ller quads is 
+energized. The status of the quadrupole power supplies is on the 
+checklist for
+closing up Hall A. Lock and tag training is required of all personnel working
+in the vicinity of the M{\o}ller magnets. \\ 
+
+The power supply for
+the dipole is located in the Beam Switch yard Building (Building 98). 
+The maximum current for the dipole is 450A.
+The quadrupole power supplies are located in Hall A electronics rack 13,
+2 supplies connected in parallel per one quadrupole. The maximum
+current per one power supply is 60A at about 20V. 
+\\
+
+\noindent
+{\bf Vacuum System}\\
+
+One must be careful in working near the downstream side of the dipole
+magnet, as there are two 2 by 16 cm, 4 mil thick titanium windows.
+Only members of the M{\o}ller polarimeter group should work in this
+area.\\
+
+\noindent
+{\bf High Voltage}\\
+
+There are 38 photomultiplier tubes within the detector
+shielding hut, with a maximum voltage of 3000 V. The detector is serviced
+by sliding it back on movable rails. The high voltage must be turned
+off during any detector movement. Only members of the M{\o}ller group
+should move the detector.\\
+
+\noindent
+{\bf Target}\\
+
+To avoid damage to the M{\o}ller target, the target should not be in the beam 
+if the beam current is greater than
+5 $\mu$A. Only MCC can move the target, but the experimenters
+are responsible for ensuring that it is properly positioned.\\
+\end{safetyen}
+
+
+\begin{safetyen}{0}{0}
+\subsection{List of Authorized  Personnel}
+\end{safetyen}
+%All authorized persons must sign next to the correct listed
+%name. This signature indicates that they have read and understand this
+%OSP.
+The list of the presently authorized personnel is given in Tab.~\ref{tab:moller:personnel}.
+Other individuals must notify and receive permission from
+the contact person (see Tab.~\ref{tab:moller:personnel}) before adding their names 
+to the above list.
+
+% include the personnel list
+%\input{\dircur/moller_personnel}
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|ll|l|l|l|l|r|} \hline
+  \multicolumn{2}{|c|}{Name} & Dept. & \multicolumn{2}{c|}{Telephone} & 
+  \multicolumn{1}{c|}{e-mail} & Comment \\ 
+  \cline{4-5}
+   &  &   & JLab & Pager &  & \\ 
+\hline
+ {\em Eugene} & {\em Chudakov}  & JLab    & 6959 & 6959 & gen@jlab.org      & Contact     \\ 
+ Alexander    & Glamazdin       & Kharkov & 6378 &      & glamazdi@jlab.org &  \\ 
+ Viktor       & Gorbenko        & Kharkov & 6378 &      & gorbenko@jlab.org &  \\ 
+ Roman        & Pomatsalyuk     & Kharkov & 6378 &      & romanip@jlab.org  &  \\ 
+\hline
+\end{tabular}
+\end{center}
+\caption{Moller Polarimeter: authorized personnel. The primary contact person's
+ name is marked with with a slanted font. 
+}
+\label{tab:moller:personnel}
+\end{table}
+ 
+%Daniel Dale (606-257-2504, Jlab office x5375, pager 3727, e-mail: dale@pa.uky.edu)\\
+%Ashot Gasparian (606-257-5565, e-mail: gasparian@jlab.org)\\
+%Marie Keese (office x7635, pager x7635, e-mail: keesee@jlab.org)\\
+%Roman Pomasalyk (office x6378, e-mail: romanip@jlab.org )\\
+%Victor Gorbenko (office x6378, e-mail: gorbenko@jlab.org)\\
+%Alexander Glamazdin (office x6378, pager 6370, e-mail: glamazdin@jlab.org))\\
+%Eugene Chudakov (Office x6959, pager 5152, e-mail: gen@jlab.org )\\
+
+
+%\begin{center}
+%{ \bf Other individuals must notify and receive permission from
+% Eugene Chudakov before adding their names to the above list }
+%\end{center}
+
+
+
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Id: moller.tex,v 1.1 2003/06/05 17:28:32 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:32 $
+% $Name:  $
+% $Locker:  $
+% $Log: moller.tex,v $
+% Revision 1.1  2003/06/05 17:28:32  gen
+% Initial revision
+%

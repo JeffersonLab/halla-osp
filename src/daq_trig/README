@@ -1,0 +1,20 @@
+
+  Re:  Hall A OPS Manual Chapter for DAQ and Trigger
+Author:  Robert Michaels, Hall A Staff, Jefferson Lab
+ Date:  March, 1999
+
+ Files needed for the Hall OPS Manual chapter on DAQ and
+ Trigger are the following.  
+
+    1. daq.tex   (the latex file)
+    2. etrig.epsi     (encapsulated postscript figure)
+    3. htrig.epsi         "            "         "
+    4. coinc.epsi         "            "         "
+
+ The file daq.tex compiles "as is".  But to incorporate
+ it into a larger tex file one must comment out the stuff
+ at the top (up to \begin{document}) and also the line at
+ the end (\end {document})
+
+
+ 

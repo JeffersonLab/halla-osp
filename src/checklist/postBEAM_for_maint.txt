@@ -1,0 +1,44 @@
+Post Beam Checklist for maintenance period
+									Revised 2/22/99
+This checklist will be performed after every restricted access to Hall A that maintenance is performed
+People checking list _______________________________________________________
+
+
+ Spectrometers
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+___	Install yellow covers on inlets to spectrometers
+
+  Target
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+___	Install protective shields over vacuum windows if Cryo target is installed
+
+Power supplies
+	( from a computer console )
+Electron
+___	set current to 0 amps by remote control on Q1
+___	set current to 0 amps by remote control on Q2
+___	set current to 0 amps by remote control on Q3
+___	set current to 0 amps by remote control on Dipole
+Hadron
+___	set current to 0 amps by remote control on Q1
+___	set current to 0 amps by remote control on Q2
+___	set current to 0 amps by remote control on Q3
+___	set current to 0 amps by remote control on Dipole
+
+Entrance beam tube
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+Exit beam tube
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+
+Dump
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+___	Inspect visible areas for water leaks
+
+
+ Hall 
+___	NOTE :  LOOK FOR "RADIATION AREA" SIGN and OBEY
+___	Inspect power supply platforms, spectrometers, and the rest of the Hall, looking for water leaks and cryogenic plumes
+___	Man lift and Forklift removed from truck ramp
+
+

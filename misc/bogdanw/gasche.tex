@@ -1,0 +1,504 @@
+\documentclass[12pt]{article} 
+\usepackage{epsfig} 
+\usepackage{graphicx} 
+\begin{document}
+\section{Gas Cherenkov Counter}
+
+\subsection{Overview}
+
+Cherenkov detectors are used for particle identification in physics experiments. 
+They are based on the Cherenkov effect. The velocity
+of the light in transparent materials (glass, aerogel , gas,....) is 
+smaller than in vacuum (their index of refraction is less than one). When
+a high energy charged particle travels through these materials its velocity,
+still limited to the velocity of light in the vacuum, can thus be larger
+than the velocity of light in the material. When this condition occurs a
+light is emitted by material, called the Cherenkov light. By detecting if a given particle
+emits the Cherenkov light, one can detect if its velocity is larger than a 
+threshold velocity depending on the material used. In this manual a gas 
+Cherenkov for electron identification is described.
+\\
+Two similar threshold gas Cherenkov counters have been constructed as a part
+of the particle identification equipment to be included in the focal plane 
+detectors of the High Resolution Spectrometers (HRS) of the TJNAF experimental
+Hall A. Each counter housing is made in steel with thin entry and exit
+windows made of tedlar. Light weight spherical mirrors have also been built 
+resulting in a very thin total thickness traversed by particles. The counter is
+operated at atmospheric pressure with CO2.
+
+This two counters have identical sections $(600 \times 2000)mm^2$ but
+different thicknesses, $1000mm$ for the hadron arm and $1500mm$ for the
+electron arm. These are gas Cherenkov which are use as threshold counters. 
+The refraction in-dice of the gas is choose in order to give the maximum
+light impulsion for electrons and to stay inefficient to other particles, 
+for instance pions until they get $4.8GeV/c$ of impulsion. 
+With CO2 at normal pressure, the refraction 
+index  is $n=1.00041$ which give a threshold of
+\begin{itemize}
+\item[-] $p_{min} = 17 MeV/c $ for electrons
+\item[-] $p_{min} = 4.8 GeV/c $ for pions
+\end{itemize}
+
+Each Cherenkov is made of 10 multiplyer tubes (PMT) and 10 mirrors.
+\begin{itemize}
+\item[-] The PMT (type Burle 8854) have a spherical entrance window of
+$129mm$ of diameter which only a spherical part of $110mm$ of diameter is
+efficient to collect the light obtained after reflection on the mirrors. 
+The photocathode is made of Bialkali with a quantum efficiency of 22.5\% 
+at $385nm$ and a extended response in the UV until $220 nm$.
+\item[-] Each mirror has a rectangular profile $(350 \times 478) mm^2$
+built in a empty sphere of interior radius (reflective face) 
+of $900mm$ and thickness of $10mm$. The very light structure is built
+like honey comb and is constituted as the following manner:
+\begin{itemize}
+\item[*] magnesium which protect aluminum
+\item[*] aluminum which assure the reflectivity
+\item[*] plexiglas which assure a good surface 
+\item[*] a sandwich (carbon-epoxy , phenolic honey comb, carbon epoxy) which
+assure the rigidity of the system.
+\end{itemize}
+\end{itemize}
+The 10 mirrors are placed just before the output window and are grouped in
+two columns of 5 mirrors. Each mirror reflect the light on a PMT placed at the
+side of the box (figure \ref{gen}). The mirrors of the same column are
+identical and the two
+columns are almost symmetrical. Positions and angles of the PMT are not placed
+regularly like for the mirrors but were adjusted by a optical study in order to
+maximize the collection of light coming from the particular envelope of
+particle which have to be detected with the High Resolution Spectrometer
+(HRS) of the Hall A. PMT are fixed and mirrors can
+be adjusted by hand.
+
+The number of photoelectrons is not very high so that the 
+distribution is a Poisson distribution,
+$$P(N)=\frac{e^{- \bar N}(\bar N)^N}{N\!}$$
+where $\bar N$ represent the number of photoelectrons 
+$N_{\gamma e^-}$ collected after the
+parcours in the radiator.\\
+The inefficiency is defined by the probability to detect zero photo electron, if
+we decide to put a threshold below one photo electron, and then is defined 
+by the quantity
+\begin{equation}
+\epsilon=P(0)=e^{- \bar N}
+\label{eff}
+\end{equation}
+This number of photoelectrons produced by Cherenkov effect by unity of
+length crossed in the radiator is given by the following formula:
+$$\frac{dN_{\gamma e^-}}{dL}=2\pi \alpha (sin \theta)^2 
+\int_{\lambda_1}^{\lambda_2}\frac{1}{\lambda^2}\epsilon_Q(\lambda)
+\Pi_i[\epsilon_i]d\lambda$$
+with
+\begin{itemize}
+\item[-]$\alpha=1/137$ is fine structure constant
+\item[-]$\lambda$ is the wave length
+\item[-]$\theta=acos(1/\beta n)$ is the Cherenkov angle
+\item[-]$\epsilon_Q(\lambda)$ is the quantum efficiency of the photo cathode
+\item[-]$\epsilon_1(\lambda)$=efficiency of transmission of the radiator (we
+take 
+100\% )
+\item[-]$\epsilon_2(\lambda)$=efficiency of reflectivity of the mirrors 
+(a typical curve is given in paragraph \ref{refi}).
+\end{itemize}
+If we make the integral with the characteristics of the Cherenkov counters, we
+expect to have 15 photoelectrons per meter of gas. With our apparatus the
+length of gas crossed is 1.5 meters so we expect to have 23 photoelectrons.
+ This theoretical value will be verified experimentally with beam and 
+will permit to have an efficiency 
+greater to 99.99\%.
+\newpage
+\ssubsection{Gas system}
+\leftline{\bf General description}
+\label{des}
+The gas Cherenkov counter is an apparatus which will be filled with gas during
+a long period. It is important to measure along
+the time if there are no leakage of gas. An easy way to detect gas leakage is 
+to record the entrance and the exit volume in a gas circulation maintained
+with a constant flow. Figure \ref{circ} illustrate this principle.
+A flexible vessel (symbolized by a cylinder in the figure) 
+is connected to the gas exit of the Cherenkov box. This box is
+ able to store up to 200 l 
+of gas and will restitute it to the Cherenkov box, if needed, due to a 
+rapid change of the ambient
+temperature or atmospheric pressure.
+ The gas flow recorder is a device which guarantee a
+precision within $10^{-2}$ but below a low flux such as $15 l/h$ this 
+precision goes down. \\
+{\bf The minimum flux for the gas circulation of the 
+ Cherenkov counter is $5 l/h$}.\\
+
+\snfig{./figs/chegasflow.eps}{\em Schematic description of the gas flow.}{circ}{5in}
+
+The counter is operated at atmospheric pressure with a very small
+over-pressure due to the gas flow maintained to detect gas leakage. 
+The over pressure inside the Cherenkov box is limited by the maximum value
+of his volume which assure that the windows don't touch other plane
+of detectors.\\ 
+{\bf The value of the maximum over-pressure in the Cherenkov is 5.5 mbar}.\\
+In the paragraph \ref{toto} detailed informations are given about the
+ variation of the volume with pressure.\\
+{\bf A safety valve placed on the top of the
+Cherenkov box, assure that the inside pressure don't go up to 6 mb}.
+
+\leftline{\bf Gas rack description}
+\label{upi}
+Our gas system is divided in two parts; 
+\begin{itemize}
+\item[-] the upper part which is outside the Hall and stay near the gas 
+bottles (near the gas shed),
+\item[-] two gas racks associated to each Cherenkov counter.
+\end{itemize}
+The upper gas rack is the place where gas is extracted from bottles and is
+ expanded from the bottle pressure (52 bar at T=15C, 74 bar at 31 C 
+= critical point) to a pressure between 9 and 10 bars. The distribution to 
+electron and hadron arm is made at this place with a Tee valve so that you
+can open or close the gas line you want to select. The schematic view of this
+part is shown  in figure \ref{up}. The numerotation of following items is 
+reported on the same figure.
+\begin{enumerate}
+\item There are \underline{two bottles of CO2 gas} 
+which provide a high capacity CO2 storage. This correspond to a volume 
+of $2\times 20m^3$. With the flow of 20l/h  this will give an autonomy 
+of $\sim$42 days.
+\item \underline{A system for automatic bottle switching with also expansion 
+valve} which decrease the bottle pressure to a pressure of $\sim$ 10 bar.
+\item \underline{A stop valve}
+\item \underline{A Tee valve} for the distribution in the two gas lines, 
+electron and hadron arm.
+\end{enumerate}
+
+\snfig{./figs/uppergas.eps}{\em The gas rack for the gas distribution in the electron and/or
+the hadron Cherenkov counters.}{up}{5in}
+
+The gas rack which stay near the Cherenkov counter include the gas flow
+ monitor and control the inside pressure of the box. The place of this rack is
+just near the last stairs which go on the platform of the detector house. The
+following list describe the elements of this rack which is shematised on
+ figure \ref{down}.
+\begin{enumerate}
+\item \underline{An expansion valve from $\sim 10$ bar to 0.5 bar}. The
+ gas flow recorders are devices which are working at this pressure.
+\item \underline{A gas flow selector}. We can have two different flow
+ inside the Cherenkov, a high flow for gas filling and a low flow 
+during physics experiments. 
+\item \underline{A pair of gas flow recorders}, recording both entrance 
+and exit gas flow.
+This provide a high sensitivity leak diagnostic within a few $10^{-3}$.
+\item \underline{a flexible vessel} connected to the gas exit, able to 
+store up to 200 l of gas and to restitute it if needed due to a rapid change 
+of the ambient temperature or atmospheric pressure.
+\end{enumerate}
+
+\snfig{./figs/lowergas.eps}{\em The gas rack for gas flow tunning and the control of the 
+inside pressure in the Cherenkov counter.}{down}{5in}
+
+n the final position of the gas setup, final pipes and connections with the
+ Cherenkov Box, we have no gas leakage. The total volume of gas which came in, 
+recorded with the entrance gas meter, was within a few percent equal to the
+volume recorded at the exit.
+\leftline{\bf Filling Cherenkov counters with gas}
+We decide to fill the volume five times 
+in order to consider that is well full of CO2 gas. 
+With the highest flow of 150 l/h we need 
+\begin{itemize}
+\item[-] $\sim$100 hours to fill one time the electron Cherenkov
+ (V=2780 + 200 l)
+\item[-] $\sim$66 hours to fill one time the hadron Cherenkov 
+(V=1849 + 200 l)
+\end{itemize}
+
+\leftline{\bf Window deformation with pressure}
+\label{toto}
+Gas Cherenkov counters are working at the atmospheric pressure with a small
+over-pressure ($\Delta P=P_{in}-P_{atm}=$few mbar). The windows are
+ very thin (see paragraph \ref{cons})
+and can be deformed with a small variation of the pressure.
+We have study the deformation of the windows as a function of the 
+small over-pressure in the Cherenkov box. The volume difference which correspond
+to this deformation is given by the formula:
+$$\Delta V=\frac{3}{4} \times H (f^{in} \times l^{in}+f^{out} \times l^{out})$$
+where 
+\begin{itemize}
+\item[-] $H=2457$mm is the high of the window 
+\item[-] $l^{in}=605$ mm is the width of the entrance window
+\item[-] $l^{out}=838$ mm is the width of the exit window
+\item[-] $f^{in}$ and $f^{out}$ are the ``arrows'' which represent the window 
+deformation (see figure \ref{ar}).
+\end{itemize}
+\snfig{./figs/arrow.eps}{\em The volume deformation, due to the 
+                 inside pressure, was measured through 
+                 the measurement of the``arrows'' of each entrance} {ar}{5in}
+\snfig{./figs/volume.eps}{\em Volume variation for the hadron Cherenkov 
+counter in function of the pressure.}{vol}{5in}
+
+To measure these ``arrows'', different over-pressures inside the
+Cherenkov counters was applied, from $\Delta P=P_{in}-P_{atm}=$1 to 6 mbar. This
+was maintained in the box without a gas flow by closing the output valve. For 
+each over-pressure, window's deformation was measured 
+(``arrows'' in figure \ref{ar}) and this operation was repeated several times
+in order to obtain asymptotic value of the deformation. For over-pressures
+ going from 1 to 6 mbar, the minimum and maximum values of the ``arrows'' 
+, in millimeters, are:\\
+\underline{$e^-$ Cherenkov}:\\
+$$53.35 \leq f^{out} \leq 58.85 $$
+$$36.95 \leq f^{in} \leq 39.45 $$
+\underline{hadron Cherenkov}:\\
+$$47.15 \leq f^{out} \leq  51.75$$
+$$28.45 \leq f^{in} \leq 34.55 $$
+The figure \ref{vol} represent the volume variation for the hadron Cherenkov 
+counter in function of the pressure.\\
+{\bf The windows bend is within tolerances for the maximum flow}.\\
+We have made a test in order to know the {\bf maximum pressure that can 
+support the windows}. The inside pressure on the Cherenkov box was 
+increased until the
+windows was torn. We have maintained this pressure without gas flow by closing
+the output valve on the top of the Cherenkov box. {\bf The value of this 
+over-pressure is $\Delta P=117 mbar$}. 
+
+\leftline{\bf Empty bottle signal}
+There are two bottles of CO2 gas which provide a high capacity CO2 
+storage. This correspond to a volume 
+of $2\times 20m^3$. With the flow of 20l/h  this will give an autonomy 
+of $\sim$42 days. An automatic switching
+bottle is installed in the upper gas rack, so that you are not obliged to 
+move immediately to change the bottle. There are only two things to do:
+\begin{itemize}
+\item[-] to change the ``arm'' direction by hand on the upper-gas rack. The
+pressure gauge under this device will go from 8 to 10 bar. 
+\item[-] command a new bottle for the next time (the autonomy is 
+at least 40 days during experiment when low flow is running).
+\end{itemize} 
+
+\leftline{\bf Check list before experiment}
+This list is a summary of all procedures for gas filling and control 
+which has to be done before an experiment.\\
+\\
+\underline{{\bf Upper gas rack}}(see figure \ref{up}):\\
+If the gas is already in circulation you don't have to do the points 1 to 6. 
+There are necessary only if you need to install a new bottle. 
+Points 7 to 12 are the only
+things that you have to check if gas is already installed.
+\begin{enumerate}
+\item close bottle and close orange button
+\item open the purge valve (black button on the side)
+\item open slightly the bottle. You should hear the gas outgoing from the purge
+valve.
+\item close the purge
+\item open completely the bottle
+\item open the orange valve
+\item At this time the two bottles are open, the two orange valves also 
+and the two purge are closed.
+\item the switch valve (``piece of metal with a black button at the extremity)
+ in high or low position indicate which bottle we are using
+\item when a bottle is empty, the device (CENTRALE LF50)
+ will automatically switch to the 
+other bottle. In the pressure gauge instead of a pressure of 10 bars you will
+read a lower pressure of 8 bars. To recover the pressure of 10 bars at this
+point we have to change the direction of the switch valve by hand to the
+direction
+of the bottle which is now in operation.
+\item open the right valve provide gas to the rack number 1 for electron arm
+\item or open the left valve provide gas to the rack number 2 for hadron arm
+\item or both
+\item be sure that the valve of the Cherenkov counter you don't use is closed.
+\end{enumerate}
+\underline{{\bf gas rack number 1 or 2}}(see figure \ref{down}):\\
+The pressure gauge at the but-tom of the rack indicate the over-pressure 
+($\Delta P=P_{in}-P_{atm}$ in mbar) which is inside the Cherenkov counter. This
+value should always be below 5.5 mbar during all operations (see paragraph 
+\ref{des}).
+\begin{enumerate}
+\item tune the expansion valve at a pressure of maximum 0.5 bar
+\item before manipulating the three channels valve (low flow on the left, 
+closed for position up, and high flow on the right) be sure that the two valves
+for the gas flux tunning are closed
+\item for high flux, the maximum gas flow is 150 l/h which correspond 
+to a pressure gauge of 5.4 mbar and a pressure inside the Cherenkov of 
+($\Delta P=P_{in}-P_{atm}=$3.1 mbar
+ (there is pressure lost in the 50 meters of pipes)
+\item for low flux, the minimum is around 25 l/h,
+ because the gas flow recorders become less precise below 15l/h,
+ and the pressure inside the Cherenkov counter 
+is $\Delta P=$1mbar
+\end{enumerate}
+Each time you can, when you go into the Hall A to make something in the
+detector house, take the numbers from the two gas meter (in and out) of the
+rack $n^0$1 for the electron and $n^0$2 for the hadron and report these
+numbers in the experiment book. The table \ref{gamet} is an example of what
+will be useful to control that there is no gas leakage.
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+date & $V_{in}$ & $V_{out}$ & gas flow l/h& $\Delta_{in}$ l/h &
+ $\Delta_{out}$ l/h & $\Delta P$mbar \\
+\hline
+9/18/96 11h10 a.m & 52531 & 37407 & 30 & & & 1 \\ 
+9/18/96 12h25 a.m & 52571 & 37447 & 30 & 40 & 40 & 1 \\
+9/18/96 4h20 p.m & 52694 & 37571 & 30 & 123 & 124 & 1 \\
+\hline
+\end{tabular}
+\label{gamet}
+\caption{ {\em Table to control gas flow.}}
+\end{center}
+\end{table}
+
+\newpage
+\ssubsection{Construction}
+\leftline{\bf Cherenkov box}
+\label{cons}
+Each Cherenkov is a box with only two walls and which is closed by two windows 
+of different material. These windows are fixed by a set of two frames. There
+are two identical boxes for the two detectors and as the Cherenkov for the 
+electron arm is bigger there is a suplementary peace, call the raising, which
+is fixed to the main box with a hermetic gasket.  
+
+\snfig{./figs/boxdim.eps}{\em
+              Each parts, windows raising and main box are fixed together
+              with hermetic joins.} {boit}{5in}
+              
+   The figure \ref{boit} show how the different elements, 
+frames, windows, boxes,  
+ are fixed together. The material of these elements are steel for all
+ elements expect the windows which are made of tedlar. The thicknesses are
+ the following:
+\begin{itemize}
+\item[-] the walls of the boxes have a thickness of 2.5 mm
+\item[-] the walls of the raising have a thickness of 1.5 mm
+\item[-] the frames have a dimensions of $250 \times 500 mm^2$ and a thickness
+of 2 mm.
+\item[-] the windows are made of two leaves of tedlar of 37.5$\mu m$ of
+thickness for a leaf (the density of the tedlar is 1.49 $g/cm^3$).
+\end{itemize}
+
+The figure \ref{boit1} is a detailed description of the raising, 
+and in the figure \ref{boit2} the dimension of the boxes are given.
+
+\leftline{\bf Mirrors}
+The gas Cherenkov counter is positionned between other plane detectors, one
+of the requirement is , therefore, to influence as less as possible the 
+properties of the incoming particle. Multiple scattering and energy loss are 
+thus minimized with the choice of materials with low atomic numbers and
+minimizing the thickness, while keeping the requires rigidity of the 
+whole structure. Since a paper where the details of the employed technique of
+construction is in preparation, we will only summarize their main features.
+
+The spherical mirrors have a radius of curvature of 90 cm. Their shape is 
+such as that their ``shadow'' onto a planar surface, is a rectangle
+of $35 \times 47.8 cm^2$ (see figure \ref{mirr}).
+ The mirrors have been constructed with a rigid
+backing made of a sandwich of phenolic honeycomb between two triple layers
+of about $60 \mu m$ of carbon fiber mat ($180 \mu m$ on each side) glued with
+epoxy resin. As a reflecting surface, $ 1mm$ thick aluminum plexiglas sheets 
+have been used. \\
+{\bf The final mirror has a total average thickness of about $230 mg/cm^2$ 
+corresponding to about $\sim 5.5 10^{-3}$ radiation lengths}.
+
+The mirrors are placed on two parallel rows and are suitably tilted to 
+reflect the light towards the PMTs. As they have a spherical shape with radius 
+of curvature $R=90 cm$, the PMTs are placed at a distance of $R/2=45 cm$ from
+the mirrors, where the parallel rays of incident light on the mirrors are
+approximatively focussed. To avoid ``dark zones'' between two adjacent mirrors,
+they are independent one with respect to the other and overlap partially. 
+Moreover, to avoid the possibility that inclined light rays could hit the mirror
+along its side edge (loosing the photon which is absorbed before reaching the
+mirror below), the cut along the edges of the mirror is suitably tilted. In
+appendix A, detailed geometry of these mirrors are given.
+
+Figure \ref{ref} shows a typical curve of reflectivity of the mirrors. This
+value is around 90\% in the UV region which is the most important region
+to cover because the number of photoelectrons produced by Cherenkov effect
+is proportional to $1/\lambda^2$.
+
+\snfig{./figs/reflec.eps}{\em
+            Typical curve of reflectivity of the mirrors.}{ref}{5in}
+
+\ssubsection{Photo-multipliers}
+Five photo-multiplier tubes (PMT) are fixed of the two side walls. Each one
+is surrounded by a high magnetic permeability shielding (mu-metal). The
+fixing provides high voltage insulation between the PMT and the steel vessel.
+A set of optic fibers provides light pulses to each PMT for their 
+calibration.
+\leftline{\bf Characteristics}
+The type of the PMT is a Burle 8854 Photo-multiplier. This is a 129 mm
+ (5 inch) diameter, 14 stage head on QUANTACON photomultiplier having 
+a bialkali photo cathode of high quantum efficiency and an extremely
+ high gain cesiated gallium phosphide first
+dynode followed by high stability copper beryllium dynodes in the succeeding
+stages. The high gain first dynode permits the direct observation of peaks 
+corresponding to one two and three photoelectrons. 
+
+The 8854 features high quantum efficiency (22.5\% at 385 nm), 
+ultraviolet response (UV response to 220 nm). The number of photon from the 
+Cherenkov light is proportional to $1/\lambda^2$ so it's important to have a
+extended response in UV light. Figure \ref{ro} show a typical curve for
+the quantum efficiency as a function of the wavelength.
+
+\snfig{./figs/rho.eps}{\em
+            Quantum efficiency of the photo cathode as a function of
+            the}{ro}{5in}
+
+Figure \ref{uni} shows a typical ADC pluse height spectrum 
+(with High Voltage around 2000V) where the single
+photo electron peak is very well separated from other sources of noise. Thus
+they allow us to clearly define the electronic threshold to eliminate events
+below this peak. The number of photo electron produced in the Cherenkov is 
+expected to be large enough ($\sim 23\gamma e^{-}$) to put a threshold around
+few photoelectrons which garantee to get rid of the noise and have a very good
+efficiency.
+
+
+\leftline{\bf High Voltage adjustment}
+If an electron is above the Cherenkov threshold, it will produce Cherenkov 
+light in the gas. This light will be translate into an electric signal 
+via a photomultiplicator. Each photomutiplicator will receive the light 
+transmitted by his mirror. As a group of mirror can be touched by a good 
+event, we expect to have sometimes a group of touched PMT. Before the 
+discrimination of the signal we have to sum the signals over the touched 
+PMT. In order to be able to make the sum , we have to know a relative 
+calibration between the ten PMT of a counter. 
+
+For the further analysis of experiment
+which will use these Cherenkov counters, we need to know the efficiency of
+these counters. From the spectrum of charge, we can find this efficiency from
+the number of mean photoelectrons in this spectrum (see formula \ref{eff}). To
+obtain this mean number of photoelectrons from the ADC spectrum, we need to
+make an absolute calibration in energy of each PMT.
+
+The high Voltage has to be adjust in order to have for each PMT the position
+of the photo electron peak at the same position
+above the pedestal. This adjustment has to verify some conditions:
+\begin{itemize}
+\item[-] to correspond to a High Voltage where the PMT noise is 
+not high (below 2kHz)
+\item[-] to correspond to the maximum value of the quantum efficiency
+ of the photocathode.
+\end{itemize}
+If the two conditions are not possible at the same time, a compromise has
+ to be found.
+
+\leftline{\bf Total radiation length}
+
+When a particle cross the Cherenkov detector, it will go through:
+\begin{itemize}
+\item[-] the entrance and exit window
+$$\frac{x}{X_0}=\frac{2\times 37.5 10^{-4}}{28.7}=2.6 10^{-4}$$
+\item[-] the gas medium
+$$\frac{x}{X_0}=\frac{150}{18310}=8.2 10^-{3}$$
+\item[-] one mirror
+$$\frac{x}{X_0}=\sim 5.5 10^{-3}$$
+\end{itemize}
+The total radiation length for the whole Cherenkov detector is 
+$\sim 1.4 10^{-2}$ which is equivalent of 5 mm of scintilator.
+
+\ssubsection{Authorized Personnel}
+The following individuals are authorized to work on Gas Cherenkov counters. 
+\begin{itemize}
+\item[~]Segal, Jack - x7242 
+\item[~]Wojtsekhowski, Bogdan - x7191 
+\end{itemize} 
+
+\end{document
+
+
+
+

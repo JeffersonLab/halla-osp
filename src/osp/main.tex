@@ -1,0 +1,53 @@
+\documentclass[12pt,letterpaper]{report} 
+
+\input{preamb_common} % include the common preambule 
+
+% \newcommand{\Cerenkov}{\v{C}erenkov} 
+\newcommand{\Cerenkov}{Cherenkov} 
+\parindent=2em 
+\hyphenation{cebaf} 
+
+\begin{document}
+\color{\Mcol}
+\pagestyle{headings}
+
+\input{title}
+
+%\pagestyle{plain}
+\pagenumbering{arabic} 
+\setcounter{page}{1} 
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+\newpage
+\setcounter{subsection}{0}
+\input{introduction/all}
+\input{beamline/all}
+\input{targets/all}
+\input{hrs/all}
+\input{hrs_det/all}
+\input{controls/all}
+\input{daq_trig/all}
+\appendix
+\input{checklist/all}
+
+\vskip 0.5cm
+\bibliographystyle{unsrt}
+\bibliography{bibl/halla_ops,bibl/halla_add}
+
+\end{document} 
+ 
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/osp/main.tex,v 1.1 2003/06/05 17:28:27 gen Exp $
+% $Id: main.tex,v 1.1 2003/06/05 17:28:27 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:27 $
+% $Name:  $
+% $Locker:  $
+% $Log: main.tex,v $
+% Revision 1.1  2003/06/05 17:28:27  gen
+% Initial revision
+%

@@ -1,0 +1,289 @@
+ 	Operating Safety Procedure 
+  for the 
+ Hall A Shield House Door 
+
+Segal / Folts / Stevens							4/27/98
+			Table of contents
+
+1. Introduction and Scope
+
+2. General Characteristics of the Doors
+
+3. Personnel hazards
+
+4. Mitigating these personnel hazards
+
+5. Equipment hazards
+
+6. Mitigating these equipment hazards
+
+7. Training
+
+8. Operation of Doors while under upgrade or modification
+
+9.   Upgrade or modification Authorized designees			
+
+10.  Instructions for normal operation of doors
+
+11.  Authorized operators for normal operation of doors
+
+12.  Instructions for door operation while removing Detectors
+
+13.  Authorized operators for door operation while removing Detectors
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Introduction and Scope
+
+In order to insure the integrity of the data taken by the Hall A High Resolution Spectrometers the Detectors must be housed inside of  Shielding Huts. The Huts in Hall A are covered on the target side by two large 60 ton doors.  Doors of this size must be actuated by mechanical means; in this case electrical actuators are used for this purpose.
+
+2.  General Characteristics of the Doors
+
+	The Hall A shield house doors consist of a pair of concrete filled steel rectangular boxes lined on the interior with lead. The doors weigh 60 tons and swing outward from the center, pivoting on a pair of hinges located at the top and bottom of each door.
+
+3.  Personnel Hazards
+	
+3.1	Crush hazard.  There is a crush hazard that could exist between and behind the doors if someone were to become pinned between the two doors or between a door and the Shield hut.
+
+3.2	Fall hazard #1.  There is a fall hazard between the door and the floor, and between the door and the guard rail if a door is opened to its most open position.
+
+3.3	Fall hazard #2.  There is a potential for a fall hazard if a person were to get between a door and the edge of the balcony while the door is being opened.
+
+3.4       Entrapment hazard.  Unwary or unconscious personnel could become trapped in the closed Shielding Hut.  The Shielding Huts are equipped with an automatic oxygen deprivation fire extinguishing system (Energen(tm) gas deluge) which could suffocate anyone trapped inside the Shielding Hut if the system were activated.  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.  Mitigating these personnel hazards
+
+4.1	Crush hazard.   It is the operator's responsibility to ensure that no one is in the area of the doors when they are moved.  The operator must personally inspect the area behind, between and in front of the doors prior to movement.  For the operator's safety, the controller for the doors is located at the opposite end of the balcony, beside the run/ safe box.
+
+4.2	Fall hazard #1.  Under normal operational circumstances, the doors should not be opened wide enough to create this hazard.  It is the operator's responsibility to stop the doors at a point where there is no fall hazard.  Exception:  when it becomes necessary to open the doors to their widest design position, such as when the Detector Stack is rolled out of the Shielding Hut, removable guards shall be installed around the hazard by the operator to prevent any possibility of a fall.
+
+4.3	Fall hazard #2.  Guard rails have been installed in order to prevent anyone from entering this area
+
+4.4       Entrapment hazard.  It is the operator's responsibility to ensure that no one is inside the Detector Hut prior to closing the doors.  It is imperative that a thorough visual inspection must be performed by the operator to ensure that the Detector Hut is clear of all personnel prior to closing the doors. In addition to the required inspection, an audible alarm and a strobe will be installed in the vicinity of the Doors on each detector Hut and will be energized when the doors are actuated. As a final precaution to prevent entrapment a push to open button will be installed on the inside of the Doors of each Detector Hut.
+
+
+5. Equipment hazards:
+
+5.1  Obstructions to door movement on each spectrometer.  Portable ladders and other equipment may interfere with door movement.
+
+5.2  Obstructions to door movement between spectrometers.  When both spectrometers are located near the beamline, the beamline - side doors of each Shielding Hut can hit each other.  
+
+
+
+
+
+
+
+
+6.  Mitigating these equipment hazards
+
+6.1  Obstructions to door movement on each spectrometer:  The operator must visually inspect the area to ensure that the intended door movement will not hit any equipment.  Care must be taken when moving the portable ladders or staircases; attention must be paid to the path of the wheels to avoid rolling them into the several holes in the surface of the platform.  Rocking of the staircase back and forth shall be avoided - it is possible to tip the staircase over by mishandling it.
+
+6.2 Obstructions to door movement between spectrometers.  The operator must visually determine adequate clearance between the spectrometers prior to moving the doors
+
+
+7.  Training
+
+	All door operators must be trained and their name must appear on the master list of authorized operators located within this document in Counting Room A. Training and signoff for the normal operation of the Hall A Shield Hut doors can be accomplished by any member of the Hall A technical staff.
+
+	Training for operation of doors while removing the detector stacks will be carried out and signed off by Jack Segal only.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.  Operation of Doors while under upgrade or modification
+
+	When the Hall A Shield Hut Doors are in the process of an upgrade or modification, they could be in any number of configurations. Design, construction and installation of the electrical Door Actuation system is the responsibility of John Segal, so any questions that arise about the system should be directed to him. Since it is not practical to try to rewrite a TOSP for every configuration ONLY John Segal or his designee will be permitted to operate any shield house door while it is in the process of being modified. When a set of doors is in the process of being modified, a sign reading, "CAUTION DO NOT ATTEMPT TO OPEN OR CLOSE DOORS" will be placed on that set of doors and at the door control box.
+
+
+
+9.	Upgrade or modification Authorized designees								
+	Only the below listed personnel are authorized to upgrade or modify the door systems.  
+
+Jack Segal
+
+Mark Stevens
+
+Scot Spiegel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10.   Instructions for normal operation of doors
+
+	The controls for the shield house doors are located at the top of the stairs to the Detector balcony, next to the Run/Safe box. The controls consists of an ON/OFF switch, an OPEN button and a CLOSE button. The OPEN and CLOSE buttons are momentary contact switches, and must be continually pressed/held in order for the door to move in the respective direction.  The system is equipped with travel limit switches so that the doors stop automatically in the closed position.
+
+10.1	To open the doors:
+	
+	To open the Shield hut doors, first ensure that the Detector platform is clear of all personnel except the door operator, and  that there are no obstructions to door movement.  Visually inspect the area of  the door swing on the balcony for items that might be damaged, be knocked from the balcony, or jam the doors.  Remove these obstructions.  Next,  determine the required clearance between the Spectrometers for the desired door opening.  Make certain that the beam-line side doors cannot impact each other.  
+	
+	Twist the off/on switch to the ON position.
+
+	Push the open button, while watching the doors and hold it until the doors open to the normal open position as marked on the doors and balcony.  If anomalous operation of the system occurs, immediately release the button and inform the Hall A technical staff of the problem.  
+
+	Twist the ON/OFF switch to the OFF position.
+
+10.2	To close the doors:
+
+	Visually inspect the upper and lower Detector platforms and the entire Shielding Hut to ensure that all personnel have departed.  Under no circumstances will the doors be closed with personnel inside.  Clear the Detector platform of all personnel except for the door operator.  
+
+	Move all stairs, ladders and any other obstruction out to a position that will allow the doors to clear.
+
+	Twist the ON/OFF switch to the ON position.
+
+	Push the CLOSE button, while watching the doors and hold it until the doors are fully closed.
+	
+	Twist the ON/OFF switch to the OFF position.
+
+
+
+11.   Authorized operators for normal operation of doors
+
+Jack Segal
+
+Mark Stevens
+
+Scot Spiegel
+
+Gary Dezern
+
+Ed Folts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12.   Instructions for door operation for removing Detectors
+
+
+12.1	To open the doors:
+	
+	To open the Shield hut doors, first ensure that the Detector platform is clear of all personnel except the door operator, and  that there are no obstructions to door movement.  Visually inspect the area of  the door swing on the balcony for items that might be damaged, be knocked from the balcony, or jam the doors.  Remove these obstructions.  Next,  determine the required clearance between the Spectrometers for the desired door opening.  Make certain that the beam-line side doors cannot impact each other.  
+	
+	Twist the off/on switch to the ON position.
+
+	Push the open button, while watching the doors and hold it until the doors open to the desired position.  If the doors are opened wide enough to create fall hazards, you must install barricades around the hazards and post signs.  If anomalous operation of the system occurs, immediately release the button and inform the Hall A technical staff of the problem.  
+
+	Twist the ON/OFF switch to the OFF position.
+
+12.2	To close the doors:
+
+	Visually inspect the upper and lower Detector platforms and the entire Shielding Hut to ensure that all personnel have departed.  Under no circumstances will the doors be closed with personnel inside. Clear the Detector platform of all personnel except for the door operator.  
+ 
+	Move all stairs, ladders and any other obstruction out to a position that will allow the doors to clear.  Remove any barricades as necessary.
+
+	Twist the ON/OFF switch to the ON position.
+
+	Push the CLOSE button, while watching the doors and hold it until the doors are fully closed.
+	
+	Twist the ON/OFF switch to the OFF position.
+
+
+
+
+
+
+
+
+13. Authorized operators for door operation for removing Detectors
+
+Jack Segal
+
+Ed Folts 
+
+Mark Stevens
+
+Scot Spiegel
+
+Gary Dezern

@@ -1,0 +1,439 @@
+\documentclass[12pt,letterpaper]{article} 
+
+\input{preamb_common} % include the common preambule 
+
+\newcommand{\myil}[0]{{\color{red}{\em infolevel}}}
+
+% \newcommand{\Cerenkov}{\v{C}erenkov} 
+\newcommand{\Cerenkov}{Cherenkov} 
+\parindent=2em 
+\hyphenation{cebaf} 
+
+\begin{document}
+\color{\Mcol}
+\pagestyle{headings}
+
+% \pagestyle{empty}
+\begin{titlepage}
+\title{{\bf OSP Instructions for Contributors}}  
+
+\author{E.Chudakov} 
+\setcounter{tocdepth}{3}
+\end{titlepage} 
+\maketitle 
+ 
+% \pagenumbering{arabic} 
+% \setcounter{page}{1} 
+\tableofcontents
+
+%\listoftables
+
+%\listoffigures
+
+\section{Introduction}
+\label{sec:intro}
+  The Hall A\cite{Hallawww} OSP (Operation Safety Procedures) document describes  
+  the systems, devices and procedures used in Hall A, containing
+  the safety issues. The systems include, for example, the HRS
+  scintillation counters, the HRS magnets, the Moller polarimeter
+  etc. 
+
+  Many Hall A collaboration members contributed to the Operating Safety 
+  Procedures (OSP) document. This writeup gives instructions for the
+  contributors\cite{OSPgen}.
+
+\section{OSP Document Source}
+\label{sec:document}
+   
+\subsection{Document Format}
+\label{sec:format}   
+
+  The source document is in \LaTeX{} format.
+  The output OSP document is available in two formats: 
+  \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
+    \item ~PDF, produced with \mycomp{pdflatex} command; 
+    \item HTML, produced with \mycomp{latex2html} command. 
+  \end{list}
+  This makes certain requirements to the source document,
+  since both \mycomp{pdflatex} and \mycomp{latex2html} have their own
+  peculiarities.
+
+\subsection{Obtaining the Source Package}
+\label{sec:obtain}
+
+ The source package contains the source of the text, 
+ the pictures and tools to make the document.
+ It is kept in the \href{http://www.cvshome.org/}{CVS} format.
+ The repository is located at JLab at: \\
+ \mycomp{/group/halla/analysis/cvs/tex/osp} \\
+ and is available for those included in the UNIX group \mycomp{a-doc}.
+ In order to change the source you have to check out the source
+ (make your personal copy), edit the source files and commit
+ your changes (write down your changes into the repository). Use
+ a JLab machine, with mounted \mycomp{/group}, say \mycomp{jlabl1}, \mycomp{dlha1} etc.
+ I checked the procedure only on the Linux platform.
+  \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
+    \item Declare an environmental variable \mycomp{CVSROOT=/group/halla/analysis/cvs};
+    \item \mycomp{cp /home/gen/.cvswrappers~~ $\tilde{}$/} - provide a CVS wrappers file,
+           defining the binary files in the repository;
+    \item Let us assume you want to keep the source in the directory \mycomp{$\tilde{}$/tex/},
+          type \mycomp{cd~ $\tilde{}$/};
+    \item \mycomp{cvs checkout tex/osp} - a source tree directory \mycomp{$\tilde{}$/tex/osp}
+          should appear. 
+  \end{list}
+ 
+   
+\subsection{Platform to Use}
+\label{sec:platform}   
+
+  In section~\ref{sec:obtain} it was assumed that a Linux (or a UNIX) paltform
+  is used. In fact, one can checkout the source from a MS Windows command line.
+  I did it as follows:
+  \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{cd j:} - go to the UNIX home directory;
+    \item \mycomp{cvs -d :local:m:/halla/analysis/cvs checkout osp/cvs};
+  \end{list}
+  Unfortunately it is all I was able to do on MS Windows.
+  The scripts and Makefile did no work - at least without
+  a major change. Also, I did not find \mycomp{pdflatex}.
+
+  I recommend to use a Linux%
+\footnote{A relatively new version of \href{http://www.tug.org/teTeX/}{tetex} 
+  package should be used. I have tested it with \mycomp{tetex-1.0.7-47.1},
+  available for Linux RedHat 7.3. In contrast, the older package
+  installed at RedHat 7.2 gives problems with \mycomp{latex2html}.
+  By May,20 2003, of all the JLab public computers, RedHat 7.3 was installed only
+  at the diskless machines \mycomp{dlha1}, \mycomp{dlha2} etc. These machines
+  can be used to make the documents.
+}
+  machine to
+  check out the code and build the documents.
+  There are only a few commands to be typed in the UNIX
+  command line - the \mycomp{cvs} commands and the
+  \mycomp{make} commands. I suppose that editing and
+  browsing can be done in the MS Windows environment,
+  if one prefers it. 
+
+\subsection{Source Package Structure}
+\label{sec:structure}
+
+  The \mycomp{tex/osp} directory has the following structure:
+
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{CVS/} - CVS data
+    \item \mycomp{cvs.template} - a template to add to new files
+    \item \mycomp{misc} - miscellaneous documents - not used regularly
+    \item \mycomp{scripts} - auxiliary scripts and the makefile
+    \item \mycomp{src} - the \LaTeX{} code
+  \end{list}
+
+\subsection{OSP Document Information Level}
+\label{sec:infolev}
+
+  One can create the OSP document with different levels of
+  details (noted as \myil{}), the lower the value, 
+  the more slim is the document. All the levels contain the 
+  basic safety information for every system. Additional 
+  information depends on the level:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item[{\color{red}0}] - a short (1 page) description per system including 
+            a picture for the layout if needed;
+    \item[{\color{red}1}] - plus a description of the system's components;
+    \item[{\color{red}2}] - plus a description of the procedures and pictures, 
+               like MEDM windows in PNG format;
+    \item[{\color{red}3}] - plus the main principles of the devices' 
+               operation;
+    \item[{\color{red}4}] - plus photographs and other large pictures.
+  \end{list} 
+
+
+\subsection{Making the OSP Document}
+\label{sec:make}
+
+  In order to produce a document%
+   at a certain \myil{}, say {\color{red}4},
+  one has to create a work directory \mycomp{run}:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{cd tex/osp} - go to the top package directory;
+    \item \mycomp{./scripts/config osp 4} - create the work directory \mycomp{run}.
+  \end{list}
+
+  At first the PDF document should be built, the HTML document 
+  can be built afterword's:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{cd run} 
+    \item \mycomp{make pdf} - a file \mycomp{osp.pdf} is created;
+    \item \mycomp{make html} - a directory \mycomp{osp\_html} is created.
+  \end{list}
+  The created documents should be copied to the proper
+  destination be hand.
+
+\subsection{Making other Documents}
+\label{sec:makeother}
+
+  This writeup can be produces similar to the OSP document:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{./scripts/config doc 0} - create the work directory \mycomp{run}.
+    \item \mycomp{cd run} 
+    \item \mycomp{make pdf} - a file \mycomp{doc.pdf} is created;
+  \end{list}
+ 
+\section{Editing the OSP Source}
+\label{sec:edit}
+
+\subsection{The \LaTeX{} Files}
+\label{sec:latexfiles}
+
+  The \LaTeX{} files are stored in subdirectories of the directory
+  \mycomp{src}:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{beamline/} - the beam line equipment;
+    \item \mycomp{bibl/} - the bibliography, in the BIBTEX format;
+    \item \mycomp{checklist/} - checklist templates;
+    \item \mycomp{common/} - general style and preamble files;
+    \item \mycomp{controls/} - the slow controls;
+    \item \mycomp{daq\_trig/} - the DAQ and trigger;
+    \item \mycomp{doc/} - this document (not used for the OSP);
+    \item \mycomp{hrs/} - the HRS arms;
+    \item \mycomp{hrs\_det/} - the HRS detectors;
+    \item \mycomp{introduction/} - the introduction and access description;
+    \item \mycomp{osp/} - the top file and the title;
+    \item \mycomp{people/} - a list of the personnel;
+    \item \mycomp{people/} - the targets' description.
+  \end{list}
+
+ For example, the directory \mycomp{hrs/} contains:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{AlignmentOps.tex} - alignment section;
+    \item \mycomp{all.tex} - a file containing a list of \LaTeX{} files in
+           the directory to be included, and some other definitions;
+    \item \mycomp{figs/} - a directory for the files with pictures;
+    \item \mycomp{hrs\_1999.tex} - HRS section;
+    \item \mycomp{nmr\_1999.tex} - NMR section.
+  \end{list}
+ 
+ All the directories used, apart from the ``top'' one \mycomp{osp/},
+ contain a file \mycomp{all.tex} for steering and a subdirectory
+ \mycomp{figs/} for the pictures.
+
+\subsection{Pictures and Formats}
+\label{sec:pictures}
+
+  The pictures for all the sections in a given directory are stored
+  in a subdirectory \mycomp{figs/}. The following formats are accepted:
+  
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{pdflatex} - PDF, PNG, JPEG
+    \item \mycomp{latex2html} - Encapsulated PostScript, PNG, JPEG 
+  \end{list}
+  The picture (say, layout) can be presented by either one
+  file (\mycomp{layout.png} or \mycomp{layout.jpg}), or by two
+  files: \mycomp{layout.eps} and \mycomp{layout.pdf}.
+  For the Encapsulated PS, \mycomp{.epsi} files can be also used.
+  In fact, \mycomp{.ps} files can be used, if they contain
+  the \mycomp{BoundingBox} command. The tools to convert
+  the formats are:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{ps2epsi} - PS $\rightarrow$ EPSI;
+    \item \mycomp{epstopdf} - EPS $\rightarrow$ PDF;
+    \item \mycomp{pstops} - rectify a PS file;
+    \item \mycomp{eps2eps} - rectify an EPS file.
+  \end{list}
+
+  The last two commands are needed sometimes, to
+  make a file ``more standard'' and usable for other
+  format converting programs\footnote{EPS files produced by
+  Adobe Illustrator had to be processed by \mycomp{eps2eps},
+  otherwise the \mycomp{BoundingBox} command was not seen by
+  the \mycomp{epstopdf} command}.
+  
+  The computer screen windows, like the MEDM ones, can be easily
+  grabbed using the command \mycomp{import~~tmp.png} and clicking
+  with the mouse on the appropriate window. A file \mycomp{tmp.png}
+  will be created.
+
+  In \LaTeX{}, a command as
+  {\color{blue}
+  \begin{verbatim}
+    \includegraphics*[angle=XX,width=\texwidth]{xxxx}
+  \end{verbatim}
+  } \noindent
+  should be used. No extension (as \mycomp{.eps}) should be
+  given in the file name. Neither the directory name
+  \mycomp{figs/} should be given.
+  It is better to use angle=0, since
+  \mycomp{latex2html}
+    contained a bug for calculating
+    the limits of a rotated picture, reducing the picture to a line
+    at 90 and 270$^{\circ}$. If there is a need to rotate
+    the picture in PDF, do as here:
+  {\color{blue}
+  \begin{verbatim}
+%begin{latexonly}
+\includegraphics[angle=90.0,height=20cm]{xxxx}
+%end{latexonly}
+\html{
+\includegraphics[angle=0,height=20cm]{xxxx}
+}%
+  \end{verbatim}%
+  }\noindent%
+  The first and third lines are recognized as commands (not comments)
+  by the package {\color{blue}\verb|html.sty|}.
+
+  If is easy to rotate an PS/EPS picture using \mycomp{ghostscript}, in
+  order to avoid rotating it in \LaTeX{}. A script from the OSP package
+  can be used to make a -90$^\circ$ rotation: \\
+\mycomp{osp/scripts/psrotat input.ps output.ps}\\
+
+\subsection{Selecting the Information Levels}
+\label{sec:selinfolev}
+
+  As explained in section~\ref{sec:infolev}, one can attribute to a
+  part of the document a certain information level.
+  This part will appear on the output if the document is made
+  with the information level flag \myil{} not less than this level.
+  For \myil{}=0 only the unmarked pieces will appear on the output.
+  The following commands can be used:
+  {\color{blue}
+   \begin{verbatim}
+\infolevone{ ... }
+\infolevtwo{ ... }
+\infolevthree{ ... }
+\infolevfour{ ... }
+  \end{verbatim}%
+  }\noindent
+  The selected parts can be long and can contain sections, figures etc.
+
+
+\subsection{Selecting the Safety Information}
+\label{sec:safety}
+
+  A section or a sentence dedicated to the safety issues
+  should be marked as a \LaTeX{} environment:
+  {\color{blue}
+   \begin{verbatim}
+\begin{safetyen}{10}{5}
+  ... Safety First! ...
+\end{safetyen}
+  \end{verbatim}%
+  }\noindent
+  The text will be marked by a different color and a bar
+  will be place on the right margin, all in order to attract 
+  attention to the safety issues.
+  The first argument (10)
+  indicates the length (in mm) of the bar, while the second on (5),
+  indicates the vertical offset of the top edge of the bar.
+  One may need to adjust these values after looking
+  at the made document. The bar is not transferred to the next page,
+  therefore one should not make it too long. The example from
+  above will look as: \\
+\begin{safetyen}{10}{5}
+  ... Safety First! ...
+\end{safetyen}
+
+\subsection{Hyper References}
+\label{sec:hyperref}
+
+  PDF allows to have hyper references both internal to the document
+  (citations, sections, figures etc.) and external ones (WWW). In the latter
+  case one can configure \mycomp{acroread} or \mycomp{xpdf}
+  to use a WWW browser\footnote{
+    Use the \mycomp{Edit/Preference} button
+   on \mycomp{acroread}. For \mycomp{xpdf} (version 1.00-5)
+   you may need to copy \mycomp{/etc/xpdfrc}
+   to \mycomp{$\tilde{}$/.xpdfrc} and edit it, uncommenting the line
+   \mycomp{\#urlCommand}     \mycomp{netscape -remote 'openURL(\%s)'}
+   and commenting out the previous line.
+   Typically, \mycomp{xpdf/acroread} tries to use an existing WWW browser
+   window and does not open a new window.
+  }.
+  The \LaTeX{} references {\color{blue}\verb|\ref{...}|} to sections, 
+  figures etc. automatically become hyper references in PDF and HTML.
+  For the external references one can use:
+  {\color{blue}
+   \begin{verbatim}
+\url{http://www.jlab.org/~moller/}
+\href{http://www.jlab.org/~moller/}{M{\o}ller page}
+  \end{verbatim}%
+  }\noindent
+  In the former case the whole URL will appear on the output,
+  in the latter only the second argument will appear,
+  but clicking the mouse button on both will produce the same
+  results. No escape sequences for the special characters are 
+  needed.
+
+\subsection{Other Environments}
+\label{sec:otherenv}
+
+  I suggest to use a special style for the computer
+  commands or names:
+  {\color{blue}
+   \begin{verbatim}
+\mycomp{ .... }
+  \end{verbatim}%
+  }\noindent
+  At the moment it uses the {\color{blue}\verb|\sf|} font
+  and the magenta color.
+
+  In order to comment out a big piece of the text, instead
+  of commenting out each line one can use 
+  a comand:
+  {\color{blue}
+   \begin{verbatim}
+\obsolete{ .... }
+  \end{verbatim}%
+  }\noindent
+
+\subsection{New \LaTeX{} files}
+\label{sec:newlatex}
+
+  Creating a new \LaTeX{} file in an existing directory,
+  one has to add its name to the appropriate \mycomp{all.tex}
+  and add the contents of the file \mycomp{cvs.template}
+  to the end of the new file. See also the CVS instructions
+  \ref{sec:commit}.
+
+\subsection{Changing the Repository}
+\label{sec:commit}
+
+  After completing and debugging your changes, you may commit them
+  to the CVS repository by:\\
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{cvs add {\em file}} - add a new file if needed;
+    \item \mycomp{cvs commit {\em file}} - commit the updated file.
+  \end{list}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+  One can use the file \mycomp{src/beamline/moller.tex} as an
+  example for the used \LaTeX{} commands and extensions. \\
+
+  I have checked the procedure only on the Linux platforms.
+%  Although CVS for MS Windows exists, it is perhaps easier
+%  to login to a Linux
+%  machine from Windows, and do all the work in Linux.
+%  Browsing the output with \mycomp{acroread} can be done
+%  in Windows. 
+
+  In case you can not use \LaTeX{},
+  please do not send me documents in proprietary MS formats, like Word,
+  but rather send just a simple text file and pictures, which I can
+  convert to \LaTeX{} and incorporate. 
+
+\bibliographystyle{unsrt}
+\bibliography{bibl/doc}
+
+\end{document} 
+ 
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.1 2003/06/05 17:28:33 gen Exp $
+% $Id: main.tex,v 1.1 2003/06/05 17:28:33 gen Exp $
+% $Author: gen $
+% $Date: 2003/06/05 17:28:33 $
+% $Name:  $
+% $Locker:  $
+% $Log: main.tex,v $
+% Revision 1.1  2003/06/05 17:28:33  gen
+% Initial revision
+%

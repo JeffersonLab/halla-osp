@@ -1,0 +1,240 @@
+ Cryo Target Pre Beam Checklist	 Date______	time _______   
+ 									Last revised 3/6/98
+This checklist will be performed after every restricted access to Hall A that maintenance is performed
+People checking list _______________________________________________________
+Electron Arm
+
+Spectrometers
+___	correct angle ___________ (not to be used for calculations)
+___	correct pointing _________(not to be used for calculations)
+___	collimator operation at 3 positions
+___	check spectrometer for obstructions to movement
+___	check intergen bottles for correct pressure
+___	insure that 15 degree stop pin is installed
+
+Vacuum 
+___	blower on at controls under spectrometer
+___	turbo on at turbo controller in rack # 1H71B01
+___	pump valves open at valve controller in rack # 1H71B01  channel #2 
+___	convectron gages read "0" millitorr 
+___	roughing valve closed at rack #1H71B01 channel # 4 
+___	cold cathode gages on at gage in rack # 1H71B01 cold cathode < 5x10-5
+___	actual cold cathode reading ________
+___	entrance & exit vacuum windows functional
+
+magnet controls
+Q1
+___	Q1 full of liquid  (80%) actual______
+___	open lead flows on Q1 to 80 slm as read from rack #Q171Q
+___	actual lead flows	A______	B______
+___	cctv camera on and focused
+
+D1
+___	Dipole full of liquid  (80%) actual______
+___	open lead flows on Dipole to 80 slm as read from rack #D171Q
+___	actual lead flows	A______	B______
+
+Q2
+___	Q2 full of liquid  (80%) actual______
+___	open lead flows on Q2 to 60 slm as read from the Q2 instrument rack meter.
+___	actual lead flows	A______	B______
+
+Q3
+___	Q3 full of liquid  (80%) actual______
+___	open lead flows on Q3 to 60 slm as read from the Q3 instrument rack meter.
+___	actual lead flows	A______	B______
+
+ Power supplies
+		POWER SUPPLY TURN ON PROCEDURES
+
+___	Verify UPSs as operational on all power supply controls (with no current on magnets only)
+___	red rotating beacons on 
+
+Q1:	
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	visually check power supply for faults
+___	when all faults have been cleared, insure that power supply is in remote control
+
+Q2:	
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on both sets of three pole breakers located on power supply
+___	visually check power supply for faults
+___	when all faults have been cleared, lift lever on lower right side of supply
+___	insure that power supply is in remote control
+
+Q3:
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on both sets of three pole breakers located on power supply
+___	visually check power supply for faults
+___	when all faults have been cleared, lift lever on lower right side of supply
+___	insure that power supply is in remote control
+
+Dipole:
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on power lever on right upper side of supply
+___	visually check power supply for faults on supply and at rack #
+___	when all faults have been cleared, insure that power supply is in remote control
+___	cctv camera on and focused
+___	check power supply for proper polarity 
+___	NMR gradient compensation for on and proper polarity
+
+Hadron Arm
+
+Spectrometers
+___	correct angle ___________ (not to be used for calculations)
+___	correct pointing _________(not to be used for calculations)
+___	collimator operation at 3 positions
+___	check spectrometer for obstructions to movement
+___	check intergen bottles for correct pressure
+___	insure that 15 degree stop pin is installed
+
+Vacuum 
+___	blower on at controls under spectrometer
+___	turbo on at turbo controller in rack # 1H71B01
+___	pump valves open at valve controller in rack # 1H71B01  channel #2 
+___	convectron gages read "0" millitorr 
+___	roughing valve closed at rack #1H71B01 channel # 4 
+___	cold cathode gages on at gage in rack # 1H71B01 cold cathode < 5x10-5
+___	actual cold cathode reading ________
+___	check dipole turbo for on
+
+magnet controls
+Q1
+___	Q1 full of liquid  (80%) actual______
+___	open lead flows on Q1 to 80 slm as read from rack #Q171Q
+___	actual lead flows	A______	B______
+___	cctv camera on and focused
+
+D1
+___	Dipole full of liquid  (80%) actual______
+___	open lead flows on Dipole to 80 slm as read from rack #D171Q
+___	actual lead flows	A______	B______
+
+Q2
+___	Q2 full of liquid  (80%) actual______
+___	open lead flows on Q2 to 60 slm as read from the Q2 instrument rack meter.
+___	actual lead flows	A______	B______
+
+Q3
+___	Q3 full of liquid  (80%) actual______
+___	open lead flows on Q3 to 60 slm as read from the Q3 instrument rack meter.
+___	actual lead flows	A______	B______
+
+
+
+
+
+ Power supplies
+		POWER SUPPLY TURN ON PROCEDURES
+
+___	Verify UPSs as operational on all power supply controls (with no current on magnets only)
+___	red rotating beacons on 
+
+Q1:	
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	visually check power supply for faults
+___	when all faults have been cleared, insure that power supply is in remote control
+
+Q2:	
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on both sets of three pole breakers located on power supply
+___	visually check power supply for faults
+___	when all faults have been cleared, lift lever on lower right side of supply
+___	insure that power supply is in remote control
+
+Q3:
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on both sets of three pole breakers located on power supply
+___	visually check power supply for faults
+___	when all faults have been cleared, lift lever on lower right side of supply
+___	insure that power supply is in remote control
+
+Dipole:
+___	visual inspection of main current leads, dump resistor, and lead flags (for condition, visual shorts ,etc.)
+___	unlock power disconnect switch and turn on AC power
+___	turn on power lever on right upper side of supply
+___	visually check power supply for faults on supply and at rack #
+___	when all faults have been cleared, insure that power supply is in remote control
+___	cctv camera on and focused
+___	check power supply for proper polarity 
+___	NMR gradient compensation for on and proper polarity
+
+
+
+  Target
+___	windows functional	
+___	cctv cameras "on" and focused
+___	target light "on" 
+___	backing pump "on" at pump
+___	turbo "on" at rack # 1H75B09
+___	turbo valve "open" at rack # 1H75B09 channel # 1
+___	gages operational
+___	convectron "0" millitorr at rack # 1H75B09
+___	cold cathode < 5x10-4 at rack # 1H75B08
+___	actual cold cathode reading __________
+
+
+Exit beam tube
+___	backing  pump "on" at pump and operational
+___	valve "open" controlled at rack # 1H75B09  channel # (temp manual at pump)
+___	turbo "on" at rack #  1H75B09            
+___	gages operational
+___	convectron "<5" millitorr at rack # 1H75B09
+___	actual  convection reading ________
+___	diffuser cooler on
+___	diffuser water level ok
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Entrance beam tube
+___	insure that Moeller turbo is on and running
+___	insure that Moeller target cooler is on and operational
+___	insure that there is cooling water flow to the Moeller Dipole 
+___	insure that ep turbo is on and running
+___	 beam line vacuum valves "open" (visually checked)
+___	instrument air compressor functioning normally
+
+
+ Hall 
+___	all interlocks in rack # 1H75B08 indicate green
+___	check 3 Moeller power supplies for on (lights flashing at magnets)
+___	check location and operational readiness of Ion chambers
+___	correct LCW flow and pressure (100 psi supply and 60 psi return)
+___	cctv cameras on and focused
+___	cctv monitors at X terminal off
+___	clear of unnecessary equipment
+___	Man lift and Forklift in truck ramp
+___	perform pre sweep of run safe boxes
+___	unnecessary personnel exit Hall
+___	move Electron spectrometer stairs clear of lower balcony
+___	ensure polar crane is positioned over the entrance beam pipe 
+and that power is off at the power disconnect switch 
+___	ensure spectrometer entrance window guards are removed
+___	ensure target window guards are remove

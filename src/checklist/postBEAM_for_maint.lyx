@@ -1,0 +1,542 @@
+#This file was created by <mitchell> Tue Jun 29 11:31:55 1999
+#LyX 1.0 (C) 1995-1999 Matthias Ettrich and the LyX Team
+\lyxformat 2.15
+\textclass article
+\language default
+\inputencoding default
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+Post Beam Checklist for maintenance period
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Revised 2/22/99
+\layout Standard
+
+This checklist will be performed after every restricted access to Hall A
+ that maintenance is performed
+\layout Standard
+
+People checking list _______________________________________________________
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+Spectrometers
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Install yellow covers on inlets to spectrometers
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ Target
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Install protective shields over vacuum windows if Cryo target is installed
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Power supplies
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+( from a computer console )
+\layout Standard
+
+Electron
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q2
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q3
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Dipole
+\layout Standard
+
+Hadron
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q1
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q2
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Q3
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+set current to 0 amps by remote control on Dipole
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Entrance beam tube
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Exit beam tube
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+Dump
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Inspect visible areas for water leaks
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+Hall 
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+NOTE :
+\protected_separator 
+ LOOK FOR "RADIATION AREA" SIGN and OBEY
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Inspect power supply platforms, spectrometers, and the rest of the Hall,
+ looking for water leaks and cryogenic plumes
+\layout Standard
+
+___
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+Man lift and Forklift removed from truck ramp
+\layout Standard
+
+\the_end
