@@ -1,17 +1,17 @@
 \chapter[The Waterfall Target]{The Waterfall Target
 \footnote{
-  $CVS~revision~ $Id: waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $ $
+  $CVS~revision~ $Id: waterfall-target.tex,v 1.6 2003/12/13 06:23:39 gen Exp $ $
 }
-\footnote{Authors: David Meekins \url{mailto:meekins@jlab.org} and 
- Maurizio Lucentini \url{mailto:lucentin@jlab.org}. \\
+\footnote{Authors: David Meekins \email{meekins@jlab.org} and 
+ Maurizio Lucentini \email{lucentin@jlab.org}. \\
  This file is a combination of two files taken from: \\
  \url{http://www.jlab.org/~meekins/h20_target/safety_doc/},\\
   \mycomp{Operation\_manual.lyx} and \mycomp{waterfall\_safety.lyx}.
   The original documents are available:\\
  \url{http://www.jlab.org/~meekins/h20_target/safety_doc/Operation_manual.ps} and\\
  \url{http://www.jlab.org/~meekins/h20_target/safety_doc/waterfall_safety.ps}\\
- The file has been formatted by J.LeRose \url{mailto:lerose@jlab.org}
- and E.Chudakov \url{mailto:gen@jlab.org}
+ The file has been formatted by J.LeRose \email{lerose@jlab.org}
+ and E.Chudakov \email{gen@jlab.org}
 }}
 % \newcommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
 
@@ -315,7 +315,7 @@ line to interface with the motor driver.
 The user interface (GUI)%
 \infolevtwo{ (Fig.~\ref{fig:wt_GUI})} %infolev
 is based on MEDM\cite{MEDMwww}\footnote{
-  The software is maintained by David Wetherholt \url{mailto:wether@jlab.org} 
+  The software is maintained by David Wetherholt \email{wether@jlab.org} 
   of the accelerator controls group.}\footnote{
  Software location:\mycomp{~mccops/medm/hla} (monticello),
  MEDM application \mycomp{ha$\_$wt$\_$stepmot.adl}; \\
@@ -1190,32 +1190,35 @@ necessary. Signage stating this will be posted on the motion mechanism
 upon installation in the hall.
 } %infolev
 \newpage
+\begin{safetyen}{10}{15}
 \section{Authorized  Personnel}
+\end{safetyen}
 
-\begin{table}[htp]
-\begin{center}
-  \begin{tabular}{|c|c|c|}\hline 
-  Name             & Phone & Pager\\ \hline\hline 
-Maurizio Lucentini &   -   & -\\ \hline
-Dave Meekins       & 5434  & 872-2442\\ \hline
-Ed Folts           & 7857  & 989-4580\\ \hline
-Rusty Salmons      & 6914  & 820-9205\\ \hline
-Scot Spiegel       & 5900  & 820-9013\\ \hline
-Mark Stevens       & 6383  & 820-9480\\\hline
-Gary Dezern        & 7119  & 820-5864\\\hline
-\end{tabular}
-\end{center}
-\caption{List of experts for the Hall A Waterfall Target.\label{tab:wt_experts}}
-\end{table}
+\begin{namestab}{tab:wt_experts}{Waterfall target: authorized personnel}{%
+   Waterfall target: authorized personnel}
+   \namestabheader{Physicists}
+   \DaveMeekins{\em Target Group}
+   \MaurizioLucentini{}
+   \namestabheader{Hall A Technicians}
+   \EdFolts{}
+   \RustySalmons{}
+   \ScotSpiegel{}
+   \MarkStevens{}
+   \GaryDezern{}
+\end{namestab}
+
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $
-% $Id: waterfall-target.tex,v 1.5 2003/12/05 07:35:03 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/waterfall-target.tex,v 1.6 2003/12/13 06:23:39 gen Exp $
+% $Id: waterfall-target.tex,v 1.6 2003/12/13 06:23:39 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/05 07:35:03 $
+% $Date: 2003/12/13 06:23:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: waterfall-target.tex,v $
+% Revision 1.6  2003/12/13 06:23:39  gen
+% Septum added. Name tables. Polishing
+%
 % Revision 1.5  2003/12/05 07:35:03  gen
 % WT2 modified. Polishing
 %

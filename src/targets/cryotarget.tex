@@ -1,7 +1,7 @@
 \chapter[Cryogenic Targets]{Cryogenic Targets
 \footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.7 2003/12/05 07:35:03 gen Exp $ $ }
-\footnote{Authors: J. P. Chen \url{mailto:jpchen@jlab.org}}
+  $CVS~revision~ $Id: cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $ $ }
+\footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
 
 \section{Procedure for Normal Running of the Hall A Cryogenic Targets}
@@ -388,44 +388,16 @@ experts (who have worked on the Hall A cryotarget system and
 have extensive knowledge of the system)
 and their pager and/or home numbers
 
-\vspace{0.3cm}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-Expert Name &Affiliation&
-Pager&Office&
-Home\\
-\hline 
-\hline 
-\hline 
-J. P. Chen&JLab Hall A&
- 584-7413&
- 7413&
- 867-7380\\
-\hline 
-K. McCormick&Rutgers&
-584-5433&
-7011&
-640-8062\\
-\hline 
-D. Meekins&JLab Target Group&
-584-5434&
-5434&
-974-4750\\
-\hline
-M. Seely&JLab Target Group&
-584-5036&
-5036&
-833-7890\\
-\hline  
-C. Keith&JLab Target Group&
-584-5878&
-5878&
-596-3002\\
-\hline 
-\end{tabular}
-\end{center}
-\vspace{0.3cm}
+\begin{namestab}{tab:cryotarg:personnel}{Cryo Target: experts}{%
+   Cryo target: experts and authorized personnel, with their home numbers}
+   \namestabheader{Hall A Physicists} 
+   \JianPingChen{h:867-7380}
+   \KathyMcCormick{h:640-8062}
+   \namestabheader{JLab Cryo-Target Group} 
+   \DaveMeekins{h:974-4750}
+   \MikellSeely{h:833-7890}
+   \ChristopherKeith{h:596-3002}
+\end{namestab}
 
 \par
 A cryotarget expert will be on call all the time when
@@ -1097,103 +1069,36 @@ the upstream and downstream  scattering chamber valves.
 the computer. This allows one to place the desired target in the beam.
 \end{description}
 
+\begin{safetyen}{10}{15}
 \subsection{ Authorized Personnel}
+\end{safetyen}
 
 The principle contacts for the cryogenic targets are listed in 
-table~\ref{tab:tarper}. Every shift must have a trained target
+table~\ref{tab:cryotarg:personnel-con}. Every shift must have a trained target
 operator whenever the cryogenic targets contain liquid. These
 operators are trained by one of the ``experts'' listed in the
 table and certified by J.P.~Chen.
 
-\vspace{0.3cm} { \centering 
-\begin{table}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline 
-Component &
- A Staff&
- \#&
- Outside Group&
- \#&
- Remark\\
-\hline 
-Chamber Vacuum&
- Ed Folts&
- 7857&
-&
-&
- or Technician \\
-&
-&
-&
-&
-&
- On Call\\
-\hline 
-Cryogenic Target &
-J. P. Chen
-&7413 &
-&
-&
- or Cryo-target \\
-&
-&
-&
-&
-&
-On Call 
-\\
-\hline 
-&
-&
-&
- K. McCormick&
- 7011&
- Rutgers\\
-\hline 
-&
-&
-&
- D. Meekins&
- 5434&
- Target Group\\
-\hline 
-&
-&
-&
- M. Seely&
- 5036&
- Target Group\\
-\hline 
-&
-&
-&
- C. Keith&
- 5878&
- Target Group\\
-\hline 
-ESR&
-&
-&
- CHL&
- 7405&
- Cryo Group\\
-\hline 
-ESR&
-&
-&
- Cryo on Call&
- 7048&MCC
-\\
-\hline 
-\end{tabular}
-\label{tab:tarper}
+\begin{namestab}{tab:cryotarg:personnel-con}{Cryo Target: personnel and contacts}{%
+   Cryo target: authorized personnel and contacts. ''W.B'' stands for the white board
+   in Counting House.}
+   \namestabheader{Hall A Technicians} 
+   \TechonCall{Vacuum}
+   \EdFolts{Vacuum}
+   \namestabheader{Hall A Physicists} 
+   \CryotargonCall{Cryotarget}
+   \JianPingChen{Cryotarget}
+   \KathyMcCormick{}
+   \namestabheader{JLab Cryo-Target Group} 
+   \DaveMeekins{}
+   \MikellSeely{}
+   \ChristopherKeith{}
+   \namestabheader{Central Helium Liquefier (CHL) Experts} 
+   \CryoonCall{ESR}
+   \CHLgroup{ESR}
+\end{namestab}
 
-\caption{Contact Personnel for the Cryogenic Targets and Scattering Chamber}
-\end{table}
-}
-
-\par{} \vspace{0.3cm}
-}
+} %infolev
 % \newpage
 %-----------------------------------------------------------------------
 \section[Cryogenic Target Control System User Manual]
@@ -1228,13 +1133,16 @@ is also available at the above web sites.
 %\end{document}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.7 2003/12/05 07:35:03 gen Exp $
-% $Id: cryotarget.tex,v 1.7 2003/12/05 07:35:03 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $
+% $Id: cryotarget.tex,v 1.8 2003/12/13 06:23:39 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/05 07:35:03 $
+% $Date: 2003/12/13 06:23:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: cryotarget.tex,v $
+% Revision 1.8  2003/12/13 06:23:39  gen
+% Septum added. Name tables. Polishing
+%
 % Revision 1.7  2003/12/05 07:35:03  gen
 % WT2 modified. Polishing
 %

@@ -1,8 +1,8 @@
 \chapter[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: HacOps.tex,v 1.9 2003/12/05 06:42:14 gen Exp $ $
+  $CVS~revision~ $Id: HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $ $
 }
-\footnote{Authors: J.Gomez \url{mailto:gomez@jlab.org}}
+\footnote{Authors: J.Gomez \email{gomez@jlab.org}}
 }
 \label{chap:controls}
 
@@ -239,8 +239,10 @@ monitor the hall cryogenics. The application can be started from the terminal wi
 }
 
 \section{Hall A Menu}
+\label{sec:contr-ha-menu}
 The ``Hall A Menu'' application brings up a menu giving access to all the EPICS 
 based control systems in Hall A. The application can also be started on, say \mycomp{hacsbc2}
+under username \mycomp{hacuser}\footnote{The password can be found in the counting house},
 from a terminal with the command \mycomp{hlamain}, opening a control window%
 \infolevtwo{ (see Fig.~\ref{fig:medm-hlamain})}.
 Using this window one can open the ``Tools'' window%
@@ -276,13 +278,16 @@ the software on-call person be notified. If the name is ``hallasc..'' call J. Go
 %\clearpage % forces LaTeX to finish all remaining open floats
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.9 2003/12/05 06:42:14 gen Exp $
-% $Id: HacOps.tex,v 1.9 2003/12/05 06:42:14 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $
+% $Id: HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/05 06:42:14 $
+% $Date: 2003/12/13 06:23:37 $
 % $Name:  $
 % $Locker:  $
 % $Log: HacOps.tex,v $
+% Revision 1.10  2003/12/13 06:23:37  gen
+% Septum added. Name tables. Polishing
+%
 % Revision 1.9  2003/12/05 06:42:14  gen
 % Re-add two png files to avoid branches
 %
