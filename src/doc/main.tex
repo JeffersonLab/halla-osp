@@ -18,7 +18,7 @@
 \begin{titlepage}
 \title{{\bf OSP Instructions for Contributors
 \thanks{
- $CVS~revision~ $Id: main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $ $
+ $CVS~revision~ $Id: main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $ $
 }
 }}
 
@@ -106,13 +106,17 @@
 
   I recommend to use a Linux%
 \footnote{A relatively new version of \href{http://www.tug.org/teTeX/}{tetex} 
-  package should be used. I have tested it with \mycomp{tetex-1.0.7-47.1},
-  available for Linux RedHat 7.3. In contrast, the older package
-  installed at RedHat 7.2 gives problems with \mycomp{latex2html}.
-  By May,20 2003, of all the JLab public computers, RedHat 7.3 was installed only
-  at the diskless machines \mycomp{dlha1}, \mycomp{dlha2} etc. These machines
-  can be used to make the documents.
-}
+  package should be used (at least \mycomp{tetex-1.0.7-47.1} or more recent),
+  generally available at JLab Linux computers.},
+  
+%. I have tested it with \mycomp{tetex-1.0.7-47.1},
+%  available for Linux RedHat 7.3. In contrast, the older package
+%  installed at RedHat 7.2 gave problems with \mycomp{latex2html}. 
+%  By Dec,5 2004, RedHat Enterprise Linux is installed on nearly all JLab
+%  computers, equipped with newer versions of  \mycomp{tetex}. One may use 
+%of all the JLab public computers, RedHat 7.3 was installed only
+%  at the diskless machines \mycomp{dlha1}, \mycomp{dlha2} etc. These machines
+%  can be used to make the documents.
   machine to
   check out the code and build the documents.
   There are only a few commands to be typed in the UNIX
@@ -166,7 +170,7 @@
   \end{list}
 
   At first the PDF document should be built, the HTML document 
-  can be built afterword's:
+  can be built afterwords:
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
     \item \mycomp{cd run} 
     \item \mycomp{make pdf} - a file \mycomp{osp.pdf} is created;
@@ -185,6 +189,22 @@
     \item \mycomp{make pdf} - a file \mycomp{doc.pdf} is created;
   \end{list}
  
+\subsection{Updating Your Source}
+\label{sec:updatesource}
+
+  The repository can change at any moment, when people commit their changes.
+  In order to update your source (match it with the repository) of, for example. directory \mycomp{run}, you should: :
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+    \item \mycomp{cd src/hrs} - create the work directory \mycomp{run}.
+    \item \mycomp{cvs update} 
+  \end{list}
+
+  Other useful commands, helping to compare your source with the repositoruy:
+  \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
+     \item \mycomp{cvs status} 
+     \item \mycomp{cvs diff} 
+  \end{list}
+  
 \section{Editing the OSP Source}
 \label{sec:edit}
 
@@ -551,13 +571,16 @@ Use the existing OSP document as the source of other examples.
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $
-% $Id: main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $
+% $Id: main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/17 03:59:48 $
+% $Date: 2004/12/08 20:07:14 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.11  2004/12/08 20:07:14  gen
+% Update on the details of the soft. packages
+%
 % Revision 1.10  2003/12/17 03:59:48  gen
 % authorized personnel tables unfied
 %
