@@ -1,19 +1,19 @@
 \chapter[RICH]{RICH
+\label{sec:rich}
 \footnote{
-  $CVS~revision~ $Id: rich.tex,v 1.3 2004/03/20 01:02:45 reitz Exp $ $
+  $CVS~revision~ $Id: rich.tex,v 1.4 2005/04/04 22:27:25 gen Exp $ $
 }
 \footnote{Authors: B.Reitz \email{reitz@jlab.org}}
 }
-\label{sec:rich}
 
 \section{Purpose and Layout} 
 
 The Hall A RICH detector is designed to be used for particle identification purposes, mainly 
-to identify kaons in a large background of pions and protons. The detector can be mounted in
+to identify kaons from a large background of pions and protons. The detector can be mounted in
 the detector stack of the left HRS, between the trigger scintillator planes S1 and S2 (S2m),
 together with the two Aerogel Cherenkov detectors.
 
-Its design is conceptional identical 
+Its design is conceptionally identical 
 to the CERN Alice HMPID detector \cite{Beole:1998yq}, but adapted to the special needs
 of the Hall A environment.
 A detailed description of the Hall A RICH detector can be found in \cite{hallarep02}.
@@ -28,8 +28,7 @@ is housed in a vessel made of NEOCERAM\footnote{NEOCERAM is
 a glass-ceramic material with mechanical and thermal properties
 almost identical to quartz.}    
 on all sides but
-the exit window which is made of pure quartz, 
-0.5 cm thick. 
+at the exit window, which is made of 0.5~cm thick.pure quartz.  
 The use of a liquid radiator has been imposed by the momentum range (around
  2 GeV/c) of the particles to be identified.
 The Cherenkov photons, emitted along a conical surface,
@@ -50,25 +49,25 @@ of 10 cm filled with methane.
 
 The pad plane
  is covered by a thin substrate of CsI which
-acts as photon converter. The emitted photo-electron is
+acts as the photon converter. The emitted photo-electron is
 accelerated by an electrostatic field (2100~V$/2$~mm) 
 between the pad plane and
 an anode wire plane in front of the pads,
  forming a MWPC (Multi Wire Proportional Chamber). 
 While the anode wires collect the electron avalanche, the counterpart 
 ions are collected by clusters of pads, each of which is connected to the
-input channel of a multiplexed sample-and-hold electronics, housed on the
+input channel of multiplexed sample-and-hold electronics, housed on the
 back of the pad plane.
 At the end of this process, the
 clusters of pads hit by the photons should be
 scattered around a ring (ellipse) while 
 one cluster coming from the charged particle track
 should be located in the central region of the ring.
-A drift electrode operated at 250~V and located close to the quartz window,
-prevents electrons produced by ionization of the counting gas by charged 
+A drift electrode operated at 250~V and located close to the quartz window
+prevents electrons produced by the ionization of the counting gas by charged 
 particles in the proximity gap from reaching the MWPC. The MWPC of the RICH detector 
 has to be operated with pure methane to achieve the 
-designed performances. The first stage of front-end electronics is mounted on the 
+designed performances. The first stage of the front-end electronics is mounted on the 
 backside of the detector. \infolevone{
 Table \ref{rich_list.tab} presents a detailed list of the RICH components.  
 
@@ -96,7 +95,7 @@ Table \ref{rich_list.tab} presents a detailed list of the RICH components.
     Photon converter & 300~nm of CsI coating the pad surface \\
     Electronics      & analog, charge sensitive sample
                        and hold, 11520 channels\\
-                     &  multiplexed in 48 ADCs \\
+                     &  multiplexed into 48 ADCs \\
     \hline
   \end{tabular}
   \end{center}
@@ -106,7 +105,7 @@ Table \ref{rich_list.tab} presents a detailed list of the RICH components.
 
 The RICH detector is mounted together with the standard HRS detector package 
 in the shield hut of the left HRS in Hall A. For the operation of the RICH
-detector the following systems need to be installed in Hall A.
+detector the following systems must be installed in Hall A.
 
 \infolevone{
 \section{Description of Components}
@@ -118,18 +117,18 @@ methane, when the detector is operated or in stand-by, or with
 an ultra high purity inert gas (argon) when the RICH is not used.\end{safetyen}
 If the detector is not flushed with clean gas for extended periods,
 there is a risk of damage or degradation of the CsI photo-cathode.
-The choice of using methane as counting gas is based on experience with 
-comparable detectors at CERN and STAR, it is the optimal choice concerning 
-detector efficiency. \begin{safetyen}{10}{5} However, methane like other hydrocarbons, is flammable,
+The choice of using methane as the counting gas is based on experience with 
+comparable detectors at CERN and STAR: it is the optimal choice concerning 
+detector efficiency. \begin{safetyen}{10}{5} However methane, like other hydrocarbons, is flammable
 so care must be taken to mitigate the hazards involved with its use.\end{safetyen}
 The methane supply is an addition to 
 the Hall A Wire Chamber Gas System HAWGS\cite{Hawgswww}. The complete gas system is 
 described elsewhere in this document.
-Devices to monitor water and oxygen contaminations 
-and filters to clean out oxygen contaminations are installed in the lines close to the 
+Devices to monitor water and oxygen contamination 
+and filters to clean out oxygen contamination are installed in the lines close to the 
 detector itself. 
 The flow is restricted by \begin{itemize}
-\item an Excess-Flow valve (maximum flow 4~l/min, standard flow is 1~l/min)
+\item an Excess-Flow valve (maximum flow is 4~l/min, standard flow is 1~l/min)
 located in each gas supply line just prior to the entry to the gas shed;
 \item by the mass-flow control system which meters the gas delivered out of the 
 gas shed to the two shield houses. 
@@ -140,21 +139,21 @@ The remote controls for the
 RICH gas system is integrated into the standard Hall A EPICS controls. 
 
 \subsection{Freon System}
-The liquid freon needs to be constantly purified for operating the RICH detector.
-A freon recirculation and purification system is installed close to to the RICH detector 
+The liquid freon needs to be constantly purified when operating the RICH detector.
+A freon recirculation and purification system is installed close to the RICH detector 
 on the floor of the left detector hut. Besides the filtering and refilling stages,
 which control the high solubility and volatility of the freon, a device to measure
 the transparency of the freon is integrated. The slow controls and DAQ for the freon
 system are integrated into the Hall A EPICS system.
 
 \subsection{DAQ, Low- and High-Voltage Supplies}
-The high voltage for the MWPC is provided by an CAEN HV power supply, which can
+The high voltage for the MWPC is provided by a CAEN HV power supply which can
 be controlled remotely by EPICS. The low voltage for the front-end electronics 
-is provided by two power supplies, which can only be controlled locally, but
+is provided by two power supplies which can only be controlled locally, but
 whose status can be monitored via EPICS.
 All power supplies are located on the first or second level platform of the 
 left arm detector stack. The DAQ system is integrated into the standard Hall A 
-DAQ system, however it requires two additional VME-Crates, and one additional 
+DAQ system; however it requires two additional VME-Crates and one additional 
 NIM-Bin.
 }
 
@@ -163,7 +162,7 @@ NIM-Bin.
  
 \subsection{Installation}
  
-Before moving the detector into the Hall, it shall be filled with an inert, ultra high purity gas, either
+Before moving the detector into the Hall, it shall be filled with an inert, ultra high purity gas: either
 carbon dioxide, argon, or nitrogen. After mounting the detector in the detector stack, the 
 appropriate routing for the outlet tubing shall be determined (Hall A exhaust line). This tubing 
 is equipped with a gas bubbler and ends outside the Hall, vented to 
@@ -173,19 +172,19 @@ Prior to using methane in the RICH detector, the
 tubing shall be flushed completely with an inert gas (argon) - bypassing the RICH detector -
 to displace any oxygen in the system. 
 
-The low voltage cables and the front-end electronics cards need to be installed next
+The low voltage cables and front-end electronics cards need to be installed next
 (if they aren't already installed) to ensure proper electrical grounding of all parts
 of the detector.
 {\bf Now the chamber can be flushed with methane }
 The signal and control cabling can be installed, as well as the tubing for the freon system. 
-Low- and high-voltage supplies, and all VME-crates/NIM-bins for DAQ and slow control
-should now be connected, and can be powered up.
+Low- and high-voltage supplies, all VME-crates/NIM-bins for DAQ, and slow controls
+should now be connected and can be powered up.
 
 \subsection{De-Installation and Mechanical Work}
 
 Before removing the detector from the detector stack or before mechanical 
-work on the detector is performed, it shall be flushed with argon. The radiator
-needs to be drained, and the freon tubing removed, before the RICH detector can
+work on the detector is performed it shall be flushed with argon. The radiator
+needs to be drained and the freon tubing removed before the RICH detector can
 be moved out of the detector stack.
 
 \subsection{During Data-Taking}
@@ -198,12 +197,12 @@ These functions include:
 \item Setting and monitoring of the high voltage for the MWPC.
 \item Monitoring of the freon purity and freon flow.
 \item Measurements of the freon transparency.
-\item Monitoring and controlling of gas selection and gas flow for the MWPC.
+\item Monitoring and controlling the gas selection and gas flow for the MWPC.
 \item Monitoring of the water and oxygen contamination of the counting gas for the MWPC.
 \item Monitoring of the currents for the low voltage supply of the front-end electronics. 
 \end{itemize}
 The EPICS controls will be described in more detail in the following subsections.
-The DAQ of the RICH itself is fully integrated into the Hall A DAQ software, by
+The DAQ of the RICH itself is fully integrated into the Hall A DAQ software. By
 choosing the appropriate CODA configuration, data from the RICH will be included into the
 data stream. 
 
@@ -212,7 +211,7 @@ data stream.
 All slow controls for the RICH detector are written in EPICS
 and run on the IOC iocha3.jlab.org (129.57.188.40). 
 The controls are accessible from a single EPICS screen,
-which can be started from the HLAMAIN menu \cite{EPICSwww}, by pressing the 
+which can be started from the HLAMAIN menu \cite{EPICSwww} by pressing the 
 button ``RICH Detector''.
 
 \infolevfour{
@@ -246,13 +245,13 @@ per 10~mV. If the radiator is filled, the pressure should be
 at roughly 950~Torr (9.5~V). If the pressure increases, there 
 is a risk of breaking the freon vessel. On the other side, a decreasing
 pressure indicates either a leak, a wrong setting of a valve, or 
-the freon system to be nonoperational.
+the freon system is nonoperational.
 For normal  operation the Radiator fill valve has to be open,
 and the Radiator drain valve closed. If both valves would be closed,
 the freon would not be purified any longer and its transparency
 would decrease. If the drain valve is opened
 the radiator will be emptied.
-During and after an IOC crash reboot the Radiator remains in the same
+During and after an IOC crash/reboot the Radiator remains in the same
 state as before. 
 If anything is wrong in this part of the screen, contact 
 the ``RICH on call'' person.
@@ -266,12 +265,12 @@ status of the Condensor controls remains the same as before.
 
 Shift workers have to watch the status of the Gas System frequently.
 The methane flow should be at 500~SCCM (look at the White Board for
-more up-to-date numbers), the argon flow at 0~SCCM.
-Under these conditions the oxygen content should be below 25~ppm,
+more up-to-date numbers), and the argon flow at 0~SCCM.
+Under these conditions the oxygen content should be below 25~ppm, and
 the moisture below 10~ppm. All six valves have to be in the state ``RegFlow''.
-Be aware that the oxygen sensor is flow sensitive, at 
-larger gas flows, the readings decrease. See Sec. \ref{sec:rich_measures} 
-for details, about what to do, if the readings are not at the
+Be aware that the oxygen sensor is flow sensitive - at 
+larger gas flows the readings decrease. See Sec. \ref{sec:rich_measures} 
+for details about what to do if the readings are not at the
 appropriate values.
 
 \subsubsection{Power Supplies}
@@ -296,15 +295,15 @@ The control screens for the HV of the MWPC
 are started by pressing the button ``CAEN'', which is 
 in the lower right corner of the EPICS screen
 in the ``Fluid Purity'' section. 
-The next level screen allows to clear alarms and to choose between
+The next level screen allows one to clear alarms and to choose between
 different modules in the CAEN CRATE. The channels for the RICH are in
 module 2. Clicking on this button brings up the status screen of the 
 HV module. The RICH uses channel 16 for the anode wires and channel
 17 for the shield wires in front of the radiator. They should be at
 roughly 2100~V and 250~V. The current is typically very low (less
-than 0.1~uA). If the HV trips, the alarm should be cleared,
+than 0.1~uA). If the HV trips the alarm should be cleared,
 and then one can try to turn the chamber back on (go to the 
-Module 2 controls screen). The ramp-up rate is low, and it takes
+Module 2 controls screen). The ramp-up rate is low and it takes
 several minutes. If the chamber trips again, or if it trips frequently, 
 the ``RICH-on-call''
 should be informed, and no further attempt to reset the chamber should
@@ -313,22 +312,22 @@ be made.
 \subsubsection{Procedures for the Gas System}
 \label{sec:rich_measures}
 
-There are two common problems with gas system for the 
+There are two common problems with the gas system for the 
 MWPC of the RICH. If the IOC crashes and does not reboot,
 the Interlock system takes over. In this status the 
 RICH detector is flushed with whatever gas is in the line
 with a very high flow. This is safe, as long as the detector
 was in normal condition before the crash. However due to the 
 large flow, the methane bottle(s) would run empty very fast.
-Also the operator has no control to remotely stop the gas flow,
+Also the operator has no control to remotely stop the gas flow
 in case something happens. Therefore the shift workers should 
 contact the ``RICH-on-call'' if the IOC hangs and does not come 
 up by itself.
 
-After an IOC crash, it should reboot by itself.
+After an IOC crash it should reboot by itself.
 However, initially the IOC turns down the gas flow, and puts
 the valves in the RegFlow position \infolevfour{(see Fig. \ref{fig:rich_afterreb})}. 
-If the gas does not flow,
+If the gas does not flow
 there is a slight chance that it becomes contaminated. 
 Therefore the procedure to recover is the following:
 \begin{itemize}
@@ -372,10 +371,10 @@ the ``RICH on call'' should be contacted.
 
 \subsection{Exchange of Gas Bottles}
 
-The gas system automatically switches to the second methane bottle, if the first one 
+The gas system automatically switches to the second methane bottle if the first one 
 runs empty. With the standard gas flow a single bottle will last for two weeks.
-When a gas bottle is exchanged, a very tiny amount of air (several ml) can in principle come 
-into the system. This amount would not generate any fire hazard, since it is small
+When a gas bottle is exchanged, a very tiny amount of air (several ml) can in principle 
+enter the system. This amount would not generate any fire hazard, since it is small
 compared to the volume of any subsystem of the RICH. However, since the CsI-photocathode
 suffers from any exposition to oxygen or water, the following procedure is recommended.
 Before switching the bottles the RICH gas system should be set in by-pass mode.
@@ -394,7 +393,7 @@ again, and the gas system can be turned back to use any of the two available bot
 The gas used for the RICH detector 
 is methane, which is flammable. The detector is installed inside
 the left detector hut, together with the standard Hall A detector system.
-This following section will show, that the addition of the RICH with its gas system,
+This following section will show that the addition of the RICH with its gas system,
 although increasing the amount of flammable gas, does not change the 
 Gas System Risk Class assessment of the standard detector package. 
 The necessary measures to mitigate the fire hazards are part of the standard
@@ -404,7 +403,7 @@ The following sections will only point out the additional precautions required b
 \subsubsection{Detector Hut}
 
 As methane is flammable there can be no  
-smoking, open flames, or any operation nearby, which generates sparks.  
+smoking, open flames, or any operation nearby which generates sparks.  
 Another important precaution is to prevent any mixing of methane with air or 
 oxygen.
 The detector (including all plumbing inside the shield hut) holds less 
@@ -503,7 +502,7 @@ The anode wire plane is typically operated at 2100~V, the
 drift electrode plane at 250~V.
 Before installing the HV cables and before applying the HV the 
 LV cables have to be installed, and the grounding of the detector 
-has to be ensured. The HV shall only be turned on, after the 
+has to be ensured. The HV shall only be turned on after the 
 detector is thoroughly flushed with the counting gas.
 The high voltage MUST be turned off during all work on the detector.
 
@@ -512,7 +511,7 @@ The high voltage MUST be turned off during all work on the detector.
 \section{List of people working on the project} 
  
 The list
-of the presently authorized personnel for work on the RICH detector 
+of presently authorized personnel for work on the RICH detector 
 is given in Tab.~\ref{tab:rich:personnel}.
 Other individuals must notify and receive permission from
 the contact person (see Tab.~\ref{tab:rich:personnel}) before adding their names 
@@ -526,7 +525,7 @@ This training shall include a familiarization with this document and with
 the hazards involved in the operation of the RICH detector, and a demonstration
 of the EPICS and CODA interfaces to control and monitor the RICH.
 A list of trained RICH operators, together with their signature and 
-with the sign-off of an authorized personnel of Tab.~\ref{tab:rich:personnel}
+with the sign-off of an authorized personnel of Tab.~\ref{tab:rich:personnel},
 shall be kept by the RICH contact person.
 
 

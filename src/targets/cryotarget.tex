@@ -1,6 +1,6 @@
 \chapter[Cryogenic Targets]{Cryogenic Targets
 \footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $ $ }
+  $CVS~revision~ $Id: cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $ $ }
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
 
@@ -12,7 +12,7 @@ cryogenic Hydrogen and Deuterium targets.
 The Hall A cryotarget system contains three target loops. The top loop (loop 1)
 has a single 10 cm ``tuna can'' helium cell, which will be filled with either 
 $^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA). For 
-normal Hydrogen and Deuterium running, the top loop is often leave as a spare,
+normal Hydrogen and Deuterium running, the top loop is often left as a spare,
 in which 
 case it will be filled with a little over one atm helium gas. Both the middle 
 loop and the bottom loop contain one 15 cm and one 4 cm  ``beer can'' cells.
@@ -21,7 +21,7 @@ operation.
 The bottom loop (loop 3) is usually filled with liquid Deuterium during normal
 operation. If only the Hydrogen target is used, such as the case for   
 the HAPPEX running, loop 3 (the Deuterium loop) 
-will be filled with 17 PSIA helium gas to prevent save contamination.
+will be filled with 17 PSIA helium gas to prevent contamination.
 
 \par
 During the normal operation, the Hydrogen and/or Deuterium target should
@@ -111,7 +111,7 @@ target motion mechanism.
 
 \par
 \begin{safetyen}{10}{5}
-When full power beam with tiny beam spot hit the cryotarget, there is a danger 
+When full power beam with tiny beam spot hits the cryotarget, there is a danger 
 that the beam can melt the target cell. The fast raster is used to prevent this
 from happening. Every time when moving the cryotarget into beam position,
 the target operator \emph {must check to make sure} that the faster raster 
@@ -136,7 +136,7 @@ the on-call target expert.
 The Hall A target experts and the JLab target group like to track the state
 of the target. To help them in this task the 
 target checklist \emph{must be filled
-out once per shift} and store in the target checklist binder.
+out once per shift} and stored in the target checklist binder.
 
 }
 %\infolevltone{
@@ -145,7 +145,7 @@ out once per shift} and store in the target checklist binder.
 One individual on each shift is responsible for target operations. 
 This individual
 is the designated target operator. To become a target operator, 
-one must be trained by one of the target experts and to sit at least
+one must be trained by one of the target experts and must sit at least
 one shift with an already certified target operator. The training usually 
 takes place in the Hall A counting house and consists of a guided walk 
 through of the control system. 
@@ -166,12 +166,15 @@ who trained him/her should inform the Hall A staff who is responsible
 for the cryotarget system (J. P. Chen), who will then sign off to authorize
 him/her to be a certified target operator. 
 \par
-The table below lists the qualified target operators and provides space 
-for additional entries. The names of all
-operators must appear in this table.
+The Table~\ref{tab:targ-operators} lists the qualified target operators and provides space 
+for additional entries. This table is a template, while the currently valid
+table is located in the counting house.
+The names of all operators must appear in that table.
 
 \vspace{0.3cm}
 
+
+\begin{table}[htb]
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -365,18 +368,13 @@ R. Suleiman&suleiman&
 &
 \\
 \hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
- \\
 \hline 
 \end{tabular}
 \end{center}
+\caption[Cryotarget: Trained operators]{An example list of the trained operators. The currently valid
+         list is located in the counting house.}
+\label{tab:targ-operators}
+\end{table}
 
 \vspace{0.3cm}
 
@@ -538,7 +536,7 @@ a Oxford ITC-502 temperature controller. The heater lead wire is
 18 gauge Kapton insulated copper stranded wire. The heaters have a
 DC resistance of 20 $\Omega$ and hence will draw a maximum of 2 $A$. 
 The power supplied to this heater is monitored by the control system.
-\item[{\bf High Power Heater}]There are two kapton enclosed incoloy heater foils
+\item[{\bf High Power Heater}]There are two kapton enclosed incoloy\texttrademark{} heater foils
 wrapped on the inside wall of each heat exchanger.
 The maximum power available to each
 heater is  500 $W$. The heater has a DC resistance of
@@ -629,8 +627,9 @@ and pressure gauges (PI123 for hydrogen and PI112 for deuterium).
 If the pressures are significantly deviate from either from one another or from
 the normal operating pressure, the target operator should call the 
 target-expert-on-call. When they differ from one another, it often is due to 
-a failure of one (or more) of the pressure transducers. If more than one deviate significantly from the normal operating pressure, it could be due to 
-temperature change or could be, in more serious situation, leak in the system.
+a failure of one (or more) of the pressure transducers. 
+If more than one deviates significantly from the normal operating pressure, it could be due to 
+a temperature change or could be, in a more serious situation, a leak in the system.
 
 \subsubsection{ Target Cells}
 
@@ -906,7 +905,7 @@ relief line response. The mass flow rate was 0.03 lbs/s.}
 
 The calculation of the pressure drop includes all the plumbing up to the
 large relief valve. 
-The calculation assumes that all the mass flow is carried out the
+The calculation assumes that all the mass flow is carried out on the
 relief side of the target gas handling system (no flow out of the fill line
 reliefs). 
 The friction factor for each diameter was taken from a Moody plot.
@@ -1015,12 +1014,12 @@ In the unlikely event that the target temperature drops too low,
 an alarm will sound and the target operator will turn down the corresponding
 J-T valve(s). 
 In one instance the target temperature could drop is when the target control
-ios is rebooted. After the ioc reboot, the high power heater will be reset 
+IOC is rebooted. After the IOC reboot, the high power heater will be reset 
 to zero before going back to PID control. Although the time the high power 
-heater is zeor is short (for about 1 minute), the temperature will drop.
+heater is zero is short (for about 1 minute), the temperature will drop.
 To prevent it to happen, an auxiliary heater is used in parallel to the
-regular heater. During an ioc reboot, the auxiliary heater will
-replace the rugular one to keep the temperature from dropping.
+regular heater. During an IOC reboot, the auxiliary heater will
+replace the regular one to keep the temperature from dropping.
 
 \subsection{ODH}
 \label{sec:targ:odh}
@@ -1039,7 +1038,9 @@ The target controls have been implemented with the EPICS~\cite{EPICSwww} control
 system and with hardware very similar to that employed by the accelerator.
 The basic control functions reside on a VME based single board
 computer. The graphical interfaces to the control system use a PC, and
-also require the Hall A Hewlett Packard, HP, computer for control (HAC)
+also require the Hall A 
+%Hewlett Packard, HP, 
+computer for control (HAC, for example \mycomp{hacsbc2} -see Sec.~\ref{chap:controls}) 
 to be present as well.
 
 All of the instrumentation for the target is downstairs in Hall A.
@@ -1134,13 +1135,16 @@ is also available at the above web sites.
 %\end{document}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $
-% $Id: cryotarget.tex,v 1.11 2004/12/20 21:45:21 jpchen Exp $
-% $Author: jpchen $
-% $Date: 2004/12/20 21:45:21 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
+% $Id: cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
+% $Author: gen $
+% $Date: 2005/04/04 22:27:25 $
 % $Name:  $
 % $Locker:  $
 % $Log: cryotarget.tex,v $
+% Revision 1.12  2005/04/04 22:27:25  gen
+% Chnges after the review
+%
 % Revision 1.11  2004/12/20 21:45:21  jpchen
 % further changes according to review
 %

@@ -12,6 +12,7 @@ Cates            Gordon          UVA
 Chen             Jian-Ping      JLab 
 Chudakov         Eugene         JLab
 Colombel         Nathalie        CEA   8350  ncolombel@Cea.Fr
+Curtis           Christopher    JLab
 Cusanno          Francesco      INFN    
 Day              Tony           JLab 
 Deck             Pascale         CEA   2426  pdeck@Cea.Fr        
@@ -39,13 +40,13 @@ Keith            Christopher    JLab
 Korsch           Wolfgang        UoK 
 Kramer           Kevin           CWM
 Kross            Brian          JLab
-Kursun           Zafer          JLab
 Lauze            Ron            JLab 
 LeRose           John           JLab
 Lhuillier        David           CEA   9497  dlhuillier@Cea.Fr   
 Liyanage         Nilanga         UVA
 Lucentini        Maurizio       INFN
 Lussignol        Yves            CEA   2828  lussi@Cea.Fr        
+Manzlak          Bert           JLab
 Marroncle        Jacques         CEA
 McCormick        Kathy         Rutgers 
 Meekins          Dave           JLab
@@ -70,6 +71,7 @@ Seidman          David          JLab
 Slifer           Karl          Temple          
 Solvignon        Patricia      Temple  
 Spiegel          Scot           JLab
+Spraggins        Darrell        JLab
 Stevens          Mark           JLab
 Sulkosky         Vince           CWM 
 Tarte            G\'{e}rard      CEA   8464  gtarte@Cea.Fr       

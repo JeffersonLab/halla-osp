@@ -1,7 +1,7 @@
 \chapter[eP Beam Energy Measurement]{eP Beam Energy Measurement
 \label{sec:ep}
 \footnote{
-  $CVS~revision~ $Id: ep.tex,v 1.7 2004/12/15 00:12:59 gen Exp $ $
+  $CVS~revision~ $Id: ep.tex,v 1.8 2005/04/04 22:27:24 gen Exp $ $
 }
 \footnote{Authors: B.Reitz \email{reitz@jlab.org}}
 }
@@ -86,7 +86,7 @@ Channel & HV (Volts) & Detector  \\ \hline \hline
 
 \infolevtwo{
 The standard way to control the high voltage is the use of the 
-Hall A MEDM~\cite{MEDMwww} graphical user interface (EPICS~\cite{EPICSwww}), which is running 
+Hall A MEDM~\cite{MEDMwww} graphical user interface (EPICS~\cite{EPICSwww}), which runs
 on the \mycomp{hacsbc2} computer. This computer is located in the counting house,
 but can also be accessed from other terminals. Usually at least one terminal 
 in Hall A itself has a MEDM screen running, as well. If it is not running, log into \mycomp{hacsbc2}
@@ -192,7 +192,7 @@ It can be started from the ``Hall A Main Menu'' \infolevtwo{(Fig. \ref{fig:medm-
 running on \mycomp{hacsbc2} by pressing the \mycomp{EP Energy Measure} button.
 (see previous chapter, to learn how to start the ``Hall A Main Menu'' in case
 it is not already running)
-The controls are actually running on a VME computer \mycomp{hallasc6} 
+The controls actually run on a VME computer \mycomp{hallasc6} 
 (Bob calls this \mycomp{e-p~2}). It is located in the eP electronics 
 racks along the beamline in Hall A \infolevfour{(Fig. \ref{fig:ep_pic_slow_ctrl})}. This computer
 sometimes requires rebooting. \infolevtwo{ The computer is reached through 
@@ -269,7 +269,7 @@ least 30 minutes for the strips to stabilize.
 \label{sec:ep_target}
 
 The target of the eP system is made of a thin polyethylene (CH$_2$) tape, which 
-is moving while it is in the electron beam. \infolevtwo{ To operate the target one has to
+moves while it is in the electron beam. \infolevtwo{ To operate the target one has to
 pull up the target GUI (Fig. \ref{fig:ep_target_control}). There are two controls, one to start the target moving
 labeled \mycomp{Motor Control}
 and another labeled \mycomp{Target Motion} to place the target in the beam. 
@@ -297,8 +297,8 @@ If you operate the target manually, make sure that the system
 is set back to remote control afterwards.\\
 \end{safetyen}
 The CH$_2$-tape has only a limited life time. Therefore it
-should be exchanged on a regular basis (twice per year, or 
-before a long beam time). This work has to be done by the 
+should be replaced on a regular basis (twice per year, or 
+before a long beam time). This work must be done by the 
 Hall A technical staff. 
 \infolevfour{
  \begin{figure}[bht]
@@ -343,7 +343,7 @@ This is a rather slow process, and can take several minutes.
     \label{fig:ep_cer_control} 
  \end{figure}  }
 
-The Cherenkov detector is filled with pure CO$_2$-gas. \infolevtwo{The schematic of the gas 
+The Cherenkov detector is filled with pure CO$_2$-gas. \infolevtwo{A schematic of the gas 
 system is shown in Fig. \ref{fig:ep_cer_gas_layout}, \infolevfour{ a picture of the gas-controller
 in Fig. \ref{fig:ep_cer_gas_ctrl}}.} The gas-controller is located in the same rack as 
 the DAQ system. This rack is located in Hall A next to the beamline.
@@ -351,22 +351,22 @@ the DAQ system. This rack is located in Hall A next to the beamline.
 should be in \mycomp{Pressure}-mode. Therefore the left rotary switch should be at
 \mycomp{PRESSION} and the right one at \mycomp{FERME}. The two digital displays
 should both indicate a pressure of roughly 10.0~mbar, and the two flow-meters should
-be at zero. However the flow regulator under the left flow meter needs to be open.
+be at zero. However the flow regulator under the left flow meter must be open.
 In this mode the system is pressurized, if the pressure falls below 10~mbar
 the automated valve on the gas inlet side opens, until the pressure is restored.
 On the other hand, if the pressure rises above 15~mbar, the automated valve in the exit pipe
 opens, to release pressure.
 
-If the gas Cherenkov detector needs to be opened, one should turn down the gas flow
+If the gas Cherenkov detector must be opened, one should turn down the gas flow
 on the regulator beneath the left flow meter and open the exit valve (right switch, \mycomp{OUVERT}). 
 After the work on the detector is finished,
-and the volume is closed again, the detector needs to be set in \mycomp{Flow Mode}.
-The left rotary switch needs to be in the \mycomp{DEBIT} and the right one in the
-\mycomp{OUVERT} position, the gas flow regulator needs to be opened. After the 
+and the volume is closed again, the detector must be set in \mycomp{Flow Mode}.
+The left rotary switch must be in the \mycomp{DEBIT} and the right one in the
+\mycomp{OUVERT} position, the gas flow regulator must be opened. After the 
 detector is purged for a sufficient time, one should switch back to the \mycomp{Pressure}-mode,
 and verify that a pressure of 10~mbar is restored. The CO$_2$ is supplied by the Hall A 
 gas system, which also supplies the Cherenkov detectors in the HRS with CO$_2$. The cylinders
-and the main vallve (operated manually) are located in the gas-shack.
+and the main valve (operated manually) are located in the gas-shack.
 
 \begin{figure}[bht]
     \begin{center}
@@ -394,7 +394,7 @@ and the main vallve (operated manually) are located in the gas-shack.
 \subsection{Data Acquisition}
 \label{sec:ep_daq}
 
-The data acquisition (DAQ) is running on \mycomp{adaqep} in the
+The data acquisition (DAQ) is runs on \mycomp{adaqep} in the
 \mycomp{epmeas} user account. It is a standard CODA 2.2 system.
 The DAQ system also downloads and initializes logic modules,
 and thresholds of discriminators. Since these settings depend
@@ -478,8 +478,7 @@ epmeas@adaqep.jlab.org$>$\\}
 If the reboot fails, or if CODA afterwards still does not work, 
 check that the ROC is configured for CODA 2.2.
 Therefore one has to interrupt the reboot by pressing the \mycomp{any}-key.
-Press \mycomp{p} to show the present setting, it should look the following
-way:\\
+Press \mycomp{p} to show the present setting, it should look as follows:\\
 \\
 \mycomp{boot device          : ei \\
 processor number     : 0 \\
@@ -502,9 +501,9 @@ reboot the ROC by pressing \mycomp{@} afterwards.
 
 \subsubsection{Running CODA \\ }
 
-To run CODA, you have to be logged into \mycomp{adaqep} as user
+To run CODA, you must be logged into \mycomp{adaqep} as user
 \mycomp{epmeas}. From the prompt CODA can be started with the
-command \mycomp{runcontrol}. Withing CODA you have to click 
+command \mycomp{runcontrol}. Withing CODA you click 
 on \mycomp{Configure} and choose configuration \mycomp{epm1},
 then click on \mycomp{Download}, and finally on \mycomp{Prestart}.
 At this point the information in the settings.conf file,
@@ -574,10 +573,10 @@ epmeas@adaqep.jlab.org$>$ ep \\
 Make sure, that the nominal beam energy is given in \textbf{GeV}.
 The program prints the result for the energy, together with
 the path and name for log-files and ntuple files.
-It is recommended to repeat the analysis with a slightly changed
+It is recommended that you repeat the analysis with a slightly changed
 nominal energy value or with slightly changed cuts, to verify that
 the automatic fitting procedure does really find the eP events,
-and does not trigger on noise. One also has to be aware, that one
+and does not trigger on noise. Be aware also, that one
 needs elastic events in both arms to get a reliable results.
 Furthermore, for beam energies between 2.7~GeV and 3.4~GeV,
 where micro-strip detector E$_3$ is used, the obtained
@@ -596,11 +595,11 @@ These two measures should be started several hours before the actual
 eP measurement is scheduled.
 
 Shortly before the measurement, the high voltages for the scintillator photomultiplier tubes
-and for the Cherenkov photomultiplier tubes need to be turned on (see Sec. 
+and for the Cherenkov photomultiplier tubes muat be turned on (see Sec. 
 \ref{sec:ep_highvoltage}). Finally the DAQ should be 
 prepared (see Sec. \ref{sec:ep_daq}).
 
-For the eP measurement, the following requirements need to 
+For the eP measurement, the following requirements muat 
 be communicated to MCC:
 \begin{itemize}
 \item 3-4 $\mu$A CW beam 
@@ -670,10 +669,10 @@ arms of the eP system.
 \label{sec:ep_maintenance}
 
 The CH$_2$ tape of the eP target 
-should be exchanged on a regular basis (twice per year, or 
+should be replaced on a regular basis (twice per year, or 
 before a long beam time). This work involves opening the 
 eP scattering chamber and therefore breaking the vacuum in
-this section of the beamline. This work has to be coordinated
+this section of the beamline. This work must be coordinated
 by the Hall A work coordinator, and can only be done by the 
 Hall A technical staff personnel. 
 }
@@ -706,11 +705,11 @@ ion chambers should never be masked.
 The target is controlled by the experimenters, not by MCC. Therefore it is
 the responsibility of the eP operator to ensure that it is properly
 operated.
-To avoid damage to the eP target, the following instructions have to be 
+To avoid damage to the eP target, the following instructions must be 
 followed:
 \begin{itemize}
 \item The target should only be in the beam during an eP measurement
-\item Before inserting the target into the beam, the tape motion has to
+\item Before inserting the target into the beam, the tape motion must
 be turned on. The target should not be in the beam when the tape is not moving. 
 \item The target should not be in the beam 
 if the beam current is greater than 5 $\mu$A. 
@@ -722,9 +721,9 @@ without an eP operator being present.
 
 \subsection{Cherenkov}
 
-If for work on the Cherenkov detector the detector needs to be opened, 
-the CO$_2$ gas flow needs to be stopped. After the work is finished the 
-detector needs to be purged and later the operating mode needs to be restored.
+If for work on the Cherenkov detector the detector must be opened, 
+the CO$_2$ gas flow must be stopped. After the work is finished the 
+detector must be purged and later the operating mode must be restored.
 \infolevone{(see Sec. \ref{sec:ep_cer})}
 
 \end{safetyen}
@@ -733,13 +732,16 @@ detector needs to be purged and later the operating mode needs to be restored.
 \input{beamline/ep-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.7 2004/12/15 00:12:59 gen Exp $
-% $Id: ep.tex,v 1.7 2004/12/15 00:12:59 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.8 2005/04/04 22:27:24 gen Exp $
+% $Id: ep.tex,v 1.8 2005/04/04 22:27:24 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/15 00:12:59 $
+% $Date: 2005/04/04 22:27:24 $
 % $Name:  $
 % $Locker:  $
 % $Log: ep.tex,v $
+% Revision 1.8  2005/04/04 22:27:24  gen
+% Chnges after the review
+%
 % Revision 1.7  2004/12/15 00:12:59  gen
 % minor update of the labels
 %

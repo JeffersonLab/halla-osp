@@ -18,7 +18,7 @@
 \begin{titlepage}
 \title{{\bf OSP Instructions for Contributors
 \thanks{
- $CVS~revision~ $Id: main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $ $
+ $CVS~revision~ $Id: main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $ $
 }
 }}
 
@@ -195,8 +195,8 @@
   The repository can change at any moment, when people commit their changes.
   In order to update your source (match it with the repository) of, for example. directory \mycomp{run}, you should: :
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
-    \item \mycomp{cd src/hrs} - create the work directory \mycomp{run}.
-    \item \mycomp{cvs update} 
+    \item \mycomp{cd src/hrs} 
+    \item \mycomp{cvs update -A} 
   \end{list}
 
   Other useful commands, helping to compare your source with the repositoruy:
@@ -429,7 +429,7 @@ format as:
   \begin{verbatim}
 Areti            Hari           JLab
 Chen             Jian-Ping      JLab 
-Kursun           Zafer          JLab
+Spraggins        Darrell        JLab
 Saha             Arun           JLab
 Veyssi\`{e}re    Christian       CEA   9704  cveyssiere@Cea.Fr   
   \end{verbatim}%
@@ -469,7 +469,7 @@ A table of the authorized personnel may look like:
   \JianPingChen{\em 2-nd Contact}
   \namestabheader{Liaisons from Accelerator Division}
   \HariAreti{..to Physics Div.}
-  \ZaferKursun{..to Hall-A}
+  \DarrellSpraggins{..to Hall-A}
   \namestabheader{Remote Experts}
   \ChristianVeyssiere{Electronics}
 \end{namestab}
@@ -494,7 +494,7 @@ is printed in Table \ref{tab:beam:personnel}.
   \JianPingChen{\em 2-nd Contact}
   \namestabheader{Liaisons from Accelerator Division}
   \HariAreti{..to Physics Div.}
-  \ZaferKursun{..to Hall-A}
+  \DarrellSpraggins{..to Hall-A}
   \namestabheader{Remote Experts}
   \ChristianVeyssiere{Electronics}
 \end{namestab}
@@ -571,13 +571,16 @@ Use the existing OSP document as the source of other examples.
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $
-% $Id: main.tex,v 1.11 2004/12/08 20:07:14 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
+% $Id: main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/08 20:07:14 $
+% $Date: 2005/04/04 22:27:25 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.12  2005/04/04 22:27:25  gen
+% Chnges after the review
+%
 % Revision 1.11  2004/12/08 20:07:14  gen
 % Update on the details of the soft. packages
 %

@@ -1,7 +1,8 @@
 \chapter[Hall A Access and Safety]{Hall A Access and Safety
 %\section[General]{General
+\label{sec:chap:access}
 \footnote{
-  $CVS~revision~ $Id: access.tex,v 1.4 2004/12/08 17:27:27 gen Exp $ $ 
+  $CVS~revision~ $Id: access.tex,v 1.5 2005/04/04 22:27:25 gen Exp $ $ 
 }
 \footnote{Authors: J.LeRose \email{lerose@jlab.org} and
                    E.Chudakov \email{gen@jlab.org}}
@@ -9,8 +10,9 @@
  
 \begin{safetyen}{10}{15}
 \section{The Personnel Safety System} 
-\end{safetyen}
 \label{sec:Access}
+\end{safetyen}
+
 
  Users and staff working on the accelerator site are protected from
  the dangers associated with the prompt ionizing radiation that the
@@ -42,21 +44,23 @@ Sweep is the state of the PSS when delivery of beam and/or RF power is
 not permitted and access is limited to the Jefferson Lab personnel
 conducting the sweep operation.  The hall's entrance gates are closed
 from the inside to ensure that no one can enter behind the person
-conducting the sweep. During the sweep, an Assigned Radiation Monitor
-or ARM systematically searches the hall to verify the absence of
-people and to arm the run/safe boxes. The ARM posts a guard at the
+conducting the sweep. During the sweep, a ``Qualified Sweeper''\cite{PSScebaf}
+%an Assigned Radiation Monitor or ARM 
+systematically searches the hall to verify the absence of
+people and to arm the run/safe boxes. The Qualified Sweeper posts a guard at the
 entrance to the hall as another method of ensuring that no one enters
 after him.
  
-When the Assigned Radiation Monitor is ready to perform a sweep, the
+When the Qualified Sweeper is ready to perform a sweep, the
 Machine Control Center or MCC must first place the hall in the Sweep
 state. The Personnel Safety System will read ``Sweep In Progress."
 Once the hall is placed in the sweep state, the sweep monitors enter
-the first gate to the hall, making sure it locks behind them. The ARM
+the first gate to the hall, making sure it locks behind them. The Qualified Sweeper
 then notifies the MCC that he is ready to begin the sweep. The MCC
 communicates with the sweep monitors via intercom and video
 camera. Using the video camera, the MCC makes sure both sweep monitors
-are wearing the proper dosimetry. At this point the ARM also indicates
+are wearing the proper dosimetry and have current ODH training. 
+At this point the Qualified Sweeper also indicates
 that he is in possession of the key needed to arm the Run/Safe boxes
 placed throughout the hall.  Having confirmed that the dosimetry is
 adequate, the MCC will unlock the second entrance gate allowing the
@@ -64,19 +68,19 @@ sweep monitors to enter the hall. Once the sweep monitors pass through
 the second gate, they close the gate and ensure it is locked. The
 sweep monitors then proceed to the hall entrance where one sweep
 monitor is left to guard the entrance and the other begins the sweep.
-During the actual sweep, the ARM walks through every area and secluded
+During the actual sweep, the Qualified Sweeper walks through every area and secluded
 workspace in the hall to ensure that no one could be left inside when
 the Personnel Safety System moves from the sweep state to controlled
 access, power permit, and finally beam permit state. Once he checks an
 area, he arms the run/safe box in that area.  After all areas of the
 hall have been checked and the run/safe boxes armed, the sweep
 monitors will return to the entrance where the sweep began. Before
-arming the last run/safe box, the ARM will contact the MCC. Upon
+arming the last run/safe box, the Qualified Sweeper will contact the MCC. Upon
 contact, the MCC will check to see if the sweep has ``dropped"; if all
-is well he will notify the ARM that it is okay to arm the box. Once
+is well he will notify the Qualified Sweeper that it is okay to arm the box. Once
 the box is armed, the sweep monitors have 30 seconds to exit both
 gates or the sweep will drop, and the entire sweep process will have
-to be repeated. After exiting, the ARM must contact the MCC to let
+to be repeated. After exiting, the Qualified Sweeper must contact the MCC to let
 them know the Hall~can now be moved to the controlled access state.
  
 \begin{safetyen}{10}{10}
@@ -103,8 +107,11 @@ When the PSS is in RF Power Permit the hall is considered an
 delivery is not.  Reaching this state requires that the hall has
 passed through the controlled access state and that no one is left
 inside the hall. This is usually a temporary state bridging the
-transition from the Controlled Access to the Beam Permit state. Once
-the Personnel Safety System reads ``Power Permit'', a steady klaxon
+transition from the Controlled Access to the Beam Permit state. 
+At this stage there is a possibility of interlock equipment being energized
+and high magnetic fields turned on, however it has not been
+taken place in Hall A so far.
+Once the Personnel Safety System reads ``Power Permit'', a steady klaxon
 sounds in the hall. If you are in the hall when this klaxon sounds,
 press the emergency safe button on the nearest run/safe box and
 immediately exit the hall. The hall entrance gates are locked at this
@@ -135,9 +142,9 @@ ensure that no one is left inside. During the Sweep, each run/safe box
 is moved to the Operational position in preparation for Beam
 Permit. After the sweep has been completed and the hall is placed in
 the RF Power Permit state, the run/safe box will show Unsafe. Each box
-has an emergency stop button. If you see the box in the Unsafe
+has an emergency ``Push-to-Safe'' button. If you see the box in the Unsafe
 position, you are in danger of receiving high levels of ionizing
-radiation. Immediately press the emergency stop button, exit the hall,
+radiation. Immediately press the emergency ``Push-to-Safe'' button, exit the hall,
 and call the Machine Control Center Crew Chief at extension 7050.
 
 \begin{figure}
@@ -331,8 +338,8 @@ full inspection must be carried out. This is begun by setting all
 equipment to its operating state (following the Hall~A checklist) and
 then clearing all workers out of the hall. Next, a request is made to
 the MCC to arrange a sweep of the hall and to restore the Beam Permit
-state. The MCC will send over an ARM and set the hall status to Sweep.
-The ARM will then sweep the hall, verifying that everyone is
+state. The MCC will send over a ``Qualified Sweeper'' and set the hall status to Sweep.
+The Qualified Sweeper will then sweep the hall, verifying that everyone is
 out. Following a successful sweep, the MCC can move the hall through
 the Controlled Access and RF Permit states to the Beam Permit state.
 While working in the hall you must observe all posted radiation areas.
@@ -381,14 +388,40 @@ the Hall A showing the location of the circuit breaker panels.}
 \end{center}
 \end{figure}
 
+%\begin{safetyen}{10}{10}
+%\section{Safety Issues}
+%\end{secsafetyen}
+
+%Several potential hazards 
+
+\begin{safetyen}{10}{10}
+\subsection{Radiation Safety}
+\end{safetyen}
+
+Radiation Worker I (RW-I) training~\cite{RWIcebaf} includes information on the
+radiation environment in the experimental halls. Here, we remind of a few items:
+ \begin{list}{--}{\setlength{\itemsep}{-0.2cm}}
+    \item All the area of Hall A is qualified as at least a ``Radiation Area''.
+    \item Some areas, as the target area, and the area around the beam dump may be qualified as ``High Radiation Area''.
+    \item All the items, except those kept in the shielded detector huts of HRS, 
+          which stayed in the Hall during the CW beam operations
+          have to be surveyed by RADCON, prior to removal from the hall. 
+          A rack close to the entrance is used to store these items.
+    \item Some electronic modules and racks may need to be cleaned by RADCON, before
+          removal from the hall.        
+ \end{list}
+ 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/introduction/access.tex,v 1.4 2004/12/08 17:27:27 gen Exp $
-% $Id: access.tex,v 1.4 2004/12/08 17:27:27 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/introduction/access.tex,v 1.5 2005/04/04 22:27:25 gen Exp $
+% $Id: access.tex,v 1.5 2005/04/04 22:27:25 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/08 17:27:27 $
+% $Date: 2005/04/04 22:27:25 $
 % $Name:  $
 % $Locker:  $
 % $Log: access.tex,v $
+% Revision 1.5  2005/04/04 22:27:25  gen
+% Chnges after the review
+%
 % Revision 1.4  2004/12/08 17:27:27  gen
 % minor changes before review
 %

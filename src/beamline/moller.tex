@@ -1,7 +1,7 @@
 \chapter[M{\o}ller Polarimeter]{M{\o}ller Polarimeter
 \label{sec:moller}
 \footnote{
-  $CVS~revision~ $Id: moller.tex,v 1.9 2004/12/15 00:13:00 gen Exp $ $
+  $CVS~revision~ $Id: moller.tex,v 1.10 2005/04/04 22:27:24 gen Exp $ $
 }
 \footnote{Authors: E.Chudakov \email{gen@jlab.org}}
 }
@@ -203,7 +203,7 @@ is prevented mechanically.
 \end{safetyen}
 
 \infolevtwo{
-he target motion is supervised using 2 TV cameras, displayed in
+The target motion is supervised using 2 TV cameras, displayed in
 Hall A counting house.
 One camera is looking from the side. A glass window in the target 
 vacuum box allows one to see the beam area in the place where 
@@ -316,7 +316,7 @@ The M{\o}ller polarimeter spectrometer consists of three quadrupole magnets and 
 These magnetic elements are controlled by MCC operators.
 
 The spectrometer accepts electrons scattered close to the horizontal 
-plane (see Fig.\ref{fig:moller_layout}). The acceptance in the asymuthal
+plane (see Fig.\ref{fig:moller_layout}). The acceptance in the azimuthal
 angle is limited by a collimator in front of the dipole magnet, while
 the detector vertical size and the magnetic field in the dipole magnet limit 
 the acceptance in the scattering angle $\theta_{CM}$.
@@ -328,7 +328,7 @@ region of the quads, through the collimator in front of
 the dipole magnet, with a slit of 0.3-4~cm high, 
 through two vertical
 slits in the dipole, about 2~cm wide, positioned at $\pm$4~cm 
-from the beam. These slits are ended with vacuum tight windows
+from the beam. These slits are terminated with vacuum tight windows
 at the end of the dipole. The dipole deflects the scattered 
 electrons down, towards the detector. 
 The detector, consisting
@@ -367,7 +367,7 @@ Each part of the detector includes:
          to the radiation damage and deterioration of the optical contact.},
         consisting of 2 blocks 9$\times$15$\times$30~cm$^3$, each separated into 2
         channels equipped with Photonis XP2282B (2 inch) photomultiplier tubes. Thus,
-        The vertical aperture is segmented into 4 calorimeter channels.
+        the vertical aperture is segmented into 4 calorimeter channels.
 \end{itemize}
 The HV crate is located in the Hall A rack 15 and is connected
 to a portserver {\em hatsv5}, port 11.
@@ -460,7 +460,7 @@ The DAQ%
 \htmladdnormallinkfoot{}{(More details in: \url{http://www.jlab.org/~moller/guide1_linux.html})} 
  is based on CODA\cite{CODAwww} and runs at \mycomp{adaql2},
 connecting to \mycomp{hallavme5}. The database server for CODA
-is located on \mycomp{adaqs2}. 
+is located on \mycomp{adaql1}. 
 
 \subsection {Slow Control}
 \label{sec:moller_compon_slow}
@@ -493,7 +493,7 @@ are controlled from a Java program, equipped with a GUI.
 }
  The components are: 
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
-   \item \mycomp{EPICS~\cite{EPICSwww} Monitor}: these EPISC variables are stored for every DAQ run
+   \item \mycomp{EPICS~\cite{EPICSwww} Monitor}: these EPICS variables are stored for every DAQ run
    \item \mycomp{Detector Settings} is used to set up the thresholds, delays etc.
    \item \mycomp{High Voltage Control} for the photomultiplier tubes
    \item \mycomp{Motor Control} to move the collimator
@@ -501,7 +501,7 @@ are controlled from a Java program, equipped with a GUI.
  \end{list}
 \infolevtwo{
 
-  High voltage can be changed or turne on/off using the HV console (Fig.~\ref{fig:moller_slowc_hv}),
+  High voltage can be changed or turned on/off using the HV console (Fig.~\ref{fig:moller_slowc_hv}),
   where the first 8 channels belong to the calorimeter and the other 2 channels
   belong to the aperture counters.
    \begin{figure}[htb]
@@ -528,7 +528,7 @@ are controlled from a Java program, equipped with a GUI.
      \item \mycomp{PLU Module} - settings of the logical unit
    \end{list}
   The collimator width can be changed using
-  \mycomp{Motor Control} window (Fig.~\ref{fig:moller_slowc_co}),
+  \mycomp{Motor Control} window (Fig.~\ref{fig:moller_slowc_co}).
    \begin{figure}[htb]
       \begin{center}
           \includegraphics*[angle=0,scale=0.55]{moller_slowcntrl_window_co}
@@ -617,7 +617,7 @@ Slow control:
  slightly deflects the beam downward. The deflection at the main target
  could be 2-8~mm, depending on the beam energy. It is, therefore, 
  useful to tune the beam position before the dipole is turned on. It can be done
- before the magnets are set to th M{\o}ller mode.
+ before the magnets are set to the M{\o}ller mode.
  The requirements are: 
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
    \item On BPM IPM1H01 (in front of the M{\o}ller target) $|X|<0.2$~mm, $|Y|<0.2$~mm.
@@ -638,7 +638,7 @@ Slow control:
  they have a tool to load the proper settings for the M{\o}ller
  magnets and a few other magnets on the beam line. 
  The set values should be compared with the calculated values%
- \footnote{The reasonable acuracy in the  magnets settings is about 1-2\%}.
+ \footnote{A reasonable accuracy in the  magnets settings is about 1-2\%}.
  \begin{safetyen}{5}{2}
    The beam must be turned off when the magnets are tuned.
  \end{safetyen}
@@ -792,7 +792,7 @@ The windows are partially protected by a lead collimator downstream
 of the dipole. 
 Only members of the M{\o}ller polarimeter group should work in this
 area. 
-If a work is done on the collimators, the appropriate hearing
+If work is done on the collimators, the appropriate ear
 and eye protection should be used.
 
 \subsection{High Voltage}
@@ -816,13 +816,16 @@ are responsible for ensuring that it is properly positioned.\\
 \input{beamline/moller-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.9 2004/12/15 00:13:00 gen Exp $
-% $Id: moller.tex,v 1.9 2004/12/15 00:13:00 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.10 2005/04/04 22:27:24 gen Exp $
+% $Id: moller.tex,v 1.10 2005/04/04 22:27:24 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/15 00:13:00 $
+% $Date: 2005/04/04 22:27:24 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.10  2005/04/04 22:27:24  gen
+% Chnges after the review
+%
 % Revision 1.9  2004/12/15 00:13:00  gen
 % minor update of the labels
 %
@@ -865,13 +868,16 @@ are responsible for ensuring that it is properly positioned.\\
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.9 2004/12/15 00:13:00 gen Exp $
-% $Id: moller.tex,v 1.9 2004/12/15 00:13:00 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.10 2005/04/04 22:27:24 gen Exp $
+% $Id: moller.tex,v 1.10 2005/04/04 22:27:24 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/15 00:13:00 $
+% $Date: 2005/04/04 22:27:24 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.10  2005/04/04 22:27:24  gen
+% Chnges after the review
+%
 % Revision 1.9  2004/12/15 00:13:00  gen
 % minor update of the labels
 %

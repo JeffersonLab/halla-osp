@@ -1,0 +1,454 @@
+\chapter[Hall A Safety Assessment Overview]{Hall A Safety Assessment Overview
+%\section[General]{General
+\footnote{
+  $CVS~revision~ $Id: sad-overview.tex,v 1.1 2005/04/04 22:27:25 gen Exp $ $ 
+}
+\footnote{Authors: E.Chudakov \email{gen@jlab.org}, based on an old ESAD}
+}
+ 
+\begin{safetyen}{10}{15}
+\section{Overview of the Hazards} 
+\end{safetyen}
+\label{sec:overviewhazards}
+
+The purpose of this section is to give a general overview of the hazards one may encounter
+while in Hall A,
+without going into the details of each part of the equipment. In order to 
+be able to operate a particular piece of equipment in a safe way one must study the appropriate
+section of  
+\infolevltthree{the full OSP manual\cite{HallAosp}.}
+\infolevthree{this OSP manual.}
+The general hazards are:
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+  \item Radiation hazard (see Sec.\ref{sec:radhazard});
+  \item Fire hazard (see Sec.\ref{sec:firehazard});
+  \item Electrical hazard (see Sec.\ref{sec:electrhazard});
+  \item Mechanical hazard (see Sec.\ref{sec:mechhazard});
+  \item Hazard from strong magnetic fields (see Sec.\ref{sec:maghazard});
+  \item Cryogenic and Oxygen Deficiency Hazard (ODH) (see Sec.\ref{sec:odhhazard});
+  \item Vacuum and high pressure hazards  (see Sec.\ref{sec:vachazard});
+  \item Toxic materials hazard  (see Sec.\ref{sec:toxichazard}).
+\end{list}
+
+The principal contacts for Hall A safety issues are given in Tab.\ref{tab:ehs:principlecont}.
+ 
+\begin{namestab}{tab:ehs:principlecont}{Principle contacts for safety issues}{%
+   Principle contacts for safety issues}
+  \EdFolts{\em Safety Warden}
+  \BertManzlak{\em EHS Engineer}
+\end{namestab}
+ 
+\begin{safetyen}{0}{0}
+\section{Radiation Hazard} 
+\label{sec:radhazard}
+\end{safetyen}
+  The radiation hazards and the ways to mitigate them are described in detail in the
+  course of Radiation Worker I (RW-I) training~\cite{RWIcebaf},
+  as well as in the Hall A Radiation Work Permit (RWP).
+  Here, the most essential issues are discussed.
+
+  CEBAF's high intensity, high energy electron beam 
+  is a potentially lethal radiation source and hence many redundant measures,
+  called Personnel Safety System or PSS~\cite{PSScebaf}, are in place,
+   aimed at preventing accidental exposure of personnel to the beam or exposure 
+  to beam-associated radiation sources.
+  The PSS keeps ionizing radiation out of areas where people are working,
+  and keeps people out of areas where ionizing radiation is present. 
+  The PSS procedure to enter the hall is described in detail in  Sec.~\ref{sec:Access}.
+
+%  Here, we remind of a few items.
+
+% \begin{list}{--}{\setlength{\itemsep}{-0.cm}}
+%    \item 
+ All of Hall A is qualified as a ``Radiologically Controlled Area''~\cite{RWIcebaf}.
+ Entrance requirements are listed in Sec.\ref{sec:access-req}.
+ Some areas, such as the target area, and the area around the beam dump may be qualified as 
+ a ``Radiation Area'' or a ``High Radiation Area''. Some areas may be also qualified 
+ as a ``Contaminated Area', if removable radio-isotopes are likely to be present.
+ These areas should be marked with appropriate signs and may be delimited by barrier. 
+ Access to ``Radiation Areas'' requires a permit from RadCon, while access
+ to ``High Radiation Area'', and ``Contaminated Area'', is not allowed. One should consult 
+ the RWP document for more details.
+
+ All the items, except those kept in the shielded detector huts of HRS,
+          which stayed in the Hall during CW beam operations,
+          must be surveyed and released by a qualified Radiological Control Technologist from
+          RadCon group, prior to removal from the hall.
+          A rack close to the entrance is used to store these items.
+
+ Some electronic modules and racks are posted as potentially contaminated.
+ They must be surveyed and, if necessary, cleaned by RadCon personnel,
+ prior to removal from the Hall, or prior to performing any work on the internal parts of the racks
+ and modules, including the air filters. 
+ 
+ More details on radiation safety issues can be found in various sections of this 
+ document, as in Chap.\ref{sec:targets-overv} for target operations and
+ in Sec.\ref{sec:beam-intro} for operation of the equipment on the beam line.
+ 
+ The contacts for Hall A radiation safety issues are given in Tab.\ref{tab:ehs:radiation}.
+ 
+ \begin{namestab}{tab:ehs:radiation}{Contacts for radiation safety issues}{%
+   Contacts for radiation safety issues}
+  \EdFolts{\em Safety Warden}
+  \RadCon{\em RC Group}
+ \end{namestab}
+
+
+\begin{safetyen}{0}{0}
+\section{Fire Hazard} 
+\label{sec:firehazard}
+\end{safetyen}
+
+ Fire Hazards are associated with the use of electrical power and also with the use of 
+ flammable gases and/or materials. 
+
+ The flammable gasses include the cryotarget
+ materials such as hydrogen or deuterium 
+ (see the details on the hazard and its mitigation in Sec.\ref{sec:target-cryo-safety}) as well as
+ the gas used in the wire detectors of the spectrometers 
+ (see the details on the hazard and its mitigation in Sec.\ref{sec:hrs-det-gasalarms}).
+ 
+ In general an effort has been made to limit the volume of combustible material 
+ in the hall but some flammable material is unavoidable. For instance all plastic 
+ scintillators are flammable and if exposed to a direct flame these 
+ plastic materials will eventually melt. The elements then lose structural integrity, 
+ sag or fall to the floor, and the melted elements would likely be exposed to air and burn.
+
+ Some special equipment in the subsystems, like heaters, lasers etc., may present a
+ fire hazard (see Sec.\ref{sec:targ-polhelfire}\infolevone{ and Sec.\ref{sec:heaterinterlock}}).
+ 
+ The fire hazard in Hall A is mitigated by a VESDA smoke detection system. 
+% The head sensitivity of 
+% the VESDA is 0.03 to 0.003\%. This corresponds to approximately 1 % of full scale and the system trips 
+% at 90\% full scale. 
+ The main VESDA panel is located in the room at the bottom of the truck ramp on the 
+ right hand side as you walk out of Hall A. The clean power in the detector huts is 
+ interlocked to the VESDA system. If the VESDA system senses smoke, it will remove power 
+ from the huts.
+
+ The detector huts are equipped with a clean agent fire suppression system. This system, when triggered 
+ by a smoke detector installed on the hut ceiling, releases an inert gas mixture into the hut and dilute
+ s the oxygen level below that needed to sustain combustion. The inert gas is a mixture of nitrogen, 
+ argon and carbon dioxide. When the system is functioning properly the oxygen content of the air in the 
+ hut will be reduced to approximately 12.5\% from the standard 21\%. Operation of this system
+ would result in an ODH hazard (see Sec.\ref{sec:odhhazard}).
+
+ In case of a fire alarm personnel should leave the area. Upon seeing a fire
+ or unexplained smoke one should activate the fire alarm, leave the area and
+ call 911 and 4444 from a safe place (see \cite{EHScebaf}).
+  
+ The contacts for Hall A fire safety issues are given in Tab.\ref{tab:ehs:fire}.
+ 
+ \begin{namestab}{tab:ehs:fire}{Contacts for radiation safety issues}{%
+   Contacts for radiation safety issues}
+  \EdFolts{\em Safety Warden}
+  \BertManzlak{\em EHS Engineer}
+ \end{namestab}
+
+\begin{safetyen}{0}{0}
+\section{Electrical Hazard} 
+\label{sec:electrhazard}
+\end{safetyen}
+
+ Almost every subsystem in Hall A requires AC and/or DC power. Due to the high current
+ and/or high voltage requirements of many of these subsystems the power supplies providing this 
+ power are potentially lethal.
+
+ Aside from the resetting of a small branch circuit breaker you should not attempt to solve
+ any other problems associated with AC power distribution without consulting responsible personnel. All
+ the power distribution boxes are clearly marked to aid in finding the appropriate circuit breaker in
+ the event of a problem.
+
+ There is a ``Hall A power'' crash button in the counting house. This is intended for dire emergency use. 
+ It is possible to cause severe damage to Hall A systems (in particular the hadron spectrometer dipole) 
+ by inappropriate use of this power kill switch.
+
+ Anyone working on AC power in Hall A must be familiar with the EH\&S\cite{EHScebaf} manual 
+ and must contact one of the responsible personnel. Lock and Tag training may also be required.
+
+ The DC power supplies energizing the magnets can provide a very high current.
+ There is a danger of metal tools coming into contact with exposed leads, shorting out the
+ leads, depositing a large amount of power in the tool, vaporizing the metal, and creating an arc.
+ These hazards are mitigated by covers installed around the leads,
+ preventing accidental access to them. The covers must not be removed
+ unless the magnet is turned off using the Lock and Tag procedure by trained
+ personnel. 
+
+ The electronics NIM, CAMAC, FASTBUS and VME crates are equipped with high current
+ DC power supplies for $\pm$5~V and other low voltages. Although their power 
+ is typically lower than the power supplied for magnets,
+ care should be taken to avoid accidental contact to the leads with metal tools.
+ Typically, covers are installed on the back of the crates or the racks,
+ in order to mitigate the hazard. 
+
+ Another electrical hazard is caused by high voltage (HV) in a range of 1-3~kV  DC power used 
+ for photomultiplier tubes. The current per channel, provided by the appropriate power supplies,
+ is limited to about 1-2~mA. 
+ The HRS detectors 
+ (see Sec.\ref{chap:hrs-det}), as well as the beam line equipment use 
+ hundreds of such channels. 
+ Typically, the power is provided through special cables (of red color). The cables and SHV connectors 
+ meet the existing EH\&S standards. Even with the cables disconnected, an accidental
+ contact with the power electrodes is not probable. In order to avoid the hazard to the personnel
+ as well as damage to the equipment, one should not attach/remove HV cables or the
+ phototube bases when HV is present on a given channel. Formally, the ``Lock out / Tag out'' 
+ procedure is not required to operate this equipment. However, turning the HV off
+ and making sure that it is not accidentally turned on remotely or locally, is required.
+ The LeCroy~1458 power supply mainframes, used in Hall A, are equipped with
+ a control key on the front panel. The key should be turned to ``local'' mode in order to
+ avoid remote operation. If the power supply is located far from the working place,
+ it is recommended that the crate be turned off and the key be removed.
+ 
+ Numerous cables, including HV cables and high current cables, are installed in trays, 
+ racks and other accessible areas. Damage to these cables may result
+ in hazards to personnel and equipment. 
+
+ The contacts for Hall A electrical safety issues are given in Tab.\ref{tab:ehs:electrical}.
+ 
+ \begin{namestab}{tab:ehs:electrical}{Contacts for radiation safety issues}{%
+   Contacts for radiation safety issues}
+  \EdFolts{\em Safety Warden}
+  \MarkStevens{}
+ \end{namestab}
+
+ 
+\begin{safetyen}{0}{0}
+\section{Mechanical Hazard} 
+\label{sec:mechhazard}
+\end{safetyen}
+
+ One source of mechanical hazards includes the heavy movable 
+ elements in Hall A, as the HRS~\ref{sec:hrs-safety} and the detector hut doors.
+ In order to alert personnel, visible and audible signals are issued when
+ the spectrometers or the doors are moving.   
+ The HRS motion can be controlled remotely from the counting house,
+ in the angular range $>15^\circ$. Motion at smaller angles
+ must be performed by the hall technicians only (see \ref{tab:ehs:mechanical}).
+ Since motion at large angles may be hindered by equipment stored on the floor,
+ Ed Folts provides ``administrative limits'' for spectrometer motion for
+ the current time period. Typically, the safe limits for the HRS motion 
+ are enforced by pins planted in the hall floor, however the shift crews should
+ be aware of the current limits and never exceed them.
+
+ There are conventional
+ hazards like fall hazards and crane hazards. The installed safe ladders and hand rails
+ mitigate the fall hazards. Working on elevated areas beyond the hand rail protection
+ requires the use of safety harnesses or other means. One should consult the contact
+ personnel (see Table\ref{tab:ehs:mechanical}) before starting such a work.
+ The safety of crane operations is supervised by the hall technical staff. 
+
+ The contacts for Hall A mechanical safety issues are given in Tab.\ref{tab:ehs:mechanical}.
+ 
+ \begin{namestab}{tab:ehs:mechanical}{Contacts for mechanical safety issues}{%
+   Contacts for mechanical safety issues}
+  \EdFolts{\em Safety Warden}
+  \MarkStevens{}
+ \end{namestab}
+
+ 
+\begin{safetyen}{0}{0}
+\section{Hazard from Strong Magnetic Fields} 
+\label{sec:maghazard}
+\end{safetyen}
+
+ Personnel working in the proximity of the energized, strong  magnets of the HRS or the beam line
+ are exposed to the following magnetic hazards:
+ \begin{list}{--}{\setlength{\itemsep}{-0.cm}}
+    \item electrical hazards, described in Sec.\ref{sec:electrhazard};
+    \item danger of magnetic objects being attracted by the magnet fringe field, and becoming airborne;
+    \item  danger of cardiac pacemakers or other electronic medical devices no longer
+           functioning properly in the presence of magnetic fields;
+    \item danger of metallic medical implants (non-electronic) being adversely affected
+          by magnetic fields.
+ \end{list}
+
+ Several measures are taken to mitigate the hazards. 
+ Whenever a magnet is energized, a flashing red light on the magnet or on the
+ magnet support structure is activated to notify and warn personnel of 
+ the associated electrical and magnetic field hazards.
+ 
+ Administrative measures are implemented to
+ reduce the danger of magnetic objects being attracted by the magnet 
+ fringe field and becoming airborne. (Note that for most magnets strong magnetic 
+ fields are only encountered within non-accessible areas inside the magnet.) 
+ Areas where these measures are in effect are clearly marked.
+
+ To reduce the danger of magnetic fields to people using pacemakers or other medical
+ implants, warning signs are prominently displayed at the entrance to the hall. 
+
+ The contacts for Hall A magnetic safety issues are given in Tab.\ref{tab:ehs:magnetic}.
+ 
+ \begin{namestab}{tab:ehs:magnetic}{Contacts for mechanical safety issues}{%
+   Contacts for mechanical safety issues}
+  \EdFolts{\em Safety Warden}
+ \end{namestab}
+
+\begin{safetyen}{0}{0}
+\section{Cryogenic and Oxygen Deficiency Hazard (ODH)} 
+\label{sec:odhhazard}
+\end{safetyen}
+
+The superconducting magnets are all operated at temperatures of about 4~K. 
+This temperature is obtained by refrigeration with liquid (or super critical) 
+helium supplied from the End Station Refrigerator (ESR).
+
+During normal operation the superconducting magnets consume $\sim$14~g/s of Helium. 
+In addition, the cryostats of these magnets have an inventory of liquid Helium. If a magnet ``goes
+normal'' for whatever reason this Helium inventory will be rapidly boiled. Relief systems have been 
+installed on the magnets to protect the vessels from building undue pressures during a quench event. 
+However, all superconducting magnets are at least somewhat subject to damage in the event of a quench. 
+The magnets have quench protection circuitry designed to safely dispose of the magnets 
+stored electromagnetic energy.
+
+Contact with cryogenic fluids presents the possibility of severe burns (frostbite). 
+When handling these fluids, Liquid Nitrogen or Helium, one must follow the
+guidelines in the EH\&S manual\cite{EHScebaf}. These guidelines mandate the use 
+of cryogenic gloves and eye protection.
+
+All volumes in the cryogenic systems which can be isolated by valves or any other 
+means are equipped with pressure relief valves to prevent explosion hazards.
+The release and subsequent expansion of cryogenic fluids presents the possibility 
+of an oxygen deficiency hazard. Rapid expansion of a cryogenic fluid in a confined 
+space presents an explosion hazard. Cryogenics in Hall A are present in the superconducting 
+HRS magnets, and the scattering chamber with its cryogenic targets. The total 
+inventory of cryogens in the magnets and targets present a minimal ODH hazard in all 
+areas of the hall except the area above the Hall A crane\infolevone{ (see also Sec.\ref{sec:targ:odh})}.
+
+There are a number of vessels which are normally filled with oxygen free atmosphere. 
+These include the gas Cerenkov, the spectrometer vacuum space and the scattering chamber. 
+Service of these vessels could represent a ODH (confined space) hazard.
+
+Hall A is listed as an Oxygen Deficiency Hazard area of Class 0. 
+No unescorted access is allowed without up-to-date JLab ODH training.
+
+No one should enter the Cerenkov tanks while there is gas inside these tanks. 
+The tanks should be pumped out and filled with air before access to the interior 
+of these tanks is permitted. 
+The HRS detector huts may present an ODH hazard in case of the fire suppression 
+system activation (see Sec.\ref{sec:firehazard}), if the doors of the hut are shut. 
+No one may stay in the hut with the doors shut.
+  
+ The contacts for Hall A cryo and ODH safety issues are given in Tab.\ref{tab:ehs:cryo}.
+ 
+ \begin{namestab}{tab:ehs:cryo}{Contacts for cryogenic safety and ODH issues}{%
+   Contacts for cryogenic safety and ODH issues}
+  \BertManzlak{\em EHS Engineer}
+  \EdFolts{\em Safety Warden}
+ \end{namestab}
+
+\begin{safetyen}{0}{0}
+\section{Vacuum and High Pressure Hazards} 
+\label{sec:vachazard}
+\end{safetyen}
+
+The greatest safety concern for the vacuum vessels in use in Hall A are the thin 
+aluminum, titanium or kapton windows that close the entrance and/or exit of 
+these vessels. The HRS spectrometer vacuum vessel, and the Hall A Scattering Chamber 
+both contain thin windows.
+
+The HRS Vacuum System is described in detail in Chapter~\ref{chap:vacuum}. 
+The space between the magnet poles of both spectrometers is evacuated in order 
+to diminish multiple scattering. The entrance and exits of the main spectrometer 
+volumes are covered by relatively thin vacuum windows. 
+The vacuum safety of the cryo-target is described in Sec.\ref{sec:target-cryo-safety}. 
+
+The HRS spectrometer vacuum can has a volume of approximately 6 m$^3$.
+%, representing a stored energy of 6 \Theta  105 Joules. 
+The circular (7 inch diameter) entrance window on the front of Q1 is made of 0.007~inch thick 
+kapton while the rectangular 90.89" by 6.41" exit window located in the shield hut below the VDC 
+is 0.004~inch thick Ti (3,2.5) Alloy. The scattering chamber contains two windows 
+constructed from 0.016~inch thick 5052 aluminum.
+
+Installation of vacuum windows can only be done by the responsible personnel following
+detailed instructions provided in the Operations Manual.
+Before entering the detector huts or pivot area, all personnel should
+check the spectrometer and/or scattering chamber vacuum gauges. If the spectrometers 
+and/or scattering chamber are under vacuum:
+ \begin{list}{--}{\setlength{\itemsep}{-0.cm}}
+    \item Use careful judgment if it is necessary to work near the vacuum windows;
+    \item Do not work near the windows any longer than is absolutely necessary;
+    \item Never touch the vacuum windows, neither with your hands nor with tools;
+    \item Do not place objects so that they may fall on the windows, etc.;
+    \item Hearing protection is required when working near the target chamber windows and 
+          is recommended in the shield huts.
+ \end{list}
+
+Window covers must be in place over the target chamber whenever the hall is in
+Restricted access. The windows covers must also be employed whenever extensive 
+work must be done in the area of the pivot.
+Window covers must be placed over the spectrometer exit windows when they are
+not covered by the detector package.
+
+The highest gas pressure used in Hall A is about 2000~PSI ($\sim$140~atm) in the bottles
+of argon and other gasses used to flush the drift chambers of HRS 
+(see Chapter~\ref{chap:hrs-det-gas}). The bottles (``cylinders'') are installed
+in a gas shed outside the hall. To ease handling, gas bottle carts are available for use 
+in the hall and the gas shed. Typically, the Hall A technicians handle the gas bottles. 
+Bottles must never be left free standing. They must always be stored in a rack, 
+on a cart or tied to a support.
+
+Polarized $^3$He targets contain Helium gas at $\sim$10~atm in a glass cell.
+Hearing protection is mandatory when working near the glass 
+cell\infolevone{ (see Sec.\ref{sec:targ-hel-saf})}.   
+ 
+ The contacts for Hall A vacuum and pressure safety issues are given in Tab.\ref{tab:ehs:vacuum}.
+ 
+ \begin{namestab}{tab:ehs:vacuum}{Contacts for vacuum and pressure issues}{%
+   Contacts for vacuum and pressure issues}
+  \BertManzlak{\em EHS Engineer}
+  \EdFolts{\em Safety Warden}
+ \end{namestab}
+
+\begin{safetyen}{0}{0}
+\section{Toxic Materials Hazard} 
+\label{sec:toxichazard}
+\end{safetyen}
+
+ Some of our target materials may pose a safety concern. Presently the
+ only hazardous target materials used is ceramic Beryllium-Oxide (BeO).
+ In solid form, BeO is completely safe under normal conditions of use.
+ The product can be safely handled with bare hands. However, in powder form 
+ all Beryllia are toxic when airborne. Overexposure to airborne Beryllium particulate 
+ may cause a serious lung disease called Chronic Berylliosis. 
+% Beryllium has also been listed as a potential cancer hazard. 
+% Furthermore exposure to Beryllium may aggravate medical conditions related to 
+ airway systems (such as asthma, chronic bronchitis, etc.). 
+ Since beryllia are mainly dangerous in powdered form, do not machine, break, or 
+ scratch these products. Machining of the Beryllia can only be performed after 
+ consulting the EH\&S staff. It is good practice to wash your hands after handling 
+ the ceramic BeO.
+
+ Lead shielding blocks and sheets are also potentially toxic. Always wear gloves 
+ when handling lead, unless it is completely painted or wrapped in Heavy-Duty 
+ Aluminum Foil. Do not machine lead yourself, contact the EH\&S personnel or 
+ the Jefferson Lab workshop to ask for assistance prior to machining lead. There 
+ are lead storage areas designated in the hall, when not in use, shielding should 
+ be stored in an area marked for lead storage.
+
+ The Material Safety Data Sheets (MSDS) for all materials encountered in the workplace 
+ are available. If in doubt ask the hall safety warden or contact the physics division 
+ EH\&S staff.
+
+ The contacts for Hall A material safety issues are given in Tab.\ref{tab:ehs:toxic}.
+ 
+ \begin{namestab}{tab:ehs:toxic}{Contacts for material safety issues}{%
+   Contacts for material issues}
+  \BertManzlak{\em EHS Engineer}
+  \EdFolts{\em Safety Warden}
+ \end{namestab}
+
+\obsolete{
+ % aaa
+} 
+
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/introduction/sad-overview.tex,v 1.1 2005/04/04 22:27:25 gen Exp $
+% $Id: sad-overview.tex,v 1.1 2005/04/04 22:27:25 gen Exp $
+% $Author: gen $
+% $Date: 2005/04/04 22:27:25 $
+% $Name:  $
+% $Locker:  $
+% $Log: sad-overview.tex,v $
+% Revision 1.1  2005/04/04 22:27:25  gen
+% Chnges after the review
+%

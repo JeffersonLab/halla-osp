@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 %\footnote{
-%  $CVS~revision~ $Id: pol-he3.tex,v 1.11 2004/12/15 00:14:15 gen Exp $ $
+%  $CVS~revision~ $Id: pol-he3.tex,v 1.12 2005/04/04 22:27:25 gen Exp $ $
 %}
 \footnote{Authors: Revised by: J. P. Chen, P. Chevtsov, K. Kramer, 
 N. Liyanange, K. McCormick, X. Zheng; Original: T. Black, J. P. Chen, H. Gao, 
@@ -12,20 +12,21 @@ O. Hansen, S. Incerti, S. Jensen, M. G. Jones, M. Liang, Z.-E. Meziani.
 \label{sec:target-he3-general}
 \subsection{Physics Principle}
 
-This target system provides a high-density 
+The polarized $^3$He target system provides a high-density 
 ($\approx 2.5\times 10^{20}$ nuclei/cm$^3$)
 polarized $^3$He gas target for spin physics experiments. 
+The target cells contain high pressure $^3$He gas and a small amount of
+rubidium vapor. In addition, they
+also contain a small amount of nitrogen to increase the
+pumping efficiency.
 
-The target employs the so-called spin-exchange technique.
+Polarization is acieved via
+the so-called spin-exchange technique.
 In this technique $^3$He is polarized in a two-step process.
 First, rubidium vapor is polarized by optical pumping with
 circularly polarized 795~nm laser light. Second, the electronic polarization
 of the Rb is transferred to the $^3$He nucleus in spin-exchange
 collisions, in which $^3$He nuclei are polarized via the hyperfine interaction.
-The target cell contains high pressure $^3$He gas and a small amount of
-rubidium vapor. In addition, it
-also contains a small amount of nitrogen to increase the
-pumping efficiency.
 
 \subsection{Apparatus}
 
@@ -48,9 +49,10 @@ and the Helmholtz coils with the RF assembly and support sub-assembly. }
 \label{fig:overview}
 \end{figure}
 
-The polarized target comprises several
-components beyond its target cell (see Fig.~\ref{fig:overview})
-related to its operation, they are in subsection:
+In addition to the target cell,
+the polarized target comprises several
+components (see Fig.~\ref{fig:overview})
+related to its operation:
 
 \begin{enumerate}
 
@@ -93,7 +95,7 @@ and bears the target cell viewing mirrors and the optical beam line
 mirrors. 
 
 \item 
-A laser shielding house known as ``laser hut'' where two laser beam lines
+A laser shielding house, known as the laser hut, where two laser beam lines
 are formed by seven 30-Watt diode lasers. 
 These laser beam lines are used for optical
 pumping of the rubidium alkali atoms in the direction either along the 
@@ -107,7 +109,7 @@ can also be directed at a different (specific) direction.
 
 The control (including monitoring and measurement) system for
 the target Helmholtz coil magnet power supplies, the NMR polarimetry
-and the EPR polarimetry is based on the LabView system on a PC.
+and the EPR polarimetry runs under LabView on a PC.
 The control system for the target vertical motion, the half-wave
 plate motion, the lasers,
 the oven heater, and temperature and pressure monitoring
@@ -115,7 +117,7 @@ runs under the EPICS~\cite{EPICSwww} environment utilizing
  an IOC in a VME crate. The LabView system 
 records data on disk and communicates with the 
 EPICS system through the network. Information from the EPICS IOC is logged 
-on disk and selected information passed to the event data stream.
+on disk and selected information passed to the Hall A event data stream.
 
 \infolevtwo{
 %=============================================
@@ -123,8 +125,8 @@ on disk and selected information passed to the event data stream.
 \section{Operation Overview}
 \label{sec:Opover}
 
-In normal operation the target will be under one of the following
-situations described below.
+In normal operation, the target will be under one of the following
+situations described below:
 
 \begin{safetyen}{10}{5}
 
@@ -134,26 +136,29 @@ situations described below.
 The target is in ``beam position'', the fast raster set to a
 nominal 4 mm $\times$ 4 mm area coverage and the experiment is
 running to collect physics data. In this configuration the monitoring
-of the target consists of reading a set of temperatures of the pumping
+of the target consists of monitoring the temperatures of the pumping
 cell, target cell and reference cell. The temperature in the pumping
-cell provides feedback for the temperature controller.  A spectral-analyzer
-is monitoring the laser wavelength and the relative intensity.
-All interlocks of electron beam and laser beam should be on.
+cell provides feedback for a temperature controller.  A spectral-analyzer
+monitors the laser wavelength and the relative intensity.
+When operating in this mode, all the  
+electron beam and laser beam interlocks should be on.
 
 \item 
-The beam is turned off and the target is moved to ``Pickup Coil Position''
+The electron and laser beam are turned off (the laser beam should be turned off first)
+and the target is moved to ``Pickup Coil Position''
 (polarized $^3$He target in a position
 between the NMR pickup coils) and a polarization measurement is
-performed using the NMR (AFP) method.  The laser beam will be stopped
-first. If the polarization is in the transverse mode, 
+performed using the NMR (AFP) method.  
+If the polarization is in the transverse mode, 
 a rotation of the polarization to the longitudinal direction is
 performed (procedure described in Section~\ref{sec:nmr}).  Once the
 measurement is completed the target cell will be moved back to the ``beam
 position''. If the next running is in transverse mode, a rotation of
 the polarization to the transverse direction is performed.
-The laser beam will be turned on. The beam interlock is
+Once in position,
+the laser beam will be turned on. The beam interlock should be
 reset and the fast raster enabled before turning the beam back on
-target. The physics data taking should resume. 
+target.
 
 \item 
 The ``Polarized $^3$He Target'' is either in ``beam position'' or in ``pick-up
@@ -223,7 +228,7 @@ into the beam path of each laser.
 
 To protect the lasers from radiation damage due to the electron beam
 and shield personnel from accidental exposure to hazardous laser
-light, all laser systems are located in a shielding house ("laser hut").
+light, all laser systems are located in an enclosed laser hut.
 It is positioned in Hall A on the right-hand side of the target at a
 distance of approximately 5 meters as shown in Fig.
 \ref{fig:overview} and \ref{fig:laserhut}.  This placement limits
@@ -243,7 +248,7 @@ Inside the laser hut, an optical table with an anodized aluminum top
 supports all optics. The setup of the
 polarizing optics is shown in Fig. \ref{fig:laser_setup}. 
 
-Seven infrared diode lasers (four for longitudinal pumping and three
+The seven infrared diode lasers (four for longitudinal pumping and three
 for transverse pumping) and the related interlock control box
  are located on a 19" rack.  Light is guided out of each laser and 
 goes to an optical table via an optical fiber.  Each beam is focused by a 2" 
@@ -267,13 +272,12 @@ achieve a very high degree of linear polarization for the split beam
 since the splitter only gives high polarization for direct beam 
 ($T_P>95$\%,$R_S>99.8$\%).
 
-Now both beams from each laser have identical linear
-polarizations.  Each passes through a $\lambda$/4 waveplate that
+Once both beams from each laser have identical linear
+polarizations,  each passes through a $\lambda$/4 waveplate that
 transforms its polarization from linear to circular.  The orientation of 
-each $\lambda$/4 waveplate is shown in Fig. \ref{fig:laser_setup}, note that 
+each $\lambda$/4 waveplate is shown in Fig. \ref{fig:laser_setup}. Note that 
 all eight (or six for transverse pumping) $\lambda$/4 waveplates should have 
 the same orientation.
-
 The eight (or six for transverse pumping)
 resulting beams are carefully aligned to coincide on the pumping chamber 
 of the cell.  They enter the target chamber via transparent
@@ -312,8 +316,8 @@ towards downstream direction) to collect the light for the EPR measurement.
 The light is focused by two lenses (mounted on the oven) first, then guided
 by a pipe with mirror and additional focusing lenses in it, finally reaches 
 the EPR photodiode which is located a few meters away from the target.
-At the meantime this light will also be viewed by a fiber and enters 
-the spectral-analyzer, which is used to monitor the spectrum and intensity of 
+This light will also be viewed by a fiber and enters 
+a spectral-analyzer, which is used to monitor the spectrum and intensity of 
 the lasers.
 
 The laser beam line is
@@ -329,12 +333,12 @@ safety precautions (see Section 13 and Appendix A).
 %-----------------------
 \subsection{Diode Lasers \& Controls}
 
-The laser light for this experiment is provided by seven 30 Watt, 795
+The laser light is provided by seven 30 Watt, 795
 nm solid-state diode lasers.  The seven primary lasers used during the
 experiment are made by Coherent Semiconductor Inc.  There will also be
-two diode lasers made by the Opto-Power Corporation that will be used
+two diode lasers made by the Opto-Power Corporation that are used
 as spares.  Though there are some minor differences, both companies'
-laser systems perform the same function. Only the Ceherent lasers and
+laser systems perform the same function. Only the Coherent lasers and
 control will be described here. If the Opto-Power lasers are used,
 readers are refered to the original version of the polarized $^3$He
 target OSP manual.
@@ -350,7 +354,9 @@ $26.5^{\circ}$ C depending on the system.  They are run at output
 power of 30 Watts which uses an operating current of 35-40 Amps.  The
 output laser light has a central wavelength of 795 nm with a spectral
 width of less than 2 nm. The fiber diamter is 800 microns.  The beam
-divergence is $< 0.20$ N.A.
+divergence is $< 0.20$ N.A.\footnote{N.A. stands for Numerical Aperture
+of the fiber, equal to $\sin{(\theta{}/2)}$, where $\theta{}$ is 
+the acceptance angle.}
 
 The lasers have a local control system, which is integrated into the
 main enclosure.  The local control allows adjustments in operating
@@ -373,6 +379,7 @@ During the experiment the lasers will be controlled remotely through
 
 
 \begin{enumerate} \setlength{\parskip}{0ex}
+\item Apply the safety measures described in Section~\ref{sec:lassaf}.
 \item Set the height of the diode laser, the center of the polarizing
   cube (beam splitter), the two-inch mirror, the quarter wave plates, 
   the lens, and the three-inch mirror to be at the same height.
@@ -529,6 +536,7 @@ spot at the center of 2'' mirror.
 \subsection{Operation I: Local Mode}
 To turn a laser on:
 \begin{enumerate} \setlength{\parskip}{0ex}
+\item Apply the safety measures described in Section~\ref{sec:lassaf}.
 \item Be sure to connect the laser control box to the interlock and to
 the correct laser.
 \item Turn on the switch on the back panel of the laser.
@@ -596,30 +604,29 @@ at the laser box in the Hall then you should see 'laser disabled'.
 In addition to cameras pointing at the lasers boxes in the Laser Hut to 
 monitor lasers on or off, there is a spectral-analyzer which monitors
 both the relative power and the waveform of the lasers. The spectral-analyzer 
-has remote readback.  Alarm will be set when the readback deviate
-from the regular running condition by more than $10\%$. This will enable us 
-to know when there is one laser goes off or when the cell ruptured.
+has remote readback.  An alarm will be triggered when the readback deviate
+from the regular running condition by more than $10\%$. This enables us 
+to know when a laser goes off or when a cell ruptures.
 
 %-----------------------------------------------------------
 \subsection{Half-Wave Plate Motion Control}
 The target polarization can be reversed by insertion or removal of 
 a set of half-wave plates. Before moving the half-wave plates, all lasers
-must be turned off first.
+must be turned off.
 
-The half-wave plate positions are controlled through the MEDM GUI running
+The half-wave plate positions are controlled through a MEDM GUI running
 on one of the computers in the Hall A Counting House.  The half-wave plates
 have only two positions: IN (in the laser beam path) and OUT (pulled out
 of the laser path).  The speed, acceleration, deceleration and number of
 steps can be defined for the half-wave plate motor, but the defaults
-should be fine except in special circumstances.  The GUI allows 
-insertion and removal of the half-wave plates:
+should be fine except in special circumstances.  
+%The GUI allows 
+%insertion and removal of the half-wave plates:
 
 To move the half-wave plates IN, click the ``Go'' button under
 ``Move Half-Wave Plates IN''.  
-
 To move the half-wave plates OUT, click the ``Go'' button under
 ``Move Half-Wave Plates OUT''.
-
 After the motion is finished, you can get the position of the 
 motor by clicking on the ``Get Position'' button.  This button
 shouldn't be pressed while the motor is moving because the motor
@@ -681,7 +688,8 @@ then bolted onto the oven.
 \begin{safetyen}{10}{5}
 The target installation is a delicate procedure and should be
 performed only by qualified personnel. A minimum requirement is
-Radiation Worker II training.  Only the first time installation does
+Radiation Worker II training.  Only the installation prior to beam delivery 
+does
 not require the monitoring of radiation around the pivot area. After
 the cell has been exposed to the electron beam, any replacement of the
 cell must be done under strict observation of possible radiation and
@@ -837,17 +845,17 @@ temporary masking of this FSD channel.
 \section{Target Enclosure \& Windows}
 
 The target is surrounded by an enclosure similar to a scattering chamber.
-The enclosure serves three purposes: First, it provides a
+The enclosure serves three purposes: first, it provides a
 containment volume in case of explosion of the target cell and so limits
-the potential hazard working area.  Second, it holds the RF coils in a
+the potential hazard working area;  second, it holds the RF coils in a
 stable position and provides a strong frame for the support
-assembly. Third, it allows the region around the target to be filled
+assembly; and third, it allows the region around the target to be filled
 with helium gas, minimizing ionization and energy loss of the electron 
 beam crossing the target area.
 
 The enclosure is made of high density polyvinyl (HDPV) material and has 
 several removable
-windows.  The windows are of three types: The incident electron beam
+windows.  The incident electron beam
 entrance and exit windows are 0.127 mm thick aluminum.
 The windows on the side of the chamber through which the scattered 
 particles pass are 2.54 mm thick aluminum. Five-mm thick optical-perfect
@@ -886,10 +894,11 @@ The target pumping cell must be kept at a temperature of about
 effective. This is accomplished by flowing hot air through a special
 temperature-resistant enclosure (``oven'') around the pumping cell 
 and regulating the temperature of the air using a process
-controller. The system is described in detail in the following.
+controller. The system is described in detail in Section~\ref{sec:polheldesc}.
 
 %----------------------------------
 \subsection{Description}
+\label{sec:polheldesc}
 Fig. \ref{fig:oven} shows a schematic diagram of the heater system
 and the associated controls. Pressurized dry and filtered air at room 
 temperature is provided by a dedicated compressor in the Hall. The air
@@ -901,7 +910,7 @@ to indicate insufficient flow. The air then passes through a
 resistive heater element (120 VAC, 700 W)\ and continues through
 insulated copper tubing into the target oven. The
 oven material is Torlon and Vespel plastic which can withstand a
-temperature of at least 260$^\circ$C continuously.
+continuous temperature of at least 260$^\circ$C.
 The air finally exits the system through a several meters long
 exhaust pipe where it can cool down.
 
@@ -1007,7 +1016,7 @@ the heating of the target oven.
 
 \subsection{Operation}
 The oven can be controlled from a GUI running
-on one of the Hall A counting house computers, or manually using the
+on one of the Hall A counting house computers or manually using the
 front panel controls. 
 
 \subsubsection{Local Operation}
@@ -1021,7 +1030,7 @@ A brief description of the manual operating procedure is given here:
 \item Verify the alarm set points for the flow meter and
   temperature indicator. Press the {\tt SETPTS} button
   until the display shows {\tt SP3}. After about 1 second,
-  the setpoint value appears. It should be 250 for the
+  the setpoint value will appear. It should be 250 for the
   air flow display and 220 for the temperature display. Press
   {\tt SETPTS} again and check setpoint {\tt SP4}. It
   should be identical to {\tt SP3}.
@@ -1114,7 +1123,7 @@ A brief description of the manual operating procedure is given here:
   oven temperature. In particular, the heater may become significantly
   hotter than the oven, and its temperature 
   might fluctuate from almost room temperature
-  to high values over short periods of time as the heater 
+  to higher values over short periods of time as the heater 
   power is automatically
   cycled on and off by the controller.  As long as the temperature 
   stays below the alarm threshold (220$^\circ$C) there is no reason 
@@ -1344,7 +1353,7 @@ corresponds to 9.2 amps of current.
 The coils are controlled by a DC voltage from two Stanford Research
 System DS345 Function Generators.  These are in turn controlled by a
 LabView Vi running on a PC.  There is a small glitch in the DS345
-function generator : there sometimes will be a short drop in voltage
+function generator : sometimes the voltage drops for a short time,
 before going to the correct voltage.  This is a problem when rotating
 the field, since it causes sudden magnitude shifts which in turn
 destroy a little of the target polarization.  This glitch is
@@ -1355,8 +1364,8 @@ be performed smoothly.
 
 Attached to the small set of Helmholtz coils are a smaller set of
  coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W
- power supply.  This target occasionally has a problem with a
- phenomena known as masing.  This is a loss of target polarization due
+ power supply.  This target occasionally causes a problem 
+ known as masing.  This is a loss of target polarization due
  to coupling of the helium nuclei in their higher energy states (such
  as during an NMR measurement) and a coil of wire (the pick-up coils,
  a Rb ring, or some other source).  Masing can be easily identified
@@ -1834,8 +1843,8 @@ around'' erratically, or looks as if the  Opamps have been saturated, you
 must adjust the gains.  The best advice
 is to begin with the relative gain, and if this does not rectify the
 problem, move on to the absolute gain. 
-Basically, adjust these parameters such that the feedback signal is not too strong,
-neither too weak. \\
+Basically, adjust these parameters such that the feedback signal is not too strong or
+too weak. \\
 
 \item Once this is done, the circuit should track
 the resonance frequency and the counter reading should change towards it.  The lock-in
@@ -1955,7 +1964,7 @@ is needed, as shown in Fig. \ref{fig3:epr}
 \begin{figure}
 \begin{center}
 \centerline{ \includegraphics[scale=0.7]{eprfig3}}
-\caption{Circuit for continuous EPR measurement with field feedback}
+\caption{Circuit for continuous EPR measurement with field feedback.}
 \end{center}
 \label{fig3:epr}
 \end{figure}
@@ -2201,7 +2210,7 @@ The principal hazards associated with the reference cell are
 flying material and loud noise if the gas panel or reference cell
 fails catastrophically under high pressure.  Of the two subsystems,
 the reference cell subsystem presents the greater hazard, both because
-it is more likely to fail, and because it is likely to be more
+it is more likely to fail and because it is likely to be more
 dangerous if it does.  The RF enclosure is designed to contain all the debris
 in case of a cell explosion.
 
@@ -2466,7 +2475,7 @@ laser beam into the pumping cell;
 \end {itemize}
 
 The optical table will be about 2 meters from the platform.
-The laser beams will be from about 15 cm to 105 cm above the table
+The laser beams will be from about 15 cm to 105 cm above the table.
 Each of the 795 nm diode laser light, after passing through the lens,
 will be split into two beams. Each one will go through a $\lambda$/4 waveplate
 to transform linear polarization to circularly right or left polarization. 
@@ -2547,7 +2556,7 @@ are required.
 
 \subsubsection{Normal procedure}
 In the operation mode, each diode laser is in lasing mode rendering an output 
-power of approximately 30 W. The laser beam is already aligned, properly 
+power of approximately 30 W. The laser beam will already have been aligned, properly 
 focused and directed into the pumping cell. The lasers are interlocked with the
 entrance door of the laser hut. All the laser beam pipes and the laser 
 enclosure on top of the target are securely installed.
@@ -2784,7 +2793,7 @@ and authorized by Jian-Ping Chen, phone 7413 and
    \WolfgangKorsch{}
    \KevinKramer{}
    \NilangaLiyanage{}
-   \KathyMcCormick{}
+%   \KathyMcCormick{}
    \ZeinEddineMeziani{}
    \KarlSlifer{}
    \PatriciaSolvignon{}
@@ -2818,13 +2827,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.11 2004/12/15 00:14:15 gen Exp $
-% $Id: pol-he3.tex,v 1.11 2004/12/15 00:14:15 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
+% $Id: pol-he3.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/15 00:14:15 $
+% $Date: 2005/04/04 22:27:25 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.12  2005/04/04 22:27:25  gen
+% Chnges after the review
+%
 % Revision 1.11  2004/12/15 00:14:15  gen
 % minor update of the labels
 %
