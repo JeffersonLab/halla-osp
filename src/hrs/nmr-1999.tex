@@ -1,6 +1,7 @@
+\infolevone{
 \section[Field Monitoring]{Field Monitoring
 \footnote{
-  $CVS~revision~ $Id: nmr-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $ $ 
+  $CVS~revision~ $Id: nmr-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $ $ 
 }
 \footnote{Authors: J.LeRose \url{mailto:lerose@jlab.org}}
 }
@@ -22,15 +23,35 @@
 \end{center}
 \end{figure}
 
-This box displays a brief summary of the status of the spectrometer magnets and their cryogenic systems. The blue fields 
-(with white numbers) give readbacks of the magnetic fields and currents in each magnet. The black fields also give readbacks, 
-however in this case if the text appears green those parameters are OK while if they are red then that parameter is out of 
-tolerance and may indicate a fault condition. For example if the helium level goes below a certain point the magnet will be 
-automatically turned off.  In some cases it may be desirable to monitor certain critical quantities on a strip chart 
-(e.g. Magnet settings). A strip chart tool is available for this purpose from the bottom of the main control screen.
+This box displays a brief summary of the status of the spectrometer
+magnets and their cryogenic systems. The blue fields (with white
+numbers) give readbacks of the magnetic fields and currents in each
+magnet. The black fields also give readbacks, however in this case if
+the text appears green those parameters are OK while if they are red
+then that parameter is out of tolerance and may indicate a fault
+condition. For example if the helium level goes below a certain point
+the magnet will be automatically turned off.  In some cases it may be
+desirable to monitor certain critical quantities on a strip chart
+(e.g. Magnet settings). A strip chart tool is available for this
+purpose from the bottom of the main control screen.
 
-{\bf To set the spectrometers} for a given value of central momentum (P0) type the desired P0 value into the yellow P0 SET box and hit return. The magnets will be automatically set to the correct values. All green numbers in the P0 column indicates that the desired field or current settings have been reached. 
-{\bf Caution:} Re dipoles, in general it's a bad idea to assume that at the first instant that the P0 display turns green that the desired field has been reached and you can start taking data. Stable field is in general not achieved for from 15 to 30 minutes after reaching the nominal desired field. This settling time depends on the magnet (Hadron is slower than Electron) and the magnitude of the field change (small changes settle faster than big changes). Experimenters are advised to observe both the field reading and current reading on the magnet in question and verify that things are stable to their satisfaction before proceeding.
+{\bf To set the spectrometers} for a given value of central momentum
+(P0) type the desired P0 value into the yellow P0 SET box and hit
+return. The magnets will be automatically set to the correct
+values. All green numbers in the P0 column indicates that the desired
+field or current settings have been reached. 
+
+{\bf Caution:} Re
+dipoles, in general it's a bad idea to assume that at the first
+instant that the P0 display turns green that the desired field has
+been reached and you can start taking data. Stable field is in general
+not achieved for from 15 to 30 minutes after reaching the nominal
+desired field. This settling time depends on the magnet (Hadron is
+slower than Electron) and the magnitude of the field change (small
+changes settle faster than big changes). Experimenters are advised to
+observe both the field reading and current reading on the magnet in
+question and verify that things are stable to their satisfaction
+before proceeding.
  
 \subsection{ Dipole Field Monitoring Electron Arm}
 
@@ -61,7 +82,7 @@ The basic layout is shown in Figure~\ref{fig:nmrbasic}
 of three; one group on the low field side of the gap and the other on the high 
 field side of the gap.  The groups of three are made up of one each of 
 the manufacturer's type 3, 4 \& 5 probes, designed to cover different 
-field ranges (see Table 1).  The six ``Purcell Gap Probes'' (Group 1 in 
+field ranges (see Table \ref{nmr_range}).  The six ``Purcell Gap Probes'' (Group 1 in 
 the controls) are located in the Purcell gap of the magnet 
 and consists of two each of the above types. {\em Note: Since
 the fall of 1998 the multiplexer-multiplexer in the electron arm,
@@ -119,7 +140,7 @@ the compensating coils is shown in Figure~\ref{fig:nmrcir}
 \end{center}
 \end{figure}
 
-The following graphs (see Figures~\ref{fig:nmrcomp4}, 
+The following graphs (see Figures~\ref{fig:nmrcomp4}), 
 and ~\ref{fig:nmrcomp5}can be used to determine optimum values for the 
 compensating coil control voltage.  It should be noted that the setting 
 of the compensating coil current is not very critical in most cases.  In 
@@ -130,14 +151,14 @@ work fine.
 
 \begin{table}
 \begin{center}
-\caption[Spectrometers: Dipole NMR Probe Field Ranges]{Dipole NMR probe field ranges}
-\label{nmr_range}
 \begin{tabular}{|cc|} \hline
 Probe Type & Field Range (T) \\ \hline 
 3 & 0.17 - 0.52 \\
 4 & 0.35 - 1.05 \\
 5 & 0.70 - 2.10 \\ \hline
 \end{tabular}
+\caption[Spectrometers: Dipole NMR Probe Field Ranges]{Dipole NMR probe field ranges}
+\label{nmr_range}
 \end{center}
 \end{table}
 
@@ -317,19 +338,25 @@ shows  -\#.0000000) & software. & \\ \hline
 
 \subsection{Powering Up Dipole Magnets:}
 \noindent
-Use these instructions to recover from loss of a magnet due to a fault (e.g. He level or lead flow fault). The order of actions matters. \\
-(Contact Tech on call if anything behaves funny or things don't respond as expected. Sometimes after a trip an access to the Hall is required to reset things)\\
+Use these instructions to recover from loss of a magnet due to a fault
+(e.g. He level or lead flow fault). The order of actions matters. \\
+(Contact Tech on call if anything behaves funny or things don't
+respond as expected. Sometimes after a trip an access to the Hall is
+required to reset things)\\
+
 \noindent 1. Wait for Iout=0 (you can't and don't want to do anything while the magnet is in emergency fast dump mode.)\\
 \noindent 2. While waiting, make a log entry re the fault. Give details such as time, coincident activities, and nature of the fault.\\
 \noindent 3. Make sure the fault is cleared. (e.g. He level and flow rates returned to normal values and stable)\\
 \noindent 4. In the HRS Hadron (Electron) Dipole Systems' control panel:\\
-\noindent a) Press RESET (verify that all faults are cleared in the middle column)\\
-\noindent b) Press START (Display will indicate Power Supply ON and magnet ENGAGED)\\
+\noindent(a) Press RESET (verify that all faults are cleared in the middle column)\\
+\noindent(b) Press START (Display will indicate Power Supply ON and magnet ENGAGED)\\
+
 Power supply and magnet are ready to go. From here you can return
 to "Autopilot Mode" 
 (type in desired P0 on control screen and wait) or proceed as described below.
 For Electron dipole type in desired current in I Set and the power supply will respond.\\ 
 For Hadron dipole go to HRS HADRON DIPOLE NMR control panel.\\
+
 \noindent 1. Press RESET\\
 \noindent 2. Press Reg. Enable YES\\
 \noindent 3. Press Search ON (should already be on but it doesn't hurt to check)\\
@@ -343,7 +370,7 @@ For Hadron dipole go to HRS HADRON DIPOLE NMR control panel.\\
 \noindent 1. Push RESET (check all faults cleared)\\
 \noindent 2. Select desired polarity\\
 \noindent 3. Push ON\\
-\noindent 4. Type in ISET (yellow field) or re-enter P0 in Autopilot Mode).\\
+\noindent 4. Type in ISET (yellow field) or re-enter P0 in Autopilot Mode.\\
 
 \subsection{Starting Q2/3 Power Supply:}
 \noindent Do this when a fault causes the power supply to shut off.\\
@@ -352,15 +379,18 @@ For Hadron dipole go to HRS HADRON DIPOLE NMR control panel.\\
 \noindent 3. Select polarity\\
 \noindent 4. Press ON\\
 \noindent 5. Type in ISET (yellow field) or re-enter P0 in Autopilot Mode.\\
-
+} %infolev
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/nmr-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $
-% $Id: nmr-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/nmr-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $
+% $Id: nmr-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 15:44:08 $
+% $Date: 2003/12/05 06:49:07 $
 % $Name:  $
 % $Locker:  $
 % $Log: nmr-1999.tex,v $
+% Revision 1.2  2003/12/05 06:49:07  gen
+% infolevels added, polishing
+%
 % Revision 1.1  2003/06/06 15:44:08  gen
 % Revision printout changed
 %

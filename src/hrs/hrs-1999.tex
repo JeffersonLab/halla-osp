@@ -1,6 +1,6 @@
-\section[Overview]{Overview
+\chapter[High Resolution Spectrometers (HRS)]{High Resolution Spectrometers (HRS)
 \footnote{
-  $CVS~revision~ $Id: hrs-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $ $ 
+  $CVS~revision~ $Id: hrs-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $ $ 
 }
 \footnote{Authors: J.LeRose \url{mailto:lerose@jlab.org}}
 }
@@ -20,7 +20,7 @@ angular and momentum acceptance.
 
 \begin{figure}[tbp]
 \begin{center}
-\includegraphics[angle=0,width=\textwidth,clip]{figure0101_r}
+\includegraphics[angle=0,width=0.9\textwidth,clip]{figure0101_r}
 {\linespread{1.}
 \caption[Spectrometers: Elevation View of Hall~A HRS]{A side view of the Hall~A
 HRS spectrometer.}  
@@ -30,7 +30,7 @@ HRS spectrometer.}
  
 \begin{figure}[tbp]
 \begin{center}
-\includegraphics[angle=0,width=\textwidth,clip]{figure0102_r}
+\includegraphics[angle=0,width=0.9\textwidth,clip]{figure0102_r}
 {\linespread{1.}
 \caption[Spectrometers: Plan View of Hall~A]{A bird's eye view of the Hall~A
 end-station at TJNAF.}  
@@ -71,13 +71,15 @@ house and the magnet power supplies; and the bogies, which support the
 cradle-gantry assembly and slide on the floor plates and provide the 
 driving power to move the two spectrometer arms.
 
-The detector package is supported on the box beam and is surrounded by 
+The detector package (described in details in Chapter \ref{chap:hrs_det})
+is supported on the box beam and is surrounded by 
 the shield house.  It must perform two functions, tracking and particle 
 identification, PID.  The most important capability of focusing 
 spectrometers is measuring precisely the momenta and entrance 
 orientations of the tracks.  Momenta resolution of 10$^{-4}$ is 
 obtainable, consistent with the resolution of the incident beam.
 
+\infolevone{
 A particle traversing the detector stack 
 (Figure~\ref{fig:hrs_electron_det}) encounters two sets of horizontal 
 drift chambers (x,y) with two planes of 368
@@ -94,17 +96,17 @@ with a second hodoscope pair it can provide time of flight particle
 identification.  These scintillators can also be used to perform crude 
 tracking.
 
-The next element encountered by a particle is a gas threshold Cerenkov 
+The next element encountered by a particle is a gas threshold \Cherenkov{} 
 detector.  This is used for particle identification.  In the hadron 
-spectrometer this gas threshold Cerenkov detector can be swapped 
+spectrometer this gas threshold \Cherenkov{} detector can be swapped 
 against an Aerogel detector, with a similar function.
 
 The second hodoscope plane, S2, is located directly behind the 
-gas Cerenkov.  Its function is essentially the same as that of S1.  
+gas \Cherenkov{}.  Its function is essentially the same as that of S1.  
 In the hadron spectrometer an option exists to have this hodoscope 
 pair be preceded by a third chamber, to improve tracking.
  Each of the two spectrometers 
-have gas and Aerogel Cerenkov detectors which can be used
+have gas and Aerogel \Cherenkov{} detectors which can be used
  when they are in electron detection mode.
 
 The final elements in the detector stack on HRSE are 
@@ -137,7 +139,7 @@ electron arm.  The remaining part of the detection system is used to
 define the level 1 trigger, as well as for particle identification and 
 timing.  It consists of three minimally segmented planes of 
 scintillation counters equipped with photomultipliers at both ends, and 
-it includes Cerenkov counters (gas CO$_2$ and Aerogel).
+it includes \Cherenkov{} counters (gas CO$_2$ and Aerogel).
 
 In addition, a proton polarimeter is installed in the back of the 
 detector package to measure the polarization of the proton using a 
@@ -161,18 +163,23 @@ components are mounted on an FPP subframe for installation and removal as
 a unit.  The trigger electronics are located next to the detectors, 
 as for the electron arm.
 
+} %infolev
+
 To reduce the resolution degrading effects of multiple scattering, the 
 entire interior of the spectrometer from the pivot to the detector hut 
 is a vacuum vessel.  The ends of this evacuated volume are capped by 
 relatively thin vacuum windows.
 
+\obsolete{
 As mentioned, subsystems will be discussed in more detail in the next 
 three sections.  The remainder of this section will describe some 
 features common to the two spectrometers, then the following major 
 sections will be devoted to the specifics that are not common.
+} % obsolete
 
-
-\subsection{Safety with Regards to the Spectrometer}
+\begin{safetyen}{10}{15}
+\section{Safety with Regards to the Spectrometer}
+\end{safetyen}
 
 The principle concern with the spectrometers is that they are large, 
 and have associated vacuum, hydraulic, cryogenic and magnet systems all of 
@@ -208,7 +215,7 @@ the dump resistor is attached to the magnet.
 
 There are several major safety concerns with regards to the detectors, 
 namely 1) flammable gas located in the VDC and FPP, 2) ODH hazard due to 
-CO$_2$ in the Cerenkov counter, 3) high voltage due to the photo 
+CO$_2$ in the \Cherenkov{} counter, 3) high voltage due to the photo 
 multipliers on the various detectors and 4) a thin vacuum window 
 separating the detector array from the vacuum system in the 
 spectrometers.  The clean agent fire suppression system, while installed 
@@ -220,7 +227,14 @@ system was attached.  Personnel should have a 5 minute air pack with
 them in the event they must enter the area alongside the box beam to the gantry roof 
 inside the shield house.
 
-\subsection{Hall A Vacuum System}
+\infolevltone{
+\begin{safetyen}{5}{10}
+For more information consult the full OSP manual~\cite{HallAosp}.
+\end{safetyen}
+}
+
+\infolevone{
+\section{Hall A Vacuum System}
 
 The Hall A vacuum system consists of 5 separate but interconnected 
 subsystems.  The largest is designed to supply the Hall A HRS with a 
@@ -235,7 +249,7 @@ system used in the accelerator ring and a small turbo pump located near
 the target.  The final subsystem is a differential pumping station 
 located near the target exit port.
 
-\subsubsection{Spectrometer Vacuum System}
+\subsection{Spectrometer Vacuum System}
 
 The spectrometer vacuum system is shown in Figure~\ref{fig:hrs_vac_sys}.
 Vacuum for the HRS is supplied by an Alcatel 880 $\ell$/s Turbo 
@@ -275,7 +289,7 @@ transition, Dipole to Q3 transition, and the Q3 to exit window assembly.
  The spectrometer vacuum is contained by a .007 kapton window at the
  entrance and a .004 titanium window at the exit.
 
-\subsubsection{Target Vacuum System}
+\subsection{Target Vacuum System}
 
 Vacuum for the target chamber is supplied by an Alcatell 880 $\ell$/s 
 Turbo pump backed by an Alcatell 21 $cfm$ 2 stage vane pump.  The Turbo is 
@@ -289,7 +303,7 @@ at the Vacuum System equipment rack located on the access Balcony.
 Selective equipment will also be controllable from the Hall A counting 
 house. 
 
-\subsubsection{Magnet Vacuum System}
+\subsection{Magnet Vacuum System}
 
 Vacuum for the magnet insulating vacuum is provided by the Cryo
 pumping effects of each individual magnet.
@@ -301,7 +315,7 @@ initial pump down.
 The insulating vacuum for each magnet is self contained within the 
 magnet.
 
-\subsubsection{Beam Line Vacuum System}
+\subsection{Beam Line Vacuum System}
 
 Vacuum for the entrance beam line is supplied by 65 $\ell$/s Balzers turbo
 pumps, the first of which is located on the E P chamber, and the
@@ -319,7 +333,7 @@ at the Vacuum System equipment rack located on the Balcony.  Selective
 equipment will also be monitored from the Hall A counting house.  All 
 control is by Accelerator in the MCC.
 
-\subsubsection{Beam Exit Vacuum System}
+\subsection{Beam Exit Vacuum System}
 
 Vacuum for the target chamber is supplied by an Alcatell 880
 $\ell$/s Turbo pump backed by an Alcatell 21 $cfm$ 2 stage vane pump
@@ -351,7 +365,7 @@ one on the return line.
 Due to high radiation levels at the exit beam pipe all seals in
 this area are metal.
 
-\subsubsection{Hazards of Vacuum Systems}
+\subsection{Hazards of Vacuum Systems}
 
 Hazards associated with the vacuum system are due to rapid 
 decompression in case of a window failure. Loud noise can cause hearing
@@ -377,7 +391,7 @@ KV; consequently there is also a shock hazard.
 Additionally, all vacuum vessels and piping are designed as pressure 
 vessels.
 
-\subsection{The High Resolution Spectrometer (HRS)}
+\section{The High Resolution Spectrometer (HRS)}
 
 The HRS is composed of three superconducting quadrupole magnets, Q1, Q2, 
 and Q3, and one superconducting dipole magnet.  The large quadrupoles were 
@@ -398,7 +412,7 @@ able to momentum analyze charged particles up to very high momenta.  The
 design value for the maximum momentum accessible to the HRS magnet 
 system is 4 GeV/c.
 
-\subsubsection{Magnets and Power Supplies}
+\subsection{Magnets and Power Supplies}
 
 The HRS magnet's are all superconducting and hence their coils must be 
 maintained at cryogenic temperatures during operations.  The LHe 
@@ -415,7 +429,7 @@ screens in the counting house, one for each magnet.  Normally during run
 periods the control screens are sent upstairs to the Hall A counting 
 house and information on all the HRS magnets is available on the HRS 
 control screen located in the center of the main console.  The control 
-of all magnets is described in a following Subsection.
+of all magnets is described in a following Section.
 
 The power supplies for the magnets are located on the gantry balcony 
 adjacent to the magnets.  The supplies are all cooled with LCW.
@@ -430,7 +444,9 @@ signs posted listing the dangers of high magnetic fields.
 The control interface for the power supplies is available through the 
 HRS control screen in the Hall A counting house.
 
-\subsubsection{Personnel}
+} %infolev
+
+\subsection{Personnel}
 
 In the event that problems arise during 
 operation of the magnets, qualified personnel should be notified.  This 
@@ -441,7 +457,8 @@ Hall A engineering group is qualified to deal with unusual magnet
 situations but in the event of serious problems the technician on
 call should be contacted.
 
-\subsubsection{Quadrupole Magnets}
+\infolevone{
+\subsection{Quadrupole Magnets}
 
 The quadrupoles provide some of the 
 focusing properties of the spectrometer and to a large extent 
@@ -489,17 +506,17 @@ installed rotated 90 $^\circ$ from their correct
 orientation, these trim coils are now considered useless 
 and there are at present no plans to use them.
 
-\subsubsection{Cryogenic Procedures}
+\subsection{Cryogenic Procedures}
 
 All cryogenics control is handled by WBS7.  The cryo control coordinator 
 can be reached at the CHL (x7405) or by calling the MCC.
 
-\subsubsection{First Time Startup Check List.}  
+\subsection{First Time Startup Check List.}  
 
 See attached check lists for all quadrupole and dipole magnets
  (Tables~\ref{dip_check}, \ref{q1_check}, and \ref{q23_check}).
 
-\subsubsection{Dipole Magnet}
+\subsection{Dipole Magnet}
 
 The dipole, by virtue of its field index, provides both
 dispersion and focusing.  The present operations envelope 
@@ -528,8 +545,10 @@ the floor of Hall A.  The total water flow needed to cool the 4 power
 supplies for the HRS magnet system (dipole and quadrupoles) amounts to 
 80 liters per minute, with a supply pressure of cooling water for Hall A 
 of 100 psi.
+}
 
-\subsection{Operation of the HRS Magnets}
+\infolevtwo{
+\section{Operation of the HRS Magnets}
 
 \noindent{\bf Introduction}
 
@@ -620,7 +639,7 @@ Magnet Lead A Trip (+) Voltage\_80 mV \underline{\hskip0.5in} &
 \underline{\hskip1in} \\
 Magnet Lead B Trip (-) Voltage\_80 mV \underline{\hskip0.5in} & 
 \underline{\hskip1in} \\
-Level Trip percent 980\%) \underline{\hskip0.5in} & 
+Level Trip percent 980\%  \underline{\hskip0.5in} & 
 \underline{\hskip1in} \\
 Magnet Flow A Trip (30 SLPM+) setting \underline{\hskip0.5in} & 
 \underline{\hskip1in} \\
@@ -691,15 +710,18 @@ Password: hacuser
 {\bf Type:} HAC\underline{ }xt or HAC\underline{ }hp (as per instructions when you log-on).
 \noindent A Hall-A Main Control Window pops up, and all
  subsystem control windows can be accessed via pull down menus from there.
-
+}
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/hrs-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $
-% $Id: hrs-1999.tex,v 1.1 2003/06/06 15:44:08 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/hrs-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $
+% $Id: hrs-1999.tex,v 1.2 2003/12/05 06:49:07 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 15:44:08 $
+% $Date: 2003/12/05 06:49:07 $
 % $Name:  $
 % $Locker:  $
 % $Log: hrs-1999.tex,v $
+% Revision 1.2  2003/12/05 06:49:07  gen
+% infolevels added, polishing
+%
 % Revision 1.1  2003/06/06 15:44:08  gen
 % Revision printout changed
 %
