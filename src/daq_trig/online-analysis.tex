@@ -1,6 +1,8 @@
+\infolevone{
+
 \section[Online Analysis, Data Checks]{Online Analysis, Data Checks
 \footnote{
-  $CVS~revision~ $Id: online-analysis.tex,v 1.1 2003/06/06 15:38:43 gen Exp $ $
+  $CVS~revision~ $Id: online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -14,9 +16,10 @@ data online.
 Scaler rates and values are displayed using
 a MOTIF based display called ``xscaler''
 written by C. Howell of Duke University.
+}
+\infolevtwo{
 Normally this is already running on adaqs2 or s3.
-It also runs on HP-UX but the SunOS version
-is preferred.  If it is not running, login as
+If it is not running, login as
 adaq and go to the appropriate directory,
 which is 
 /home/adaq/\$EXPERIMENT/electron/scaler
@@ -39,24 +42,34 @@ a complete history of scaler readings at
 the end of each run that ended normally.
 For 1-TS mode, this file is in /home/adev/scaler.
 
-\subsection{Analysis using ESPACE}
+}
+
+\infolevone{
+
+
+\subsection{Analysis using ESPACE or C++ Analyzer}
 
 ESPACE is the main offline software package
-for analyzing Hall A experiments, and it is
+for analyzing Hall A experiments.
+It is being replaced by a ROOT/C++ analyzer.
+Both may be
 used for rapid near-online analysis in the
-counting room.  ESPACE is
-documented in a separate chapter, 
+counting room.  These codes are 
+documented in separate chapters, 
 but it is worth mentioning here in a list of
 essential tools for checking data.
 
 \subsection{Dataspy and Dhist} 
 
-Dataspy and Dhist are online diagnostic programs
-whose purposes are: 
-\hskip 0.05in 1) To print
+Dataspy and Dhist are somewhat obsolete
+online diagnostic programs.  It remains to
+be seen if we replace these by an offshoot of
+the C++ analyzer.
+The purposes of dataspy and dhist are: 
+\hskip 0.05in (1) To print
 out randomly sampled detector data; and
 \hskip 0.05in 
-2) To automatically plot to the screen
+(2) To automatically plot to the screen
 histograms of online data.
 \hskip 0.05in 
 Dhist is actually a shell script which runs 
@@ -68,6 +81,10 @@ of {\it raw, uncut} data
 in real time from the CODA computer.
 The data are distributed on the network by
 a server which obtains data from shared memory.
+
+}
+
+\infolevtwo{
 
 \par 
 This paragraph assumes you are on shift
@@ -96,14 +113,19 @@ results in a postscript file for printing, and
 there is a histogram file dplot.his which one
 can view in PAW.    
 
+}
+
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.1 2003/06/06 15:38:43 gen Exp $
-% $Id: online-analysis.tex,v 1.1 2003/06/06 15:38:43 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 15:38:43 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $
+% $Id: online-analysis.tex,v 1.2 2003/08/01 20:34:06 rom Exp $
+% $Author: rom $
+% $Date: 2003/08/01 20:34:06 $
 % $Name:  $
 % $Locker:  $
 % $Log: online-analysis.tex,v $
+% Revision 1.2  2003/08/01 20:34:06  rom
+% updated for year 2003
+%
 % Revision 1.1  2003/06/06 15:38:43  gen
 % Revision printout changed
 %

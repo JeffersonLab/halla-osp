@@ -1,6 +1,7 @@
+\infolevone{
 \section[Trigger Hardware and Software]{Trigger Hardware and Software
 \footnote{
-  $CVS~revision~ $Id: trigger.tex,v 1.3 2003/06/06 17:19:22 gen Exp $ $
+  $CVS~revision~ $Id: trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $ $
 }
 \footnote{Authors: R.Michaels \url{mailto:rom@jlab.org}}
 }
@@ -13,43 +14,41 @@ hardware arrangement,
 the logic of the trigger, and the usage
 of the software control.
 Diagrams of the hardware layout are shown in
-three accompanying 
-figures for the E-arm, H-arm,
-and coincidence circuit.
+accompanying figures.
 
 \par
-Scintillators make the main, so-called S-Ray,
-trigger in each spectrometer arm, and a
-coincidence is formed between the spectrometer
-arms.  The S-Ray trigger is formed by
-requiring that scintillator paddles in
-planes S1 and S2 both fired (and both phototubes
-in each paddle), and that the paddle
-combinations in S1 and S2 belong to an
-allowed set.  A memory lookup (MLU) decides
-if the combination is valid.  The allowed
-combinations are for ``S-Ray'' tracks that are at
-an approximately 45 degree angle with respect
-to the hall floor, with a tolerance of $\pm$1
-paddle on either S1 or S2.  The timing of
-this trigger is determined by a strobe on
-the MLU which in most events comes from the 
-right-side PMTs of the S2 plane.  The coincidence
-is formed in an overlap AND circuit with
-a 110 nsec window.  The electron arm singles
-triggers are called T1 (event type 1) in CODA,
-the hadron arm singles are T3, and the coincidences
-are T5.  If T1 doesn't exist, a looser trigger
-called T2 is considered (similarly for T3/T4 on
-H-arm).  This looser trigger requires any hit
-in 2 out of the following 3 detectors: 
-S1,S2, and Cerenkov
-(in the case that a Cerenkov detector is used), 
-or 1 out of 2 from S1 and S2 if there is no
-Cerenkov detector in the spectrometer.  
-These looser triggers are prescaled,
-and a sample of about 5 Hz from them allows for
-an accurate measurement of inefficiencies.
+
+Scintillators make the main trigger 
+in each spectrometer arm. For coincidence experiments a 
+coincidence is formed between the spectrometer arms.   
+The main trigger is formed by requiring that scintillator 
+planes S1 and S2 both fired (and both phototubes of the 
+paddles that got a hit) in a simple overlap. To repeat, 
+the trigger requires that one paddle in S1 and one in 
+S2 both got a hit in both of their PMTs (4 PMTs total).  
+The coincidence between spectrometers is formed in an 
+overlap AND circuit.  The Right Spectrometer singles 
+triggers are called T1, the Left Spectrometer triggers 
+are called T3, and the coincidence triggers are T5.   
+Other triggers might be formed which require other detectors 
+to measure the efficiency of the main trigger. The most 
+important is T2 on R-arm and T4 on L-arm, whose definition 
+has changed over time but typically require 2 out of 3 
+from among the S1, S2, and Cerenkov detectors (i.e. the 
+"or" of S1 is used, etc).
+
+The Hall A HRS trigger system is remotely configured by 
+CAMAC modules.   The main change that can occur during 
+an experiment is in the delays required to adjust the 
+timings of triggers which change with momentum and 
+particle ID relevant for coincidence setup only.   
+Of course for single arm running one may just use the 
+defaults, but it may still be a wise investment in 2 
+minutes time to download in order to make sure of 
+the state of the modules.   If the power is turned off, 
+the CAMAC modules certainly must be reprogrammed. 
+Instructions to download the trigger are given below.
+
 The trigger design is quite flexible and it
 is relatively easy to add detectors to define
 new trigger types or to modify existing ones,
@@ -57,123 +56,104 @@ so long as the detector is fast enough.
 The trigger supervisor also allows for the
 possibility of 2nd level triggers which could
 be used for a later decision.
+}
 
+\infolevone{
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=15cm,clip]{etrig}
+\includegraphics[angle=0,width=15cm,clip]{strig}
 {\linespread{1.}
-\caption[Data Acquisition: Electron Arm Trigger]{Electron Arm Trigger Circuit.}
-\label{fig:etrig}}
+\caption[Data Acquisition: Single Arm Trigger]{Single Arm Trigger Circuit.}
+\label{fig:strig}}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=0,width=15cm,clip]{htrig}
-{\linespread{1.}
-\caption[Data Acquisition: Hadron Arm Trigger]{Hadron Arm Trigger Circuit.}
-\label{fig:htrig}}
-\end{center}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\includegraphics[angle=0,width=15cm,clip]{coinc}
+\includegraphics[angle=0,width=15cm,clip]{coinc_03}
 {\linespread{1.}
 \caption[Data Acquisition: Coincidence Trigger]{Coincidence Trigger Circuit.}
 \label{fig:ctrig}}
 \end{center}
 \end{figure}
+}
+
+\infolevtwo{
 
 \par
 Here we describe the software control
 of the CAMAC modules involved in the trigger.
+The software control was written by 
+Tim Smith and Jeff Vieregg of MIT with
+some input from Bob Michaels.
 There are four types of modules that
 are controlled:
 \hskip 0.05in 
-1) Discriminators;
+(1) Discriminators;
 \hskip 0.05in 
-2) Delay Units;
+(2) Delay Units;
 \hskip 0.05in 
-3) Memory Lookup Unit
+(3) Memory Lookup Unit
 \hskip 0.05in 
-4) AND/OR Modules
+(4) AND/OR Modules
 \hskip 0.05in 
-A graphical user interface called
-XTrigMang was written by
-T. Smith (UNH).  
-XTrigMang is used to download
-the trigger and read back values.
-This GUI reads in a default setup file and
-with one button, called ``Download All'',
-one may load the default setup.
-To start XTrigMang, login to adaqh2 as
-the ``adaq'' account, then type ``gotrigger''
-to go to the correct directory (which
-contains the default setup in trigsetup.settings), 
-and type ``XTrigMang'' there.
-For experiments that never change
-the trigger, one only needs to ``Download All''
-to ensure the trigger is set up after
-power is turned on for the crates.
-For coincidence experiments it is anticipated
-that the only change one needs to make is the
-delay on the hadron arm to accommodate
-momentum changes.  
-Proton momenta above 360 MeV/c are at
-present accommodated by the hardware (it would
-be a fairly easy hardware change to go lower).
-For coincidence experiments, instead
-of using XTrigMang directly, one must download
-the trigger with a script called trigsetup.
-Login to adaqh2 as ``adaq'' account and
-type ``trigsetup''.  It asks for the 
-momentum of the H-arm (under the assumption
-that a proton is in the H-arm and that the E-arm has
-an electron with respect to which the H-arm must be
-delayed).  Then trigsetup loads the
-correct default setup file and starts
-XTrigMang, which pops up.  At this point, 
-you simply press
-the ``Download All'' button in XTrigMang
-to setup the trigger.  
+    
 
+Here are the instructions to download the trigger.
+First login to the ADAQ Linux box adaql1 or adaql2 
+(and no others) as ``atrig'' account.   (E.g. ssh adaql1 -l atrig).   
+The Run Coordinator should know the password.  
+Type ``trigsetup''.   A self-explanatory graphical user 
+interface pops up, where if you are in a coincidence 
+experiment setup you must enter the momenta and particle 
+ID's and then press "Download" and WAIT for it to finish 
+and do not press Ctrl-C.   However, for single arm 
+running like Spin Duality or GDH, just press "Download" 
+with the defaults, and WAIT for it to finish and do 
+not press Ctrl-C.   The user should look for suspicious 
+error messages in the window from which trigsetup was 
+launched, e.g. to check if connection to the crate is ok. 
 
 \par
 If individual modules need to be modified
 for test purposes etc. (e.g. to change thresholds),
-one may press on the buttons in the XTrigMang
-GUI and pop up the components in an obvious way.
-Each component has four buttons which it is
-essential to understand: 
-\hskip 0.05in
-1) The ``Set'' button.  One must enter the choice
-and then press ``Set''.  This loads your choice
-into memory on the workstation ({\it not} on 
-the CAMAC crate).
-\hskip 0.05in
-2) The ``Down'' button.  This sends whatever choice
-is in memory to the CAMAC crate.
-\hskip 0.05in
-3) The ``Show'' button.  This reads back from CAMAC
-what is actually in the module.
-\hskip 0.05in
-4) The ``Read'' button.  This shows what is in
-memory on your workstation.  Note that ``read'' is quite 
-different from ``show''.
-A typical operation to modify a trigger module
-would be to Set the value,
-Download it, and then Show to check that the value
-is in the CAMAC module.  
+one may use the expert mode.
+Login to an ADAQ linux box as explained above, 
+then type ``trigsetup mapfile'' where mapfile is 
+the name of the trigger map file.   Some examples 
+of map files are in /home/atrig/trigger, see 
+trigger\_left.map and trigger\_right.map for the 
+left and right spectrometers respectively.     
+These are default databases.   One can modify 
+each module on the fly, save the database, etc.   
 
-% ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.3 2003/06/06 17:19:22 gen Exp $
-% $Id: trigger.tex,v 1.3 2003/06/06 17:19:22 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 17:19:22 $
+\par
+
+After you download, a record of what was sent 
+is put into a file (/home/atrig/trigger/trigger.setup) 
+which gets put automatically into the electronics 
+logbook ``halog''.   Also, whenever a CODA run is 
+started, this file is inserted as a special event 
+type 136 at the start of run.   This will be the 
+setup IF the download was successful.   It is also 
+interesting to know what is actually in CAMAC, but 
+that can only be done in expert mode, and the delays
+cannot be read from CAMAC.
+The simplest way to be sure about what is in the 
+trigger is to download again. 
+
+}
+
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
+% $Id: trigger.tex,v 1.4 2003/08/01 20:34:06 rom Exp $
+% $Author: rom $
+% $Date: 2003/08/01 20:34:06 $
 % $Name:  $
 % $Locker:  $
 % $Log: trigger.tex,v $
+% Revision 1.4  2003/08/01 20:34:06  rom
+% updated for year 2003
+%
 % Revision 1.3  2003/06/06 17:19:22  gen
 % Revision printout changed
 %
