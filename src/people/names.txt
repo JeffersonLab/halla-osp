@@ -18,6 +18,8 @@ Deck             Pascale         CEA   2426  pdeck@Cea.Fr
 Delbart          Alain           CEA   3454  adelbart@Cea.Fr     
 Deur             Alexandre       UVA
 Dezern           Gary           JLab
+Ewing            Todd           JLab
+Fansler          Heidi          JLab
 Feuerbach        Robert         JLab
 Folts            Ed             JLab
 Francis          Pete           JLab 
