@@ -1,6 +1,6 @@
 \section[Fast Raster]{Fast Raster
 \footnote{
-  $CVS~revision~ $Id: raster.tex,v 1.6 2003/12/17 03:59:47 gen Exp $ $
+  $CVS~revision~ $Id: raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $ $
 }
 \footnote{Authors: R.~Michaels \email{rom@jlab.org}}
 }
@@ -9,35 +9,47 @@ The beam is rastered on target with an amplitude of
 several millimeters to prevent overheating.  
 The raster is a pair of horizontal (X) and vertical (Y)
 air-core dipoles located 23 m upstream of the
-target. The raster has been used in two different modes,
-sinusoidal and amplitude modulated. In the sinusoidal pattern
-both the X and Y magnet pairs are driven with pure sine waves
+target. Prior to 2003, the raster has been 
+used in two different modes, sinusoidal and 
+amplitude modulated.  After 2003 the raster
+design was upgraded (see below).
+For the old sinusoidal pattern both the X and Y magnet 
+pairs were driven with pure sine waves
 with $90^{\circ}$ relative phase, 
-and frequencies which do not produce a closed Lissajous pattern.
-In the amplitude modulated (or square root of time) mode  
-both the X and Y magnets are driven at 18 kHz with
-a $90^{\circ}$ phase between X and Y producing  a circular
-pattern. The radius of this pattern is changed by amplitude
-modulation at 1 kHz. The radius modulation
-is controlled by a function generator whose function
-creates a uniform distribution of the area swept out
-by the beam motion. It is not possible to switch on the fly
-between the two modes of operation as hardware changes are required.
+and with frequencies which do 
+not produce a closed Lissajous pattern.
+For the old amplitude modulated mode  
+both the X and Y magnets were driven at 18 kHz with
+a $90^{\circ}$ phase between X and Y producing a circular
+pattern whose radius was amplitude-modulated at 1 kHz. 
 
-One can view the status of the raster in the
+The upgraded fast raster design (ca. 2003)
+achieves a uniform rectangular
+density distribution of beam on the target 
+by moving the beam with a time-varying dipole
+magnetic field whose waveform is triangular
+with very little dwell time at the peaks.  
+The electronics design is an ``H-bridge''
+in which switches are opened and closed 
+at 25 kHz, to switch between two directions 
+of current (100 A peak-to-peak) 
+through the raster coils.
+
+One can view the 
+status of the raster in the
 EPICS overview screen called ``General Accelerator
 Parameters'' where the set-point for the radius amplitude
 and the readback of the peak-current in the raster are displayed.
 
 Control of the raster is done by first asking the MCC
-operators to set up the raster for a particular radius, 
-typically 2.5 mm.
+operators to set up the raster for a particular size
+typically 2 mm square.
 The control software assumes a field-free region between
 the raster and the target, so it is only approximately
 correct because there are four quadrupoles in this region.
 It is important to check the raster spot size and
 make adjustments if necessary.  The main adjustment is made
-by asking MCC to change the radius.
+by asking MCC to change the size.
 Relatively small independent adjustments to the 
 gains on the X and the Y raster
 coils are available in the middle room of the hall A
@@ -49,30 +61,27 @@ affording some protection of the target.
 
 {\it NOTE:  If you are unsure of the status of the raster,
 measure the spot size with very low current ($\le 2 \mu$A) or with
-the target out of the beam.}  A % unfortunately common and 
-potentially fatal error 
+the target out of the beam.}  A potentially fatal error 
 is to check the beam spot size with high current on target; by
 the time you check it, the target might already be destroyed.
 The rastered beam spot on target can be checked with
-plots in ESPACE or by using the stand alone code called \mycomp{spot}.
-Spot is probably already running somewhere; it runs on the 
-Linux or Sun computers in the counting room; if it's not
-running, type \mycomp{spot}.  When a new CODA run is started,
-spot automatically clears its histograms and displays 
-in a window the X-Y beam position monitor
-coordinates from the first few thousand events from the
-start of the run.  
-For more details on usage, type \mycomp{spot -h} (help).
+plots in the ROOT analyzer or by 
+using the stand alone code called \mycomp{spot}.
+For more details on usage, type \mycomp{spot -h} (help)
+on the ADAQ computers.
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/raster.tex,v 1.6 2003/12/17 03:59:47 gen Exp $
-% $Id: raster.tex,v 1.6 2003/12/17 03:59:47 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/17 03:59:47 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $
+% $Id: raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $
+% $Author: rom $
+% $Date: 2003/12/19 14:16:35 $
 % $Name:  $
 % $Locker:  $
 % $Log: raster.tex,v $
+% Revision 1.7  2003/12/19 14:16:35  rom
+% updated for 2003 uniform triangle pattern
+%
 % Revision 1.6  2003/12/17 03:59:47  gen
 % authorized personnel tables unfied
 %
