@@ -1,71 +1,109 @@
 \section[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: overview.tex,v 1.3 2003/06/06 17:00:27 gen Exp $ $
+  $CVS~revision~ $Id: overview.tex,v 1.4 2003/11/20 16:17:13 bogdanw Exp $ $
 }
-\footnote{Authors: Dr.No \url{mailto:????@jlab.org}}
+\footnote{Authors: Dr. B.B.Wojtsekhowski \url{mailto:bogdanw@jlab.org}}
 }
+\hskip .3 in The detector packages of the two spectrometers are designed 
+to perform various functions 
+in the characterization of charged particles passing through the spectrometer. 
+These include: providing a trigger to activate the data-acquisition 
+electronics, collecting tracking information (position and direction), 
+precise timing for time-of-flight measurements and coincidence determination, 
+and identification of the scattered particles. 
+The timing information is provided from scintillators, as well as the
+main trigger. The particle identification is obtained from a 
+variety of \v{C}erenkov  type detectors (aerogel and gas) and 
+lead-glass shower counters. 
+A pair of VDCs provides tracking information.
+The main part of the detector package in the two spectrometers (trigger scintillators and VDCs)
+is identical; the arrangement of particle-identification detectors differs slightly.
+The HRS-L can be equipped with a focal-plane polarimeter to determine 
+the polarization of detected protons.
+The optics of the HRS spectrometers, described in the previous section,
+results in a narrow distribution of particle trajectories in the 
+transverse direction, leading 
+to an aspect ratio of the beam envelope of about 20:1 at 
+the beginning of the detector package and 4:1 at the end.
 
-The detector package of each spectrometer has trigger, tracking, and particle 
-ID components. In addition, the Hadron spectrometer has a unique
-proton polarimeter. Particles 
-which have passed through the magnetic 
-elements first encounter the tracking detectors to  minimize 
-the multiple scattering contribution to the angular and 
-energy resolutions of the spectrometer. The tracking part consists of 
-two identical vertical drift chambers. The trigger detectors include two planes of
-thin plastic scintillator counters, gas and aerogel Cerenkov
-counters and a shower 
-counter. On the hadron spectrometer the shower counter or large scintillator counter 
-can be used in the trigger. Particle ID is provided by several techniques. 
-For electron identification the electron arm, EA, has the gas
-Cerenkov counter and two layers of a segmented 
-lead glass shower counter. Because the hadron arm, HA, also can
-be used for experiments with electrons 
-it is equipped with a short version of the gas Cerenkov counter
-and one layer of a segmented 
-lead glass shower counter. Pion identification in both
-spectrometers relies on an aerogel 
-Cerenkov counters which presently have aerogel radiator
-with a refraction index, n, of 1.025. 
-Aerogel Cerenkov counter commissioning is not yet completed. For particle momenta  
-below 800 MeV/c, the dE/E in the scintillator and shower counters can be used for 
-separation of pions and protons. The large distance between
-planes of the trigger scintillator 
-counters (2 -3 $m$) allows a direct measurement of the particle
-speed with resolution ( sigma )
-of 0.07. Measurement of the time of flight on the long path from the target to the 
-spectrometer ( $~ 25 m$ ) provides another powerful particle ID
-for coincidence experiments.
-The focal plane polarimeter on the HA operates with proton
-momenta up to 3 GeV/c with a figure of merit $~ 0.03$.\\
+The detector package and all data-acquisition (DAQ) electronics are located 
+inside a Shield Hut (SH) to protect the detector against radiation background.
+The SH is also equipped with air conditioning and fire
+suppression systems. The individual detectors are installed on a 
+retractable frame, so that they can be moved out of the SH 
+for repair or reconfiguration. 
+The DAQ electronics are mounted on the same frame.
+Figure~\ref{det_sideview} shows sideviews of the  detector setups
+for the two HRSs, including 
+the movable frame, the detector stack and the DAQ electronics.
 
-The detector packages are installed inside of the Shielding Huts (SH). Access to the Shielding Huts 
-is via very heavy swinging front doors. The main structure of the
-SH is made from 3 $in$ thick steel plates.
-The side walls and bottom surfaces of the SH are covered inside
-with 1 $in$ thick lead slabs. Outside of the steel box, concrete
-is used for neutron protection. 
-The front door has about 34 $in$ of concrete and 3 $in$ of lead. Side walls are 
-covered with 17 $in$ of concrete. The roof of the SH has 10 $in$ of concrete above 
-3 $in$ of steel. The lower half of the side walls facing the beam dump have an
-additional cover of 15 $in$ of concrete. Additional ``Line of Sight 
-Shielding'', LSS, is installed at a distance of $~5 m$ from the
-target. This consists of 2 to 3 $m$ of concrete. 
-High energy pions interact in this concrete before decaying. The
-LSS reduces the rate of 
-high energy muons, which are produced in pion decay. The overall
-result from SH and LSS is a reduction 
-factor of 10 to 20 in the counting rate of a single scintillator counter
-( according to calculations ). 
+The concept of VDCs fits well into the scheme of a spectrometer with a small 
+acceptance, allowing a simple analysis algorithm and high efficiency, 
+because multiple tracks are rare.
+The VDCs are bolted to an aluminum frame, which slides on Thomson rails 
+attached to the box beam. 
+Each VDC can be removed from its SH for repair using these Thomson rails. 
+The position of each VDC relative to the box beam can be reproduced to within 
+100 $\mu$m. 
 
-The 2 VDCs provide accurate tracking information. They are
-mounted on a movable frame which slides 
-along Thompson rails to hard stops. 
-The position of the VDC on the frame and location of the 
-Thompson rails is surveyed relative to the Hall center. The
-rest of the detectors are mounted 
-on a detector frame which can be moved out of the Shielding Hut
-for detector maintenance.   
+There are two primary trigger scintillator planes (S1 and S2), 
+separated by a distance of about 2 m. 
+
+The long path from the target to the HRS focal plane (25 m) allows 
+accurate time-of-flight identification in coincidence experiments 
+if the accidental rate is low. 
+After correcting for differences in trajectory lengths, 
+a TOF resolution of $\sim 0.5$ ns ($\sigma$) is obtained (see Fig. 
+\ref{tofres}). The time-of-flight between the S1 and S2 planes is also 
+used to measure the speed of particles $\beta$, with a resolution of 7\% ($\sigma$).
+
+A gas \v{C}erenkov detector filled  with CO$_{2}$ at atmospheric 
+pressure is mounted between the trigger scintillator planes S1 and S2. 
+The detector allows an electron identification  with 99\% efficiency
+and has a threshold for pions at 4.8 GeV/$c$. 
+\v{C}erenkov in the HRS-R, leading to an average of about twelve photoelectrons. 
+In the HRS-L, the gas \v{C}erenkov detector in its standard configuration has 
+a pathlength of 80~cm, yielding seven photoelectrons on average. 
+The total amount of material in the particle path is about 1.4\% $X_0$. 
+
+Two layers of shower detectors~\cite{shower} are installed in each HRS. 
+The structure of the shower detectors in each arm is shown in Fig.~\ref{shower}. 
+The blocks in both layers in HRS-L and in the first 
+layer in HRS-R are oriented perpendicular to the particle tracks. In 
+the second layer of HRS-R, the blocks are parallel to the tracks. The front 
+layer in HRS-R is composed of 48 lead glass blocks, 
+10 cm by 10 cm by 35 cm. The second layer is composed of 80 
+lead glass blocks, 15 cm by 15 cm by 35 cm each.  
+The front layer in HRS-L is composed of 34 lead glass blocks, of 
+dimensions 15 cm by 15 cm by 30(35) cm. The second layer is  composed 
+of 34 similar blocks. Because of its reduced thickness, the resolution in 
+HRS-L is not as good as that of the shower detector in HRS-R.
+The combination of the gas \v{C}erenkov and shower detectors provides a 
+pion suppression above 2 GeV/$c$ of  a factor of $2 \cdot 10^{5}$, with a 
+98\% efficiency for electron selection in the HRS-R. 
+
+There are  three aerogel \v{C}erenkov counters available with various indices
+of refraction, which can be installed in either spectrometer and allow 
+a clean separation of pions, kaons and protons over the full momentum 
+range of the HRS spectrometers.
+The first counter (AM) contains hygroscopic aerogel  
+with a refraction index of 1.03 and a thickness of 9~cm. The 
+aerogel is continuously flushed with dry CO$_{2}$ gas.  It is viewed 
+by 26 PMTs (Burle 8854). For high-energy electrons the average 
+number of photo-electrons is about 7.3. 
+
+The next two counters (A1 and A2)~\cite{a1a2} are diffusion-type aerogel 
+counters. 
+A1 has 24 PMTs (Burle 8854). 
+The 9 cm thick aerogel radiator used in A1 has a refraction index of 1.015, 
+giving a threshold of 2.84 (0.803) GeV/$c$ for kaons (pions). 
+The average number of photo-electrons for GeV electrons 
+in A1 is $\simeq$~8 (see Fig.~\ref{diff_aero}). The A2 counter has 26 PMTs  
+XP3372B1 made by Photonis. 
+The aerogel in A2 has a refraction index of 1.055, 
+giving a threshold of 2.84 (0.415) GeV/$c$ for protons (pions). 
+The thickness of the aerogel radiator in A2 is 5 cm, producing an average 
+number of about 30 photo-electrons for GeV electrons.
 
 \subsection{Geometry of the Spectrometer Detector Packages}
 
@@ -93,8 +131,8 @@ preSHOW &    3502&     3546 &   2400 &    700  &     925    & -1158  & +/- 301  
 SHOW2   &    3780&     3912 &   2400 &    900  &     964    & -1207  & +/- 322  \\  \hline
 \end{tabular}
 \end{center}
-\caption[Detectors: Electron ARM Detector Locations]{Locations of
-the detectors on Electron Arm in mm.}
+\caption[Detectors: Right ARM Detector Locations]{Locations of
+the detectors on Right Arm in mm.}
 \label{ta:Edetg}
 \end{table}
 
@@ -115,42 +153,27 @@ S2     &        &      3141&    2220&     640 &     877  &  -1099  &  +/- 274  \
 Analyzer&       &      3495&    2190&     680 &     916  &  -1147  &  +/- 296  \\   
 SC3    &        &      3907&    2540&    1000 &    1099  &  -1343  &  +/- 457  \\  
 SC4    &        &      4264&    3170&    1500 &    1382  &  -1645  &  +/- 705  \\    
-S3     &        &      4477&    3600&    1550 &    1437  &  -1704  &  +/- 752  \\  \hline
 \end{tabular}
 \end{center}
-\caption[Detectors: Hadron Arm Detector Locations]{Locations of
- the detectors on Hadron Arm in mm.}
+\caption[Detectors: Left Arm Detector Locations]{Locations of
+ the detectors on Left Arm in mm.}
 \label{ta:Hdetg}
 \end{table}
 
 %\vfill\eject
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.3 2003/06/06 17:00:27 gen Exp $
-% $Id: overview.tex,v 1.3 2003/06/06 17:00:27 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/06 17:00:27 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/overview.tex,v 1.4 2003/11/20 16:17:13 bogdanw Exp $
+% $Id: overview.tex,v 1.4 2003/11/20 16:17:13 bogdanw Exp $
+% $Author: bogdanw $
+% $Date: 2003/11/20 16:17:13 $
 % $Name:  $
 % $Locker:  $
 % $Log: overview.tex,v $
+% Revision 1.4  2003/11/20 16:17:13  bogdanw
+% detector introduction
+%
 % Revision 1.3  2003/06/06 17:00:27  gen
 % Revision printout changed
 %
