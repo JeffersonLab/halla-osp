@@ -1,7 +1,7 @@
 \newpage
-\section[Compton Polarimeter]{Compton Polarimeter
+\chapter[Compton Polarimeter]{Compton Polarimeter
 \footnote{
-  $CVS~revision~ $Id: compton.tex,v 1.5 2003/11/17 21:36:26 nanda Exp $ $
+  $CVS~revision~ $Id: compton.tex,v 1.6 2003/12/05 05:48:30 gen Exp $ $
 }
 \footnote{Authors: S.Nanda \url{mailto:nanda@jlab.org}}
 }
@@ -25,8 +25,9 @@
 \newcommand{\wel}{\omega_L}
 
 \label{sec:compton}
-\subsection {Introduction}
+\section {Introduction}
 \label{sec:compton_introduction}
+\infolevone{
 In order to measure the longitudinal polarization of the 3-6 GeV high intensity TJNAF electron beam, a
 Compton Polarimeter was built by CEA Saclay,
 LPC Clermont-Ferrand,
@@ -35,8 +36,10 @@ Jefferson Laboratory.
 The Compton polarimeter has been running since february 1999 and has been used by severals HALL A
 experiments.
 
-\subsection {Principle of Operation}
+\section {Principle of Operation}
+}
 \label{sec:compton_principle}
+\infolevthree{
 The Compton effect, light scattering
 off electrons, discovered by Arthur Holly Compton (1892-1962), Nobel
 prize in Physics, 1927, is one of the cornerstone of the wave-particle
@@ -56,7 +59,9 @@ measurement can not to be performed at the same time than the data taking becaus
 interaction with the target, is misdefined in terms of polarization, momentum and position. Another
 physical solution has to be found  in order to permit a non-invasive polarization measurement of the
 beam. This is the primary motivation for Compton Polarimetry.
-
+} %infolev
+\infolevltthree{Compton polarimeter provides non-invasive measurements of
+the beam polarization simultaneously with running experiments.}
 
 \begin{figure}[htp]
     \begin{center}
@@ -87,7 +92,7 @@ in the Compton scattering events $N^{\pm}$ detected at opposite helicity.
 In the following, the events are defined as count rates normalized
 to the electron beam intensity within the polarization window.
 The electron beam polarization is extracted from this
-asymmetry via \cite{prescott}
+asymmetry via \cite{Prescott:1973ek}
 
 \begin{equation}
 \dis
@@ -166,15 +171,18 @@ detector, will be used as a spectrometer in order to measure the scattered elect
 a quick polarization measurement, the photon flux has to be as high as possible. A Fabry-Pérot Cavity,
 made of 2 multi-layers concave mirrors with very high reflectivity, will amplify this flux to a factor
 greater than 7000. The 15 meters long Compton Polarimeter  has been installed in the last linear section
-of the arc tunnel, at the entrance of the Hall A at spring 98. The complete setup, including the optical
+of the arc tunnel, at the entrance of the Hall A at spring 98. 
+\infolevltone{The layout is presented on Fig.~\ref{fig:compton_setup}.} 
+The complete setup, including the optical
 cavity was installed in February 99 and is running successfully since then.
 
-\subsection{Description of Components}
+\infolevone{
+\section{Description of Components}
 \label{sec:compton_comp}
 As  shown in Fig.\ref{fig:compton_setup},
 the Compton polarimeter consists of four major subsystems and associated data acquisition system
 as described below:
-
+} % infolev
  \begin{figure}[htp]
     \begin{center}
         \includegraphics*[angle=0,width=\textwidth]{compton_setup}
@@ -185,8 +193,8 @@ as described below:
     \label{fig:compton_setup}
  \end{figure}
 
-
-\subsubsection{Optics table}
+\infolevone{
+\subsection{Optics table}
 \label{sec:compton_optics}
 A high-finesse Fabry-Perot cavity housed on a optics table serves the role of the photon target.
 The optical setup consists of four parts:
@@ -214,7 +222,7 @@ Compton polarimetry can be found in Nuclear Instruments And Methods In Physics R
 Section A412 1 (1998) pp. 1-18
 \url{http://hallaweb.jlab.org/compton/Documentation/Papers/nima4592001.pdf}
 
-\subsubsection{Magnetic Chicane}
+\subsection{Magnetic Chicane}
 \label{sec:compton_chicane}
 
 The Compton magnetic chicane, illustrated in Fig.\ref{fig:compton_chicane}, consists of 4 dipoles (1.5 T maximum field,
@@ -253,7 +261,7 @@ up to 8 GeV electrons for 1.5 T field. The parameters of the Chicane are as foll
     \item At the centre of (D2,MMC1P02) : B(T) = 0.1875145 p (GeV/c).
 \end{itemize}
 
-\subsubsection{Photon Detector}
+\subsection{Photon Detector}
 To detect Compton backscattered photons, an electromagnetic
 calorimeter is used. It consists of 25 PbWO$_4$ crystals (2cmx2cmx23cm) read by XP1911
 Philips photomultiplier tubes and is located in the line of sight of the optical cavity,
@@ -272,7 +280,7 @@ as installed in the beamline is shown in Fig.\ref{fig:compton_gdet}. Details on 
 in  Nuclear Instruments And Methods In Physics Research Section A443 2-3 (2000) pp. 231-237
 \url{http://hallaweb.jlab.org/compton/Documentation/Papers/nima4432000.pdf}.
 
-\subsubsection{Electron detector}
+\subsection{Electron detector}
 \label{sec:compton_edet}
 
 The electron detector is made of 4 planes of silicon strips composed
@@ -300,7 +308,7 @@ The trigger logic looks for a coincidence
 between a given number of plane in a "road" of 2 strips. For each trigger
 it outputs a signal check by the Polarimeter DAQ.
 
-\subsubsection{Fast acquisition system}
+\subsection{Fast acquisition system}
 \label{sec:compton_daq}
 The goal of this system is to acquire
 for each electron helicity state the energie of the scattered photons at a
@@ -315,13 +323,16 @@ A specific tool, the so-called spy\_acq, has been developped in Tcl/Tk
 to manage all acquisition system parameters. Finally, a web-based logbook
 is available on this site at \url{http://hallaweb.jlab.org/compton/Logbook/index.php}.
 
-\subsection {Operating Procedure }
+} %infolev
+
+\infolevtwo{
+\section {Operating Procedure }
 \label{sec:compton_oper}
 
 The main operations computer for the compton polarimeter is compton.jlab.org located
 in the central isle of the Hall A counting house. A dedicated console labelled as Compton
 is in the backroom. This machine, running RedHat Linux 7.3, runs the compton data acquisition,
-analysis, and the EPICS slow control system. To begin compton polarimeter activity log on to:
+analysis, and the EPICS~\cite{EPICSwww} slow control system. To begin compton polarimeter activity log on to:
 
 
 \noindent machine:  \mycomp{compton.jlab.org}\\
@@ -332,7 +343,7 @@ All necessary environment variables are automatically defined on logon. Follow t
 paying careful attention to ensuring that you have checked the result of each step:
 
 
-\subsubsection{DAQ Setup}
+\subsection{DAQ Setup}
 \begin{itemize}
 \item Go to the CODA desktop and open a new terminal window. Type
 
@@ -437,12 +448,12 @@ the spy acqusition control panels\\
 
 Don't be surprised. 7 windows will be open but regroup in only one
         within few seconds. From time to time, it may happen that one window
-        does not go inside spy\_acq window. Click on the corresponding widget.
+        does not go inside \mycomp{spy\_acq} window. Click on the corresponding widget.
 
 \item Check the High Voltages applied on the Photon detector PMT's.
-Go to the "Acq" panel where spy\_acq is currently runnning,
+Go to the "Acq" panel where \mycomp{spy\_acq} is currently runnning,
 Go in the Logbook panel and select photon detector. You will get the 
-the  panel shown in Fig.\ref{fig:compton_spy_ht}) with the high voltages values:
+the  panel shown in Fig.\ref{fig:compton_spy_ht} with the high voltages values:
 \begin{figure}[htp]
     \begin{center}
         \includegraphics*[angle=0,scale=0.7]{compton_spy_ht}
@@ -464,8 +475,8 @@ check if others are logged in. See also procedure posted in rack \#CH01B05.
 \end{itemize}
 
 \newpage
-\subsubsection{Cavity Setup}
-Choose the EPICS desktop and in a fresh terminal window and start the MEDM EPICS panel 
+\subsection{Cavity Setup}
+Choose the EPICS desktop and in a fresh terminal window and start the MEDM~\cite{MEDMwww} EPICS panel 
  by executing  the command:\\
 
 \mycomp{\$ epicshall}\\
@@ -473,7 +484,7 @@ Choose the EPICS desktop and in a fresh terminal window and start the MEDM EPICS
 This will open the main EPICS menu for the Compton as shown in Fig.\ref{fig:compton_epicsall}.
  \begin{figure}[htp]
     \begin{center}
-        \includegraphics*[angle=0,scale=0.6]{compton_epicsall}
+        \includegraphics*[angle=0,width=0.8\textwidth]{compton_epicsall}
     \end{center}
     \caption[compton:epics main control]{Compton polarimeter main EPICS control panel }
     \label{fig:compton_epicsall}
@@ -585,7 +596,7 @@ To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:com
 \end{itemize}
     
 \newpage
-\subsubsection{Electron Detector Setup}
+\subsection{Electron Detector Setup}
 \begin{itemize}
 \item {\bf Turn on the electron detector}\\
         The detector system needs to be powered. In hall A there is an
@@ -661,13 +672,14 @@ The electron detector must be on the garage position.
         the procedure MCC-PR-04-001. If necessary
        (after a long shutdown for exemple), let's remind to the operator
        to open valves located on the Compton line.
-       The complete procedure is available on the MCC web site at :\\
-http://opsntsrv.acc.jlab.org/ops\_docs/online\_document\_files/MCC\_online\_files/HallA\_beam\_delivery\_proc.pdf
+       The complete procedure is available on the MCC web site \\
+\href{http://opsntsrv.acc.jlab.org/ops_docs/online_document_files/MCC_online_files/HallA_beam_delivery_proc.pdf}%
+{ at this URL}
        
 \item {\bf Lock once again the cavity}\\
 \end{itemize}
 
-\subsubsection{Vertican Scan}
+\subsection{Vertican Scan}
 Perform a vertical scanning of the electron beam inside the magnetic chicane 
 in order to maximize the counting rates in the Photon detector.
 
@@ -717,7 +729,7 @@ When this procedure is over, come back to the right Y-position and
         false asymmetry.
 \begin{figure}[htp]
     \begin{center}
-        \includegraphics*[angle=0,scale=0.8]{compton_spy_bell}
+        \includegraphics*[angle=0,height=0.8\textheight]{compton_spy_bell}
     \end{center}
        \caption[compton:vertical scan]{Vertical scan trace in spy\_acq panel}
         \label{fig:compton_spy_bell}
@@ -745,7 +757,7 @@ little bit if the system is running properly.
 Finally, Ask to the MCC operators to switch the beam on.
 \end{itemize}
 
-\subsubsection{Taking data}
+\subsection{Taking data}
 This is a list of check points to run Compton. It assumes the polarimeter 
 has already been started up as described in the previous sections and  
 that a run has just ended and you want to take a 
@@ -856,11 +868,13 @@ vertical scan.
 
 Any comment about the running conditions, shift summary, ... are welcome to 
 help the offline analysis. You can insert them in the Compton electronic 
-logbook by filling up the {\bf LogEntry window} in spy\_acq. Click on 
+logbook by filling up the {\bf LogEntry window} in \mycomp{spy\_acq}. Click on 
 {\bf Submit} to dowload your comments in the logbook.
 
+} %infolev
 
-\subsubsection{Turning off the compton polarimeter}
+\infolevtwo{
+\subsection{Turning off the compton polarimeter}
 \begin{itemize} 
 \item  Stop the magnetic chicane\\
 
@@ -878,7 +892,7 @@ logbook by filling up the {\bf LogEntry window} in spy\_acq. Click on
        dust deposit on the high reflectivity mirrors of the cavity
        The complete procedure is available on our web site at :
        
-       \url{http://hallaweb.jlab.org/compton/Documentation/Procedures/compton\_off.frm.ps}
+       \url{http://hallaweb.jlab.org/compton/Documentation/Procedures/compton_off.frm.ps}
 
 \item Set the electron detector on the GARAGE position\\
 
@@ -886,11 +900,12 @@ logbook by filling up the {\bf LogEntry window} in spy\_acq. Click on
 First of all, the electron beam must
 be off (see Hall A run coordinator and call MCC operator) 
 If it is not the case the detector will eventually be destroyed.
-Slow control of the electron detector. To perform operations on the electron detector. 
+%Slow control of the electron detector. 
+%To perform operations on the electron detector. 
 Open the MISC... screen from the main Polarimeter EPICS screen
 and then choose "Electron Detector". On this screen, active buttons appear in blue 
 and readback values appear on a yellow background. This screen is also reachable, 
-by loading the file ComptonElectron.adl located 
+by loading the file \mycomp{ComptonElectron.adl} located 
 under the home directory of hacuser on the hac computer.
     
 Click on "garage" button.\\
@@ -918,14 +933,15 @@ On the EPICS control panel, pull the "OPTICS" menu down.\\
  Check LASER STATUS and INCIDENT POWER.\\
  The Laser spots would switch off on the CCD control TV screen
 \end {itemize}
+} %infolev
 
 \begin{safetyen}{0}{0}
-\subsection {Safety Assessment}
+\section {Safety Assessment}
 \label{sec:compton_safety}
 \end{safetyen}
 
-\begin{safetyen}{50}{50}
-\subsubsection{Magnets}
+\begin{safetyen}{10}{15}
+\subsection{Magnets}
 
 Particular care must be taken in working in the vicinity of the
 magnetic chicane dipoles of the compton polarimeter as they can have large currents
@@ -942,7 +958,7 @@ light is activated via a magnetic field sensitive switch placed
 on the coils of one of the dipole. Lock and tag training is required of all personnel working
 in the vicinity of the Compton magnets. \\
 
-\subsubsection{Laser}
+\subsection{Laser}
 The primary hazzard in the optical table of the compton polarimeter is the Class IIIB, 240~mw 
 CW infra-red laser.
 It is housed in the tunnel in a laser safety enclosure interlocked with the laser power.
@@ -958,7 +974,7 @@ available in the tunnel wall next to the laser hut. Only personnel aouthorized i
 permitted to access the laser hut.
  
 
-\subsubsection{High Voltage}
+\subsection{High Voltage}
 
 There are 25 photomultiplier tubes within the compton photon detector module.
 Each tube is connected to a high voltage power supply located in the beamline instrumentation area
@@ -969,10 +985,12 @@ are authorized to access the  detector.\\
 
 \end{safetyen}
 
+\subsection{Authorized Personnel}
+
 The list
-of the presently authorized personnel is given in Tab.~\ref{tab:compton:personnel}.
+of the presently authorized personnel is given in Table~\ref{tab:compton:personnel}.
 Other individuals must notify and receive permission from
-the contact person (see Tab.~\ref{tab:compton:personnel}) before adding their names
+the contact person (see Table~\ref{tab:compton:personnel}) before adding their names
 to the above list.
 \begin{table}[ht]
 \begin{center}
@@ -1005,13 +1023,16 @@ Veyssière&  Christian &CEA & 9704* & & cveyssiere@Cea.Fr & Electronics \\
 \end{table}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/compton.tex,v 1.5 2003/11/17 21:36:26 nanda Exp $
-% $Id: compton.tex,v 1.5 2003/11/17 21:36:26 nanda Exp $
-% $Author: nanda $
-% $Date: 2003/11/17 21:36:26 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/compton.tex,v 1.6 2003/12/05 05:48:30 gen Exp $
+% $Id: compton.tex,v 1.6 2003/12/05 05:48:30 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: compton.tex,v $
+% Revision 1.6  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.5  2003/11/17 21:36:26  nanda
 % comments from gen
 %

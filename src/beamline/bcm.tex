@@ -1,6 +1,6 @@
 \section[Beam Current Measurement]{Beam Current Measurement
 \footnote{
-  $CVS~revision~ $Id: bcm.tex,v 1.3 2003/06/06 15:19:02 gen Exp $ $
+  $CVS~revision~ $Id: bcm.tex,v 1.4 2003/12/05 05:48:30 gen Exp $ $
 }
 \footnote{Authors: A.Saha \url{mailto:saha@jlab.org}}
 }
@@ -18,10 +18,11 @@ A. The temperature controller, the Unser back end electronics and its calibratio
 current source, cavity's RF unit (housing the RMS-to-DC converter board) and all 
 multi-meters, VME crate and computers are located in Hall A control room.
 
+\infolevone{
 \subsection{ System Layout}
 
 The schematic diagram of the BCM system is presented in
-figure~\ref{fig:halla_bcm}.
+Fig.~\ref{fig:halla_bcm}.
 \begin{figure}
 \begin{center}
 \includegraphics[angle=0,width=\textwidth,clip]{habcm_r}
@@ -58,7 +59,7 @@ data ) will now be described. (The other part of the split signal is downconvert
 to 1 MHz signals and represents the old system (pre Jan 99). Only the HAPPEX 
 collaboration presently uses these signals.)
 
-For the sampled (or EPICS or Slow) data, one of the amplifier outputs is sent to a 
+For the sampled (or EPICS~\cite{EPICSwww} or Slow) data, one of the amplifier outputs is sent to a 
 high precision digital AC voltmeter (HP 3458A). Each second this device provides 
 a digital output which represents the  RMS average of the input signal during that 
 second.  The resulting number is  proportional to the beam charge accumulated 
@@ -88,9 +89,11 @@ from each BCM (Upx1, Upx3, Upx10, Dnx1, Dnx3, Dnx10). All 6 signals are fed
 to scaler inputs of each spectrometer (E-arm and H-arm) . Hence we have a 
 redundancy of 12 scaler outputs for determining the charge during a run. During 
 calibration runs we calibrate each of these scaler outputs.   
+}
 
-
+\begin{safetyen}{10}{10}
 \subsection{ Authorized Personnel}
+\end{safetyen}
 
 All Hall A members are authorized to take BCM calibration data using the Standard 
 Non-Invasive Hall A BCM Calibration Procedure. The extended calibration procedures 
@@ -103,45 +106,34 @@ The Accelerator AES group performs the maintenance of the BCM monitors. These
 include:
 
 \begin{tabular}{l l}
-
 1. The Unser calibration. & Every 3 months \\
-
-
 2. Resonant Cavities Tuning. & Every Downtime \\
-
-
 3. Multi-meters Autocalibration. & Every Downtime \\
-
-
 4. Connectors Cleaning. &  Every year \\
-
-
 5. Unser Keithley Current Source. & Calibration Yearly \\
-
-
 6. Digital Multi-meters HP3458A and HP 34401A. & Calibration Yearly\\   
-
 \end{tabular}
-
-\vskip 0.2cm
 
 System Contacts:
 
 Arun Saha -x 7605
 
-Jean-Claude Denard -x 7555
+%Jean-Claude Denard -x 7555
 
 
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/bcm.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
-% $Id: bcm.tex,v 1.3 2003/06/06 15:19:02 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/bcm.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
+% $Id: bcm.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 15:19:02 $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: bcm.tex,v $
+% Revision 1.4  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.3  2003/06/06 15:19:02  gen
 % Revision printout changed
 %

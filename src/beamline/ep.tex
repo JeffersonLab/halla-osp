@@ -1,11 +1,11 @@
-\section[eP Beam Energy Measurement]{eP Beam Energy Measurement
+\chapter[eP Beam Energy Measurement]{eP Beam Energy Measurement
 \footnote{
-  $CVS~revision~ $Id: ep.tex,v 1.3 2003/11/18 22:34:16 reitz Exp $ $
+  $CVS~revision~ $Id: ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $ $
 }
 \footnote{Authors: B.Reitz \url{mailto:reitz@jlab.org}}
 }
 \label{sec:ep}
-\subsection {Purpose and Layout}
+\section {Purpose and Layout}
 \label{sec:ep_purpose}
 
 The Hall A eP system is a stand-alone device to measure the 
@@ -28,7 +28,7 @@ in cancellation, to first order, of uncertainties in the knowledge of the positi
 and direction of the beam. 
  \begin{figure}[htb]
     \begin{center}
-        \includegraphics*[angle=0,width=0.7\textwidth]{ep_layout}
+        \includegraphics*[angle=0,width=0.9\textwidth]{ep_layout}
     \end{center}
     \caption[eP: Layout]{
             Schematic layout of the eP energy measurement system,
@@ -38,13 +38,13 @@ and direction of the beam.
             }
     \label{fig:ep_layout} 
  \end{figure}  
-\clearpage
+%\clearpage
 
 \infolevone{
-\subsection{Description of Components}
+\section{Description of Components}
 \label{sec:ep_desc_comp}
 
-\subsubsection{High Voltage}
+\subsection{High Voltage}
 \label{sec:ep_highvoltage}
 
 The eP system is equipped with two gas Cherenkov detectors and 
@@ -52,7 +52,7 @@ altogether 18 scintillators. The high voltage for the photomultiplier
 tubes of these detectors are provided by a LeCroy 1450 HV power supply,
 located in the electronics racks along the beamline. The channel 
 assignment and HV voltages (as of summer 2003) are given in
-Tab. \ref{tab:ep_hv}.
+Table \ref{tab:ep_hv}.
 
 \begin{table}[ht]
 \begin{center}
@@ -86,29 +86,19 @@ Channel & HV (Volts) & Detector  \\ \hline \hline
 
 \infolevtwo{
 The standard way to control the high voltage is the use of the 
-Hall A MEDM graphical user interface (EPICS), which is running 
+Hall A MEDM~\cite{MEDMwww} graphical user interface (EPICS~\cite{EPICSwww}), which is running 
 on the \mycomp{hacsbc2} computer. This computer is located in the counting house,
 but can also be accessed from other terminals. Usually at least one terminal 
 in Hall A itself has a MEDM screen running, as well. If it is not running, log into \mycomp{hacsbc2}
 as user \mycomp{hacuser}, and start the GUI with the command
-\mycomp{hlamain}. A screen labeled ``Hall A Main Menu'' will appear (Fig. \ref{fig:ep_hlamain}).
+\mycomp{hlamain}. A screen labeled ``Hall A Main Menu'' will appear (Fig. \ref{fig:medm-hlamain}).
 Chose \mycomp{LeCroy HV}, and select \mycomp{Beamline} in the screen which will pop 
 up (Fig. \ref{fig:ep_hvlecroy}). 
 
- \begin{figure}[bht]
-    \begin{center}
-        \includegraphics*[angle=0,width=4cm]{ep_hlamain}
-    \end{center}
-    \caption[eP: hlamain]{
-            Main menu of the Hall A MEDM graphical user interface. For the eP system
-            the buttons LeCroy HV and EP Energy Measure are relevant.
-            }
-    \label{fig:ep_hlamain} 
- \end{figure}  
 
  \begin{figure}[bht]
     \begin{center}
-        \includegraphics*[angle=0,width=4cm]{ep_lecroy}
+        \includegraphics*[angle=0,width=6cm]{ep_lecroy}
     \end{center}
     \caption[eP: LeCroy HV Screen]{
 	    Epics Menu for the LeCroy High Voltage supplies in Hall A. All slots related
@@ -118,7 +108,7 @@ up (Fig. \ref{fig:ep_hvlecroy}).
  \end{figure}  
 }
 
-For a measurement, all HV channels defined in Tab. \ref{tab:ep_hv}
+For a measurement, all HV channels defined in Table \ref{tab:ep_hv}
 should be turned on. The demand voltages in these slots
 (Slot 1, Slot 2 ``(e,p) \& ARC'' and Slot 3 ``Moller'') should have 
 the correct preset values. 
@@ -175,15 +165,15 @@ During a measurement, the alarm handler should be running, so that the
 operator will be informed, should one of the detectors trip. \infolevtwo{This can
 also be done manually, by watching the beamline screen Fig. \ref{fig:ep_hvbeamline}.
 All fields should be green and showing a voltage close to the values given
-in Tab. \ref{tab:ep_hv}.}
+in Table \ref{tab:ep_hv}.}
 If the EPICS screens are not working, there is an alternative way to 
 control the HV, by connecting via telnet directly to the LeCroy 1450.
 This can be done from nearly any Linux PC in the counting house with the 
 command: \mycomp{$>$ telnet hatsv5 2011}.
 
-\clearpage
+%\clearpage
 
-\subsubsection{MEDM Controls}
+\subsection{MEDM Controls}
 \label{sec:ep_medm}
 
 \infolevtwo{
@@ -198,7 +188,7 @@ command: \mycomp{$>$ telnet hatsv5 2011}.
  \end{figure} }
 The target, the silicon micro-strip detectors, and the setting of the 
 Cherenkov detector are controlled by an EPICS GUI \infolevtwo{(Fig. \ref{fig:ep_slow})}. 
-It can be started from the ``Hall A Main Menu'' \infolevtwo{(Fig. \ref{fig:ep_hlamain})}
+It can be started from the ``Hall A Main Menu'' \infolevtwo{(Fig. \ref{fig:medm-hlamain})}
 running on \mycomp{hacsbc2} by pressing the \mycomp{EP Energy Measure} button.
 (see previous chapter, to learn how to start the ``Hall A Main Menu'' in case
 it is not already running)
@@ -237,7 +227,7 @@ $>$\\ }
 }
 
 \infolevtwo{
-\subsubsection{Silicon Micro-Strip Detectors}
+\subsection{Silicon Micro-Strip Detectors}
 \label{sec:ep_ssd}
 
 There are three GUI's associated with the silicon micro-strip detectors. 
@@ -272,10 +262,10 @@ least 30 minutes for the strips to stabilize.
     \label{fig:ep_mx7_control} 
  \end{figure}  
 
-\clearpage
+%\clearpage
 }
 
-\subsubsection{Target}
+\subsection{Target}
 \label{sec:ep_target}
 
 The target of the eP system is made of a thin polyethylene (CH$_2$) tape, which 
@@ -321,9 +311,9 @@ Hall A technical staff.
     \label{fig:ep_pic_trgtctrl} 
  \end{figure}  
 }
-\clearpage
+%\clearpage
 
-\subsubsection{Cherenkov}
+\subsection{Cherenkov}
 \label{sec:ep_cer}
 
 The detectors for the protons (the scintillators S1 and S2, and 
@@ -399,9 +389,9 @@ and the main vallve (operated manually) are located in the gas-shack.
     \label{fig:ep_cer_gas_ctrl} 
 \end{figure} }
 }
-\clearpage
+%\clearpage
 
-\subsubsection{Data Acquisition}
+\subsection{Data Acquisition}
 \label{sec:ep_daq}
 
 The data acquisition (DAQ) is running on \mycomp{adaqep} in the
@@ -440,7 +430,8 @@ in Hall A (see Fig. \ref{fig:ep_pic_daq1} - \ref{fig:ep_pic_daq3} ).
             }
     \label{fig:ep_pic_daq3} 
  \end{figure}  
-\clearpage }
+%\clearpage 
+}
 
 \infolevtwo{
 \paragraph{Trigger-configuration \\ }
@@ -536,7 +527,7 @@ After collecting enough data, the \mycomp{End} button should be used
 to end data-taking, and to ensure that all data is written into the 
 datafile.
 
-\subsubsection{Data Analysis}
+\subsection{Data Analysis}
 \label{sec:ep_analysis}
 
 The data analysis is currently done in two steps, using
@@ -595,7 +586,7 @@ probably due to a misalignment of this detector.
 }}
 
 \infolevtwo{
-\subsection{Operating Procedure}
+\section{Operating Procedure}
 \label{sec:ep_ops_proc}
 
 In preparation of an eP measurement, the mirrors of the Cherenkov 
@@ -675,7 +666,7 @@ that the full statistics of the run is analyzed, that the result is
 independent of the chosen cuts, and that there are events on both 
 arms of the eP system.
 
-\subsection{Maintenance}
+\section{Maintenance}
 \label{sec:ep_maintenance}
 
 The CH$_2$ tape of the eP target 
@@ -688,10 +679,10 @@ Hall A technical staff personnel.
 }
 
 \begin{safetyen}{0}{0}
-\subsection {Safety Assessment}
+\section {Safety Assessment}
 \label{sec:ep_safety}
 
-\subsubsection{High Voltage}
+\subsection{High Voltage}
 
 The LeCroy 1450~HV~crate equipped with LeCroy~1461N
 high voltage cards provides up to 3~kV of low current power.
@@ -702,7 +693,7 @@ at 1900~-~2300~V and draw up to 1.5~mA currents. The PMTs for the
 S3 scintillators are operated at 1000~-~1150~V, drawing 0.9~mA current.
 The high voltage MUST be turned off during all work on the detector.
 
-\subsubsection{Silicon Micro-Strip Detectors}
+\subsection{Silicon Micro-Strip Detectors}
 
 The SSD are prone to radiation damage, regardless if they are 
 turned on or off. Ion chambers next to the eP measure radiation levels
@@ -710,7 +701,7 @@ in this part of the beamline and interrupt beam delivery via the
 fast shutdown system (FSD), in case the levels are not acceptable. Therefore these
 ion chambers should never be masked. 
 
-\subsubsection{Target}
+\subsection{Target}
 
 The target is controlled by the experimenters, not by MCC. Therefore it is
 the responsibility of the eP operator to ensure that it is properly
@@ -729,7 +720,7 @@ of the beam, and then the tape motion stopped.
 without an eP operator being present.
 \end{itemize}
 
-\subsubsection{Cherenkov}
+\subsection{Cherenkov}
 
 If for work on the Cherenkov detector the detector needs to be opened, 
 the CO$_2$ gas flow needs to be stopped. After the work is finished the 
@@ -742,13 +733,16 @@ detector needs to be purged and later the operating mode needs to be restored.
 \input{beamline/ep-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.3 2003/11/18 22:34:16 reitz Exp $
-% $Id: ep.tex,v 1.3 2003/11/18 22:34:16 reitz Exp $
-% $Author: reitz $
-% $Date: 2003/11/18 22:34:16 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
+% $Id: ep.tex,v 1.4 2003/12/05 05:48:30 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: ep.tex,v $
+% Revision 1.4  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.3  2003/11/18 22:34:16  reitz
 % personnel added
 %

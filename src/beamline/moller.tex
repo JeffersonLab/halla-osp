@@ -1,11 +1,11 @@
-\section[M{\o}ller Polarimeter]{M{\o}ller Polarimeter
+\chapter[M{\o}ller Polarimeter]{M{\o}ller Polarimeter
 \footnote{
-  $CVS~revision~ $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $ $
+  $CVS~revision~ $Id: moller.tex,v 1.7 2003/12/05 05:48:30 gen Exp $ $
 }
 \footnote{Authors: E.Chudakov \url{mailto:gen@jlab.org}}
 }
 \label{sec:moller}
-\subsection {Purpose and Layout}
+\section {Purpose and Layout}
 \label{sec:moller_purpose}
 
 The Hall A beam line is equipped with a M{\o}ller 
@@ -15,7 +15,7 @@ to measure the polarization of the electron beam delivered to the hall.
 
  \begin{figure}[bht]
     \begin{center}
-        \includegraphics*[angle=0,width=\textwidth]{moller_layout_v}
+        \includegraphics*[angle=0,width=0.8\textwidth]{moller_layout_v}
     \end{center}
     \caption[M{\o}ller: layout]{
             Layout of M{\o}ller polarimeter. The origin of the 
@@ -50,7 +50,7 @@ There are also external resources of
 information\htmladdnormallinkfoot{}{(Home page: \url{http://www.jlab.org/~moller/})}. 
 
 \infolevthree{
-\subsection {Principles of Operation}
+\section {Principles of Operation}
 \label{sec:moller_principles}
 
 The cross-section of the M{\o}ller scattering 
@@ -123,15 +123,15 @@ measured at 2 complimentary target angles, say 25 and $155^o$.
 
 \infolevone{
 
-\subsection{Description of Components}
+\section{Description of Components}
 \label{sec:moller_compon}
 
-\subsubsection{MEDM Control}
+\subsection{MEDM Control}
 \label{sec:moller_compon_medm}
 
  Several components of the polarimeter, namely the target position and
  the current in the magnets can be checked
- using the regular MEDM program of Machine Control Center (MCC). The appropriate
+ using the regular MEDM~\cite{MEDMwww} program of Machine Control Center (MCC). The appropriate
  window%
 \infolevtwo{
    ~\ref{fig:moller_medm_1}
@@ -147,7 +147,7 @@ measured at 2 complimentary target angles, say 25 and $155^o$.
 can be called from the Hall A MEDM menues. Only the MCC can change
 the values in this window.
 
-\subsubsection{Polarized Electron Target }
+\subsection{Polarized Electron Target }
 \label{sec:moller_compon_targ}
 
 The M{\o}ller Polarized Electron Target is
@@ -259,10 +259,30 @@ than the lab method and has not been used.}.
 }
 }
 
+\noindent
+    The M{\o}ller target positions are connected to the Fast ShutDown (FSD)
+    system of the accelerator.
+\infolevfour{
+   The photograph on Fig.~\ref{fig:moller_fsd_phot1} shows the crate which controls
+   the signals.
+   \begin{figure}[hbt]
+      \begin{center}
+          \includegraphics*[angle=0,width=0.8\textwidth]{moller_fsd_phot1}
+      \end{center}
+      \caption[M{\o}ller: FSD crate.]{The M{\o}ller target
+            motion may cause the Fast ShutDown (FSD) of the accelerator.
+            The LEDs in the top right corner show the appropriate
+            signals from the target. The top LED lit indicates
+            no FSD signal.
+            }
+      \label{fig:moller_fsd_phot1} 
+   \end{figure}  
+}
+
 %\cbend
 \infolevone{
 
-\subsubsection {Spectrometer Description }
+\subsection {Spectrometer Description }
 \label{sec:moller_compon_spectr}
 
 The M{\o}ller polarimeter spectrometer consists of three quadrupole magnets and one
@@ -284,7 +304,7 @@ The M{\o}ller polarimeter spectrometer consists of three quadrupole magnets and 
    of the spectrometer.
    \begin{figure}% [hbt]
       \begin{center}
-          \includegraphics*[angle=0,width=\textwidth]{moller_spectr_phot1}
+          \includegraphics*[angle=0,width=0.8\textwidth]{moller_spectr_phot1}
       \end{center}
       \caption[M{\o}ller:spectrometer]{The M{\o}ller spectrometer. The target is located at the right
             side of the photograph, the blue dipole magnet is close to the center.
@@ -328,7 +348,7 @@ to optimize the beam line for both regular running and for
 M{\o}ller measurements. Typically, the dipole magnet should be turned on
 only for the M{\o}ller measurements. 
 
-\subsubsection {Detector}
+\subsection {Detector}
 \label{sec:moller_compon_det}
 
 The M{\o}ller polarimeter detector is located in the shielding box downstream 
@@ -397,7 +417,7 @@ In order to obtain the HV values for an arbitrary energy:
 } 
 
 
-\subsubsection {Electronics}
+\subsection {Electronics}
 \label{sec:moller_compon_ele}
 
 The electronics, used for M{\o}ller polarimetry, is located
@@ -414,7 +434,7 @@ in several crates in the Hall:
    The photograph on Fig.~\ref{fig:moller_electr_phot1} shows the crates 2-4.
    \begin{figure}% [hbt]
       \begin{center}
-          \includegraphics*[angle=0,height=20cm]{moller_electronics_phot1}
+          \includegraphics*[angle=0,height=0.8\textheight]{moller_electronics_phot1}
       \end{center}
       \caption[M{\o}ller: electronics crates.]{The M{\o}ller electronics,
             located in the Hall, at the right side of the beam line. 
@@ -433,27 +453,7 @@ One can connect to the CPU boards and the HV crate via a portserver:
   \item[5.] LeCroy 1450 - \mycomp{hatsv5} port \mycomp{11}.
 \end{list}
 
-\noindent
-\infolevfour{
-    The M{\o}ller target positions are connected to the Fast ShutDown (FSD)
-    system of the accelerator.
-   The photograph on Fig.~\ref{fig:moller_fsd_phot1} shows the crate which controls
-   the signals.
-   \begin{figure}[hbt]
-      \begin{center}
-          \includegraphics*[angle=0,width=\textwidth]{moller_fsd_phot1}
-      \end{center}
-      \caption[M{\o}ller: FSD crate.]{The M{\o}ller target
-            motion may cause the Fast ShutDown (FSD) of the accelerator.
-            The LEDs in the top right corner show the appropriate
-            signals from the target. The top LED lit indicates
-            no FSD signal.
-            }
-      \label{fig:moller_fsd_phot1} 
-   \end{figure}  
-}
-
-\subsubsection {DAQ}
+\subsection {DAQ}
 \label{sec:moller_compon_daq}
 
 The DAQ%
@@ -462,7 +462,7 @@ The DAQ%
 connecting to \mycomp{hallavme5}. The database server for CODA
 is located on \mycomp{adaqs2}. 
 
-\subsubsection {Slow Control}
+\subsection {Slow Control}
 \label{sec:moller_compon_slow}
 
 The Helmholtz coils are controlled via a script starting automatically
@@ -484,7 +484,7 @@ are controlled from a Java program, equipped with a GUI.
   The slow control console is presented on Fig.~\ref{fig:moller_slowc_1}.
    \begin{figure}[htb]
       \begin{center}
-          \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window}
+          \includegraphics*[angle=0,width=0.8\textwidth]{moller_slowcntrl_window}
       \end{center}
       \caption[M{\o}ller:slow control window]{The slow control console (Java).
             }
@@ -493,7 +493,7 @@ are controlled from a Java program, equipped with a GUI.
 }
  The components are: 
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
-   \item \mycomp{EPICS Monitor}: these EPISC variables are stored for every DAQ run
+   \item \mycomp{EPICS~\cite{EPICSwww} Monitor}: these EPISC variables are stored for every DAQ run
    \item \mycomp{Detector Settings} is used to set up the thresholds, delays etc.
    \item \mycomp{High Voltage Control} for the photomultiplier tubes
    \item \mycomp{Motor Control} to move the collimator
@@ -506,7 +506,7 @@ are controlled from a Java program, equipped with a GUI.
   belong to the aperture counters.
    \begin{figure}[htb]
       \begin{center}
-          \includegraphics*[angle=0,width=\textwidth]{moller_slowcntrl_window_hv}
+          \includegraphics*[angle=0,width=0.8\textwidth]{moller_slowcntrl_window_hv}
       \end{center}
       \caption[M{\o}ller:HV control]{HV control console.
             }
@@ -543,7 +543,7 @@ are controlled from a Java program, equipped with a GUI.
 }
 
 \infolevtwo{
-\subsection {Operating Procedure }
+\section {Operating Procedure }
 \label{sec:moller_oper}
 
 The procedure includes general steps as follows: 
@@ -575,7 +575,7 @@ In more details, the ``invasive'' procedure looks as follows:
    \item Make measurements at the backward target angle ($\sim{}163^\circ$);
  \end{list}
 
-\subsubsection {Initialization}
+\subsection {Initialization}
 \label{sec:moller_oper_initial}
 
 In order to control the operations several sessions
@@ -607,7 +607,7 @@ Slow control:
    \item Load the regular settings and the appropriate HV.
  \end{list}
 
-\subsubsection {Initial Beam Tune}
+\subsection {Initial Beam Tune}
 \label{sec:moller_oper_initbeam}
 
  Typically, the M{\o}ller measurements are taken during the regular Hall A
@@ -625,7 +625,7 @@ Slow control:
  \end{list}
  The request should be given to MCC. 
 
-\subsubsection {The Magnet Settings}
+\subsection {The Magnet Settings}
 \label{sec:moller_oper_magset}
 
  In order to find the proper settings for the given beam energy, say 3.25~GeV, 
@@ -644,7 +644,7 @@ Slow control:
  \end{safetyen}
 
 
-\subsubsection {Final Beam Tune}
+\subsection {Final Beam Tune}
 \label{sec:moller_oper_finalbeam}
 
  The beam parameters for M{\o}ller measurements
@@ -659,7 +659,7 @@ Slow control:
    \end{list}
 
 
-\subsubsection {Target Motion}
+\subsection {Target Motion}
 \label{sec:moller_oper_target}
  MCC should be asked to put in one of the targets (typically, the \mycomp{bottom}
 \infolevtwo{
@@ -677,7 +677,7 @@ Slow control:
  {\bf SLD1H03} reading. It should not exceed 1000. At beam energies
  above 1.6 GeV it should not exceed 300.
 
-\subsubsection{Detector Tuning and Checking }
+\subsection{Detector Tuning and Checking }
 \label{sec:dettune}
 
 The goal is to check that the detector is working, that the counting rates
@@ -718,7 +718,7 @@ for all the calorimeter blocks.
         \end{list}
 \end{list}
 
-\subsubsection {Polarization Measurement }
+\subsection {Polarization Measurement }
 \label{sec:polmeas}
 
 \begin{list}{$\bullet$}{\setlength{\itemsep}{0.cm}}
@@ -747,13 +747,13 @@ for all the calorimeter blocks.
 
 }
 \begin{safetyen}{0}{0}
-\subsection {Safety Assessment}
+\section {Safety Assessment}
 \label{sec:moller_safety}
 \end{safetyen}
 
 
 \begin{safetyen}{50}{50}
-\subsubsection{Magnets}
+\subsection{Magnets}
 
 Particular care must be taken in working in the vicinity of the
 magnetic elements of the polarimeter as they can have large currents
@@ -781,14 +781,14 @@ The quadrupole power supplies are located in Hall A electronics rack 13,
 2 supplies connected in parallel per one quadrupole. The maximum
 current per one power supply is 60A at about 20V. 
 
-\subsubsection{Vacuum System}
+\subsection{Vacuum System}
 
 One must be careful in working near the downstream side of the dipole
 magnet, as there are two 2 by 16 cm, 4 mil thick titanium windows.
 Only members of the M{\o}ller polarimeter group should work in this
 area.
 
-\subsubsection{High Voltage}
+\subsection{High Voltage}
 
 There are 38 photomultiplier tubes within the detector
 shielding hut, with a maximum voltage of 3000 V. The detector is serviced
@@ -796,7 +796,7 @@ by sliding it back on movable rails. The high voltage must be turned
 off during any detector movement. Only members of the M{\o}ller group
 should move the detector.\\
 
-\subsubsection{Target}
+\subsection{Target}
 
 To avoid damage to the M{\o}ller target, the target should not be in the beam 
 if the beam current is greater than
@@ -809,13 +809,16 @@ are responsible for ensuring that it is properly positioned.\\
 \input{beamline/moller-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
-% $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.7 2003/12/05 05:48:30 gen Exp $
+% $Id: moller.tex,v 1.7 2003/12/05 05:48:30 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 21:41:39 $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.7  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.6  2003/06/06 21:41:39  gen
 % Captions improvements
 %
@@ -849,13 +852,16 @@ are responsible for ensuring that it is properly positioned.\\
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
-% $Id: moller.tex,v 1.6 2003/06/06 21:41:39 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.7 2003/12/05 05:48:30 gen Exp $
+% $Id: moller.tex,v 1.7 2003/12/05 05:48:30 gen Exp $
 % $Author: gen $
-% $Date: 2003/06/06 21:41:39 $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.7  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.6  2003/06/06 21:41:39  gen
 % Captions improvements
 %

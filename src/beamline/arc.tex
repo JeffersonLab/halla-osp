@@ -1,6 +1,6 @@
 \section[Arc Energy Measurement]{Arc Energy Measurement
 \footnote{
-  $CVS~revision~ $Id: arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $ $
+  $CVS~revision~ $Id: arc.tex,v 1.5 2003/12/05 05:48:30 gen Exp $ $
 }
 \footnote{Authors: A.Saha \url{mailto:saha@jlab.org}}
 }
@@ -27,10 +27,11 @@
    \item[]}
   {\end{list}}
 
-The ARC energy measurement is under EPICS control through a MEDM display. Two
+The ARC energy measurement is under EPICS~\cite{EPICSwww} control through 
+a MEDM~\cite{MEDMwww} display. Two
 independent control systems are used: the beam bend angle measurement through
-the arc (\char`\"{}scanners\char`\"{}) and the field integral of
-the arc (\char`\"{}integral\char`\"{}). To measure the energy: 
+the arc ("scanners") and the field integral of
+the arc ("integral"). To measure the energy: 
 
 \begin{itemize}
 \item perform several angle measurements 
@@ -43,11 +44,10 @@ then ask for the energy calculation, enter the above arc field integral and
 you will get the beam energy computed from the average angle. 
 \end{itemize}
 
-\vspace{0.3cm}
+\infolevtwo{
+\subsection{Summary of ARC operations }
 
-\subsection{Summary of ARC operations: }
-
-Six scanners of the same type, called \char`\"{}ARC scanner\char`\"{} and labelled
+Six scanners of the same type, called ``ARC scanner'' and labelled
 from scanner \#1 to \#6, are installed on the Hall-A beamline. Scanners \#1
 to \#4 are used for the ARC energy measurement and they are located on the Hall-A
 arc: \#1 [1HA1C07A] and \#2 [1HA1C07B] just upstream of the arc, in the BSY, and 
@@ -59,10 +59,8 @@ are located
 between the Moller and the target to control the beam geometry on the target
 and their use will not be discussed here. 
 
-Procedure for running a harp scan is described in:
-
-\href{http://hallaweb.jlab.org/equipment/beam/harp_halla/harp.html}{scanrun}.
-
+Procedure for running a harp scan is described elsewhere\footnote{
+Harp scan procedure \url{http://hallaweb.jlab.org/equipment/beam/harp_halla/harp.html}.}
 
 Each scanner has a motor/ball-screw/shaft-encoder/vacuum-penetrator system moving
 accurately a set of 3 tungsten wires through the beam. Each time a wire crosses
@@ -90,38 +88,38 @@ energy.
 \subsection{Summary of field integral }
 
 The purpose is to measure absolutely the straight field integral of a 
-\char`\"{}BA\char`\"{}
-3m long dipole, called the \char`\"{}9th dipole\char`\"{} and located in the
-\char`\"{}Dipole Shed\char`\"{}. It is of the same type as the 8 arc dipoles
+"BA"
+3m long dipole, called the "9th dipole" and located in the
+"Dipole Shed". It is of the same type as the 8 arc dipoles
 and is powered in series with them. 
 
 The ARC integral setup is basically made of a 3m long plate (the 
-\char`\"{}probe\char`\"{})
+"probe")
 which is able to move inside the 9th dipole gap along the beam axis and carrying 
 two
 field measurement devices: a pair of pick-up coils connected in series and a
 set of NMR probes. The coils are on both ends of the probe and the NMRs close
 to the center. 
 
--at the \char`\"{}upstream\char`\"{} probe position, the 
-\char`\"{}downstream\char`\"{}
-coil is close to the dipole center, the \char`\"{}upstream\char`\"{} is outside
+-at the "upstream" probe position, the 
+"downstream"
+coil is close to the dipole center, the "upstream" is outside
 the dipole and the NMRs at one end of the dipole: 
 
 Door$<-$-- ....................$<-$-------DIPOLE-----$--->$ 
 
 .............$<-$-------PROBE------$--->$ 
 
--at the \char`\"{}central\char`\"{} probe position, each coil is at one end
+-at the "central" probe position, each coil is at one end
 of the 3m long dipole and the NMRs close to the dipole center: 
 
 Door$<-$-- ...................$<-$-------DIPOLE-----$--->$ 
 
 ..................................$<-$-------PROBE------$--->$ 
 
--at the \char`\"{}downstream\char`\"{} probe position, the 
-\char`\"{}upstream\char`\"{}
-coil is close to the dipole center, the \char`\"{}downstream\char`\"{} is outside
+-at the "downstream" probe position, the 
+"upstream"
+coil is close to the dipole center, the "downstream" is outside
 the dipole and the NMRs at one end of the dipole: 
 
 Door$<-$-- ...................$<-$-------DIPOLE-----$--->$ 
@@ -134,21 +132,21 @@ dipole
 field is the central one as in the extreme position of the probe, the field 
 homogeneity
 is not sufficient. The probe position is controlled by a linear encoder. The
-Z axis refers to the \char`\"{}beam\char`\"{} direction, increasing from upstream
-to downstream. We use three kinds of \char`\"{}Z\char`\"{}: 
+Z axis refers to the "beam" direction, increasing from upstream
+to downstream. We use three kinds of "Z": 
 
 -Zm to locate a point inside the magnet. The dipole center is at Zm=0 and the
 yoke ends at +-1500.mm 
 
 -Zp to locate a point inside the probe. The probe center is at Zp=0. Each of
-the 4 NMR probes has a Zp given in the file \char`\"{}magnet.dir\char`\"{}.
+the 4 NMR probes has a Zp given in the file "magnet.dir".
 At a temperature of 21C, the coils are at Zp=+-1519.815mm (from magnet.dir) 
 
 -Zd to refer to a displacement of the probe w.r.t. the dipole. Zd=0 refers to
 the upstream (home) position of the probe. The integral measurement is performed
 from Zd=0.000mm (1st PDI trigger) to Zd=3199.000mm (last PDI trigger), for forward
 pass. Zd is given by the display (at the top of the rack) or by the master screen
-(\char`\"{}OUT\char`\"{}). 
+("OUT"). 
 
 The relationship between Zm, Zp and Zd is: 
 
@@ -167,43 +165,43 @@ to a limit (optic) switch.
 
 -move to the central position to measure the central field by NMR, the system
 checks if the NMR locks and if the reading is stable, it will be the 
-\char`\"{}before\char`\"{}
+"before"
 field 
 
 -move back to upstream position 
 
 -move to downstream position while integrating the flux through the coil system,
-this measurement will be called the \char`\"{}forward\char`\"{} integral (duration
+this measurement will be called the "forward" integral (duration
 \( \sim  \) 7s) 
 
 -move back to upstream position while integrating the flux through the coil
-system, this measurement will be called the \char`\"{}backward\char`\"{} integral
+system, this measurement will be called the "backward" integral
 (duration \( \sim  \)7s) 
 
 -move to the central position to measure the central field by NMR, the system
 checks if the NMR locks and if the reading is stable, it will be the 
-\char`\"{}after\char`\"{}
+"after"
 field. 
 
 In addition to the central field, 4 probe temperatures, a local excitation current
 measurement, the setting of the dipoles P.S, the readback of the dipoles P.S
 and the probe position at NMR measurement time are recorded 
-\char`\"{}before\char`\"{}
-and \char`\"{}after\char`\"{}. 
+"before"
+and "after". 
 
 To perform an integral field measurement: 
 
-1-check if the system works (see \char`\"{}details on integral system 
-check\char`\"{}
+1-check if the system works (see "details on integral system 
+check"
 below) 
 
-2-run the above integral sequence (see \char`\"{}details on integral run\char`\"{}
+2-run the above integral sequence (see "details on integral run"
 below) 
 
-3-fix the error(s) if any (see \char`\"{}details on integral errors\char`\"{}
+3-fix the error(s) if any (see "details on integral errors"
 below) 
 
-4-save the data in a file (see \char`\"{}details on integral data save\char`\"{}
+4-save the data in a file (see "details on integral data save"
 below) 
 
 5-analyze the data (see Arun Saha). 
@@ -212,31 +210,31 @@ below)
 \subsection{Details on integral run }
 
 To run the integral measurement sequence, call the 
-\char`\"{}arc\_integral.adl\char`\"{}
+\mycomp{arc\_integral.adl}
 medm screen, then: 
 
--push \char`\"{}start\char`\"{} to start the full sequence 
+-push "start" to start the full sequence 
 
 -look at the results displayed: 
 
--after the \char`\"{}before\char`\"{} NMR measurement: the 
-\char`\"{}before\char`\"{}
+-after the "before" NMR measurement: the 
+"before"
 data set 
 
--after the \char`\"{}forward\char`\"{} integral pass: the forward velocity profile
+-after the "forward" integral pass: the forward velocity profile
 and the forward voltage-after-gain profile 
 
--after the \char`\"{}backward\char`\"{} integral pass: the backward velocity
+-after the "backward" integral pass: the backward velocity
 profile and the backward voltage-after-gain profile 
 
--after the \char`\"{}after\char`\"{} NMR measurement: the 
-\char`\"{}after\char`\"{}
+-after the "after" NMR measurement: the 
+"after"
 data set 
 
--if \char`\"{}BAD NMR\char`\"{} or \char`\"{}PDI saturation\char`\"{} flags
+-if "BAD NMR" or "PDI saturation" flags
 are set, or if something is obviously wrong in the data or plots, call expert. 
 
--data are ready to be saved (see \char`\"{}Details on integral data save\char`\"{}
+-data are ready to be saved (see "Details on integral data save"
 below) 
 
 
@@ -251,7 +249,7 @@ be anywhere in the {[}18C,35C{]} range, regardless of the season. The BSY
 temperature
 and the shed temperature are given (in F) by a display panel located close to
 the workstation, on the wall. The AC system can be set in manual control by
-turning from \char`\"{}auto\char`\"{} to \char`\"{}manual\char`\"{} a set of
+turning from "auto" to "manual" a set of
 switches controlling the cooling units and the heater unit. These switch boxes
 are located on the shed wall. If the shed temperature is above 34.4C (94F),
 call Arun Saha (the electronics can be damaged) and cool down the shed in manual
@@ -289,16 +287,16 @@ Door$< -${}-{}-~~~~~~~~~~~$<
 >$
 \end{lyxcode}
 
-Both \char`\"{}x+\char`\"{} sensors are on the probe edge which is inside the
-dipole gap and both \char`\"{}x-\char`\"{} sensors on the opposite edge which
-is outside the dipole gap. Both \char`\"{}z-\char`\"{} sensors are at 1/4 of
+Both "x+" sensors are on the probe edge which is inside the
+dipole gap and both "x-" sensors on the opposite edge which
+is outside the dipole gap. Both "z-" sensors are at 1/4 of
 the long dimension of the probe and both z+ at 3/4 of this length. The average
 of the 4 temperatures is used by the analysis program to correct the coil distance
 from the thermal expansion of the probe, so it is important to make sure that
 the 4 sensors are working well. The user can just make sure that the temperatures
-displayed in \char`\"{}arc-master.adl\char`\"{} or recorded in 
-\char`\"{}arc-integral.adl\char`\"{}
-are realistic. In \char`\"{}arc-integral.adl\char`\"{} they are given in the
+displayed in \mycomp{arc-master.adl} or recorded in 
+\mycomp{arc-integral.adl}
+are realistic. In \mycomp{arc-integral.adl} they are given in the
 order: Tx+z-, Tx+z+, Tx-z-, Tx-z+ Tx-z- and Tx-z+ should be close to the shed
 temperature. Tx+z- and Tx+z+ depend on the probe position, as the gap (iron
 yoke) is warmer than the shed and the dipole coil (at both ends of the dipole)
@@ -309,6 +307,9 @@ and the magnet/shed temperature history. The 4 temperatures are also displayed
 inside the shed, on the electronics rack. These values are digitized by separate
 ADCs, so they may differ from the remote values by \( \sim  \)0.1C. 
 
+}
+
+\begin{safetyen}{10}{10}
 \subsection{Shed access and safety }
 
 For safety reasons, the access to the shed is limited to authorized
@@ -319,8 +320,11 @@ The standard
 operation mode of the integral measurement setup is the remote mode, through
 the network, from the counting house. In case of problem needing an access in
 the shed, unauthorized users must contact Arun Saha.
+\end{safetyen}
 
+\begin{safetyen}{10}{10}
 \subsection{List of Authorized Personnel for Shed Access}
+\end{safetyen}
 
 
 Pascal Vernin
@@ -359,13 +363,16 @@ Tony Day
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $
-% $Id: arc.tex,v 1.4 2003/11/17 21:11:03 saha Exp $
-% $Author: saha $
-% $Date: 2003/11/17 21:11:03 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/arc.tex,v 1.5 2003/12/05 05:48:30 gen Exp $
+% $Id: arc.tex,v 1.5 2003/12/05 05:48:30 gen Exp $
+% $Author: gen $
+% $Date: 2003/12/05 05:48:30 $
 % $Name:  $
 % $Locker:  $
 % $Log: arc.tex,v $
+% Revision 1.5  2003/12/05 05:48:30  gen
+% Polishing
+%
 % Revision 1.4  2003/11/17 21:11:03  saha
 % update
 %
