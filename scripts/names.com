@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Parses the name list, checks the "staff" data and creates latex commands
 
@@ -21,8 +21,10 @@ if [ $nth -gt 0 ]; then
   i=0; while i=`expr $i + 1`; [ $i -le $nth ]; do
     lin=`head -$i $fil_inp | tail -1`   
     nf=`echo $lin | awk '{print NF}'`
-    lnam=`echo $lin | awk '{print $1}'`
-    fnam=`echo $lin | awk '{print $2}'`
+    lnamf=`echo $lin | awk '{print $1}'`
+    fnamf=`echo $lin | awk '{print $2}'`
+    lnam=$(echo $lnamf | sed s"/[\^\`\'\{\}]//"g)
+    fnam=$(echo $fnamf | sed s"/[\^\`\'\{\}]//"g)
     inst=""     ; [ $nf -gt 2 ] && inst=`echo $lin | awk '{print $3}'`
     etel=""     ; [ $nf -gt 3 ] && etel=`echo $lin | awk '{print $4}'`
     eml=""      ; [ $nf -gt 4 ] &&  eml=`echo $lin | awk '{print $5}'`
@@ -43,9 +45,9 @@ if [ $nth -gt 0 ]; then
           echo Missing form staff: $lnam  $fnam >> $fil_log
        fi 
     fi
-    com=`echo $fnam$lnam | sed s"/[-~]//"g `
+    com=`echo $fnam$lnam | sed s"/[-~]//"g`
     echo $eml | grep '[a-z]' &>/dev/null ; [ $? -eq 0 ] && eml=\\email\{$eml\}
-    echo \\newcommand{\\$com}[1]{$fnam $lnam \& $inst \& $etel \& $pag \& "$eml" \& \#1 \\\\ } >> $fil_out
+    echo \\newcommand{\\$com}[1]{$fnamf $lnamf \& $inst \& $etel \& $pag \& "$eml" \& \#1 \\\\ } >> $fil_out
   done
   echo Finished.
 fi

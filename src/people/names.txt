@@ -50,7 +50,9 @@ Musson           John           JLab
 Nanda            Sirish         JLab
 Neyret           Damien          CEA   7552  dneyret@Cea.Fr      
 Paschke          Kent          Syracuse
+Perdrisat        Charles         CWM
 Pomatsalyuk      Roman         KhIPT
+Punjabi          Vina            CWM
 Reitz            Bodo           JLab
 Roblin           Yves           JLab
 Rutledge         Gary            CWM
@@ -64,10 +66,10 @@ Solvignon        Patricia      Temple
 Spiegel          Scot           JLab
 Stevens          Mark           JLab
 Sulkosky         Vince           CWM 
-Tarte            Gerard          CEA   8464  gtarte@Cea.Fr       
+Tarte            G\'{e}rard      CEA   8464  gtarte@Cea.Fr       
 Tiefenback       Michael        JLab    
-Vernin           Pascal          CEA
-Veyssiere        Christian       CEA   9704  cveyssiere@Cea.Fr   
+Vernin           Pascal          CEA   7354  pvernin@cea.fr
+Veyssi\`{e}re    Christian       CEA   9704  cveyssiere@Cea.Fr   
 Voskanyan        Hakob         ErPhI
 Wojtsekhowski    Bogdan         JLab
 Zhang            Joseph         JLab

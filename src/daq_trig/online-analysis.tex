@@ -1,7 +1,6 @@
-\infolevone{
 \chapter[Online Analysis, Data Checks]{Online Analysis, Data Checks
 \footnote{
-  $CVS~revision~ $Id: online-analysis.tex,v 1.5 2003/12/13 06:23:38 gen Exp $ $
+  $CVS~revision~ $Id: online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $ $
 }
 \footnote{Authors: R.Michaels \email{rom@jlab.org}}
 }
@@ -15,8 +14,7 @@ data online.
 Scaler rates and values are displayed using
 a MOTIF based display called \mycomp{xscaler}
 written by C. Howell of Duke University.
-}
-\infolevtwo{
+
 Normally this is already running on \mycomp{adaqs2} or \mycomp{s3}.
 If it is not running, login as
 adaq and go to the appropriate directory,
@@ -41,7 +39,6 @@ a complete history of scaler readings at
 the end of each run that ended normally.
 For 1-TS mode, this file is in \mycomp{/home/adev/scaler}.
 
-}
 
 \infolevone{
 
@@ -76,7 +73,7 @@ These codes analyze a random sample of of {\it raw, uncut} data in
 real time from the CODA computer.  The data are distributed on the
 network by a server which obtains data from shared memory.
 
-}
+} %infolev
 
 \infolevtwo{
 
@@ -107,16 +104,29 @@ results in a postscript file for printing, and
 there is a histogram file dplot.his which one
 can view in PAW.    
 
-}
+} %infolev
+
+\begin{safetyen}{10}{15}
+\subsection{Responsible  Personnel} 
+\end{safetyen}
+The responsible personnel is shown in table \ref{tab:online:personnel}.
+\begin{namestab}{tab:online:personnel}{Online analysis: authorized personnel}{%
+      Online analysis: authorized personnel.}
+  \OleHansen{\em Contact}
+  \RobertMichaels{}
+\end{namestab}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.5 2003/12/13 06:23:38 gen Exp $
-% $Id: online-analysis.tex,v 1.5 2003/12/13 06:23:38 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $
+% $Id: online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/13 06:23:38 $
+% $Date: 2003/12/17 03:59:48 $
 % $Name:  $
 % $Locker:  $
 % $Log: online-analysis.tex,v $
+% Revision 1.6  2003/12/17 03:59:48  gen
+% authorized personnel tables unfied
+%
 % Revision 1.5  2003/12/13 06:23:38  gen
 % Septum added. Name tables. Polishing
 %

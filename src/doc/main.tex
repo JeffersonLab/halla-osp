@@ -1,6 +1,7 @@
 \documentclass[12pt,letterpaper]{article} 
 
 \input{preamb_common} % include the common preambule 
+\input{namesenv}
 
 \newcommand{\myil}[0]{{\color{red}{\em infolevel}}}
 
@@ -17,7 +18,7 @@
 \begin{titlepage}
 \title{{\bf OSP Instructions for Contributors
 \thanks{
- $CVS~revision~ $Id: main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $ $
+ $CVS~revision~ $Id: main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $ $
 }
 }}
 
@@ -33,6 +34,7 @@
 %\listoftables
 
 %\listoffigures
+\input{people/names} % list of names
 
 \section{Introduction}
 \label{sec:intro}
@@ -202,6 +204,7 @@
     \item \mycomp{hrs/} - the HRS arms;
     \item \mycomp{hrs\_det/} - the HRS detectors;
     \item \mycomp{introduction/} - the introduction and access description;
+    \item \mycomp{offline/} - the offline analysis;
     \item \mycomp{osp/} - the top file and the title;
     \item \mycomp{people/} - a list of the personnel;
     \item \mycomp{targets/} - the targets' description.
@@ -215,6 +218,7 @@
     \item \mycomp{figs/} - a directory for the files with pictures;
     \item \mycomp{hrs-1999.tex} - HRS section;
     \item \mycomp{nmr-1999.tex} - NMR section.
+    \item \mycomp{vacuum.tex}   - vacuum elements in the hall.
   \end{list}
  
  All the directories used, apart from the ``top'' one \mycomp{osp/},
@@ -393,7 +397,91 @@
   results. No escape sequences for the special characters are 
   needed.
 
-\subsection{Other Environments}
+\subsection{Names of Authorized Personnel}
+\label{sec:personnel}
+Since the OSP document contains many lists with the names and coordinates 
+of the authorized personnel, a special environment has been defined
+in order to minimize typing and make these lists look standardized.
+
+The names are stored in a file \mycomp{src/people/names.txt} in text
+format as:
+{\color{blue}
+  \begin{verbatim}
+Areti            Hari           JLab
+Chen             Jian-Ping      JLab 
+Kursun           Zafer          JLab
+Saha             Arun           JLab
+Veyssi\`{e}re    Christian       CEA   9704  cveyssiere@Cea.Fr   
+  \end{verbatim}%
+}\noindent
+The first 3 fields are obligatory, while the 4-th and 5-th field
+are optional. The latter indicate the ``outside'' phone number in the home institution 
+(last 4 digits) and the e-mail to be used, different from the JLab e-mail. The name fields
+allow special \LaTeX{} characters as shown in the last line. In case
+an ``outside'' telephone number is given, one has to provide an appropriate entry
+in the \mycomp{src/bibl/jlab\_manuals.bib}, as:
+{\color{blue}
+  \begin{verbatim}
+@manual{inst:CEA,
+ORGANIZATION = "{CEA Saclay, F-91191 Gif-sur-Yvette, France}",
+NOTE = "{Telephone number, from US: 9-011-33-1-6908-XXXX}",
+URL = "http://www-dapnia.cea.fr/Sphn/"
+}
+  \end{verbatim}%
+}\noindent
+The ``outside'' telephone number printed in the document will contain a reference to the
+institution entry.
+While making the document,
+the file \mycomp{src/people/names.txt} is automatically processed and a file
+\mycomp{src/people/names.tex} is created and included. This file contains
+a separate command for every name in the list, which should be used
+in the text for referencing to this name. The JLab coordinates of each person
+are automatically obtained using the command \mycomp{staff}. Therefore,
+the names' spelling should match the ``staff'' database. 
+
+A table of the authorized personnel may look like:
+{\color{blue}
+  \begin{verbatim}
+\begin{namestab}{tab:beam:personnel}{Example: Beam line: authorized personnel}{%
+   Example: Beam Line: authorized personnel}
+  \namestabheader{Hall A Physicists}
+  \ArunSaha{\em 1-st Contact}
+  \JianPingChen{\em 2-nd Contact}
+  \namestabheader{Liaisons from Accelerator Division}
+  \HariAreti{..to Physics Div.}
+  \ZaferKursun{..to Hall-A}
+  \namestabheader{Remote Experts}
+  \ChristianVeyssiere{Electronics}
+\end{namestab}
+  \end{verbatim}%
+}\noindent
+
+The command {{\color{blue}\verb|begin{namestab}|}} has 3 variables:
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+  \item the label for the table; 
+  \item the caption for the table list;
+  \item the caption.
+\end{list}
+A name is referred to by a command consisting of the first and last names.
+A parameter may contain some additional information. The command
+{{\color{blue}\verb|begin{namestab}|}} inserts a horisontal line 
+with the comment given, into the table. The example above
+is printed in Table \ref{tab:beam:personnel}.
+\begin{namestab}{tab:beam:personnel}{Example: Beam line: authorized personnel}{%
+   Example: Beam Line: authorized personnel}
+  \namestabheader{Hall A Physicists}
+  \ArunSaha{\em 1-st Contact}
+  \JianPingChen{\em 2-nd Contact}
+  \namestabheader{Liaisons from Accelerator Division}
+  \HariAreti{..to Physics Div.}
+  \ZaferKursun{..to Hall-A}
+  \namestabheader{Remote Experts}
+  \ChristianVeyssiere{Electronics}
+\end{namestab}
+
+Use the existing OSP document as the source of other examples.
+
+\subsection{Other Commands and Environments}
 \label{sec:otherenv}
 
   I suggest to use a special style for the computer
@@ -405,6 +493,9 @@
   }\noindent
   At the moment it uses the {\color{blue}\verb|\sf|} font
   and the magenta color.
+
+  For the e-mail references use a command as {\color{blue}\verb|\email{gen@jlab.org}|}
+  which would produce \email{gen@jlab.org}.
 
   In order to comment out a big piece of the text, instead
   of commenting out each line one can use 
@@ -453,20 +544,23 @@
   convert to \LaTeX{} and incorporate. 
 
 
-\bibliographystyle{unsrt}
-\bibliography{bibl/doc}
+\bibliographystyle{unsrtmod}
+\bibliography{bibl/jlab_manuals,bibl/doc}
 
 
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $
-% $Id: main.tex,v 1.9 2003/11/21 18:11:47 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $
+% $Id: main.tex,v 1.10 2003/12/17 03:59:48 gen Exp $
 % $Author: gen $
-% $Date: 2003/11/21 18:11:47 $
+% $Date: 2003/12/17 03:59:48 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.10  2003/12/17 03:59:48  gen
+% authorized personnel tables unfied
+%
 % Revision 1.9  2003/11/21 18:11:47  gen
 % new command added
 %

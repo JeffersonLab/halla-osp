@@ -1,6 +1,6 @@
 \chapter[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $ $
+  $CVS~revision~ $Id: HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $ $
 }
 \footnote{Authors: J.Gomez \email{gomez@jlab.org}}
 }
@@ -236,7 +236,7 @@ monitor the hall cryogenics. The application can be started from the terminal wi
 \label{fig:medm-hlamain}
 \end{center}
 \end{figure}
-}
+} %infolev
 
 \section{Hall A Menu}
 \label{sec:contr-ha-menu}
@@ -257,7 +257,7 @@ many available functions for slow control of Hall A equipment.
 \label{fig:medm-hlamain-tools}
 \end{center}
 \end{figure}
-}
+} %infolev
 
 \section{Troubleshooting Procedures}
 The status of most IOCs can be seen
@@ -273,18 +273,31 @@ or the crate resets screen ``Hall A Menu'' $-->$ ``Tools'' $-->$ ``Crate Resets'
 If an IOC fails to reset and its name is ``iocha..'', call MCC and request that
 the software on-call person be notified. If the name is ``hallasc..'' call J. Gomez.
 
-}
+} %infolev
+
+\infolevltone{\newpage}
+\begin{safetyen}{10}{15}
+\subsection{Authorized  Personnel} 
+\end{safetyen}
+The authorized personnel is shown in table \ref{tab:ctrl:personnel}.
+\begin{namestab}{tab:ctrl:personnel}{Slow controls: authorized personnel}{%
+      Slow controls: authorized personnel.}
+  \JavierGomez{\em Contact}
+\end{namestab}
 
 %\clearpage % forces LaTeX to finish all remaining open floats
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $
-% $Id: HacOps.tex,v 1.10 2003/12/13 06:23:37 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $
+% $Id: HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/13 06:23:37 $
+% $Date: 2003/12/17 03:59:48 $
 % $Name:  $
 % $Locker:  $
 % $Log: HacOps.tex,v $
+% Revision 1.11  2003/12/17 03:59:48  gen
+% authorized personnel tables unfied
+%
 % Revision 1.10  2003/12/13 06:23:37  gen
 % Septum added. Name tables. Polishing
 %

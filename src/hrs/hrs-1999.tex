@@ -1,6 +1,6 @@
 \chapter[High Resolution Spectrometers (HRS)]{High Resolution Spectrometers (HRS)
 \footnote{
-  $CVS~revision~ $Id: hrs-1999.tex,v 1.3 2003/12/13 06:23:38 gen Exp $ $ 
+  $CVS~revision~ $Id: hrs-1999.tex,v 1.4 2003/12/17 03:59:48 gen Exp $ $ 
 }
 \footnote{Authors: J.LeRose \email{lerose@jlab.org}}
 }
@@ -236,9 +236,34 @@ inside the shield house.
 \begin{safetyen}{5}{10}
 For more information consult the full OSP manual~\cite{HallAosp}.
 \end{safetyen}
-}
+} %infolev
+
+\begin{safetyen}{10}{15}
+\subsection{Authorized Personnel}
+\end{safetyen}
+
+In the event that problems arise during 
+operation of the magnets, qualified personnel should be notified
+(see Table \ref{tab:hrs:personnel}).  
+This includes any prolonged or serious problem with the source of magnet 
+cryogens (the ESR).  On weekends and after hours there will be a 
+designated individual on call for magnet services.  Any member of the 
+Hall A engineering group is qualified to deal with unusual magnet 
+situations but in the event of serious problems the technician on
+call should be contacted.
+
+\begin{namestab}{tab:hrs:personnel}{HRS: authorized personnel}{%
+      HRS: authorized personnel. ''W.B'' stands for the white board 
+      in the counting house.}
+   \TechonCall{\em Contact}
+   \EdFolts{}
+   \ScotSpiegel{}
+   \MarkStevens{}
+   \GaryDezern{}
+\end{namestab}
 
 
+\infolevone{
 \section{The Magnets of HRS}
 
 Each HRS is composed of three superconducting quadrupole magnets, Q1, Q2, 
@@ -263,7 +288,6 @@ design value for the maximum momentum accessible to the HRS magnet
 system is 4 GeV/c.
 
 \subsection{Magnets and Power Supplies}
-\infolevtwo{
 
 The HRS magnet's are all superconducting and hence their coils must be 
 maintained at cryogenic temperatures during operations.  The LHe 
@@ -284,7 +308,6 @@ of all magnets is described in a following Section.
 
 The power supplies for the magnets are located on the gantry balcony 
 adjacent to the magnets.  The supplies are all cooled with LCW.
-} %infolev
 
 \begin{safetyen}{10}{15}
 
@@ -299,22 +322,8 @@ signs posted listing the dangers of high magnetic fields.
 The control interface for the power supplies is available through the 
 HRS control screen in the Hall A counting house.
 
-\begin{safetyen}{10}{15}
-\subsection{Personnel}
-\end{safetyen}
-
-In the event that problems arise during 
-operation of the magnets, qualified personnel should be notified.  This 
-includes any prolonged or serious problem with the source of magnet 
-cryogens (the ESR).  On weekends and after hours there will be a 
-designated individual on call for magnet services.  Any member of the 
-Hall A engineering group is qualified to deal with unusual magnet 
-situations but in the event of serious problems the technician on
-call should be contacted.
-
 \subsection{Quadrupole Magnets}
 
-\infolevone{
 The quadrupoles provide some of the 
 focusing properties of the spectrometer and to a large extent 
 its acceptance.  Operating limits imposed on the 
@@ -374,6 +383,7 @@ See attached check lists for all quadrupole and dipole magnets
  (Tables~\ref{tab:dip_check}, \ref{tab:q1_check}, and \ref{tab:q23_check}).
 } %infolev
 
+\infolevone{
 \subsection{Dipole Magnet}
 
 The dipole, by virtue of its field index, provides both
@@ -388,6 +398,7 @@ bend radius of 8.4 $m$, and a gap width of 25 $cm$.  It is configured to
 achieve a 45 degree bending angle for 4 GeV/c momentum particles at a 
 central field excitation of 1.6 T.  For the HRS dipole to reach 1.6 T 
 an operating current of about 1500 A is required.
+} %infolev
 
 \infolevthree{
 The dipole has been designed to achieve cryostability up to a field of 2 
@@ -406,6 +417,7 @@ supplies for the HRS magnet system (dipole and quadrupoles) amounts to
 of 100 psi.
 } %infolev
 
+\infolevone{
 \subsection{\bf Septum Magnets}
 
 The Septum Superconducting Magnet System (SSMS)
@@ -417,7 +429,6 @@ will be described separately below.
 
 \subsection {\bf Septum Vacuum System}
 
-\infolevthree{
 The Septum Magnets have warm bore tubes and therefore the Septum Magnet 
 insulating vacuum system is completely independent from all and any other 
 vacuum systems. There are NO vacuum system interactions between the Septum 
@@ -503,7 +514,7 @@ the magnet from reservoirs located in the control dewar at the top of the magnet
 the top of the magnet makes the connection from the reservoirs to the manifolds.  A photo of the 
 cooling tubes is shown in Figure \ref{fig:septum-cooling} and a schematic diagram of the LHe cooling circuit 
 is provided in Figure \ref{fig:septumcryo}.
-}
+} %infolev
 
 \infolevfour{
 \begin{figure}[htp]
@@ -617,7 +628,7 @@ relocated to a point in the circuit after the dump switch and dump resister.
 \label{fig:septumcircuit}}
 \end{center}
 \end{figure}
-}
+} %infolev
 
 \infolevthree{
 All interconnections between room-temperature components of the circuit are made with 1000 MCM flexible 
@@ -655,13 +666,13 @@ A second pair of discriminator channels are devoted to quench detection in the  
 } %infolev
 
 
-\subsection {\bf Septum Control System}
 \infolevone{
+\subsection {\bf Septum Control System}
 
 The control system consists of three principle subsystems: 1) signal processing electronics, 2) the PLC 
 and its ``ladder logic" software, and 3) the console (user interface) PC and the software that runs on it.  
 The control system occupies three racks located behind the shielding wall in Hall A.
-}
+} %infolev
 
 \infolevthree{
 The signal processing electronics, provides conditioned (level shifted, gain adjusted, isolated, etc.) 
@@ -730,8 +741,9 @@ of the temperature controllers directly at the PLC.  In-stead, the Lakeshore con
 and read-out by a process on the console PC, which simply transfers temperatures from serial inputs on 
 the PC to PLC memory via Ethernet.
 \end{list}
-}
+} %infolev
 
+\infolevone{
 \begin{safetyen}{10}{15}
 \subsection {\bf Septum Hazard Analysis and Control}
 \end{safetyen}
@@ -774,18 +786,22 @@ It is imperative that the SSMS beam vacuum and target scattering chamber be evac
 the target loop. The target cell is very thin and will implode if the pressure outside it exceeds the 
 pressure inside.
 
-Without controls, the likelihood of this occurrence is estimated to be ``likely to happen given 
+Without controls, the likelihood of this occurrence is estimated to be ``likely to happen'' given 
 sufficient time. (Likelihood Code C).  While there is no danger of personnel injury (the target is 
 completely enclosed by the scattering chamber), the property loss, not to mention the labor required 
 to replace the cell, would involve costs in the \$500 to \$10,000 range resulting in a Consequence 
 Level of II.  The Risk Code with no controls is then 2.  In order to mitigate this risk, two controls 
-are implemented: 1) The engineering control of interlocking target pneumatic valve PV21 with vacuum 
-as indicated by the SSMS  beam vacuum cold cathode gauge to prevent pumping on the target loop unless 
-the vessel is evacuated.  If the gauge is turned off, preventing a valid vacuum measurement, the 
-interlock is opened and evacuation of the cell prevented. 2) As a further control, any venting of 
-the SEPTUM beam vacuum must be approved in writing (or by e-mail) by the target person on-call.  
-With these controls in place, the likelihood of target cell implosion is greatly reduced.  The Risk 
-Code is mitigated to level 0.
+are implemented: 
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+   \item The engineering control of interlocking target pneumatic valve PV21 with vacuum 
+       as indicated by the SSMS  beam vacuum cold cathode gauge to prevent pumping on the target loop unless 
+       the vessel is evacuated.  If the gauge is turned off, preventing a valid vacuum measurement, the 
+       interlock is opened and evacuation of the cell prevented.
+   \item As a further control, any venting of 
+       the SEPTUM beam vacuum must be approved in writing (or by e-mail) by the target person on-call.  
+       With these controls in place, the likelihood of target cell implosion is greatly reduced.  The Risk 
+       Code is mitigated to level 0.
+\end{list}
 
 \begin{safetyen}{10}{15}
 \subsection {\bf Hazards Associated with the Cryogenic Cooling Circuits in Septum Magnets}
@@ -844,15 +860,20 @@ unlikely to occur (Likelihood Code A).  However, a burst disk rupture is expecte
 sufficient time (Likelihood Code C).  The greatest risk, a Risk code of 3, then comes from the possibility 
 of injury due to burst disk fragments.
 
-The risk can be reduced through the following controls 1) Burst disks must be located at a height and 
-orientation such that all fragments are blown upward above anyone working in the vicinity. 2) Where 
-it is impossible to relocate the burst disk, a protective screen or tube must be installed.  3) Warning 
-signs must be installed near the burst disks.  These should tell workers to avoid the immediate vicinity 
-of the burst disks exhaust.  4) Personnel working on the SSMS platform, near the burst disks and other 
-external plumbing, must be limited during cooldown to those who are aware of the hazard,
-  5) Burst disks should be inspected regularly to 
-ensure that no foreign material can block their operation. Assuming that these controls are followed, 
-the risk of personal injury will be greatly reduced.  This will result in a reduced Risk Code of 1.
+The risk can be reduced through the following controls:
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+   \item Burst disks must be located at a height and orientation such that all fragments 
+         are blown upward above anyone working in the vicinity.
+   \item Where it is impossible to relocate the burst disk, a protective screen or tube must be installed.
+   \item Warning signs must be installed near the burst disks.  These should tell workers 
+         to avoid the immediate vicinity of the burst disks exhaust.
+   \item Personnel working on the SSMS platform, near the burst disks and other 
+         external plumbing, must be limited during cooldown to those who are aware of the hazard.
+   \item Burst disks should be inspected regularly to ensure that no foreign material can block 
+         their operation. Assuming that these controls are followed, the risk of personal injury 
+         will be greatly reduced.  This will result in a reduced Risk Code of 1.
+\end{list}
+
 
 {\bf Over-pressurization of the vacuum vessel caused by leak in cryogen plumbing:} The likelihood 
 of this event is estimated in Table \ref{tab:septumfail} to be very unlikely to occur (i.e. Likelihood Code A).  The 
@@ -970,9 +991,9 @@ check, the lead flow should be checked and logged by hand once per shift when th
 These controls reduce the probability of damage to the VCLs due to loss of gas flow to an acceptable level 
 (Likelihood Code A, Risk Code 1) 
 
+} %infolev
 
-
-
+\infolevone{
 \begin{safetyen}{10}{15}
 \subsection {\bf Hazards Associated with the Septum Magnet Control System}
 \end{safetyen}
@@ -1041,24 +1062,24 @@ quicker correction in case of misadjustment of the PID loop.  The greatest possi
 is during the Cooldown I phase over which the magnet is brought from 300 K to 100 K.  Two modes of running 
 will be implemented during this cooldown phase:
 
-\begin{list}{--}{\setlength{\itemsep}{0.cm}}
-\item {\bf a)} Between the hours of 8:00 AM and 5:00 PM, Monday through Friday, an operator will be on hand 
-in Hall A or a JLab office.  The status of the cooldown will be checked and logged by the operator at least 
-once per 30 min.  The cooldown will be operated in ``automatic" mode with the CDHXR mixing valve under the 
-control of the PID loop.  Cooldown will typically proceed at a rate of 3 K/hr.
+\begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
+  \item Between the hours of 8:00 AM and 5:00 PM, Monday through Friday, an operator will be on hand 
+      in Hall A or a JLab office.  The status of the cooldown will be checked and logged by the operator at least 
+     once per 30 min.  The cooldown will be operated in ``automatic" mode with the CDHXR mixing valve under the 
+     control of the PID loop.  Cooldown will typically proceed at a rate of 3 K/hr.
 
-\item{\bf b)} Between the hours of 5:00 PM and 8:00 AM on Monday through Friday and all day on Saturday and 
-Sunday, the magnet will be operated in ``manual" mode.  The PID control of the CDHXR mixing valve will be 
-discontinued.  The valve will be set manually at a fixed setting corresponding to from 1-2  K/hr cooldown 
-rate.  During this period a designated operator will be required to carry a pager and be ``on call".  The 
-control system will be set to generate pager calls based on any alarm condition.
-In order to prevent rapid warm-up of the magnet in the event of loss of LN2 supply to the CDHXR, the cooldown 
-gas inlet cryogenic valve (JT2) will be closed automatically if the supply gas temperature exceeds a 
-threshold around 300 K.  In order to ensure that operators have the proper level of experience and 
-understanding of the hazards involved in the cooldown, only explicitly designated and trained personnel 
- will be allowed to serve as operators or to interact with the control system.  Following 
-these procedures, the likelihood of a control system problem is reduced to Likelihood Code A with a 
-corresponding Risk Code reduction to 1.
+  \item Between the hours of 5:00 PM and 8:00 AM on Monday through Friday and all day on Saturday and 
+    Sunday, the magnet will be operated in ``manual" mode.  The PID control of the CDHXR mixing valve will be 
+    discontinued.  The valve will be set manually at a fixed setting corresponding to from 1-2  K/hr cooldown 
+    rate.  During this period a designated operator will be required to carry a pager and be ``on call".  The 
+    control system will be set to generate pager calls based on any alarm condition.
+    In order to prevent rapid warm-up of the magnet in the event of loss of LN2 supply to the CDHXR, the cooldown 
+    gas inlet cryogenic valve (JT2) will be closed automatically if the supply gas temperature exceeds a 
+    threshold around 300 K.  In order to ensure that operators have the proper level of experience and 
+    understanding of the hazards involved in the cooldown, only explicitly designated and trained personnel 
+    will be allowed to serve as operators or to interact with the control system.  Following 
+    these procedures, the likelihood of a control system problem is reduced to Likelihood Code A with a 
+    corresponding Risk Code reduction to 1.
 \end{list}
 
 \begin{safetyen}{10}{15}
@@ -1178,6 +1199,7 @@ control system will phone a digital pager carried by the magnet on-call person a
 when an alarm occurs and is enabled.  In order to test the paging system, a special ``just checking in" alarm 
 can be programmed to call the magnet on-call person periodically.
 
+} %infolev
 
 \infolevtwo{
 \section{Operation of the HRS Magnets}
@@ -1446,7 +1468,6 @@ Magnet Ready for Operation & \underline{\hskip1in} \\
 \caption[Spectrometers: Q1 Checklist]{Hall A Q1 Quadrupole Magnet Check List (15 August 1996)} 
 \label{tab:q1_check}
 \end{table}
-}
 
 \begin{table}[hp]
 \begin{tabular}{ll}
@@ -1487,14 +1508,19 @@ Magnet Ready for Operation \underline{\hskip0.5in} &
 \label{tab:q23_check}
 \end{table}
 
+} %infolev
+
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/hrs-1999.tex,v 1.3 2003/12/13 06:23:38 gen Exp $
-% $Id: hrs-1999.tex,v 1.3 2003/12/13 06:23:38 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs/hrs-1999.tex,v 1.4 2003/12/17 03:59:48 gen Exp $
+% $Id: hrs-1999.tex,v 1.4 2003/12/17 03:59:48 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/13 06:23:38 $
+% $Date: 2003/12/17 03:59:48 $
 % $Name:  $
 % $Locker:  $
 % $Log: hrs-1999.tex,v $
+% Revision 1.4  2003/12/17 03:59:48  gen
+% authorized personnel tables unfied
+%
 % Revision 1.3  2003/12/13 06:23:38  gen
 % Septum added. Name tables. Polishing
 %
