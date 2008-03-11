@@ -1,30 +1,19 @@
 \section[Fast Raster]{Fast Raster
 \footnote{
-  $CVS~revision~ $Id: raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $ $
+  $CVS~revision~ $Id: raster.tex,v 1.8 2008/03/11 21:39:44 rom Exp $ $
 }
 \footnote{Authors: R.~Michaels \email{rom@jlab.org}}
 }
 
 The beam is rastered on target with an amplitude of
-several millimeters to prevent overheating.  
+several millimeters at 25 kHz to prevent overheating.  
 The raster is a pair of horizontal (X) and vertical (Y)
 air-core dipoles located 23 m upstream of the
-target. Prior to 2003, the raster has been 
-used in two different modes, sinusoidal and 
-amplitude modulated.  After 2003 the raster
-design was upgraded (see below).
-For the old sinusoidal pattern both the X and Y magnet 
-pairs were driven with pure sine waves
-with $90^{\circ}$ relative phase, 
-and with frequencies which do 
-not produce a closed Lissajous pattern.
-For the old amplitude modulated mode  
-both the X and Y magnets were driven at 18 kHz with
-a $90^{\circ}$ phase between X and Y producing a circular
-pattern whose radius was amplitude-modulated at 1 kHz. 
+target.
 
-The upgraded fast raster design (ca. 2003)
-achieves a uniform rectangular
+Since 2003 we've used the triangle-wave 
+raster pattern designed by Chen Yan.  
+This achieves a very uniform rectangular
 density distribution of beam on the target 
 by moving the beam with a time-varying dipole
 magnetic field whose waveform is triangular
@@ -46,14 +35,17 @@ operators to set up the raster for a particular size
 typically 2 mm square.
 The control software assumes a field-free region between
 the raster and the target, so it is only approximately
-correct because there are four quadrupoles in this region.
+correct because there are several quadrupoles in this region.
 It is important to check the raster spot size and
-make adjustments if necessary.  The main adjustment is made
-by asking MCC to change the size.
+make adjustments if necessary.  The adjustment is made
+by asking MCC to change the size and noting the 
+linear relationship between what their software says
+the size is and the actual size.
 Relatively small independent adjustments to the 
 gains on the X and the Y raster
 coils are available in the middle room of the hall A
-counting room using the ``PGA Controller'' knobs.
+counting room using the ``PGA Controller'' knobs;
+however, it is not recommended to touch these.
 Near these knobs is also located an oscilloscope X-Y trace
 of the current in the raster.  A fast shutdown (FSD) shuts
 the beam down within 0.1 msec if the raster fails, thus
@@ -61,24 +53,37 @@ affording some protection of the target.
 
 {\it NOTE:  If you are unsure of the status of the raster,
 measure the spot size with very low current ($\le 2 \mu$A) or with
-the target out of the beam.}  A potentially fatal error 
-is to check the beam spot size with high current on target; by
-the time you check it, the target might already be destroyed.
+the target out of the beam.}  It would be a mistake
+to check the beam spot size with high current on target; by
+the time you check it, the target may already be destroyed.
 The rastered beam spot on target can be checked with
 plots in the ROOT analyzer or by 
-using the stand alone code called \mycomp{spot}.
+using the stand alone code called \mycomp{spot},
+also called \mycomp{raster}.
 For more details on usage, type \mycomp{spot -h} (help)
 on the ADAQ computers.
 
+Regarding the BPM measurements, it should be noted that 
+the stripline BPMs displayed by \mycomp{spot} have a high-frequency 
+cutoff of approximately 30 kHz.  Since the raster frequency is 25 kHz
+the plot of the amplitude distribution shows spikes at the 
+limits of the orbit, instead of a flat distribution.  The scale
+factor between what is seen in \mycomp{spot} and the real width of the beam
+is $\sim 1.5$, i.e. the beam is 1.5 times bigger than the naive
+reading of the \mycomp{spot} distribution.
+
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $
-% $Id: raster.tex,v 1.7 2003/12/19 14:16:35 rom Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/raster.tex,v 1.8 2008/03/11 21:39:44 rom Exp $
+% $Id: raster.tex,v 1.8 2008/03/11 21:39:44 rom Exp $
 % $Author: rom $
-% $Date: 2003/12/19 14:16:35 $
+% $Date: 2008/03/11 21:39:44 $
 % $Name:  $
 % $Locker:  $
 % $Log: raster.tex,v $
+% Revision 1.8  2008/03/11 21:39:44  rom
+% update for 2008
+%
 % Revision 1.7  2003/12/19 14:16:35  rom
 % updated for 2003 uniform triangle pattern
 %

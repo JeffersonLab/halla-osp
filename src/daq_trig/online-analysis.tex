@@ -1,6 +1,6 @@
 \chapter[Online Analysis, Data Checks]{Online Analysis, Data Checks
 \footnote{
-  $CVS~revision~ $Id: online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $ $
+  $CVS~revision~ $Id: online-analysis.tex,v 1.7 2008/03/11 21:40:14 rom Exp $ $
 }
 \footnote{Authors: R.Michaels \email{rom@jlab.org}}
 }
@@ -12,24 +12,14 @@ data online.
 
 \subsection{Scaler Display and Scaler Events}
 Scaler rates and values are displayed using
-a MOTIF based display called \mycomp{xscaler}
-written by C. Howell of Duke University.
+a ROOT based display called \mycomp{xscaler}.
 
-Normally this is already running on \mycomp{adaqs2} or \mycomp{s3}.
-If it is not running, login as
-adaq and go to the appropriate directory,
-which is 
-\mycomp{/home/adaq/\$EXPERIMENT/electron/scaler}
-and
-\mycomp{/home/adaq/\$EXPERIMENT/hadron/scaler}
-for the E-arm and H-arm respectively
-where \mycomp{\$EXPERIMENT} is an environment
-variable like e95001.
-Then type \mycomp{xscaler} there.  
-{\it Remember} to push the button ``Start''.
-The first several pages are the scaler rates and
-the next half of the pages are the absolute
-scaler counts.  The scalers are cleared at
+Normally this is already running on \mycomp{adaql4} but 
+if it is not running, login as
+adaq and go to the appropriate directory
+by typing ``goxscaler''.
+Then type \mycomp{./xscaler} there.  
+The scalers are cleared at
 the beginning of each CODA run.
 Scalers are read out at approximately 0.5 Hz 
 and injected into the CODA data-stream 
@@ -37,72 +27,21 @@ as event type 140.  A file
 \mycomp{scaler\_history.dat} is maintained which is
 a complete history of scaler readings at
 the end of each run that ended normally.
-For 1-TS mode, this file is in \mycomp{/home/adev/scaler}.
+For 1-TS mode, this file is in \mycomp{/adaqfs/halla/a-onl/scaler}.
 
 
 \infolevone{
 
 
-\section{Analysis using ESPACE or C++ Analyzer}
+\section{Analysis using C++ Analyzer}
 \label{sec:onl-ofl-analysis}
 
-ESPACE is the main offline software package
+Podd is the main offline software package
 for analyzing Hall A experiments.
-It is being replaced by a ROOT/C++ analyzer.
-Both may be
-used for rapid near-online analysis in the
-counting room.  These codes are 
-documented in separate chapters, 
+This code is documented in a seperate chapter
 but it is worth mentioning here in a list of
-essential tools for checking data.
+essential tools for checking data online.
 
-\section{Dataspy and Dhist} 
-\label{sec:onl-dhist}
-
-\mycomp{Dataspy} and \mycomp{Dhist} are somewhat obsolete
-online diagnostic programs.  It remains to be seen if we replace these
-by an offshoot of the C++ analyzer.  The purposes of \mycomp{dataspy} and \mycomp{dhist}
-are:
-\begin{list}{(\arabic{enumi})}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
-  \item To print out randomly sampled detector data;
-  \item To automatically plot to the screen histograms of online data.
-\end{list}
-\mycomp{Dhist} is actually a shell script which runs the executable
-\mycomp{dplot}.  For some online help, simply type \mycomp{dataspy} or \mycomp{dplot}.
-These codes analyze a random sample of of {\it raw, uncut} data in
-real time from the CODA computer.  The data are distributed on the
-network by a server which obtains data from shared memory.
-
-} %infolev
-
-\infolevtwo{
-
-\par 
-This paragraph assumes you are on shift
-and wish to run dhist.  
-While \mycomp{dplot} can run in
-several ways, let's be definite:  Log in to
-\mycomp{adaqh2} (or \mycomp{s3}) as \mycomp{adaq} account.  If \mycomp{dhist}
-isn't running, type \mycomp{dhist}.  Now you will
-see a reminder of what directory to go to and
-that you should type \mycomp{./dhist} there.
-
-\par 
-There are optional interfaces \mycomp{dopte} and 
-\mycomp{dopth} for turning on/off the histogram
-pages.  The \mycomp{dopte(h)} interfaces also show an 
-alarm status for the histograms by statistical
-comparison to a set of reference histograms.
-To start these interfaces, type \mycomp{dopte} or
-\mycomp{dopth} for the E-arm and H-arm respectively.
-
-\par 
-\mycomp{dhist} makes about 20 pages of plots which pop
-up on the workstation screen and remain for
-a few seconds in succession.  Each page also
-results in a postscript file for printing, and
-there is a histogram file dplot.his which one
-can view in PAW.    
 
 } %infolev
 
@@ -117,13 +56,16 @@ The responsible personnel is shown in table \ref{tab:online:personnel}.
 \end{namestab}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $
-% $Id: online-analysis.tex,v 1.6 2003/12/17 03:59:48 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/17 03:59:48 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/online-analysis.tex,v 1.7 2008/03/11 21:40:14 rom Exp $
+% $Id: online-analysis.tex,v 1.7 2008/03/11 21:40:14 rom Exp $
+% $Author: rom $
+% $Date: 2008/03/11 21:40:14 $
 % $Name:  $
 % $Locker:  $
 % $Log: online-analysis.tex,v $
+% Revision 1.7  2008/03/11 21:40:14  rom
+% update for 2008
+%
 % Revision 1.6  2003/12/17 03:59:48  gen
 % authorized personnel tables unfied
 %

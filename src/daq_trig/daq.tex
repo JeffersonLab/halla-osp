@@ -1,6 +1,6 @@
 \chapter[Spectrometer Data Acquisition]{Spectrometer Data Acquisition
 \footnote{
-  $CVS~revision~ $Id: daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $ $
+  $CVS~revision~ $Id: daq.tex,v 1.10 2008/03/11 21:40:05 rom Exp $ $
 }
 \footnote{Authors: R.Michaels \email{rom@jlab.org}}
 }
@@ -60,12 +60,12 @@ run the spectrometers independently if needed.
 The public account \mycomp{a-onl} is normally
 used for running DAQ and \mycomp{adaq} is used
 for running other online software including
-ESPACE or the C++ analyzer.
+the C++ analyzer Podd.
 On ``\mycomp{adaq}'' the directory
 tree of an experiment is \mycomp{adaq/\$EXPERIMENT}
 which is organized in subdirectories of 
 various tasks, such as scaler display,
-ESPACE, and other online codes, all of
+Podd, and other online codes, all of
 which will be described in sections below.
 The trigger management software is run from the
 \mycomp{atrig} account and is described in
@@ -81,19 +81,13 @@ In the counting room we have various computers
 for DAQ, analysis, and controls.  The controls
 subnet is the responsibility of 
 J. Gomez and is documented in another chapter.
-The DAQ computer's names are denoted by \mycomp{adaqXN}, where
-X = s is SunOS and X = l is for Linux PC. 
-adaqs1 is the Compton DAQ computer and is normally
-reserved by the Compton group.  \mycomp{adaqs2} and \mycomp{s3}
-are for running the spectrometer DAQ or doing
-online analysis; we are gradually phasing out the Suns.
-adaql1 and l2 are Linux computers for running DAQ
-while \mycomp{adaql3,4}... and higher are for analysis.
+The DAQ computer's names are denoted by \mycomp{adaqlN}, where
+N is a number.  adaql1 and l2 are Linux computers for 
+running DAQ while \mycomp{adaql3,4}... and higher 
+are for analysis.
 The Linux PCs are administered mostly by Ole Hansen.
 
 \par
-To reboot the Suns,  login as \mycomp{adaq}
-and type \mycomp{reboot}. 
 To reboot the Linux machines, first hit \mycomp{Ctrl-Alt-F1}
 to switch to a text console, then hit \mycomp{Ctrl-Alt-Del} 
 to reboot.
@@ -115,7 +109,7 @@ on. They should
 boot up in a functional state, except for
 heavily loaded fastbus crates that sometimes
 lose their NVRAM.  (If that happens, see notes
-in \mycomp{adaq/doc/vmeram.doc}).}
+in \mycomp{/adaqfs/halla/a-onl/doc/vmeram.doc}).}
 
 \item{You may download
 a default trigger, following the directions in
@@ -157,7 +151,7 @@ The 1-TS mode can also handle single--arm
 triggers but is about 1/2 the aggregate speed
 of the 2-TS mode.  When running the 2-TS
 mode, one uses the a-onl account on \mycomp{adaql2} for one
-spectrometer and the adev account on \mycomp{adaql1} or \mycomp{adaqs2} 
+spectrometer and the adev account on \mycomp{adaql1} 
 for the other spectrometer.  
 The 1-TS mode normally uses the 
 a-onl account on \mycomp{adaql2} only.
@@ -192,7 +186,7 @@ you want are the following.
 A note about pedestal runs.  They have the exclusive
 purpose of obtaining pedestals used for pedestal
 suppression.  For details about what is done
-and hints for getting pedestals for ESPACE (which
+and hints for getting pedestals for analysis (which
 does not want the PEDRUN result), see \mycomp{/ped/README}.
 
 }
@@ -209,9 +203,9 @@ Use a command ``find\_run 1745'' to find
 where run 1745 has been written on disk and MSS.  
 The data are first written to disks like
 \mycomp{/adaql2/dataN}, N=1,2,3...etc.  Files are 
-automatically split, with suffixes .0,.1,.2...etc.
-Splitting occurs at 2 Gbytes to avoid problem
-of system file size limit.  
+automatically split if they become bigger than a 
+prescribed limit, the split files have 
+suffixes .0,.1,.2...etc.
 Files are archived automatically to tape in the MSS
 tape silo.  Two tape copies are made.  Data are
 purged from disk automatically.  Users should
@@ -232,16 +226,22 @@ not up, type \mycomp{datamon} to bring it up.
 This window also shows the full-path-name of the file
 being written by CODA for the present run.}
 
+\item{ {\it Q: Where are the crates ?} \hskip 0.05in
+R-HRS has fastbus crates ROC1 and ROC2 on the lower level
+of the detector hut, and a 9U (tall) VME crate TS0 on 
+the upper level.  L-HRS has fastbus ROC3, ROC4 and 
+VME crate TS11.}
+
 \item{ {\it Q: Why is the deadtime so high ?  
 (and related)} \hskip 0.1in
 Search for answers among the following.
-The standard lore is that 30\% deadtime is tolerable,
+The standard lore is that 20\% deadtime is tolerable,
 but you should ask your analysis team to decide.
 Sometimes people seeing large deadtimes
 have forgotten to observe that the beam is in
 pulsed mode.  Another possibility is that the
 workstation is overloaded.  The computer used
-for CODA should not be used for much else.
+for CODA should not be used for anything else.
 Do not attempt to read or write rapidly to the
 same physical disk to which CODA is writing.
 Sometimes it is observed that the workstation
@@ -253,7 +253,7 @@ doesn't solve the problem, you may
 try rebooting the workstation
 (see computer section).  Also, if
 the event size changes substantially, e.g. due
-to VDC thresholds being turned off (a common mistake), 
+to VDC or FPP thresholds being turned off (a common mistake), 
 the deadtime as a function
 of rate will change, especially 
 in the regime of high rates.}
@@ -290,11 +290,6 @@ are necessary, so the simplest
 thing is to do them all, which takes a few minutes.
 
 \begin{itemize}
-\item{Kill off all CODA processes on the workstation
-by typing \mycomp{kcoda}.  This stops runcontrol, the
-event builder, and other processes, and allows
-for a clean start.  The \mycomp{kcoda} script will then
-tell you exactly what to do next.}
 \item{Make sure the fastbus and VME crates are
 running.  The crates are usually known by 
 ``ROCnumber-computer-(portserver-port)''
@@ -304,9 +299,10 @@ computer is the internet name and the
 portserver-port is the portserver IP and port\#
 where to login.
 An example might be \hskip 0.05in
-ROC4-hallasfi4-(hatsv4,port3) which is
+ROC4-hallasfi4-(hatsv4,port3) which is 
 ROC4, a fastbus crate with IP \mycomp{hallasfi4} attached
 to the portserver IP \mycomp{hatsv4} at port 3.
+You would telnet in with the command ``telnet hatsv4 2003''.
 You can check if the ROCs
 are up by looking on the Components work space
 at the telnet session (if it's not logged, 
@@ -322,16 +318,13 @@ After the ROC comes back (2 minutes),
 telnet back in to verify it's up.
 On rare occassions it is necessary to
 power cycle the crate, which requires access. }
-\item{ Start runcontrol interactively
-by typing \mycomp{runcontrol}.
-Actually there may be
-more steps prior to starting runcontrol,
-depending on the experimental setup.
-See the printout from \mycomp{kcoda} for instructions.}
+\item{ Start runcontrol and the other necessary
+processes by typing \mycomp{startcoda}.  Note, 
+\mycomp{startcoda} first cleans up old processes
+for you, so you don't need to take care of that.}
 \item{ In runcontrol,
 press the ``Connect'' button.  
-After ``connect''
-wait 10 seconds and press ``Run Types''.  
+Wait 5 seconds and press ``Run Types''.  
 After configure and before download, 
 press the ``Reset'' button in the upper left corner.
 Choose the run type from the dialog box
@@ -489,13 +482,16 @@ Port Servers for DAQ}
 } %infolev
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $
-% $Id: daq.tex,v 1.9 2003/12/17 05:38:13 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/17 05:38:13 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/daq.tex,v 1.10 2008/03/11 21:40:05 rom Exp $
+% $Id: daq.tex,v 1.10 2008/03/11 21:40:05 rom Exp $
+% $Author: rom $
+% $Date: 2008/03/11 21:40:05 $
 % $Name:  $
 % $Locker:  $
 % $Log: daq.tex,v $
+% Revision 1.10  2008/03/11 21:40:05  rom
+% update for 2008
+%
 % Revision 1.9  2003/12/17 05:38:13  gen
 % Polishing
 %
