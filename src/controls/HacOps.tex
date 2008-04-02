@@ -1,6 +1,6 @@
 \chapter[Overview]{Overview
 \footnote{
-  $CVS~revision~ $Id: HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $ $
+  $CVS~revision~ $Id: HacOps.tex,v 1.12 2008/04/02 21:48:50 gomez Exp $ $
 }
 \footnote{Authors: J.Gomez \email{gomez@jlab.org}}
 }
@@ -38,11 +38,13 @@ signal database and controls algorithms).
 \infolevtwo{
 \section{System's Components}
 Four Linux based computers are used as OPIs: \mycomp{hacsbc2} (Hall A counting house), 
-\mycomp{hacweb1} (101B), \mycomp{hacweb2} (hall) and \mycomp{hacweb3} (101B).
+\mycomp{hacweb4} (101B), \mycomp{hacweb2} (hall) and \mycomp{hacweb3} (laptop - as needed).
 Two computers act as boot servers: \mycomp{hacsbc2} and \mycomp{hlasrv} 
 (2nd-floor of counting house). \mycomp{Hlasrv}
-also acts as MEDM server. The signal archiver resides in \mycomp{hacweb1}.
+also acts as MEDM server.
 The tasks assigned to the various IOCs are,
+
+\vspace{\parskip}
 
 \begin{tabular}{r p{12.0cm}}
 \mycomp{hallasc7} & Right HRS motion control.\\[0.5ex]
@@ -61,59 +63,51 @@ scanners.\\[0.5ex]
 \mycomp{iocha22} & Electron detector stack - LeCroy high voltage supplies located at
 various points in the hall
 (i.e. beam-line and both electron and hadron detector stacks).\\[0.5ex]
-\mycomp{iocha26} & \\[0.5ex]
+\mycomp{iocha26} & Polarized $^3$He target system.\\[0.5ex]
 \mycomp{iocha48} & Left and Right HRS Q1 power supplies. BigBox power supply.\\[0.5ex]
-\mycomp{iocha49} & Septum magnets
+\mycomp{iocha49} & Septum magnets.\\[0.5ex]
+\mycomp{iochawt1} & Waterfall target system.\\[0.5ex]
+\mycomp{iocha33} & Polarized $^3$He target system (lasers).
 \end{tabular}
 }
 
 \infolevthree{
 \section{Operating Procedures}
 Log into the Hall A control system through one of
-the computers \mycomp{hacsbc2}, \mycomp{hacweb1}, \mycomp{hacweb2} or \mycomp{hacweb3}. The task bar has a
+the computers \mycomp{hacsbc2}, \mycomp{hacweb4}, \mycomp{hacweb2} or \mycomp{hacweb3}. The task bar has a
 ``tool box'' icon with a small arrow on top. Clicking on the arrow brings up a 
-menu. In the case of \mycomp{hacsbc2}, the menu contains the Alarm Handler
-application and three further sub-menus: Spectrometer Motion, StripTool and WebMedm.
-The Alarm Handler application is not available in \mycomp{hacweb1} - \mycomp{hacweb3}.
-Three applications are located under Spectrometer Motion (HRS Floor Marks, LEFT HRS and RIGHT HRS),
-two under SripTool (Strip Tool and Snapshot) and, three under WebMedm (Accelerator Menu,
-Cryogenics Menu and Hall A Menu). To start any of these applications, use the left mouse button
-to click on the application name. These applications, as described below, can be started
-from a terminal. In that case, type the commands given without the quotes.
+menu of applications.
+To start any of these applications, use the left mouse button
+to click on the application name. These applications can also be started from a terminal by just typing their name.
 
-\section{Alarm Handler}
-The Alarm Handler notifies the user when either a signal being monitored
+\section{AlarmHandler}
+The ``AlarmHandler'' notifies the user when either a signal being monitored
 is outside some pre-defined limits or
 communication with the IOC in which the signal resides has been lost.
-The Alarm Handler will only detect an abnormal signal condition if
-the signal is included in the Alarm Handler configuration file
+``AlarmHandler'' will only detect an abnormal signal condition if
+the signal is included in the application configuration file
 and, the corresponding IOC database record is set to produce an alarm condition.
-
-The Alarm Handler can be started from a terminal with the command \mycomp{start\_alh}.
-The default configuration file is \mycomp{\~/alh/ALH-default.alhConfig}.
+The application configuration file is \mycomp{$\sim$/AlarmHandler/{\it EXP}/ALH-default.alhConfig}
+where {\it EXP} represents the running experiment number.
 A detail description of the operation and configuration of this application can be found
 in the Alarm Handler Users
-Guide.\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/extensions/alh/index.php}}
+Guide.\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/epics/extensions/alh/index.php}}
 
-\section{HRS Floor Marks}
-This application determines the floor marks and vernier readings required
-to set each spectrometer to a given angle. The application can be started from a terminal
-with the command \mycomp{setspec}.
+\section{ArchiverViewer}
+This application allows to look at the history of many EPICS signals (but not all) distributed over the whole accelerator complex including
+the halls. ``ArchiverViewer'' is a shell script which simply calls MyaViewer, an interface to the EPICS channel archiver Mya.
+A FAQ and User's Guide\htmladdnormallinkfoot{}{\url{http://devweb.acc.jlab.org/controls_web/certified/MyaViewer/}} are available
+for those interested in using this tool. These documents can also be accessed through the ``help'' button at the top of the application.
 
-\section{RIGHT HRS and LEFT HRS}
-The ``RIGHT HRS'' (``LEFT HRS'') application is used to set the right (left)
-spectrometer angle.
-To start the ``RIGHT HRS'' (``LEFT HRS'')
-application from a terminal type the command ``bogies\_RIGHT'' (``bogies\_LEFT'').
-The ``RIGHT HRS'' and ``LEFT HRS'' applications are very similar so, we will
-use ``RIGHT HRS'' as an example.
-
-Upon starting the ``RIGHT HRS'' application, 
+\section{bogies\_LEFT and bogies\_RIGHT}
+These applications are used to move the left and right HRS spectrometers to the desired angle.
+The applications are very similar so, we will
+use ``bogies\_RIGHT'' as an example.
+Upon starting the ``bogies\_RIGHT'' application, 
 a screen labeled ``RIGHT-HRS Bogies'' will open as 
 shown in Fig. \ref{fig:medm-hrs-bogies}.
 \begin{figure}[htb]
 \begin{center}
-%  \includegraphics[angle=0,width=0.9\textwidth]{controls-fig1}
     \includegraphics[angle=0,scale=0.5]{medm_hrs-bogies-right}
 \caption[Right HRS Motion Control]{Right HRS motion control.}
 \label{fig:medm-hrs-bogies}
@@ -196,37 +190,23 @@ application.
 \end{itemize}
 \end{safetyen}
 
-\section{Strip Tool}
-Strip Tool plots a real-time strip chart of the values of one or more signals.
-It is useful to monitor data trends.
+\section{bogies\_SetSpec}
+This application determines the floor mark and vernier readings required
+to set each spectrometer to a given angle. Its use is self-explanatory.
 
-A detail description of the options and operation
-of this application can be found in the Strip Tool Users
-Guide\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/extensions/StripTool/index.php}}
-with one difference; the version used by Hall A does not have a ``print'' function.
-To print a strip chart use the application ``Snapshot'' described below.
-To start Strip Tool from a terminal type the command \mycomp{StripTool}.
-
-\section{Snapshot}
-Snapshot refers to a KDE desktop application (ksnapshot) which allows to grab an image
-of either the whole
-screen or an individual window. The image can then be sent to a printer or stored on disk.
-The application can be started from a terminal with the command \mycomp{ksnapshot}.
-
-\section{Accelerator Menu}
-The ``Accelerator Menu'' application brings up a web-version of Monticello,
+\section{Menu\_Accelerator}
+The ``Menu\_Accelerator'' application brings up a web-version of Monticello,
 the root MEDM screen giving access to the various accelerator systems. Access to those
 systems is read-only mode except for some Hall A applications which are described elsewhere
 in this OSP. Not all the menus shown in this web-version of Monticello are operational
 because they still are linked to directory structures residing in specific
-Machine Control Center (MCC) computers. The application can be started from a terminal with
-the command \mycomp{accmain}.
+Machine Control Center (MCC) computers.
 
-\section{Cryogenics Menu}
-The ``Cryogenics Menu'' application brings up the End Station
+\section{Menu\_ESR}
+This application brings up the End Station
 Refrigerator (ESR) menu. Access to all ESR systems is read-only mode. This application
 is typically used by the Hall A technical staff to
-monitor the hall cryogenics. The application can be started from the terminal with the command \mycomp{esrmenu}.
+monitor the hall cryogenics.
 
 \infolevtwo{
 \begin{figure}[htb]
@@ -238,12 +218,10 @@ monitor the hall cryogenics. The application can be started from the terminal wi
 \end{figure}
 } %infolev
 
-\section{Hall A Menu}
+\section{Menu\_HallA}
 \label{sec:contr-ha-menu}
-The ``Hall A Menu'' application brings up a menu giving access to all the EPICS 
-based control systems in Hall A. The application can also be started on, say \mycomp{hacsbc2}
-under username \mycomp{hacuser}\footnote{The password can be found in the counting house},
-from a terminal with the command \mycomp{hlamain}, opening a control window%
+This application brings up a menu giving access to all the EPICS 
+based control systems in Hall A.
 \infolevtwo{ (see Fig.~\ref{fig:medm-hlamain})}.
 Using this window one can open the ``Tools'' window%
 \infolevtwo{ (see Fig.~\ref{fig:medm-hlamain-tools})}
@@ -259,6 +237,20 @@ many available functions for slow control of Hall A equipment.
 \end{figure}
 } %infolev
 
+\section{StripTool}
+Strip Tool plots a real-time strip chart of the values of one or more signals.
+It is useful to monitor data trends.
+A detail description of the options and operation
+of this application can be found in the Strip Tool Users
+Guide\htmladdnormallinkfoot{}{\url{http://www.aps.anl.gov/epics/extensions/StripTool/index.php}}
+with one difference; the version used by Hall A does not have a ``print'' function.
+To print a strip chart use the application ``Snapshot'' described below.
+
+\section{Snapshot}
+Snapshot refers to a KDE desktop application (ksnapshot) which allows to grab an image
+of either the whole
+screen or an individual window. The image can then be sent to a printer or stored on disk.
+
 \section{Troubleshooting Procedures}
 The status of most IOCs can be seen
 by opening the `Hall A Menu'' $-->$ ``IOCs''. White entries means that the IOC
@@ -271,7 +263,7 @@ either the green buttons located in the middle room of the counting house
 or the crate resets screen ``Hall A Menu'' $-->$ ``Tools'' $-->$ ``Crate Resets''.
 
 If an IOC fails to reset and its name is ``iocha..'', call MCC and request that
-the software on-call person be notified. If the name is ``hallasc..'' call J. Gomez.
+the software on-call person be notified. If the name is ``hallasc..'' call J. Segal or J. Gomez.
 
 } %infolev
 
@@ -282,19 +274,23 @@ the software on-call person be notified. If the name is ``hallasc..'' call J. Go
 The authorized personnel is shown in table \ref{tab:ctrl:personnel}.
 \begin{namestab}{tab:ctrl:personnel}{Slow controls: authorized personnel}{%
       Slow controls: authorized personnel.}
-  \JavierGomez{\em Contact}
+  \JackSegal{}
+  \JavierGomez{}
 \end{namestab}
 
 %\clearpage % forces LaTeX to finish all remaining open floats
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $
-% $Id: HacOps.tex,v 1.11 2003/12/17 03:59:48 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/17 03:59:48 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/controls/HacOps.tex,v 1.12 2008/04/02 21:48:50 gomez Exp $
+% $Id: HacOps.tex,v 1.12 2008/04/02 21:48:50 gomez Exp $
+% $Author: gomez $
+% $Date: 2008/04/02 21:48:50 $
 % $Name:  $
 % $Locker:  $
 % $Log: HacOps.tex,v $
+% Revision 1.12  2008/04/02 21:48:50  gomez
+% *** empty log message ***
+%
 % Revision 1.11  2003/12/17 03:59:48  gen
 % authorized personnel tables unfied
 %
