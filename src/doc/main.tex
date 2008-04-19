@@ -18,7 +18,7 @@
 \begin{titlepage}
 \title{{\bf OSP Instructions for Contributors
 \thanks{
- $CVS~revision~ $Id: main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $ $
+ $CVS~revision~ $Id: main.tex,v 1.13 2008/04/19 06:05:54 gen Exp $ $
 }
 }}
 
@@ -59,7 +59,8 @@
   The output OSP document is available in two formats: 
   \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
     \item ~PDF, produced with \mycomp{pdflatex} command; 
-    \item HTML, produced with \mycomp{latex2html} command. 
+    \item HTML, produced with \mycomp{latex2html} command (this has not been used for a long
+          time and is basically deprecated). 
   \end{list}
   This makes certain requirements to the source document,
   since both \mycomp{pdflatex} and \mycomp{latex2html} have their own
@@ -80,7 +81,12 @@
  a JLab machine, with mounted \mycomp{/group}, say \mycomp{jlabl1}, \mycomp{dlha1} etc.
 % I checked the procedure only on the Linux platform.
   \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
-    \item Declare an environmental variable \mycomp{CVSROOT=/group/halla/analysis/cvs};
+    \item Declare an environmental variable \mycomp{CVSROOT=/group/halla/analysis/cvs};\\
+          You may use files from my home directory: :
+        \begin{itemize} 
+            \item If in \mycomp{tcsh}, type \mycomp{source /home/gen/.cvs\_osp\_ini.csh}
+            \item If in \mycomp{bash}, type \mycomp{source /home/gen/.cvs\_osp\_ini.bsh}
+        \end{itemize}
     \item \mycomp{cp /home/gen/.cvswrappers~~ $\tilde{}$/} - provide a CVS wrappers file,
            defining the binary files in the repository;
     \item Let us assume you want to keep the source in the directory \mycomp{$\tilde{}$/tex/},
@@ -532,7 +538,17 @@ Use the existing OSP document as the source of other examples.
   Creating a new \LaTeX{} file in an existing directory,
   one has to add its name to the appropriate \mycomp{all.tex}
   and add the contents of the file \mycomp{cvs.template}
-  to the end of the new file. See also the CVS instructions
+  to the end of the new file. 
+  It is also recommended to include another template \mycomp{cvs.id1.template}
+  which contains two footnotes, in the name of the first section.
+  The first footnote
+  shows the dynamic version number which will change automatically, along
+   with the date of the last change and other information. This footnote
+   should not be modified by hand. The second footnote contains the name
+   of the author of this file and should be edited accordingly.
+
+   New files must be added to the repository and then commited:
+   see the CVS instructions.
   \ref{sec:commit}.
 
 \subsection{Changing the Repository}
@@ -541,8 +557,11 @@ Use the existing OSP document as the source of other examples.
   After completing and debugging your changes, you may commit them
   to the CVS repository by:\\
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
-    \item \mycomp{cvs add {\em file}} - add a new file if needed;
+    \item \mycomp{cvs add {\em file}} - for files which do not exist yet in the repository,
+                                        for all new files;
     \item \mycomp{cvs commit -m \"{}some comments\"{}~ {\em file}} - commit the updated file.
+          The comments will be shown in the file history and should explain the reason for the
+          change, say: ``several typos corrected'', or ``A new target chamber, installed in May 2007 is described''.
   \end{list}
 
 \section{Conclusion}
@@ -571,13 +590,16 @@ Use the existing OSP document as the source of other examples.
 \end{document} 
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
-% $Id: main.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/doc/main.tex,v 1.13 2008/04/19 06:05:54 gen Exp $
+% $Id: main.tex,v 1.13 2008/04/19 06:05:54 gen Exp $
 % $Author: gen $
-% $Date: 2005/04/04 22:27:25 $
+% $Date: 2008/04/19 06:05:54 $
 % $Name:  $
 % $Locker:  $
 % $Log: main.tex,v $
+% Revision 1.13  2008/04/19 06:05:54  gen
+% Small improvements ans more CVS instructions
+%
 % Revision 1.12  2005/04/04 22:27:25  gen
 % Chnges after the review
 %
