@@ -1,6 +1,6 @@
 \chapter[Cryogenic Targets]{Cryogenic Targets
 \footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $ $ }
+  $CVS~revision~ $Id: cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $ $ }
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
 
@@ -10,30 +10,32 @@ cryogenic Hydrogen and Deuterium targets.
 
 \subsection{Introduction }
 The Hall A cryotarget system contains three target loops. The top loop (loop 1)
-has a single 10 cm ``tuna can'' helium cell, which will be filled with either 
+often has a single helium cell, which will be filled with 
+either 
 $^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA). For 
-normal Hydrogen and Deuterium running, the top loop is often left as a spare,
+normal Hydrogen and Deuterium running, the top loop is often leave as a spare,
 in which 
-case it will be filled with a little over one atm helium gas. Both the middle 
-loop and the bottom loop contain one 15 cm and one 4 cm  ``beer can'' cells.
+case it will be filled with a little over one atm helium gas. Each of the 
+middle and the bottom loop often contains two target cells with different 
+sizes, for example, one 15 cm and one 4 cm cells.
 The middle loop (loop 2) is usually filled with liquid Hydrogen during normal 
 operation.
 The bottom loop (loop 3) is usually filled with liquid Deuterium during normal
-operation. If only the Hydrogen target is used, such as the case for   
-the HAPPEX running, loop 3 (the Deuterium loop) 
-will be filled with 17 PSIA helium gas to prevent contamination.
+operation. If only the Hydrogen target is used, loop 3 (the Deuterium loop) 
+will be filled with a little over one atm helium gas to prevent
+air leaking into the cell.
 
 \par
 During the normal operation, the Hydrogen and/or Deuterium target should
 have already been liquefied and are in a stable state of 
-about 3 degree sub-cooled. 
+about 2 to 3 degree sub-cooled liquid. 
 The normal operating conditions of the targets are given in Table~\ref{tab:target-cryo-param}.
 Also listed in Table~\ref{tab:target-cryo-param} are the freezing and boiling temperatures.
 These parameters should be reasonably stable (temperature to $\pm 0.1$ K, 
 pressure to $\pm 1$ psi) provided that the End Station
 Refrigerator (ESR) is stable. The
 temperature is controlled by a software PID loop with a high power heater (up
-to 600 Watts). The PID loops read the output of one
+to 700 Watts). The PID loops read the output of one
 of the Cernox resistor temperature sensors and adjust the power in the high 
 power heater appropriately. 
 The control loops function extremely well and the temperature fluctuations with
@@ -111,11 +113,11 @@ target motion mechanism.
 
 \par
 \begin{safetyen}{10}{5}
-When full power beam with tiny beam spot hits the cryotarget, there is a danger 
+When full power beam with tiny beam spot hit the cryotarget, there is a danger 
 that the beam can melt the target cell. The fast raster is used to prevent this
 from happening. Every time when moving the cryotarget into beam position,
 the target operator \emph {must check to make sure} that the faster raster 
-is on and has a reasonable size.
+is on and has a reasonable size for beam current above 5 $\mu$A.
 \end{safetyen}
 
 \infolevone{
@@ -135,8 +137,8 @@ the on-call target expert.
 
 The Hall A target experts and the JLab target group like to track the state
 of the target. To help them in this task the 
-target checklist \emph{must be filled
-out once per shift} and stored in the target checklist binder.
+target checklist \emph{must be Elog the charts and the main target page
+once per shift}.
 
 }
 %\infolevltone{
@@ -145,7 +147,7 @@ out once per shift} and stored in the target checklist binder.
 One individual on each shift is responsible for target operations. 
 This individual
 is the designated target operator. To become a target operator, 
-one must be trained by one of the target experts and must sit at least
+one must be trained by one of the target experts and to sit 
 one shift with an already certified target operator. The training usually 
 takes place in the Hall A counting house and consists of a guided walk 
 through of the control system. 
@@ -163,18 +165,14 @@ with the normal operation of the cryotargets, he/she should sign
 his/her name on the target operator authorization list, indicating that
 he/she has read this procedure and has been trained. The target expert
 who trained him/her should inform the Hall A staff who is responsible 
-for the cryotarget system (J. P. Chen), who will then sign off to authorize
-him/her to be a certified target operator. 
+for the cryotarget system (J. P. Chen). 
 \par
-The Table~\ref{tab:targ-operators} lists the qualified target operators and provides space 
-for additional entries. This table is a template, while the currently valid
-table is located in the counting house.
-The names of all operators must appear in that table.
+The table below lists the qualified target operators and provides space 
+for additional entries. The names of all
+operators must appear in the same list kept in the counting house.
 
 \vspace{0.3cm}
 
-
-\begin{table}[htb]
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -188,21 +186,11 @@ J. P. Chen&jpchen&
  --&
  --\\
 \hline 
-K. McCormick&mccormic&
+J. LeRose&lerose&
  3/21/99&
  --&
  --\\
 \hline 
-G. Rutledge&grutledg&
- 3/21/99&
- --&
- --\\
-\hline 
-R. Suleiman&suleiman&
-3/21/99&
---&
---\\
-\hline 
 &&
 &
 &
@@ -368,13 +356,18 @@ R. Suleiman&suleiman&
 &
 \\
 \hline 
+&&
+&
+&
+\\
+\hline 
+&&
+&
+&
+ \\
 \hline 
 \end{tabular}
 \end{center}
-\caption[Cryotarget: Trained operators]{An example list of the trained operators. The currently valid
-         list is located in the counting house.}
-\label{tab:targ-operators}
-\end{table}
 
 \vspace{0.3cm}
 
@@ -387,16 +380,17 @@ R. Suleiman&suleiman&
 The following table contains the names of the currently recognized target 
 experts (who have worked on the Hall A cryotarget system and
 have extensive knowledge of the system)
-and their pager and/or home numbers
+and their pager numbers
 
 \begin{namestab}{tab:cryotarg:personnel}{Cryo Target: experts}{%
    Cryo target: experts and authorized personnel, with their home numbers}
    \namestabheader{Hall A Physicists} 
-   \JianPingChen{h:867-7380}
+   \JianPingChen{page:584-7413}
+   \JohnLeRose{page:584-7624}
    \namestabheader{JLab Cryo-Target Group} 
-   \DaveMeekins{h:974-4750}
-   \MikellSeely{h:833-7890}
-   \ChristopherKeith{h:596-3002}
+   \DaveMeekins{page:584-5434}
+   \MikellSeely{page:584-5036}
+   \ChristopherKeith{page:584-5878}
 \end{namestab}
 
 \par
@@ -452,7 +446,7 @@ the liquid state and gas at STP by a factor of about 800.
 Thus filling the target
 would require about 4,300 STP $l$ of hydrogen. The hydrogen target is 
 connected to a 1,000 Gallon (about 3,800 $l$) recovery tank. The normal 
-running condition for hydrogen is 26 PSIA. So the total amount needed
+running condition for hydrogen is 25 PSIA. So the total amount needed
 to fill the target and the tank is about 10,900 STP $l$. 
 For deuterium, the target is about 4,300 STP $l$. The normal running
 condition for deuterium is 22 PSIA. So the total volume needed
@@ -536,7 +530,7 @@ a Oxford ITC-502 temperature controller. The heater lead wire is
 18 gauge Kapton insulated copper stranded wire. The heaters have a
 DC resistance of 20 $\Omega$ and hence will draw a maximum of 2 $A$. 
 The power supplied to this heater is monitored by the control system.
-\item[{\bf High Power Heater}]There are two kapton enclosed incoloy\texttrademark{} heater foils
+\item[{\bf High Power Heater}]There are two kapton enclosed incoloy heater foils
 wrapped on the inside wall of each heat exchanger.
 The maximum power available to each
 heater is  500 $W$. The heater has a DC resistance of
@@ -548,15 +542,13 @@ is a software power maximum enforced on the power setting
 of this heater. 
 The heater is connected to
 the outside world by 18 gauge stranded wire with Kapton insulation.
-\item[{\bf Resistors}] There are two Allen Bradley and four Cernox
+\item[{\bf Resistors}] There are four Cernox
 resistors immersed in each target loop. These resistors provide temperature
 measurements of the target fluid. The temperature controllers that
 read them use a current of less than 30 $\mu$A to excite them (
 they are excited with a constant voltage which for our resistors is
 on the order of 30 mV). The Cernox resistors are connected to the outside world
 with quad strand 36 gauge phosphor bronze wire with Formvar insulation.
-The Allen Bradley resistors are wired with 30 gauge Kapton insulated 
-copper stranded wire.
 \item[{\bf Target Lifter}] There are two AC servo motors which provide
 the power to lift the target ladder. These motors are powered by three
 phase 208 $V$ power and are equipped with fail safe brakes (the brakes are
@@ -627,61 +619,27 @@ and pressure gauges (PI123 for hydrogen and PI112 for deuterium).
 If the pressures are significantly deviate from either from one another or from
 the normal operating pressure, the target operator should call the 
 target-expert-on-call. When they differ from one another, it often is due to 
-a failure of one (or more) of the pressure transducers. 
-If more than one deviates significantly from the normal operating pressure, it could be due to 
-a temperature change or could be, in a more serious situation, a leak in the system.
+a failure of one (or more) of the pressure transducers. If more than one deviate significantly from the normal operating pressure, it could be due to 
+temperature change or could be, in more serious situation, leak in the system.
 
 \subsubsection{ Target Cells}
 
 The target cells themselves represent the most likely failure point
 in the hydrogen system. The outer walls and downstream window 
 of the cells are made of
-$\approx$ 0.003 to 0.045 $in$ thick 3004 aluminum (Coors beer cans in a former
-incarnation) (all the final ones are above 0.0035 $in$). 
-There are two cells soldered to each cell block, one 15 $cm$ long
-and one 4 $cm$ long. Both cells have an outer diameter of 
-approximately 2.5 inches.
-The upstream windows of the cells are made from 0.0028 $in$ thick 5052
+$\approx$ 0.003 to 0.045 $in$ thick aluminum, which are connected to a flange. 
+There are usually two cells bolted on to each cell block, typically 
+one 15 $cm$ long and one 4 $cm$ long. Both cells have an outer diameter of 
+approximately 2 inches.
+The upstream windows of the cells are made from 0.0028 $in$ thick 
 aluminum.
-These windows are soldered to 1.75 $in$ diameter (0.0065 $in$ wall)
-upstream window tubes which are in turn soldered to the cell block.
+These windows are connected 
+to 1.25 $in$ diameter (0.0065 $in$ wall)
+upstream window tubes with flanges which are also 
+bolted on to the cell block.
 
-Since all the components are made of aluminum it is necessary to plate
-them before soldering. The final components were copper
-plated before assembly. 
-
-The cell block components have been pressure tested hydro-statically at
-Jefferson Lab.
-We chose the thinnest beer cans for the pressure burst test.
- Results are listed
-in the summary table.
-Upstream windows have been tested
-to similar pressures. Finally, the entire completed cell block
-assemblies were pressurized to 85 PSID with helium gas.
-A summary of the testing program to date is presented
-in Table \ref{ta:test}.
-
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|} \hline
-Object & P (PSIG) & thickness (in) & size & test method \\ \hline
-Can & 55  & 0.003 &short &test (J)ig, (D)estructive \\ \hline
-Can & 80 & 0.0035 &short &(J), (D) \\ \hline
-Can & 80 & 0.0035 &long &(J), (D) \\ \hline
-Can & 60 & 0.0038 &long &(V)acuum, (D) \\ \hline
-Can & 85 & 0.0039 &long &(V), (D) \\ \hline
-Window & 110 &0.0028& &(J),(D) \\ \hline
-Window & 125 &0.0028& &(J),(D) \\ \hline
-Window & 125 &0.0028& &(J),(D) \\ \hline
-Window & 115 &0.0028& &(J),(D) \\ \hline
-Window & 147 &0.0028& &(J),(D) \\ \hline
-Window & 150 &0.0028& &(J),(D) \\ \hline
-Complete Blocks & 85 &&&(V), Non-Destructive \\ \hline
-\end{tabular}
-\end{center}
-\caption[Cryotarget: Cell Pressure Test Data]{A summary of the early cell block pressure test data.}
-\label{ta:test}
-\end{table}
+The cell block components have been pressure tested hydro-statically
+to about 100 psia.
 
 \subsubsection{ Pressure Relief}
 
@@ -905,7 +863,7 @@ relief line response. The mass flow rate was 0.03 lbs/s.}
 
 The calculation of the pressure drop includes all the plumbing up to the
 large relief valve. 
-The calculation assumes that all the mass flow is carried out on the
+The calculation assumes that all the mass flow is carried out the
 relief side of the target gas handling system (no flow out of the fill line
 reliefs). 
 The friction factor for each diameter was taken from a Moody plot.
@@ -1014,12 +972,12 @@ In the unlikely event that the target temperature drops too low,
 an alarm will sound and the target operator will turn down the corresponding
 J-T valve(s). 
 In one instance the target temperature could drop is when the target control
-IOC is rebooted. After the IOC reboot, the high power heater will be reset 
+ios is rebooted. After the ioc reboot, the high power heater will be reset 
 to zero before going back to PID control. Although the time the high power 
-heater is zero is short (for about 1 minute), the temperature will drop.
+heater is zeor is short (for about 1 minute), the temperature will drop.
 To prevent it to happen, an auxiliary heater is used in parallel to the
-regular heater. During an IOC reboot, the auxiliary heater will
-replace the regular one to keep the temperature from dropping.
+regular heater. During an ioc reboot, the auxiliary heater will
+replace the rugular one to keep the temperature from dropping.
 
 \subsection{ODH}
 \label{sec:targ:odh}
@@ -1038,9 +996,7 @@ The target controls have been implemented with the EPICS~\cite{EPICSwww} control
 system and with hardware very similar to that employed by the accelerator.
 The basic control functions reside on a VME based single board
 computer. The graphical interfaces to the control system use a PC, and
-also require the Hall A 
-%Hewlett Packard, HP, 
-computer for control (HAC, for example \mycomp{hacsbc2} -see Sec.~\ref{chap:controls}) 
+also require the Hall A Hewlett Packard, HP, computer for control (HAC)
 to be present as well.
 
 All of the instrumentation for the target is downstairs in Hall A.
@@ -1135,15 +1091,15 @@ is also available at the above web sites.
 %\end{document}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
-% $Id: cryotarget.tex,v 1.12 2005/04/04 22:27:25 gen Exp $
-% $Author: gen $
-% $Date: 2005/04/04 22:27:25 $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
+% $Id: cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2008/04/21 21:11:06 $
 % $Name:  $
 % $Locker:  $
 % $Log: cryotarget.tex,v $
-% Revision 1.12  2005/04/04 22:27:25  gen
-% Chnges after the review
+% Revision 1.13  2008/04/21 21:11:06  jpchen
+% new cryotarget
 %
 % Revision 1.11  2004/12/20 21:45:21  jpchen
 % further changes according to review
