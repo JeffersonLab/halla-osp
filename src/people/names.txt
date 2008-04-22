@@ -8,6 +8,7 @@ Augustine        Mark           JLab
 Authier          Martial         CEA   4324  mauthier@Cea.Fr     
 Averett          Todd            CWM
 Bertin           Pierre        IN2P3
+Camsonne	 Alexandre     JLab	5064 camsonne@jlab.org
 Cates            Gordon          UVA
 Chen             Jian-Ping      JLab 
 Chudakov         Eugene         JLab
