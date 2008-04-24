@@ -1,6 +1,6 @@
 \chapter[Vertical Drift Chambers]{Vertical Drift Chambers
 \footnote{
-  $CVS~revision~ $Id: vdc.tex,v 1.7 2003/12/17 03:59:49 gen Exp $ $
+  $CVS~revision~ $Id: vdc.tex,v 1.8 2008/04/24 18:52:17 gen Exp $ $
 }
 \footnote{Authors: J.Segal \email{segal@jlab.org}}
 }
@@ -81,8 +81,10 @@ Ionization is collected in the form of analog pulses on the signal
 wires.  The pulses are then amplified, discriminated and used to
 start multihit TDCs, which are subsequently stopped by the overall
 event trigger.  The TDCs are read out by the CODA\cite{CODAwww} acquisition
-software.  The data are histogrammed online by the \mycomp{dhist} 
-(see Sec.~\ref{sec:onl-dhist}) software.  In-depth data analysis  
+software.  
+%The data are histogrammed online by the \mycomp{dhist} 
+%(see Sec.~\ref{sec:onl-dhist}) software.  
+In-depth data analysis  
 requires the offline software (see Sec.~\ref{sec:onl-ofl-analysis}).
 } %infolev
 \infolevtwo{
@@ -301,13 +303,16 @@ of the VDC are shown in Table \ref{tab:vdc:personnel}.
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/vdc.tex,v 1.7 2003/12/17 03:59:49 gen Exp $
-% $Id: vdc.tex,v 1.7 2003/12/17 03:59:49 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/vdc.tex,v 1.8 2008/04/24 18:52:17 gen Exp $
+% $Id: vdc.tex,v 1.8 2008/04/24 18:52:17 gen Exp $
 % $Author: gen $
-% $Date: 2003/12/17 03:59:49 $
+% $Date: 2008/04/24 18:52:17 $
 % $Name:  $
 % $Locker:  $
 % $Log: vdc.tex,v $
+% Revision 1.8  2008/04/24 18:52:17  gen
+% Missing ref to sec:onl-dhist is removed
+%
 % Revision 1.7  2003/12/17 03:59:49  gen
 % authorized personnel tables unfied
 %
