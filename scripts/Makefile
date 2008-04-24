@@ -54,6 +54,11 @@ dummy := $(shell if [ $(INFOLEVEL) -gt 3 ]; then echo "\renewcommand{\infolevltf
 dummy := $(shell if [ $(INFOLEVEL) -gt 2 ]; then echo "\renewcommand{\infolevltthree}[1]{}%" ; fi >> currinfolevel.tex)
 dummy := $(shell if [ $(INFOLEVEL) -gt 1 ]; then echo "\renewcommand{\infolevlttwo}[1]{}%" ; fi >> currinfolevel.tex)
 dummy := $(shell if [ $(INFOLEVEL) -gt 0 ]; then echo "\renewcommand{\infolevltone}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -ne 4 ]; then echo "\renewcommand{\infoleveqfour}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -ne 3 ]; then echo "\renewcommand{\infoleveqthree}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -ne 2 ]; then echo "\renewcommand{\infoleveqtwo}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -ne 1 ]; then echo "\renewcommand{\infoleveqone}[1]{}%" ; fi >> currinfolevel.tex)
+dummy := $(shell if [ $(INFOLEVEL) -ne 0 ]; then echo "\renewcommand{\infoleveqnull}[1]{}%" ; fi >> currinfolevel.tex)
 
 #$(error .config dir= $(srcdir) lev=$(lev))
 TEXINPUTS =.:$(srcdir1):$(srcdir1)/common:$(srcdir1)/$(top):
@@ -97,6 +102,7 @@ comfs := $(shell find ../src/common -type f | grep -v '~' )
 
 .PHONY	: clean
 .PHONY	: pdf
+none:	  pdf
 clean:		
 	echo Clean
 	ls -1 $(top).* | grep -v '\.tex' | xargs rm -f
@@ -118,7 +124,11 @@ pdf:	 clean $(namest)
 	   echo Rerun ... ; \
 	   $(PDFLATEX) $(top) ; \
 	   nrun=`expr $$nrun + 1` ; \
-	done ; echo Finished at iteration $$nrun
+	done ;  \
+        if [ ! -z "`sed -n '/undefined references/p' < $(top).log`" ]; then \
+            $(PDFLATEX) $(top) ; nrun=`expr $$nrun + 1` ; \
+        fi ; \
+	echo Finished at iteration $$nrun
 	rm -f $(top).tex ; \
 	rm -f title.tex 
 #	if [ ! -z $(bibl) ]; then $(BIBTEX) $(top) ; else $(error $(bibl));fi
@@ -169,13 +179,16 @@ html:
 
 
 # ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.4 2003/12/13 06:26:26 gen Exp $
-# $Id: Makefile,v 1.4 2003/12/13 06:26:26 gen Exp $
+# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.5 2008/04/24 18:53:20 gen Exp $
+# $Id: Makefile,v 1.5 2008/04/24 18:53:20 gen Exp $
 # $Author: gen $
-# $Date: 2003/12/13 06:26:26 $
+# $Date: 2008/04/24 18:53:20 $
 # $Name:  $
 # $Locker:  $
 # $Log: Makefile,v $
+# Revision 1.5  2008/04/24 18:53:20  gen
+# More runs to include references, if needed
+#
 # Revision 1.4  2003/12/13 06:26:26  gen
 # Name tables added
 #
