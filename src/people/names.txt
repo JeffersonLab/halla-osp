@@ -20,6 +20,7 @@ Deck             Pascale         CEA   2426  pdeck@Cea.Fr
 Delbart          Alain           CEA   3454  adelbart@Cea.Fr     
 Deur             Alexandre       UVA
 Dezern           Gary           JLab
+Dutta            Chiranjib      Kentucky
 Ewing            Todd           JLab
 Fansler          Heidi          JLab
 Feuerbach        Robert         JLab
@@ -37,6 +38,7 @@ Higgins          Scott          JLab
 Higinbotham      Douglas        JLab
 Jiang            Xiaodong      Rutgers
 Iodice           Mauro          INFN
+Katich           Joe            CWM
 Keith            Christopher    JLab
 Korsch           Wolfgang        UoK 
 Kramer           Kevin           CWM
@@ -64,6 +66,7 @@ Punjabi          Vina            CWM
 Reitz            Bodo           JLab
 Roblin           Yves           JLab
 Rutledge         Gary            CWM
+Qiang            Yi             Duke
 Saha             Arun           JLab
 Salmons          Rusty          JLab
 Seely            Mikell         JLab
@@ -81,5 +84,7 @@ Vernin           Pascal          CEA   7354  pvernin@cea.fr
 Veyssi\`{e}re    Christian       CEA   9704  cveyssiere@Cea.Fr   
 Voskanyan        Hakob         ErPhI
 Wojtsekhowski    Bogdan         JLab
+Zhan             Xiaohui        MIT
 Zhang            Joseph         JLab
+Zhang            Yi             Lanzhou
 Zheng            Xiaochao        ANL
