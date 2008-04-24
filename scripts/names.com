@@ -35,11 +35,11 @@ if [ $nth -gt 0 ]; then
        echo $inst | grep JLab &>/dev/null ; [ $? -ne 0 ] && etel=$etel\\cite{inst:$inst}
     fi
     if [ $ys -gt 0 ]; then
-       lin1=`staff $lnam | grep $fnam`
+       lin1=`staff $lnam | grep $fnam | sed s"/\%/ /"`
        if [ -n "$lin1" ]; then
           tel=`echo "$lin1" | cut -c27-30`
           pag=`echo "$lin1" | cut -c39-42`
-          eml=`echo "$lin1" | awk '{print $NF}'`
+          eml=`echo "$lin1" | awk '{print $NF"@jlab.org"}'`
           etel=$tel
        else
           echo Missing form staff: $lnam  $fnam >> $fil_log
