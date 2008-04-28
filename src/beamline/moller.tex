@@ -1,7 +1,7 @@
 \chapter[M{\o}ller Polarimeter]{M{\o}ller Polarimeter
 \label{sec:moller}
 \footnote{
-  $CVS~revision~ $Id: moller.tex,v 1.11 2008/04/01 16:10:54 gen Exp $ $
+  $CVS~revision~ $Id: moller.tex,v 1.12 2008/04/28 15:34:33 gen Exp $ $
 }
 \footnote{Authors: E.Chudakov \email{gen@jlab.org}}
 }
@@ -113,13 +113,21 @@ is measured using a scale, engraved on the target holder and seen
 with a TV camera, and also using the counting rates measured at
 different target angles.
 
-The target is rotated in the
-horizontal plane. The beam polarization may have a horizontal 
-transverse component, which would interact with the horizontal transverse 
-component of the target polarization. The way to cancel the influence
-of the transverse component is to take an average of the asymmetries
-measured at 2 complimentary target angles, say 25 and $155^o$. 
-}
+Two target holders have been used:
+\begin{itemize}
+  \item Before Nov, 2004 the target foil could be rotated in the horizontal plane.
+  The beam polarization may have a horizontal 
+  transverse component, which would interact with the horizontal transverse 
+  component of the target polarization. The way to cancel the influence
+  of the transverse component is to take an average of the asymmetries
+  measured at 2 complimentary target angles, say 25 and $155^\circ$. 
+  \item After Nov, 2004 several target foils are tilted at $\sim{}20^\circ$
+       to the beam, in the vertical plane. The vertical beam polarization is very small
+       and only the longitudinal component of the beam polarization
+       contributes to the asymmetry measured.
+\end{itemize}
+
+} %infolevthree
 
 \infolevone{
 
@@ -137,7 +145,8 @@ measured at 2 complimentary target angles, say 25 and $155^o$.
    ~\ref{fig:moller_medm_1}
    \begin{figure}% [htb]
       \begin{center}
-          \includegraphics*[angle=90,scale=0.45]{moller_medm_window}
+%          \includegraphics*[angle=90,scale=0.45]{moller_medm_window}
+          \includegraphics*[angle=90,scale=0.45]{moller_medm_window_1}
       \end{center}
       \caption[M{\o}ller:MEDM MCC control]{The M{\o}ller MEDM MCC control.
             }
@@ -153,20 +162,68 @@ the values in this window.
 The M{\o}ller Polarized Electron Target is
 placed on the beamline 17.5 m upstream of the main Hall A
 physics target.
+
+The target consists of:
+\begin{itemize}
+  \item A sliding rail which contains 5 ferromagnetic foils, stretched at
+        $20^\circ$ to the beam in the vertical plane. The rail can
+        move the target foils across the beam in two projections.
+  \item An air-core magnet consisting of two coils coaxial with the beam,
+        used to magnetize the target foils.
+\end{itemize}
+
+
+\infolevfour{
+
+   The rail with 5 foils is shown in Fig.~\ref{fig:moller_targ_rail}. 
+   \begin{figure}% [hbt]
+      \begin{center}
+          \includegraphics*[angle=0,width=0.8\textwidth]{moller_targ_2_phot2}
+      \end{center}
+      \caption[M{\o}ller:target foils]{The M{\o}ller target contains
+            5 ferromagnetic foils, stretched at $20^\circ$ to the beam.
+            }
+      \label{fig:moller_targ_rail} 
+   \end{figure}  
+
+   The foils are described in Table~\ref{tab:moller-foils}.
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|l|c|r|r|r|r|r|c|} \hline
+          & \multicolumn{7}{c|}{Position} \\ \cline{2-8}
+          & 6               &  5  &  4  &  3   &  2   &  1   &  0              \\
+          &    Right limit  &     &     &      &      &      &     Left limit  \\
+\hline 
+  Material            & beam hole & SM     &  Fe    &  Fe    &  SM    & SM     &  Al  \\
+  Thickness, $\mu$m   &  empty    & 6.8    &  9.3   & 14.3   & 29.4   & 13.0   & 16.5 \\
+  Polarization        &           & 7.97\% & 7.44\% & 7.62\% & 8.21\% & 7.80\% &      \\
+  Comment             &           &        &        &        &        & old    &      \\
+\hline
+\end{tabular}
+\end{center}
+\caption[Moller target foils]{The target foils' parameters. ``SM'' stands for a supermendur
+        alloy. The polarization are quoteted for a 16~A current in the coils. The target 1
+        is the old target, used before 2005, installed for its cross-calibration.
+   }
+\label{tab:moller-foils}
+\end{table}
+} % info 4
+
 \infolevfour{
    The photograph on Fig.~\ref{fig:moller_targ_1} shows the
    target chamber, the beam pipe, Helmholtz coils and other
    elements.
    \begin{figure}% [hbt]
       \begin{center}
-          \includegraphics*[angle=0,width=\textwidth]{moller_targ_phot1}
+          \includegraphics*[angle=0,width=\textwidth]{moller_targ_2_phot3}
       \end{center}
-      \caption[M{\o}ller:target]{The M{\o}ller target.
+      \caption[M{\o}ller:target]{The M{\o}ller target area.
             }
       \label{fig:moller_targ_1} 
    \end{figure}  
-}
+} % info 4
 
+\obsolete{
 Two target slots exist, called ``bottom'' and ``top''.
 For the M{\o}ller target at the moment
 a supermendur foil 12~$\mu$m thick is used, positioned in the ``bottom'' 
@@ -175,8 +232,21 @@ which contains the hole for the beam, to either ``bottom'' or ``top''
 position.  
 The foil can be tilted to the beam at an angle required,
 in a range from $20^o$ to $160^o$.
+}
+
+
 
 \infolevtwo{
+The target rail can be moved horizontally, placing different foils
+into the beam. The whole target holder can also be moved along
+another rail, tilted at $20^\circ$ to the beam, as the foils are tilted.
+This allows to scan the beam along the foil. Both motions put no material
+in the beam, apart from the thin foils, and can be carried out while 
+the beam is on, at beam currents below $2~\mu$A. 
+
+} %levtwo
+
+\obsolete{
 Both vertical movement of the target and its rotation is controlled by the 
 Machine Control Center (MCC)
 operators. The vertical movement is controlled by 3 buttons
@@ -189,9 +259,10 @@ and this distance is divided into 80 units. Therefore one unit is about
 $1.75^o$. In order to turn the target to $90^o$ one should set a value
 of about 38 units. The default rotary position is at 0 units and
 the target cannot be moved vertically being at a different position.
-}
+} % obsolete
 
 \begin{safetyen}{20}{20}
+\obsolete{
 Before the target is moved vertically the target
 movement should be ``masked'' by the MCC operators, since the vertical
 movement may bring thick construction elements into the beam area
@@ -200,18 +271,33 @@ is safer and can be performed without ``masking'' the target movement
 and is normally performed without turning off the beam.
 A potentially dangerous target rotation to angles lower than $15^o$
 is prevented mechanically. 
+} % obsolete
+The target  can be moved in two projections both by the MCC operators and by the Hall A
+crew. The beam current applied should not exceed $2~\mu$A. It is allowed to move
+the target  while the beam is on, however in this case the MCC operator must
+mask the M{\o}ller target motion beforehand. Only the authorized personnel
+from Hall A are allowed to move the target (see section~\ref{sec:moller-pers}).
+Each time the MCC should be asked to provide a ``channel access'' to \mycomp{iochla}
+for the duration of the measurements. 
+
+The target motion is supervised using 2 TV cameras, displayed in
+Hall A counting house. One camera is looking from the side and shows
+a scale measuring the longitudinal position of the target. At the central
+(default) position, the scale shows 31~mm. The second camera shows 
+the horizontal position of the target rail. At the empty (default)
+position the scale is centered about a mark ``20''.
+
 \end{safetyen}
 
 \infolevtwo{
-The target motion is supervised using 2 TV cameras, displayed in
-Hall A counting house.
+\obsolete{
 One camera is looking from the side. A glass window in the target 
 vacuum box allows one to see the beam area in the place where 
 a target can be moved in. The central position (empty) of the target
 block is seen as an empty round hole. A target moved in is clearly
 visible. The second camera looks from the top at the target
 holder. A scale 
-}
+
 \infolevfour{
    (Fig.~\ref{fig:moller_targ_2})
    \begin{figure}[hbt]
@@ -231,24 +317,36 @@ using the event rates, measured at a given target angle and
 at about $90^o$. At the moment the scale has a shift, that:
 $\theta^{target}~\approx~\theta^{scale}-2.5^o$.
 }
-
+} % obsolete 2
 The target is magnetically saturated using 2 external
-Helmholtz coils, providing a field of about 240~Gs along the beam
+Helmholtz coils, providing a field of about \obsolete{240~Gs} 350~Gs 
+along the beam
 axis at the target center. The coils are turned on by the M{\o}ller 
 CODA task, during the data taking. Its polarity is reversed for each new
 run of data taking (one run typically takes 2-3~min).
+} %infolevtwo
 
 \begin{safetyen}{20}{20}
+The Helmholtz coils are water-cooled and should be connected to 
+the water line. There are also 2-4 air fans attached by the target
+chamber sides, which help the cooling.
+
 The beam of a few $\mu$A may heat up the target locally by 20-40K,
 which may change slightly the target polarization. Therefore
-the beam current is limited to about 2$\mu$A\footnote{ 
+the beam current is limited to about 2$\mu$A
+\obsolete{
+ \footnote{ 
 A system for cooling the target with liquid nitrogen has been built. 
 However, it has not been used and there are no plans to use it.}
-because of heating, while the dead time problems actually
-limit the current to about 0.5$\mu$A.
+} % obsolete
+because of heating, while the dead time problems typically
+limit the current to about 1.0$\mu$A.
+
 \end{safetyen}
 
+
 \infolevtwo{
+\obsolete{
 The temperature of the target holder is measured using cernox resistors.
 
 The target magnetization has been measured before the installation\footnote{
@@ -257,7 +355,7 @@ the Helmholtz coils and measuring the voltage at pick-up coils, wound
 around the target foils, although this method is less accurate
 than the lab method and has not been used.}.
 }
-}
+}% levtwo
 
 \noindent
     The M{\o}ller target positions are connected to the Fast ShutDown (FSD)
@@ -278,8 +376,10 @@ than the lab method and has not been used.}.
       \label{fig:moller_fsd_phot1} 
    \end{figure}  
 }
-
+} % infolevone
 %\cbend
+
+
 \infolevone{
 
 \subsection {Spectrometer Description }
@@ -423,11 +523,11 @@ In order to obtain the HV values for an arbitrary energy:
 The electronics, used for M{\o}ller polarimetry, is located
 in several crates in the Hall:
 \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
-  \item[1.] VME, board computer \mycomp{halladaq14} - for Helmholtz coils control;
-  \item[2.] VME, board computer \mycomp{hallavme5} - for DAQ;
-  \item[3.] CAMAC - for the trigger and data handling;
-  \item[4.] NIM - for the trigger and data handling;
-  \item[5.] LeCroy 1450 - HV crate, slot 4.
+%  \item[1.] VME, board computer \mycomp{halladaq14} - for Helmholtz coils control;
+  \item[1.] VME, board computer \mycomp{hallavme5} - for DAQ;
+  \item[2.] CAMAC - for the trigger and data handling;
+  \item[3.] NIM - for the trigger and data handling;
+  \item[4.] LeCroy 1450 - HV crate, slot 4.
 \end{list}
 \noindent
 \infolevfour{
@@ -448,16 +548,16 @@ in several crates in the Hall:
 \noindent
 One can connect to the CPU boards and the HV crate via a portserver:
 \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
-  \item[1.] \mycomp{halladaq14} - \mycomp{hatsv5} port \mycomp{3};
-  \item[2.] \mycomp{hallavme5}~ - \mycomp{hatsv5} port \mycomp{4};
-  \item[5.] LeCroy 1450 - \mycomp{hatsv5} port \mycomp{11}.
+%  \item[1.] \mycomp{halladaq14} - \mycomp{hatsv5} port \mycomp{3};
+  \item[1.] \mycomp{hallavme5}~ - \mycomp{hatsv5} port \mycomp{4};
+  \item[4.] LeCroy 1450 - \mycomp{hatsv5} port \mycomp{3}.
 \end{list}
 
 \subsection {DAQ}
 \label{sec:moller_compon_daq}
 
 The DAQ%
-\htmladdnormallinkfoot{}{(More details in: \url{http://www.jlab.org/~moller/guide1_linux.html})} 
+\htmladdnormallinkfoot{}{(More details in: \url{http://www.jlab.org/~moller/guide1.2_linux.html})} 
  is based on CODA\cite{CODAwww} and runs at \mycomp{adaql2},
 connecting to \mycomp{hallavme5}. The database server for CODA
 is located on \mycomp{adaql1}. 
@@ -470,7 +570,8 @@ at the beginning of each CODA run. The polarity of the current in the coils
 is reversed at every new run.
 
 The HV, the electronics settings and the collimator position
-are controlled from a Java program, equipped with a GUI.
+are controlled from a Java program, equipped with a GUI%
+\footnote{More details in \url{http://www.jlab.org/~moller/slow_mpc.html}}.
 
  Start the slow control task:
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
@@ -565,14 +666,17 @@ before starting the ``invasive'' part.
 In more details, the ``invasive'' procedure looks as follows:
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
    \item Remove the main target;
+   \item Load the M{\o}ller settings in the magnets, keep the dipole off; 
    \item Tune the beam position with any convenient beam current;
-   \item Load the M{\o}ller settings in the magnets; 
+   \item Turn on the M{\o}ller dipole; 
    \item Check the beam position;
-   \item Tune the beam to $\sim{}0.3~\mu$A for M{\o}ller measurements; 
-   \item Pull in the M{\o}ller target;
-   \item Make measurements at the forward target angle ($\sim{}23^\circ$);
-   \item Make 2 short runs at the normal target angle ($\sim{}90^\circ$);
-   \item Make measurements at the backward target angle ($\sim{}163^\circ$);
+   \item Tune the beam to $\sim{}0.5~\mu$A for M{\o}ller measurements; 
+   \item Pull in the M{\o}ller target, using the TV camera to make sure the foil is at the
+         window center;
+   \item Make at least two CODA runs in order to use both coil polarities;
+%   \item Make measurements at the forward target angle ($\sim{}23^\circ$);
+%   \item Make 2 short runs at the normal target angle ($\sim{}90^\circ$);
+%   \item Make measurements at the backward target angle ($\sim{}163^\circ$);
  \end{list}
 
 \subsection {Initialization}
@@ -587,24 +691,37 @@ session on  \mycomp{adaql1}:
    \item \mycomp{adaql1$>$~cd~paw/analysis}, start PAW (type \mycomp{paw}), select Workstation type 3.  
  \end{list}
 \noindent
-CODA runs on \mycomp{adaql2}: 
+Check that the portserver connections are available:
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
-   \item Login to \mycomp{adaql2} as \mycomp{moller}, make two sessions;
-   \item \mycomp{adaql2$>$ kcoda} - clean up the old coda;
-   \item \mycomp{adaql2$>$ et\_start moller \&} - start ET if it is not running;
-   \item Reset \mycomp{hallavme5} and \mycomp{halladaq14} by pressing two top left green
-         reset buttons in the middle room of the counting house;
-   \item \mycomp{adaql2$>$ runcontrol} - start CODA;
-   \item Click \mycomp{Connect} and select the configuration \mycomp{beam\_pol};
-   \item Click \mycomp{Download} to download the program into the VME board.
+   \item Try \mycomp{telnet hatsv5 2003} and \mycomp{telnet hatsv5 2004};
+   \item If a connection i refused - clean it up, by connecting
+         \mycomp{telnet hatsv5} as root and typing \mycomp{kill 3} or \mycomp{kill 4},
+         see instructions in \mycomp{\~adaq/doc/portserver.doc}.    
  \end{list}
-
 \noindent
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql1} as \mycomp{moller};
+   \item Start the slow control (see section~\ref{sec:moller_compon_slow});
+   \item Load the regular settings and the appropriate HV.
+ \end{list}
 Slow control:
  \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
    \item Login to \mycomp{adaql1} as \mycomp{moller};
    \item Start the slow control (see section~\ref{sec:moller_compon_slow});
    \item Load the regular settings and the appropriate HV.
+ \end{list}
+\noindent
+CODA runs on \mycomp{adaql1}: 
+ \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+   \item Login to \mycomp{adaql1} as \mycomp{moller}, make two sessions;
+   \item \mycomp{adaql2$>$ kcoda} - clean up the old coda;
+   \item Reset the VME board \mycomp{hallavme5} by: \mycomp{telnet hatsv5 2004}, \mycomp{-$>$ reboot};  
+%   \item \mycomp{adaql2$>$ et\_start moller \&} - start ET if it is not running;
+%   \item Reset \mycomp{hallavme5} and \mycomp{halladaq14} by pressing two top left green
+%         reset buttons in the middle room of the counting house;
+   \item \mycomp{adaql2$>$ start\_coda} - start CODA;
+   \item Click \mycomp{Connect} and select the configuration \mycomp{beam\_pol};
+   \item Click \mycomp{Download} to download the program into the VME board.
  \end{list}
 
 \subsection {Initial Beam Tune}
@@ -650,8 +767,7 @@ Slow control:
  The beam parameters for M{\o}ller measurements
  are: 
    \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}        
-     \item Remove the main target;
-     \item \begin{safetyen}{5}{0} the beam current $\sim{}0.3~\mu$A and $<2~\mu$A;
+     \item \begin{safetyen}{5}{0} the beam current $\sim{}0.5~\mu$A and $<2~\mu$A;
             \end{safetyen}
      \item the beam current should be reduced mainly by closing the ``slit''
            in the injector (not by the laser attenuator), in order to
@@ -661,21 +777,33 @@ Slow control:
 
 \subsection {Target Motion}
 \label{sec:moller_oper_target}
- MCC should be asked to put in one of the targets (typically, the \mycomp{bottom}
-\infolevtwo{
- (see Fig.~\ref{fig:moller_medm_1})
-}
- target is used). The requirements for the target motion are:
- \begin{safetyen}{10}{10}
-    \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
-       \item Vertical motion: beam OFF, target motion MASKED.
-       \item Rotation: no constraint, the beam can be ON. 
-    \end{list}
- \end{safetyen}
+ The procedure is as follows:
+% MCC should be asked to: %put in one of the targets (typically, the \mycomp{bottom}
+   \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}        
+     \item Ask the MCC to mask the main target (cryotarget or whatever) motion
+           and remove the main target, then ask the MCC to unmask the motion;
+     \item Ask the MCC to mask the M{\o}ller target motion;
+     \item Move to target to the position needed (say, 5) using
+           the MEDM screen \infolevtwo{(see Fig.~\ref{fig:moller_medm_1})}.
+           Check that the target is close to the center of the window
+           in the TV camera screen. 
+   \end{list}
 
- Ask the MCC to resume the same beam and check the Ion Chamber
- {\bf SLD1H03} reading. It should not exceed 1000. At beam energies
- above 1.6 GeV it should not exceed 300.
+%\infolevtwo{
+% (see Fig.~\ref{fig:moller_medm_1})
+%}
+% target is used). 
+%The requirements for the target motion are:
+% \begin{safetyen}{10}{10}
+%    \begin{list}{--}{\setlength{\itemsep}{-0.15cm}}
+%       \item Vertical motion: beam OFF, target motion MASKED.
+%       \item Rotation: no constraint, the beam can be ON. 
+%    \end{list}
+% \end{safetyen}
+
+ %Ask the MCC to resume the same beam and check the Ion Chamber
+ %{\bf SLD1H03} reading. It should not exceed 1000. At beam energies
+ %above 1.6 GeV it should not exceed 300.
 
 \subsection{Detector Tuning and Checking }
 \label{sec:dettune}
@@ -722,21 +850,21 @@ for all the calorimeter blocks.
 \label{sec:polmeas}
 
 \begin{list}{$\bullet$}{\setlength{\itemsep}{0.cm}}
-  \item[1.] Make a note in the logbook of the target angle on the scale, 
-            seen with the TV camera.  
-  \item[2.] Take 4 runs of data with the given angle, each run of about 20-30k
+%  \item[1.] Make a note in the logbook of the target angle on the scale, 
+%            seen with the TV camera.  
+  \item[1.] Take an even (say, 2) number  of runs of data with the given angle, each run of about 20-30k
             events (30k at $E_{beam}<2$~GeV).
-  \item[3.] Ask the MCC to turn the target to 38 units 
-            and make a note of the angle on the scale.
-  \item[4.] Take 2 runs of data with the given angle, each run of about 15k events.
-  \item[5.] Ask the MCC to turn the target to 80 units
-            and make a note of the angle on the scale.
-  \item[6.] Take 6 runs of data with the given angle, each run of about 20-30k
-            events (30k at $E_{beam}<2$~GeV).
-  \item[7.] Analyze the data
+%  \item[3.] Ask the MCC to turn the target to 38 units 
+%            and make a note of the angle on the scale.
+%  \item[4.] Take 2 runs of data with the given angle, each run of about 15k events.
+%  \item[5.] Ask the MCC to turn the target to 80 units
+%            and make a note of the angle on the scale.
+%  \item[6.] Take 6 runs of data with the given angle, each run of about 20-30k
+%            events (30k at $E_{beam}<2$~GeV).
+  \item[2.] Analyze the data
         \begin{list}{--}{\setlength{\itemsep}{0.cm}}
              \item[1.] \mycomp{PAW$>$~exec~run~run=????} and
-             \item[2.] \mycomp{PAW$>$~exec~asyms~run=????~angl=tang}, for each RUN,
+             \item[2.] \mycomp{PAW$>$~exec~asymt~run=????~angl=tang}, for each RUN,
                        \mycomp{tang} is the target angle observed on the scale.
              \item[3.] \mycomp{PAW$>$~call~prunpri.f(9000,20000)}, print a table
                        with the results for a given range of runs.
@@ -745,7 +873,8 @@ for all the calorimeter blocks.
         \end{list}
 \end{list}
 
-}
+} %levtwo
+
 \begin{safetyen}{0}{0}
 \section {Safety Assessment}
 \label{sec:moller_safety}
@@ -807,8 +936,12 @@ should move the detector.\\
 
 To avoid damage to the M{\o}ller target, the target should not be in the beam 
 if the beam current is greater than
-5 $\mu$A. Only MCC can move the target, but the experimenters
-are responsible for ensuring that it is properly positioned.\\
+5 $\mu$A. 
+%Only MCC can move the target, but 
+The experimenters
+are responsible for ensuring that the M{\o}ller target is removed from the beam
+for regular running and that its position is unmasked. \\
+
 \end{safetyen}
 
 
@@ -816,13 +949,16 @@ are responsible for ensuring that it is properly positioned.\\
 \input{beamline/moller-personnel}
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.11 2008/04/01 16:10:54 gen Exp $
-% $Id: moller.tex,v 1.11 2008/04/01 16:10:54 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.12 2008/04/28 15:34:33 gen Exp $
+% $Id: moller.tex,v 1.12 2008/04/28 15:34:33 gen Exp $
 % $Author: gen $
-% $Date: 2008/04/01 16:10:54 $
+% $Date: 2008/04/28 15:34:33 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.12  2008/04/28 15:34:33  gen
+% New target
+%
 % Revision 1.11  2008/04/01 16:10:54  gen
 % Minor changes
 %
@@ -871,13 +1007,16 @@ are responsible for ensuring that it is properly positioned.\\
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.11 2008/04/01 16:10:54 gen Exp $
-% $Id: moller.tex,v 1.11 2008/04/01 16:10:54 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/beamline/moller.tex,v 1.12 2008/04/28 15:34:33 gen Exp $
+% $Id: moller.tex,v 1.12 2008/04/28 15:34:33 gen Exp $
 % $Author: gen $
-% $Date: 2008/04/01 16:10:54 $
+% $Date: 2008/04/28 15:34:33 $
 % $Name:  $
 % $Locker:  $
 % $Log: moller.tex,v $
+% Revision 1.12  2008/04/28 15:34:33  gen
+% New target
+%
 % Revision 1.11  2008/04/01 16:10:54  gen
 % Minor changes
 %
