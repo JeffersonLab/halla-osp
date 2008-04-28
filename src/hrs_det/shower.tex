@@ -1,6 +1,6 @@
 \chapter[Electromagnetic Calorimeters]{Electromagnetic Calorimeters
 \footnote{
-  $CVS~revision~ $Id: shower.tex,v 1.7 2005/04/04 22:27:25 gen Exp $ $
+  $CVS~revision~ $Id: shower.tex,v 1.8 2008/04/28 15:51:05 gen Exp $ $
 }
 \footnote{Authors: E.Chudakov \email{gen@jlab.org}}
 }
@@ -83,16 +83,15 @@ with momentum $p$.
 The detector components are summarized in Table~\ref{tab:shower-blocks}.
 \begin{table}[htb]
 \begin{center}
-\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|c|} \hline
-  HRS  &  layer  &  historic         & number & cols$\times$rows & \multicolumn{3}{c|}{Sizes, cm} & glass & \multicolumn{2}{c|}{PM} \\
-  \cline{5-7} \cline{9-10}
-       &         &  name             & of blocks  &  &  X &  Y &  Z  &     & \multicolumn{1}{c|}{type}   & od, in \\  
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|} \hline
+  HRS  &  layer  &  historic         & \# of & cols & \multicolumn{3}{c|}{Sizes, cm} & glass & PM \\
+  \cline{6-8}
+       &         &  name             & blocks  & $ \times$rows &  X &  Y &  Z  &     & type \\  
 \hline
-  L    &  1      & pion rejector 1   & 34  & 2$\times$17 & 14.7 & 35.0 & 14.7  & SF5 & XP2050$^{(a)}$ & 5 \\    
-  L    &  2      & pion rejector 2   & 34  & 2$\times$17 & 14.7 & 35.0 & 14.7  & SF5 & XP2050$^{(a)}$ & 5 \\    
-  R    &  1      & pre-shower        & 48  & 2$\times$24 & 10.0 & 35.0 & 10.0  & TF1 &  R3036$^{(b)}$ & 3 \\    
-  R    &  2      & shower (old)      & 80  & 5$\times$16 & 14.7 & 14.7 & 35.0    & SF5 & XP2050$^{(a)}$ & 5 \\    
-  R    &  2      & shower            & 75  & 5$\times$15 & 15.0 & 15.0 & 32.5  & SF5 & XP3530B$^{(c)}$ & 5 \\    
+  L    &  1      & pion rejector 1   & 34  & 2$\times$17 & 14.7 & 35.0 & 14.7  & SF5 & XP3540B$^{(c)}$ \\    
+  L    &  2      & pion rejector 2   & 34  & 2$\times$17 & 14.7 & 35.0 & 14.7  & SF5 & XP3540B$^{(c)}$ \\    
+  R    &  1      & pre-shower        & 48  & 2$\times$24 & 10.0 & 35.0 & 10.0  & TF1 & XP5312B$^{(b)}$ \\    
+  R    &  2      & shower            & 75  & 5$\times$15 & 15.0 & 15.0 & 32.5  & SF5 & XP3530B$^{(a)}$ \\    
 \hline
 \end{tabular}
 \end{center}
@@ -101,9 +100,10 @@ The detector components are summarized in Table~\ref{tab:shower-blocks}.
    of the HRS, while ``Z'' is along the average particle direction,
    perpendicular to the focal plane. Some of the large blocks are 30~cm
    long, instead of 35~cm. The photo-multiplier tubes were from:
-   (a) - Philips, now Photonis~\cite{PhotonisInd} (discontinued),
-    and are gradually being replaced by (c) Photonis XP3530B~\cite{PhotonisInd};
-   (b) - Hamamatsu~\cite{HamamatsuPM}, discontinued.
+   (a) - Photonis~\cite{PhotonisInd}, a 130~mm tube,
+    they have been replaced by (c) Photonis XP3540B~\cite{PhotonisInd};
+%   (b) - Hamamatsu~\cite{HamamatsuPM}, discontinued.
+   (b) - Photonis~\cite{PhotonisInd}; (c) Photonis~\cite{PhotonisInd}.
    }
 \label{tab:shower-blocks}
 \end{table}
@@ -143,9 +143,10 @@ The MEDM windows and the voltages are shown in Figs. \ref{fig:hrs-det-hv-hrsr-to
 
 \subsection{Electronics}
 
-The signals from PM tubes XP2050 (see Table \ref{tab:shower-blocks})
-are electronically amplified by a factor of $\sim$8. The other signals
-are not amplified. All the signals
+The signals from PM tubes %XP2050 
+(see Table \ref{tab:shower-blocks})
+%are electronically amplified by a factor of $\sim$8. The other signals
+%are not amplified. All the signals
 are delivered via the 1~$\mu$s delay lines to LeCroy ADC 1881M.
 
 } %infolev
@@ -187,13 +188,16 @@ are delivered via the 1~$\mu$s delay lines to LeCroy ADC 1881M.
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/shower.tex,v 1.7 2005/04/04 22:27:25 gen Exp $
-% $Id: shower.tex,v 1.7 2005/04/04 22:27:25 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/hrs_det/shower.tex,v 1.8 2008/04/28 15:51:05 gen Exp $
+% $Id: shower.tex,v 1.8 2008/04/28 15:51:05 gen Exp $
 % $Author: gen $
-% $Date: 2005/04/04 22:27:25 $
+% $Date: 2008/04/28 15:51:05 $
 % $Name:  $
 % $Locker:  $
 % $Log: shower.tex,v $
+% Revision 1.8  2008/04/28 15:51:05  gen
+% New PMs and geometry
+%
 % Revision 1.7  2005/04/04 22:27:25  gen
 % Chnges after the review
 %
