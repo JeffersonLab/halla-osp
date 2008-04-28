@@ -77,7 +77,7 @@ Solvignon        Patricia      Temple
 Spiegel          Scot           JLab
 Spraggins        Darrell        JLab
 Stevens          Mark           JLab
-Sulkosky         Vince           CWM 
+Sulkosky         Vince          JLab 
 Tarte            G\'{e}rard      CEA   8464  gtarte@Cea.Fr       
 Tiefenback       Michael        JLab    
 Vernin           Pascal          CEA   7354  pvernin@cea.fr
