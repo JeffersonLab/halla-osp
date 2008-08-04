@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.16 2008/04/28 20:22:47 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.17 2008/08/04 13:03:58 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: J. P. Chen, earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
@@ -1293,17 +1293,23 @@ provide a large constant magnetic field.  Three sets are necessary so
 that the magnetic field can point in any direction in the horizontal
 plane.  
 The larger pair horizontal coils each has an inner diameter of 1.45 m and
-consists of 272 turns of coil.  The smaller set of coils each has an
-inner diameter of 1.27 m and is made of 256 turns of coil.
+consists of 272 turns of coil. The smaller set of coils each has an
+inner diameter of 1.27 m and is made of 256 turns of coil. Each pair of the
+horizontal coils has a resistance of 3 Ohms. 
 The vertical coils each has an inner diameter of 1.83 m and consists of
-355 turns of coil.
+355 turns of coil. The pair of vertical coils has resistance of 4.4 ohms. 
 
 The normal holding field for the target is 25 Gauss which corresponds
-to approximately 7.2 amps of current in the coils.  However, when
+to approximately 7.2 Amps of current and 28 Volts in the horizontal coils 
+and 7.4 Amps and 33 Volts
+in the vertical coils.  However, when
 doing an NMR measurement the field gets as high as 32 Gauss, which
-corresponds to 9.2 amps of current.
+corresponds to 9.2 Amps and 36 Volts in the horizontal coils and 9.5 Amps
+and 42 Volts in the vertical coils. The maximum field will not exceed
+35 Gauss, which corresponding to 10.0 Amps and 39 Volts for the horizontal coils 
+and 10.4 Amps and 46 Volts for the vertical coils.
 
-The coils are controlled by a DC voltage from two Stanford Research
+The horizontal coils are controlled by a DC voltage from two Stanford Research
 System DS345 Function Generators.  These are in turn controlled by a
 LabView Vi running on a PC.  There is a small glitch in the DS345
 function generator : there sometimes will be a short drop in voltage
@@ -1315,15 +1321,63 @@ Wavetek 80 function generator is attached.  This function generator
 compensates for the small decrease in voltage so that the rotation can
 be performed smoothly.
 
-Attached to the small set of Helmholtz coils are a smaller set of
- coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W
- power supply.  This target occasionally has a problem with a
- phenomena known as masing.  This is a loss of target polarization due
- to coupling of the helium nuclei in their higher energy states (such
- as during an NMR measurement) and a coil of wire (the pick-up coils,
- a Rb ring, or some other source).  Masing can be easily identified
- with EPR, and introducing a small field gradient generally makes it
- disappear.  These coils are used to introduce that field gradient.
+The vertical coils are powered by an Agilent 6675A power supply. The
+maximum range of power supply is 18A and 120 V. The operation condition 
+for the magnet is typically 25-32 Gauss. The maximum field will not excced 
+35 Gauss, which corresponding 10.4 A and max 46 V.
+The power supply is controlled by a LabView Vi running on a PC.  
+
+Hazards associated with the operation of the target magnet include exposure 
+to voltage and exposure to magnetic field. All Hazards are mitigated by the 
+use of the engineering and administrative controls detailed below. 
+
+The power supply is located in an electronics rack. Two insulated cables connect the power supply to the magnet. The voltage hazards are electrical shock or 
+burns.The hazards are mitigated by:
+\begin{itemize}
+\item Engineering control:
+ \begin{itemize}
+ \item Connectors are covered with insulated material.
+ \item Magnet is grounded.
+ \item Electronic rack is grounded.
+% \item The power supplies are set to have a limit of 48 V.
+ \end{itemize}
+\item Administrative controls:
+ \begin{itemize}
+ \item Warning signs in front of the power supply and on the magnet wall.
+ \item Voltage to be used is not to exceed 48 V.
+ \end{itemize}
+\end{itemize}
+
+In addition, there is a hazard associated with magnetic field. The maximum
+magnetic field is 35 Gauss inside the magnet. A warning sign will be posted 
+around the target area. No person with pace maker will be allowed around the target area.
+
+The following personnel have received the proper training. They are the only ones authorized to operate the power supply and the magnets. Names may be added with authorization from the supervisor of the system (Jian-ping Chen,  x7413).
+
+\begin{namestab}{tab:polhel:personnel-magnet}{Polarized $^3$He target: personnel for working with the coils and power supplies}{%
+   Polarized $^3$He target: personnel authorized to operate the power supply 
+and
+the target magnets}
+   \JianPingChen{\em Contact}
+   \ChiranjibDutta{}
+   \JoeKatich{}
+   \YiQiang{}
+   \VinceSulkosky{}
+   \YiZhang{}
+\end{namestab}
+
+
+%Attached to the horizontal Helmholtz coils are two smaller sets of
+% coils.  These consist of 20 loops of 16 AWG wire attached to a 150 W
+% power supply.  This target occasionally has a problem with a
+% phenomena known as masing.  This is a loss of target polarization due
+% to coupling of the helium nuclei in their higher energy states (such
+% as during an NMR measurement) and a coil of wire (the pick-up coils,
+% a Rb ring, or some other source).  Masing can be easily identified
+% with EPR, and introducing a small field gradient generally makes it
+% disappear.  These coils are used to introduce that field gradient.
+%They can also be used to compensate for field gradient to minimize AFP
+%polarization loss.
 
 } % infolev
 \infolevone{
@@ -2788,13 +2842,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.16 2008/04/28 20:22:47 jpchen Exp $
-% $Id: pol-he3.tex,v 1.16 2008/04/28 20:22:47 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.17 2008/08/04 13:03:58 jpchen Exp $
+% $Id: pol-he3.tex,v 1.17 2008/08/04 13:03:58 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/04/28 20:22:47 $
+% $Date: 2008/08/04 13:03:58 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.17  2008/08/04 13:03:58  jpchen
+% added vertical coils
+%
 % Revision 1.16  2008/04/28 20:22:47  jpchen
 % pol-he3 corrections
 %
