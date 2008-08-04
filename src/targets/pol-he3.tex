@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.18 2008/08/04 13:50:20 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: J. P. Chen, earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
@@ -1363,7 +1363,6 @@ and
 the target magnets}
    \JianPingChen{\em Contact}
    \ChiranjibDutta{}
-   \JinHuang{}
    \JoeKatich{}
    \YiQiang{}
    \VinceSulkosky{}
@@ -1506,20 +1505,23 @@ electronics.
 
 \subsubsection{ The DC current}
 
-It is produced by the two Kepco power supplies. 
-One drives the large coils, and the other the small ones, as stamped 
-on their front panel. The output of each Kepco consists of four wires,
+
+The DC currents are produced by two Kepco and one Agilent power supplies
+One Kepco drives the large horizontal coils, and the other the small ones, 
+as stamped on their front panel. The Agilent drives the vertical coils.
+The output of each Kepco consists of four wires,
 two to lead the current, 
-and the two others used for sensing. The four output plugs are located
+and the two others used for sensing. The Agilent has two wires.
+The output plugs are located
 on the back panel of each power 
 supply which can only be reached through the back
 panel of the rack. The connections are protected by a plastic strip and
 can not be touched by hands. 
 In the hall, simple copper screws are used to connect those wires to the
 coils. They should never be 
-touched. The grounding of the system is achieved in the hall.  
+touched. The power supplies are connected to the ground of the hall.  
 
-\centerline {\bf How to turn the Kepco Power Supplies off in an
+\centerline {\bf How to turn the Power Supplies off in an
 emergency ?}
 
 \begin{enumerate}
@@ -1530,6 +1532,8 @@ pressing the on/off switch.
 \item Turn the Kepco power supplies off by setting the manual on/off
 switch to the off position. The digital 
 displays should turn off. 
+
+\item Turn the Agilent on/off switch to off. 
 
 \end{enumerate} 
 
@@ -1562,19 +1566,19 @@ should turn off and the needle should go back to the zero position.
 
 \end{enumerate} 
 
-\begin{table}[h]
-\begin{center}
-\caption{ \label{settings} {\it KEPCO settings} }\begin{tabular}[b]
-{|c|c|c|c|c|}
-\hline
-Orientation & KEPCO     & KEPCO     & KEPCO     & KEPCO \\
-            & 3 Voltage & 3 Current & 4 Voltage & 4 Current
-\\ \hline
-0 deg & 38.0 V & 7.1 A & 0.0 V & 0.0 A \\
-90 deg & 0.0 V & 0.0 A & 38.2 V & 7.2 A \\ \hline
-\end{tabular}
- \end{center}
-  \end{table}
+%\begin{table}[h]
+%\begin{center}
+%\caption{ \label{settings} {\it KEPCO settings} }\begin{tabular}[b]
+%{|c|c|c|c|c|}
+%\hline
+%Orientation & KEPCO     & KEPCO     & KEPCO     & KEPCO \\
+%            & 3 Voltage & 3 Current & 4 Voltage & 4 Current
+%\\ \hline
+%0 deg & 38.0 V & 7.1 A & 0.0 V & 0.0 A \\
+%90 deg & 0.0 V & 0.0 A & 38.2 V & 7.2 A \\ \hline
+%\end{tabular}
+% \end{center}
+%  \end{table}
 
 \end{safetyen}
 
@@ -2849,13 +2853,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.18 2008/08/04 13:50:20 jpchen Exp $
-% $Id: pol-he3.tex,v 1.18 2008/08/04 13:50:20 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $
+% $Id: pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/08/04 13:50:20 $
+% $Date: 2008/08/04 14:04:21 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.19  2008/08/04 14:04:21  jpchen
+% added new coils/power inf
+%
 % Revision 1.18  2008/08/04 13:50:20  jpchen
 % added new coils/power inf
 %
