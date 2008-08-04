@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.20 2008/08/04 16:11:58 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: J. P. Chen, earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
@@ -52,7 +52,7 @@ Fig.~\ref{fig:overview}.
 \centerline{\includegraphics[scale=0.6]{overview_may23}}
 \end{center}
 \caption[Overview of the polarized $^3$He target setup]%
-{Overview of the target setup. Shown are the laser hut, the
+{Overview of the target setup. Shown are the laser
 beam pipes covering the laser beam line extending to the target area,
 and the Helmholtz coils with the RF assembly and support sub-assembly. }
 \label{fig:overview}
@@ -69,7 +69,8 @@ Three sets of orthogonal Helmholtz coils provide the target spins with a
 holding magnetic field 
 of few tens of Gauss as well as define the orientation of the
 polarization in any required 
-direction. The set of vertical is a new addition and will be used for the first
+direction. The set of vertical coils
+is a new addition and will be used for the first
 time for the transversity experiment\cite{E06010}.
 
 \item
@@ -80,8 +81,8 @@ Paramagnetic
 Resonance (EPR) technique, as well as a way to flip target spin direction.
 
 \item
-A multi-purpose RF enclosure which holds the RF coils but more
-importantly is crucial for the
+A multi-purpose enclosure which is part of the laser light enclosure and
+provides a
 containment of the target cell in case of explosion. It also provides a
 containment volume for the
 $^4$He gas to cool the target windows with cooling jets, minimizing the
@@ -189,9 +190,14 @@ target are taken for spectrometer optics study or detector calibration.
 Since the BeO and the optics target are in beam at the same time, the above 
 two measurements are often performed at the same time.
 
+\item
+The ``hole'' target is in ``beam position''. The ``hole'' target is
+a signle $^{12}$C foil with a 1 mm square hole at the center. It is used for
+center the beam with respect to the target ladder.  
+
 \item 
 The target ladder ``Empty Target''
- frame is moved to ``beam position'' whenever
+frame is moved to ``beam position'' whenever
 beam tuning is performed, and when checking for possible beam halo
 background.
 
@@ -252,8 +258,8 @@ light, all laser systems are located in a laser room outside the hall.
 %supports all optics. The setup of the
 %polarizing optics is shown in Fig.~\ref{fig:laser_setup}. 
 
-Ten infrared diode lasers (five for each pumping direction) and 
-the related interlock control box are located on a 19" rack in the laser room.
+Up to 15 infrared diode lasers (five for each pumping direction) and 
+the related interlock control box are located on two 19" racks in the laser room.
 Light is guided out of each laser and 
 goes into the hall via an optical fiber.  
 Five beams combined to one with a 5-to-1 combiner. 
@@ -330,8 +336,8 @@ safety precautions (see Section 13 and Appendix A).
 %-----------------------
 \subsection{Diode Lasers \& Controls}
 
-The laser light for this experiment is provided by ten 30 Watt, 795
-nm solid-state diode lasers.  The ten primary lasers used during the
+The laser light for experiments is provided by multi (up to 15) 30 Watt, 795
+nm solid-state diode lasers.  The primary lasers used during the
 experiment are made by Coherent Semiconductor Inc. 
 The diode lasers consist of a main enclosure which contains the diode,
 power supplies, fans and control systems for the laser.  The laser
@@ -669,6 +675,10 @@ If the replacement of the cell follows the explosion of a previous
 target, a new $Q$ curve of the pickup coils should be measured. If the
 pickup coils have deteriorated, they should be replaced as well.
 
+\item
+Lasers should all be tunne off. Laser fibers be disconnected from the lasers
+and be lock-away following the lock-and-tag procedure.
+
 \item 
 Prepare the replacement target and, if necessary, a new set of
 pickup coils. Request Hall access from MCC, and wait for a member from
@@ -690,8 +700,7 @@ protection, a face shield and a pair of safety glasses
 during any access to the inside of the target enclosure.
 \end{safetyen}
 \item  
-Raise the target top assembly support and if necessary remove the
-scattering windows of the RF enclosure to provide sufficient
+Remove the side enclosure to provide sufficient
 access to the target.  
 \begin{safetyen}{10}{5}
 Monitor the radiation level close to the target
@@ -703,8 +712,8 @@ with a radiation safe work condition.
 Qualified personnel should proceed to replace the target and align it
 according to well defined reference lines of the target ladder. The
 motion of the target and the clearance between the pickup
-coils should be tested. When finished, the scattering windows of
-the RF enclosure should be put back in place. 
+coils should be tested. When finished,
+the enclosure should be put back in place. 
 
 \item 
 \begin{safetyen}{10}{5}
@@ -728,12 +737,13 @@ removed from the Hall after approval from RADCON.
 \subsection{Description}
 
 
-        The polarized $^3$He target system has four target positions:
+        The polarized $^3$He target system has five target positions:
 the actual polarized target cell, which can be replaced by a water
 cell for NMR calibration (see Section \ref{sec:nmr}), a solid
 BeO target inline with a seven-foil Carbon target for alignment and
-optics calibration, an empty target position that contains no target
-and allows the beam to pass undisturbed through the apparatus and 
+optics calibration, a ``hole'' target for alignment,
+an empty target position that contains no target
+and allows the beam to pass undisturbed through the apparatus, and
 a reference cell position (see Section \ref{sec:refcell}).
 These targets are mounted on a target ladder as shown in Fig.
 \ref{fig:tgtladder}.
@@ -748,11 +758,11 @@ These targets are mounted on a target ladder as shown in Fig.
 
         The target ladder can be positioned vertically using a  
 stepper-motor-driven motion control system.  The controller can drive the
-ladder to five different fixed positions, three of which correspond to
-the three targets, the fourth to the empty (no target) configuration,
-and the fifth to the position used for NMR measurements where the
-target cell is surrounded by the pick-up coils.  The total required
-vertical motion range is approximately 15\,cm.
+ladder to six different fixed positions, four of which correspond to
+the four targets, the fifth to the empty (no target) configuration,
+and the sixth to the position used for NMR measurements where the
+target cell is surrounded by the pick-up coils.  
+%The total required vertical motion range is approximately 15\,cm.
 
         The motion controller employed was developed at JLab and has been 
 used for previous experiments.
@@ -801,35 +811,33 @@ temporary masking of this FSD channel.
 \section{Target Enclosure \& Windows}
 
 The target is surrounded by an enclosure similar to a scattering chamber.
-The enclosure serves three purposes: First, it provides a
+The enclosure serves three purposes: First, it is part of the laser light 
+enclosure. Second, it provides a
 containment volume in case of explosion of the target cell and so limits
-the potential hazard working area.  Second, it holds the RF coils in a
-stable position and provides a strong frame for the support
-assembly. Third, it allows the region around the target to be filled
+the potential hazard working area. 
+Third, it allows the region around the target to be filled
 with helium gas, minimizing ionization and energy loss of the electron 
 beam crossing the target area.
 
-The enclosure is made of high density polyvinyl (HDPV) material and has 
-several removable
-windows.  The windows are of two types: The incident electron beam
-entrance and exit windows are 0.127 mm thick aluminum.
-The windows on the side of the chamber through which the scattered 
-particles pass are 2.54 mm thick aluminum.
+The enclosure is made of HDPV material and the middle section is removable
+for access to work in the target area.
 
 \begin{safetyen}{10}{5}
-If any windows are open, people working anywhere on the {\em target
-platform} must wear ear protection and a face shield. This region is
+If the middle section is open, people working anywhere on the {\em target
+platform} must wear ear protection and a face shield. Lasers should have been
+tuned off and fibers be locked away following the lock-and-tag procedure.
+This region is
 designated as the ``target area''.  Signs will be posted indicating
-that the windows are open and that work is in progress. If the windows
-are closed the target area is no longer restricted except for possible
+that the enclosure is open and that work is in progress. If the enclosure
+is closed the target area is no longer restricted except for possible
 reasons of radiation safety.
 \end{safetyen}
 
 The electron beam line is under vacuum and separate from
 the target enclosure for both upstream and down-stream of the target
-enclosure with the enclosure windows.  The beam inlet
-and outlet windows of the target enclosure are made of 0.127mm thick
-aluminum and are strong enough to stop any flying glass shreds in case
+enclosure with the enclosure windows.  The beam inlet and
+outlet windows of the target enclosure are made of 0.127mm and 0.254mm) 
+thick Be and are strong enough to stop any flying glass shreds in case
 of a target cell explosion.
 } % infolev
 %-----------------------------
@@ -2229,8 +2237,8 @@ flying material and loud noise if the gas panel or reference cell
 fails catastrophically under high pressure.  Of the two subsystems,
 the reference cell subsystem presents the greater hazard, both because
 it is more likely to fail, and because it is likely to be more
-dangerous if it does.  The RF enclosure is designed to contain all the debris
-in case of a cell explosion.
+dangerous if it does.  The target enclosure is designed to contain all the 
+debris in case of a cell explosion.
 
 
 \subsection{Hazard Mitigation }
@@ -2310,8 +2318,8 @@ is at least 150 degrees Celsius.
 \subsection{Fire Hazards and Safety}
 \label{sec:targ-polhelfire}
 
-The fire and safety in the laser hut is covered in the LOSP
-for the laser hut area,
+The fire and safety in the laser room is covered in the LOSP
+for the laser room,
 however, in the target area where the laser beam is directed, there is a
 case where a potential 
 fire hazard exists. 
@@ -2346,23 +2354,25 @@ beam pipes
 from the laser hut to the  target need to be removed. During this time
 period we
 will ensure that no other person except those people who are laser
-trained and qualified  for
-laser beam alignment are in the hall. This will be arranged by using a
+trained are in the hall. This will be arranged by using a
 controlled access 
 to the Hall provided by the CANS system.
 This alignment 
-will be performed only during the night time and (or) weekend. 
+will be performed usually during the night time and (or) weekend. 
 Clear warning signs will
 be posted  at the
-entrance of the Hall when the alignment is under progress.
+entrances of the Hall when the alignment is under progress.
 
 \item One period is during the setup of the high pressure target cell in
-its final position. 
+its final position, or when replace a target cell, or perform target related 
+work requiring opening the enclosure.
 In this case the ``target platform'' which is a natural perimeter around
 the target area 
  will be marked  and signs posted requiring the wearing of ear
 protection and
-faceshield. Beyond that defined perimeter all personnel working in the
+faceshield. Lasers should be tuned off and fibers be disconnected and locked 
+away following the lock-and-tag procedure.
+Beyond that defined perimeter all personnel working in the
 hall
 will not be affected in case of explosion of the cell if they are not 
 wearing  a faceshield. Nevertheless, it is strongly recommended to have 
@@ -2474,8 +2484,8 @@ Emission Bandwidth (FWHM)       & $\pm 2$ nm \\
 
 The optical setup is shown in Fig.~\ref{fig:laser_hall}, and is made of:
 \begin {itemize}
-\item Ten infra-red diode lasers (five for each pumping direction) 
-located on a rack in the laser room;
+\item Up to 15 infra-red diode lasers (five for each pumping direction) 
+located on two racks in the laser room;
 \item Fifteen long (75 m) optical fiber to transport laser beam from the lasers
 into the hall;
 \item Three 5-to-1 optical fiber combiners, one for each pumping direction;
@@ -2679,7 +2689,7 @@ nearest fire alarm. Then leave the hall.
 
 In case anybody is accidentally exposed to the laser beam (direct or indirect)
 without eye protection, he or she should immediately contact the Jefferson
-Lab medical center (Mary Gibson, phone: 7539, page: 584-7539). If it is 
+Lab medical center (phone: 7539, page: 584-7539). If it is 
 off business hours, please contact local hospital emergency. At the mean time,
 please inform the laser system superviser (Jian-ping Chen, phone: 7413,
 page: 584-7413) and/or laser safety officer (Bert Manzlak, phone: 7556,
@@ -2695,7 +2705,7 @@ and to the direct laser area. We will enumerate these controls here.
 yellow beacon indicating the presence of Class IV diode lasers. Danger
 sign will also be posted near the target enclosure area.
 \item A controlled access interlock system will limit the entrance to
-the laser hut with a coded number pad. The code is given only to the
+the laser room with a coded number pad. The code is given only to the
 authorized laser users listed in section 10 with currently valid
 training.
 \item The laser switches are interlocked to allow an opening of the
@@ -2709,7 +2719,7 @@ worn when the laser is operational.
 beam pipe or other enclosure (except during laser alignment process).
 \item All personnel need to fulfill the training requirements as
 indicated in Section 1 of this document.
-\item the LSOP will be posted on the outside door of the laser hut to
+\item the LSOP will be posted on the outside door of the laser room to
 inform personnel about the hazards associated with the setup and the
 proper procedures.
 \end {enumerate}
@@ -2785,10 +2795,10 @@ and authorized by Jian-Ping Chen, phone 7413 and
    \ChiranjibDutta{}
    \HaiyanGao{}
    \OleHansen{}
+   \JinHuang {}
    \JoeKatich{}
    \WolfgangKorsch{}
    \NilangaLiyanage{}
-   \KathyMcCormick{}
    \ZeinEddineMeziani{}
    \YiQiang{}
    \KarlSlifer{}
@@ -2831,6 +2841,7 @@ and authorized by Jian-Ping Chen, phone 7413 and
    Polarized $^3$He target: personnel authorized to change target cells}
    \JianPingChen{\em Contact}
    \ChiranjibDutta{}
+   \JinHuang {}
    \JoeKatich{}
    \YiQiang{}
    \VinceSulkosky{}
@@ -2842,6 +2853,7 @@ and authorized by Jian-Ping Chen, phone 7413 and
    Polarized $^3$He target: personnel authorized to perform laser alignment}
    \JianPingChen{\em Contact}
    \ChiranjibDutta{}
+   \JinHuang{}
    \JoeKatich{}
    \WolfgangKorsch{}
    \YiQiang{}
@@ -2853,13 +2865,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $
-% $Id: pol-he3.tex,v 1.19 2008/08/04 14:04:21 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.20 2008/08/04 16:11:58 jpchen Exp $
+% $Id: pol-he3.tex,v 1.20 2008/08/04 16:11:58 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/08/04 14:04:21 $
+% $Date: 2008/08/04 16:11:58 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.20  2008/08/04 16:11:58  jpchen
+% modification 08 runs
+%
 % Revision 1.19  2008/08/04 14:04:21  jpchen
 % added new coils/power inf
 %
