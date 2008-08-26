@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.23 2008/08/04 19:40:16 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.24 2008/08/26 20:06:00 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: J. P. Chen, earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
@@ -542,8 +542,7 @@ To turn a laser off:
 \end{itemize}
 
 Table \ref{tab:laserparam} lists the optimum parameter
-determined for the 30\,W lasers used in experiments E99-117 and E97-103
-in the summer of 2001.
+determined for the 30\,W lasers used in early experiments.
 
 \begin{table}[hbp]
 \begin{center}
@@ -2126,7 +2125,7 @@ The gas handling system consists of 8 solenoid-controlled,
 air-actuated valves, one hand-set needle valve, two baratron pressure
 gauges (0--1000 torr and 0--1000 psia), two pressure relief valves, a
 bottle of high-pressure $^3$He gas, a bottle of high pressure N$_2$
-gas, a bottle of high pressure $^{4}$He gas, an oil-free turbo pump
+gas, a bottle of high pressure H$_2$ gas, an oil-free turbo pump
 backed up by a pre-pump, and sufficient tubing and pipe fittings to
 connect them all together.  There are 5 basic actions that the gas
 handling system must accomplish; pump-out, vent, fill with H$_2$, N$_2$, or 
@@ -2408,11 +2407,11 @@ systems installed to protect personnel and equipment.
 \subsection{Personnel and Required Training}
 \label{sec:target-phe3-laser-train}
 
-The 30 watts infrared diode lasers (Coherent FAP-System) may only be operated by
+The 30 watts infrared diode lasers (Coherent FAP-System and Newport Comet lasers) may only be operated by
 personnel who have :
 \begin {itemize}
 \item completed a Laser Safety course administrated by the laser safety officers at
-Jefferson Laboratory (Patty Hunt).
+Jefferson Laboratory (Bert Manzlak).
 \item read the Laser Safety section of the EH\&S Manual(6410);
 \item  completed and passed an opthalmological exam;
 \item had a safety walkthrough by the Laser Safety Supervisor of the 
@@ -2437,8 +2436,10 @@ equipment due to electrical hazards.
 
 \subsection{Laser}
 
-The main Laser specifications are outlined in Table~\ref{tab:speclaser}. For more specific
-information, we refer to the Coherent FAP-system diode laser users manual, 
+The main Laser specifications are outlined in Table~\ref{tab:coherent} and
+Table~\ref{tab:Comet}. For more specific
+information, we refer to the Coherent FAP-system diode laser users manual
+and the Newport Comet diode laser manual, 
 which will be available in the lab.
 
 \begin{table}
@@ -2475,11 +2476,49 @@ Wavelength Temp Coefficient	& 0.27 to 0.30 nm/$^\circ$C \\
 Emission Bandwidth (FWHM)       & $\pm 2$ nm \\
 \hline
 \end{tabular}
-\label{tab:speclaser}
-\caption{Laser specifications}
+\label{tab:coherent}
+\caption{Coherent laser specifications}
 \end{center}
 \end{table}
 
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+& \\
+{\bf Specifications}&{\bf Newport Comet Diode Laser System} \\
+\hline
+& \\
+\underline {\it Operational Specifications}& \\
+Output power			& 25-30 W \\
+& \\
+\underline {\it Mechanical Specifications}& \\
+%Weight			        & <60 pounds  \\
+Cooling Requirements 		& None required \\
+Delivery Optical Fiber Bundle   & 0.4 mm diameter \\
+Delivery Fiber Length		& 1.0 meter nom.\\
+Delivery Fiber Termination	& SMA 905 conn. \\
+& \\
+\underline {\it Operational Specifications}& \\
+Operating Temperature   & $20^\circ$C to $35^\circ$C \\
+Storage Temperature     & $-30^\circ$C to $50^\circ$C \\
+Operating Humidity        & Non-condensing  \\
+& \\
+\underline {\it Electrical Specifications}& \\
+Input Power	                & 90-250 V, 50-60 Hz, 6 Amp max. \\
+& \\
+\underline {\it Optical Specifications}& \\
+Operating Cionditions 		& standard CW \\
+Beam Divergence        & 98% within 0.22 N. A. \\
+Diode Laser Center Wavelength   & 794.69 nm \\
+Temperature Tuning	& 0.005 nm/$^\circ$C \\
+Spectra Width (FWHM)       & <= 0.35 nm \\
+\hline
+\end{tabular}
+\label{tab:Comet}
+\caption{Comet laser specifications}
+\end{center}
+\end{table}
 
 \subsection{Optical setup}
 
@@ -2499,17 +2538,19 @@ each beam from linear polarization to right or left circular polarization;
 \item Three transparent windows 
 on the oven to allow the combined laser beams to pass through;
 \item One pumping cell to absorb all the laser beam power;
-\item One mirror and two optical fiber with lenses for EPR and spectral-analyzer;
+\item One mirror and three optical fibers with lenses for 
+spectral-analyzer and for EPR;
 \item One spectral-analyzer for monitoring the pumping cell.
 \end {itemize}
 
-For each pumping direction, five diode lasers will be used. After passing through the 75 m long fibers, they will be combined
+For each pumping direction, up to five diode lasers will be used. 
+After passing through the 75 m long fibers, they will be combined
 to be one beam with a 5-to-1 optical fiber combiner. The combined beam, after passing through two lenses,
 will be split into two beams. Each one will go through a $\lambda$/4 waveplate
 to transform linear polarization to circularly right or left polarization. 
 All beams, after passing some windows and being reflected by some mirrors,  
 will shoot into a glass pumping cell filled with
-mixture of Rb vapor and $^3$He gas. The laser beams will be mostly absorbed
+mixture of Rb-K vapor and $^3$He gas. The laser beams will be mostly absorbed
 by the pumping cell. The total path length from the output of 5-to-1 combiner 
 to the pumping cell
 is about 5 meters. The pumping cell is inside an oven and 
@@ -2544,23 +2585,32 @@ The normal Hazard Zone for the 30 Watts FAP system is $2.76 \times 10^3$ meters.
 
 The diode lasers and the associated devices will be located in the
 laser room outside Hall A.  The entire laser room is a
-laser controlled area. Laser beams go into the hall via long optical fibers
-and then combined to form desired polarized lights for optical pumping.
-The setup is shown in
-Fig.~\ref{fig:laser_hall}.
-
+laser controlled area (see Fig.~\ref{fig:laser_newroom}).
 
 \begin{figure}
 %  \begin{center}
-  \centerline{\includegraphics[width=\textwidth]{laser_hall}}
-  \caption[Polarized $^3$He Laser Setup]{The Polarized $^3$He Target Laser 
-Setup}
+  \centerline{\includegraphics[width=\textwidth]{laser_newroom}}
+  \caption[Polarized $^3$He Laser Room Layout]{The Polarized $^3$He Target 
+Laser Room Layout}
 %  \end{center}
    \label{fig:laser_hall} 
 \end{figure}
 
+Laser beams go into the hall via long optical fibers
+and then combined to form desired polarized lights for optical pumping.
+The setup is shown in Fig.~\ref{fig:optics_setup}.
 After passing through the optical setup, the laser beams 
 are directed into the pumping cell and terminated there. 
+
+\begin{figure}
+%  \begin{center}
+  \centerline{\includegraphics[width=\textwidth]{optics_setup}}
+  \caption[Polarized $^3$He Laser Optics Setup]{The Polarized $^3$He Target 
+Laser Optics Setup}
+%  \end{center}
+   \label{fig:optics_setup} 
+\end{figure}
+
 
 Outside the laser room, the laser beam path is completely enclosed with beam 
 pipe between the laser room and the target pivot and an enclosure on top of the 
@@ -2661,8 +2711,10 @@ When the target enclosure windows need to be opened (such as to inspect
 the target or to replace a 
 target cell) and the hall is not in laser controlled access, 
 the lasers must be turned off before opening the target enclosure.
-The keys for all of the laser power
-supplies will be secured in a lock box.  All staff working in the
+The 
+keys for all of the laser power supplies 
+optical fibers will be disconnected and the connection ends
+will be secured in a lock box.  All staff working in the
 vicinity of the target enclosure 
 must apply personal locks to this box in accordance with
 JLab lockout/tagout procedures.
@@ -2670,8 +2722,7 @@ The vicinity area will be determined
 from the power measurement and with clear danger sign posted.
 
 In case of the failure of any electromechanical or electrical or electronical device,
-the lasers and the other power supplies will be turned off and the out of order devices
-will be fixed by Coherent service personnel. The Laser power
+the lasers and the other power supplies will be turned off. The Laser power
 can simply be unplugged.
 
 
@@ -2823,6 +2874,7 @@ and authorized by Jian-Ping Chen, phone 7413 and
    \ChiranjibDutta{}
    \HaiyanGao{}
    \OleHansen{}
+   \JinHuang {}
    \JoeKatich{}
    \WolfgangKorsch{}
    \NilangaLiyanage{}
@@ -2866,13 +2918,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.23 2008/08/04 19:40:16 jpchen Exp $
-% $Id: pol-he3.tex,v 1.23 2008/08/04 19:40:16 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.24 2008/08/26 20:06:00 jpchen Exp $
+% $Id: pol-he3.tex,v 1.24 2008/08/26 20:06:00 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/08/04 19:40:16 $
+% $Date: 2008/08/26 20:06:00 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.24  2008/08/26 20:06:00  jpchen
+% update lsop
+%
 % Revision 1.23  2008/08/04 19:40:16  jpchen
 % change to a new overview fig
 %
