@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.28 2008/09/02 15:33:38 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: T. Averett, J. P. Chen, C. Dutta, Y. Qiang. earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
@@ -1618,7 +1618,7 @@ the lineshape of the
 EPR transition (Rb D2 line or K lines) light emitted from the cell as a function of applied
 frequency to the EPR coil. \\
 
-First, construct the  circuit described in Fig. \ref{fig1:epr} by
+First, construct the circuit described in Fig. \ref{fig1:epr} by
 following these steps:
 
 \begin{figure}
@@ -1632,14 +1632,14 @@ following these steps:
 
 \begin{enumerate}
 
-\item Position the PIN diode so that it looks directly at the light beam
-coming from the cell.  If pipe is used for guiding the light from the cell
-to where the PIN diode is located, you may need to adjust the focusing lenses
-within the pipe such that most of the light is collected and reaches the PIN 
-diode.
+\item 
+Position the EPR optical fiber so that it looks directly at the light beam
+coming from the cell.  Adjust and align the focusing lenses such that 
+most of the light is collected through the optical fiber
+and reaches the PIN diode.
 
 \item Measure PIN diode output, it should be a DC signal with an amplitude
-of -100 mV to -150 mV (could be as high as 230 mV).  
+of -100 mV to -150 mV (could be as high as -230 mV).  
 If the signal is less than -100mV, check the light and PIN diode again.
 
 \item Set Lock-in amplifier parameters:\\
@@ -1679,20 +1679,20 @@ DS345 'sync output' to Lock-in Amplifier 'ref in'.
 %\item Bypass the RF capacitor by setting the switch to 'EPR' 
 %on RF capacitor box front panel.
 
-\item Set the parameters for the function generator E4400
-FM: ON
-RF: ON
-Source:External DC
-Dev: 20 KHz and so on
-Gain: $-5$dB (but range is from 0 to $-10$ dB depending on the sintuation)
+\item Set the parameters for the function generator E4400:
+FM: ON,
+RF: ON,
+Source:External DC,
+Dev: 20 KHz,
+Gain: $-5$dB (range is from 0 to $-10$ dB depending on the sintuation),
 Frequency: 10 MHz to 24 MHz (you need to set the frequency limit according 
 to Rb or K resonance. At this monent this is controlled by the EPRFM.VI. 
-So dont have to worry about it.)
+So dont have to worry about it).
 
 \item Connect the RF output of E4400B to the RF amplifier and also to the A 
 input of the counter SR620.
 
-\item Do not connect the lock in back output to the INPUT of the PI box. Leave that INPUT OPEN.
+\item Do not connect the lock-in back output to the INPUT of the PI box. Leave that INPUT OPEN.
 
 \item Connect the OUTPUT of the PI box to the INPUT of the E4400.
 
@@ -1778,7 +1778,7 @@ Now that the circuit is in place, open the LabView program
 
 \item Set the Start Freq and stop frequency according to your wish .i.e. the range mentioned above.
 
-\item Set the step sizeto 0.01 MHz for a quick scan. Or 0.005 MHz for a 
+\item Set the step size to 0.01 MHz for a quick scan. Or 0.005 MHz for a 
 nominal scan.
 
 \item Set the lockin time constant to 100 or 200 ms (should try both).
@@ -1793,7 +1793,7 @@ larger depending on the signal.
 $-12$ dB otherwise the counter will not register signals).
 %You can use -2 dB as well.
 
-\item Lets just not care about the phase of the lock in now.
+\item Do not worry about the phase of the lock-in now.
 
 \item Set the modulator frequency to 100 Hz and the amplitude to 1.5 Vpp.
 
@@ -2007,26 +2007,30 @@ doing FM sweep.
 
 \item Open EPRAFP.VI
 
-\item RUN it. SET the DEFAULT parameters. Freq. 78 to 92 KHz. V\_rms to 0.8 V.
+\item RUN it. SET the DEFAULT parameters. Frequency 78 to 92 KHz. 
+V\_rms to 0.8 V.
 
 \item Set it to MANUAL or AUTO. If AUTO, SET the wait time to 15 sec/20 sec.
 
-\item POWER ON. You will see the frequency ( GREEN) in the first plot, frequency fluctuation in the second plot and lockin signal in the third plot. Just dont worry about those at this moment.
+\item POWER ON. You will see the frequency (GREEN) in the first plot, frequency fluctuation in the second plot and lockin signal in the third plot. Just dont worry about those at this moment.
 
-\item SET the Integration gain at knob to 1 first in the PI box. Usually between 1 to 2 should be okay. But you have to play around. ( The magic numbers we found is 1 to 1.2 for 100ms time constant and 1.5 to 1.7 for 200ms time constant)
+\item SET the Integration gain at knob to 1 first in the PI box. Usually between 1 to 2 should be okay. But you have to play around. (The magic numbers we found is 1 to 1.2 for 100ms time constant and 1.5 to 1.7 for 200ms time constant)
 
 \item TURN the INT GAIN ON in the PI box. You should see in the third plot 
 the lockin signal approaching $0 \pm 5$ mV is okay. If not, try to increase the INT GAIN slowly till you feel comfortable.
 
 \item WAIT for a couple of seconds.
   
-\item START SWEEP. You should hear a "click" and see a drop or rise in the frequency ("well" or "hat" shape) in the first plot.
+\item START SWEEP. You should hear a ``click'' and see a drop or rise in the frequency (``well'' or ``hat'' shape) in the first plot.
 
-\item If you are doing in MANUALLY, wait for 10 to 15 sec in that flipped state and hit "START SWEEP" again to get back to the original state. If you feel you need more data in that flipped state, wait for another 10 sec.
+\item If you are doing in MANUALLY, wait for 10 to 15 sec in that flipped state and hit ``START SWEEP'' again to get back to the original state. If you feel you need more data in that flipped state, wait for another 10 sec.
 
 \item Repeat the above two steps one more time or two.
 
-\item Make sure you end up in the original state. Then POWER OFF. SAVE the data 
+\item Make sure you end up in the original state. Then POWER OFF. SAVE the data. 
+\item \emph{Never stop the program during sweeping, this could cause the $^3$He
+ to stay at the wrong state and hence a big loss in target polarization. }
+
 \end{enumerate}        
 
 \begin{figure}
@@ -3037,13 +3041,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.28 2008/09/02 15:33:38 jpchen Exp $
-% $Id: pol-he3.tex,v 1.28 2008/09/02 15:33:38 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $
+% $Id: pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/09/02 15:33:38 $
+% $Date: 2008/09/02 16:25:32 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.29  2008/09/02 16:25:32  jpchen
+% epr section update
+%
 % Revision 1.28  2008/09/02 15:33:38  jpchen
 % epr section update
 %
