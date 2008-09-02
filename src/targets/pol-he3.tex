@@ -1,8 +1,8 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.26 2008/08/26 20:30:32 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.27 2008/09/02 15:08:39 jpchen Exp $ $
 }
-\footnote{Authors: Revised by: J. P. Chen, earlier versions: 
+\footnote{Authors: Revised by: T. Averett, J. P. Chen, C. Dutta, Y. Qiang. earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
 O. Hansen, S. Incerti, S. Jensen, M. G. Jones, K. Kramer, M. Liang, 
 N. Liyanange, K. McCormick, Z.-E. Meziani, X. Zheng.
@@ -1615,7 +1615,7 @@ Use this configuration when you wish only to find the Electron
 Paramagnetic Resonance (EPR) frequency,
 not actually track its position.  This method allows the user to observe
 the lineshape of the
-EPR transition (Rb D2 line) light emitted from the cell as a function of applied
+EPR transition (Rb D2 line or K lines) light emitted from the cell as a function of applied
 frequency to the EPR coil. \\
 
 First, construct the  circuit described in Fig. \ref{fig1:epr} by
@@ -1623,7 +1623,8 @@ following these steps:
 
 \begin{figure}
 \begin{center}
-\centerline{\includegraphics[scale=0.7]{eprfig1}}
+%\centerline{\includegraphics[scale=0.7]{eprfig1}}
+\centerline{\includegraphics[scale=0.7]{eprfm}}
 \caption{Circuit for EPR lineshape measurement}
 \end{center}
 \label{fig1:epr}
@@ -1638,8 +1639,8 @@ within the pipe such that most of the light is collected and reaches the PIN
 diode.
 
 \item Measure PIN diode output, it should be a DC signal with an amplitude
-of -100 mV to -150 mV.  If the signal is less than -100mV, check the light and 
-PIN diode again.
+of -100 mV to -150 mV (could be as high as 230 mV).  
+If the signal is less than -100mV, check the light and PIN diode again.
 
 \item Set Lock-in amplifier parameters:\\
 \indent    AC Gain:     50 dB;    \hspace{3.2cm}    Input Limit: 10 mV;\\
@@ -1657,95 +1658,170 @@ DS345 'sync output' to Lock-in Amplifier 'ref in'.
 
 \item Set PI circuit Integration off, make sure the input is disconnected.
 
-\item Set Wavetek 80 parameters:\\
-\indent Modulation Mode: \hspace{0.5cm} VCO;\\
-\indent Output: \hspace{2.3cm}  sine wave;\\
-\indent Operating mode: \hspace{0.8cm}  FUNC.\\
+% The following part is for when Wavetek 80 is used:
+%\item Set Wavetek 80 parameters:\\
+%\indent Modulation Mode: \hspace{0.5cm} VCO;\\
+%\indent Output: \hspace{2.3cm}  sine wave;\\
+%\indent Operating mode: \hspace{0.8cm}  FUNC.\\
+%
+%Be sure that the VCO indicator is lit.
+%(The VCO is used because it is very sensitive to small changes in voltage.  
+%At a carrier frequency of 10MHz, a 1mV input will produce a 400Hz shift 
+%in the output frequency.)
+%
+%\item Connect PI circuit output to Wavetek 80 VCO IN through an 100:1 
+%attenuator. Set the 100:1 attenuator switch to ``FMS'' (no attenuation). 
+%
+%\item Connect Wavetek 80 sync out to SR 620 Counter.  Connect  Wavetek 80 
+%output to the cable leading to the EPR coils.  Make sure that the Wavetek 80
+%output is not in standby mode. 
+%
+%\item Bypass the RF capacitor by setting the switch to 'EPR' 
+%on RF capacitor box front panel.
 
-Be sure that the VCO indicator is lit.
-(The VCO is used because it is very sensitive to small changes in voltage.  
-At a carrier frequency of 10MHz, a 1mV input will produce a 400Hz shift 
-in the output frequency.)
+\item Set the parameters for the function generator E4400
+FM: ON
+RF: ON
+Source:External DC
+Dev: 20 KHz and so on
+Gain: $-5$dB (but range is from 0 to $-10$ dB depending on the sintuation)
+Frequency: 10 MHz to 24 MHz (you need to set the frequency limit according 
+to Rb or K resonance. At this monent this is controlled by the EPRFM.VI. 
+So dont have to worry about it.)
 
-\item Connect PI circuit output to Wavetek 80 VCO IN through an 100:1 attenuator. 
-       Set the 100:1 attenuator switch to ``FMS'' (no attenuation). 
+\item Connect the RF output of E4400B to the RF amplifier and also to the A 
+input of the counter SR620.
 
-\item Connect Wavetek 80 sync out to SR 620 Counter.  Connect  Wavetek 80 output to 
-the cable leading to the EPR coils.  Make sure that the Wavetek 80
-output is not in standby mode. 
+\item Do not connect the lock in back output to the INPUT of the PI box. Leave that INPUT OPEN.
 
-\item Bypass the RF capacitor by setting the switch to 'EPR' 
-on RF capacitor box front panel.
+\item Connect the OUTPUT of the PI box to the INPUT of the E4400.
+
+\item Turn INT GAIN OFF.
+
+\item Turn the RF amplifier ON.
+
+\item Make sure you have exactly the same circuit as in the figure.
+
 \end{enumerate}
 
 
-Now that the circuit is in place, open the LabView program called ``FMSweep.vi'' (in windows-diagram).
-
+Now that the circuit is in place, open the LabView program
+%``FMSweep.vi''.
+``EPRFM.VI''.
 
 \begin{enumerate}
 
-\item  Input the start frequency for your sweep in the upper
-left of the screen.  At the start of
-pumping, the resonance frequency should be around the number given by
-this formula:
+%\item  Input the start frequency for your sweep in the upper
+%left of the screen.  At the start of
+%pumping, the resonance frequency should be around the number given by
+%this formula:
+%
+%EPR base resonance = (466000 * holding field in Gauss)
+%
+%Thus, your sweep should begin below and end above this number.
+%However the resonance frequency is different for different Rb polarization
+%directions 
+%in the pumping cell.  Typically with 25 Gauss holding field the starting 
+%sweep frequency is 11.1 MHz for right-handed light, 
+%or 11.5 MHz for left-handed light.  
+%
+%\item Input the voltage at which you will run the EPR coils.  Typically,
+%this is 8.0 Vpp, but it can go as high as 16.0 Vpp.
+%
+%\item Next, set the step to be 1KHz and the number of steps to be 500.
+%Keep in mind that the lineshape you are looking for is about 500kHz in
+%width. 
+%\item Set the number of points per sweep, as well as the sweep
+%duration.  Typically we take 2 points per sweep and 500ms for each point.
+%The maximum speed should not exceed two points per second. 
+%
+%\item
+%The program will automatically generate the data file to store the data, 
+%with a filename related to date and time the program is running.  However,
+%you can change the filename and path through the dialog bar located at the
+%right bottom corner.
+%
+%\item After all of the necessary data has been entered, the sweep may begin.  
+%To start the program, simply click on the white arrow in the upper
+%left corner of the screen.  You should be able to read the current Lock-in
+%signal amplitude and the EPR coil frequency from the screen.
+%
+%\item Under normal conditions,
+% in the plot of Lock-in signal vs. EPR coil frequency showed
+%by the program, you should find a dip followed by a peak, or vice versa.  
+%
+%\item You might need to adjust the Lock-in Amplifier phase. You can use
+%``auto-phase'' in reference channel menu or you can adjust it manually
+%as follows:
+%
+%When the program goes at the maximum of the peak (or mininum of the dip), 
+%check the Lock-in Amplifier phase by reading the X and Y signals from Lock-in
+%Amplifier front panel.  Since the LabView program only reads X channel, the 
+%phase should be adjusted such that X channel has a big signal while 
+%Y channel is roughly zero (or only consists noise).  If not, adjust the 
+%reference channel phase through the front panel menu of the Lock-in amplifier.
+%You don't need to stop the program to do it, it is easier to adjust phase
+%by checking the output of the running program simutaneously.  
+%After the phase is optimized, run the program again.
+%
+%Manual adjustment is useful when the signal is small compared to the 
+%background(cable resonance, noise etc.), where ``auto-phase'' will track the 
+%phase of the background.
+%
+%\item An EPR signal of amplitude higher than 25 $\mu$V extracted by FM Sweep
+%will be good enough to do the EPR polarization measurement.
+%
+%\item Once the measurement is done, disconnect the output of 
+%Wavetek 80 to the cable leading to RF coil.
 
-EPR base resonance = (466000 * holding field in Gauss)
+\item RUN it.
 
-Thus, your sweep should begin below and end above this number.
-However the resonance frequency is different for different Rb polarization
-directions 
-in the pumping cell.  Typically with 25 Gauss holding field the starting 
-sweep frequency is 11.1 MHz for right-handed light, 
-or 11.5 MHz for left-handed light.  
+\item Set the Start Freq and stop frequency according to your wish .i.e. the range mentioned above.
 
-\item Input the voltage at which you will run the EPR coils.  Typically,
-this is 8.0 Vpp, but it can go as high as 16.0 Vpp.
+\item Set the step sizeto 0.01 MHz for a quick scan. Or 0.005 MHz for a 
+nominal scan.
 
-\item Next, set the step to be 1KHz and the number of steps to be 500.
-Keep in mind that the lineshape you are looking for is about 500kHz in
-width. 
-\item Set the number of points per sweep, as well as the sweep
-duration.  Typically we take 2 points per sweep and 500ms for each point.
-The maximum speed should not exceed two points per second. 
+\item Set the lockin time constant to 100 or 200 ms (should try both).
 
-\item
-The program will automatically generate the data file to store the data, 
-with a filename related to date and time the program is running.  However,
-you can change the filename and path through the dialog bar located at the
-right bottom corner.
+\item Set the lockin sensitivity to 200 uV/ 500 uV/ 1mV nominal.
 
-\item After all of the necessary data has been entered, the sweep may begin.  
-To start the program, simply click on the white arrow in the upper
-left corner of the screen.  You should be able to read the current Lock-in
-signal amplitude and the EPR coil frequency from the screen.
+\item Set the FM dev to 20 KHz first. Later need to be adjusted and make it 
+larger depending on the signal. 
+%But you can start with 40 or 50 KHz as well.
 
-\item Under normal conditions,
- in the plot of Lock-in signal vs. EPR coil frequency showed
-by the program, you should find a dip followed by a peak, or vice versa.  
+\item Set the gain to $-5$ dB (might need to adjust later, but no less than 
+$-12$ dB otherwise the counter will not register signals).
+%You can use -2 dB as well.
 
-\item You might need to adjust the Lock-in Amplifier phase. You can use
-``auto-phase'' in reference channel menu or you can adjust it manually
-as follows:
+\item Lets just not care about the phase of the lock in now.
 
-When the program goes at the maximum of the peak (or mininum of the dip), 
-check the Lock-in Amplifier phase by reading the X and Y signals from Lock-in
-Amplifier front panel.  Since the LabView program only reads X channel, the 
-phase should be adjusted such that X channel has a big signal while 
-Y channel is roughly zero (or only consists noise).  If not, adjust the 
-reference channel phase through the front panel menu of the Lock-in amplifier.
-You don't need to stop the program to do it, it is easier to adjust phase
-by checking the output of the running program simutaneously.  
-After the phase is optimized, run the program again.
+\item Set the modulator frequency to 100 Hz and the amplitude to 1.5 Vpp.
 
-Manual adjustment is useful when the signal is small compared to the background
-(cable resonance, noise etc.), where ``auto-phase'' will track the phase of the 
-background.
+\item [START SWEEP].
 
-\item An EPR signal of amplitude higher than 25 $\mu$V extracted by FM Sweep
-will be good enough to do the EPR polarization measurement.
+\item Once you have the lineshape signal, [PLOT] it. Choose /select the linear 
+regions of both channels (X and Y). [FIT] with order 3 unless it is really 
+linear. Once you fit, take a look at the calculated PHASE (Just take a look, 
+nothing needs to be done).
 
-\item Once the measurement is done, disconnect the output of 
-Wavetek 80 to the cable leading to RF coil.
+\item [SET PARAMETER] and  click on [I KNOW I KNOW].
+
+\item [START SWEEP] again. This time you should see all the signal is in one 
+channel (X usually unless the program is broken) and you have the correct 
+phase.
+
+\item Repeat steps 9 to 11 again. In step 10, this time you probably 
+can use FIT ORDER 1.
+When you are done with the SET PARAMETER and I KNOW I KNOW, record the number 
+of turns for the gain in the PI box. Make sure that the overall gain we are 
+shooting for is $-0.5$. It is the default value in the VI . But if you find 
+its different, SET IT TO $-0.5$ and RECALCULATE the number of turns again. 
+This NUMBER OF TURNS in the PI gain is the heart of our measurement.
+
+\item Save the datafile if the data look reasonable to lock the signal in the 
+next AFP step. Usually K signals are larger than the Rb signal at a
+temperature of $\approx 230^\circ$C. Anything above 20 mV is good enough 
+for AFP.   
 
 \end{enumerate}
 
@@ -1781,142 +1857,185 @@ box to lock into the EPR resonance frequency and then track its
 behavior. With AFP spin-flip, a shift in EPR resonance frequency 
 will be measured, which is proportional to the pumping cell polarization.\\
 
-Construct the circuit described in Fig. \ref{fig2:epr}:
+Once you are done with the FM sweep and have the number for the turns for 
+the GAIN for the PI box, follow the procedure below to get the AFP sweep done.
+
+%First construct the circuit described in Fig. \ref{fig2:epr}:
 
 \begin{enumerate}
 
-\item First construct FM Sweep circuit described above.
+%\item First construct FM Sweep circuit described above.
+%
+%\item Connect Lock-in amplifier channel 1 output (from rear panel) to PI 
+%circuit 'in'.
+%
+%\item Switch the 100:1 attenuator from ``FMS (no attenuation)'' to 
+%``AFP (100:1)''.
+%\item Set Modulation source DS345 parameters:\\
+%\indent     Frequency: 200 Hz (This frequency is arbitrary.  200Hz is good 
+%since it is far away from most noise sources.)\\
+%\indent     Waveform:  sine wave
+%\item Set Wavetek 80 parameters:\\
+%\indent Amplitude: 8.0 V, higher amplitude will be needed if the signal 
+%extracted by FM Sweep is less
+%than 25 $\mu$V;\\
+%
+%\item Bypass the RF capacitor by setting the switch to 'EPR' 
+%on RF capacitor box front panel.
+%\end{enumerate}
+%
+%\begin{figure}
+%\begin{center}
+%\centerline{ \includegraphics[scale=0.7]{eprfig2}}
+%\caption{Circuit for EPR measurement with AFP spin flip}
+%\end{center}
+%\label{fig2:epr}
+%\end{figure}
+%
+%
+%Now that the circuit is built, you can begin the initialization of the
+%setup.
+%
+%\begin{enumerate}
+%
+%\item Set the modulation source DS345 amplitude to approximately 0.6 Vpp.  
+%This number can be optimized for different conditions such as different 
+%target polarization and EPR D2 signal amplitude.  At an EPR D2 signal amplitude
+%of 25 $\mu$V the optimized DS345 amplitude is roughly 0.05 Vpp for P$< 20\%$, 
+%between 0.05 and 0.6 Vpp for $20\%<$P$<40\%$, and 0.6 Vpp or higher for 
+%P$> 40\% $.
+%
+%\item Find the EPR resonance frequency:\\
+%
+%If you have done a FM Sweep measurement, then you already know the
+%EPR resonance frequency, continue to the next step.\\
+%
+%If you don't know where the resonance frequency is, you may want to do 
+%a FM sweep measurement, or you can 
+%find the current resonance frequency by hand,
+%To do this, 
+%\begin{itemize}
+%\item Temporarily remove the
+%connection to Vin on the PI feedback box, turn off the integration
+%function, set the 100:1 attenuator switch to ``FMS (short)''.  Now you are back to the FM Sweep circuit setup.
+%Manually adjust the Wavetek 80
+%frequency with the smallest step 0.01 MHz, 
+%while observing the lock-in.  Look in the area
+%given by the formula:                                                                                       
+%
+%EPR base resonance = (466000 * holding field in Gauss) 
+%
+%This is typically about 11MHz.
+%
+%\item You should be able to observe the lock-in signal changing 
+%when adjusting the frequency.  It should show a maximum ($>$0, peak) followed
+%by a minimum ($<$0, dip), or vice versa, and the resonance is between them
+%when the lock-in signal is small.  Keep in mind that the lock-in will
+%read zero when you are far from resonance
+%as well, so be sure to look for this characteristic resonance behavior. 
+%
+%\item Reconnect the Vin input, and
+%set the 100:1 attenuator switch from ``FMS (short)'' back to ``AFP (100:1)''.   
+%\end{itemize}
 
-\item Connect Lock-in amplifier channel 1 output (from rear panel) to PI circuit 'in'.
+%\item Set the Wavetek 80 frequency
+%to be 0.1 MHz lower than the current resonance frequency if the light is
+%right-handed polarized, or 0.15 MHz lower than the current resonance frequency 
+%if the light is left-handed polarized.
+%The lock-in signal should be large since you are not at the resonance frequency.
+%
+%\item Turn on the integration on the PI feedback box.
+%
+%\item Observe the Vout of PI circuit on an oscilloscope.  If it is ``jumping
+%around'' erratically, or looks as if the  Opamps have been saturated, you
+%must adjust the gains.  The best advice
+%is to begin with the relative gain, and if this does not rectify the
+%problem, move on to the absolute gain. 
+%Basically, adjust these parameters such that the feedback signal is not too strong,
+%neither too weak. \\
+%
+%\item Once this is done, the circuit should track
+%the resonance frequency and the counter reading should change towards it.  The lock-in
+%signal should be stablized to minimum.   
+%
+%\item Wait until the counter reading is stablized, change Wavetek frequency manually
+%by 0.01 MHz.  You can observe a jump of 0.01 MHz in counter reading, but then
+%it should change back to the resonance frequency, which means the circuit is following
+%the resonance.  If not, then the frequency
+%it was stablized before is not the true resonance frequency, check the circuit and
+%try again.
+%
+%\item Once this is done, the circuit
+%should take care of itself.  Left alone, it will track the movement of
+%the resonance peak.
+%\end{enumerate}        
+%
+%To measure the shift in resonance frequency due to AFP spin-flip, 
+%open the LabView program AFPSweep.vi.  Enable the program by clicking
+%on the large white arrow in the upper left corner of the panel.
+%
+%\begin{enumerate} 
+%\item Set the sweeping time to be 6 seconds and the waiting time to be 20 seconds.  
+%Set the number of sweeps to be 2.
+%\item Run the program.
+%\item Download parameters by clicking the corresponding button, you should read 
+%``downloading parameters'' on the program status dialog.
+%\item Wait until the program status shows ``waiting for data taking to start''.
+%\item Start data taking by clicking the ``pause :: run'' button.  Now the program 
+%should read resonance frequency from counter, and the lock-in amplifier signal.  
+%The program status should show ``waiting for sweep trigger''.
+%\item Wait for roughly 20 seconds, start sweeping by clicking on the ``start
+%sweeping'' button. The program status should show ``sweeping...''.
+%\item You should then be able to see the jump in resonance frequency.  When the light
+%is right-handed polarized, this should be a positive jump, while for left-handed
+%light it is negative.
+%\item After the sweeping is completed, wait until the program status shows ``waiting 
+%for sweep trigger'', now you can stop the program.
+%
+%\item Disconnect the output of Wavetek 80 to the cable leading to RF coil.
+%
+%\item \emph{Never stop the program during sweeping, this will cause the $^3$He
+% to stay 
+%at the wrong state and hence a big loss in target polarization. }
 
-\item Switch the 100:1 attenuator from ``FMS (no attenuation)'' to 
-``AFP (100:1)''.
-\item Set Modulation source DS345 parameters:\\
-\indent     Frequency: 200 Hz (This frequency is arbitrary.  200Hz is good 
-since it is far away from most noise sources.)\\
-\indent     Waveform:  sine wave
-\item Set Wavetek 80 parameters:\\
-\indent Amplitude: 8.0 V, higher amplitude will be needed if the signal extracted by FM Sweep is less
-than 25 $\mu$V;\\
+\item Refer to the circuit diagram. Start from the configuration as you were 
+doing FM sweep.
 
-\item Bypass the RF capacitor by setting the switch to 'EPR' 
-on RF capacitor box front panel.
-\end{enumerate}
+\item Connect the lockin output from the back of the lockin to the INPUT of the PI box.
+
+\item SET the GAIN to the number you have got from the FM sweep vi.
+
+\item Open EPRAFP.VI
+
+\item RUN it. SET the DEFAULT parameters. Freq. 78 to 92 KHz. V\_rms to 0.8 V.
+
+\item Set it to MANUAL or AUTO. If AUTO, SET the wait time to 15 sec/20 sec.
+
+\item POWER ON. You will see the frequency ( GREEN) in the first plot, frequency fluctuation in the second plot and lockin signal in the third plot. Just dont worry about those at this moment.
+
+\item SET the Integration gain at knob to 1 first in the PI box. Usually between 1 to 2 should be okay. But you have to play around. ( The magic numbers we found is 1 to 1.2 for 100ms time constant and 1.5 to 1.7 for 200ms time constant)
+
+\item TURN the INT GAIN ON in the PI box. You should see in the third plot 
+the lockin signal approaching $0 \pm 5$ mV is okay. If not, try to increase the INT GAIN slowly till you feel comfortable.
+
+\item WAIT for a couple of seconds.
+  
+\item START SWEEP. You should hear a "click" and see a drop or rise in the frequency ("well" or "hat" shape) in the first plot.
+
+\item If you are doing in MANUALLY, wait for 10 to 15 sec in that flipped state and hit "START SWEEP" again to get back to the original state. If you feel you need more data in that flipped state, wait for another 10 sec.
+
+\item Repeat the above two steps one more time or two.
+
+\item Make sure you end up in the original state. Then POWER OFF. SAVE the data 
+\end{enumerate}        
 
 \begin{figure}
 \begin{center}
-\centerline{ \includegraphics[scale=0.7]{eprfig2}}
+\centerline{ \includegraphics[scale=0.7]{eprafp}}
 \caption{Circuit for EPR measurement with AFP spin flip}
 \end{center}
 \label{fig2:epr}
 \end{figure}
-
-
-Now that the circuit is built, you can begin the initialization of the
-setup.
-
-\begin{enumerate}
-
-\item Set the modulation source DS345 amplitude to approximately 0.6 Vpp.  
-This number can be optimized for different conditions such as different 
-target polarization and EPR D2 signal amplitude.  At an EPR D2 signal amplitude
-of 25 $\mu$V the optimized DS345 amplitude is roughly 0.05 Vpp for P$< 20\%$, 
-between 0.05 and 0.6 Vpp for $20\%<$P$<40\%$, and 0.6 Vpp or higher for 
-P$> 40\% $.
-
-\item Find the EPR resonance frequency:\\
-
-If you have done a FM Sweep measurement, then you already know the
-EPR resonance frequency, continue to the next step.\\
-
-If you don't know where the resonance frequency is, you may want to do 
-a FM sweep measurement, or you can 
-find the current resonance frequency by hand,
-To do this, 
-\begin{itemize}
-\item Temporarily remove the
-connection to Vin on the PI feedback box, turn off the integration
-function, set the 100:1 attenuator switch to ``FMS (short)''.  Now you are back to the FM Sweep circuit setup.
-Manually adjust the Wavetek 80
-frequency with the smallest step 0.01 MHz, 
-while observing the lock-in.  Look in the area
-given by the formula:                                                                                       
-
-EPR base resonance = (466000 * holding field in Gauss) 
-
-This is typically about 11MHz.
-
-\item You should be able to observe the lock-in signal changing 
-when adjusting the frequency.  It should show a maximum ($>$0, peak) followed
-by a minimum ($<$0, dip), or vice versa, and the resonance is between them
-when the lock-in signal is small.  Keep in mind that the lock-in will
-read zero when you are far from resonance
-as well, so be sure to look for this characteristic resonance behavior. 
-
-\item Reconnect the Vin input, and
-set the 100:1 attenuator switch from ``FMS (short)'' back to ``AFP (100:1)''.   
-\end{itemize}
-
-\item Set the Wavetek 80 frequency
-to be 0.1 MHz lower than the current resonance frequency if the light is
-right-handed polarized, or 0.15 MHz lower than the current resonance frequency 
-if the light is left-handed polarized.
-The lock-in signal should be large since you are not at the resonance frequency.
-
-\item Turn on the integration on the PI feedback box.
-
-\item Observe the Vout of PI circuit on an oscilloscope.  If it is ``jumping
-around'' erratically, or looks as if the  Opamps have been saturated, you
-must adjust the gains.  The best advice
-is to begin with the relative gain, and if this does not rectify the
-problem, move on to the absolute gain. 
-Basically, adjust these parameters such that the feedback signal is not too strong,
-neither too weak. \\
-
-\item Once this is done, the circuit should track
-the resonance frequency and the counter reading should change towards it.  The lock-in
-signal should be stablized to minimum.   
-
-\item Wait until the counter reading is stablized, change Wavetek frequency manually
-by 0.01 MHz.  You can observe a jump of 0.01 MHz in counter reading, but then
-it should change back to the resonance frequency, which means the circuit is following
-the resonance.  If not, then the frequency
-it was stablized before is not the true resonance frequency, check the circuit and
-try again.
-
-\item Once this is done, the circuit
-should take care of itself.  Left alone, it will track the movement of
-the resonance peak.
-\end{enumerate}        
-
-To measure the shift in resonance frequency due to AFP spin-flip, 
-open the LabView program AFPSweep.vi.  Enable the program by clicking
-on the large white arrow in the upper left corner of the panel.
-
-\begin{enumerate} 
-\item Set the sweeping time to be 6 seconds and the waiting time to be 20 seconds.  
-Set the number of sweeps to be 2.
-\item Run the program.
-\item Download parameters by clicking the corresponding button, you should read 
-``downloading parameters'' on the program status dialog.
-\item Wait until the program status shows ``waiting for data taking to start''.
-\item Start data taking by clicking the ``pause :: run'' button.  Now the program 
-should read resonance frequency from counter, and the lock-in amplifier signal.  
-The program status should show ``waiting for sweep trigger''.
-\item Wait for roughly 20 seconds, start sweeping by clicking on the ``start
-sweeping'' button. The program status should show ``sweeping...''.
-\item You should then be able to see the jump in resonance frequency.  When the light
-is right-handed polarized, this should be a positive jump, while for left-handed
-light it is negative.
-\item After the sweeping is completed, wait until the program status shows ``waiting 
-for sweep trigger'', now you can stop the program.
-
-\item Disconnect the output of Wavetek 80 to the cable leading to RF coil.
-
-\item \emph{Never stop the program during sweeping, this will cause the $^3$He
- to stay 
-at the wrong state and hence a big loss in target polarization. }
-\end{enumerate}        
 
 \subsection{Common Problems}
 
@@ -2522,7 +2641,7 @@ Spectra Width (FWHM)       & $\le 0.35$ nm \\
 
 \subsection{Optical setup}
 
-The optical setup is shown in Fig.~\ref{fig:laser_hall}, and is made of:
+The optical setup is shown in Fig.~\ref{fig:optics_setup}, and is made of:
 \begin {itemize}
 \item Up to 15 infra-red diode lasers (five for each pumping direction) 
 located on two racks in the laser room;
@@ -2918,13 +3037,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.26 2008/08/26 20:30:32 jpchen Exp $
-% $Id: pol-he3.tex,v 1.26 2008/08/26 20:30:32 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.27 2008/09/02 15:08:39 jpchen Exp $
+% $Id: pol-he3.tex,v 1.27 2008/09/02 15:08:39 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/08/26 20:30:32 $
+% $Date: 2008/09/02 15:08:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.27  2008/09/02 15:08:39  jpchen
+% update EPR section
+%
 % Revision 1.26  2008/08/26 20:30:32  jpchen
 % update lsop
 %
