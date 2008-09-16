@@ -1,8 +1,9 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.30 2008/09/16 19:28:51 jpchen Exp $ $
 }
-\footnote{Authors: Revised by: T. Averett, J. P. Chen, C. Dutta, Y. Qiang. earlier versions: 
+\footnote{Authors: Revised by: T. Averett, J. P. Chen, C. Dutta, J. Katich,
+Y. Qiang. earlier versions: 
 T. Black, J. P. Chen, P. Chevtsov, H. Gao, 
 O. Hansen, S. Incerti, S. Jensen, M. G. Jones, K. Kramer, M. Liang, 
 N. Liyanange, K. McCormick, Z.-E. Meziani, X. Zheng.
@@ -28,7 +29,7 @@ Recently,a noval technique of hybrid pumping has been used.
 In addition to the direct spin exchange, it also happens indirectly for the 
 hybrid Rb-K cells: spin-excahnge first happens between rubidium and potassium atoms 
 (very fast) and 
-then between potassium atoms and and $^3$He nuclei, which is more efficient 
+then between potassium atoms and $^3$He nuclei, which is more efficient 
 than the direct Rb-$^3$He spin exchange.
 The target cell contains high pressure $^3$He gas and a small amount of
 vapor of Rb-K mixture. 
@@ -1400,201 +1401,207 @@ masing effect.
 \section{NMR Polarimetry}
 \label{sec:nmr}
 
-This guide explains briefly how to perform safely an NMR AFP sweep on the
-polarized $^{3}$He target. Please, refer to Fig. \ref{fig:nmr}  
-showing the target setup and explaining the angle conventions. Longitudinal 
-or parallel field configuration is named if the holding field is pointing 
-towards 0$^{\circ}$, {\it i.e.\/} 
-along the incident electron momentum direction. 
+This guide explains briefly how to perform safely an NMR AFP sweep on
+the polarized $^3$He target. Figure.~\ref{fig:NMR_topview}
+shows the target setup and explaining the angle conventions of the
+polarized target system. 
+%Longitudinal field configuration is named if the holding field is
+%pointing along the incident electron momentum direction. 
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[angle=0,width=.95\textwidth]{./figure/coil_setup.eps}
+    \caption{Top view of the coils used in the $^3$He target
+      setup. The combinations of the 3 pairs of Helmholtz coils power
+      the main holding field to either longitudinal, transverse or
+      vertical directions while 3 lines of lasers are available as well
+      in these three directions to polarize the target.
+      The two sets of RF coils are needed to flip the target spin for
+      NMR and EPR measurements with different setups field direction.
+      Four pairs of NMR pick up coils are used during the flips to
+      read out the polarization strength. Two of the pairs are located
+      below the beam line to measure the NMR signal from upstream and
+      downstream part of the target chamber. The other two of the pairs
+      are fixed in the target oven to measure the NMR signal from the
+      pumping chamber.}
+    \label{fig:NMR_topview}
+  \end{center}
+\end{figure}
 
 \subsection{NMR polarization measurement}
 
+An automatic NMR measurement will be performed every time when the
+target spin gets flipped. Each of these measurement includes:
 \begin{itemize}
-\item{Turn off the lasers, rotate the magnetic holding
-field to the parallel configuration (if the field is in transverse or vertical 
-mode).}
-\item{Make sure the target is in the Helium 3 (beam) position.}
-\item{Make sure you are in the parallel field configuration.}
-\item{Run the NMR Record Settings panel. Make sure you get the print out.}
-\item{Run the Current Monitoring panel. Print it at the end.}
-\item{Call MCC and tell them you are going to move the target down to 
-the pick-up coils to measure its polarization. When the target is masked, 
-move the target down to the pick-up coils.}
-\item{Print the RTD screen from the HAC X terminnal.}
-\item{Run the NMR Measurement panel and print it when completed.}
-\item{Move the target back to its beam position.}
-\item{Call MCC, tell them you have measured the polarization 
-and that the target is back to its beam position. 
-Be sure to follow the beam back procedure before sending 
-the beam back to the target (beam position, raster on with 
-a radius setting  $r=2\ $mm, current less than 15 $\mu$A)}
-\item{Run the NMR Extract Polarization panel and print it.}
-\item{Staple the plots together and store them in the target binder.}
+  \item AFP flip of $^3$He triggered by RF frequency sweep;
+  \item Laser polarization change by rotating Q-wave plates;
+  \item NMR data recording and automatic polarization calculation;
+  \item Spin state determination;
+  \item Automatic log entry.
 \end{itemize}
 
-\begin{figure}
-\begin{center}
-\centerline{\includegraphics[scale=0.8]{coils_new}}
-\caption[Top view of the longitudinal and transverse Helmholtz coils]%
-{Top view of the longitudinal and transverse Helmholtz coils
-used in the polarized $^3$He target setup. 
-The RF coils are needed to perform NMR as well as EPR measurements. The
-0$^{\circ}$ angle gives the incident electron
-beam direction. The
-dashed lines indicate the coils main axis, the long bold 
-arrow indicates the holding field direction which can be 
-rotated from 0$^{\circ}$
-to 360$^{\circ}$. We also show the laser beam
-longitudinal and transverse directions.}
-\label{fig:nmr}
-\end{center}
-\end{figure}
-
-\subsection{Plots to print}
-
-For every NMR measurement, print :
-
+For a manual NMR measurement, it has the following steps:
 \begin{itemize}
-\item{NMR Record settings panel (will be printed by the Vi)}
-\item{NMR Measurement panel (print it at the end of the sweep)}
-\item{NMR Extract Polarization panel (print it when completed)}
-\item{RTD temperatures screen (print it from the X terminal)}
+\item Turn OFF the lasers (optional).
+\item Make sure the target is in the Helium 3 (beam) position.
+\item Make sure the correct RF coil is connected to the
+  impedance match box output: use Longitudinal RF coil for
+  Transverse or Vertical polarization and use Vertical RF coil for
+  Longitudinal polarization.
+\item Make sure corresponding impedance is selected in the impedance
+  match box.
+\item Turn ON the NMR RF amplifier.
+\item Make sure the Pumping chamber Lock in amplifier get the signal
+  from correct pick up coil: use Vertical pickup coil for Transverse
+  polarization and use Transverse pickup coil for Vertical or 
+  Longitudinal polarization.
+\item Make sure the coil current and oven temperature readings are normal.
+\item Call MCC to mask the beam and make sure the target is masked
+  before doing anything further. 
+  In case NMR signals from target chamber are wanted (only for
+  Vertical and Longitudinal polarization), move the target down to the 
+  pick-up coils.
+\item Run the NMR Measurement VI.
+\item Load appropriate parameters by clicking ``Load Default'' button.
+\item Start NMR Measurement.
+\item Check result and submit log entry by inputing required info.
+\item Exit the NMR VI.
+\item Move the target back to beam position if previously moved to
+  pickup coil position.
+\item Call MCC, tell them you have measured the polarization and that 
+  the target is back to its beam position. 
+  Be sure to follow the beam back procedure before sending the beam
+  back to the target (beam position, raster ON and beam current.)
+%\item Staple the plots together and store them in the target binder.
 \end{itemize}
 
-Staple the four plots together and store them in the target binder.
+%\subsection{Plots to print}
+%For every NMR measurement, print :
+%\begin{itemize}
+%\item NMR Record settings panel (will be printed by the Vi)
+%\item NMR Measurement panel (print it at the end of the sweep)
+%\item NMR Extract Polarization panel (print it when completed)
+%\item RTD temperatures screen (print it from the X terminal) 
+%  Staple the four plots together and store them in the target binder.
+%\end{itemize}
 
 \subsection{Warnings}
-
 \begin{itemize}
-\item{Never stop a running LabVIEW Vi}
-\item{Never put CW beam on the target without raster}
-\item{Every target operator must read and sign the Target Operation and Safety 
-Procedure}
-\item{If the target ruptures, turn OFF the lasers immediately}
-\item{The lasers must be off before rotating the holding field}
-\item{We indicate on Table \ref{settings} the voltage and 
-current values for each KEPCO.}
+\item Never stop a running LabVIEW VI (Normally you can't but don't try
+  to hack it);
+\item Never put CW beam ON the target without raster;
+\item Every target operator must read and sign the Target Operation 
+  and Safety Procedure;
+\item If the target ruptures, turn OFF the lasers immediately;
+\item The lasers must be OFF before rotating the holding field;
+\item Do not manually change the voltage of the HP6675A;
+\item We indicate on Table~\ref{tab:coil_ps} the voltage and current 
+  values for each coils power supply.
 \end{itemize}
 
-\begin{figure}
-\begin{center}
-\centerline{\includegraphics{electronics_may14}}
-\caption{The electronics is located in
-the Counting House A.}
-\end{center}
-\label{fig2:electronics_new}
-\end{figure}
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      Coil & Radius (m) & Turns & Power Supply & $I_{Max}$ (A)
+      & $V_{Max}$ (V) \\
+      \hline
+      Small & 0.667 & 256 & KEPCO & 10 & 35 \\
+      \hline
+      Large & 0.758 & 272 & KEPCO & 10 & 35 \\
+      \hline
+      Vertical & 0.946 & 203 & HP6675A & 18 & 49 \\
+      \hline
+    \end{tabular}
+    \caption{Maximum condition of the power supplies during $^3$He
+      target system operation (35 Gauss).}
+    \label{tab:coil_ps}
+  \end{center}
+\end{table}
 
-\begin{figure}
-\begin{center}
-\centerline{\includegraphics[scale=0.75]{NMR_system}}
-\caption[Cabling of the NMR system]%
-{Description of the cabling of the NMR system.
-10 cables go from the counting house to the target location
-in the hall : 8 (main+sensing) ESSEX AWG 10 for
-the Helmholtz coils, 1 RG58A/U for the RF coils and 1 RG58A/U for the
-pick-up coils.}
-\end{center}
-\label{fig3:cabling}
-\end{figure}
-
-\begin{safetyen}{10}{5}
-\subsection{NMR AFP Safety }
-
+\subsection{NMR AFP Safety}
 The NMR AFP system provides the DC current in the holding coils (up to
-10 A) and the AC current in the RF 
-coils (usually 1 A rms) of the target setup. Any human contact with the
-wires could be fatal and should 
-therefore be avoided. All the electronic devices and the PC used
-to sweep are located in the Counting House A.
-Refer to Fig.~\ref{fig2:electronics_new} for a description of the
-electronics.
+18~A) and the AC current in the RF coils (usually 1~A rms) of the
+target setup.
+Any human contact with the wires could be fatal and should therefore
+be avoided. 
+The electronic devices and the PC used to sweep are located in the 
+Counting House and Hall A. Refer to Fig.~\ref{fig:ch_layout} and 
+Fig.~\ref{fig:NMR_setup} for a description of the electronics.
+\begin{figure}
+  \begin{center}
+    \includegraphics[angle=0,width=.95\textwidth]{./figure/ch_layout.eps}
+    \caption{The electronics located in the Hall A Counting House.}
+    \label{fig:ch_layout}
+  \end{center}
+\end{figure}
 
-\subsubsection{ The DC current}
+\begin{figure}
+  \begin{center}
+    \includegraphics[angle=0,width=.95\textwidth]{./figure/Target_System.eps}
+    \caption{Complete diagram of Hall A $^3$He target system.}
+    \label{fig:NMR_setup}
+  \end{center}
+\end{figure}
 
+\subsubsection{The DC current}
+The DC currents are produced by two KEPCO and one Agilent power
+supplies located in a rack behind the green wall in Hall A. 
+One KEPCO drives the large horizontal coils, and the other
+drives the small ones, as stamped on their front panel.
+The Agilent drives the vertical coils. The output of each KEPCO
+consists of four wires, two to lead the current, and the two others 
+used for sensing. The Agilent has two wires.
+The output plugs are located on the back panel of each power supply 
+which can only be reached through the back panel of the rack. 
+All connections are protected either by plastic strips or covers and 
+can not be touched directly by hands.
+At the coil end, simple metal screws are used to connect those wires 
+to the coils. The connections to the horizontal coils are wrapped by
+electric tape and the connections to the vertical coils are shielded
+by shrink tubes. They should never be touched while power is ON.
+All power supplies are grounded to the ground of the hall.
 
-The DC currents are produced by two Kepco and one Agilent power supplies
-One Kepco drives the large horizontal coils, and the other the small ones, 
-as stamped on their front panel. The Agilent drives the vertical coils.
-The output of each Kepco consists of four wires,
-two to lead the current, 
-and the two others used for sensing. The Agilent has two wires.
-The output plugs are located
-on the back panel of each power 
-supply which can only be reached through the back
-panel of the rack. The connections are protected by a plastic strip and
-can not be touched by hands. 
-In the hall, simple copper screws are used to connect those wires to the
-coils. They should never be 
-touched. The power supplies are connected to the ground of the hall.  
-
-\centerline {\bf How to turn the Power Supplies off in an
-emergency ?}
-
+\subsubsection{How to turn the Power Supplies OFF in an emergency?}
 \begin{enumerate}
+\item Turn the Function Generators SRS DS345 OFF (one for each coil) 
+  by pressing the ON/OFF switch.
+\item Turn the KEPCO power supplies OFF by setting the manual ON/OFF 
+  switch to the OFF position. The digital displays should turn OFF.
+\item Turn the Agilent ON/OFF switch to OFF.
+\end{enumerate}
 
-\item Turn the Function Generators SRS DS345 off (one for each Kepco) by
-pressing the on/off switch.
+\subsubsection{The AC current}
+It is produced by the AG Series Power Amplifier located at the bottom 
+of the right rack in counting house. 
+When it is running, the power switch is set to the
+ON position, the yellow LED is steady and the display shows loaded
+power above zero. 
+The AC current comes out from the BNC OUTPUT plug, goes through a 
+current monitor (looks like a small toroid) and finally goes to the 
+RF coils. 
+In the hall, the cable is connected to the RF coils along the RF
+mounting using simple connectors with screws. 
+Those are protected by electrical black tape. 
+They should never be touched when the RF Power Amplifier is running. 
+The grounding of the system is provided by the RF Power Amplifier.
 
-\item Turn the Kepco power supplies off by setting the manual on/off
-switch to the off position. The digital 
-displays should turn off. 
-
-\item Turn the Agilent on/off switch to off. 
-
-\end{enumerate} 
-
-\subsubsection{ The AC current}
-
-It is produced by the EIN RF Power Amplifier located at the bottom of
-the same rack. When 
-it is running, the manual switch is set to the ON position, the red LED
-is steady and the needle on the display is
-above zero. The AC current comes out from the BNC OUTPUT plug, goes
-through a current monitor (looks like a small
-toroid) and finally goes to the RF coils. In the hall, the cable is
-connected to the RF coils along the RF
-mounting using simple connectors with screws. Those are protected by
-electrical black tape. They should never be
-touched when the RF Power Amplifier is running.  The grounding of the
-system is provided by the RF Power Amplifier.
-
-\centerline {\bf How to turn the RF Power Amplifier off in an emergency
-?}
-
+\subsubsection{How to turn the RF Power Amplifier OFF in an emergency?}
 \begin{enumerate}
+\item Turn the Function Generator HP 3324A connected to the RF Power 
+  Amplifier OFF.
+\item Turn the RF Power Amplifier OFF by setting the power ON/OFF 
+  switch to the OFF position. 
+  All LEDs should turn OFF.
+\end{enumerate}
 
-\item Turn the Function Generator HP 33120A connected to the RF Power
-Amplifier off.
-
-\item Turn the RF Power Amplifier off by setting the manual ON/OFF
-switch to the OFF position. The red LED 
-should turn off and the needle should go back to the zero position. 
-
-\end{enumerate} 
-
-%\begin{table}[h]
-%\begin{center}
-%\caption{ \label{settings} {\it KEPCO settings} }\begin{tabular}[b]
-%{|c|c|c|c|c|}
-%\hline
-%Orientation & KEPCO     & KEPCO     & KEPCO     & KEPCO \\
-%            & 3 Voltage & 3 Current & 4 Voltage & 4 Current
-%\\ \hline
-%0 deg & 38.0 V & 7.1 A & 0.0 V & 0.0 A \\
-%90 deg & 0.0 V & 0.0 A & 38.2 V & 7.2 A \\ \hline
-%\end{tabular}
-% \end{center}
-%  \end{table}
-
-\end{safetyen}
-
-Detailed description of the NMR system is contained in the 
-following technical note by S. Incerti: {\it The NMR system of the Hall A
-polarized Helium 3 target}, JLab-TN-98-049. A copy of this note is included
-in the target 
-binder in the Hall A counting house.
+Detailed description of the NMR system is contained in the Hall A wiki
+page:
+http://hallaweb.jlab.org/wiki
+%following technical note by S. Incerti: The NMR system of the Hall A 
+%polarized Helium 3 target, JLab-TN-98-049.
+%A copy of this note is included in the target binder in the Hall A 
+%counting house.
 
 } % infolev
 
@@ -2205,8 +2212,8 @@ reference target cell, the gas handling system, and the control
 electronics.  The reference target cell is mounted inside the target
 enclosure, which is located in the beam path immediately upstream of
 the spectrometers.  The gas handling system consists of a gas
-manifold, which is located in the electronics rack behind the laser
-hut, and a series of gas lines that connect the manifold to the
+manifold, which is located in the electronics rack near passageway under 
+beam line, and a series of gas lines that connect the manifold to the
 reference cell. A control box consisting of electronics that control
 the solenoid valves of the gas system is also located in the
 electronics rack.  A remote control box, identical to the one in the
@@ -2228,7 +2235,7 @@ or N$_2$ gas at high pressure
 (typically $\approx 10$~atm).  The system
 may be operated either locally (at the panel) or remotely (via
 switches mounted in the counting house).  A switch on the
-gas panel itself allows one to toggle between local and remote
+remote gas panel itself allows one to toggle between local and remote
 control.  All switches, local and remote, are equipped with LED
 displays so that one can readily determine the status of any switch.
 
@@ -2244,12 +2251,12 @@ special coupling tool has been designed to facilitate the
 coupling/de-coupling the reference cell at the quick-plug-on gas
 joint.
 
-The gas handling system consists of 8 solenoid-controlled,
+The gas handling system consists of 7 solenoid-controlled,
 air-actuated valves, one hand-set needle valve, two baratron pressure
 gauges (0--1000 torr and 0--1000 psia), two pressure relief valves, a
 bottle of high-pressure $^3$He gas, a bottle of high pressure N$_2$
-gas, a bottle of high pressure H$_2$ gas, an oil-free turbo pump
-backed up by a pre-pump, and sufficient tubing and pipe fittings to
+gas, a bottle of high pressure H$_2$ gas, an oil-free MD pump
+backed up by a backing pump, and sufficient tubing and pipe fittings to
 connect them all together.  There are 5 basic actions that the gas
 handling system must accomplish; pump-out, vent, fill with H$_2$, N$_2$, or 
 fill with $^3$He. 
@@ -2269,11 +2276,11 @@ Table~\ref{tab:refcell}.
 \hline\hline
 Condition & Action & Valves activated (open) \rule[-2.5mm]{0mm}{7mm}\\
 \hline
-C1 & {\bf Evacuate} & V1+V4+V5+V6 \\
-C2 & {\bf Vent} & V4+V5+V6+V7 \\
-C3 & {\bf $\bf ^3$He fill} & V3+V4+V6 \\
-C4 & {\bf N$\bf _2$ fill } & V2+V4+V6 \\
-C5 & {\bf H$\bf _2$ fill } & V2+V4+V6+V8 \\
+C1 & {\bf Evacuate} & V1+V4+V5 \\
+C2 & {\bf Vent} & V4+V5+V7 \\
+C3 & {\bf $\bf ^3$He fill} & V3 \\
+C4 & {\bf N$\bf _2$ fill } & V2+V4+V5 \\
+C5 & {\bf H$\bf _2$ fill } & V4+V5+V8 \\
 \hline\hline
 \end{tabular}
 \caption{Action of the remote-control switch panel}
@@ -3041,13 +3048,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $
-% $Id: pol-he3.tex,v 1.29 2008/09/02 16:25:32 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.30 2008/09/16 19:28:51 jpchen Exp $
+% $Id: pol-he3.tex,v 1.30 2008/09/16 19:28:51 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/09/02 16:25:32 $
+% $Date: 2008/09/16 19:28:51 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.30  2008/09/16 19:28:51  jpchen
+% update NMR section
+%
 % Revision 1.29  2008/09/02 16:25:32  jpchen
 % epr section update
 %
