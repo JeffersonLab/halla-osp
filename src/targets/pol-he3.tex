@@ -1,6 +1,6 @@
 \chapter[Polarized $^3$He Target]{Polarized $^3$He Target
 \footnote{
-  $CVS~revision~ $Id: pol-he3.tex,v 1.34 2008/09/17 15:56:09 jpchen Exp $ $
+  $CVS~revision~ $Id: pol-he3.tex,v 1.35 2008/09/22 21:09:39 jpchen Exp $ $
 }
 \footnote{Authors: Revised by: T. Averett, J. P. Chen, C. Dutta, J. Katich,
 Y. Qiang. earlier versions: 
@@ -436,6 +436,55 @@ During the experiment the lasers will be controlled remotely through
 %      to Fig.~\ref{fig:laser_setup}. If not, you need to do bench test first to 
 %      find the axises of each half wave plate.
 \end{enumerate}
+
+\medskip
+\noindent
+{\bf{With 5-to-1 combiner}}
+The basic procedure is the same for alignment. But couple of special
+steps need to be considered.
+
+\begin{itemize}
+\item Since the 5-->1 combiner gives out 5 spots, we have to merge those
+spots finally at the position of the cell. In practice, first we need to
+overlap all the spots as much as efficiently on the oven window so that
+most of the or "all" of the light go through it to hit the cell.
+
+\item We run UNRAT.vi to simulate the situation in this case because we use
+two lenses now unlike the usual condition. The first lens has the focal
+length 8.3 cm as usual and the second lens has a focal length of 75cm. The
+simulation approximately gives you the relative distance of the first lens
+from the fiber tip and also the distance of the second lens from the fiber
+tip.
+
+\item With these numbers in hand, we have to place the lens and play around a
+little bit to see whether all the 5 spots coming through the first lens
+actually incident within the second lens. This needs some "playing"
+because in real world, we have to make sure that all the spots after
+coming out from  the second lens "really" pass through the all the optics
+component.
+
+\item Now the alignment procedure is basically the same once we have the
+spots within all the optics components. In practice, once we fix the
+distance between the fiber and the first lens and make sure the spot size
+looks fine on that first lens, we dont usually touch those anymore. All we
+adjust is the second lens and other components as mentioned in the usual
+steps for alignent.
+
+\item Sometimes we saw from our experience that when all the five spots when
+incident on the second lens , hit the edge of the lens retainer in the
+frame. Sometimes it is not easy to avoid it becasue of the size of the
+length. In that case, we just have to make sure that all the 5 spots are
+symmetric w.r.t the center of the lens and the small portion hitting the
+edge is just from the hallow of all the spots. That should be okay. One
+can make all the spots really small to go through the lens, but in order
+to adjust the outcoming spot to go through the beam splitter completely ,
+one has to make compromise a little bit to make those larger and make the
+hallow  hitting the edge.
+
+\item Once we adjust these two lenses, the rest is the same as mentioned
+earlier for the alignemnt.
+
+\end{itemize}
 
 \medskip
 \noindent
@@ -3053,13 +3102,16 @@ and authorized by Jian-Ping Chen, phone 7413 and
 
 
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.34 2008/09/17 15:56:09 jpchen Exp $
-% $Id: pol-he3.tex,v 1.34 2008/09/17 15:56:09 jpchen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/pol-he3.tex,v 1.35 2008/09/22 21:09:39 jpchen Exp $
+% $Id: pol-he3.tex,v 1.35 2008/09/22 21:09:39 jpchen Exp $
 % $Author: jpchen $
-% $Date: 2008/09/17 15:56:09 $
+% $Date: 2008/09/22 21:09:39 $
 % $Name:  $
 % $Locker:  $
 % $Log: pol-he3.tex,v $
+% Revision 1.35  2008/09/22 21:09:39  jpchen
+% update alignment
+%
 % Revision 1.34  2008/09/17 15:56:09  jpchen
 % minor update
 %
