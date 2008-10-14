@@ -1,9 +1,9 @@
 \chapter[RICH]{RICH
 \label{sec:rich}
 \footnote{
-  $CVS~revision~ $Id: rich.tex,v 1.5 2008/04/22 01:44:55 camsonne Exp $ $
+  $CVS~revision~ $Id: rich.tex,v 1.6 2008/10/14 13:54:36 camsonne Exp $ $
 }
-\footnote{Authors: B.Reitz \email{reitz@jlab.org}, A. Camsonne \email{camsonne@jlab.org}}
+\footnote{Authors: B.Reitz \email{reitz@jlab.org}, A. Camsonne \email{camsonne@jlab.org},E. Cisbani\email{evaristo.cisbani@iss.infn.it} }
 }
 
 \section{Purpose and Layout} 
@@ -56,7 +56,7 @@ an anode wire plane in front of the pads,
  forming a MWPC (Multi Wire Proportional Chamber). 
 While the anode wires collect the electron avalanche, the counterpart 
 ions are collected by clusters of pads, each of which is connected to the
-input channel of multiplexed sample-and-hold electronics, housed on the
+input channel of multiplexed track-and-hold electronics, housed on the
 back of the pad plane.
 At the end of this process, the
 clusters of pads hit by the photons should be
@@ -79,23 +79,23 @@ Table \ref{rich_list.tab} presents a detailed list of the RICH components.
   \begin{tabular}{ll} 
     \\
     \hline 
-    RICH size        & $50\times 210 \times 50$~cm$^3$ \\
+    RICH size        & $90\times 210 \times 40$~cm$^3$ \\
     Optics           & proximity focusing \\
     Radiator         & 15 mm of liquid freon (C$_6$F$_{14}$) $n=1.28$\\
     Quartz window    & 5 mm, $n=1.56$ \\
     Position detector& MWPC, with one cathode of pads,
-                       size: $1920\times403$~mm$^2$,
+                       size: $2015\times646$~mm$^2$,
                        anode\\ 
-                     &  wire pitch: 4.2 mm, anode-cathode gap: 2 mm,
+                     &  wire pitch: 4. mm, anode-cathode gap: 2 mm,
                        amplification gas:\\ 
                      & CH$_4$ at STP, operating voltage: 2 kV \\
-    Pad surface      & 3 pad planes, 
+    Pad surface      & 5 pad planes, 
                        $630\times400$~mm$^2$ each;
-                       11520 pads, $8\times8.4$~mm each\\
+                       19200 pads, $8.4\times8$~mm each\\
     Photon converter & 300~nm of CsI coating the pad surface \\
     Electronics      & analog, charge sensitive sample
-                       and hold, 11520 channels\\
-                     &  multiplexed into 48 ADCs \\
+                       and hold, 19200 channels\\
+                     &  multiplexed into 40 ADCs \\
     \hline
   \end{tabular}
   \end{center}
@@ -300,7 +300,7 @@ different modules in the CAEN CRATE. The channels for the RICH are in
 module 2. Clicking on this button brings up the status screen of the 
 HV module. The RICH uses channel 16 for the anode wires and channel
 17 for the shield wires in front of the radiator. They should be at
-roughly 2100~V and 250~V. The current is typically very low (less
+roughly $+2100$~V and $+250$~V. The current is typically very low (less
 than 0.1~uA). If the HV trips the alarm should be cleared,
 and then one can try to turn the chamber back on (go to the 
 Module 2 controls screen). The ramp-up rate is low and it takes
@@ -407,7 +407,7 @@ smoking, open flames, or any operation nearby which generates sparks.
 Another important precaution is to prevent any mixing of methane with air or 
 oxygen.
 The detector (including all plumbing inside the shield hut) holds less 
-than  150 l of gas. 
+than 250 l of gas (old RICH: 78 l, new RICH 169 l). 
 This leads to the following $Q_{RICH}$ value:  
 $V_{Rich}$ is the  
 volume of the detector, 
@@ -417,12 +417,12 @@ to that of hydrogen:
  
 \begin{equation} 
 Q_{RICH} = V_{rich} \; \rho_{methane} \; X_{methane} 
-= 0.15 \mbox{m}^3 \; 0.668 \frac{\mbox{kg}}{\mbox{m}^3} \; 0.39 \; = \; 0.04 \; \mbox{kg}
+= 0.25 \mbox{m}^3 \; 0.668 \frac{\mbox{kg}}{\mbox{m}^3} \; 0.39 \; = \; 0.07 \; \mbox{kg}
 \end{equation} 
  
 This is in addition to the $Q_{hadron}$-value for the hadron detector stack (which is 
 the one installed in the left detector hut). According to \cite{HazardCalc} $Q_{hadron}=0.15$~kg.
-This leads to a total $Q = Q_{RICH} + Q_{hadron} = 0.19$~kg hydrogen equivalent, 
+This leads to a total $Q = Q_{RICH} + Q_{hadron} = 0.22$~kg hydrogen equivalent, 
 implying an unchanged Risk Class 0. Precautions relevant to this class are already 
 implemented in the procedures for the Hall A shield hut \cite{Hawgswww}. Only the 
 additional measures for the RICH gas system are listed here:
@@ -498,8 +498,8 @@ properly routed. Care must be taken to ensure this is not the case.
 provides up to 3~kV of low current power.
 RG-59/U~HV~cables, certified for up to 5~kV, with standard SHV 
 connectors are used to connect the power supply to the RICH detector.
-The anode wire plane is typically operated at 2100~V, the 
-drift electrode plane at 250~V.
+The anode wire plane is typically operated at $+2100$~V, the 
+drift electrode plane at $+250$~V.
 Before installing the HV cables and before applying the HV the 
 LV cables have to be installed, and the grounding of the detector 
 has to be ensured. The HV shall only be turned on after the 
@@ -534,7 +534,7 @@ RICH: authorized personnel.}
  \AlexandreCamsonne{\it Contact}
  \JackSegal{Gas and Freon System}
  \BrianKross{Freon System}
- \MauroIodice{}
+ \EvaristoCisbani{}
  \FrancescoCusanno{}
 \end{namestab}
 
