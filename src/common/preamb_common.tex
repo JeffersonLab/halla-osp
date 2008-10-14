@@ -91,8 +91,8 @@
 \usepackage{comment}
 \usepackage{ifthen}
 \usepackage{changebar}
-% \usepackage{url}
-\usepackage{html,hthtml}
+\usepackage{url}
+% \usepackage{html,hthtml}
 
 \oddsidemargin=0.25in 
 \evensidemargin=0.25in 
@@ -106,16 +106,16 @@
 \newcommand{\obsolete}[1]{}%
 \newcommand{\myhtml}[1]{}%
 
-\begin{htmlonly}
-  \usepackage{graphicx}
-%  \usepackage{epsf}
-  \DeclareGraphicsExtensions{.eps,.epsi,.ps}
-  \def\makeglossary{}
-  \pagecolor[named]{White}
-
-% -  Define the environments for different information levels (lev=0 - no special environment)
-
-\end{htmlonly}
+%\begin{htmlonly}
+%  \usepackage{graphicx}
+%%  \usepackage{epsf}
+%  \DeclareGraphicsExtensions{.eps,.epsi,.ps}
+%  \def\makeglossary{}
+%  \pagecolor[named]{White}
+%
+%% -  Define the environments for different information levels (lev=0 - no special environment)
+%
+%\end{htmlonly}
 
 
 \newenvironment{safetyen}[2]%  SAFETY environment
@@ -133,13 +133,16 @@
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}
  
 % ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/common/preamb_common.tex,v 1.6 2004/12/08 17:27:27 gen Exp $
-% $Id: preamb_common.tex,v 1.6 2004/12/08 17:27:27 gen Exp $
+% $Header: /group/halla/analysis/cvs/tex/osp/src/common/preamb_common.tex,v 1.7 2008/10/14 18:12:58 gen Exp $
+% $Id: preamb_common.tex,v 1.7 2008/10/14 18:12:58 gen Exp $
 % $Author: gen $
-% $Date: 2004/12/08 17:27:27 $
+% $Date: 2008/10/14 18:12:58 $
 % $Name:  $
 % $Locker:  $
 % $Log: preamb_common.tex,v $
+% Revision 1.7  2008/10/14 18:12:58  gen
+% Removed unsupported html.sty. html is not used anyway
+%
 % Revision 1.6  2004/12/08 17:27:27  gen
 % minor changes before review
 %
