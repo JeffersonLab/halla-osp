@@ -12,6 +12,8 @@ Camsonne	 Alexandre     JLab	5064 camsonne@jlab.org
 Cates            Gordon          UVA
 Chen             Jian-Ping      JLab 
 Chudakov         Eugene         JLab
+Cisbani		 Evaristo	INFN
+Cusano		 Francesco	INFN
 Colombel         Nathalie        CEA   8350  ncolombel@Cea.Fr
 Curtis           Christopher    JLab
 Cusanno          Francesco      INFN    
@@ -36,6 +38,7 @@ Gougnaud         Francois        CEA
 Hansen           Ole            JLab 
 Higgins          Scott          JLab 
 Higinbotham      Douglas        JLab
+Huang            Jin		MIT
 Jiang            Xiaodong      Rutgers
 Iodice           Mauro          INFN
 Katich           Joe            CWM
