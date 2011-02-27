@@ -1,0 +1,275 @@
+%
+% Update 20 February 2008
+%	- referenced old OSP
+%       - added note about hand held field measurement units
+%
+% Update 15 December 2005
+%
+% 	- changed LCW pressure from 50 psi to 100 psi
+%       
+%       - changed wording in \subsection{Energizing the BigBite Magnet}
+%         to clarify what should be done if there is an unauthorized
+%         entry or a hazard noted
+%
+
+%--- Description of components
+
+\chapter[BigBite Magnet]{BigBite Magnet
+\footnote{Author: D. W. Higinbotham \email{doug@jlab.org}}
+}
+
+\section{Overview}
+The BigBite magnet, the key component to several Hall~A approved experiments, was 
+commissioned to 550~A under TOSP PHY-04-014 and subsequently to 
+800~A under TOSP PHY-05-015. 
+The purpose of this document is to describe the hazards 
+and safety procedures for operating this magnet.  These procedures include running 
+the magnet during an experiment and making field measurements.  
+The BigBox power supply being used with BigBite was commissioned during 
+Hall A experiment E99-114 (TSOP PHY-02-003) and this document presents 
+the same procedures for safely operating the supply.  
+This BigBite dipole magnet document is an update to the expired OSP PHY-05-001
+and OSP PHY-08-002. 
+under which the BigBite dipole was run for the past several years.
+This document does not attempt to describe the function or operation of the dipole or
+power supply. 
+
+\section{Description of Magnet}
+
+Hall~A BigBite experiments will make use of a large-acceptance dipole magnet 
+to deflect charged particles into the various BigBite detector packages.  
+The BigBox power supply will be used to energize this magnet.  
+The power supply has previously been tested and was successfully 
+used during the Hall~A RCS experiment (E99-114).
+The control software of the supply runs from the HAC computer with the BigBox GUI.  
+The first BigBite experiment (E01-015) ran the magnet at an excitation 
+of 0.92~T which required 518~A with the maximum current limited to
+550~A.  Subsequently, after the successful completion of a high current 
+commissioning under TOSP PHY-05-015, the limited was raised to 800~A.
+
+\section{Authority and Responsibility}
+
+\subsection{BigBox Power Supply}
+
+Only authorized personnel may enable the power supply as per the operating
+guidelines described in Section~\ref{guideline-commissioning}.  To become authorized one must:
+
+\begin{itemize}
+
+\item{Read and understand this document.}
+
+\item{Read and understand Chapter 6440 of the Jefferson Lab EH\&S Manual on Static Magnet Fields.}
+
+\item{Complete JLab Lock and Tag Training (SAF104)}
+
+\item{Complete NFPA-70E Electrical Safety Training (SAF603)}
+
+\item{Complete training on power supply operation by authorized Hall A technical staff.}
+
+\item{Obtain an authorizing signature from the BigBite contact person, Douglas Higinbotham, on the
+attached signature sheet.}
+
+\end{itemize}
+
+\subsection{Energizing the BigBite Magnet}
+
+Once the BigBox power supply has been enabled, the BigBite magnet can either be
+controlled locally or with the BigBox GUI.
+Shift workers will only be allowed to control the magnet via the BigBox GUI and only after
+they have read and signed the COO of the experiment for which they are taking shift.  
+One shall immedately turn off the magnet via the BigBox GUI or locally at the BigBox supply 
+if someone unauthorized and/or unknown is seen entering the magnet area or any hazard, e.g. leaking low conductivity water,
+is identified.
+
+\subsection{Magnetic Field Measurements}
+
+With the written permission of the Hall~A work coordinator, physics users may make field measurements of the
+area around the magnet.
+The guidelines for safely performing these
+measurements can be found in Section~\ref{guideline-mapping}.  
+During these measurements, the current to the magnet may be changed using the BigBox GUI.
+Once the measurements have been completed, authorized personnel secure the system 
+as per Section~\ref{off}.
+
+\section{Location of Equipment}
+
+All required equipment is located in Hall A.  During operation, the BigBite magnet 
+will be located near the pivot area and the BigBox power supply is
+located near the Hall A control racks.
+
+\section{Hazard Analysis}
+
+The hazards associated with the magnet and power supply are electrical, magnetic, and fire.
+
+\noindent{\textbf{Electrical:}}	The power supply has a maximum output current of 1050~A 
+at a voltage of 250~V and thus presents a potentially lethal hazard.  
+A hazard also arises from the power bus on the magnet itself. 
+
+\noindent{\textbf{Magnetic:}}	The magnet produces a central field of 0.92~T at 518~A.  
+As the magnet has a return yoke and a front field clamp, the external field is much smaller 
+than the central field.   Although the magnetic field is primarily confined to the magnet 
+gap, fringe fields are strong enough to accelerate unsecured metal objects in the vicinity of
+the magnet.  In addition these fields may present a particularly large hazard 
+to individuals using a pacemaker.
+An additional hazard arises due to the close proximity of the magnet to the target area where
+an unsecured metal object could destroy the scattering chamber.
+
+\noindent{\textbf{Fire:}}  There exists a potential fire hazard with high current power supplies.  
+\section{Hazard Mitigation}
+
+\noindent{\textbf{Electrical:}}
+Access to the power supply or magnet can only be made after following
+``Lockout/Tagout Procedures'' 
+as described in Chapter 6110 of the Jefferson Lab EH\&S manual and the {\it{Hall~A power
+supply test and maintenance}} safety procedure.  
+When working on
+the power supply, the responsible people will follow the guidelines in the 
+electrical safety chapter of the EH\&S manual.  
+Before being energized, the magnet's exposed current bus must be covered
+to mitigate the shock hazard.
+The power supply bus must be covered and all doors secured.
+Also, to keep the current of the BigBite magnet within operational limits, 
+the over-current circuit in the BigBox power supply should be set to
+no more than 800~A.  
+
+\noindent{\textbf{Magnetic:}}
+The possible presence of high magnetic fields will be 
+indicated by standard Jefferson Lab signs and by a 
+flashing beacon.  The area surrounding the magnet will be 
+roped off whenever it is possible that the magnet
+will be energized.  The ropes will be at a distance from the 
+magnet such that the fringe fields are less than
+500~{$\mu$}T (5~G) at the maximum allowed current of 800~A.  
+This should be roughly one meter, but should be checked as soon as
+possible once the magnet has been energized.  Personnel with ferromagnetic 
+implants and those wearing 
+electronic medical devices are not allowed inside the roped off area.  
+Due to the large magnet gap size, personnel
+working inside the roped-off area should be aware of the possible presence of a magnetic fringe field, as well as
+a high field in the magnet gap.  
+
+\noindent{\textbf{Fire:}}
+The magnet coils are protected from over-heating by 
+Klixon devices installed on the magnet and interlocked to the power supply that will shut off the
+power supply in case of the coil over-heating.
+
+\section{Operating Guidelines}
+
+
+\subsection{Testing the BigBite Magnet After Installation}
+\label{guideline-commissioning}
+
+Once the BigBite magnet has been installed and connected to the BigBox power supply, it should be
+tested to ensure that it is working properly.  
+
+\begin{itemize}
+\item{At least two qualified persons must be working on the task together.}
+\item{Rope off the area around the magnet.}
+\item{Install protective covers as needed over the target windows and the spectrometer
+sieve slit.  Check with the Hall~A work coordinator to ensure proper covers are used.}
+\item{Sweep the area inside the ropes for magnetic material.  Make sure that the area is clean,
+and that no foreign objects are in or near the aperture of the magnet or the inside of the stay-clear zone.
+All such materials must be removed and placed outside of the ropes.}
+\item{Make sure all protective barricades, signs and beacons are in place to warn of possible exposure 
+to magnetic and electrical hazards.}
+\item{Verify all covers on energized conductors on the magnet are securely in place.}
+\item{Verify all power supply doors and cabinets are closed and locked.}
+\item{Check that the cooling water is turned on.  Valves on the magnet and on individual cooling paths must all
+be open.}
+\item{Verify that water flow is present.  The flow switches on the supply and return lines must be open and the 
+the supply pressure must be verified to be 50~psi greater than the return pressure.}
+\item{Turn on the flashing beacons.}
+\item{Remove the administrative lock on the power supply disconnect switch.  Make sure the Jefferson Lab's
+Lockout/Tagout procedures, as described in Chapter 6110 of the Jefferson Lab EH\&S manual are followed.
+Make sure your Lockout/Tagout training is up-to-date, you have been trained on the operation of the power
+supply and magnet and that you have been authorized by Douglas Higinbotham.}
+\item{Enable main power on the power supply and ramp output current at the rate of approximately 10~A per
+second to 50~A.  Check that all controls and safety features are operational then continue to ramp at the
+rate of 10~A per second to the maximum current.}
+\item{Enter record of the successful test into a Hall A electronic log book.}
+\end{itemize}
+
+\subsection{Enabling the BigBite Magnet For Physics}
+
+\begin{itemize}
+\item{At least two persons must be working on the task together.}
+\item{Rope off the area around the magnet.}
+\item{Sweep the area inside the ropes for magnetic material.  Make sure that the area is clean,
+and that no foreign objects are in or near the aperture of the magnet or the inside of the stay-clear zone.
+All such materials must be removed and placed outside of the ropes.}
+\item{Make sure all protective barricades, signs and beacons are in place to warn of possible exposure
+to magnetic and electrical hazards.}
+\item{Verify all covers on energized conductors on the magnet are securely in place.}
+\item{Verify all power supply doors and cabinets are closed and locked.}
+\item{Check that the cooling water is turned on.  Valves on the magnet and on individual cooling paths must all
+be open.}
+\item{Verify that water flow is present --- checking that the differential pressure is greater than 50 psi and 
+look at flow switches (inlet pressure should be greater than 100~psi).}
+\item{Turn on the flashing beacons.}
+\item{Remove the administrative lock on the power supply disconnect switch.  Make sure the Jefferson Lab's
+Lockout/Tagout procedures, as described in Chapter 6110 of the Jefferson Lab EH\&S manual are followed.
+Make sure your Lockout/Tagout training is up-to-date, you have been trained on the operation of the power
+supply and magnet and that you have been authorized by Douglas Higinbotham.}
+\item{Enable main power on the power supply and check the current can be set with the BigBox GUI by ramping
+the magnet to 50~A.}
+\item{Set the magnet to 0~A and submit a electronic log entry that magnet is ready
+and that Hall~A shift workers now can control the magnet via the BigBox GUI.}
+\end{itemize}
+
+\subsection{Magnetic Field Measurements}
+\label{guideline-mapping}
+With the Hall~A work coordinator's written authorization, a map of the magnet's fringe
+field can be made.  During magnetic field measurements, the covers should be on the
+scattering chamber.  All work in the vicinity of the magnet must conform 
+to the practice described in Chapter
+6440 of the Jefferson Lab EH\&S manual.  In particular 
+all workers must respect the limits shown in the table
+``exposure limits for static magnetic fields'' of that chapter and reproduced below.  
+
+{\tiny
+\begin{tabular}{ccc}
+				& & \\
+	& Routine 8 Hour Average & Maximum Allowable \\
+Ferromagnetic implant and & Routine Exposure & 0.5~mT (5 G) or \\
+electronic medical device & Not Recommended  & as determined by a physician \\
+wearers                   & &  \\
+				& & \\
+Regular Employees	& Whole Body: 60~mT (600~G)     & Whole Body: 2~T (20,000 G) \\  
+	                & Limbs: 600~mT (6000~G)	& Limbs: 5~T (50,000 G) \\
+				& & \\
+\end{tabular}
+}
+
+The first field measurements should be made around the 1~meter perimeter to make sure the fringe is less than 5~G at
+this location.  Measurements closer to the magnet and in the gap of the magnet can
+be made as long as the limits in the table are adhered to and a description of the planned measurement points
+has been presented to Douglas Higinbotham for approval.
+A hand-held Lake Shore field measurement device is avaliable from Douglas Higinbotham 
+for establishing the 5~G perimeter
+and making measurements to 0.1~G precision.
+
+
+\subsection{Turning Off The BigBox Supply}
+\label{off}
+
+The magnet power supply should always be locked out when the magnet is not going 
+to be used for any extended period.
+
+\begin{itemize}
+\item{Ramp output current to zero and turn off main power at the power supply.}
+\item{Apply the administrative lock to the power supply.}
+\item{Turn off the flashing beacons.}
+\end{itemize}
+
+\subsection{Before Moving BigBite}
+
+Before moving the BigBite magnet (e.g. changing the angle of the spectrometer which must
+be done locally), the power supply must be turned off as per Section~\ref{off}.   
+
+\clearpage
+\section{Authorized Personnel}
+
+Only Hall A technical staff are authorized to enable the main power supply and require
+proper electrical safety training.  Shift workers are only allowed to control 
+the BigBite power supply via a GUI.  
+
