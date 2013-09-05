@@ -1,4 +1,4 @@
-     
+
         Hall A OSP Documentation Source
         ===============================
          (E.Chudakov   gen@jlab.org)
@@ -6,9 +6,9 @@
 Introduction:
 ------------
 The Hall A OSP (Operation Safety Procedures) document describes  
-the systems, devices and procedures used in Hall A, containing
-the safety issues. The systems include, for example, the HRS
-scintillation counters, the HRS magnets, the Moller polarimeter
+the systems, devices and procedures used in Hall A, including
+safety issues. The systems include, for example, the HRS
+scintillation counters, the HRS magnets, the Moller polarimeter,
 etc.
 
 The purpose of this package is to produce the Hall A OSP manual
@@ -17,14 +17,14 @@ the pictures and tools to make the documents.
 
 Top directory, static:
 src/ - the source (LaTeX) and pictures
-scripts/ - auxilliary scripts and the makefile
-mics/ - miscelleneous documents - not used regularly
+scripts/ - auxiliary scripts and the makefile
+mics/ - miscellaneous documents - not used regularly
 
 Top directory, dynamic:
 run/ - work directory to create the documents
 
 One can create the OSP document with different levels of
-detalization (noted as "infolevel"), the lower the value, 
+detail (noted as "infolevel"), the lower the value, 
 the more slim is the document. All the levels contain the 
 basic safety information for every system. Additional 
 information depends on the level:
@@ -38,7 +38,7 @@ infolevel=4 - plus photographs and other large pictures
  
 Producing the Documents:
 -----------------------
-In order to produce the OSP document, with, say, infolevel=4 one 
+In order to produce the OSP document with, say, infolevel=4 one 
 has to:
 1) ./scripts/config osp 4   (in the top directory)
    This creates a work directory run/ to produce the document 
@@ -48,7 +48,7 @@ has to:
 
 Browsing the PDF document: 
 -------------------------
-The PDF can be viewed with Acrobat reader of xpdf (on Linux).
+The PDF can be viewed with Acrobat Reader or xpdf (on Linux).
 Both browsers can search for a given word. Also, the 
 document contains hyper-references both inside the document
 (so, one can jump forth and back to, say, the literature 
@@ -62,19 +62,7 @@ and commenting out the previous line.
 Typically, xpdf/acroread tries to use an existing WWW browser
 window and does not open a new window.
 
-Instructions for Contrubutors
+Instructions for Contributors (Obsolete)
 ----------------------------
 A more detailed instruction can be found in
 http://www.jlab.org/~gen/osp/
-
-% ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/README,v 1.1 2003/06/05 17:28:27 gen Exp $
-% $Id: README,v 1.1 2003/06/05 17:28:27 gen Exp $
-% $Author: gen $
-% $Date: 2003/06/05 17:28:27 $
-% $Name:  $
-% $Locker:  $
-% $Log: README,v $
-% Revision 1.1  2003/06/05 17:28:27  gen
-% Initial revision
-%
