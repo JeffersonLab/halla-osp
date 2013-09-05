@@ -1002,17 +1002,3 @@ FUNCTION {end.bib}
 }
 
 EXECUTE {end.bib}
-% ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/common/unsrtmod.bst,v 1.1 2003/12/05 06:08:05 gen Exp $
-% $Id: unsrtmod.bst,v 1.1 2003/12/05 06:08:05 gen Exp $
-% $Author: gen $
-% $Date: 2003/12/05 06:08:05 $
-% $Name:  $
-% $Locker:  $
-% $Log: unsrtmod.bst,v $
-% Revision 1.1  2003/12/05 06:08:05  gen
-% Add a hacked bibtex style unsrtmod
-%
-% Revision 1.1.1.1  2003/06/05 17:28:27  gen
-% Imported from /home/gen/tex/OSP
-%
