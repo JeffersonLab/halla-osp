@@ -48,14 +48,3 @@
   [ -f tmp1 ] && rm -f tmp1
   [ -f tmp2 ] && rm -f tmp2
   echo html_img.com finished
-# ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/html_img.com,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Id: html_img.com,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Author: gen $
-# $Date: 2003/06/05 17:28:33 $
-# $Name:  $
-# $Locker:  $
-# $Log: html_img.com,v $
-# Revision 1.1  2003/06/05 17:28:33  gen
-# Initial revision
-#

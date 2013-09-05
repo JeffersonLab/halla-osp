@@ -178,26 +178,3 @@ html:
 #	done
 
 
-# ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/Makefile,v 1.5 2008/04/24 18:53:20 gen Exp $
-# $Id: Makefile,v 1.5 2008/04/24 18:53:20 gen Exp $
-# $Author: gen $
-# $Date: 2008/04/24 18:53:20 $
-# $Name:  $
-# $Locker:  $
-# $Log: Makefile,v $
-# Revision 1.5  2008/04/24 18:53:20  gen
-# More runs to include references, if needed
-#
-# Revision 1.4  2003/12/13 06:26:26  gen
-# Name tables added
-#
-# Revision 1.3  2003/12/05 05:42:29  gen
-# New latex commands added
-#
-# Revision 1.2  2003/11/21 18:22:47  gen
-# add new command
-#
-# Revision 1.1.1.1  2003/06/05 17:28:33  gen
-# Imported from /home/gen/tex/OSP
-#

@@ -65,21 +65,3 @@ help_doc
   echo " INFOLEVEL="$lev >> .config
   echo Directory run created.
 #  
-# === CVS header
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/config,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Log: config,v $
-# Revision 1.1  2003/06/05 17:28:33  gen
-# Initial revision
-#
-
-# ===========  CVS info
-# $Header: /group/halla/analysis/cvs/tex/osp/scripts/config,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Id: config,v 1.1 2003/06/05 17:28:33 gen Exp $
-# $Author: gen $
-# $Date: 2003/06/05 17:28:33 $
-# $Name:  $
-# $Locker:  $
-# $Log: config,v $
-# Revision 1.1  2003/06/05 17:28:33  gen
-# Initial revision
-#
