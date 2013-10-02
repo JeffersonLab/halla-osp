@@ -1,4 +1,6 @@
 ## ignore latex trash
+*.brf
+*.cb
 *.aux
 *.glo
 *.idx
