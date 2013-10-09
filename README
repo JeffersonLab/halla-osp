@@ -3,11 +3,10 @@ Hall A OSP Documentation Source
 
 Moved the Hall A OSP document from cvs to github.   
 
-The 2011 version of the document is being updated in preparation for first beam in Hall A in early 2014.
+The 2011 version of the document is being updated in preparation
+for first beam in Hall A in early 2014.
 
 
-
-        
 Introduction
 ------------
 The Hall A OSP (Operation Safety Procedures) document describes  
@@ -23,7 +22,7 @@ the pictures and tools to make the documents.
 Top directory, static:
 src/ - the source (LaTeX) and pictures
 scripts/ - auxiliary scripts and the makefile
-mics/ - miscellaneous documents - not used regularly
+misc/ - miscellaneous documents - not used regularly
 
 Top directory, dynamic:
 run/ - work directory to create the documents
@@ -70,5 +69,5 @@ window and does not open a new window.
 Instructions for Contributors (Obsolete)
 ----------------------------
 A more detailed instruction can be found in
-http://www.jlab.org/~gen/osp/
+https://userweb.jlab.org/~gen/osp/
 
