@@ -6,14 +6,70 @@ Moved the Hall A OSP document from cvs to github.
 The 2011 version of the document is being updated in preparation
 for first beam in Hall A in early 2014.
 
+This document is intended to provide guidelines for Scientists (both staff and visitors) how to
+safety operate the standard equipment in Hall A.
 
-Introduction
-------------
-The Hall A OSP (Operation Safety Procedures) document describes  
-the systems, devices and procedures used in Hall A, including
-safety issues. The systems include, for example, the HRS
-scintillation counters, the HRS magnets, the Moller polarimeter,
-etc.
+This document is NOT intended to provide guidelines for technical equipment (such as manlifts or the crane) 
+that require special training to operate NOR does the document provide guidelines on how do electrical work
+(such as repairing an HRS power supplies).   An example of what should be covered is how to safely reset the 
+HRS power supply. (i.e. something that a scientist has
+done in the past)
+
+-
+Our 2011 version of this document can be found at:
+http://hallaweb.jlab.org/news/minutes/OSP/osp-27feb2011.pdf
+
+
+For the high level outline, the name next to the section is just the led person for that part and is not 
+expected to be the sole person working on that section.   In general, you should be working on the same 
+sections you worked on in 2011.
+
+High Level OUTLINE
+
+I. Hall A Safety Document Overview [T.K.]
+
+II. Beamline Equipment [D.H.]
+
+III. Target Control (target details that are beyond the scope of a user should be covered elsewhere) [J.P.]
+
+IV. High Resolution Spectrometers [J.S.]
+
+V. HRS Detectors [B.W.]
+
+VI. Slow Controls [J.G.]
+
+VII. DAQ [A.C., B.M.]
+
+
+VIII. Offline Software [O.H.]
+
+IX. BigBite Spectrometer [D.H.]
+
+-
+
+The simplest way to update the document do, is grab your tex file, edit it and e-mail it back to me.
+(if you know what section you editted last time, likely you just need to do it again adding a checklist)
+
+http://hallaweb.jlab.org/github/halla-osp/src/
+
+IF you have materials in word, please just send them to me and I will reformat into LaTeX.  I only ask that you send me any images or figures as separate, high quality files (e.g. one word doc along with the jpegs, eps, etc.)
+
+-
+
+Over the coming weeks, I will be updating the materials in that directory and keeping in sync with our github repository:
+
+https://github.com/JeffersonLab/halla-osp.git
+
+and anyone with a Jefferson Lab github account can access the materials there.
+
+For unix/linux users; you can quickly pull a copy of the current materials by typing into a comment line:
+
+git clone https://github.com/JeffersonLab/halla-osp.git
+
+I would encourage anyone who knows git or who is want to learn git to setup a github account.   I just need to know your github your name so you can be added to the offical Jefferson Lab 
+
+LaTeX Information
+-----------------
 
 The purpose of this package is to produce the Hall A OSP manual
 in PDF and HTML formats. It contains the source of the text, 
