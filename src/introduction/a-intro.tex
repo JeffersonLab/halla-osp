@@ -1,10 +1,6 @@
 %\chapter{Introduction}
 \chapter[Introduction]{Introduction
-\footnote{
-  $CVS~revision~ $Id: a-intro.tex,v 1.7 2008/04/01 16:50:02 lerose Exp $ $ 
-}
-\footnote{Authors: J.LeRose \email{lerose@jlab.org} and
-                   E.Chudakov \email{gen@jlab.org}}
+\footnote{Authors: D. Higinbotham \email(doug@jlab.org)}
 }
 \ifpdfhref{ 
 \section[About this Document]{Technical Information About this Document}
@@ -13,7 +9,6 @@
  This is a PDF document with hyper-references. Browsing is helped
  by the ``bookmark'' menu at the left side of the \mycomp{acroread} or
  \mycomp{xpdf} window. 
-% Another browser, \mycomp{xpdf} seems to lack this option.
  The objects like
  citations, figures, tables etc. are hyper-marked. One can ``click''
  on a reference to an object and jump to the page with this
@@ -33,16 +28,11 @@
  Also, red margin bars mark the beginnings of these areas.
  
  \LaTeX{} (more specifically, \mycomp{pdflatex}) is used to produce
- this document. The document source is kept in CVS~\cite{CVSwww} format\footnote{
-   Instruction for the document authors/maintainers: 
-   \url{http://www.jlab.org/~gen/osp/doc.pdf}.}.
+ this document. The document source was originally kept in CVS~\cite{CVSwww} format but has now
+ moved to the Jefferson Lab github repository~\cite{halla-github} with a full copy stored on the 
+Hall A's web pages~\cite{hallaweb-github}.
 
- Typically, each chapter or a big section occupies one file,
- and the date of CVS revision of the file is printed
- in a footnote for the chapter title, along with the name of
- the author or the person responsible for the chapter.\\
-
- This document can be printed, but it is better used on-line.
+ {\bf{This document can be printed, but it is best used on-line.}}
 }
 \clearpage
 }
@@ -130,7 +120,7 @@ spectrometers in the (fictitious) 0$^\circ$ position.
 \end{figure}
 
 The beam line transports the CEBAF electron beam, in the energy 
-and current ranges of 0.4~-~6.0~GeV and 0.1~-~120~$\mu$A to the target
+and current ranges of 0.4~-~11.0~GeV and 0.1~-~120~$\mu$A to the target
 at the Hall center. Various types of targets have been used, including
 liquid hydrogen and polarized $^3$He gas. Secondary particles
 are detected with the  
@@ -144,15 +134,3 @@ The present base instrumentation in Hall A has been used with great
 success for experiments which require high luminosity and high resolution 
 in momentum and/or angle for at least one of the reaction products.
 	
-%\infolevthree{  
-%  A CAD-drawn view of Hall A and its basic equipment is shown
-%  on Fig.\ref{fig:cad_halla_1}.
-%\begin{figure}[tbh]
-%\begin{center}
-%\includegraphics[angle=0,width=\textwidth]{hallacombo}
-%\caption[Hall A CAD-drawn picture]
-%   {Hall A CAD-drawn picture.}
-%\label{fig:cad_halla_1}
-%\end{center}
-%\end{figure}
-%}
