@@ -43,10 +43,9 @@ the manufacturer's type 3, 4 \& 5 probes, designed to cover different
 field ranges (see Table \ref{nmr_range}).  The six ``Purcell Gap Probes'' (Group 1 in 
 the controls) are located in the Purcell gap of the magnet 
 and consists of two each of the above types. {\em Note: Since
-the fall of 1998 the multiplexer-multiplexer in the electron arm,
+the fall of 1998 the multiplexer-multiplexer in both arms,
 MUX 2032, has been bypassed and hence the ``Purcell Gap Probes'' are currently
-unavailable. There are no plans to fix this multiplexer in the
-immediate future.}
+unavailable. There are no plans to re-install this multiplexer.}
 
  The "Gap Probes" are equipped with coils which provide a field 
 gradient that cancels out the field gradient of the magnet in the vicinity of 
@@ -98,8 +97,8 @@ the compensating coils is shown in Figure~\ref{fig:nmrcir}
 \end{center}
 \end{figure}
 
-The following graphs (see Figures~\ref{fig:nmrcomp4}), 
-and ~\ref{fig:nmrcomp5}can be used to determine optimum values for the 
+The following graphs (see Figures~\ref{fig:nmrcomp4} 
+and ~\ref{fig:nmrcomp5}),can be used to determine optimum values for the 
 compensating coil control voltage.  It should be noted that the setting 
 of the compensating coil current is not very critical in most cases.  In 
 general if you're within 10\% of the correct value everything should 
@@ -128,7 +127,7 @@ Probe Type & Field Range (T) \\ \hline
 When running in Autopilot mode (see: Simple Spectrometer Field Setting) the 
 compensating coil voltage is set automatically and the probe appropriate for 
 the field desired is selected. The gaussmeter is placed in SEARCH Mode and the 
-dipole power supply regulator is turned on. In this case the dipole current is 
+dipole power supply software regulator is turned on. In this case the dipole current is 
 adjusted to achieve the desired field. The user should just stand 
 back and let it work. What follows are instructions for using
 the NMR gaussmeter in situations where Autopilot doesn't work or
@@ -153,29 +152,29 @@ is what we will be doing.
 
 In any case, for ``gap probes" (group 0) you must energize and adjust 
 the gradient compensating coils for the field ranges to be measured before 
-trying to make measurement.
+trying to make a measurement.
 
 For studies involving 
 10\% changes in the field settings the compensating coil current can be 
 set once and left alone.
 
 
-\noindent\underline{\bf Recommended Procedure:}(turn the {\bf REGULATOR OFF} for all 
+\noindent\underline{\bf Recommended Procedure:}(turn the {\bf SOFTWARE REGULATOR OFF} for all 
 non-autopilot field measurements)\\
 For group 0 probes set compensating coils appropriately (see figures).\\
-Put meter in MANUAL mode with SEARCH OFF \\
+Put the meter in MANUAL mode with SEARCH OFF \\
 Select a probe \underline{\bf and} polarity (\underline{\bf Group 0:  
-Probes 0, 1, 2 negative;} {\underline Probes 3, 4, 5 positive}) \\
-Type in DAC number for the field range being measured (see below) \\
-Select AUTO and wait for a lock (positive field reading) \\
+Probes 0, 1, 2 negative; Probes 3, 4, 5 positive}) \\
+Type in the appropriate DAC number for the field range being measured (see below) \\
+Select AUTO and wait for a lock (indicating a valid field reading) \\
 Verify that you have a good lock by checking the oscilloscope for a 
 clear resonant signal. \\
 If you have problems see the table listing problems and possible 
 solutions.
 
-\noindent\underline{\bf Selecting DAC \#'s}
+\noindent\underline{\bf Selecting DAC Number}
 
-In selecting the DAC \# to use for the field of interest use 
+In selecting the DAC number to use for the field of interest use 
 either the graph in Figure~\ref{fig:nmr_dac} or the polynomial at the bottom of the same figure.
 
 \pagebreak
