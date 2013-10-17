@@ -1,9 +1,7 @@
 \section[Fast Raster]{Fast Raster
-\footnote{
-  $CVS~revision~ $Id: raster.tex,v 1.8 2008/03/11 21:39:44 rom Exp $ $
-}
 \footnote{Authors: R.~Michaels \email{rom@jlab.org}}
 }
+
 
 The beam is rastered on target with an amplitude of
 several millimeters at 25 kHz to prevent overheating.  
@@ -13,6 +11,8 @@ Two dipoles are for horizontal (X) motion and
 another two for vertical (Y).  During the 6 GeV era
 there was only one pair of X and Y, but we have doubled
 the raster to account for the energy increase to 11 GeV.
+The arrangement along the beamline along the 
+direction of the beam will be XXYY.
 
 Since 2003 we've used the triangle-wave 
 raster pattern designed by Chen Yan.  
@@ -27,20 +27,26 @@ at 25 kHz, to switch between two directions
 of current (100 A peak-to-peak) 
 through the raster coils.
 
-A new feature during the 12-GeV era are is that
-the driver of the H-bridge electronics is now
-an Agilent model 33522A waveform generator.
-This allows us to syncrhronize the pairs of X
-to within about 1 nsec; and likewise for the
-pairs of Y.  Furthermore, the entire raster can
+Three new features during the 12-GeV era are 
+1) the driver of the H-bridge electronics is now
+an Agilent model 33522A waveform generator; and
+2) The two X are synchronized with each other, and
+the two Y are synchronized.  This makes the kicks
+add and allows us to accomodate the higher energy
+of the beam; and 3) The entire raster can
 be synchronized to an external 10 MHz wavetrain
 supplied by the polarized injector electronics.
 This makes the nominal 25 kHz an exact multiple of
 the helicity-flip rate, which achieves a cancellation
 of raster noise, important for parity-violation 
 experiments only.
+The syncrhronization of the pairs of X and Y are
+accurate to within a few nsec.
 
-One can view the 
+For most users, these three new features will not be
+noticeable and the raster will appear to function
+the same as during the 6 GeV running.
+A user can view the 
 status of the raster in the
 EPICS overview screen called ``General Accelerator
 Parameters'' where the set-point for the radius amplitude
