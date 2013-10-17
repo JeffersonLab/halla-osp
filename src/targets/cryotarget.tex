@@ -9,34 +9,31 @@ This procedure provides guidelines for the everyday running of the Hall A
 cryogenic Hydrogen and Deuterium targets.
 
 \subsection{Introduction }
-The Hall A cryotarget system contains three target loops. The top loop (loop 1)
+The Hall A cryotarget system contains three target loops. 
+One of the loops
 often has a single helium cell, which will be filled with 
 either 
-$^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA). For 
-normal Hydrogen and Deuterium running, the top loop is often leave as a spare,
-in which 
-case it will be filled with a little over one atm helium gas. Each of the 
-middle and the bottom loop often contains two target cells with different 
-sizes, for example, one 15 cm and one 4 cm cells.
-The middle loop (loop 2) is usually filled with liquid Hydrogen during normal 
-operation.
-The bottom loop (loop 3) is usually filled with liquid Deuterium during normal
-operation. If only the Hydrogen target is used, loop 3 (the Deuterium loop) 
-will be filled with a little over one atm helium gas to prevent
-air leaking into the cell.
+$^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA).
+The other two loops are usually used for liquid hygrodgen and deuterium 
+targets. Each loop can have two target cells in one loop with different 
+sizes, for example, one 15 cm and one 4 cm cells. Or it can have one cell
+with length range from 4 cm to 25 cm. The loop not in use  
+will usually be filled with a little over one atm helium gas. 
+For the next round of cryotarget experiments (DVCS and GMp), all three loops
+will have single 15-cm cell for liquid hydrogen target.
 
 \par
-During the normal operation, the Hydrogen and/or Deuterium target should
+During the normal operation, the hydrogen target should
 have already been liquefied and are in a stable state of 
-about 2 to 3 degree sub-cooled liquid. 
+about 2 to 3 degree sub-cooled liquid (19K). 
 The normal operating conditions of the targets are given in Table~\ref{tab:target-cryo-param}.
 Also listed in Table~\ref{tab:target-cryo-param} are the freezing and boiling temperatures.
 These parameters should be reasonably stable (temperature to $\pm 0.1$ K, 
 pressure to $\pm 1$ psi) provided that the End Station
 Refrigerator (ESR) is stable. The
 temperature is controlled by a software PID loop with a high power heater (up
-to 700 Watts). The PID loops read the output of one
-of the Cernox resistor temperature sensors and adjust the power in the high 
+to 1000 Watts). The PID loops read the output of one
+of the temperature sensors and adjust the power in the high 
 power heater appropriately. 
 The control loops function extremely well and the temperature fluctuations with
 steady beam are typically measured in hundredths of degrees. During beam off-
@@ -84,7 +81,8 @@ be used to find more details or for reference.
 \subsection{Alarm Handler}
 
 \begin{safetyen}{10}{5}
-It is \emph{mandatory} to have an alarm handler,ALH, running at all times. 
+It is \emph{mandatory} to have an alarm handler,ALH, running at all times when 
+the target has been cooled-down. 
 Further,
 it is \emph{mandatory} that the alarm handler be visible in all work spaces
 on the target control computer.
@@ -110,6 +108,10 @@ The target motions are interlocked with the machine Fast Shut Down (FSD)
 system. Therefore, it is \emph{mandatory} that you call MCC so that they can
 remove beam from the Hall and mask our FSD node \emph{before} using \emph{any}
 target motion mechanism.
+In the case of Gmp experiment, a separate pointing target
+is planned to be inside the scattering chamber. An interlock system needs to be
+in place to prevent the pointing target to interfere with the cryotarget. The safety aspect of the pointing target needs to be covered in a separate safety document. For the cryotarget operation, it is important to have extra caution to prevent 
+the interfereance of cryotarget with the pointing target. 
 
 \par
 \begin{safetyen}{10}{5}
@@ -182,12 +184,12 @@ Operator Name&e-mail&
  Authorization\\
 \hline 
 J. P. Chen&jpchen&
- 3/21/99&
+ --&
  --&
  --\\
 \hline 
 J. LeRose&lerose&
- 3/21/99&
+ --&
  --&
  --\\
 \hline 
@@ -383,14 +385,13 @@ have extensive knowledge of the system)
 and their pager numbers
 
 \begin{namestab}{tab:cryotarg:personnel}{Cryo Target: experts}{%
-   Cryo target: experts and authorized personnel, with their home numbers}
+   Cryo target: experts and authorized personnel, with their phone numbers}
    \namestabheader{Hall A Physicists} 
-   \JianPingChen{page:584-7413}
-   \JohnLeRose{page:584-7624}
+   \JianPingChen{cell:218-0722}
+   \JohnLeRose{cell:565-5060}
    \namestabheader{JLab Cryo-Target Group} 
-   \DaveMeekins{page:584-5434}
-   \MikellSeely{page:584-5036}
-   \ChristopherKeith{page:584-5878}
+   \DaveMeekins{cell:968-9076}
+   \ChristopherKeith{cell:746-9277}
 \end{namestab}
 
 \par
@@ -519,35 +520,22 @@ coil that views the flux change caused by a permanent magnet attached to
 the motor rotor. The tachometer signals are carried on 22 gauge stranded wire
 with Kapton insulation. This is a low power signal. The control system
 monitors the frequency of the fans.
-\item[{\bf Low Power Heater}] This is a ``hair dryer'' style heater ( it 
-resembles the heater elements found in hair dryers and heat guns) that
-is immersed in the hydrogen. The heater is made of 0.0179 $in$ diameter
-Nichrome wire with a resistance of 1.993 $\Omega$ per foot wrapped
-on a G10 carrier board.
-The maximum power available to this
-heater is 80 $W$. The power for the low power heater is supplied by
-a Oxford ITC-502 temperature controller. The heater lead wire is
-18 gauge Kapton insulated copper stranded wire. The heaters have a
-DC resistance of 20 $\Omega$ and hence will draw a maximum of 2 $A$. 
-The power supplied to this heater is monitored by the control system.
-\item[{\bf High Power Heater}]There are two kapton enclosed incoloy heater foils
-wrapped on the inside wall of each heat exchanger.
-The maximum power available to each
-heater is  500 $W$. The heater has a DC resistance of
-26 $\Omega$ and two heaters in parallel
-are driven by a 150 $V$, 7 $A$ power supply.
+\item[{\bf High Power Heater}]There is a high-power heater in the pipe of the
+loop.
+The maximum power available is 1000 $W$. The heater 
+is driven by a 150 $V$, 7 $A$ power supply.
 The current and voltage supplied to this heater are monitored by the control
 system and there
 is a software power maximum enforced on the power setting
 of this heater. 
 The heater is connected to
 the outside world by 18 gauge stranded wire with Kapton insulation.
-\item[{\bf Resistors}] There are four Cernox
-resistors immersed in each target loop. These resistors provide temperature
+\item[{\bf Resistive temperature sensors}] There are four
+resistive temperature sensors immersed in each target loop. These resistors provide temperature
 measurements of the target fluid. The temperature controllers that
 read them use a current of less than 30 $\mu$A to excite them (
 they are excited with a constant voltage which for our resistors is
-on the order of 30 mV). The Cernox resistors are connected to the outside world
+on the order of 30 mV). The resistors are connected to the outside world
 with quad strand 36 gauge phosphor bronze wire with Formvar insulation.
 \item[{\bf Target Lifter}] There are two AC servo motors which provide
 the power to lift the target ladder. These motors are powered by three
@@ -625,19 +613,16 @@ temperature change or could be, in more serious situation, leak in the system.
 \subsubsection{ Target Cells}
 
 The target cells themselves represent the most likely failure point
-in the hydrogen system. The outer walls and downstream window 
-of the cells are made of
-$\approx$ 0.003 to 0.045 $in$ thick aluminum, which are connected to a flange. 
-There are usually two cells bolted on to each cell block, typically 
-one 15 $cm$ long and one 4 $cm$ long. Both cells have an outer diameter of 
-approximately 2 inches.
-The upstream windows of the cells are made from 0.0028 $in$ thick 
-aluminum.
-These windows are connected 
-to 1.25 $in$ diameter (0.0065 $in$ wall)
-upstream window tubes with flanges which are also 
-bolted on to the cell block.
-
+in the hydrogen system. The outer wall is made of 0.006 $in$ thick aluminum.
+The entrance and exit windows are thinner, but no less than  
+0.003 $in$.
+There is one 15 $cm$ long  cell bolted on to each cell block. 
+The cell has an outer diameter of 
+approximately 3 inches.
+The upstream windows are connected 
+to 1.25 $in$ diameter
+tubes with flanges which are also 
+bolted on to the cell block. A vertical flow diverter plays a role to make the coolant flow in vertical direction to help remove the beal heating effectively.
 The cell block components have been pressure tested hydro-statically
 to about 100 psia.
 
@@ -911,17 +896,17 @@ This is really more an issue of target stability than one of
 safety. However, a target with a carefully regulated temperature
 will presumably not undergo worrisome pressure changes.
 
-Each target contains six quality temperature measurements, four Cernox
-resistors and two hydrogen vapor pressure thermometers. The 
+Each target contains four quality temperature measurements with
+resistive temperature sensors. The 
 temperature regulation is done with a software control of a high power
 heater
-to the temperature read by one of the Cernox resistors.
+to the temperature read by one of the sensors.
 This is a three parameter control loop (Proportional, Integral and Differential
 Control or PID).
 
 Finally, the heat load from the beam will be compensated in the "active"
 target loop by use of the high power heater. This is not a true regulation
-but rather a one for one replacement of the beam load should the beam
+but rather an one for one replacement of the beam load should the beam
 disappear for whatever reason. The beam load is calculated from the
 target length, the beam current as read from a current monitor and
 the target material.
@@ -1026,6 +1011,9 @@ that is outside user defined limits. High pressures will cause the
 solenoid relief valve to open.
 \item[Target Lifter] The target lifting mechanism is controlled by
 the computer. This allows one to place the desired target in the beam.
+Limit switches are installed to not allow the target to move outside
+the allowable range.  
+
 \end{description}
 
 \begin{safetyen}{10}{15}
@@ -1049,7 +1037,6 @@ table and certified by J.P.~Chen.
    \JianPingChen{Cryotarget}
    \namestabheader{JLab Cryo-Target Group} 
    \DaveMeekins{}
-   \MikellSeely{}
    \ChristopherKeith{}
    \namestabheader{Central Helium Liquefier (CHL) Experts} 
    \CryoonCall{ESR}
@@ -1063,14 +1050,28 @@ table and certified by J.P.~Chen.
 {Cryogenic Target Control System User Manual 
 }
 A short version of 
-the cryotarget target control system user manual, written by Kathy 
-McCormick, is available at
+the cryotarget target control system user manual is available at
 \url{http://hallaweb.jlab.org/equipment/targets/cryotargets/Halla_tgt.html}.
-An updated User's Guide to the Hall A Cryotarget, written by Chris Keith,
+An updated User's Guide to the Hall A Cryotarget
 is available at \url{https://polweb/guides/atarg/ATARG_MAN.html}.  Other useful
 information for cryotarget operators 
 is also available at the above web sites.
 
+\subsection{Checklist}
+Checklist for pre-hall-closing:
+\begin{itemize}
+\item Target has completed cool-down, at least one loop has liquid hydroge with temperature stable at 19K, pressure stable at around 25 psi. 
+\item High power heater in PID control for the hydorgen loop.
+\item Loop fan (pump) has been set to non zero value (20-75 Hz) for the 
+hydrogen loop.
+\item Coolant (ESR) flow and inlet temperature are stable.
+\item All other loops are filled with over 1 atm helium gas.
+\item Scattering chamber vacuum is normal (below $10^{-5}$).
+\item target in ``Empty'' position for beam tuning.
+\item Alarm handler is on and all alarm limits are set.
+\item No constant alarms caused by abnormal conditions.
+\item Target-on-call name is written on the whiteboard.
+\end{itemize}
 
 %\begin{thebibliography}{99}
 %% hydrogen props
@@ -1090,3 +1091,66 @@ is also available at the above web sites.
 
 %\end{document}
  
+% ===========  CVS info
+% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
+% $Id: cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
+% $Author: jpchen $
+% $Date: 2008/04/21 21:11:06 $
+% $Name:  $
+% $Locker:  $
+% $Log: cryotarget.tex,v $
+% Revision 1.13  2008/04/21 21:11:06  jpchen
+% new cryotarget
+%
+% Revision 1.11  2004/12/20 21:45:21  jpchen
+% further changes according to review
+%
+% Revision 1.10  2004/12/15 00:14:15  gen
+% minor update of the labels
+%
+% Revision 1.9  2004/12/10 22:39:41  jpchen
+% made changes according to review
+%
+% Revision 1.8  2003/12/13 06:23:39  gen
+% Septum added. Name tables. Polishing
+%
+% Revision 1.7  2003/12/05 07:35:03  gen
+% WT2 modified. Polishing
+%
+% Revision 1.6  2003/11/21 18:26:21  gen
+% polishing
+%
+% Revision 1.5  2003/11/17 07:18:21  gen
+% CVS record added
+%
+% Revision 1.4  2003/11/16 07:46:44  gen
+% Shrink some large objects
+%
+% Revision 1.3  2003/11/12 16:08:55  jpchen
+% cryotarget chapter
+%
+% Revision 1.2  2003/11/12 15:38:40  jpchen
+% cryotarget chapter
+%
+% Revision 1.1  2003/09/24 17:08:38  jpchen
+% cryotargets and polarized 3He target
+%
+% Revision 1.3  2003/06/06 17:11:53  gen
+% Revision printout changed
+%
+% Revision 1.2  2003/06/06 17:10:24  gen
+% Revision printout changed
+%
+% Revision 1.1  2003/06/06 17:09:04  gen
+% Revision printout changed
+%
+% Revision 1.2  2003/06/05 23:30:01  gen
+% Revision ID is printed in TeX
+%
+% Revision 1.1.1.1  2003/06/05 17:28:27  gen
+% Imported from /home/gen/tex/OSP
+%
+%  Revision parameters to appear on the output
+
+
+

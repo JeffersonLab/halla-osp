@@ -1,4 +1,8 @@
+## ignore the compiled document
+osp.pdf
 ## ignore latex trash
+*.brf
+*.cb
 *.aux
 *.glo
 *.idx

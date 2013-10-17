@@ -1,31 +1,6 @@
 \chapter[Arc Energy Measurement]{Arc Energy Measurement
-\footnote{
-  $CVS~revision~ $Id: arc.tex,v 1.8 2004/12/15 00:12:59 gen Exp $ $
+\footnote{Authors: D. Higinbotham \email{doug@jlab.org}}
 }
-\footnote{Authors: A.Saha \email{saha@jlab.org}}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\newenvironment{lyxlist}[1]
-  {\begin{list}{}
-    {\settowidth{\labelwidth}{#1}
-     \setlength{\leftmargin}{\labelwidth}
-     \addtolength{\leftmargin}{\labelsep}
-     \renewcommand{\makelabel}[1]{##1 \hfill}}}
-  {\end{list}}
-
-\newenvironment{lyxcode}
-  {\begin{list}{}{
-    \setlength{\rightmargin}{\leftmargin}
-    \raggedright
-    \setlength{\itemsep}{0pt}
-    \setlength{\parsep}{0pt}
-    \ttfamily}%
-   \item[]}
-  {\end{list}}
 
 The ARC energy measurement is under EPICS~\cite{EPICSwww} control through 
 a MEDM~\cite{MEDMwww} display. Two
@@ -252,40 +227,9 @@ the workstation, on the wall. The AC system can be set in manual control by
 turning from "auto" to "manual" a set of
 switches controlling the cooling units and the heater unit. These switch boxes
 are located on the shed wall. If the shed temperature is above 34.4C (94F),
-call Arun Saha (the electronics can be damaged) and cool down the shed in manual
+call the crew chief (the electronics can be damaged) and cool down the shed in manual
 AC mode. The 4 temperature sensors of the probe are labelled Tx+z+, Tx+z-, Tx-z+,
-Tx-z- depending on their position w.r.t. the following (x,z) frame: 
-
-\begin{lyxcode}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\^{}~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
-
-Door$< -${}-{}-~~~~~~~~~~~$< 
--${}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-D~I~P|O~L~E~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}$-
->$~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~$< 
--${}-{}-{}-{}-Tx+z-~-{}-{}-{}-{}-{}-{}-|-{}-{}-{}-{}-{}-Tx+z+-{}-{}-{}-{}-{}$->$~
-
-~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|-{}-{}-{}-{}-{}-{}-{}-{}-{}$->$z~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~P~R~O~B~E~~~~~~~~~~~~~|~
-
-~~~~~~~~~~~~~~~~~~~$< 
--${}-{}-{}-{}-Tx-z-~-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-Tx-z+-{}-{}-{}-{}-{}$-
->$
-\end{lyxcode}
+Tx-z- depending on their position w.r.t. the frame. 
 
 Both "x+" sensors are on the probe edge which is inside the
 dipole gap and both "x-" sensors on the opposite edge which
