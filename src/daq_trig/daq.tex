@@ -10,7 +10,7 @@
 %Author:  Robert Michaels, Hall A Staff, Jefferson Lab
 % Date:  March, 1999
 % Updated: Aug, 2003
-
+% Updated: Oct 22nd, 2013 Alexandre Camsonne 
 
 
 \par
@@ -26,13 +26,13 @@ is kept at
 \htmladdnormallinkfoot{}{\url{http://hallaweb.jlab.org/equipment/daq/daq_trig.html}}.
 
 \par
-We typically run with two fastbus crates in
-each spectrometer, plus VME crates for scalers.
+We typically run with three fastbus crates in
+each spectrometer, plus VME crates for scalers and Trigger supervisor.
 The fastbus modules are of the following
 types:
 \begin{list}{\arabic{enumi}.~}{\usecounter{enumi}\setlength{\itemsep}{-0.15cm}}
   \item LeCroy model
-    1877 TDCs operating in common--stop with 0.5 nsec
+    1877S TDCs operating in common--stop with 0.5 nsec
     resolution for our drift chambers and
     straw chambers; 
   \item model 1875 TDCs operating in common--start with 0.1 nsec resolution
@@ -41,9 +41,9 @@ types:
   \item model 1881M ADCs for analog signals from scintillators, 
         \Cherenkov{}, and leadglass detectors.
 \end{list}
-In some run periods the beam position monitors
-and raster current were available in a VME system,
-but presently they are read out in fastbus.
+%In some run periods the beam position monitors
+%and raster current were available in a VME system,
+%but presently they are read out in fastbus.
 
 \par
 The trigger supervisor is a custom--made
@@ -57,12 +57,12 @@ one in each spectrometer.  This allows us to
 run the spectrometers independently if needed.
 
 \par
-The public account \mycomp{a-onl} is normally
-used for running DAQ and \mycomp{adaq} is used
+The public account \mycomp{adaq} is normally
+used for running DAQ and \mycomp{a-onl} is used
 for running other online software including
 the C++ analyzer Podd.
-On ``\mycomp{adaq}'' the directory
-tree of an experiment is \mycomp{adaq/\$EXPERIMENT}
+On ``\mycomp{a-onl}'' the directory
+tree of an experiment is \mycomp{a-onl/\$EXPERIMENT}
 which is organized in subdirectories of 
 various tasks, such as scaler display,
 Podd, and other online codes, all of
@@ -84,7 +84,8 @@ J. Gomez and is documented in another chapter.
 The DAQ computer's names are denoted by \mycomp{adaqlN}, where
 N is a number.  adaql1 and l2 are Linux computers for 
 running DAQ while \mycomp{adaql3,4}... and higher 
-are for analysis.
+are for analysis. A new computer has been installed and will be used for the 
+Left HRS DAQ it is named adaq1.
 The Linux PCs are administered mostly by Ole Hansen.
 
 \par
@@ -94,6 +95,21 @@ to reboot.
 If power fails for a prolonged time,
 you must shutdown before the UPS fails.
 
+
+\section{DAQ checklist}
+Things to check before experiment starts
+\begin{enumerate}
+\item blaster test transfer rate
+\item BPM cabling
+\item BCM cabling
+\item timestamp cabling
+\item raster cabling
+\item check portserver
+\item check reset
+\item check trigger latch is connected
+\item helicity
+\item scalers
+\end{enumerate}
 
 \section{Beginning of Experiment Checkout}
 
