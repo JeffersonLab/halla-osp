@@ -1,7 +1,7 @@
 #
 #  Makefile  to build TeX documents (using pdflatex and latex2html)
 #
-#   For Hall A OSP 
+#  For Hall A OSP 
 #  by  E.Chudakov gen@jlab.org
 #  28 Apr 2003
 #  Some code was taken from latex2html manual makefile
