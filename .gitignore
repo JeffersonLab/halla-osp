@@ -1,6 +1,9 @@
 ## ignore the compiled document
+doit
 osp.pdf
+versions/*
 ## ignore latex trash
+*.cb2
 *.brf
 *.cb
 *.aux
