@@ -1,0 +1,16 @@
+\section{HRS Detectors Safety Checklist}
+Check the following items before declaring HRS detectors are safe for
+operations.
+\begin{itemize}
+\item The LeCroy high voltage system is operational and all the cables
+are connected to the detectors.
+\item The VDC gas flow in turned on and flow is seen from the exhaust.
+\item The power supply is turned on for the VDC amplifier cards and
+the level translators, and it is operational.
+\item Dry air flow is turned on for PMTs on S0, S1 and S2m
+detectors.
+\item Power to the front-end discriminator is turned on for s2m
+detector.
+\item All high voltage and signal cables are secured. There are no
+dangling cables in the detector hut.
+\end{\itemize}

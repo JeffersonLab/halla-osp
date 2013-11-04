@@ -165,18 +165,49 @@ Connections from the power supply to the Hammond splitter box, as
 well as from the Hammond splitter box to the VDCs are made using
 standard SHV connectors on red RG-59/U cable good to 5 kV.
 
-A Kepco ATE 15-3m discriminator power supply provides +3.0 V (92 cards
-draw $\leq$ 2 A) and the Kepco ATE 6-100m pre-amp power supply provides 
-$\pm$5 V nominal to the LeCroy 2735DC pre-amp/discriminator cards used 
-to instrument the chambers via a heavy-duty fuse panel.  The precise 
-voltages provided are +5.0 V (92 cards draw 22 A) and -5.2 V (92 cards 
-draw 58 A).  These LV supplies are located in the detector hut on the 
+%Changes by K.Allada, 10-17-2013%
+The old LeCroy 2735DC pre-amp/discriminator cards used to instrument
+the chambers were replaced by the new MAD cards. MAD cards are powered
+with +5.0 V only, and the total current drawn from 92 cards is less
+than 15A. The signals from MAD cards are plugged into level-translator
+cards, before connecting to the FASTBUS readout. Level translator
+cards are powered with +5.0 V and -5.0 V with total current draw less
+than 10 A. 
+%A Kepco ATE 15-3m discriminator power supply provides +3.0 V (92 cards
+%draw $\leq$ 2 A) and the Kepco ATE 6-100m pre-amp power supply provides 
+%$\pm$5 V nominal to the LeCroy 2735DC pre-amp/discriminator cards used 
+%to instrument the chambers via a heavy-duty fuse panel.  The precise 
+%voltages provided are +5.0 V (92 cards draw 22 A) and -5.2 V (92 cards 
+%draw 58 A).  
+These LV supplies are located in the detector hut on the 
 main level of the space frame for the HRS$_{\rm e}$ and on the upper 
 level of the space frame for the HRS$_{\rm h}$.
 Complete connection schematics and instructions
 for making or breaking the connections are located on the aluminum
 Faraday cage protective plates covering the respective interface
 nodes between the power supplies and the VDCs.
+
+\begin{figure}[ht]
+\includegraphics[width=40mm]{mad_card.eps}
+\caption{\label{fig:mad_card} The new MAD card that is used as
+  pre-amp/discriminator on VDC. It operates with +5.0 V}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[width=40mm]{mad_card_setup.eps}
+\caption{\label{fig:mad_card_setup} MAD cards on VDC}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[width=40mm]{mad_ps.eps}
+\caption{\label{fig:mad_ps} Power supply arrangement for MAD cards in the
+  detector hut}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[width=40mm]{level_translators.eps}
+\caption{\label{fig:lt_setup}Level translator arrangement in the detector hut}
+\end{figure}
 
 Each VDC wire plane consists of 400 20 $\mu$m $\phi$, Au-plated
 tungsten wires.  The first 16 wires on each end of the wire plane
@@ -254,13 +285,14 @@ four 12VDC fans mounted in the aluminum Faraday cage.}
 \item{When ramping the HV, never allow the chambers to draw more than
 1 $\mu$A instantaneously.  If they do, something is wrong!}
 \end{itemize}
+}
 
-\section{Other Documentation}
-See the URL%
-\htmladdnormallinkfoot{}{\url{
-http://www.jlab.org/~fissum/vdcs.html
-}}.
-} %infolev
+%\section{Other Documentation}
+%See the URL%
+%\htmladdnormallinkfoot{}{\url{
+%http://www.jlab.org/~fissum/vdcs.html
+%}}.
+%} %infolev
 
 \begin{safetyen}{5}{5}
 \section{Safety Assessment}
@@ -274,10 +306,15 @@ box, and then to connect the splitter box to each of the three high
 voltage planes in a given VDC.  A given chamber draws a current
 from  50-100 nA.
 \item {\bf The Low Voltage System}
-Kepco LV power supplies are used for the the LeCroy 2735DC
-pre-amp/discriminator cards.  Each card (23 per chamber) requires
-+5.0 V (92 cards draw 22 A), -5.2 V (92 cards draw 58 A) and +3.0 V
-(92 cards draw $\leq$ 2 A).
+% Added by K. Allada %
+The pre-amp/discriminator (MAD) cards are powered by a LV supply. Each
+card (23 per chamber) requires +5.0 V (92 cards draw less than
+15A). The level-translator are powered by a LV supply. Each card
+requires +5.0 V and -5.0 V with total current draw less than 10 A.
+%Kepco LV power supplies are used for the the LeCroy 2735DC
+%pre-amp/discriminator cards.  Each card (23 per chamber) requires
+%+5.0 V (92 cards draw 22 A), -5.2 V (92 cards draw 58 A) and +3.0 V
+%(92 cards draw $\leq$ 2 A).
 \item{\bf Explosive Gas} The Ar~C$_2$H$_6$ chamber gas is explosive
 and must be handled accordingly.  Further, gas flow should be maintained
 for at least 24 hours prior to the enabling of HV.
