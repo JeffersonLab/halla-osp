@@ -41,9 +41,9 @@ types:
   \item model 1881M ADCs for analog signals from scintillators, 
         \Cherenkov{}, and leadglass detectors.
 \end{list}
-%In some run periods the beam position monitors
-%and raster current were available in a VME system,
-%but presently they are read out in fastbus.
+In some run periods the beam position monitors
+and raster current were available in a VME system,
+but presently they are read out in fastbus.
 
 \par
 The trigger supervisor is a custom--made
@@ -67,6 +67,7 @@ which is organized in subdirectories of
 various tasks, such as scaler display,
 Podd, and other online codes, all of
 which will be described in sections below.
+
 The trigger management software is run from the
 \mycomp{atrig} account and is described in
 the Trigger chapter. 
@@ -85,7 +86,7 @@ The DAQ computer's names are denoted by \mycomp{adaqlN}, where
 N is a number.  adaql1 and l2 are Linux computers for 
 running DAQ while \mycomp{adaql3,4}... and higher 
 are for analysis. A new computer has been installed and will be used for the 
-Left HRS DAQ it is named adaq1.
+Left HRS DAQ it is named adaq1 we plan to have adaq2 installed for Right HRS soon.
 The Linux PCs are administered mostly by Ole Hansen.
 
 \par
@@ -104,11 +105,12 @@ Things to check before experiment starts
 \item BCM cabling
 \item timestamp cabling
 \item raster cabling
-\item check portserver
+\item check portservers
 \item check reset
 \item check trigger latch is connected
-\item helicity
+\item helicity if needed
 \item scalers
+\item synchronization time stamp
 \end{enumerate}
 
 \section{Beginning of Experiment Checkout}
@@ -127,12 +129,12 @@ heavily loaded fastbus crates that sometimes
 lose their NVRAM.  (If that happens, see notes
 in \mycomp{/adaqfs/halla/a-onl/doc/vmeram.doc}).}
 
-\item{You may download
-a default trigger, following the directions in
-the trigger chapter.  If the hadron momentum changes
-you may need to set a new delay.  A trigger expert
-should do the start-of-experiment
-trigger checklist.}
+%\item{You may download
+%a default trigger, following the directions in
+%the trigger chapter.  If the hadron momentum changes
+%you may need to set a new delay.  A trigger expert
+%should do the start-of-experiment
+%trigger checklist.}
 
 \item{Make sure the HV is on for all detectors
 and that the values are normal.}
@@ -166,15 +168,16 @@ independently.
 The 1-TS mode can also handle single--arm
 triggers but is about 1/2 the aggregate speed
 of the 2-TS mode.  When running the 2-TS
-mode, one uses the a-onl account on \mycomp{adaql2} for one
-spectrometer and the adev account on \mycomp{adaql1} 
+mode, one uses the adaq account on \mycomp{adaql2} or \mycomp{adaq1}  for one
+spectrometer and the adev account on \mycomp{adaql1} or \mycomp{adaq2} 
 for the other spectrometer.  
 The 1-TS mode normally uses the 
-a-onl account on \mycomp{adaql2} only.
+adaq account on \mycomp{adaql2} or \mycomp{adaq1}  only.
 The information that follows refers to 
-the a-onl account, but the other account is quite similar.
+the adaq account, but the other account is quite similar.
 
 \par
+
 Here is how to start and stop a run.
 Normally, when you come on shift, 
 runcontrol will be running.  If not,
@@ -243,9 +246,9 @@ This window also shows the full-path-name of the file
 being written by CODA for the present run.}
 
 \item{ {\it Q: Where are the crates ?} \hskip 0.05in
-R-HRS has fastbus crates ROC1 and ROC2 on the lower level
+R-HRS has fastbus crates ROC1, ROC2, ROC7 on the lower level
 of the detector hut, and a 9U (tall) VME crate TS0 on 
-the upper level.  L-HRS has fastbus ROC3, ROC4 and 
+the upper level.  L-HRS has fastbus ROC3, ROC4, ROC8 and 
 VME crate TS11.}
 
 \item{ {\it Q: Why is the deadtime so high ?  
@@ -290,8 +293,13 @@ is hung up, reboot by going the workspace
 ``Components'' and typing \mycomp{reboot}.  If this 
 doesn't work, try pressing the reset button 
 which is on the ``Crate Resets'' section of the
-Hall A General Tools EPICS~\cite{EPICSwww} Gui.  Telnet back into
-the ROC to verify its alive.  Then press ``Reset''
+Hall A General Tools EPICS~\cite{EPICSwww} Gui. 
+If this still fails for the FastBus crates there is a power cycle relay
+which can be activated with the EPICS button : Fastbus Power AC.
+ Telnet back into
+the ROC to verify its alive. 
+If all failed call an expert and most likely an access will be needed.
+Then press ``Reset''
 in runcontrol, download and start a new run.
 
 \subsection{ Cold Start of CODA}
@@ -451,7 +459,8 @@ then \mycomp{exit}.  Now you can \mycomp{telnet hatsv5 2004}.
 The authorized personnel is shown in table \ref{tab:daq:personnel}.
 \begin{namestab}{tab:daq:personnel}{DAQ: authorized personnel}{%
       DAQ: authorized personnel.}
-  \RobertMichaels{\em Contact}
+  \AlexandreCamsonne{\em Contact, first on call}
+  \RobertMichaels{\em Contact, second on call}
   \OleHansen{Computers}
 \end{namestab}
 
