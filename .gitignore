@@ -1,7 +1,7 @@
 ## ignore the compiled document
 doit
 osp.pdf
-versions/*
+version/*
 ## ignore latex trash
 *.cb2
 *.brf
