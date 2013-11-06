@@ -128,6 +128,8 @@ pdf:	 clean $(namest)
         if [ ! -z "`sed -n '/undefined references/p' < $(top).log`" ]; then \
             $(PDFLATEX) $(top) ; nrun=`expr $$nrun + 1` ; \
         fi ; \
+	   $(PDFLATEX) $(top) ; \
+	   nrun=`expr $$nrun + 1` ; \
 	echo Finished at iteration $$nrun
 	rm -f $(top).tex ; \
 	rm -f title.tex 

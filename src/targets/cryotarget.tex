@@ -1,13 +1,17 @@
+\infolevone{
 \chapter[Cryogenic Targets]{Cryogenic Targets
-\footnote{
-  $CVS~revision~ $Id: cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $ $ }
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
 }
+}
+\infoleveqnull{\subsection{Introduction}}
 
+\infolevone{
 \section{Procedure for Normal Running of the Hall A Cryogenic Targets}
 This procedure provides guidelines for the everyday running of the Hall A
 cryogenic Hydrogen and Deuterium targets.
+}
 
+\infolevone{
 \subsection{Introduction }
 The Hall A cryotarget system contains three target loops. 
 One of the loops
@@ -22,7 +26,6 @@ will usually be filled with a little over one atm helium gas.
 For the next round of cryotarget experiments (DVCS and GMp), all three loops
 will have single 15-cm cell for liquid hydrogen target.
 
-\par
 During the normal operation, the hydrogen target should
 have already been liquefied and are in a stable state of 
 about 2 to 3 degree sub-cooled liquid (19K). 
@@ -62,10 +65,13 @@ D\( _{2} \)&
   of the cryo-target cells}
 \label{tab:target-cryo-param}
 \end{table}
+}
 
 \infolevltone{
-
-For more information consult the full OSP manual~\cite{HallAosp}.
+Once the Jefferson Lab target group finished cooling down the Hall A
+cyrotarget system, there must be a trained target operator in the counting
+house monitoring the system at all times.
+For details of the target operation consult the full Hall A operations manual~\cite{HallAosp}.
 }
 
 \infolevone{
@@ -76,17 +82,18 @@ Graphical User Interface (GUI), of the control system.
 Every target operator should be familiar with the
 short version of the GUI manual. The long version can 
 be used to find more details or for reference.
- 
+} 
 
 \subsection{Alarm Handler}
 
-\begin{safetyen}{10}{5}
+\begin{safetyen}{0}{0}
 It is \emph{mandatory} to have an alarm handler,ALH, running at all times when 
 the target has been cooled-down. 
 Further,
 it is \emph{mandatory} that the alarm handler be visible in all work spaces
 on the target control computer.
 \end{safetyen}
+\infolevone{
 Even though the  
 target safety is ultimately
 insured by mechanical measures, the alarm handler can save you lots of 
@@ -96,14 +103,15 @@ Servicing the alarm is the responsibility of the target operator.
 At high beam current, the ALH will usually alarm when the beam goes from
 on to off or from off to on, since the temperature change is out of normal
 range. The ALH can also repeated alarm if there are noisy analog channels. 
-\begin{safetyen}{10}{5}
-If the AH alarms repeatedly or the cause of the alarm is not clear, the 
+}
+\begin{safetyen}{0}{0}
+If the alarm handler alarms repeatedly or the cause of the alarm is not clear, the 
 target operator should contact the on-call target expert.
 \end{safetyen}
-}
 
 \subsection{Target Motion and Fast Raster}
 
+\infolevone{
 The target motions are interlocked with the machine Fast Shut Down (FSD) 
 system. Therefore, it is \emph{mandatory} that you call MCC so that they can
 remove beam from the Hall and mask our FSD node \emph{before} using \emph{any}
@@ -112,9 +120,9 @@ In the case of Gmp experiment, a separate pointing target
 is planned to be inside the scattering chamber. An interlock system needs to be
 in place to prevent the pointing target to interfere with the cryotarget. The safety aspect of the pointing target needs to be covered in a separate safety document. For the cryotarget operation, it is important to have extra caution to prevent 
 the interfereance of cryotarget with the pointing target. 
+}
 
-\par
-\begin{safetyen}{10}{5}
+\begin{safetyen}{0}{0}
 When full power beam with tiny beam spot hit the cryotarget, there is a danger 
 that the beam can melt the target cell. The fast raster is used to prevent this
 from happening. Every time when moving the cryotarget into beam position,
@@ -123,7 +131,6 @@ is on and has a reasonable size for beam current above 5 $\mu$A.
 \end{safetyen}
 
 \infolevone{
-
 \subsection{Cryogenic Consumption}
 
 The ESR is not a bottomless reservoir of helium coolant. Every effort should
@@ -134,16 +141,14 @@ If you feel that the cryogenic consumption is too high (or have received complai
 from another ESR user) and are uncertain about the appropriate action contact
 the on-call target expert.
 
-
 \subsection{Checklist}
 
 The Hall A target experts and the JLab target group like to track the state
 of the target. To help them in this task the 
 target checklist \emph{must be Elog the charts and the main target page
 once per shift}.
-
 }
-%\infolevltone{
+
 \subsection{Target Operators}
 
 One individual on each shift is responsible for target operations. 
@@ -153,7 +158,8 @@ one must be trained by one of the target experts and to sit
 one shift with an already certified target operator. The training usually 
 takes place in the Hall A counting house and consists of a guided walk 
 through of the control system. 
-\par
+
+\infolevone{
 The target operator must read this document,
 the Safety Assessment Document for the Hall A Cryogenic Targets,
 and the short version of the GUI manual. The target operator should
@@ -161,18 +167,19 @@ be familiar with the GUI system and be able to handle the normal target
 loop operation, the cryostat operation and the target motion. 
 He/she should also be able to deal with the GUI crash, the IOC crash
 and the usual alarms.
-\par
+
 After the target operator's training, if he/she feels comfortable
 with the normal operation of the cryotargets, he/she should sign
 his/her name on the target operator authorization list, indicating that
 he/she has read this procedure and has been trained. The target expert
 who trained him/her should inform the Hall A staff who is responsible 
 for the cryotarget system (J. P. Chen). 
-\par
 The table below lists the qualified target operators and provides space 
 for additional entries. The names of all
 operators must appear in the same list kept in the counting house.
+}
 
+\infolevone{
 \vspace{0.3cm}
 
 \begin{center}
@@ -372,12 +379,9 @@ J. LeRose&lerose&
 \end{center}
 
 \vspace{0.3cm}
+}
 
-%}
-
-\begin{safetyen}{10}{10}
-\section{Target Experts}
-\end{safetyen}
+\subsection{Target Experts}
 
 The following table contains the names of the currently recognized target 
 experts (who have worked on the Hall A cryotarget system and
@@ -401,9 +405,8 @@ An on-call cryotarget-expert list will be posted in the
 Hall A Counting House. 
 
 
-
-\begin{safetyen}{10}{5}
-\section{Safety Assessment}
+\begin{safetyen}{0}{0}
+\subsection{Fire/Explosion Hazards}
 \label{sec:target-cryo-safety}
 
 The cryogenic hydrogen and deuterium targets present a number of potential
@@ -416,15 +419,15 @@ the vacuum vessel and the of handling cryogenic liquids
 A detailed safety assessment is given in the full OSP manual~\cite{HallAosp}.
 }
 \end{safetyen}
+
 \infolevone{
 In this document the hydrogen target will be referred
 to, but the deuterium target is essentially identical and almost all
 comments apply to both targets. 
 }
 
-%\infolevone{
 \begin{safetyen}{10}{5}
-\subsection{Flammable Gas}
+\subsubsection{Flammable Gas}
 \label{sec:targ-flammablegas}
 
 Hydrogen and deuterium are
@@ -561,7 +564,7 @@ is measured by a convectron gauge.
 \end{description}
 }
 
-\subsubsection{ Flammable Gas Detectors}
+\subsubsection{Flammable Gas Detectors}
 
 There are four flammable gas detectors installed (one on top of the target,
 one each on top of the hydrogen and deuterium gas panels, one on top of the gas
@@ -583,8 +586,7 @@ which removes the beam from the hall by disabling a grid bias at the
 injector.
 \end{safetyen}
 
-\infolevone{
-\subsection{ Pressure}
+\subsection{Pressure}
 \begin{safetyen}{10}{5}
 
 The most important aspect of hydrogen safety is to minimize the
@@ -664,6 +666,7 @@ scattering chamber itself has a four-$in$ one PSIG relief, VRV01.
 This is the path that the
 hydrogen will take in the event of a cell failure.   
 
+\infolevone{
 The target pressure reliefs are summarized in Table \ref{ta:pre}.
 
 \begin{table}[htb]
@@ -691,6 +694,7 @@ and RL is an abbreviation for
 Relief Line. SC stands for Scattering Chamber.}
 \label{ta:pre}
 \end{table}
+}
 
 \subsubsection{ Scattering Chamber Vacuum Failure}
 \label{sec:cryo_targ_cmb_falure}
@@ -743,6 +747,7 @@ in the cells remains well below their bursting point.
 
 \end{safetyen}
 
+\infolevone{
 The calculation was performed  by following methods in 
 an internal report from the MIT Bates
 laboratory \cite{bi:bates}. The formulas and algorithm in the report were
@@ -889,7 +894,9 @@ close.
 In the unlikely event that a line which carries helium coolant
 were to rupture the four $in$ chamber relief valve is capable
 of handling the full coolant flow rate.
+}
 
+\infolevone{
 \subsection{ Temperature Regulation}
 
 This is really more an issue of target stability than one of
@@ -921,7 +928,7 @@ in Reference \cite{bi:tgts}.
 
 \subsubsection{Target Freezing}
 
-\begin{safetyen}{10}{5}
+\begin{safetyen}{0}{0}
 Solid hydrogen is more dense than the liquid phase, so freezing does not
 endanger the mechanical integrity of a closed system. The chief hazard is that
 relief routes out of the system will become clogged with hydrogen ice,
@@ -952,7 +959,9 @@ The targets are always temperature regulated by
 temperature controllers. Also a high power heater will be in the PID loop
 to compensate any large temperature fluctuations to keep the temperature 
 constant.
-\begin{safetyen}{10}{5}
+}
+
+\begin{safetyen}{0}{0}
 In the unlikely event that the target temperature drops too low,
 an alarm will sound and the target operator will turn down the corresponding
 J-T valve(s). 
@@ -975,6 +984,7 @@ is located in the middle of Hall A
 the ODH hazard is minimal.
 \end{safetyen}
 
+\infolevone{
 \subsection{ Controls}
 
 The target controls have been implemented with the EPICS~\cite{EPICSwww} control
@@ -1013,12 +1023,10 @@ solenoid relief valve to open.
 the computer. This allows one to place the desired target in the beam.
 Limit switches are installed to not allow the target to move outside
 the allowable range.  
-
 \end{description}
 
-\begin{safetyen}{10}{15}
+\infolevone{
 \subsection{ Authorized Personnel}
-\end{safetyen}
 
 The principle contacts for the cryogenic targets are listed in 
 table~\ref{tab:cryotarg:personnel-con}. Every shift must have a trained target
@@ -1042,13 +1050,11 @@ table and certified by J.P.~Chen.
    \CryoonCall{ESR}
    \CHLgroup{ESR}
 \end{namestab}
-
-} %infolev
-% \newpage
-%-----------------------------------------------------------------------
-\section[Cryogenic Target Control System User Manual]
-{Cryogenic Target Control System User Manual 
 }
+
+\infolevone{\section[Cryogenic Target Control System User Manual]
+{Cryogenic Target Control System User Manual 
+}}
 A short version of 
 the cryotarget target control system user manual is available at
 \url{http://hallaweb.jlab.org/equipment/targets/cryotargets/Halla_tgt.html}.
@@ -1056,7 +1062,9 @@ An updated User's Guide to the Hall A Cryotarget
 is available at \url{https://polweb/guides/atarg/ATARG_MAN.html}.  Other useful
 information for cryotarget operators 
 is also available at the above web sites.
+}
 
+\infolevone{
 \subsection{Checklist}
 Checklist for pre-hall-closing:
 \begin{itemize}
@@ -1072,85 +1080,5 @@ hydrogen loop.
 \item No constant alarms caused by abnormal conditions.
 \item Target-on-call name is written on the whiteboard.
 \end{itemize}
-
-%\begin{thebibliography}{99}
-%% hydrogen props
-%\bibitem{bi:mc75} R.D. Mc Carty, "Hydrogen Technology Survey: Thermophysical
-%Properties", N76-11297, NBS 1975
-%%helium props
-%%\bibitem{bi:mc72} R.D. Mc Carty, "Thermophysical Properties of $^4$He from
-%%2 to 1500 K with Pressures to 1000 Atmospheres", COM 75-10334, NBS 1972
-%%\bibitem{bi:gi67} R.M. Gibbons and D.I. Nathan, " Thermodynamic Data
-%%of $^3$He ", Tech Report AFML-TR-67-173, Oct 1967
-%\bibitem{bi:bates} W. Schmitt and C. Williamson, "Boiloff Rates of
-%Cryogenic Targets Subjected to Catastrophic Vacuum Failure", 
-%Bates Internal Report $\#$ 90-02, Sept 1990
-%\bibitem{bi:tgts} F. Duncan, K. McCormick, and J. Goity,  
-%"A User's Guide to the Hall A Cryotarget Control System", Sept 1997
-%\end{thebibliography}
-
-%\end{document}
- 
-% ===========  CVS info
-% $Header: /group/halla/analysis/cvs/tex/osp/src/targets/cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
-% $Id: cryotarget.tex,v 1.13 2008/04/21 21:11:06 jpchen Exp $
-% $Author: jpchen $
-% $Date: 2008/04/21 21:11:06 $
-% $Name:  $
-% $Locker:  $
-% $Log: cryotarget.tex,v $
-% Revision 1.13  2008/04/21 21:11:06  jpchen
-% new cryotarget
-%
-% Revision 1.11  2004/12/20 21:45:21  jpchen
-% further changes according to review
-%
-% Revision 1.10  2004/12/15 00:14:15  gen
-% minor update of the labels
-%
-% Revision 1.9  2004/12/10 22:39:41  jpchen
-% made changes according to review
-%
-% Revision 1.8  2003/12/13 06:23:39  gen
-% Septum added. Name tables. Polishing
-%
-% Revision 1.7  2003/12/05 07:35:03  gen
-% WT2 modified. Polishing
-%
-% Revision 1.6  2003/11/21 18:26:21  gen
-% polishing
-%
-% Revision 1.5  2003/11/17 07:18:21  gen
-% CVS record added
-%
-% Revision 1.4  2003/11/16 07:46:44  gen
-% Shrink some large objects
-%
-% Revision 1.3  2003/11/12 16:08:55  jpchen
-% cryotarget chapter
-%
-% Revision 1.2  2003/11/12 15:38:40  jpchen
-% cryotarget chapter
-%
-% Revision 1.1  2003/09/24 17:08:38  jpchen
-% cryotargets and polarized 3He target
-%
-% Revision 1.3  2003/06/06 17:11:53  gen
-% Revision printout changed
-%
-% Revision 1.2  2003/06/06 17:10:24  gen
-% Revision printout changed
-%
-% Revision 1.1  2003/06/06 17:09:04  gen
-% Revision printout changed
-%
-% Revision 1.2  2003/06/05 23:30:01  gen
-% Revision ID is printed in TeX
-%
-% Revision 1.1.1.1  2003/06/05 17:28:27  gen
-% Imported from /home/gen/tex/OSP
-%
-%  Revision parameters to appear on the output
-
-
+}
 

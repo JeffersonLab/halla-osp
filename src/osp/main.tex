@@ -25,30 +25,29 @@
 %\pagestyle{plain}
 \pagenumbering{arabic} 
 %\setcounter{page}{1} 
+
 \infolevone{
 \tableofcontents
-
-% 
-% Removed the list of tables and figures as unneccisary information, DWH Nov. 2013
-%
-%\listoftables
-%
-%\listoffigures
 \newpage
 }
+
 \input{people/names} % list of names
 \setcounter{subsection}{0}
 
-\infoleveqnull{
-\setcounter{chapter}{2}
-}
+%
+% Set the Chapter counter for making the ESAD level zero document
+%
+\infoleveqnull{\setcounter{chapter}{2}}
 
 \input{introduction/all}
 
 \infolevone{
 \input{beamline/all}
+}
 \input{targets/all}
 \input{hrs/all}
+
+\infolevone{
 \input{hrs_det/all}
 \input{controls/all}
 \input{daq_trig/all}
