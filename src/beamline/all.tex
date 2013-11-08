@@ -1,9 +1,14 @@
-\part{Beamline}
-%\chapter{Beamline}
+%
+% Beamline Material for Operations Manual and ESAD
+%
+\infolevone{\part{Beamline}}
+%\infoleveqnull{\chapter{Beamline}}
+
 \graphicspath{{beamline/figs/}}
 \renewcommand{\dirfig}[0]{beamline/figs}
 \renewcommand{\dircur}[0]{beamline}
 
+\infolevone{
 \input{beamline/beam}
 \newpage
 \input{beamline/bpms}
@@ -18,12 +23,12 @@
 \newpage
 \input{beamline/moller}
 \newpage
+}
 \input{beamline/compton}
 
+%
 % Old Material
 %
-% \input{beamline/ep} was for the eP energy measurement that has been removed 
-%  from the beamline
-%
-% \input{beamline/radiator} was for the radiator for doing real photon exp.
+% \input{beamline/ep} eP device has been removed from Hall A
+% \input{beamline/radiator} currenlty not used
 %

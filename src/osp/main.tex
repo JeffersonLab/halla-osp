@@ -1,14 +1,26 @@
+%
+% Hall A Operations Manual
+% 
 \documentclass[12pt,letterpaper]{report} 
-
+%
+% preamb_common sets up the document levels 
+% 
 \input{preamb_common} % include the common preambule 
 \input{namesenv} % definition for the ``names table'' environment
-
-% \newcommand{\Cerenkov}{\v{C}erenkov} 
+%
+\infoleveqnull{
+\renewenvironment{safetyen}[2]%  SAFETY environment
+       {\color{white}%
+              \marginpar{\rule[-#2mm]{1mm}{#1mm}}%
+        \color{black}}%
+       {\color{black}}
+}
+%
 \newcommand{\Cerenkov}{Cherenkov} 
 \newcommand{\Cherenkov}{Cherenkov} 
 \parindent=2em 
 \hyphenation{cebaf} 
-
+%
 %  Modify the default report.cls settings
 %  --------------------------------------
 \setcounter{secnumdepth}{3}
@@ -17,9 +29,9 @@
 
 \begin{document}
 \color{\Mcol}
-
+%
 \pagestyle{headings}
-
+%
 \input{title}
 
 %\pagestyle{plain}
@@ -27,8 +39,8 @@
 %\setcounter{page}{1} 
 
 \infolevone{
-\tableofcontents
-\newpage
+	\tableofcontents
+	\newpage
 }
 
 \input{people/names} % list of names
@@ -39,16 +51,16 @@
 %
 \infoleveqnull{\setcounter{chapter}{2}}
 
+%
+% Input Sections of the Operations Manual
+%
 \input{introduction/all}
-
-\infolevone{
 \input{beamline/all}
-}
 \input{targets/all}
 \input{hrs/all}
+\input{hrs_det/all}
 
 \infolevone{
-\input{hrs_det/all}
 \input{controls/all}
 \input{daq_trig/all}
 \input{offline/all}
@@ -57,8 +69,9 @@
 \input{checklist/all}
 }
 
-\vskip 0.5cm
-%\bibliographystyle{unsrt}
+%
+% Bibliography / References
+%
 \bibliographystyle{unsrtmod}
 \bibliography{bibl/jlab_manuals,bibl/halla_ref_papers}
 
