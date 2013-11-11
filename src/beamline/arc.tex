@@ -1,7 +1,17 @@
+\infolevone{
 \chapter[Arc Energy Measurement]{Arc Energy Measurement
 \footnote{Authors: D. Higinbotham \email{doug@jlab.org}}
 }
+}
 
+\infoleveqnull{
+\section{Arc Energy 9th Dipole}
+In order to determine the integral field of the eight dipoles that lead to Hall A, and 
+in turn determine the beam energy, a nineth dipole wired in series with the rest is 
+located in a special shed near the hall A counting house.
+}
+
+\infolevone{
 The ARC energy measurement is under EPICS~\cite{EPICSwww} control through 
 a MEDM~\cite{MEDMwww} display. Two
 independent control systems are used: the beam bend angle measurement through
@@ -19,7 +29,6 @@ then ask for the energy calculation, enter the above arc field integral and
 you will get the beam energy computed from the average angle. 
 \end{itemize}
 
-\infolevtwo{
 \section{Summary of ARC operations }
 
 Six scanners of the same type, called ``ARC scanner'' and labelled
@@ -220,7 +229,7 @@ controller connected to two temperature sensors : one located in the shed and
 one located in the BSY. This system is programmed in such a way that the 
 temperature
 of the shed follows the BSY temperature within +-2C. The BSY temperature can
-be anywhere in the {[}18C,35C{]} range, regardless of the season. The BSY 
+be anywhere in the 18C to 35C range, regardless of the season. The BSY 
 temperature
 and the shed temperature are given (in F) by a display panel located close to
 the workstation, on the wall. The AC system can be set in manual control by
@@ -250,11 +259,10 @@ i.e the shed temperature plus 0. to 5.C, depending on the current, LCW temperatu
 and the magnet/shed temperature history. The 4 temperatures are also displayed
 inside the shed, on the electronics rack. These values are digitized by separate
 ADCs, so they may differ from the remote values by \( \sim  \)0.1C. 
-
 }
 
 \begin{safetyen}{10}{10}
-\section{Shed access and safety }
+\infolevone{\section{Shed access and safety }}
 
 For safety reasons, the access to the shed is limited to authorized
 persons which are listed in the ESAD and listed below. To be added to the list, 
@@ -267,9 +275,9 @@ the shed, unauthorized users must contact Arun Saha.
 \end{safetyen}
 
 \begin{safetyen}{10}{10}
-\section{List of Authorized Personnel for Shed Access}
+\infolevone{\section{List of Authorized Personnel for Shed Access}}
+\infoleveqnull{\subsection{List of Authorized Personnel for Shed Access}}
 \end{safetyen}
-
 \begin{namestab}{tab:arc:personnel}{Arc Energy Measurement: authorized personnel}{%
                  Arc Energy Measurement: authorized personnel}
   \namestabheader{Hall A Personnel}

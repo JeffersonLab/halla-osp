@@ -1,20 +1,14 @@
-\chapter[Trigger Hardware and Software]{Trigger Hardware and Software
-\footnote{
-  $CVS~revision~ $Id: trigger.tex,v 1.10 2008/04/28 15:48:22 gen Exp $ $
-}
+\infolevone{
+\chapter[Trigger Hardware and Software]{Trigger Hardware and Software}
 \footnote{Authors: R.Michaels \email{rom@jlab.org}}
-}
 
 \section{Overview}
-\par
 Here we give a brief overview of the 
 hall A trigger, including its hardware arrangement,
 the logic of the trigger, and the usage
 of the software control.
 Diagrams of the hardware layout are shown in
 accompanying figures.
-
-\par
 
 Scintillators make the main trigger 
 in each spectrometer arm. For coincidence experiments a 
@@ -35,18 +29,6 @@ has changed over time but typically require 2 out of 3
 from among the S1, S2, and \Cherenkov{} detectors (i.e. the 
 "or" of S1 is used, etc).
 
-%The Hall A HRS trigger system is remotely configured by 
-%CAMAC modules.   The main change that can occur during 
-%an experiment is in the delays required to adjust the 
-%timings of triggers which change with momentum and 
-%particle ID relevant for coincidence setup only.   
-%Of course for single arm running one may just use the 
-%defaults, but it may still be a wise investment in 2 
-%minutes time to download in order to make sure of 
-%the state of the modules.   If the power is turned off, 
-%the CAMAC modules certainly must be reprogrammed. 
-%Instructions to download the trigger are given below.
-
 The trigger design is quite flexible and it
 is relatively easy to add detectors to define
 new trigger types or to modify existing ones,
@@ -54,7 +36,7 @@ so long as the detector is fast enough.
 The trigger supervisor also allows for the
 possibility of 2nd level triggers which could
 be used for a later decision.
-
+}
 
 \infolevone{
 
@@ -81,8 +63,6 @@ The trigger schematics is shown in Fig. \ref{fig:strig} and \ref{fig:ctrig}.
 } %infolev
 
 \infolevtwo{
-
-\par
 Here we describe the software control
 of the CAMAC modules involved in the trigger.
 The software control was written by 
@@ -112,7 +92,6 @@ not press \mycomp{Ctrl-C}.   The user should look for suspicious
 error messages in the window from which trigsetup was 
 launched, e.g. to check if connection to the crate is ok. 
 
-\par
 If individual modules need to be modified
 for test purposes etc. (e.g. to change thresholds),
 one may use the expert mode.
@@ -124,8 +103,6 @@ of map files are in \mycomp{/home/atrig/trigger}, see
 left and right spectrometers respectively.     
 These are default databases.   One can modify 
 each module on the fly, save the database, etc.   
-
-\par
 
 After you download, a record of what was sent is put into a file \\ 
 \mycomp{/home/atrig/trigger/trigger.setup} 
@@ -139,10 +116,9 @@ that can only be done in expert mode, and the delays
 cannot be read from CAMAC.
 The simplest way to be sure about what is in the 
 trigger is to download again. 
+}
 
-} % infolev
-
-
+\infolevone{
 \begin{safetyen}{10}{15}
 \subsection{Authorized  Personnel} 
 \end{safetyen}
@@ -152,14 +128,8 @@ The authorized personnel is shown in table \ref{tab:trig:personnel}.
   \RobertMichaels{\em Contact}
   \AlexandreCamsonne{}
 \end{namestab}
+}
 
-% $Header: /group/halla/analysis/cvs/tex/osp/src/daq_trig/trigger.tex,v 1.10 2008/04/28 15:48:22 gen Exp $
-% $Id: trigger.tex,v 1.10 2008/04/28 15:48:22 gen Exp $
-% $Author: gen $
-% $Date: 2008/04/28 15:48:22 $
-% $Name:  $
-% $Locker:  $
-% $Log: trigger.tex,v $
 % Revision 1.10  2008/04/28 15:48:22  gen
 % Personnel update
 %
