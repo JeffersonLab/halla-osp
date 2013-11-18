@@ -1,3 +1,7 @@
+Butler		Jessie	 	Hall-A
+Lumanog		Andrew		Hall-A
+Glorioso	Jason		Hall-A
+Long		Mahlon		Hall-A
 Tech-on-Call     ~            Hall-A   W.B.
 Cryotarg-on-Call ~            Hall-A   W.B.
 Cryo-on-Call     ~           JLabMCC   7048
