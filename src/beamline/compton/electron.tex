@@ -9,7 +9,7 @@ resolution. The detector is placed on a vertical rod allowing vertical motion.  
 beam. Illustrated in Fig.\ref{fig:compton_edet} is a view of the actual electron detector.
  \begin{figure}[htp]
     \begin{center}
-        \includegraphics*[angle=0,scale=0.6]{compton_edet}
+        \includegraphics*[angle=0,scale=0.6]{Edet-new-EPICS}
     \end{center}
     \caption[compton:electron detector]{
             View of the Compton electron detector
@@ -32,7 +32,7 @@ it outputs a signal check by the Polarimeter DAQ.
 The goal of this system is to acquire
 for each electron helicity state the energie of the scattered photons at a
 rate up to 100 kHz. The energy of each Compton event can be
-reconstructed from the signals of the 25 PMT of the photon calorimeter
+reconstructed from the signals of the photon calorimeter
 with front-end electronics and ADCs. Each helicity state, given
 by the accelerator, is also numbered.
 Further information is given for each
@@ -319,11 +319,9 @@ To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:com
 \begin{itemize}
 \item {\bf Turn on the electron detector}\\
         The detector system needs to be powered. In hall A there is an
-        electrical box called A-UH-B1 left of the stairs going to the tunnel 
+        a power supply and control box on the wall.  
 	(see Fig.\ref{fig:compton_map1_elec})
-        In this box, the main power switch for the electron detector is number 21 (it says electron
-        detector on it). It must be on turned ON. In the tunnel,
-        there is a crate attached to the wall above the electron detector, it also needs to be turned ON.
+        Make sure it is turned ON.
         When it is ON a red LED is lit (at the right end of the crate). Below this crate there is a black electrical
         box controlling the displacement system. On the left side of this box it should say "Idle".
 \begin{figure}[htp]
@@ -335,7 +333,7 @@ To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:com
 \end{figure}
 
 \item {\bf Slow control of the electron detector }\\
-To perform operations on the electron detector. Open the MISC... screen from the main Polarimeter EPICS screen
+To perform operations on the electron detector. Open the Compton Pilarimeter... screen from the main Polarimeter EPICS screen
 and then choose "Electron Detector". On this screen, ashown in Fig.\ref{fig:compton_epicsElectron},
  active buttons appear in blue
 and readback values appear on a yellow background. 
