@@ -3,7 +3,7 @@
 \label{sec:compton_edet}
 
 The electron detector is made of 4 planes of silicon strips composed
-of 192 strips each of width 250 (600 + 50) microns and 500 microns
+of 192 strips each of width 250 (200 + 50) microns and 500 microns
 thick. The planes are staggered by 200~microns to allow for better
 resolution. The detector is placed on a vertical rod allowing vertical motion.  The first strip of the first plane can reach as close as 5 mm away from the
 beam. Illustrated in Fig.\ref{fig:compton_edet} is a view of the actual electron detector.
@@ -318,12 +318,10 @@ To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:com
 \subsection{Electron Detector Setup}
 \begin{itemize}
 \item {\bf Turn on the electron detector}\\
-        The detector system needs to be powered. In hall A there is an
-        a power supply and control box on the wall.  
-	(see Fig.\ref{fig:compton_map1_elec})
-        Make sure it is turned ON.
-        When it is ON a red LED is lit (at the right end of the crate). Below this crate there is a black electrical
-        box controlling the displacement system. On the left side of this box it should say "Idle".
+        The detector system needs to be powered. In the tunnel,
+        there is a crate attached to the wall above the electron detector, it also needs to be turned ON.
+        When it is ON a red LED is lit (at the right end of the crate).
+
 \begin{figure}[htp]
     \begin{center}
         \includegraphics*[angle=0,scale=0.6]{compton_map1_elec}
@@ -333,18 +331,18 @@ To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:com
 \end{figure}
 
 \item {\bf Slow control of the electron detector }\\
-To perform operations on the electron detector. Open the Compton Pilarimeter... screen from the main Polarimeter EPICS screen
+To perform operations on the electron detector. Open the Compton Polarimeter... screen from the main Polarimeter EPICS screen
 and then choose "Electron Detector". On this screen, ashown in Fig.\ref{fig:compton_epicsElectron},
  active buttons appear in blue
 and readback values appear on a yellow background. 
 To use the electron detector a high voltage
-(80 V) must be applied to polarize the silicon
+(120 V) must be applied to polarize the silicon
 microstrips and a low voltage must be provided to the preamplifier
 circuit board and some threshold must be set for each plane for
 the detection of the signals. To do this execute the following operations :
 
 Turn the low voltage ON on both side\\
-Turn the high voltage ON. Put the final DAC value and click the ramp.\\
+Turn the high voltage ON. Put the final DAC value (up to 255 for max HV ) and click the ramp.\\
 Set thresholds to 17. The return value should read 17.\\
 Turn calibration OFF.\\
 
@@ -461,12 +459,12 @@ When this procedure is over, come back to the right Y-position and
 First of all, the electron beam must
 be off (see Hall A run coordinator and call MCC operator)
 If it is not the case the detector will eventually be destroyed.
-To perform operations on the electron detector. Open the MISC... screen from 
-the main Polarimeter EPICS screen
+To perform operations on the electron detector. Open the Compton... screen from 
+the main Hall A EPICS screen
 and then choose "Electron Detector" to get the panel shown in 
 Fig.\ref{fig:compton_epicsElectron}.\\
 
-Click the "beam" button.\\
+Click the "COMPTON" button.\\
 To make sure the detector is where you want watch the detector move on the TV screen (there is one
 in tha Hall A counting house and one in the back room). The switches readback must oscillate a
 little bit if the system is running properly.
