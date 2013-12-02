@@ -1,0 +1,757 @@
+
+\subsection{Electron detector}
+\label{sec:compton_edet}
+
+The electron detector is made of 4 planes of silicon strips composed
+of 192 strips each of width 250 (200 + 50) microns and 500 microns
+thick. The planes are staggered by 200~microns to allow for better
+resolution. The detector is placed on a vertical rod allowing vertical motion.  The first strip of the first plane can reach as close as 5 mm away from the
+beam. Illustrated in Fig.\ref{fig:compton_edet} is a view of the actual electron detector.
+ \begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.6]{Edet-new-EPICS}
+    \end{center}
+    \caption[compton:electron detector]{
+            View of the Compton electron detector
+            }
+    \label{fig:compton_edet}
+ \end{figure}
+
+Distance between the CIP and the first strip is 5750 mm. We recall that
+between the CIP and the end of the Dipole 3 is 2150 mm.
+For a beam of 3.362 GeV the Compton
+edge is at 3.170 GeV. This corresponds to a deviation of 17 mm. Thus at
+this energy, only one half of the Compton spectrum is covered and it extends
+to the 13th strip of the first plane.
+The trigger logic looks for a coincidence
+between a given number of plane in a "road" of 2 strips. For each trigger
+it outputs a signal check by the Polarimeter DAQ.
+
+\subsection{Fast acquisition system}
+\label{sec:compton_daq}
+The goal of this system is to acquire
+for each electron helicity state the energie of the scattered photons at a
+rate up to 100 kHz. The energy of each Compton event can be
+reconstructed from the signals of the photon calorimeter
+with front-end electronics and ADCs. Each helicity state, given
+by the accelerator, is also numbered.
+Further information is given for each
+event (type of event, status of the polarimeter at event's time) and for
+each polarization period (duration, dead time, counting rate,...).
+A specific tool, the so-called spy\_acq, has been developped in Tcl/Tk
+to manage all acquisition system parameters. Finally, a web-based logbook
+is available on this site at \url{http://hallaweb.jlab.org/compton/Logbook/index.php}.
+
+} %infolev
+
+\infolevtwo{
+\section {Operating Procedure }
+\label{sec:compton_oper}
+
+The main operations computer for the compton polarimeter is compton.jlab.org located
+in the central isle of the Hall A counting house. A dedicated console labelled as Compton
+is in the backroom. This machine, running RedHat Linux 7.3, runs the compton data acquisition,
+analysis, and the EPICS~\cite{EPICSwww} slow control system. To begin compton polarimeter activity log on to:
+
+
+\noindent machine:  \mycomp{compton.jlab.org}\\
+username: \mycomp{compton}\\
+password: \mycomp{*******}(contact Sirish Nanda (7176))\\
+
+All necessary environment variables are automatically defined on logon. Follow the steps below
+paying careful attention to ensuring that you have checked the result of each step:
+
+
+\subsection{DAQ Setup}
+\begin{itemize}
+\item Go to the CODA desktop and open a new terminal window. Type
+
+\$ coda start
+
+The general syntax is coda start|stop|restart. If CODA is in a bad state, do coda restart.
+All relevant CODA processes are started and you whould get the runcontrol panel 
+as shown  in Fig.\ref{fig:compton_rc_connect}. 
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=10cm]{compton_rc_connect}
+    \end{center}
+    \caption[compton:runcontrol connect]{Compton DAQ setup: {\it connect} }
+    \label{fig:compton_rc_connect}
+\end{figure}
+
+\item Click on the "CONNECT" button. You will get the  window shown in
+Fig.\ref{fig:compton_rc_configure}. \\
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=10cm]{compton_rc_configure}
+    \end{center}
+    \caption[compton:runcontrol configure]{Compton DAQ setup: {\it configure} }
+    \label{fig:compton_rc_configure}
+\end{figure}
+
+\item Click on the {\bf Configure} button and you will get the sub-panel shown in 
+Fig.\ref{fig:compton_rc_fastacq}.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=6cm]{compton_rc_fastacq}
+    \end{center}
+    \caption[compton:runcontrol run type]{Compton DAQ setup: {\it run type} }
+    \label{fig:compton_rc_fastacq}
+\end{figure}
+Click on the "Run type" button and choose of of the following configurations:
+
+\item {\bf Fastacq}
+This is the standard run type to take data in a nominal situation.
+\item {\bf Beamtune} This run type could be use during beam tuning phases.
+It does not record good data, but by connecting to ROC1 (telnet cptaq1),
+you could monitor the trigger counting rate more quickly than with spy\_acq.
+
+\item {\bf Scanacq} This run type is used during the electrons detector harp scan procedure.
+It stores in particular the electrons detector ruler values at high counting
+rates.
+\item {\bf Linscan}
+This is the procedure to determine the non-linearity of the ADC.
+This run type is used to scan the response of the photon detector electronic
+with test pulses of different amplitude. The acquisition system set the
+electronics to send 50ns long test pulses to the integration and ADC devices,
+and increase progressively the amplitude of these pulses.
+\item {\bf Others}
+The other run types are essentially used for debug purposes. If you are
+not an expert of the acquisition do not use them.
+
+\item Confirm via the "OK" button
+You should see in the window below the following message "transition
+configure succeeded"
+\item Click on the "Download" Button to get the  messages shown in 
+Fig.\ref{fig:compton_rc_configure}. \\
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=10cm]{compton_rc_download}
+    \end{center}
+    \caption[compton:runcontrol download]{Compton DAQ setup: {\it download} }
+    \label{fig:compton_rc_download}
+\end{figure}
+\item Start the run clicking on the "Start Run" button\\
+You should see the run control display as in 
+Fig.\ref{fig:compton_rc_configure}. \\
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=10cm]{compton_rc_start}
+    \end{center}
+    \caption[compton:runcontrol start run]{Compton DAQ setup: {\it start} }
+    \label{fig:compton_rc_start}
+\end{figure}
+Check that the following happens:\\
+{\it transition Go succeeded}\\
+the counting rates distribution\\
+the number of events in this run is updating\\
+the run status {\it active}\\
+the run number updated\\
+
+\item To end a run, click on End Run (Fig.\ref{fig:compton_rc_end}) button to stop the acquisition.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=10cm]{compton_rc_end}
+    \end{center}
+    \caption[compton:runcontrol end run]{Compton DAQ setup: {\it end} }
+    \label{fig:compton_rc_end}
+\end{figure}
+
+\newpage
+\item {\bf Start the acquisition control panel}\\
+
+In a fresh terminal window, excecute the command to start 
+the spy acqusition control panels\\
+
+\mycomp{\$ spy\_acq}\\
+
+Don't be surprised. 7 windows will be open but regroup in only one
+        within few seconds. From time to time, it may happen that one window
+        does not go inside \mycomp{spy\_acq} window. Click on the corresponding widget.
+
+\item Check the High Voltages applied on the Photon detector PMT's.
+Go to the "Acq" panel where \mycomp{spy\_acq} is currently runnning,
+Go in the Logbook panel and select photon detector. You will get the 
+the  panel shown in Fig.\ref{fig:compton_spy_ht} with the high voltages values:
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.7]{compton_spy_ht}
+    \end{center}
+    \caption[compton:spy\_acq high voltage]{spy\_acq high voltage status panel }
+    \label{fig:compton_spy_ht}
+\end{figure}
+
+\item If the HV are off, switch them on.\\
+The cards of the COMPTON Polarimeter PMT HV are located in crate \#2
+telnet hatsv5 2011, then 1450, vt100 and usual display.
+
+High Voltage channel for the Compton polarimeter are in cards \# 12, 13, 14 and 15.
+Typical HV for Beam Diag and Cristal PMTs is 1500 V. The voltage of the monitoring
+LED (channel 15.10) should stay in the range 110-130 V.
+
+\par NB: Only one user can connect on hatsv5 at the same time!! If you can't connect
+check if others are logged in. See also procedure posted in rack \#CH01B05.
+\end{itemize}
+
+\newpage
+\subsection{Cavity Setup}
+Choose the EPICS desktop and in a fresh terminal window and start the MEDM~\cite{MEDMwww} EPICS panel 
+ by executing  the command:\\
+
+\mycomp{\$ epicshall}\\
+
+This will open the main EPICS menu for the Compton as shown in Fig.\ref{fig:compton_epicsall}.
+ \begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=0.8\textwidth]{compton_epicsall}
+    \end{center}
+    \caption[compton:epics main control]{Compton polarimeter main EPICS control panel }
+    \label{fig:compton_epicsall}
+ \end{figure}
+
+
+\begin{itemize}
+\item {\bf Switch on the laser}\\
+
+On the EPICS control panel, pull the "OPTICS" menu down. Click on "Mini Optic" 
+(see Fig.\ref{fig:compton_optic_mini}).
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.8]{compton_optic_mini}
+     \end{center}
+    \caption[compton:epics mini control]{Compton polarimeter mini optics control panel }
+    \label{fig:compton_optic_mini}
+ \end{figure}
+
+
+To turn the Laser On .... Click on the Laser On button.\\
+        Check LASER STATUS and INCIDENT POWER.\\
+        A Laser spot may blink on the CCD control TV screen\\ 
+	(second from left among the 4 screens)\\
+        and you should see a bright spot on the miror control TV screen labelled "laser." 
+	(see Fig.\ref{fig:compton_laser_photo}).
+ \begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=6cm]{compton_laseroff_photo}
+        \includegraphics*[angle=0,width=6cm]{compton_laseron_photo}
+    \end{center}
+    \caption[compton:laser spot]{TV viewer images of laser spot }
+    \label{fig:compton_laser_photo}
+ \end{figure}
+
+        If Laser doesn't turns ON most problable problem is an interlock
+        fault.
+        You need an access in Hall A and check the different parts of the
+        laser interlock around the optic table:\\
+        Two crash buttons on the left wall, inside and outside the green
+        tent.\\
+        The optic table is protected by a metallic cover. Four magnetic switches connect the top and the walls
+        of this cover. Some of them might be opened. {\bf CAUTION!!}: you are standing close to the optic table.
+        Do not try to open the cover. Just move the top carefully sideways to try to close the switches.
+	
+\item {\bf Lock the cavity}\\
+	
+ To lock the cavity click on the Servo On button shown in Fig.\ref{fig:compton_servo_on}.
+ \begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.8]{compton_servo_on}
+    \end{center}
+    \caption[compton:servo control]{Laser servo control}
+    \label{fig:compton_servo_on}
+ \end{figure}
+You should see the cavity locking
+on the CCD control TV as in  Fig.\ref{fig:compton_accroche}, and you should have more than 1000 W stored
+in the optical cavity.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=5cm]{compton_accroche}
+    \end{center}
+    \caption[compton:vacity lock]{Compton cavity lock indicator}
+    \label{fig:compton_accroche}
+\end{figure}
+
+If it isn't the case, turn on the Slow Ramp and then Click on the Slow On button shown in 
+Fig.\ref{fig:compton_slow_on}.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.8]{compton_slow_on}
+    \end{center}
+    \caption[compton:laser ramp control]{Compton Laser slow ramp control}
+    \label{fig:compton_slow_on}
+\end{figure}
+
+    If successfull you can turn OFF the Slow Ramp button.\\
+    Photons are now ready to meet electrons and give some Compton photons children.\\
+
+    If the cavity still doesn't lock after few minutes with SERVO and Slow Ramp ON:\\
+Check the Yokogawa generator in the Compton rack (CH01B00).
+Frequency should be 928 kHz, Amplitude 80 mVpp and phase -4 deg.
+Pull down the OPTICS menu in the main epics window. Click on "Optic table" and then on "Servo".
+The laser servo control panel appears as shown in Fig.\ref{fig:compton_servo}
+Gain should be close to 167. A too high traking level in the feedback can prevent the
+cavity from locking. Bring the "tracking Level" cursor down to low values (0.20 - 0.40)
+and try to lock again with Servo and Slow Ramp on.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.8]{compton_servo}
+    \end{center}
+    \caption[compton:servo settings]{Compton Laser servo control}
+    \label{fig:compton_servo}
+\end{figure}
+
+\item {\bf Unlock the Cavity}
+
+On the EPICS control panel, pull the "OPTICS" menu down. Click on "Mini Optic" 
+\begin{figure}[htp]
+    \begin{center}    
+        \includegraphics*[angle=0,scale=0.8]{compton_laseron}
+    \end{center}
+    \caption[compton:laser control ]{Compton Laser control setup to unlock the cavity}
+    \label{fig:compton_laseron}
+\end{figure}
+
+
+To unlock the cavity, click on the Servo off button as shown in Fig.\ref{fig:compton_laseron}.
+\end{itemize}
+    
+\newpage
+\subsection{Electron Detector Setup}
+\begin{itemize}
+\item {\bf Turn on the electron detector}\\
+        The detector system needs to be powered. In the tunnel,
+        there is a crate attached to the wall above the electron detector, it also needs to be turned ON.
+        When it is ON a red LED is lit (at the right end of the crate).
+
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.6]{compton_map1_elec}
+    \end{center}
+    \caption[compton:electron detector circuit breaker]{Location of the electron detector circuit breaker}
+    \label{fig:compton_map1_elec}
+\end{figure}
+
+\item {\bf Slow control of the electron detector }\\
+To perform operations on the electron detector. Open the Compton Polarimeter... screen from the main Polarimeter EPICS screen
+and then choose "Electron Detector". On this screen, ashown in Fig.\ref{fig:compton_epicsElectron},
+ active buttons appear in blue
+and readback values appear on a yellow background. 
+To use the electron detector a high voltage
+(120 V) must be applied to polarize the silicon
+microstrips and a low voltage must be provided to the preamplifier
+circuit board and some threshold must be set for each plane for
+the detection of the signals. To do this execute the following operations :
+
+Turn the low voltage ON on both side\\
+Turn the high voltage ON. Put the final DAC value (up to 255 for max HV ) and click the ramp.\\
+Set thresholds to 17. The return value should read 17.\\
+Turn calibration OFF.\\
+
+The electron detector can be put in data
+taking position remotely. When the detector is inserted {\bf the chicane must be ON},
+when it is being moved {\bf the beam must be OFF too}. If it is not the case the detector will eventually be destroyed.
+
+Click on either "garage" or "beam" depending on where you want to put the detector.\\
+To make sure the detector is where you want watch the detector move on the TV screen (there is one
+        in tha Hall A counting house and one in the back room). The switches readback must oscillate a
+        little bit if the system is running properly.\\
+	
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,scale=0.8]{compton_epicsElectron}
+    \end{center}
+    \caption[compton:Electron detector control]{Compton electron detector control panel}
+    \label{fig:compton_epicsElectron}
+\end{figure}
+
+The electron detector must be on the garage position.
+
+        Check the status of the electron detector on\\
+          the video screen shown in Fig.\ref{fig:compton_electron_out}. The arrow must be exactly in front\\
+          of  OUT (outside) nominal position.\\
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,width=8cm]{compton_electron_out}
+    \end{center}
+    \caption[compton:Electron detector viewer]{Compton electron detector TV viewer}
+    \label{fig:compton_electron_out}
+\end{figure}
+	  
+\item {\bf Switch on the the Compton chicane}\\
+
+        This procedure is only performed by MCC operators.\\
+
+        First of all,
+        the Hall A Run Coordinator must request that
+        MCC tune the beam through the Compton chicane.
+        MCC operators have to apply the section 2 of
+        the procedure MCC-PR-04-001. If necessary
+       (after a long shutdown for exemple), let's remind to the operator
+       to open valves located on the Compton line.
+       The complete procedure is available on the MCC web site \\
+\href{http://opsntsrv.acc.jlab.org/ops_docs/online_document_files/MCC_online_files/HallA_beam_delivery_proc.pdf}%
+{ at this URL}
+       
+\item {\bf Lock once again the cavity}\\
+\end{itemize}
+
+\subsection{Vertican Scan}
+Perform a vertical scanning of the electron beam inside the magnetic chicane 
+in order to maximize the counting rates in the Photon detector.
+
+        In the case the crossing of the electron and Laser beams
+        has been lost, or is not optimal, a "Vertical scan" has to be performed.
+        By stepping the magnetic field of the
+        chicane dipoles, the beam is moved vertically. Step size should be
+        small with respect to the laser spot size (\~100 micro m). Here are some
+        step sizes corresponding to a {\bf 25 or 100$\mu$m  } vertical displacements versus
+        typical beam energies, MCC operator are used to Gauss.cm unit:
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|l|l|} \hline
+step 25$\mu$m & step 100$\mu$m & Energy \\ \hline\hline
+10 G.cm & 40 G.cm & 0.8 GeV \\ \hline
+20 G.cm &  80 G.cm &  1.6 GeV \\ \hline
+30 G.cm &  120 G.cm & 2.4  GeV \\ \hline
+40 G.cm &  160 G.cm & 3.2  GeV \\ \hline
+50 G.cm &  200 G.cm & 4.0  GeV \\ \hline
+60 G.cm &  240 G.cm &  4.8 GeV \\ \hline
+70 G.cm &  280 G.cm &  5.6 GeV \\ \hline 
+\end{tabular}
+\end{center}
+\caption[Compton:vertical scan]{Chicane vertical scan step values for various energies.
+}
+\label{tab:compton_vscan}
+\end{table}
+	
+Although the procedure is non-invasive for Hall A, let the shift leader know
+when you start and finish the scan.
+
+The scan is done in contact with MCC (7047) by checking the online evolution
+        of the counting rate using "spy\_acq".
+        The optimal Y-position is at the upper part of the bell appearing
+        on the middle of the spy\_acq picture (see Fig.\ref{fig:compton_spy_bell}) 
+	("{\bf Counting Rates versus DAQ Y
+        at vertex}"). As a first pass, one can use bigger step size to locate
+        the maximum and then go back to small steps to fine tune the position.
+
+When this procedure is over, come back to the right Y-position and
+        ask to the machine operator to lock the Y-position of the beam. Then an
+        automatic magnetic feed-back will run to keep the electron beam Y-position
+        within 50 micro m of this optimal position. Click on {\bf Set X} and
+        {\bf Set Y} buttons in the frame "Beam drift alarm on Epics pos at vertex".
+        Click on {\bf Alarm ON} to set it green. It will bip when the 50 micons limit
+        is reached. This is an important task to avoid sensitivity to beam position
+        false asymmetry.
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics*[angle=0,height=0.8\textheight]{compton_spy_bell}
+    \end{center}
+       \caption[compton:vertical scan]{Vertical scan trace in spy\_acq panel}
+        \label{fig:compton_spy_bell}
+\end{figure}
+
+\begin{itemize}
+\item {\bf Ask to the MCC operators to switch the beam off.}
+
+
+\item {\bf Insert the electron detector in the beam line.}
+
+First of all, the electron beam must
+be off (see Hall A run coordinator and call MCC operator)
+If it is not the case the detector will eventually be destroyed.
+To perform operations on the electron detector. Open the Compton... screen from 
+the main Hall A EPICS screen
+and then choose "Electron Detector" to get the panel shown in 
+Fig.\ref{fig:compton_epicsElectron}.\\
+
+Click the "COMPTON" button.\\
+To make sure the detector is where you want watch the detector move on the TV screen (there is one
+in tha Hall A counting house and one in the back room). The switches readback must oscillate a
+little bit if the system is running properly.
+
+Finally, Ask to the MCC operators to switch the beam on.
+\end{itemize}
+
+\subsection{Taking data}
+This is a list of check points to run Compton. It assumes the polarimeter 
+has already been started up as described in the previous sections and  
+that a run has just ended and you want to take a 
+new one.
+
+Bring up the  following three screens to control the data taking:
+
+\begin{itemize}
+\item {\bf EPICS screen}: slow control for the optic table + cavity, the 
+photon and electron detectors, beam parameters.
+\item {\bf Acq screen}: runcontrol and spy\_acq display.
+\item {\bf Netscape screen}: Electronic logbook of the Compton polarimeter, 
+check histograms.
+ \end{itemize}
+
+Follow the following procedure:
+\begin{itemize}
+\item Go to the {\bf EPICS screen}, check the cavity is loocked with \~1200 Watts 
+or more.
+\item Go to the {\bf Acq screen} and click on the {\bf Trigger window} in spy\_acq. 
+   
+\begin{itemize}
+\item Check Random, Mouly and central cristal are activated.
+\item Check {\bf Raw data rates}. Assuming a trigger rate of 1kHz/muA, 
+   prescaler factors should keep the read data rates at the few kHz level.
+\item Check the trigger condition in {\bf General Daq setup} (Photon only, 
+   e only, coinc, ...). 
+\end{itemize}
+\item Check the state of the acquisition in the {\bf Acquisition system window} 
+of spy\_acq. After an "End run succeded" each module should be in "downloaded" 
+state. 
+{\it If not, follow error messages displayed in the bottom window. Most of 
+the problems are fixed by clicking on Reset or Reboot + Download buttons. Display needs 
+some delay to refresh after these  actions. Don't click like crazy on every 
+enabled button. If everything is stuck try "restart this window" in the 
+spy\_acq menu to refresh the display.}
+\item Click on {\bf Start Run} in the {\bf Runcontrol window}. Check that 
+each module of the acquisition goes from downloaded to paused and then active 
+state.
+\item Click on the {\bf Online Counting Rate window} in spy\_acq. Check the rate 
+in the central cristal (red curve) is close to the optimal value from the last 
+vertical scan (it should be around 1kHz/muA).
+{\it If counting rates are low and Beam Drift Alarm keeps ringing, the 
+crossing of the electron and Laser beams is not optimal. Stop the run and 
+perform a 
+vertical scan.}
+\item Start the photon polarization reversal by clicking on {\bf Procedure ON} 
+in the {\bf Left-Right procedure} frame. Periods of cavity ON and OFF will 
+alternate, starting with OFF (bkg measurement).
+\item Take a {\bf \~1 hour run}.
+\item Before ending a run, fill up the {\bf LogBook window} in spy\_acq (name, 
+run type, title). Ensure the Logbook and Checklist buttons are not inhibited
+if you want the run to be analysed and stored in the electronic logbook.
+\item Click on {\bf End Run} in the {\bf runcontrol window}. Look for the 
+"End of run succeeded" message in the bottom frame.
+{\it If End of run failed, go to Acquisition system in spy\_acq and follow 
+error messages.}
+\item A {\bf yellow window} should pop up for few second after the end of run 
+indicating that the run is saved and the online analysis (checklist) is 
+runnig.
+\item Go to {\bf Netscape screen} and reload the {\bf Compton logbook web 
+page}. Last run should appear on the first line. 
+\item By clicking on {\bf more} you access to detailed informations about 
+the running conditions as well as to control histograms generated by the 
+{\bf checklist} script. This script may take few minutes to run.
+{\bf It is important task to check the control histograms after each end of 
+run. Quality off the data depends on it.} See section "Control Histograms".
+\item Go to first point, {\bf start a new run}. 
+\end{itemize}
+
+Two kinds of alarm can turn ON during data taking:
+
+\begin{itemize}
+\item {\bf Y Position:} Go to {\bf On Line Counting Rate window} in spy\_acq and check 
+the "Beam drift alarm" frame. If the "Average Y" differs to "Y settings" by more than 
+50 microns, Alarm is ringing and stop bell button is red. Click on stop bell and 
+wait few seconds to see if the position feedback brings Y back to its nominal 
+value. If it doesn't, call MCC (7047) and ask them to check if the position 
+feedback on Y in the Compton chicane is still running.
+If necessary stop the run, perform a vertical scan and re-lock the vertical 
+position at the new optimal value.
+\item {\bf DAQ system:} If something goes wrong in the DAQ system during data 
+taking you should see an effect on the "photon read" counting rate. Go to 
+{\bf Acquisition system} window in spy\_acq, click on stop bell button if alarm is 
+ringing. End Run in runcontrol window. Follow error messages displayed in spy\_acq 
+to fix the problem.
+\end{itemize}
+
+ADC spectrum of the photon detector should show the 
+pedestal peak
+(pink), the diode signal (green), Compton + background spectrum (blue). 
+Gain has to be adjusted so that the Compton edge is between 1/2 and 2/3 
+of the ADC range.An automatic fit procedure substracts the background and calibrate 
+the threshold value using the Compton edge. If the fit doesn't succeed 
+it won't affect the quality of the data but prevents further online 
+analysis. Call a Compton expert to fix it.Typical experimental Compton asymmetries 
+are of the order a 1\%. 
+Check the electron beam current asymmetry stays below few 100 ppm.{\bf Vertical position} 
+of the electron beam is the {\bf most important parameter}. 
+It drives our luminosity (electron and Laser 
+beam crossing) as well as our sensitivity to beam position differences 
+correlated with the helicity.
+Check we spend most of the running time at the {\bf optimal Y position}, 
+which is at the {\bf summit of the bottom left curve (counting rate \% Ybpm)}.
+If the most probable position is off by more than 50 micron, perform a 
+vertical scan.
+
+
+Any comment about the running conditions, shift summary, ... are welcome to 
+help the offline analysis. You can insert them in the Compton electronic 
+logbook by filling up the {\bf LogEntry window} in \mycomp{spy\_acq}. Click on 
+{\bf Submit} to dowload your comments in the logbook.
+
+} %infolev
+
+\infolevtwo{
+\subsection{Turning off the compton polarimeter}
+\begin{itemize} 
+\item  Stop the magnetic chicane\\
+
+        This procedure is only performed by MCC operators.
+    
+        First of all, 
+        the Hall A Run Coordinator must request that
+        MCC tune the beam through the Compton chicane.
+        For a foreseen shutdown or maintenance days, you do not need this step.
+    
+        MCC operators have to apply the section 3 of 
+        the procedure MCC-PR-04-001. Let's remind to the operator
+       to close valves located on the Compton line. It is very important
+       to keep the best vacuum in the Compton line and avoid
+       dust deposit on the high reflectivity mirrors of the cavity
+       The complete procedure is available on our web site at :
+       
+       \url{http://hallaweb.jlab.org/compton/Documentation/Procedures/compton_off.frm.ps}
+
+\item Set the electron detector on the GARAGE position\\
+
+
+First of all, the electron beam must
+be off (see Hall A run coordinator and call MCC operator) 
+If it is not the case the detector will eventually be destroyed.
+%Slow control of the electron detector. 
+%To perform operations on the electron detector. 
+Open the MISC... screen from the main Polarimeter EPICS screen
+and then choose "Electron Detector". On this screen, active buttons appear in blue 
+and readback values appear on a yellow background. This screen is also reachable, 
+by loading the file \mycomp{ComptonElectron.adl} located 
+under the home directory of hacuser on the hac computer.
+    
+Click on "garage" button.\\
+
+To make sure the detector is where you want watch the detector move on the TV screen (there is one 
+in tha Hall A counting house and one in the back room). The switches readback must oscillate a 
+little bit if the system is running properly.
+
+\item  Switch off the PMT High Voltage of the photon detector\\
+\par The cards of the COMPTON Polarimeter PMT HV are located in crate \#2
+telnet hatsv5 2011, login:adaq, paswd:{\it ask people on shift}then 1450, vt100 and usual display.
+\par High Voltage channel for the Compton polarimeter are in cards \# 12, 13, 14 and 15.
+Switch off all the channels.
+\par NB: Only one user can connect on hatsv5 at the same time!! If you can't connect 
+check if others are logged in. See also procedure posted in rack \#CH01B05.
+
+\item Unlock the cavity\\
+On the EPICS control panel, pull the "OPTICS" menu down. \\
+Click on "Mini Optic".\\
+To unlock the cavity, click on the Servo off button.\\
+\item Switch off the laser\\
+On the EPICS control panel, pull the "OPTICS" menu down.\\
+ Click on "Mini Optic".\\
+ To turn the Laser Off .... Click on the Laser Off button.
+ Check LASER STATUS and INCIDENT POWER.\\
+ The Laser spots would switch off on the CCD control TV screen
+\end {itemize}
+} %infolev
+
+\begin{safetyen}{0}{0}
+\section {Safety Assessment}
+\label{sec:compton_safety}
+\end{safetyen}
+
+\begin{safetyen}{10}{15}
+\subsection{Magnets}
+
+Particular care must be taken in working in the vicinity of the
+magnetic chicane dipoles of the compton polarimeter as they can have large currents
+running in them. Only members of the Compton polarimeter group are
+authorized to work in their immediate vicinity, and only when they are
+not energized. As with all elements of the
+polarimeter which can
+affect the beamline, the magnets are controlled by MCC. All four dipoles are
+powered in series from a common power supply. The power supply for
+the dipoles is located in the Beam Switch yard Building (Building 98).
+The maximum current for the dipole is 600A. There is a
+red light which indicate the status of the dipoles. The warning red
+light is activated via a magnetic field sensitive switch placed
+on the coils of one of the dipole. Lock and tag training is required of all personnel working
+in the vicinity of the Compton magnets. \\
+
+\subsection{Laser}
+The primary hazzard in the optical table of the compton polarimeter is the Class IIIB, 240~mw 
+CW infra-red laser.
+It is housed in the tunnel in a laser safety enclosure interlocked with the laser power.
+Welding curtains are provided on all sides to isolate the laser enclosure from other pathways.
+A flashing yellow beacon installed in the tunnel indicates laser on status. Three crash  buttons
+are provided in the tunnel for emergency shutdown of the laser.
+
+All functions of the laser are remotely controlled and personnel access to the laser "hut" 
+is not necessary during routine operation of the compton polarimeter. However, in case of repair  
+or mainetance work, access to the laser enclosure may be necessary. The safe operating procedure for this laser is described in 
+Jeffeson Lab Laser Standard Operating Procedure (LSOP) 101-2-99-1-4. A copy of the LSOP is 
+available in the tunnel wall next to the laser hut. Only personnel aouthorized in the LSOP are
+permitted to access the laser hut.
+ 
+
+\subsection{High Voltage}
+
+There are 25 photomultiplier tubes within the compton photon detector module.
+Each tube is connected to a high voltage power supply located in the beamline instrumentation area
+with SHV cables. The maximum voltage is 3000 Volts.
+The high voltage supply must be turned off prior to accessing  any of the photon detector elements
+for servicing purposes. Only members of the Compton group
+are authorized to access the  detector.\\
+
+\end{safetyen}
+
+\subsection{Authorized Personnel}
+
+The list
+of the presently authorized personnel is given in Table~\ref{tab:compton:personnel}.
+Other individuals must notify and receive permission from
+the contact person (see Table~\ref{tab:compton:personnel}) before adding their names
+to the above list.
+\obsolete{
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|ll|l|l|l|l|c|} \hline
+  \multicolumn{2}{|c|}{Name} & Dept. & \multicolumn{2}{c|}{Telephone} &
+  \multicolumn{1}{c|}{e-mail} & Comment \\
+  \cline{4-5}
+    first & last & & JLab & Pager &  & \\
+\hline
+ {\em Sirish } & {\em Nanda} & JLab   & 7176  & 7176  & nanda@jlab.org     & Contact     \\
+   Jack   &  Segal           & Jlab   & 5849  & 5849  & segal@jlab.org     & Technical \\
+  Joseph  &  Zhang           & Jlab   & 5849  & 5849  & shukui@jlab.org    & Optics \\
+  Martial &  Authier         &  CEA   & 4324* &       & mauthier@Cea.Fr    & Engineering \\
+ Nathalie &  Colombel        &  CEA   & 8350* &       & ncolombel@Cea.Fr   & Mechanical \\
+ Pascale  &  Deck            &  CEA   & 2426* &       & pdeck@Cea.Fr       & Electronics \\
+ Alain    &  Delbart         &  CEA   & 3454* &       & adelbart@Cea.Fr    & Optics \\
+ David    &  Lhuillier       &  CEA   & 9497* &       & dlhuillier@Cea.Fr  & Analysis  \\
+  Yves    &  Lussignol       &  CEA   & 2828* &       & lussi@Cea.Fr       & EPICS \\
+  Damien  &  Neyret          &  CEA   & 7552* &       & dneyret@Cea.Fr     & DAQ \\
+  Gérard  &  Tarte           &  CEA   & 8464* &       & gtarte@Cea.Fr      & Electronics\\
+Christian &  Veyssière       &  CEA   & 9704* &       & cveyssiere@Cea.Fr  & Electronics \\
+\hline
+\end{tabular}  
+\end{center}
+\caption[compton Polarimeter: authorized personnel]{
+   Compton Polarimeter: authorized personnel. The primary contact person's
+   name is marked with a slanted font. *For CEA extensions, dial 9-011-33-1-6908-XXXX.   
+}
+\label{tab:compton:personnel}
+\end{table}
+}
+
+\begin{namestab}{tab:compton:personnel}{Compton Polarimeter: authorized personnel}{%
+          Compton Polarimeter: authorized personnel}
+ \SirishNanda{\it Contact}
+ \JackSegal{Technical}
+ \JosephZhang{Optics}
+ \MartialAuthier{Engineering}
+ \NathalieColombel{Mechanical}
+ \PascaleDeck{Electronics}
+ \AlainDelbart{Optics}
+ \DavidLhuillier{Analysis}
+ \YvesLussignol{EPICS}
+ \DamienNeyret{DAQ}
+ \GerardTarte{Electronics}
+ \ChristianVeyssiere{Electronics}
+\end{namestab}
+
