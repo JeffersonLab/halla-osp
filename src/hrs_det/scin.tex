@@ -1,8 +1,20 @@
+
+\infolevone{
 \chapter[Trigger Scintillator Counters]{Trigger Scintillator Counters}
   \footnote{Original authors: Robert~Feuerbach~\email{feuerbac@jlab.org},
     Bogdan~Wojtsekhowski~\email{bogdanw@jlab.org}}
 \section{Overview}
+}
 
+\infoleveqnull{
+\subsection{Scintillator and Shower Counters}
+\subsubsection{Overview}
+
+Many of the detector systems in Hall A make use of photomultiplier tubes.  These include
+scintillators, shower detectors, and aerogel Cherekovs.   
+}
+
+\infolevone{
 In the standard detector configuration each HRS has two trigger
 scintillator planes, S1 and S2. The paddles in each plane are arranged to
 provide segmentation along the detector-x direction. An additional
@@ -107,6 +119,7 @@ the shielding hut for processing.
   printout of the EPICS control in the last experimental logbook.
   
 }
+}
 
 \infolevtwo{
   Figures ~\ref{fig:scinhv} and ~\ref{fig:s1scinhvc} give examples which are included
@@ -128,7 +141,6 @@ the shielding hut for processing.
       \label{fig:s1scinhvc}
     \end{center}
   \end{figure}
-  
 }
 
 \infolevtwo{
@@ -181,7 +193,9 @@ the shielding hut for processing.
   rigidity and protection from stray RF fields. The mu-metal shield is at
   cathode potential to minimize the dark current due to capacitive discharge
   in the photo cathode glass window.
-}  
+}
+
+\infolevone{  
   \begin{figure}[tbhp]
     \begin{center}
       \includegraphics[angle=0,width=.6\textwidth]{scint_fig1}
@@ -225,10 +239,11 @@ the shielding hut for processing.
   scintillator counters from their subframes.
 
 \section{Safety Assessment}
+}
   
 \begin{safetyen}{10}{10}
-  WARNING: The bases are high voltage devices: the high voltage should be
-  turned off before handling.
+  The bases on the phototubes are high voltage devices and the high voltage channel must be
+  turned off and the SHV cable removed before handling.
   
   The maximum (negative) voltage for both the PMTs and dynode chain is 3 kV. In actual 
   use, however, there should be no need to exceed the 1.8-2.1 kV operating 
@@ -255,15 +270,18 @@ the shielding hut for processing.
   mA with 2.1 kV on the base. 
 \end{safetyen}
 
+\infolevone{
 \begin{safetyen}{10}{15}
-\section{Authorized Personnel}
+\section{Responsible Personnel}
 \end{safetyen}
+}
+\infoleveqnull{\subsubsection{Responsible Personnel}}
 
 The individuals responsible for the operation 
 of the trigger counters are shown in Table \ref{tab:scin:personnel}.
 
-\begin{namestab}{tab:scin:personnel}{Trigger counters: authorized personnel} {%
-      Trigger counters: authorized personnel.}
+\begin{namestab}{tab:scin:personnel}{Trigger counters responsible personnel} {%
+      Trigger counters responsible personnel.}
   \BogdanWojtsekhowski{\em Contact}
   \JackSegal{}
 \end{namestab}

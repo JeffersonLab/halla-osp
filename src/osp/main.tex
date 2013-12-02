@@ -50,11 +50,14 @@
 % Set the Chapter counter for making the ESAD level zero document
 %
 %\input{esad-charter1.tex}
-\input{esad/new-ESAD}
-\infoleveqnull{\setcounter{chapter}{2}}
+\infoleveqnull{\input{esad/new-ESAD}}
+%\infoleveqnull{\setcounter{chapter}{2}}
 
 %
 % Input Sections of the Operations Manual
+%
+% This material is Chapter 3 of the ESAD
+\infoleveqnull{\chapter{Hall Specific Equipment}}
 %
 \input{introduction/all}
 \input{beamline/all}
@@ -68,6 +71,9 @@
 }
 \input{offline/all}
 
+%
+%\input{esad/list-of-contacts.tex}
+%
 \infolevone{
 \input{bigbite/all}
 %\appendix

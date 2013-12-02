@@ -26,6 +26,7 @@
 % gas system status is now logged automatically in EPICS
 % JS segal@jlab.org
 
+\infoleveqnull{\subsubsection{Overview}}
 \infolevone{
 \section{Overview}
 
@@ -298,8 +299,7 @@ four 12VDC fans mounted in the aluminum Faraday cage.}
 
 \begin{safetyen}{5}{5}
 \infolevone{\section{Safety Assessment}}
-\infoleveqnull{\subsubsection{Safety Assessment}}
-The following potential hazards have been clearly identified.
+The following potential hazards and mitigrations have been clearly identified.
 \begin{description}
 \item {\bf The High Voltage System}
 The Bertan 377N HV low current power supply provides a nominal
@@ -307,37 +307,34 @@ The Bertan 377N HV low current power supply provides a nominal
 connectors is used to connect the power supply to a Hammond splitter
 box, and then to connect the splitter box to each of the three high
 voltage planes in a given VDC.  A given chamber draws a current
-from  50-100 nA.
-\item {\bf The Low Voltage System}
-% Added by K. Allada %
-The pre-amp/discriminator (MAD) cards are powered by a LV supply. Each
-card (23 per chamber) requires +5.0 V (92 cards draw less than
-15A). The level-translator are powered by a LV supply. Each card
-requires +5.0 V and -5.0 V with total current draw less than 10 A.
-%Kepco LV power supplies are used for the the LeCroy 2735DC
-%pre-amp/discriminator cards.  Each card (23 per chamber) requires
-%+5.0 V (92 cards draw 22 A), -5.2 V (92 cards draw 58 A) and +3.0 V
-%(92 cards draw $\leq$ 2 A).
+from  50-100 nA.  Thus, when servicing the chambers, the HV for that
+element must be turned off and disconnected.
+%\item {\bf The Low Voltage System}
+%%% Added by K. Allada %
+%The pre-amp/discriminator (MAD) cards are powered by a LV supply. Each
+%card (23 per chamber) requires +5.0 V (92 cards draw less than
+%15A). The level-translator are powered by a LV supply. Each card
+%requires +5.0 V and -5.0 V with total current draw less than 10 A.
 \item{\bf Explosive Gas} The Ar~C$_2$H$_6$ chamber gas is explosive
 and must be handled accordingly.  Further, gas flow should be maintained
-for at least 24 hours prior to the enabling of HV.
+for at least 24 hours prior to the enabling of HV. Need mitigation!
 \item{\bf High Pressure Gas Bottles} The gas used in the chambers
 is supplied in high pressure ($\ge$ 2000 psi) gas bottles. This
 confined high pressure gas represents a tremendous (potentially lethal)
-amount of stored energy.
+amount of stored energy.  Need mitigation!
 \end{description}
 \end{safetyen}
 
 \begin{safetyen}{10}{15}
-\infolevone{\section{Authorized Personnel}}
-\infoleveqnull{\subsubsection{Authorized Personnel}}
+\infolevone{\section{Responsible Personnel}}
+\infoleveqnull{\subsubsection{Responsible Personnel}}
 \end{safetyen}
 
 The individuals responsible for the operation 
 of the VDC are shown in Table \ref{tab:vdc:personnel}.
 
-\begin{namestab}{tab:vdc:personnel}{VDC: authorized personnel}{%
-      VDC: authorized personnel.}
+\begin{namestab}{tab:vdc:personnel}{VDC responsible personnel}{%
+      VDC responsibl3 personnel.}
   \JackSegal{\em Contact}
   \BogdanWojtsekhowski{}
 \end{namestab}
