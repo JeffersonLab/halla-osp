@@ -7,11 +7,11 @@
 
 \infoleveqnull{
 \section{Arc Energy Measurement}
-\subsection{Overview}
+}
+
 In order to determine the integral field of the eight dipoles that lead to Hall A, and 
 in turn determine the beam energy, a nineth dipole wired in series with the rest is 
 located in a special shed near the hall A counting house.
-}
 
 \infolevone{
 The ARC energy measurement is under EPICS~\cite{EPICSwww} control through 
@@ -68,8 +68,6 @@ calibration data not detailed here, we deduce the net beam bend angle through
 the arc. This result measured in dispersive arc tuning, along with the field
 integral of the arc dipoles, provides an accurate determination of the beam
 energy. 
-
-\vspace{0.3cm}
 
 \section{Summary of field integral }
 
@@ -263,21 +261,25 @@ inside the shed, on the electronics rack. These values are digitized by separate
 ADCs, so they may differ from the remote values by \( \sim  \)0.1C. 
 }
 
-\begin{safetyen}{10}{10}
-\infolevone{\section{Shed access and safety }}
+\begin{safetyen}{0}{0}
+\infolevone{\section{Safety Information}}
 
-Due to the the dipole magnet and motion system, the access to the shed is limited to authorized
-persons which are listed in the ESAD and listed below. To be added to the list, 
+\subsection{Hazards}
+
+The nine dipole presents a magnetic field hazards and well as the mapper creating a mechanical
+hazard as it moves.  Very high currents are also present in the magnet.
+
+\subsection{Mitigations}
+
+Due to the the dipole magnet and motion system, the equipment is located in a locked  shed is limited to authorized
+persons which are listed in the operations manual. To be added to the list, 
 contact Douglas Higinbotham.
 The standard
 operation mode of the integral measurement setup is the remote mode, through
 the network, from the counting house.
 \end{safetyen}
 
-\begin{safetyen}{10}{10}
-\infolevone{\section{List of Authorized Personnel for Shed Access}}
-\infoleveqnull{\subsection{List of Authorized Personnel for Shed Access}}
-\end{safetyen}
+\infolevone{
 \begin{namestab}{tab:arc:personnel}{Arc Energy Measurement: authorized personnel}{%
                  Arc Energy Measurement: authorized personnel}
   \namestabheader{Hall A Personnel}
@@ -301,5 +303,7 @@ the network, from the counting house.
   \FrancoisGougnaud{}
   \JacquesMarroncle{}
 \end{namestab}
+}
+
 
 

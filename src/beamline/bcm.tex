@@ -1,6 +1,7 @@
 \infolevone{
-\section[Beam Current Measurement]{Beam Current Measurement
+\chapter[Beam Current Measurement]{Beam Current Measurement
 \footnote{Authors: D.Higinbotham \email{doug@jlab.org} with thanks to A.Saha$^{Deceased}$}
+\setcounter{subsection}{0}
 }
 
 The Beam Current Monitor (BCM) is designed for stable, low noise, non-intercepting 
@@ -11,13 +12,13 @@ The box is located 25 m upstream of the target. You can recognize it as a grey
 object on the stands, about 2 m downstream from where the beam enters the 
 hall. 
 
+\infolevone{
 The DC 200 down-converters and the Unser front end electronics are located in Hall 
 A. The temperature controller, the Unser back end electronics and its calibration 
 current source, cavity's RF unit (housing the RMS-to-DC converter board) and all 
 multi-meters, VME crate and computers are located in Hall A control room.
 
-\infolevone{
-\subsection{ System Layout}
+\subsection{System Layout}
 
 The schematic diagram of the BCM system is presented in
 Fig.~\ref{fig:halla_bcm}.
@@ -90,16 +91,17 @@ calibration runs we calibrate each of these scaler outputs.
 }
 
 \begin{safetyen}{10}{10}
-\subsection{Authorized Personnel}
-\end{safetyen}
 
-All Hall A members are authorized to take BCM calibration data using the Standard 
-Non-Invasive Hall A BCM Calibration Procedure. The extended calibration procedures 
+In coordination with the Hall A run coordinator, ll Hall A members are authorized 
+to take BCM calibration data using the Standard 
+Non-Invasive Hall A BCM Calibration Procedure which is maintained in the accelerator
+document database and it exicuted by operates. The extended calibration procedures 
 involving the Faraday Cup 2 and the OLO2 monitor at the Injector are presently 
-performed by operations though a knowledgable physicist needs to be present either
+performed by accelerator operations though a knowledgable physicist needs to be present either
 in the operations room and/or the counting house to ensure that the data is recorded
-and verified as being correct..
+and verified as being correct.
 
+\obsolete{
 The Accelerator EES group performs the maintenance of the BCM monitors. These 
 include:
 
@@ -111,12 +113,20 @@ include:
 5. Unser Keithley Current Source. & Calibration Yearly \\
 6. Digital Multi-meters HP3458A and HP 34401A. & Calibration Yearly\\   
 \end{tabular}
+}
 
-System Contacts are shown in Table~\ref{tab:BCM:personnel}.
+\subsection{Harzards and Mitigations}
+
+As operators perform the calibration proceedures there is no hazard to Hall A personnal
+in performing a beam current measurement.
+
+\subsection{Responsible Personnel}
+System responsible personnel are shown in Table~\ref{tab:BCM:personnel}.
 \begin{namestab}{tab:BCM:personnel}{BCM: authorized personnel}{%
    Beam Current Monitor: authorized personnel}
   \DouglasHiginbotham{\em Contact}
   \JohnMusson{Accel. expert}
 \end{namestab}
+\end{safetyen}
 %Jean-Claude Denard -x 7555
 }

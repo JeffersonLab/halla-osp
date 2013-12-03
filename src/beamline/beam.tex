@@ -325,6 +325,48 @@ and also measure the emmitance of the incident beam. They are also used to
 absolutely calibrate the two associated beam position monitors located  in 
 front of the target. 
 
+To determine the position and the direction of the beam on the experimental 
+target point, two Beam Position Monitors (BPMs) are located at distances 7.524 m 
+(IPM1H03A) and 1.286 m (IPM1H03B) upstream of the target position. 
+The BPMs consist of a 4-wire antenna array of open ended thin wire striplines 
+tuned to the fundamental RF frequency of 1.497 GHz of the beam ~\cite{bi:bar90}. The 
+standard difference-over-sum technique is then used ~\cite{bi:HW} to determine the 
+relative position of the beam to within 100 microns for currents
+above 1 $\mu $A. The absolute  position of the BPMs can be calibrated with respect to the 
+scanners (superharps) which are located adjacent to each of the BPMs (IHA1H03A 
+at 7.353 m and IHA1H03B at 1.122 m upstream of the target). 
+\infolevone{The schematic of the  readout electronics is shown in Figure ~\ref{fig:bpmel}.}
+The position information from the 
+BPMs can be recorded in three different ways:
+
+\infolevone{
+\begin{figure}[hp]
+\begin{center}
+\includegraphics[angle=0,width=15cm]{BPM_fig}
+{\linespread{1.}
+\caption[Beamline: BPM Readout Electronics]{Schematic of the BPM readout
+electronics}
+\label{fig:bpmel}}
+\end{center}
+\end{figure}
+}
+
+1. The averaged position over 0.3 seconds is logged into the EPICS~\cite{EPICSwww} database (1 
+Hz updating frequency) and injected into the datastream every 3-4 seconds, 
+unsynchronized but with an orientative timestamp. From these values we can 
+consider that we know the average position of the beam calculated in the EPICS 
+coordinate system which is left handed.
+
+2. Approximately once a shift (or more often if requested by the experimenters) 
+a B-scope procedure ~\cite{bi:TP} can be performed using the same EPICS electronics 
+which then gives the peak-to-peak variation of the beam.
+
+3. Event-by-event information from the BPMs are recorded in the CODA datastream
+from each of the 8 BPM antennas (2x4) from which the position of the beam can be 
+reconstructed. However, these raw values belong to a parallel electronics chain 
+whose constants have to be retrieved by calibrations to the EPICS or scanner 
+data. 
+
 \subsection{Beam Exit Channel}
 
 After the target vacuum chamber, which was built by
@@ -368,14 +410,19 @@ specific beam dump.
 \section{Safety Information}
 \end{safetyen}
 }
+%
+% Information for the ESAD
+%
 
-\infoleveqnull{\subsection{Overview}}
+\begin{safetyen}{0}{0}
 
 The beamline in the Hall provide the interface between the CEBAF accelerator
 and the experimental hall.   All work on the beamline must be coordinated 
 with both physics division and accelerator division; in order to ensure
 safe and reliable transport of the electron beam to the dump.
- 
+
+\subsection{Hazards and Mitigations}
+
 All magnets (dipoles, quadrupoles, sextupoles, beam correctors) and beam 
 diagnostic devices (BPMs, scanners, Beam Loss Monitor, viewers) necessary for 
 the transport of the beam are controlled by Machine Control Center (MCC) 
@@ -384,6 +431,7 @@ subsequent sections. The detailed safety operational procedures for the Hall
 A beamline should be essentially the same as the one for the CEBAF machine 
 and beamline.\\ 
 
+  
 \noindent{}Personnel who need to work near or around the beamline should keep in mind the potential hazards:
 \begin{itemize}
   \item Radiation ``Hot Spots'' - marked by ARM or RadCon personnel,
@@ -393,6 +441,12 @@ and beamline.\\
   \item Magnetic field hazards in vicinity of the magnets, and
   \item Conventional hazards (fall hazard, crane hazard etc.).
 \end{itemize}
+
+The most hazardous areas along the beamline are roped off it restrict access.   
+In particule the scattering chamber, with it's large
+volume and thin windows requires hearing protection once it has been evacuated.   
+Signs are posted by radcon for any hot spots along the beamline and
+radcon must be notified before work is done in a posted area.
 
 Some magnets, as the M{\o}ller spectrometer elements, are covered with plastic
 sheets for electric safety. Any access to these magnets requires
@@ -406,9 +460,7 @@ including the equipment-specific one. \\
   \item Accelerator Operations Directive~\cite{AODcebaf};
 \end{list}
 
-\begin{safetyen}{10}{10}
 \subsection{Responsible Personnel}
-\end{safetyen}
 
 Since the beamline requires both accelerator and physics personnal to maintain
 and operate and it is very important that both groups stay in contact that any 
@@ -423,4 +475,5 @@ work on the Hall A beamline is coordinated.
   \HariAreti{..to Physics}
   \YvesRoblin{..to Hall-A}
 \end{namestab}
+\end{safetyen}
 
