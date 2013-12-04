@@ -1,1083 +1,617 @@
+
 \infolevone{
-\chapter[Cryogenic Targets]{Cryogenic Targets
-\footnote{Authors: J. P. Chen \email{jpchen@jlab.org}}
-}
-}
-\infoleveqnull{\subsection{Introduction}}
+\chapter[Cryogenic Targets]{Cryogenic Targets}
+\footnote{Authors: J. P. Chen \email{jpchen@jlab.org}
+}}
+\infoleveqnull{\section{Cryogenic Targets}}
 
 \infolevone{
 \section{Procedure for Normal Running of the Hall A Cryogenic Targets}
-This procedure provides guidelines for the everyday running of the Hall A
-cryogenic Hydrogen and Deuterium targets.
+
+This procedure provides guidelines for the everyday running of the
+Hall A cryogenic Hydrogen and Deuterium targets.
+
+\subsection{Introduction }
 }
 
+The Hall A cryotarget system allows for multiple configurations depending
+on the requirements of the experiment(s). In the standard configuration,
+the system has three separate target loops. One of these loops contains
+low pressure $^{4}$He gas with pressure up to 32 psia. The other
+two loops are usually used for liquid hygrodgen and deuterium targets.
+Each loop can have one or two target cells which is again dependent
+experiment requirements. 
+
+A short version of the cryotarget target control system user manual
+is available at \url{http://hallaweb.jlab.org/equipment/targets/cryotargets/Hallatgt.html}.
+An updated User's Guide to the Hall A Cryotarget is available at \url{https://polweb/guides/atarg/ATARGMAN.html}.
+Other useful information for cryotarget operators is also available
+at the above web sites.
+
 \infolevone{
-\subsection{Introduction }
-The Hall A cryotarget system contains three target loops. 
-One of the loops
-often has a single helium cell, which will be filled with 
-either 
-$^3$He or $^4$He gas with pressure up to 15 atm (about 220 PSIA).
-The other two loops are usually used for liquid hygrodgen and deuterium 
-targets. Each loop can have two target cells in one loop with different 
-sizes, for example, one 15 cm and one 4 cm cells. Or it can have one cell
-with length range from 4 cm to 25 cm. The loop not in use  
-will usually be filled with a little over one atm helium gas. 
-For the next round of cryotarget experiments (DVCS and GMp), all three loops
-will have single 15-cm cell for liquid hydrogen target.
-
-During the normal operation, the hydrogen target should
-have already been liquefied and are in a stable state of 
-about 2 to 3 degree sub-cooled liquid (19K). 
+During the normal operation, the hydrogen and/or deuterium targets
+shall have already been liquefied and are in a stable state of about
+2 to 3 degrees sub-cooled liquid (19K for hydrogen and 22K for deuterium).
 The normal operating conditions of the targets are given in Table~\ref{tab:target-cryo-param}.
-Also listed in Table~\ref{tab:target-cryo-param} are the freezing and boiling temperatures.
-These parameters should be reasonably stable (temperature to $\pm 0.1$ K, 
-pressure to $\pm 1$ psi) provided that the End Station
-Refrigerator (ESR) is stable. The
-temperature is controlled by a software PID loop with a high power heater (up
-to 1000 Watts). The PID loops read the output of one
-of the temperature sensors and adjust the power in the high 
-power heater appropriately. 
-The control loops function extremely well and the temperature fluctuations with
-steady beam are typically measured in hundredths of degrees. During beam off-
-beam on transitions high power fluctuations of a few tenths of a degree are
-not uncommon.
+Also listed in Table~\ref{tab:target-cryo-param} are the freezing
+and boiling temperatures. These parameters should be reasonably stable
+(temperature to $\pm0.1$ K, pressure to $\pm1$ psi) provided that
+the End Station Refrigerator (ESR) is stable. The temperature is controlled
+by a software PID loop with a high power heater (up to 1500 Watts).
+The PID loops read the output of one of the temperature sensors and
+adjust the power in the high power heater appropriately. The control
+loop functions extremely well and the temperature fluctuations with
+steady beam are typically measured in hundredths of degrees. The PID
+control loop also monitors the electron beam current to keep the target
+temperature stable by compensating for this heat load during unstable
+beam situations.
 
-\begin{table}{hp}
-\begin{center}
+\begin{table}
+{hp} 
+
+\begin{centering}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
-Target &
- Temperature (\( ^{\circ }K \))&
- Pressure (PSIA)&Freezing T (\( ^{\circ }K \))&Boiling T (\( ^{\circ }K \))\\
+Target  & Temperature (\ensuremath{^{\circ}K}
+) & Pressure (PSIA) & Freezing T (\ensuremath{^{\circ}K}
+) & Boiling T (\ensuremath{^{\circ}K}
+)\tabularnewline
 \hline 
-H\( _{2} \)&
- 19&
- 25&13.86&22.24\\
+H\ensuremath{_{2}}
+ & 19 & 25 & 13.86 & 22.24\tabularnewline
 \hline 
-D\( _{2} \)&
- 22&
- 22&18.73&25.13\\
+D\ensuremath{_{2}}
+ & 22 & 22 & 18.73 & 25.13\tabularnewline
 \hline 
 \end{tabular}
-\end{center}
-\caption[Cryo-target: operation conditions]{Normal operation conditions
-  of the cryo-target cells}
-\label{tab:target-cryo-param}
+\par\end{centering}
+
+\caption[Cryo-target: operation conditions]{Normal operation conditions of the cryo-target cells}
+
+
+\label{tab:target-cryo-param} 
 \end{table}
 }
 
-\infolevltone{
-Once the Jefferson Lab target group finished cooling down the Hall A
-cyrotarget system, there must be a trained target operator in the counting
-house monitoring the system at all times.
-For details of the target operation consult the full Hall A operations manual~\cite{HallAosp}.
-}
 
-\infolevone{
+\infolevone{ 
+
+
 \section*{Graphical User Interface}
 
-The principal interface with the target is through the
-Graphical User Interface (GUI), of the control system.
-Every target operator should be familiar with the
-short version of the GUI manual. The long version can 
-be used to find more details or for reference.
-} 
+The principal interface with the target is through the Graphical User
+Interface (GUI), of the control system. Every target operator shall
+be familiar with the use of the target GUI.
+
 
 \subsection{Alarm Handler}
-
-\begin{safetyen}{0}{0}
-It is \emph{mandatory} to have an alarm handler,ALH, running at all times when 
-the target has been cooled-down. 
-Further,
-it is \emph{mandatory} that the alarm handler be visible in all work spaces
-on the target control computer.
-\end{safetyen}
-\infolevone{
-Even though the  
-target safety is ultimately
-insured by mechanical measures, the alarm handler can save you lots of 
-time, grief and potentially prevent problems with data. 
-The ALH will alarm if any of its parameters goes out of normal range. 
-Servicing the alarm is the responsibility of the target operator.
-At high beam current, the ALH will usually alarm when the beam goes from
-on to off or from off to on, since the temperature change is out of normal
-range. The ALH can also repeated alarm if there are noisy analog channels. 
 }
-\begin{safetyen}{0}{0}
-If the alarm handler alarms repeatedly or the cause of the alarm is not clear, the 
-target operator should contact the on-call target expert.
+
+\begin{safetyen}{0}{0} 
+It is \emph{mandatory} to have an alarm
+handler, ALH, running at all times when the target has been cooled-down.
+Further, it is \emph{mandatory} that the alarm handler be visible
+in all work spaces on the target control computer. \end{safetyen}
+Even though the target safety is ultimately insured by mechanical
+measures, the alarm handler can save you lots of time, grief and potentially
+prevent problems with data. The ALH will alarm if any of its parameters
+goes out of normal range. Servicing the alarm is the responsibility
+of the target operator. At high beam current, the ALH will usually
+alarm when the beam goes from on to off or from off to on, since the
+temperature change is out of normal range. The ALH can also repeatedly
+alarm if there are noisy analog channels. \begin{safetyen}{0}{0}
+If the AH alarms repeatedly or the cause of the alarm is not clear,
+the target operator should contact the on-call target expert. 
 \end{safetyen}
 
+\infolevone{
 \subsection{Target Motion and Fast Raster}
 
-\infolevone{
-The target motions are interlocked with the machine Fast Shut Down (FSD) 
-system. Therefore, it is \emph{mandatory} that you call MCC so that they can
-remove beam from the Hall and mask our FSD node \emph{before} using \emph{any}
-target motion mechanism.
-In the case of Gmp experiment, a separate pointing target
-is planned to be inside the scattering chamber. An interlock system needs to be
-in place to prevent the pointing target to interfere with the cryotarget. The safety aspect of the pointing target needs to be covered in a separate safety document. For the cryotarget operation, it is important to have extra caution to prevent 
-the interfereance of cryotarget with the pointing target. 
+The target motion is interlocked with the machine Fast Shut Down (FSD)
+system. Therefore, it is \emph{mandatory} that operators call MCC
+so that they can remove beam from the Hall and mask our FSD node \emph{before}
+using \emph{any} target motion mechanism. In the case of Gmp experiment,
+a separate pointing target is planned to be inside the scattering
+chamber. This target will be manually positioned by a target group
+expert. The cryotarget motion control will be dissabled, while the
+pointing target is in position, by power lockout.
 }
 
-\begin{safetyen}{0}{0}
-When full power beam with tiny beam spot hit the cryotarget, there is a danger 
-that the beam can melt the target cell. The fast raster is used to prevent this
-from happening. Every time when moving the cryotarget into beam position,
-the target operator \emph {must check to make sure} that the faster raster 
-is on and has a reasonable size for beam current above 5 $\mu$A.
+\begin{safetyen}{0}{0} 
+When full power beam with tiny beam spot
+hit the cryotarget, there is a danger that the beam can melt the target
+cell. The fast raster is used to prevent this from happening. Every
+time when moving the cryotarget into beam position, the target operator
+\emph{must check to make sure} that the faster raster is on and has
+a reasonable size for beam current above 5 $\mu$A. 
 \end{safetyen}
 
 \infolevone{
+
+
 \subsection{Cryogenic Consumption}
 
-The ESR is not a bottomless reservoir of helium coolant. Every effort should
-be made to keep our consumption within reasonable bounds. This means that heater
-overheads should be tens and not hundreds of Watts and that loops which will
-be dormant for extended periods should be powered down as much as possible.
-If you feel that the cryogenic consumption is too high (or have received complaints
-from another ESR user) and are uncertain about the appropriate action contact
-the on-call target expert.
+The ESR is not a bottomless reservoir of helium coolant. Every effort
+should be made to keep our consumption within reasonable bounds. This
+means that heater overheads should be tens and not hundreds of Watts
+and that loops which will be dormant for extended periods should be
+powered down as much as possible. If you feel that the cryogenic consumption
+is too high (or have received complaints from another ESR user) and
+are uncertain about the appropriate action contact the on-call target
+expert.
+
 
 \subsection{Checklist}
 
-The Hall A target experts and the JLab target group like to track the state
-of the target. To help them in this task the 
-target checklist \emph{must be Elog the charts and the main target page
-once per shift}.
-}
+The Hall A target experts and the JLab target group tracks the state
+of the target. To facilitate this task the target checklist \emph{must
+be logged in the Elog and the charts and the main target page screen
+captured at least once per shift}.
+
+} 
+
 
 \subsection{Target Operators}
 
-One individual on each shift is responsible for target operations. 
-This individual
-is the designated target operator. To become a target operator, 
-one must be trained by one of the target experts and to sit 
-one shift with an already certified target operator. The training usually 
-takes place in the Hall A counting house and consists of a guided walk 
-through of the control system. 
+One individual on each shift is responsible for target operations.
+This individual is the dedicated target operator. To become a certified
+target operator, one must be trained by one of the target experts
+and to sit one shift with an already certified target operator. The
+training usually takes place in the Hall A counting house and consists
+of a guided walk through of the control system and procedures for
+handling off normal events.
 
-\infolevone{
-The target operator must read this document,
-the Safety Assessment Document for the Hall A Cryogenic Targets,
-and the short version of the GUI manual. The target operator should
-be familiar with the GUI system and be able to handle the normal target
-loop operation, the cryostat operation and the target motion. 
-He/she should also be able to deal with the GUI crash, the IOC crash
-and the usual alarms.
+The target operator must read this document, the Safety Assessment
+Document for the Hall A Cryogenic Targets, and the short version of
+the GUI manual. The target operator shall be familiar with the GUI
+system and be able to handle the normal target loop operation, the
+cryostat operation and the target motion. He/she shall also be able
+to deal with the GUI crash, the IOC crash and the usual alarms. 
 
 After the target operator's training, if he/she feels comfortable
-with the normal operation of the cryotargets, he/she should sign
-his/her name on the target operator authorization list, indicating that
-he/she has read this procedure and has been trained. The target expert
-who trained him/her should inform the Hall A staff who is responsible 
+with the normal operation of the cryotargets, he/she should sign his/her
+name on the target operator authorization list, which is  maintained in the
+counting house by the target controls, indicating that he/she
+has read this procedure and has been trained. The target expert who
+trained him/her should inform the Hall A staff who is responsible
 for the cryotarget system (J. P. Chen). 
-The table below lists the qualified target operators and provides space 
-for additional entries. The names of all
-operators must appear in the same list kept in the counting house.
-}
 
-\infolevone{
-\vspace{0.3cm}
+\begin{safetyen}{10}{10} 
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-Operator Name&e-mail&
- Date&
- Signature&
- Authorization\\
-\hline 
-J. P. Chen&jpchen&
- --&
- --&
- --\\
-\hline 
-J. LeRose&lerose&
- --&
- --&
- --\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
-\\
-\hline 
-&&
-&
-&
- \\
-\hline 
-\end{tabular}
-\end{center}
+The following table contains the names of the currently recognized
+target experts (who have worked on the Hall A cryotarget system and
+have extensive knowledge of the system) and their pager numbers
 
-\vspace{0.3cm}
-}
+\begin{namestab}{tab:cryotarg:personnel}{Cryo Target: experts}{Cryo
+target: experts and authorized personnel, with their phone numbers}
+\namestabheader{Hall A Physicists} \JianPingChen{cell:218-0722}
+\JohnLeRose{cell:565-5060} \namestabheader{JLab Cryo-Target Group}
+\DaveMeekins{cell:968-9076} \ChristopherKeith{cell:746-9277}
+\end{namestab}
 
-
-
-\begin{safetyen}{0}{0}
-\subsection{Fire/Explosion Hazards}
-\label{sec:target-cryo-safety}
-
-The cryogenic hydrogen and deuterium targets present a number of potential
-hazards, such as the
-fire/explosion hazard of the flammable gas as well as the hazards
-connected with
-the vacuum vessel and the of handling cryogenic liquids
-(ODH and high pressure). 
-\infolevltone{
-A detailed safety assessment is given in the full OSP manual~\cite{HallAosp}.
-}
+A cryotarget expert will be on call all the time when a cryotarget
+is in cooled state. An on-call cryotarget-expert list will be posted
+in the Hall A Counting House.
 \end{safetyen}
 
-\infolevone{
-In this document the hydrogen target will be referred
-to, but the deuterium target is essentially identical and almost all
-comments apply to both targets. 
-}
+\begin{safetyen}{0}{0} 
+\infolevone{\section{Safety Assessment}}
+\label{sec:target-cryo-safety}
 
-\begin{safetyen}{10}{5}
+\subsection{Hazards and Mitigations}
+
+The cryogenic hydrogen and deuterium targets present a number of potential
+hazards, such as the fire/explosion hazard of the flammable gas as
+well as the hazards connected with the vacuum vessel and the of handling
+cryogenic liquids (ODH and high pressure). \infolevltone{ A detailed
+safety assessment is given in the full OSP manual~\cite{HallAosp}.
+} \end{safetyen} \infolevone{ In this discussion the only hydrogen
+loop will be considered. The deuterium target is essentially identical
+and almost all comments apply to both targets. }
+
+%\infolevone{
+\begin{safetyen}{10}{5} 
+
+
 \subsubsection{Flammable Gas}
+
 \label{sec:targ-flammablegas}
 
-Hydrogen and deuterium are
-colorless, odorless gases and hence not easily detected by human senses.
-Hydrogen air mixtures are flammable over a large range of relative
-concentrations from 4 $\%$ to 75 $\%$ H$_2$ by volume. Detonation
-can occur with very low energy input, less than $\frac{1}{10}$
-that required by mixtures of air and gasoline. At temperatures above
--250 C hydrogen gas is lighter than (STP) air and hence will rise.
-At atmospheric pressure, the ignition temperature is approximately
-1000 $^\circ$ F but air H$_2$ mixtures at pressures of 0.2 to 0.5 Atm can be
-ignited at temperatures as low as 650 $^\circ$ F. Hydrogen mixtures
-burn with a colorless flame \cite{bi:mc75}.
+Hydrogen and deuterium are colorless, odorless gases and hence not
+easily detected by human senses. Hydrogen air mixtures are flammable
+over a large range of relative concentrations from 4 $\%$ to 75 $\%$
+H$_{2}$ by volume. Detonation can occur with very low energy input,
+less than 10\% of that required by mixtures of air and gasoline. At
+temperatures above 23K hydrogen gas is lighter than (STP) air and
+hence will rise. At atmospheric pressure, the ignition temperature
+is approximately 811K but air H$_{2}$ mixtures at pressures of 0.2
+to 0.5 Atm can be ignited at temperatures as low as 610K. Hydrogen
+mixtures burn with a colorless flame \cite{bi:mc75}.
 
-The total volume of liquid hydrogen in the heat exchanger is about
-2 $l$. The target cells and their associated plumbing hold
-an additional 3.4 $l$. Thus the total volume of hydrogen
-in the target is approximately 5.4 $l$. The volume changes between
-the liquid state and gas at STP by a factor of about 800.
-Thus filling the target
-would require about 4,300 STP $l$ of hydrogen. The hydrogen target is 
-connected to a 1,000 Gallon (about 3,800 $l$) recovery tank. The normal 
-running condition for hydrogen is 25 PSIA. So the total amount needed
-to fill the target and the tank is about 10,900 STP $l$. 
-For deuterium, the target is about 4,300 STP $l$. The normal running
-condition for deuterium is 22 PSIA. So the total volume needed
-to fill the tank is about 5,600 $l$.
-The total to fill both the target and the tank is 
-about 9,900 STP $l$.
+The total volume of hydrogen in the target is approximately 5.4 $l$.
+The volume changes between the liquid state and gas at STP by a factor
+of about 850. Thus filling the target would require about 4500 STP
+$l$ of hydrogen. The hydrogen target is connected to a 1,000 Gallon
+(about 3,800 $l$) recovery tank. The normal running condition for
+hydrogen is 25 psia. Thus, the total amount of hydrogen in the system
+is about 11000 STP $l$. A similar volume of deuterium will be required.
+In addition to this volume, one hydrogen and one deuterium bottle
+will be kept in the Hall in order to fill and pump/purge the targets.
+These bottles will be placed in a gas rack behind the gas panels.
+The large storage tanks are located outside the Hall at the rear of
+the couting house.
 
-The Hall A inventory of hydrogen and deuterium gas is stored
-outside the Hall A gas shed, adjacent to the counting house.
-The current inventory is two A size cylinders of hydrogen
-($\approx$ 6,800 STP $l$ each) and four A size cylinders
-of deuterium ($\approx$ 5,000 STP $l$ each). 
-One bottle of hydrogen and one deuterium bottle will be kept in the Hall
-in order to fill the targets. These bottles will be placed in a gas rack behind
-the gas panels. 
+The basic idea behind safe handling of any flammable or explosive
+gas is to eliminate oxygen (required for burning) and to prevent exposure
+to any energy source that could cause ignition. In the Hall A environment,
+the most likely source of oxygen is of course the atmosphere and the
+most likely ignition sources are from electrical equipment. Oxygen
+is removed from the internal volumes of the system by pumping and
+purging the system. Extensive procedures reviewed by an independant
+expert are used to perform this task. This task shall only be performed
+by system experts.
 
-The basic idea behind safe handling of any flammable or explosive gas
-is to eliminate oxygen (required for burning)
-and to prevent exposure to any energy source that could cause ignition.
-In the Hall A environment, the most likely source of oxygen is of course the
-atmosphere and the most likely ignition sources are from electrical equipment.
+\infolevone{ 
 
-\infolevone{
-\subsubsection{ Electrical Installation}
 
-Hall A contains a lot of electrical equipment and almost all of it
-could serve as an ignition source in the presence of an explosive
-oxygen and hydrogen mixture. We have made an effort to minimize the dangers
-from the equipment that is most likely to come into contact with
-hydrogen gas.
+\subsubsection{Electrical Installation}
 
-There are a number of electrically powered devices associated with the
-target gas handling system.
-All the pressure transducers in the system are approved
-for use in a hydrogen atmosphere. 
-The solenoid valves on the gas panels are explosion-proof.
-The AC power for the solenoids is
-carried by wires which are contained in either hard or flexible conduit.
-There are also LEDs on the gas panels that provide an indication as to the
-status of the valve solenoids. These are powered by a 24 $V$ DC supply.
-The readouts for the pressure transducers are
-mounted on the gas panels and the AC power for these readout units
-is in conduit. All the pressure transducers have 4-20 mA outputs.
+Hall A contains a significant amount of electrical equipment and almost
+all of it could serve as an ignition source in the presence of an
+explosive oxygen and hydrogen mixture. Extensive efforts have been
+made to minimize the dangers from the equipment that is most likely
+to come into contact with hydrogen gas. Electrical equipment considered
+to be in close contact with hydrogen meets the requirements of NFPA
+2 Hydrogen Technologies Code and/or NFPA 55 Compressed Gasses and
+Cryogenic Fluids Code as well as NFPA 497. Equipent not meeting these
+Code requirements is isolated durring off normal events by either
+valve isolation (vacuum turbopumps) or by electrical power trip.
+
+A pressure switch, installed on the scattering chamber, will trip
+when the vacuum in the scattering chamber is greater than 1 torr (i.e.
+durring an isolation vacuum loss event). This switch deenrgizes the
+following systems: vacuum gauge power, fan motor power, and heater
+power supplies. The switch also forces pneumatically actuated gate
+valves to close isolating the turbo pumps.
+
+There are a number of electrically powered devices associated with
+the target gas handling system. All the pressure transducers in the
+system are approved for use in a hydrogen atmosphere. The solenoid
+valves on the gas panels are explosion-proof and have been dissabled.
+The readouts for the pressure transducers are mounted in the target
+control equipment racks man meters from the gas panels. All the pressure
+transducers have 4-20 mA outputs.
 
 In addition to the electrical devices in the gas handling system,
 there are a number of devices inside of or mounted on the scattering
 chamber.
 
-All the devices which are in the scattering chamber must have
-their power delivered to them by wires in vacuum. The
-insulation of these wires should be radiation resistant, so Kapton
-has been used where available.
+All the devices which are in the scattering chamber must have their
+power delivered to them by wires in vacuum. The insulation of these
+wires must be radiation resistant, so Kapton and glass fiber tubing
+insulation has been used where applicable.
 
-The following electrical items are in close proximity to
-or are actually in the hydrogen system.
-
+The following electrical items are in close proximity to or are actually
+in the hydrogen system.
 \begin{description}
-\item[{\bf Axial Circulation Fan}] The fans which 
-circulate the hydrogen in the target are AC induction motors
-and therefore contain no brushes and are practically immune to sparking.
-The three phase power for these fans is delivered to them by 18
-gauge stranded copper wire with Kapton insulation.
-The maximum current that 
-the fans draw is 5 $A$ for a maximum power consumption of
-200 $W$ when pumping liquid hydrogen/deuterium. The current and voltage drawn
-by the fans is monitored by the control system.
-\item[{\bf Fan Motor Tachometer}]
-The fans have a tachometer which consist of a
-coil that views the flux change caused by a permanent magnet attached to 
-the motor rotor. The tachometer signals are carried on 22 gauge stranded wire
-with Kapton insulation. This is a low power signal. The control system
-monitors the frequency of the fans.
-\item[{\bf High Power Heater}]There is a high-power heater in the pipe of the
-loop.
-The maximum power available is 1000 $W$. The heater 
-is driven by a 150 $V$, 7 $A$ power supply.
-The current and voltage supplied to this heater are monitored by the control
-system and there
-is a software power maximum enforced on the power setting
-of this heater. 
-The heater is connected to
-the outside world by 18 gauge stranded wire with Kapton insulation.
-\item[{\bf Resistive temperature sensors}] There are four
-resistive temperature sensors immersed in each target loop. These resistors provide temperature
+\item [{\bf Axial Circulation Fan}] The fans which circulate the hydrogen
+in the target are AC induction motors and therefore contain no brushes
+and are practically immune to sparking. The three phase power for
+these fans is delivered to them by 18 gauge stranded copper wire with
+Kapton insulation. The maximum current that the fans draw is 5 $A$
+for a maximum power consumption of 200 $W$ when pumping liquid hydrogen/deuterium.
+The current and voltage drawn by the fans is monitored by the control
+system. 
+\item [{\bf Fan Motor Tachometer}] The fans have a tachometer which consist
+of a coil that views the flux change caused by a permanent magnet
+attached to the motor rotor. The tachometer signals are carried on
+22 gauge stranded wire with Kapton insulation. This is a low power
+signal. The control system monitors the frequency of the fans. 
+\item [{\bf High Power Heater}] There is a high-power heater in the pipe
+of the loop. The maximum power available is 1500 $W$.. The current
+and voltage supplied to this heater are monitored by the control system
+and there is a software power maximum enforced on the power setting
+of this heater. Internal vacuum connections to the heaters are made
+with 18 gauge stranded wire with Kapton insulation. 
+\item [{\bf Resistive temperature sensors}] There are six resistive temperature
+sensors immersed in each target loop. These resistors provide temperature
 measurements of the target fluid. The temperature controllers that
-read them use a current of less than 30 $\mu$A to excite them (
-they are excited with a constant voltage which for our resistors is
-on the order of 30 mV). The resistors are connected to the outside world
-with quad strand 36 gauge phosphor bronze wire with Formvar insulation.
-\item[{\bf Target Lifter}] There are two AC servo motors which provide
-the power to lift the target ladder. These motors are powered by three
-phase 208 $V$ power and are equipped with fail safe brakes (the brakes are
-{\bf released} by a 24 $V$ DC control voltage)
-and 50 to 1 gear reducers. On power up, there is a delay relay
-that insures that
-the motors are always energized before the brakes are released.
-\item[{\bf Vacuum Pumps}] The scattering chamber is evacuated by two Leybold
-1000 $l/s$ turbo pumps that are  backed by a Leybold 65 $cfm$
-mechanical pump. The turbo pumps are powered by 120 $V$ AC power while the
-backing pump requires three phase 208 $V$ AC power. The motor on the backing 
-pump is explosion proof and approved for use in NEC Class 1, Division 1,
-Group D (hydrocarbons {\bf but not} hydrogen) environments. An identical
+read them use a current of less than 30 $\mu$A to excite them ( they
+are excited with a constant voltage which for our resistors is on
+the order of 30 mV). The resistors are connected to the outside world
+with quad strand 36 gauge phosphor bronze wire with Formvar insulation. 
+\item [{\bf Target Lifter}] An AC servo motor provides the power to lift
+the target ladder. This motor is powered by three phase 208 $V$ power
+and is equipped with fail safe brakes (the brakes are \textbf{released}
+by a loss of 24 $V$ DC control voltage) and 50 to 1 gear reducers.
+On power up, there is a delay relay that ensures that the motors are
+always energized before the brakes are released. 
+\item [{\bf Vacuum Pumps}] The scattering chamber is evacuated by two
+Leybold 1000 $l/s$ turbo pumps that are backed by a Leybold 65 $cfm$
+mechanical pump. The turbo pumps are powered by 120 $V$ AC power
+while the backing pump requires three phase 208 $V$ AC power. The
+turbo pumps are isolated durring an insulating vacuum failure event
+by the use of automatic gate valves. The motors on the backing pumps
+are induction motors and approved for use in this environment. (The
+JLab fire protection engineer has reviewed this issue). An identical
 mechanical pump is used in the pump and purge system of the gas panels.
-Both the scattering chamber backing pump and the
-pump and purge system's mechanical pump exhaust to the vent line. 
-\item[{\bf Vacuum Gauges}] The chamber vacuum is monitored by an
-HP cold cathode gauge. This gauge has a maximum operating voltage of 
-4000 $V$ and a maximum
-current of 133 $\mu$A. The pressure at the entrance to the roughing pump
-is measured by a convectron gauge.
+Both the scattering chamber backing pump and the pump and purge system's
+mechanical pump exhaust to the vent line.
+\item [{\bf Vacuum Gauges}] The chamber vacuum is monitored by an HP cold
+cathode gauge. This gauge is not rated for hydrogen service and is
+therfore isolated from the scattering chamber vacuum durring an insulating
+vacuum loss event by automatic gate valve. This gauge has a maximum
+operating voltage of 4000 $V$ and a maximum current of 133 $\mu$A.
+The pressure at the entrance to the roughing pump is measured by a
+convectron gauge. 
 \end{description}
 }
+
 
 \subsubsection{Flammable Gas Detectors}
 
-There are four flammable gas detectors installed (one on top of the target,
-one each on top of the hydrogen and deuterium gas panels, one on top of the gas
-tanks)
-to provide early detection
-of hydrogen/deuterium leaks. These detectors are sensitive (and calibrated)
-over the range from 0 to 50 $\%$ Lower Explosive Limit (LEL) of hydrogen.
-The electro-chemical sensors were manufactured by Crowcon Detection
-Instruments LTD and
-the readout (four channels) was purchased from CEA Instruments, Inc. 
-(The Gas Master Four System). The readout unit provides two alarm
-levels per channel. The low level alarm is tripped at 20 $\%$ of LEL
-while 40 $\%$ of LEL activates the high level alarm.
-Each channel has a relay output for both low and high level alarm
-states and there is also a set of common relays for both alarm
-levels (these common relays respond to the "logical or" of the sensor inputs).
-The common relays will be connected to the Fast Shut Down System, FSD,
-which removes the beam from the hall by disabling a grid bias at the
-injector.
+There are three flammable gas detectors installed (one on top of the
+target, one each on top of the hydrogen and deuterium gas panels)
+to provide early detection of hydrogen/deuterium leaks. These detectors
+are sensitive (and calibrated) over the range from 0 to 50 $\%$ Lower
+Explosive Limit (LEL) of hydrogen. The electro-chemical sensors were
+manufactured by Crowcon Detection Instruments LTD and the readout
+(four channels) was purchased from CEA Instruments, Inc. (The Gas
+Master Four System). The readout unit provides two alarm levels per
+channel. The low level alarm is tripped at 20 $\%$ of LEL while 40
+$\%$ of LEL activates the high level alarm. Each channel has a relay
+output for both low and high level alarm states and there is also
+a set of common relays for both alarm levels (these common relays
+respond to the logic of the sensor
+inputs). 
 \end{safetyen}
 
-\subsection{Pressure}
-\begin{safetyen}{10}{5}
 
-The most important aspect of hydrogen safety is to minimize the
-possibility of explosive mixtures of hydrogen and oxygen occurring.
-Therefore the gas handling system has been made of stainless steel
-components (wherever possible) and as many junctions as possible have
-been welded.
 
-The pressure in the gas handling system is monitored in numerous
-places. Most importantly, the absolute pressure of the target is
-viewed by two pressure transducers, one on the fill line, PT127
-for H$_2$ and PT136 for D$_2$, and one on the
-return line, PT131 for H$_2$ and PT140 for D$_2$.
-These pressures are also measured by manual gauges. The fill line gauges
-are PI126 for H$_2$ and PI135 for D$_2$. The return line
-gauges are designated PI130, H$_2$ and PI139, D$_2$. The gas tanks are viewed
-with both pressure transducers (PT133 for hydrogen and PT142 for deuterium)
-and pressure gauges (PI123 for hydrogen and PI112 for deuterium).
+\begin{safetyen}{0}{0}
+\subsubsection{Gas Handling System}
 
-If the pressures are significantly deviate from either from one another or from
-the normal operating pressure, the target operator should call the 
-target-expert-on-call. When they differ from one another, it often is due to 
-a failure of one (or more) of the pressure transducers. If more than one deviate significantly from the normal operating pressure, it could be due to 
-temperature change or could be, in more serious situation, leak in the system.
+The most important aspect of hydrogen safety is to minimize the possibility
+of explosive mixtures of hydrogen and oxygen occurring. Therefore
+the gas handling system has been made of stainless steel components
+(wherever possible) and as many junctions as possible have been welded.
+Flanged connections are made with metal seals where possible. Resonable
+measures have been implimented to ensure that the system pressure
+does not fall near or below atmospheric pressure.
 
-\subsubsection{ Target Cells}
+The pressure in the gas handling system is monitored in numerous places.
+Most importantly, the absolute pressure of the target is viewed by
+two pressure transducers, one on the fill line, PT127 for H$_{2}$
+and PT136 for D$_{2}$, and one on the return line, PT131 for H$_{2}$
+and PT140 for D$_{2}$. These pressures are also measured by manual
+gauges. The fill line gauges are PI126 for H$_{2}$ and PI135 for
+D$_{2}$. The return line gauges are designated PI130, H$_{2}$ and
+PI139, D$_{2}$. The gas tanks are viewed with both pressure transducers
+(PT133 for hydrogen and PT142 for deuterium) and pressure gauges (PI123
+for hydrogen and PI112 for deuterium).
+
+If the pressures significantly deviate either from one another or
+from the normal operating pressure, the target operator shall call
+the target-expert-on-call. When they differ from one another, it often
+is due to a failure of one (or more) of the pressure transducers.
+If more than one deviate significantly from the normal operating pressure,
+it could be due to temperature change or could be a more serious situation
+(i.e. a leak in the system).
+
+The target system is considered by JLab to be a ``Pressure System''.
+Thus, the design and construction of the system must meet the requirements
+of the the most applicable ASME pressure code. The Codes of Record
+for the system are ASME Boiler and Pressure Vessel Code Section VIII
+Division 1 and ASME B31.3 Process Piping Code. These Codes have conservative
+safety allowances. The system was not originally designed or constructed
+to these Codes, however all alterations of the system are in compliance.
+Further the relief system has been modified to meet these Code requirements.
+All currently used cells and cell blocks also meet the requirements
+of the B31.3 Code. The large volume storage tanks located outside
+the Hall also meet the requirements of the ASME Boiler and Pressure
+Code and bear an ASME nameplate. These tanks are inspected on a regular
+basis and currently (or will by time of operation) meet the National
+Board Inspection Code requirements.
+\end{safetyen}
+
+\subsubsection{Target Cells}
 
 The target cells themselves represent the most likely failure point
-in the hydrogen system. The outer wall is made of 0.006 $in$ thick aluminum.
-The entrance and exit windows are thinner, but no less than  
-0.003 $in$.
-There is one 15 $cm$ long  cell bolted on to each cell block. 
-The cell has an outer diameter of 
-approximately 3 inches.
-The upstream windows are connected 
-to 1.25 $in$ diameter
-tubes with flanges which are also 
-bolted on to the cell block. A vertical flow diverter plays a role to make the coolant flow in vertical direction to help remove the beal heating effectively.
-The cell block components have been pressure tested hydro-statically
-to about 100 psia.
+in the hydrogen system. The outer wall is made of 0.006 $in$ thick
+aluminum. The entrance and exit windows are thinner, but no less than
+0.004 $in$. There is one 15 $cm$ long cell bolted on to each cell
+block. The cell has an outer diameter of 3 inches. The upstream windows
+are connected to 0.8 $in$ diameter tubes with flanges which are also
+bolted on to the cell block. A vertical flow diverter plays a role
+to make the coolant flow in vertical direction to help remove the
+beam heating more effectively. The cell and cell block components
+have been pressure tested hydro-statically to meet the requirements
+of the ASME B31.3 2008 Process Piping Code. The design pressure of
+the current cell is 100 psi.
 
-\subsubsection{ Pressure Relief}
 
-The gas handling and controls systems have been designed to 
-prevent excessive pressure build up in the system in order to
-protect the target cells from rupture.
+\subsubsection{Pressure Relief}
 
-In the event that the pressure in the system begins to rise there are multiple
-vent paths to release it. The first line of defense is the recovery tank.
-The second line of defense is a small orifice solenoid valve
-which is slaved to a pressure transducer. This valve, CSV28 for H$_2$ and
-CSV57 for D$_2$, 
-is normally controlled by the limit
-output of the computer (via a VME based relay) readout of
-the pressure transducer that views the target
-relief line, PT131 for H$_2$ and PT140 for D$_2$. The valve itself is mounted
-in the fill line relief assembly. The separation of the valve from its
-controlling pressure gauge should provide some dampening of the response
-and the small orifice of the valve also ensures that it will
-be able to make pressure adjustments gently if need be.
-There is 
-a separate relief valve on the fill side of the target, CRV30 for H$_2$ and
-CRV59 for D$_2$. This relief is mounted in parallel with the small orifice 
-solenoid valve. Right on top of the cryo-can, on the return side of the target,
-there is a large size (one $in$) relief valve. The relief valves are set at 
-40 psig.
-All target pressure reliefs are connected to the
-nitrogen vent line.
-This is a 3.5 $in$ diameter 
-copper pipe which is filled with nitrogen gas at atmospheric pressure.
-Thus any vented target gas is placed in an inert environment until it is
-released outside of Hall A. Each gas tank has one relief valve and one rupture
-disk (CRV43 and CRD44 for hydrogen, and CRV72 and CRD143 for deuterium).
- 
-In addition to the reliefs on the gas handling system described above, the
-scattering chamber itself has a four-$in$ one PSIG relief, VRV01.
-This is the path that the
-hydrogen will take in the event of a cell failure.   
+The gas handling and controls systems have been designed to prevent
+excessive pressure build up in the system in order to protect the
+target cells from rupture. It has been determined that the worst case
+pressure load will arise from an insulating vacuum loss. The calculation
+of this load was reviewed by a JLab Design Authority not associated
+with the target group. The estimated relief load is 350 scfm of hydrogen.
+The primary relief path is 2 inch Sch 10s pipe connected to the recovery
+tank. There is a separate relief valve on the fill side of the target,
+CRV30 for H$_{2}$ and CRV59 for D$_{2}$; this valve is not capable
+of handeling the entire relief load from an insulating vacuum loss
+event. Overpressure protection of the system (on each loop) is provided
+by an ASME relief valve which meets the requirements of the Code.
+The capacity of this relief is 1100 scfm for hydrogen. The relief
+valves exhaust to the Hall A hydrogen vent line. This line is 2 inch
+Sch 10s IPS stainless steel pipe \textasciitilde{}150 ft. long. The
+vent line is continuously purged with 1 psig of He gas from the House
+Helium supply. The scattering chamber and pump/purge vacuum pumps
+are also exhausted to this line. Thus any vented target gas is placed
+in an inert environment until it is released outside of Hall A. Additionally,
+each gas tank has one relief valve as required by Code.
 
-\infolevone{
-The target pressure reliefs are summarized in Table \ref{ta:pre}.
+The scattering chamber provides secondary containment in the event
+of a cell rupture. Therefore, the scattering chamber itself has a
+1 psig relief (check valve), VRV01 and a 4 psig rupture disk. Thus,
+the scatting chamber internal pressure will not exceed 5 psig. This
+relief path is also exhausted to the hydrogen vent line. A series
+of valves and controls allow for the safe removal and exhaust of hydrogen
+from the scattering chamber should a cell burst.
 
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|} \hline
-Name & Target & Location & Diameter ($in$) & Pressure (PSIG) \\ \hline
-CSV28 & H$_2$ & FRA & 0.125 & 40 \\ \hline
-CRV30 & H$_2$ & FRA & 0.5 & 40 \\ \hline
-CRV82 & H$_2$ & RL &  1 & 40 \\ \hline
-CRV43 & H$_2$ & TANK & 1 & 55 \\ \hline
-CRD44 & H$_2$ & TANK & 1 & 55 \\ \hline
-CSV57 & D$_2$ & FRA & 0.125 & 40 \\ \hline
-CRV59 & D$_2$ & FRA & 0.5 & 40 \\ \hline
-CRV64 & D$_2$ & RL &  1 & 40 \\ \hline
-CRV72 & D$_2$ & TANK & 1 & 55 \\ \hline
-CRD143 & D$_2$ & TANK & 1 & 55 \\ \hline
-CRV35 & He & RL &  1 & 40 \\ \hline
-CRV01 &  & SC & 4 & 2 \\ \hline
-\end{tabular}
-\end{center}
-\caption[Cryotarget: Relief Device Summary]{ A summary of the pressure relieving devices on the
-hydrogen/deuterium targets and the scattering chamber. FRA
-is an abbreviation for Fill Line Relief Assembly. 
-and RL is an abbreviation for
-Relief Line. SC stands for Scattering Chamber.}
-\label{ta:pre}
-\end{table}
-}
 
-\subsubsection{ Scattering Chamber Vacuum Failure}
+\subsubsection{Scattering Chamber Vacuum Failure}
+
 \label{sec:cryo_targ_cmb_falure}
 
-The scattering chamber will be leak checked before service but obviously
-the possibility of vacuum loss cannot be eliminated. The most
-likely sources of vacuum failure are:
+The scattering chamber will be leak checked before service but, the
+possibility of vacuum loss cannot be eliminated. A conservative calculation
+estimating the relief load on the relief system of each loop has been
+performed. This calculation was performed as part of Code and JLab
+policy requirements and was reviewed by an independant JLab Design
+Authority. This calculation (TGT-CALC-301-010) has been filed in the
+Hall A Cryotarget pressure system directory PS-TGT-XX-026. In summary,
+this calculation conservatively indiactes that the relief path and
+safety devices limit the maximum developed pressure in the cell to
+less than the 120 psi for all credible overpressure conditions as
+required by ASME B31.3 322.6.3.
 
-\begin{description}
-\item[Spectrometer Windows] Initially the scattering chamber will have two
- aluminum windows, one for each side of the beam line.
-\item[Target Cell Failure] This is a multiple loop system. If a target
-cell fails, the remaining targets will have their insulating
-vacuum spoiled.
-\end{description}
 
-The two spectrometer windows are both made from aluminum. Each window
-is six $in$ high and subtends 170 $^\circ$ on the 43 $in$ outer
-diameter of the scattering chamber. This window is made of
-0.016 $in$ thick 5052 H34 aluminum foil.
+\subsubsection{Temperature Regulation}
 
-The scattering chamber was evacuated (and cycled several times)
-with both windows covered by the same 0.016 $in$ material. 
-The foil forms regularly spaced vertical ridges when
-placed under load. The window had an inter-ridge
-spacing of 3 inches.
-If the window is treated as a collection
-of smaller rectangular windows which have the full vertical height
-of 6 inches and the inter-ridge spacing as a width,
-then stress formulas predict that the 0.016 $in$
-material would reach ultimate stress at a pressure higher than 35 PSID
-(for both over-pressure and under-pressure). 
-There is a gate valve between the 
-scattering chamber and the beam entrance (exit) 
-pipe. Both 
-valves will be closed automatically in the
-event that the chamber vacuum begins to rise and an FSD will be caused
-( this is done via a relay output of the scattering
-chamber vacuum gauge). If either valve is closed an FSD will result.
+This is really more an issue of target stability than one of safety.
+However, a target with a carefully regulated temperature will presumably
+not undergo worrisome pressure changes.
 
-In the unlikely event of a catastrophic vacuum failure, it
-is important that the relief line of the targets be sized
-such that it can handle the mass flow caused by the sudden
-expansion of its cryogenic contents due to exposure to the
-heat load. A calculation has been performed which
-models the response of the system to sudden vacuum failure.
-That calculation indicates that the relief plumbing is sized such that the
-flow remains subsonic at all times and that the maximum pressure
-in the cells remains well below their bursting point.
-
-\end{safetyen}
-
-\infolevone{
-The calculation was performed  by following methods in 
-an internal report from the MIT Bates
-laboratory \cite{bi:bates}. The formulas and algorithm in the report were
-incorporated in two computer codes and those codes were able to reproduce
-results in the report (hence they represent an accurate implementation
-of the Bates calculation).
-
-The calculation can be logically broken into two parts. First,
-the mass evolution rate is calculated from geometric information
-and the properties of both the target material and vacuum spoiling gas.
-The principal results of this first stage are the heat transferred
-per unit area, q, the boil off time, t$_b$, and the mass evolution rate, w.
-Second, the capability of the plumbing to handle the mass flow
-is checked. The principle result of this second step is the
-maximum pressure in the target cell during the discharge, P$_1$.
-
-The formula involved will not be repeated (readers are referred to 
-the Bates report for detail).
-The information that was used as input
-to the calculation is given in tables \ref{ta:gas}, \ref{ta:geo}
-and \ref{ta:pdr}.
-
-For the calculation of the boil off rate the target was split into
-two pieces: the cells plus cell block, both aluminum; and the heat exchangers
-plus the connecting plumbing, all steel. The mass evolution rates
-for the two pieces were then added in order to find the total
-mass flow rate.
-
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|l|l|l|} \hline
-Fluid and Phase & Property & Symbol & Value \\ \hline
-Hydrogen/Liquid & Temperature & T(K) & 22 \\ \hline
- & Density & $\rho$ (kg/m$^3$) & 67.67 \\ \hline
- & Specific Heat & C$_p$ (J/(kg K)) & 11520 \\ \hline
- & Enthalpy of Vaporization & H$_v$ J/kg & 428,500 \\ \hline
-Hydrogen/Vapor & Temperature & T(K) & 22 \\ \hline
- & Density & $\rho$ (kg/m$^3$) & 2.4991 \\ \hline
- & Viscosity & $\mu$ (kg/(s m)) & 1.29$*$10$^{-6}$ \\ \hline
- & Specific Heat & C$_p$ (J/(kg K)) & 13,550 \\ \hline
- & Thermal Conductivity & k (W/(K m)) & 0.02 \\ \hline
- & Volume Expansivity & $\beta$ K$^{-1}$ & 0.00366 \\ \hline
-Air & Temperature & T(K) & 273 \\ \hline
- & Pressure & P (Torr) & 760 \\ \hline
- & Density & $\rho$ (kg/m$^3$) & 1.224 \\ \hline
- & Viscosity & $\mu$ (kg/(s m)) & 1.8$*$10$^{-5}$ \\ \hline
- & Specific Heat & C$_p$ (J/(kg K)) & 1005 \\ \hline
- & Thermal Conductivity & k (W/(K m)) & 0.0244 \\ \hline
- & Volume Expansivity & $\beta$ K$^{-1}$ & 0.00367 \\ \hline
-\end{tabular}
-\end{center}
-\caption[Cryotarget: Gas Properties]{ The properties of the gases used to calculate
-the heat transferred to the target during a catastrophic vacuum failure.}
-\label{ta:gas}
-\end{table}
-
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|} \hline
-Quan- & Cell  & Piping & Heat      & Total \\ 
-tity  & Block &        & Exchanger &   
- \\ \hline
-D & 2.5 in (0.063 m) & 1.5 in (0.038 m) &7 in (0.1778 m) & \\ \hline
-k & 55 W/(K m) & 6.5 W/(K m) & 6.5 W/(K m) & \\ \hline
-A & 0.146 m$^2$ & 0.185 (m$^2$) & 0.216 m$^2$ & 0.510 m$^2$ \\ \hline
-V & 0.001 m$^3$ & 0.0019 (m$^3$) &0.002 m$^3$ & 0.0054 m$^3$ \\ \hline
-x & 0.004 in (0.0001 m) &  0.065 in (0.00165 m) & 0.12 in (0.003 m) & \\ \hline
-q & 14903 W/m$^2$ & 10526 W/m$^2$ & 11235 W/m$^2$ & \\ \hline
-t$_{b}$ & 26.78 s & 28.29 s & 23.89 s & 26.3 s \\ \hline
-w & 0.0038 kg/s & 0.0045 kg/s & 0.0056 kg/s & 0.014 kg/s \\
-& & & &  (0.03 lbs/s) \\ \hline 
-\end{tabular}
-\end{center}
-\caption[Cryotarget: Volumes and Geometry]{ The geometric quantities needed for and the results
-of calculations of the mass evolution rate after a catastrophic vacuum
-failure.} 
-\label{ta:geo}
-\end{table}
-
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|c|c|} \hline
-Inner Diameter & Length & K (K$_{eff}$) \\ \hline
-0.44 in tube & 10 ft & 4.64 (31.5) \\ \hline
-0.88 in tube & 10 ft & 2.32 (0.98)\\ \hline
-\multicolumn{2}{|c|} {Quantity} & Value \\ \hline
-\multicolumn{2}{|l|} {Minor Losses}  & 7.4 \\ \hline
-\multicolumn{2}{|l|} {K$^{total}_{eff}$} & 40 \\ \hline
-\multicolumn{2}{|l|} {Average Diameter} & 0.71 in \\ \hline
-\multicolumn{2}{|l|} {xmax} & 0.890 \\ \hline
-\multicolumn{2}{|l|} {w$_{sonic}$} & 0.065 lbs/s \\ \hline
-\multicolumn{2}{|l|} {m} & 0.323 \\ \hline
-\multicolumn{2}{|l|} {x} & 0.748 \\ \hline
-\multicolumn{2}{|l|} {P$_{2}$} & 14.7 PSIA \\ \hline
-\multicolumn{2}{|l|} {P$_{1}$} & 58.3 PSIA \\ \hline
-\multicolumn{2}{|l|} {P$_{1}$} & 43.6 PSIG \\ \hline
-\end{tabular}
-\end{center}
-\caption[Cryotarget: Relief Line Information]{ Tubing sizes, and other information needed to analyze
-relief line response. The mass flow rate was 0.03 lbs/s.} 
-\label{ta:pdr}
-\end{table}
-
-The calculation of the pressure drop includes all the plumbing up to the
-large relief valve. 
-The calculation assumes that all the mass flow is carried out the
-relief side of the target gas handling system (no flow out of the fill line
-reliefs). 
-The friction factor for each diameter was taken from a Moody plot.
-A typical value was $ f = 0.017$.
-The effective K values, K$_{eff}$, were adjusted to the average tube inner 
-diameter which was taken to be 0.71 in.
-The final K$_{eff}$ value was 40.
-The minor losses are from bends, expansions and contractions in
-piping. 
-
-The final result shows the cells subjected to 58 PSIA during the boil off,
-which is comparable to the 85 PSIA pressure that the assembled cell blocks were
-tested at, and is significantly below the tested
-pressure of the cell components.
-
-The scattering chamber has a volume of about 2,100 $l$ with perhaps an 
-additional 200 $l$ of volume in the bellows and the cryo can.
-If one target cell were to rupture and the chamber were unrelieved,
-the chamber pressure would rise to about 2 Atm.
-It takes approximately 150 seconds to
-bring 5 $l$ of 22 $^\circ$ K hydrogen to room temperature
-by conductive heat transfer with the scattering chamber walls.
-In order that the maximum pressure 
-in the chamber stay near one atmosphere, it is necessary to
-vent one half of the target mass in approximately one half of the
-total expansion time. Therefore the relief valve for the scattering chamber
-should be capable of venting about three grams per second
-at a low pressure difference (say two PSIG).
-If one considers the case where all three targets
-fail at once, the vent must be capable of handling three times
-that amount. A four $in$ diameter relief valve placed near the
-top of the scattering chamber should be capable of handling this rate.
-The 4 $in$ relief valve will vent into the hall.
-A rise in the chamber vacuum will stop the beam, FSD, and
-cause the gate valves on either side of the scattering chamber to
-close. 
-
-In the unlikely event that a line which carries helium coolant
-were to rupture the four $in$ chamber relief valve is capable
-of handling the full coolant flow rate.
-}
-
-\infolevone{
-\subsection{ Temperature Regulation}
-
-This is really more an issue of target stability than one of
-safety. However, a target with a carefully regulated temperature
-will presumably not undergo worrisome pressure changes.
-
-Each target contains four quality temperature measurements with
-resistive temperature sensors. The 
-temperature regulation is done with a software control of a high power
-heater
-to the temperature read by one of the sensors.
-This is a three parameter control loop (Proportional, Integral and Differential
-Control or PID).
-
-Finally, the heat load from the beam will be compensated in the "active"
-target loop by use of the high power heater. This is not a true regulation
-but rather an one for one replacement of the beam load should the beam
-disappear for whatever reason. The beam load is calculated from the
-target length, the beam current as read from a current monitor and
-the target material.
+Each target contains six quality temperature measurements with resistive
+temperature sensors. The temperature regulation is performed by a
+software PID control of a high power heater using one of the quality
+temperature measurements as input to the loop. This is a three parameter
+control loop (Proportional, Integral and Differential Control or PID).
+The PID loop also compensates for the beam heat load durring beam
+trip and recovery incidents. This is not a true regulation but rather
+one for one replacement of the beam load should the beam disappear
+for whatever reason. The beam load is calculated from the target length,
+the beam current as read from a current monitor and the target material.
 
 Excursions of the target temperature outside acceptable limits will
-cause the control system to take action.
-Finally the redundancy of temperature measurements can be used by the
-control system to pick up the failure of a sensor or its readout channel.
-A more complete discussion of target temperature regulation is available
-in Reference \cite{bi:tgts}.
-}
+cause the control system to take action. Finally the redundancy of
+temperature measurements can be used by the control system to pick
+up the failure of a sensor or its readout channel. A more complete
+discussion of target temperature regulation is available in Reference
+\cite{bi:tgts}. 
 
 \subsubsection{Target Freezing}
 
-\begin{safetyen}{0}{0}
-Solid hydrogen is more dense than the liquid phase, so freezing does not
-endanger the mechanical integrity of a closed system. The chief hazard is that
-relief routes out of the system will become clogged with hydrogen ice,
-making the behavior of the system during a warm-up unpredictable.
-\end{safetyen} 
-When the hydrogen and deuterium targets are in use,
-we usually use only 15 K coolant. While the hydrogen freezing point
-is about 13.8 K, the hydrogen target should not get frozen. 
-\begin{safetyen}{10}{5}
-The freezing point of deuterium is $\sim 19$ K, higher than the temperature of 
-the gas used for
-cooling (15 K).There is 
-a chance that the deuterium target can freeze. Also sometime we use 4 K
-instead of 15 K coolant. In this case, hydrogen target could also get frozen.
-\end{safetyen}
+\begin{safetyen}{10}{5} Solid hydrogen is more dense than the
+liquid phase, so freezing does not endanger the mechanical integrity
+of a closed system. The chief hazard is that relief routes out of
+the system will become clogged with hydrogen ice, making the behavior
+of the system during a warm-up unpredictable. \end{safetyen} For
+this reason, the relief route bypasses the heat exchanger and should
+not freeze durring any credible senario. 
 
-\infolevone{
-The coolant flow through the three target heat exchangers is
-connected in parallel for the three target loops.
-The entire target system will be run so that it
-represents a constant heat load on the ESR. For instance,
-the ESR will deliver
-a constant mass flow of helium cryogen at a constant temperature, about
-15 K, and the coolant will be returned at an approximately 
-constant but higher temperature, usually about 20 K.
+\infolevone{ The coolant flow through the three target heat exchangers
+is connected in parallel for the three target loops. The entire target
+system will be operatred so that it represents a constant heat load
+on the ESR. For instance, the ESR will deliver a constant mass flow
+of helium cryogen at a constant temperature, about 15 K, and the coolant
+will be returned at an approximately constant but higher temperature,
+usually about 20 K.
 
-The targets are always temperature regulated by
-temperature controllers. Also a high power heater will be in the PID loop
-to compensate any large temperature fluctuations to keep the temperature 
-constant.
-}
+The targets are temperature regulated by IOC heater PID loop. \begin{safetyen}{10}{5}
+In the unlikely event that the target temperature drops too low, an
+alarm will sound and the target operator shall turn down the corresponding
+J-T valve(s) or apply auxilliary heater power. Target temperature
+can fall after IOC reboot. After the reboot the high power heater
+will be reset to zero before going back to PID control. Although the
+time the high power heater is zeor is short (for about 1 minute),
+the temperature will drop. To prevent this from happening, an auxiliary
+heater is used in parallel to the regular heater. During an IOC reboot,
+the auxiliary heater supply will replace the main supply to keep the
+temperature from dropping unacceptably. Since 2008, the IOC has been
+relocated to the entry laberinth where the radiation exposure has
+been minimized. As a result the frequency of IOC reboots has dramatically
+decreased.
 
-\begin{safetyen}{0}{0}
-In the unlikely event that the target temperature drops too low,
-an alarm will sound and the target operator will turn down the corresponding
-J-T valve(s). 
-In one instance the target temperature could drop is when the target control
-ios is rebooted. After the ioc reboot, the high power heater will be reset 
-to zero before going back to PID control. Although the time the high power 
-heater is zeor is short (for about 1 minute), the temperature will drop.
-To prevent it to happen, an auxiliary heater is used in parallel to the
-regular heater. During an ioc reboot, the auxiliary heater will
-replace the rugular one to keep the temperature from dropping.
 
-\subsection{Oxygen Deficiency Harard}
+\subsubsection{ODH}
+
 \label{sec:targ:odh}
 
 The total volume of the targets is relatively small, with the entire
-scattering chamber containing only 9,000 STP $l$ of target
-gas when all three targets are full. As the scattering chamber
-is located in the middle of Hall A
-(i.e. not in a confined area) and the total Hall A volume is 40,000 m$^3$,
-the ODH hazard is minimal.
-\end{safetyen}
+scattering chamber containing only 9,000 STP $l$ of target gas when
+all three targets are full. As the scattering chamber is located in
+the middle of Hall A (i.e. not in a confined area) and the total Hall
+A volume is 40,000 m$^{3}$, the ODH hazard is minimal. \end{safetyen}
 
-\infolevone{
-\subsection{ Controls}
 
-The target controls have been implemented with the EPICS~\cite{EPICSwww} control
-system and with hardware very similar to that employed by the accelerator.
-The basic control functions reside on a VME based single board
-computer. The graphical interfaces to the control system use a PC, and
-also require the Hall A Hewlett Packard, HP, computer for control (HAC)
-to be present as well.
+\subsubsection{Controls}
 
-All of the instrumentation for the target is downstairs in Hall A.
-Most of the equipment (in fact all of the 120 V AC equipment) is
-on an Uninterruptable Power Supply, UPS. The items whose power
-is not on UPS are:
+The target controls have been implemented with the EPICS~\cite{EPICSwww}
+control system and with hardware very similar to that employed by
+the accelerator. The basic control functions reside on a VME based
+single board computer or IOC. The graphical interfaces to the control
+system use a PC, and also require the Hall A Hewlett Packard, HP,
+computer for control (HAC) to be present as well. Power failures will
+result in a loss of computer control. As a result of such a failure
+the target heat exchanger may freeze and the remainder of the target
+may vent through the relief path. The beam will also be tripped durring
+such a failure. There is thus, little chance of damage or danger from
+the system. Durring a power failure, the target operator shall call
+the target-on-call immediately.
+
+The principal functions that the control system performs are: 
 \begin{description}
-\item[$\bullet$] The scattering chamber vacuum pumps and the gas panel
-backing pump
-\item[$\bullet$] The target lifting mechanism
-\item[$\bullet$] The target circulation fans.
-\end{description}
-This is a 7 kVA zero switching time
-UPS which is dedicated to the target. The PC, HAC and the counting house target
-X-terminal are on Uninterruptable Power as well. 
-The targets dedicated UPS provides 18 minutes of power at full load
-(or 50 min at one half load). This will provide sufficient time for
-the target operator to properly turn down the targets during power outage, 
-i.e., take away heat load and turn down the fan speed. The target
-operator should call the target-on-call when there is a power outage. 
-
-The principal functions that the control system performs are:
-\begin{description}
-\item[Pressure Monitoring] The pressure at various places in the system is
-monitored and alarm states are generated if a transducer returns a value
-that is outside user defined limits. High pressures will cause the
-solenoid relief valve to open.
-\item[Target Lifter] The target lifting mechanism is controlled by
+\item [{Pressure/Temperature Monitoring}] The pressure and temperature
+are monitored at various places in the system and alarm states are
+generated if a sensor returns a value that is outside defined limits.
+\item [{Target Lifter}] The target lifting mechanism is controlled by
 the computer. This allows one to place the desired target in the beam.
-Limit switches are installed to not allow the target to move outside
-the allowable range.  
+Limit switches and hard stops are installed to ensure the target cannot
+move outside the allowable range.
 \end{description}
 
-\infolevone{
-\subsection{ Authorized Personnel}
-
-The principle contacts for the cryogenic targets are listed in 
-table~\ref{tab:cryotarg:personnel-con}. Every shift must have a trained target
-operator whenever the cryogenic targets contain liquid. These
-operators are trained by one of the ``experts'' listed in the
-table and certified by J.P.~Chen.
-
-\begin{namestab}{tab:cryotarg:personnel-con}{Cryo Target: personnel and contacts}{%
-   Cryo target: authorized personnel and contacts. ''W.B'' stands for the white board
-   in Counting House.}
-   \namestabheader{Hall A Technicians} 
-   \TechonCall{Vacuum}
-   \EdFolts{Vacuum}
-   \namestabheader{Hall A Physicists} 
-   \CryotargonCall{Cryotarget}
-   \JianPingChen{Cryotarget}
-   \namestabheader{JLab Cryo-Target Group} 
-   \DaveMeekins{}
-   \ChristopherKeith{}
-   \namestabheader{Central Helium Liquefier (CHL) Experts} 
-   \CryoonCall{ESR}
-   \CHLgroup{ESR}
-\end{namestab}
-}
-
-\infolevone{\section[Cryogenic Target Control System User Manual]
-{Cryogenic Target Control System User Manual 
-}}
-A short version of 
-the cryotarget target control system user manual is available at
-\url{http://hallaweb.jlab.org/equipment/targets/cryotargets/Halla_tgt.html}.
-An updated User's Guide to the Hall A Cryotarget
-is available at \url{https://polweb/guides/atarg/ATARG_MAN.html}.  Other useful
-information for cryotarget operators 
-is also available at the above web sites.
-}
+} %infolev
 
 \infolevone{
+
 \subsection{Checklist}
-Checklist for pre-hall-closing:
+
+Checklist for pre-hall-closing: 
 \begin{itemize}
-\item Target has completed cool-down, at least one loop has liquid hydroge with temperature stable at 19K, pressure stable at around 25 psi. 
-\item High power heater in PID control for the hydorgen loop.
-\item Loop fan (pump) has been set to non zero value (20-75 Hz) for the 
-hydrogen loop.
-\item Coolant (ESR) flow and inlet temperature are stable.
-\item All other loops are filled with over 1 atm helium gas.
-\item Scattering chamber vacuum is normal (below $10^{-5}$).
-\item target in ``Empty'' position for beam tuning.
-\item Alarm handler is on and all alarm limits are set.
-\item No constant alarms caused by abnormal conditions.
-\item Target-on-call name is written on the whiteboard.
+\item Target has completed cool-down, at least one loop has liquid hydroge
+with temperature stable at 19K, pressure stable at around 25 psi. 
+\item High power heater in PID control for the hydorgen loop. 
+\item Loop fan (pump) has been set to non zero value (20-75 Hz) for the
+hydrogen loop. 
+\item Coolant (ESR) flow and inlet temperature are stable. 
+\item All unused loops are filled with over 1 atm gauge of helium gas. 
+\item Scattering chamber vacuum is normal (below $10^{-5}$). 
+\item target in ``Empty'' position for beam tuning. 
+\item Alarm handler is on and all alarm limits are set. 
+\item No constant alarms caused by abnormal conditions. 
+\item Target-on-call name is written on the whiteboard. 
 \end{itemize}
 }
 
-\subsection{Responsible Personnal}
+\begin{safetyen}{10}{15} 
+\subsection{Responsible Personnel}
 
-The following table contains the names of the currently recognized target 
-experts (who have worked on the Hall A cryotarget system and
-have extensive knowledge of the system)
-and their pager numbers
+The principle contacts for the cryogenic targets are listed in table~\ref{tab:cryotarg:personnel-con}.
+Every shift must have a trained target operator whenever the cryogenic
+targets contain liquid. These operators are trained by one of the
+``experts'' listed in the table and certified by J.P.~Chen.
 
-\begin{namestab}{tab:cryotarg:personnel}{Cryo Target: experts}{%
-   Cryo target: experts and authorized personnel, with their phone numbers}
-   \namestabheader{Hall A Physicists} 
-   \JianPingChen{cell:218-0722}
-   \JohnLeRose{cell:565-5060}
-   \namestabheader{JLab Cryo-Target Group} 
-   \DaveMeekins{cell:968-9076}
-   \ChristopherKeith{cell:746-9277}
-\end{namestab}
-
-A cryotarget expert will be on call all the time when
-a cryotarget is in cooled state.
-An on-call cryotarget-expert list will be posted in the 
-Hall A Counting House. 
+\begin{namestab}{tab:cryotarg:personnel-con}{Cryo Target: personnel
+and contacts}{Cryo target: authorized personnel and contacts. ''W.B''
+stands for the white board in Counting House.} \namestabheader{Hall
+A Technicians} \TechonCall{Vacuum} \EdFolts{Vacuum} \namestabheader{Hall
+A Physicists} \CryotargonCall{Cryotarget} \JianPingChen{Cryotarget}
+\namestabheader{JLab Cryo-Target Group} \DaveMeekins{} \ChristopherKeith{}
+\namestabheader{Central Helium Liquefier (CHL) Experts} \CryoonCall{ESR}
+\CHLgroup{ESR} \end{namestab}
+\end{safetyen}
+\clearpage
