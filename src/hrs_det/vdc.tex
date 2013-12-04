@@ -26,9 +26,7 @@
 % gas system status is now logged automatically in EPICS
 % JS segal@jlab.org
 
-\infoleveqnull{\subsubsection{Overview}}
-\infolevone{
-\section{Overview}
+\infolevone{\section{Overview}}
 
 The High Resolution Spectrometer Vertical Drift Chambers provide a
 precise ($\pm 125~\mu$m) measurement of the position and angle of
@@ -38,6 +36,7 @@ information may be combined with the knowledge of the spectrometer
 optics to determine the position and angle of the particles in the
 target.
 
+\infolevone{
 Each Hall A spectrometer boasts its own VDC detector package.  These
 packages are located on permanent rails mounted on the spectrometer
 decks in the shielding huts above the outrun windows but beneath the
@@ -297,18 +296,16 @@ four 12VDC fans mounted in the aluminum Faraday cage.}
 %}}.
 %} %infolev
 
-\begin{safetyen}{5}{5}
+\begin{safetyen}{0}{0}
 \infolevone{\section{Safety Assessment}}
-The following potential hazards and mitigrations have been clearly identified.
+\infoleveqnull{\subsubsection{Hazards}}
+
+The following hazards are associated with the chambers:
+
 \begin{description}
 \item {\bf The High Voltage System}
 The Bertan 377N HV low current power supply provides a nominal
--4.00 kV.  Red HV RG-59/U cable good to 5 kV with standard SHV
-connectors is used to connect the power supply to a Hammond splitter
-box, and then to connect the splitter box to each of the three high
-voltage planes in a given VDC.  A given chamber draws a current
-from  50-100 nA.  Thus, when servicing the chambers, the HV for that
-element must be turned off and disconnected.
+-4.00 kV.
 %\item {\bf The Low Voltage System}
 %%% Added by K. Allada %
 %The pre-amp/discriminator (MAD) cards are powered by a LV supply. Each
@@ -323,12 +320,23 @@ is supplied in high pressure ($\ge$ 2000 psi) gas bottles. This
 confined high pressure gas represents a tremendous (potentially lethal)
 amount of stored energy.  Need mitigation!
 \end{description}
-\end{safetyen}
 
-\begin{safetyen}{10}{15}
+
+\infoleveqnull{\subsubsection{Mitigations}}
+
+For the HV, red HV RG-59/U cable good to 5 kV with standard SHV
+connectors is used to connect the power supply to a Hammond splitter
+box, and then to connect the splitter box to each of the three high
+voltage planes in a given VDC.  A given chamber draws a current
+from  50-100 nA.  Thus, when servicing the chambers, the HV for that
+element must be turned off and disconnected.
+
+The high pressure gas bottles are stored far from the equipment in a controlled 
+area as discussed in the Hall A gas handling section.
+
+
 \infolevone{\section{Responsible Personnel}}
 \infoleveqnull{\subsubsection{Responsible Personnel}}
-\end{safetyen}
 
 The individuals responsible for the operation 
 of the VDC are shown in Table \ref{tab:vdc:personnel}.
@@ -338,5 +346,6 @@ of the VDC are shown in Table \ref{tab:vdc:personnel}.
   \JackSegal{\em Contact}
   \BogdanWojtsekhowski{}
 \end{namestab}
+\end{safetyen}
 
 
