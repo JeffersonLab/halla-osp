@@ -1,0 +1,128 @@
+% Thanks to John LeRose for Rotation text. 07NOV2013
+%
+\infolevone{\chapter{Spectrometer Rotation}}
+\infoleveqnull{\section{Spectromer Rotation}}
+%
+Since each HRS weighs in excess of 1,000 tons it is very important that all safety
+precautions are carefully adhered to. The good news is they move very slowly (a few degrees/min
+maximum), BUT 1,000 tons moving even very slowly is hard to stop. 
+
+\begin{safetyen}{0}{0}
+\subsection{Hazards}
+
+Hazards include:
+\begin{itemize}
+\item{Knocking items over.}
+\item{The wheels crushing things (including fingers and toes) on the floor in the path of the 
+spectrometer}
+\item{Damaging the beamline or other equipment on the floor if one goes to too small 
+or too large an angle, or if it just gets pushed around inadvertantly.}
+\item{Tearing out of cables etc. physically attached to the superstructure}
+\end{itemize}
+
+\subsection{Mitigations}
+
+Hazard mitigations:
+\begin{itemize}
+\item{Guards on either side of the wheels prevent items from getting under them.}
+\item{Large pins in the floor to stop the spectrometer rotated beyond the needed angular range.}
+\item{Blinking lights on the spectrometers indicating they are in motion or that motion
+is possible (controls engaged etc.)}
+\item{During a running experiment the run coordinator and work coordinator should know in advance 
+of any moves.  Moves at any other time must be cleared with the Hall work coordinator 
+before implementation.}
+\item{Careful inspection of the intended path to make sure it is clear. This is part of
+the pre-run checklist performed by the technical staff prior to closing the Hall and
+a remote camera allows shift worker to inspect the area.}
+\item{Any motion that takes a spectrometer inside 14 degrees or outside x degrees
+(x being specified in the pre-run checklist and noted on the whiteboard during a run) 
+must be supervised by a trained Hall A technician.}
+\end{itemize}
+\end{safetyen}
+
+\infolevone{
+Remote Procedure for a shift worker:
+\begin{itemize}
+\item{Make sure the move is part of the approved runplan (if in doubt, check with the 
+run coordinator).}
+\item{Check that the pre-run checklist has been completed and note and comply with any 
+possible limitations to spectrometer motion (if there is a conflict inform the Run
+Coordinator and do not initiate any move until the conflict is cleared).}
+\item{Visually inspect the Hall using the closed circuit TV cameras to verify that there
+are no obstructions.}
+\item{If people are in the Hall wait until they leave (during a Controlled Access MCC keeps
+track of people in the Hall). (Maybe we could soften this to "Inform EVERYONE in the Hall of
+the move".)}
+\item{Activate the spectrometer motion controls (see the Wiki and below) and 
+move to the desired angle.}
+\item{Deactivate the controls (brakes on, power off, etc.)}
+\item{Update the spectrometer position information on the Hall A Controls screen}
+\item{Make a halog entry indicating you've moved the spectrometer including from what angle 
+to what new angle.}
+\end{itemize}
+
+Procedure for a non-run associated move in the Hall:
+\begin{itemize}
+\item{Inform the work coordinator of the planned move}
+\item{Perform a careful visual inspection to verify that the path is clear}
+\item{Check to make sure there are no temporary connections to the spectrometer (wires etc.)
+that could be damaged during the move.}
+\item{Inform everyone in the Hall of the move and check with them re 3.}
+\item{Activate the spectrometer motion controls (see the Wiki and below) verify 
+that the warning lights are on and move to the desired angle.}
+\item{Deactivate the controls (brakes on, power off, etc.).}
+\end{itemize}
+
+The full proceedure for moving the spectrometer follows and can also be found on the Hall A wiki.
+
+On hacsbc2, click the red "tool box" icon on the linux taskbar, as above. Choose 
+bogies\_SetSpec so that you can determine the angle and vernier setting for the spectrometer.
+Enter the spectrometer (L or R), and the angle, and you will get two options for the floor 
+mark and the vernier. Generally choose the vernier closer to zero. Center the cameras on the 
+desire vernier using the Move+/Move- buttons on the Hall A General Tools screen. The TV monitors 
+for these cameras are on the middle shelf, in rack CH01A05.
+
+Choose bogies\_Left (or bogies\_Right) in the tool box to bring up the bogies control screen. 
+Click PSM enable and wait a few seconds for PSM OK to read YES. 
+Click DM enable and wait a few seconds for DM OK to read YES.
+Make sure the velocity is set to 0 and the direction is CW or CCW as desired. Click on Brake Release 
+and wait for Brakes OK to read YES.
+
+Click on ClampRelease, set the velocity to 700. Once you see the spectrometer start to move in the 
+floor angle camera - you cannot see the spectrometer move in the Hall overview camera, as it only 
+moves a few degrees per minute at maximum speed. For the left arm, to move to a larger angle, the 
+direction should be CCW, while for the right arm CW moves the spectrometer to larger angle. The 
+direction of the spectrometer is reversed by using a negative rpm. Watch the spectrometer motion 
+on the cameras. When you are getting close to the desired angle, slow down to about 300 rpm. 
+To stop, click on the Clamp Release button and the Brake button. Disable DM and PSM, and disconnect 
+to close the GUI. Read off the floor angle mark and vernier, and input the values into the appropriate 
+fields in the Alignment section of the Hall A General Tools GUI. 
+}
+
+\begin{safetyen}{0}{0}
+\subsection{Responsible Personnel}
+
+While shift workers are allowed to move the HRS within the guidelines of the operations manual,
+in the event that problem getting the spectrometer to rotate
+qualified personnel should be notified
+(see Table \ref{tab:hrs:personnel}).  
+On weekends and after hours there will be a 
+designated individual on call.
+It should be noted that for experiments that are using high-A targets at high current, it is
+not uncommon that the produced radiation will cause the motion system to have problems.
+
+\begin{namestab}{tab:hrs:personnel}{HRS: authorized personnel}{%
+      List of HRS responsible personnel where ''W.B'' stands for the white board 
+      in the counting house.}
+   \TechonCall{\em Contact}
+   \EdFolts{}
+   \JackSegal{}
+   \HeidiFansler{}
+   \JessieButler{}
+   \AndrewLumanog{}
+   \JasonGlorioso{}
+   \MahlonLong{}
+\end{namestab}
+
+\end{safetyen}
+
