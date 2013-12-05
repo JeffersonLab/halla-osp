@@ -3,7 +3,7 @@
 \footnote{Author: B. B. Wojtsekhowski \email{bogdanw@jlab.org}}
 }
 
-\infoleveqnull{\subsection{Gas \Cherenkov{} Counters}}
+\infoleveqnull{\section{Gas \Cherenkov{} Counters}}
 
 The Hall A gas \Cherenkov detectors are filled with CO$_{2}$ at atmospheric
 pressure as delivered by the Hall A gas system discribed elsewhere.   The
@@ -103,31 +103,22 @@ A set of optical fibers provides light pulses to each PMT for their calibration.
 }
 
 
-\infolevone{
-\section{Safety Assessment}
-}
-\infoleveqnull{\subsubsection{Hazards and Mitigations}}
-
 \begin{safetyen}{0}{0}
+\infolevone{\section{Safety Information}}
+
+\subsection{Hazards}
+
+This detector is operated under high voltage and makes use of a gas system.
+
+\subsection{Mitigations}
+
 The Cherenkov PMTs are under high voltage and care is required when handling any 
 components of the counter and the body of the \Cherenkov{} counter must be grounded. 
-\end{safetyen}
-
-\infolevtwo{
-\section{Operating Procedure}
-
-\paragraph{Operating Voltage}
-}
-
-%Modified by K. Allada %
-%HV ratings for new ET Enterprise tubes %
-\begin{safetyen}{0}{0}
 The maximum operating voltage on the PMTs is about -2,000 V, but
 nominally they are operated around -1,000 V. The voltage must be set to
 zero before the HV cable will be connected or disconnected from HV divider.
 The HV cables must be disconnected from all HV dividers before the replacement
 of any PMT on the gas \Cherenkov{} counter. 
-\end{safetyen}
 
 \infolevone{
 The high voltage has to be adjusted in order to have 
@@ -138,14 +129,13 @@ Past experience shows that PMTs need to be replaced on average
 every three years due to aging. Such a short life-time is about 3-4 
 times less than normal, due to He content in Hall A,
 which leads to a loss of the PMT's quantum efficiency.
-} %infolev
-
-\infolevone{ 
-\begin{safetyen}{10}{15}
-\section{Responsible Personnel} 
-\end{safetyen}
 }
-\infoleveqnull{\subsubsection{Responsible Personnel}}
+
+Gas is supplied by the Hall A gas handling system and thus the gas bottles are outside
+the experimental hall and far from the equipment.   The detector itself can not be over
+pressurized and the volume of gas small.
+
+\subsection{Responsible Personnel} 
 
 The individuals responsible for the operation 
 of the gas \Cherenkov{} counters are given in Table \ref{tab:gas-cher:personnel}.
@@ -155,8 +145,7 @@ of the gas \Cherenkov{} counters are given in Table \ref{tab:gas-cher:personnel}
   \BogdanWojtsekhowski{\em Contact}
   \JackSegal{}
 \end{namestab}
-
-%
+\end{safetyen}
 
 
 

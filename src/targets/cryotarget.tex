@@ -1,15 +1,15 @@
-
+% Cryogenic Targets
 \infolevone{
-\chapter[Cryogenic Targets]{Cryogenic Targets}
+\chapter[Cryogenic Target System]{Cryogenic Target System}
 \footnote{Authors: J. P. Chen \email{jpchen@jlab.org}
 }}
-\infoleveqnull{\section{Cryogenic Targets}}
+\infoleveqnull{\section{Cryogenic Target System}}
 
 \infolevone{
 \section{Procedure for Normal Running of the Hall A Cryogenic Targets}
 
 This procedure provides guidelines for the everyday running of the
-Hall A cryogenic Hydrogen and Deuterium targets.
+Hall A cryogenic targets.
 
 \subsection{Introduction }
 }
@@ -20,7 +20,8 @@ the system has three separate target loops. One of these loops contains
 low pressure $^{4}$He gas with pressure up to 32 psia. The other
 two loops are usually used for liquid hygrodgen and deuterium targets.
 Each loop can have one or two target cells which is again dependent
-experiment requirements. 
+experiment requirements.   Below the loops, solid targets, such as carbon foils
+can be added.   
 
 A short version of the cryotarget target control system user manual
 is available at \url{http://hallaweb.jlab.org/equipment/targets/cryotargets/Hallatgt.html}.
@@ -150,7 +151,7 @@ captured at least once per shift}.
 
 } 
 
-
+\infolevone{
 \subsection{Target Operators}
 
 One individual on each shift is responsible for target operations.
@@ -176,7 +177,7 @@ has read this procedure and has been trained. The target expert who
 trained him/her should inform the Hall A staff who is responsible
 for the cryotarget system (J. P. Chen). 
 
-\begin{safetyen}{10}{10} 
+\begin{safetyen}{0}{0} 
 
 The following table contains the names of the currently recognized
 target experts (who have worked on the Hall A cryotarget system and
@@ -193,30 +194,28 @@ A cryotarget expert will be on call all the time when a cryotarget
 is in cooled state. An on-call cryotarget-expert list will be posted
 in the Hall A Counting House.
 \end{safetyen}
+}
 
 \begin{safetyen}{0}{0} 
 \infolevone{\section{Safety Assessment}}
 \label{sec:target-cryo-safety}
 
-\subsection{Hazards and Mitigations}
+\subsection{Hazards}
 
 The cryogenic hydrogen and deuterium targets present a number of potential
 hazards, such as the fire/explosion hazard of the flammable gas as
 well as the hazards connected with the vacuum vessel and the of handling
-cryogenic liquids (ODH and high pressure). \infolevltone{ A detailed
-safety assessment is given in the full OSP manual~\cite{HallAosp}.
-} \end{safetyen} \infolevone{ In this discussion the only hydrogen
-loop will be considered. The deuterium target is essentially identical
-and almost all comments apply to both targets. }
+cryogenic liquids (ODH and high pressure). 
 
-%\infolevone{
-\begin{safetyen}{10}{5} 
+\subsection{Mitigations}
 
+\infoleveqnull{More detailed
+information about these mitigations can be found in the full Hall A operations manual~\cite{HallAosp}.}
 
-\subsubsection{Flammable Gas}
-
+\paragraph{Flammable Gas}
 \label{sec:targ-flammablegas}
 
+\infolevone{
 Hydrogen and deuterium are colorless, odorless gases and hence not
 easily detected by human senses. Hydrogen air mixtures are flammable
 over a large range of relative concentrations from 4 $\%$ to 75 $\%$
@@ -240,6 +239,7 @@ will be kept in the Hall in order to fill and pump/purge the targets.
 These bottles will be placed in a gas rack behind the gas panels.
 The large storage tanks are located outside the Hall at the rear of
 the couting house.
+}
 
 The basic idea behind safe handling of any flammable or explosive
 gas is to eliminate oxygen (required for burning) and to prevent exposure
@@ -251,10 +251,23 @@ purging the system. Extensive procedures reviewed by an independant
 expert are used to perform this task. This task shall only be performed
 by system experts.
 
+There are three flammable gas detectors installed (one on top of the
+target, one each on top of the hydrogen and deuterium gas panels)
+to provide early detection of hydrogen/deuterium leaks. These detectors
+are sensitive (and calibrated) over the range from 0 to 50 $\%$ Lower
+Explosive Limit (LEL) of hydrogen. The electro-chemical sensors were
+manufactured by Crowcon Detection Instruments LTD and the readout
+(four channels) was purchased from CEA Instruments, Inc. (The Gas
+Master Four System). The readout unit provides two alarm levels per
+channel. The low level alarm is tripped at 20 $\%$ of LEL while 40
+$\%$ of LEL activates the high level alarm. Each channel has a relay
+output for both low and high level alarm states and there is also
+a set of common relays for both alarm levels (these common relays
+respond to the logic of the sensor
+inputs). 
+
 \infolevone{ 
-
-
-\subsubsection{Electrical Installation}
+\paragraph{Electrical Installation}
 
 Hall A contains a significant amount of electrical equipment and almost
 all of it could serve as an ignition source in the presence of an
@@ -347,29 +360,7 @@ convectron gauge.
 \end{description}
 }
 
-
-\subsubsection{Flammable Gas Detectors}
-
-There are three flammable gas detectors installed (one on top of the
-target, one each on top of the hydrogen and deuterium gas panels)
-to provide early detection of hydrogen/deuterium leaks. These detectors
-are sensitive (and calibrated) over the range from 0 to 50 $\%$ Lower
-Explosive Limit (LEL) of hydrogen. The electro-chemical sensors were
-manufactured by Crowcon Detection Instruments LTD and the readout
-(four channels) was purchased from CEA Instruments, Inc. (The Gas
-Master Four System). The readout unit provides two alarm levels per
-channel. The low level alarm is tripped at 20 $\%$ of LEL while 40
-$\%$ of LEL activates the high level alarm. Each channel has a relay
-output for both low and high level alarm states and there is also
-a set of common relays for both alarm levels (these common relays
-respond to the logic of the sensor
-inputs). 
-\end{safetyen}
-
-
-
-\begin{safetyen}{0}{0}
-\subsubsection{Gas Handling System}
+\paragraph{Gas Handling System}
 
 The most important aspect of hydrogen safety is to minimize the possibility
 of explosive mixtures of hydrogen and oxygen occurring. Therefore
@@ -412,9 +403,8 @@ the Hall also meet the requirements of the ASME Boiler and Pressure
 Code and bear an ASME nameplate. These tanks are inspected on a regular
 basis and currently (or will by time of operation) meet the National
 Board Inspection Code requirements.
-\end{safetyen}
 
-\subsubsection{Target Cells}
+\paragraph{Target Cells}
 
 The target cells themselves represent the most likely failure point
 in the hydrogen system. The outer wall is made of 0.006 $in$ thick
@@ -430,7 +420,7 @@ of the ASME B31.3 2008 Process Piping Code. The design pressure of
 the current cell is 100 psi.
 
 
-\subsubsection{Pressure Relief}
+\paragraph{Pressure Relief}
 
 The gas handling and controls systems have been designed to prevent
 excessive pressure build up in the system in order to protect the
@@ -453,6 +443,7 @@ are also exhausted to this line. Thus any vented target gas is placed
 in an inert environment until it is released outside of Hall A. Additionally,
 each gas tank has one relief valve as required by Code.
 
+\infolevone{
 The scattering chamber provides secondary containment in the event
 of a cell rupture. Therefore, the scattering chamber itself has a
 1 psig relief (check valve), VRV01 and a 4 psig rupture disk. Thus,
@@ -460,9 +451,9 @@ the scatting chamber internal pressure will not exceed 5 psig. This
 relief path is also exhausted to the hydrogen vent line. A series
 of valves and controls allow for the safe removal and exhaust of hydrogen
 from the scattering chamber should a cell burst.
+}
 
-
-\subsubsection{Scattering Chamber Vacuum Failure}
+\paragraph{Scattering Chamber Vacuum}
 
 \label{sec:cryo_targ_cmb_falure}
 
@@ -478,8 +469,8 @@ safety devices limit the maximum developed pressure in the cell to
 less than the 120 psi for all credible overpressure conditions as
 required by ASME B31.3 322.6.3.
 
-
-\subsubsection{Temperature Regulation}
+\infolevone{
+\paragraph{Temperature Regulation}
 
 This is really more an issue of target stability than one of safety.
 However, a target with a carefully regulated temperature will presumably
@@ -502,16 +493,17 @@ temperature measurements can be used by the control system to pick
 up the failure of a sensor or its readout channel. A more complete
 discussion of target temperature regulation is available in Reference
 \cite{bi:tgts}. 
+}
 
-\subsubsection{Target Freezing}
+\paragraph{Target Freezing}
 
-\begin{safetyen}{10}{5} Solid hydrogen is more dense than the
+Solid hydrogen is more dense than the
 liquid phase, so freezing does not endanger the mechanical integrity
 of a closed system. The chief hazard is that relief routes out of
 the system will become clogged with hydrogen ice, making the behavior
-of the system during a warm-up unpredictable. \end{safetyen} For
+of the system during a warm-up unpredictable. For
 this reason, the relief route bypasses the heat exchanger and should
-not freeze durring any credible senario. 
+not freeze during any credible senario. 
 
 \infolevone{ The coolant flow through the three target heat exchangers
 is connected in parallel for the three target loops. The entire target
@@ -520,8 +512,8 @@ on the ESR. For instance, the ESR will deliver a constant mass flow
 of helium cryogen at a constant temperature, about 15 K, and the coolant
 will be returned at an approximately constant but higher temperature,
 usually about 20 K.
+The targets are temperature regulated by IOC heater PID loop.}
 
-The targets are temperature regulated by IOC heater PID loop. \begin{safetyen}{10}{5}
 In the unlikely event that the target temperature drops too low, an
 alarm will sound and the target operator shall turn down the corresponding
 J-T valve(s) or apply auxilliary heater power. Target temperature
@@ -536,19 +528,17 @@ relocated to the entry laberinth where the radiation exposure has
 been minimized. As a result the frequency of IOC reboots has dramatically
 decreased.
 
-
-\subsubsection{ODH}
-
+\paragraph{ODH}
 \label{sec:targ:odh}
 
 The total volume of the targets is relatively small, with the entire
 scattering chamber containing only 9,000 STP $l$ of target gas when
 all three targets are full. As the scattering chamber is located in
 the middle of Hall A (i.e. not in a confined area) and the total Hall
-A volume is 40,000 m$^{3}$, the ODH hazard is minimal. \end{safetyen}
+A volume is 40,000 m$^{3}$, the ODH hazard is minimal. 
 
-
-\subsubsection{Controls}
+\infolevone{
+\paragraph{Controls}
 
 The target controls have been implemented with the EPICS~\cite{EPICSwww}
 control system and with hardware very similar to that employed by
@@ -573,11 +563,9 @@ the computer. This allows one to place the desired target in the beam.
 Limit switches and hard stops are installed to ensure the target cannot
 move outside the allowable range.
 \end{description}
-
-} %infolev
+}
 
 \infolevone{
-
 \subsection{Checklist}
 
 Checklist for pre-hall-closing: 
@@ -597,19 +585,18 @@ hydrogen loop.
 \end{itemize}
 }
 
-\begin{safetyen}{10}{15} 
 \subsection{Responsible Personnel}
 
 The principle contacts for the cryogenic targets are listed in table~\ref{tab:cryotarg:personnel-con}.
 Every shift must have a trained target operator whenever the cryogenic
 targets contain liquid. These operators are trained by one of the
-``experts'' listed in the table and certified by J.P.~Chen.
+``experts'' listed in the table and certified by J.P.~Chen or John LeRose.
 
 \begin{namestab}{tab:cryotarg:personnel-con}{Cryo Target: personnel
 and contacts}{Cryo target: authorized personnel and contacts. ''W.B''
 stands for the white board in Counting House.} \namestabheader{Hall
 A Technicians} \TechonCall{Vacuum} \EdFolts{Vacuum} \namestabheader{Hall
-A Physicists} \CryotargonCall{Cryotarget} \JianPingChen{Cryotarget}
+A Physicists} \CryotargonCall{Cryotarget} \JianPingChen{Cryotarget} \JohnLeRose{Cryotarget}
 \namestabheader{JLab Cryo-Target Group} \DaveMeekins{} \ChristopherKeith{}
 \namestabheader{Central Helium Liquefier (CHL) Experts} \CryoonCall{ESR}
 \CHLgroup{ESR} \end{namestab}
