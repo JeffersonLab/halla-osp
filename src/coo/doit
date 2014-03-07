@@ -1,0 +1,5 @@
+latex COO.tex
+latex COO.tex
+latex COO.tex
+dvipdf COO.dvi
+rm COO.toc COO.out COO.log COO.dvi
