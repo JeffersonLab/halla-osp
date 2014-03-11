@@ -42,7 +42,7 @@
   etc. 
 
   Many Hall A collaboration members contributed to the Operating Safety 
-  Procedures (OSP) document. This writeup gives instructions for the
+  Procedures (OSP) document. This write-up gives instructions for the
   contributors\cite{OSPgen}.
 
 \section{OSP Document Source}
@@ -95,7 +95,7 @@
 \subsection{Platform to Use}
 \label{sec:platform}   
 
-  In section~\ref{sec:obtain} it was assumed that a Linux (or a UNIX) paltform
+  In section~\ref{sec:obtain} it was assumed that a Linux (or a UNIX) platform
   is used. In fact, one can checkout the source from a MS Windows command line.
   I did it as follows:
   \begin{list}{$\bullet$}{\setlength{\itemsep}{-0.15cm}}
@@ -184,7 +184,7 @@
 \subsection{Making other Documents}
 \label{sec:makeother}
 
-  This writeup can be produces similar to the OSP document:
+  This write-up can be produces similar to the OSP document:
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
     \item \mycomp{./scripts/config doc 0} - create the work directory \mycomp{run}.
     \item \mycomp{cd run} 
@@ -201,7 +201,7 @@
     \item \mycomp{cvs update -A} 
   \end{list}
 
-  Other useful commands, helping to compare your source with the repositoruy:
+  Other useful commands, helping to compare your source with the repository:
   \begin{list}{}{\setlength{\itemsep}{-0.15cm}}
      \item \mycomp{cvs status} 
      \item \mycomp{cvs diff} 
@@ -399,7 +399,7 @@
    on \mycomp{acroread}. For \mycomp{xpdf} (version 1.00-5)
    you may need to copy \mycomp{/etc/xpdfrc}
    to \mycomp{$\tilde{}$/.xpdfrc} and edit it, uncommenting the line
-   \mycomp{\#urlCommand}     \mycomp{netscape -remote 'openURL(\%s)'}
+   \mycomp{\#urlCommand}     \mycomp{firefox -remote 'openURL(\%s)'}
    and commenting out the previous line.
    Typically, \mycomp{xpdf/acroread} tries to use an existing WWW browser
    window and does not open a new window.
@@ -521,7 +521,7 @@ Use the existing OSP document as the source of other examples.
 
   In order to comment out a big piece of the text, instead
   of commenting out each line one can use 
-  a comand:
+  a command:
   {\color{blue}
    \begin{verbatim}
 \obsolete{ .... }
@@ -543,7 +543,7 @@ Use the existing OSP document as the source of other examples.
    should not be modified by hand. The second footnote contains the name
    of the author of this file and should be edited accordingly.
 
-   New files must be added to the repository and then commited:
+   New files must be added to the repository and then committed:
    see the CVS instructions.
   \ref{sec:commit}.
 

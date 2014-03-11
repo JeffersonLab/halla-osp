@@ -122,7 +122,7 @@ For more information consult the full OSP manual~\cite{HallAosp}.
 \includegraphics*[height=0.4\textheight]{wt2_targ_encl}
 \caption[The enclosure of the target used for E00-102 and E94-107]%
 {The enclosure of the target used for E00-102 and E94-107 
-        is shown on the left. The waterfall target within the enclosur
+        is shown on the left. The waterfall target within the enclosure
         is shown on the right.}
 \label{fig:wt_enclosure}
 \end{figure}
@@ -174,7 +174,7 @@ target thickness stability.
 Basically, the water flows in a closed loop; there is a magnetic gear
 pump, capable of 40 liters/min, 0-90~V DC voltage controlled, which
 pulls the water in a stainless steel tube, from the rack up to the
-target cell, at a distance of about 20 metres. Before arriving in
+target cell, at a distance of about 20 meters. Before arriving in
 the cell, the water flows through a flowmeter. A display shows the
 flux in front of the rack.
 
@@ -423,14 +423,14 @@ and ADC to control the target. The pump motor tachometer, flowmeter,
 position encoder, and home switch are read through the ADC card. It
 is common to have noise on the flowmeter, tachometer, and encoder.
 The user should expect this noise and not be alarmed. The user should
-check the camera on the control rack to make sure that the postion
+check the camera on the control rack to make sure that the position
 encoder does indicate the proper target (there is some acceptable
 slop on this number).
 
 The motion control is achieved via a SHS - APS 3/A stepper motor controller.
 Communication with this controller is achieved through a RS232 serial
-connection. This controller counts absolute steps from the home postion.
-The home postion is defined using the HOME routine on the expert page
+connection. This controller counts absolute steps from the home position.
+The home position is defined using the HOME routine on the expert page
 of the GUI. Non-Experts are forbidden to use this function as serious
 down time may result. If the target motion mechanism does not seem
 to be moving to the selected target, execution of the HOME routine
@@ -438,7 +438,7 @@ might be needed and an expert must be called.
 
 The pump speed control is achieved through a -5 - 5V DAC. The DAC
 is 12 bit and negative voltages are not used in the application. Therefore
-the minimum set postion for the pump speed is 2048. This corresponds
+the minimum set position for the pump speed is 2048. This corresponds
 to 0V and 0 pump speed (pump is off). A setting of 4095 corresponds
 to 5 volts and maximum pump speed. It is not possible to set the pump
 speed outside these limits in software.
@@ -455,7 +455,7 @@ read using the same ADC and thus, the signal has a similar level of
 noise. The user should expect this noise and not be alarmed at oscillating
 values for the flowmeter signal.
 
-The postion encoder is the same type used on the collimators for both
+The position encoder is the same type used on the collimators for both
 arms. The encoder is displayed using a simple digital display on the
 control rack. This display unit has a 4-20~mA output that is converted
 to 0-5V and connected to the ADC. Again, the ADC value has significant
@@ -655,7 +655,7 @@ moving the target up or down, and the second one is, to control the
 water pump. Both these operations can be done by using the GUI%
 \infolevone{ (see Sec.\ref{sec:wt_slow_contr})}%
 \infolevtwo{ (see Fig.\ref{fig:wt_GUI})}%
- accessable from the standard Hall A controls screen.
+ accessible from the standard Hall A controls screen.
 \begin{safetyen}{20}{15}
 User operation of the target is achieved through this GUI only.
 Any problems with the target must be addressed by an expert. A list
@@ -663,7 +663,7 @@ of experts is give in Table \ref{tab:wt_experts}.
 The experts may perform some operations manually.
 \end{safetyen}
 
-The target consits of a positioning system that places one of 5 targets
+The target consists of a positioning system that places one of 5 targets
 (plus empty) on beam line and a water pump which circulates the target
 fluid for the waterfall target. Under normal operations, the pump
 should circulate $\sim 3$ l/min. 
@@ -703,7 +703,7 @@ The user should expect this noise and not be alarmed.
 The user operator should compare the displays on the GUI% 
 \infolevtwo{~(Fig.\ref{fig:wt_GUI})} 
 with the displays visible in the camera focused on the control rack.
-In particular, one should make sure that the postion
+In particular, one should make sure that the position
 encoder does indicate the proper target (there is some acceptable
 slop on this number).
 } %infolev
@@ -781,7 +781,7 @@ If for any reason, the motor can not be used, it is possible that
 movement can be performed by using the crank, which is on top of the
 target. To do this the crank must be put on the motor seat, and the
 movement can be performed manually. If the encoder is working, one
-can use the above table to positionsfor the targets, if the encoder
+can use the above table to position the targets, if the encoder
 is unavailable, the microswitches put on top of the chamber will give
 the correct alignment. \\
 \begin{safetyen}{10}{10}
@@ -822,18 +822,18 @@ control. They should be performed using the GUI (Fig.~\ref{fig:wt_GUI}).
 
 \subsection{Target Selection}
 
-The target postion is selected on the left side of the GUI under Position
+The target position is selected on the left side of the GUI under Position
 Select. There are six options. The desired target is selected by clicking
 on the particular target button. 
  Basically, this takes a present position and places it in the 
 ``set position'' input box. A specific position can also be entered 
 directly into this box.
 If the target is not already on the
-desired postion, the user should see the ``moving'' LED turn yellow
+desired position, the user should see the ``moving'' LED turn yellow
 in the Status display. The graphic display to the right of the selection
-boxes should update; the blue diamond indicating the current postion
-of the target. In addition, the ``Encoder Postion'' and ``StepMot
-Postion'' displays to the right of the GUI should update indicating
+boxes should update; the blue diamond indicating the current position
+of the target. In addition, the ``Encoder Position'' and ``StepMot
+Position'' displays to the right of the GUI should update indicating
 the target is in motion. 
 If the motor hits a
 limit switch, the motion will stop and the ``Limits'' status will
@@ -844,7 +844,7 @@ anytime by pushing the purple button labeled ``STOP''.
 
 If the motion does not appear to be operating
 correctly, call an expert. At the end of the motion sequence the encoder
-postion should be close to the value in text next to the target button.
+position should be close to the value in text next to the target button.
 The value on the camera should be within $\pm 0.0030$ on the encoder
 readout. If this is not the case call an expert. 
 
@@ -859,8 +859,8 @@ Only experts should use the functions on this screen there are no
 user features here.
 
 In addition to the camera on the control rack, there is a camera on
-top of the pivot focused on the motion mechanism. The target postions
-and names are labled in a visible fashion. The user should double
+top of the pivot focused on the motion mechanism. The target positions
+and names are labeled in a visible fashion. The user should double
 check this camera as well to make sure the motion mechanism is behaving
 as expected.
 
@@ -912,7 +912,7 @@ Ensure that the motor controller power is off. The power may be turned
 off at the front of the main control rack under the beam line. In
 the motor control rack located next to the IOC, there is a small chassis
 mounted box. At the back of the box, there is a DIP switch clearly
-marked with black pen labled B1. This switch must be set to OFF to
+marked with black pen labeled B1. This switch must be set to OFF to
 put the controller in manual mode. Restore power from the control
 rack under the beam line. Return to the motor control box. If the
 green LED at the right of the box turns on, all is well and the target
@@ -932,8 +932,8 @@ GUI. In the {}``Status'' section of the GUI, there is a small button
 that brings up the expert page. Be sure that the physical position
 of the target is a few centimeters above the H2O target. This can
 be seen at the top of the scattering chamber. The HOME routine will
-not properly execute from the H2O target postion. The target might
-have to be moved manually above the H2O target postion (see Section
+not properly execute from the H2O target position. The target might
+have to be moved manually above the H2O target position (see Section
 \ref{sec: wt-Manual}). Press the HOME button. The target should move
 in the direction of the HOME switch which is located near the empty
 target position. If the target does not move in the correct direction,
@@ -952,7 +952,7 @@ control system will lose power. This is designed so that the lifting
 mechanism will not be damaged. In this case, the limit must be bypassed
 and the target moved off of the limit manually. First, the controller
 must be set to manual mode. See Section \ref{sec: wt-Manual}. At the
-front of the box, there is a switch labled bypass power. Turn this
+front of the box, there is a switch labeled bypass power. Turn this
 switch down; the yellow LED above should turn on. Also on the front
 of the box is limit switch bypass button. Press this button and move
 the target manually. BE SURE TO MOVE IN THE CORRECT DIRECTION; severe
@@ -960,7 +960,7 @@ damage to the system may result from improper use of this feature.
 If the motor does not seem to be moving, page Dave Meekins or Scot
 Spiegel. As the power has been cycled to this module, it is now necessary
 to run the home routine (see Section \ref{sec: wt-HOME}). Disable bypass
-power when finnished with motor reset.
+power when finished with motor reset.
 
 
 \subsection{Manual water pump operation}
@@ -981,7 +981,7 @@ tachometer display. This causes undue strain on the system.
 
 \begin{safetyen}{50}{50}
 The water fall target system is much more simple than the standard
-target configuration for Hall A. There are therfore fewer hazards
+target configuration for Hall A. There are therefore fewer hazards
 which need to be addressed. The target does use the standard Hall~A 
 scattering chamber for experiment E00-102. The safety hazards for
 the scatting chamber have been addressed in the standard Hall A safety
@@ -1055,7 +1055,7 @@ not be released into the hall drains. Measurements at convenient intervals
 will be made by the radiation control group on samples to permit determinations
 of the radionuclide yields. In the case of water loss or the need
 to drain the water, the radiation control group has to be informed
-to permit precautionary measurements and controls. Appropriate sinage
+to permit precautionary measurements and controls. Appropriate signage
 on the water system indicates this.
 
 \begin{safetyen}{10}{10}
@@ -1077,7 +1077,7 @@ and in each case the window did not fail until slightly above 3 times
 over pressure (50 psig or higher). A summary of the test results is
 shown in Table \ref{tab: window-table}. It is important to note that
 the windows only have a 1 atm load on them when the scattering chamber
-is under vacuum. In this case, the windows are not accessable and
+is under vacuum. In this case, the windows are not accessible and
 present no hazard to personnel.
 
 %

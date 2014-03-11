@@ -73,7 +73,7 @@ can be used by itself or feed into the coincidence trigger, is sketched below.
 	In General,  the operation of the trigger is simple and straight forward.  Any reconfiguration of the trigger should have been performed well ahead of time and in consultation with the Hall A Trigger Manual (the XTrigMang manual is on the web).
 	
 	In most cases an operator will only need to download a trigger settings file.  The trigger is controlled through a program called ``XTrigMang''.  At present this can be executed from within the
-{\sl adaq} account, change to the {\sl \$EXPERIMENT/trigger} directory. Then execute XTrigMang, which reads four files;  ``trigger.conf'', ``trigger.map'', ``trigger.settings'' and ``X.map''.  ``X.map'' defines the placing of buttons on the {\sl gui} windows of XTrigMang.  ``trigger.map'' defines the logical name of every module in every slot in the CAMAC crates.  ``trigger.settings'' is the settings of the modules (discrimenator levels, delays, logic-gates, MLU patterns, etc.).  ``trigger.conf'' is a file in which the names of the other three files can be changed.
+{\sl adaq} account, change to the {\sl \$EXPERIMENT/trigger} directory. Then execute XTrigMang, which reads four files;  ``trigger.conf'', ``trigger.map'', ``trigger.settings'' and ``X.map''.  ``X.map'' defines the placing of buttons on the {\sl gui} windows of XTrigMang.  ``trigger.map'' defines the logical name of every module in every slot in the CAMAC crates.  ``trigger.settings'' is the settings of the modules (discriminator levels, delays, logic-gates, MLU patterns, etc.).  ``trigger.conf'' is a file in which the names of the other three files can be changed.
 
 	XTrigMang is build around five types of action,  which can be performed on one module at a time or all modules simultaneously.  The five actions are: 1) \fbox{read} and display the data-base which is in memory, 2) \fbox{ set} (modify or edit) the data-base, 3) \fbox{ show} what is in the crate, 4) \fbox{ verify} that the crate and data-base match, 5) \fbox{ download} the setting in the data-base to the crate. The user can also \fbox{save Data-Base}, ie. write the data-base to the disk file for future use.
 
@@ -90,7 +90,7 @@ can be used by itself or feed into the coincidence trigger, is sketched below.
 
 	In many cases the user may need to deal with one module at a time.  For example if the Verify All caught a problem,  the user is advised to first try and download the settings to just that one module.  Or perhaps the user wishes to modify the settings.  
 
-	By clicking on a button in the upper part of the main XTrigMang window,  a second orginizational window will be opened,  for example the \fbox{Electron\_Arm} button will open a window with buttons for every module in the electron arm.
+	By clicking on a button in the upper part of the main XTrigMang window,  a second organizational window will be opened,  for example the \fbox{Electron\_Arm} button will open a window with buttons for every module in the electron arm.
 	
 \snfig{./figs/trigger_subwindow.ps}{The {\sl Electron\_Arm } window list all the modules in the 
 Electron Arm part of the trigger.  The arrangement of the buttons indicates the flow of 
@@ -119,7 +119,7 @@ module is assigned to which slot in the crate}{trig_readMap}{5in}
 
 \paragraph{ Trouble Shooting }
 
-	The ``Verify All'' is the best meathod of detecting if something is not right.  If a module is flaged, attempt the following steps.  
+	The ``Verify All'' is the best method of detecting if something is not right.  If a module is flagged, attempt the following steps.  
 
 \begin{enumerate}
 
