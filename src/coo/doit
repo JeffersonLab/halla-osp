@@ -1,5 +1,37 @@
-latex COO.tex
-latex COO.tex
-latex COO.tex
-dvipdf COO.dvi
-rm COO.toc COO.out COO.log COO.dvi
+#! /bin/bash
+
+#OUTF="/dev/null"
+OUTF="/dev/stdout"
+
+DOC="COO"
+
+#OUTPUT_FORMAT="ps"
+OUTPUT_FORMAT="pdf"
+
+LATEX=${OUTPUT_FORMAT}latex
+
+cleanup() {
+  rm -f *.aux *.toc *.bbl *.blg *.lof *.lot *.spl *.log *.out
+  rm -f ${DOC}.dvi
+  rm -f *-eps-converted-to.pdf      # pdflatex generates these on the fly
+}
+
+
+cleanup
+mv -f ${DOC}.${OUTPUT_FORMAT} ${DOC}-old.${OUTPUT_FORMAT}
+export TEXINPUTS=$TEXINPUTS:$PWD/Figures
+
+${LATEX} ${DOC}.tex && \
+#bibtex ${DOC} && \
+${LATEX} ${DOC}.tex > $OUTF  && \
+${LATEX} ${DOC}.tex > $OUTF  && \
+${LATEX} ${DOC}.tex | grep -i warning
+
+if [ -e ${DOC}.${OUTPUT_FORMAT} ]; then
+  echo '-->Done!'
+  cleanup
+else
+  echo '*************************'
+  echo '******** FAILED *********'
+  echo '*************************'
+fi
