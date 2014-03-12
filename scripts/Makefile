@@ -111,8 +111,11 @@ clean:
 aux:    $(top).aux
 	pdf	
 
-$(namest) : $(namess)
-	(cd $(namesd) ; $(NAMCOM))
+## Disable names.tex generation from src/people/names.txt
+##   - src/people/names.txt is out of date, $(NAMCOM) should NOT be run
+##   - names.tex is now the primary source file
+#$(namest) : $(namess)
+#	(cd $(namesd) ; $(NAMCOM))
 
 pdf:	 clean $(namest)
 	echo "Rerun" > $(top).log ; \

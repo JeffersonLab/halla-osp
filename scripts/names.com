@@ -2,6 +2,14 @@
 
 # Parses the name list, checks the "staff" data and creates latex commands
 
+#----------------------------
+echo " Disable names.tex generation from src/people/names.txt"
+echo "   - src/people/names.txt is out of date, $0 should NOT be run"
+echo "   - names.tex is now the primary source file"
+
+exit 0
+#----------------------------
+
 PROG=`basename $0`
 echo Started $PROG to build a LaTeX file with a list of personnel ... 
 

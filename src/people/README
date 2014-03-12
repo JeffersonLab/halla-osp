@@ -1,0 +1,3 @@
+NOTE: src/people/names.txt is out of date, scripts/names.com should NOT be run
+
+"names.tex" is now the primary source file and should be editted directly.
