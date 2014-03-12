@@ -1,3 +1,8 @@
+#!/bin/bash
+
+if [ ! -d version ]; then
+  mkdir version
+fi
 
 ./scripts/config osp 4
 cd run; make; cd ..
