@@ -1,0 +1,10 @@
+
+./scripts/config osp 4
+cd run; make; cd ..
+cp run/osp.pdf version/osp-level4.pdf
+
+./scripts/config osp 0
+cd run; make; cd ..
+cp run/osp.pdf version/osp-level0.pdf
+
+
