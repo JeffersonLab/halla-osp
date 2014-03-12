@@ -29,6 +29,23 @@
 %   =3 + principles of operation, 
 %   =4 + performance
 
+\usepackage{etex}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{changebar}
+%\usepackage{url}
+%\usepackage{hyperref}
+\usepackage[
+   colorlinks=true,
+   urlcolor=rltblue,       % \href{...}{...} external (URL)
+   filecolor=rltgreen,     % \href{...} local file
+   linkcolor=rltred,       % \ref{...} and \pageref{...}
+   citecolor=rltdarkgreen, % citations
+   pagebackref,
+   pdfpagemode={UseOutlines},
+  ]{hyperref}
 \usepackage{color}
 \usepackage{longtable}
 \usepackage{afterpage}
@@ -55,44 +72,31 @@
     \pdftrue
 \fi
 
+
 \ifpdf
   \pdfcompresslevel=9
-  \usepackage[pdftex]{graphicx}
 %  \usepackage{thumbpdf}
   \definecolor{rltred}{rgb}{0.75,0,0}
   \definecolor{rltgreen}{rgb}{0,0.3,0}
   \definecolor{rltblue}{rgb}{0,0,0.75}
   \definecolor{rltdarkgreen}{rgb}{0.1,0.7,0.1}
   \ifhyprf
-     \usepackage[pdftex,
-         colorlinks=true,
-         urlcolor=rltblue,       % \href{...}{...} external (URL)
-         filecolor=rltgreen,     % \href{...} local file
-         linkcolor=rltred,       % \ref{...} and \pageref{...}
-         citecolor=rltdarkgreen, % citations
-         pagebackref,
-         pdfpagemode={UseOutlines},
-        ]{hyperref}
-     \hypersetup{
-         pdftitle={OSP Hall A},
-         pdfauthor={Hall A},
-         pdfsubject={JLab Hall A Operations},
-         pdfkeywords={JLab HallA operations safety OSP}
-       }
-     \renewcommand{\ifpdfhref}[1]{#1}%
+    \hypersetup{
+       pdftitle={OSP Hall A},
+       pdfauthor={Hall A},
+       pdfsubject={JLab Hall A Operations},
+       pdfkeywords={JLab HallA operations safety OSP}
+     }
+    \renewcommand{\ifpdfhref}[1]{#1}%
   \fi
-  \usepackage{pdfcolmk}
+
+  %\usepackage{pdfcolmk}    % obsolete since 2007
   \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+  \renewcommand{\htmladdnormallinkfoot}[2]{\footnote{#2}}
 \else
-  \usepackage{graphicx}
   \DeclareGraphicsExtensions{.eps,.epsi,.ps,.eps.gz,.epsi.gz,.ps.gz}
 \fi
 
-\usepackage{cite}
-\usepackage{comment}
-\usepackage{ifthen}
-\usepackage{changebar}
-\usepackage{url}
 % \usepackage{html,hthtml}
 
 \oddsidemargin=0.25in 
