@@ -118,15 +118,16 @@ aux:    $(top).aux
 #	(cd $(namesd) ; $(NAMCOM))
 
 pdf:	 clean $(namest)
-	echo "Rerun" > $(top).log ; \
+	echo "Rerun-TEST" > $(top).log ; \
 	ln -s -f $(fnam) $(top).tex ; \
 	ln -s -f ../src/$(top)/title.tex . ; \
 	$(PDFLATEX) $(top) ;\
 	$(BIBTEX) $(top) 
-	nrun=1; while [ ! -z "`sed -n '/Rerun/p' < $(top).log`" ] ; do \
+	nrun=1; while [ ! -z "`sed -n '/Rerun-TEST/p' < $(top).log`" ] ; do \
 	   echo Rerun ... ; \
 	   $(PDFLATEX) $(top) ; \
 	   nrun=`expr $$nrun + 1` ; \
+	   if [ $$nrun -gt 5 ]; then echo 'Compiling document too often, something is wrong.'; exit 1; fi; \
 	done ;  \
         if [ ! -z "`sed -n '/undefined references/p' < $(top).log`" ]; then \
             $(PDFLATEX) $(top) ; nrun=`expr $$nrun + 1` ; \
