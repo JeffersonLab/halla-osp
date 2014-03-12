@@ -67,7 +67,6 @@ BSTINPUTS =$(TEXINPUTS)
 
 export TEXINPUTS BIBINPUTS BSTINPUTS
 
-
 DVIPS = dvips  
 LATEX = latex
 PDFLATEX = pdflatex
@@ -118,6 +117,7 @@ aux:    $(top).aux
 #	(cd $(namesd) ; $(NAMCOM))
 
 pdf:	 clean $(namest)
+	env
 	echo "Rerun-TEST" > $(top).log ; \
 	ln -s -f $(fnam) $(top).tex ; \
 	ln -s -f ../src/$(top)/title.tex . ; \
@@ -135,6 +135,8 @@ pdf:	 clean $(namest)
 	   $(PDFLATEX) $(top) ; \
 	   nrun=`expr $$nrun + 1` ; \
 	echo Finished at iteration $$nrun
+	echo "------- Warnings / Errors --------"
+	egrep -i 'error|warn' $(top).log
 	rm -f $(top).tex ; \
 	rm -f title.tex 
 #	if [ ! -z $(bibl) ]; then $(BIBTEX) $(top) ; else $(error $(bibl));fi
