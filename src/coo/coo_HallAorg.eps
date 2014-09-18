@@ -1,12 +1,11 @@
-%!PS-Adobe-3.0 EPSF-3.0
+%!PS-Adobe-2.0 EPSF-2.0
 %%Title: coo_HallAorg.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5d
-%%CreationDate: Thu Dec  5 12:08:39 2013
-%%For: doug@d-173-250-157-159.dhcp4.washington.edu (Douglas Higinbotham)
+%%Creator: fig2dev Version 3.2 Patchlevel 5
+%%CreationDate: Wed Sep 17 10:33:23 2014
+%%For: doug@jlabl3.jlab.org (Douglas Higinbotham)
 %%BoundingBox: 0 0 490 452
 %Magnification: 1.0000
 %%EndComments
-%%BeginProlog
 /$F2psDict 200 dict def
 $F2psDict begin
 $F2psDict /mtrx matrix put
@@ -45,6 +44,10 @@ $F2psDict /mtrx matrix put
 /col31 {1.000 0.840 0.000 srgb} bind def
 
 end
+save
+newpath 0 452 moveto 0 0 lineto 490 0 lineto 490 452 lineto closepath clip newpath
+-53.3 486.7 translate
+1 -1 scale
 
 /cp {closepath} bind def
 /ef {eofill} bind def
@@ -80,22 +83,10 @@ end
 /$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
 /$F2psEnd {$F2psEnteredState restore end} def
 
-/pageheader {
-save
-newpath 0 452 moveto 0 0 lineto 490 0 lineto 490 452 lineto closepath clip newpath
--53.3 486.7 translate
-1 -1 scale
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
  0.06000 0.06000 sc
-} bind def
-/pagefooter {
-$F2psEnd
-restore
-} bind def
-%%EndProlog
-pageheader
 %
 % Fig objects follow
 %
@@ -114,9 +105,6 @@ n 2400 1800 m
 /Times-Roman ff 200.00 scf sf
 4425 3375 m
 gs 1 -1 sc (D. Higinbotham) col0 sh gr
-/Times-Roman ff 200.00 scf sf
-5700 1425 m
-gs 1 -1 sc (N/A in this case) col0 sh gr
 % here ends figure;
 % 
 % here starts figure with depth 0
@@ -124,6 +112,21 @@ gs 1 -1 sc (N/A in this case) col0 sh gr
 0 slj
 0 slc
 7.500 slw
+gs  clippath
+8070 4663 m 8070 4815 l 8130 4815 l 8130 4663 l 8130 4663 l 8100 4783 l 8070 4663 l cp
+eoclip
+n 8100 3600 m
+ 8100 4800 l gs col-1 s gr gr
+
+% arrowhead
+n 8070 4663 m 8100 4783 l 8130 4663 l  col-1 s
+% Polyline
+n 7200 2400 m 9000 2400 l 9000 3600 l 7200 3600 l
+ cp gs col-1 s gr 
+% Polyline
+n 4200 2400 m 6000 2400 l 6000 3600 l 4200 3600 l
+ cp gs col-1 s gr 
+% Polyline
 gs  clippath
 4960 2399 m 5108 2432 l 5121 2373 l 4973 2340 l 4973 2340 l 5084 2396 l 4960 2399 l cp
 eoclip
@@ -334,26 +337,12 @@ gs 1 -1 sc (Experiment) col-1 sh gr
 /Times-Roman ff 200.00 scf sf
 4425 2775 m
 gs 1 -1 sc (Physics Division ) col-1 sh gr
-% Polyline
-gs  clippath
-8070 4663 m 8070 4815 l 8130 4815 l 8130 4663 l 8130 4663 l 8100 4783 l 8070 4663 l cp
-eoclip
-n 8100 3600 m
- 8100 4800 l gs col-1 s gr gr
-
-% arrowhead
-n 8070 4663 m 8100 4783 l 8130 4663 l  col-1 s
 /Times-Roman ff 200.00 scf sf
 4725 3075 m
 gs 1 -1 sc (Liaison) col-1 sh gr
-% Polyline
-n 7200 2400 m 9000 2400 l 9000 3600 l 7200 3600 l
- cp gs col-1 s gr 
-% Polyline
-n 4200 2400 m 6000 2400 l 6000 3600 l 4200 3600 l
- cp gs col-1 s gr 
 % here ends figure;
-pagefooter
+$F2psEnd
+rs
 showpage
 %%Trailer
 %EOF
