@@ -50,8 +50,9 @@
 % Set the Chapter counter for making the ESAD level zero document
 %
 %\input{esad-charter1.tex}
+%removed following line for APEX
 \infoleveqnull{\input{esad/new-ESAD}}
-%\infoleveqnull{\setcounter{chapter}{2}}
+%\infoleveqnull{\setcounter{chapter}{3}}
 
 %
 % Input Sections of the Operations Manual
@@ -76,9 +77,10 @@
 %
 \infolevone{
 \input{bigbite/all}
-%\appendix
-%\input{checklist/all}
 }
+\infoleveqnull{\input{esad/exp-specific.tex}}
+
+%\input{checklist/radiation}
 
 %
 % Bibliography / References
